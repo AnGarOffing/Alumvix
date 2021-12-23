@@ -1,0 +1,11 @@
+D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\bin\Debug\Alumvix.exe.config
+D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\bin\Debug\Alumvix.exe
+D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\bin\Debug\Alumvix.pdb
+D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug\Alumvix.csproj.AssemblyReference.cache
+D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug\Alumvix.csproj.SuggestedBindingRedirects.cache
+D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug\Alumvix.Properties.Resources.resources
+D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug\Alumvix.View.ClienteView.resources
+D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug\Alumvix.csproj.GenerateResource.cache
+D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug\Alumvix.csproj.CoreCompileInputs.cache
+D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug\Alumvix.exe
+D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug\Alumvix.pdb

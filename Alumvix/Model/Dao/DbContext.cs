@@ -7,9 +7,9 @@ using System.Data.SqlClient;
 
 namespace Alumvix.Model.Dao
 {
-    public class DbContext
+    internal class DbContext
     {
-        protected SqlConnection _connection = new SqlConnection(
+        protected SqlConnection connection = new SqlConnection(
             "Server=DESKTOP-N7D39RE\\SQLEXPRESS;DataBase=ALUMVIX;Integrated Security=true");
     }
 }

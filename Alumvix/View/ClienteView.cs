@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Alumvix.Controller;
 
 namespace Alumvix.View
 {
@@ -15,6 +16,8 @@ namespace Alumvix.View
         public ClienteView()
         {
             InitializeComponent();
+            ClienteController clienteController = new ClienteController(this);
         }
+
     }
 }
