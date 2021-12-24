@@ -18,6 +18,5 @@ namespace Alumvix.View
             InitializeComponent();
             ClienteController clienteController = new ClienteController(this);
         }
-
     }
 }

@@ -9,3 +9,4 @@ D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug
 D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug\Alumvix.csproj.CoreCompileInputs.cache
 D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug\Alumvix.exe
 D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug\Alumvix.pdb
+D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug\Alumvix.View.Cliente.DetalleClienteView.resources

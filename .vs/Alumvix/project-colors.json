@@ -5,6 +5,11 @@
       "ProjectGuid": "9c6cf493-0caf-4ea9-86d7-e57151271ec2",
       "DisplayName": "Alumvix",
       "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Archivos varios",
+      "ColorIndex": -1
     }
   },
   "NextColorIndex": 1
