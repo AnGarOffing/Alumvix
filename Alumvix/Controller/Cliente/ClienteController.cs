@@ -38,6 +38,7 @@ namespace Alumvix.Controller
         {
             ClienteDao clienteDao = new ClienteDao();
             vista.dataGridClientes.DataSource = clienteDao.ObtenerListadoClientes(vista.txtFiltrarCliente.Text);
+            vista.dataGridClientes.ClearSelection();
         }
 
         //metodo para mostrar el detalle de un cliente seleccionado en el DataGridClientes
@@ -53,8 +54,16 @@ namespace Alumvix.Controller
         
         private void AbrirDetalleClienteForm(object sender, EventArgs e)
         {
-            detalleClienteVista = new DetalleClienteView();
-            detalleClienteVista.Show();
+            if (registroCliente.Count > 0)
+            {
+                detalleClienteVista = new DetalleClienteView();
+                detalleClienteVista.Show();
+            }
+            else
+            {
+                MessageBox.Show("No ha seleccionado un cliente");
+            }
+            
         }
        
 
