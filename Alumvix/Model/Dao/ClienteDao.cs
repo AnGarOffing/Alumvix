@@ -15,11 +15,12 @@ namespace Alumvix.Model.Dao
         SqlDataReader lectorFilas;
         SqlCommand command = new SqlCommand();
 
-        public List<Cliente> ObtenerClientes()
+        public List<Cliente> ObtenerListadoClientes(string condicion)
         {
             command.Connection = connection;
-            command.CommandText = "Select * from CLIENTE";
-            command.CommandType = CommandType.Text;
+            command.CommandText = "MostrarClientes";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@Condicion", condicion);
             connection.Open();
 
             lectorFilas = command.ExecuteReader();
