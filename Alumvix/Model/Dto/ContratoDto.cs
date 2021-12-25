@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Alumvix.Model.Dto
 {
-    internal class Contrato
+    internal class ContratoDto
     {
         int idContrato;
         int valorContrato;

@@ -15,7 +15,7 @@ namespace Alumvix.Model.Dao
         SqlDataReader lectorFilas;
         SqlCommand command = new SqlCommand();
 
-        public List<Cliente> ObtenerListadoClientes(string condicion)
+        public List<ClienteDto> ObtenerListadoClientes(string condicion)
         {
             command.Connection = connection;
             command.CommandText = "MostrarClientes";
@@ -24,12 +24,12 @@ namespace Alumvix.Model.Dao
             connection.Open();
 
             lectorFilas = command.ExecuteReader();
-            List<Cliente> listaClientes = new List<Cliente>();
+            List<ClienteDto> listaClientes = new List<ClienteDto>();
             while (lectorFilas.Read())
             {
-                listaClientes.Add(new Cliente
+                listaClientes.Add(new ClienteDto
                 {
-                    Id = lectorFilas.GetInt32(0),
+                    IdCliente = lectorFilas.GetInt32(0),
                     IdentificacionCliente = lectorFilas.GetString(1),
                     NombreCliente = lectorFilas.GetString(2),
                     CorreoElectronicoCliente = lectorFilas.GetString(3),

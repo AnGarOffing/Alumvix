@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Alumvix.Model.Dto
 {
-    internal class Cliente
+    internal class ClienteDto
     {
 
         
@@ -19,7 +19,7 @@ namespace Alumvix.Model.Dto
         string direccionCliente;
 
 
-        public int Id { get => idCliente; set => idCliente = value; }
+        public int IdCliente { get => idCliente; set => idCliente = value; }
         public string IdentificacionCliente { get => identificacionCliente; set => identificacionCliente = value; }
         public string NombreCliente { get => nombreCliente; set => nombreCliente = value; }
         public string CorreoElectronicoCliente { get => correoElectronicoCliente; set => correoElectronicoCliente = value; }

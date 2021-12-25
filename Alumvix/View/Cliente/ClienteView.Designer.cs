@@ -44,7 +44,7 @@
             this.dataGridClientes.Name = "dataGridClientes";
             this.dataGridClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridClientes.Size = new System.Drawing.Size(735, 148);
-            this.dataGridClientes.TabIndex = 0;           
+            this.dataGridClientes.TabIndex = 0;
             // 
             // btnDetalleCliente
             // 
@@ -72,7 +72,7 @@
             this.Controls.Add(this.btnDetalleCliente);
             this.Controls.Add(this.dataGridClientes);
             this.Name = "ClienteView";
-            this.Text = "ClienteView";
+            this.Text = "Clientes";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -35,13 +35,27 @@
             this.lblFijo = new System.Windows.Forms.Label();
             this.lblDireccion = new System.Windows.Forms.Label();
             this.gbCliente = new System.Windows.Forms.GroupBox();
+            this.lblDireccion2 = new System.Windows.Forms.Label();
             this.lblFijo2 = new System.Windows.Forms.Label();
             this.lblCelular2 = new System.Windows.Forms.Label();
             this.lblCorreo2 = new System.Windows.Forms.Label();
             this.lblNombreCliente2 = new System.Windows.Forms.Label();
             this.lblId2 = new System.Windows.Forms.Label();
-            this.lblDireccion2 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblEstadoTrabajo2 = new System.Windows.Forms.Label();
+            this.lblEstadoTrabajo1 = new System.Windows.Forms.Label();
+            this.lblEstadoContrato2 = new System.Windows.Forms.Label();
+            this.lblEstadoContrato1 = new System.Windows.Forms.Label();
+            this.lblFechaFin2 = new System.Windows.Forms.Label();
+            this.lblfechaInicio2 = new System.Windows.Forms.Label();
+            this.lblValor2 = new System.Windows.Forms.Label();
+            this.lblNumero2 = new System.Windows.Forms.Label();
+            this.lblNumero1 = new System.Windows.Forms.Label();
+            this.lblFechaFin1 = new System.Windows.Forms.Label();
+            this.lblFechaInicio1 = new System.Windows.Forms.Label();
+            this.lblValor1 = new System.Windows.Forms.Label();
             this.gbCliente.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblId
@@ -118,13 +132,23 @@
             this.gbCliente.Controls.Add(this.lblCelular);
             this.gbCliente.Controls.Add(this.lblNombreCliente);
             this.gbCliente.Controls.Add(this.lblCorreo);
-            this.gbCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbCliente.Location = new System.Drawing.Point(37, 12);
+            this.gbCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbCliente.Location = new System.Drawing.Point(12, 12);
             this.gbCliente.Name = "gbCliente";
-            this.gbCliente.Size = new System.Drawing.Size(916, 134);
+            this.gbCliente.Size = new System.Drawing.Size(941, 134);
             this.gbCliente.TabIndex = 12;
             this.gbCliente.TabStop = false;
-            this.gbCliente.Text = "Cliente";
+            this.gbCliente.Text = "Información del Cliente";
+            // 
+            // lblDireccion2
+            // 
+            this.lblDireccion2.AutoSize = true;
+            this.lblDireccion2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDireccion2.Location = new System.Drawing.Point(151, 103);
+            this.lblDireccion2.Name = "lblDireccion2";
+            this.lblDireccion2.Size = new System.Drawing.Size(514, 24);
+            this.lblDireccion2.TabIndex = 11;
+            this.lblDireccion2.Text = "Calle 45 # 36 - 18 las palmas urb portal de las flores casa 201";
             // 
             // lblFijo2
             // 
@@ -176,26 +200,161 @@
             this.lblId2.TabIndex = 6;
             this.lblId2.Text = "103628834";
             // 
-            // lblDireccion2
+            // groupBox1
             // 
-            this.lblDireccion2.AutoSize = true;
-            this.lblDireccion2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDireccion2.Location = new System.Drawing.Point(151, 103);
-            this.lblDireccion2.Name = "lblDireccion2";
-            this.lblDireccion2.Size = new System.Drawing.Size(514, 24);
-            this.lblDireccion2.TabIndex = 11;
-            this.lblDireccion2.Text = "Calle 45 # 36 - 18 las palmas urb portal de las flores casa 201";
+            this.groupBox1.Controls.Add(this.lblEstadoTrabajo2);
+            this.groupBox1.Controls.Add(this.lblEstadoTrabajo1);
+            this.groupBox1.Controls.Add(this.lblEstadoContrato2);
+            this.groupBox1.Controls.Add(this.lblEstadoContrato1);
+            this.groupBox1.Controls.Add(this.lblFechaFin2);
+            this.groupBox1.Controls.Add(this.lblfechaInicio2);
+            this.groupBox1.Controls.Add(this.lblValor2);
+            this.groupBox1.Controls.Add(this.lblNumero2);
+            this.groupBox1.Controls.Add(this.lblNumero1);
+            this.groupBox1.Controls.Add(this.lblFechaFin1);
+            this.groupBox1.Controls.Add(this.lblFechaInicio1);
+            this.groupBox1.Controls.Add(this.lblValor1);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(12, 152);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(587, 134);
+            this.groupBox1.TabIndex = 13;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Contrato";
+            // 
+            // lblEstadoTrabajo2
+            // 
+            this.lblEstadoTrabajo2.AutoSize = true;
+            this.lblEstadoTrabajo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstadoTrabajo2.Location = new System.Drawing.Point(486, 55);
+            this.lblEstadoTrabajo2.Name = "lblEstadoTrabajo2";
+            this.lblEstadoTrabajo2.Size = new System.Drawing.Size(66, 24);
+            this.lblEstadoTrabajo2.TabIndex = 15;
+            this.lblEstadoTrabajo2.Text = "********";
+            // 
+            // lblEstadoTrabajo1
+            // 
+            this.lblEstadoTrabajo1.AutoSize = true;
+            this.lblEstadoTrabajo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstadoTrabajo1.Location = new System.Drawing.Point(301, 58);
+            this.lblEstadoTrabajo1.Name = "lblEstadoTrabajo1";
+            this.lblEstadoTrabajo1.Size = new System.Drawing.Size(179, 24);
+            this.lblEstadoTrabajo1.TabIndex = 14;
+            this.lblEstadoTrabajo1.Text = "Estado de trabajo:";
+            // 
+            // lblEstadoContrato2
+            // 
+            this.lblEstadoContrato2.AutoSize = true;
+            this.lblEstadoContrato2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstadoContrato2.Location = new System.Drawing.Point(486, 34);
+            this.lblEstadoContrato2.Name = "lblEstadoContrato2";
+            this.lblEstadoContrato2.Size = new System.Drawing.Size(66, 24);
+            this.lblEstadoContrato2.TabIndex = 13;
+            this.lblEstadoContrato2.Text = "********";
+            // 
+            // lblEstadoContrato1
+            // 
+            this.lblEstadoContrato1.AutoSize = true;
+            this.lblEstadoContrato1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstadoContrato1.Location = new System.Drawing.Point(289, 34);
+            this.lblEstadoContrato1.Name = "lblEstadoContrato1";
+            this.lblEstadoContrato1.Size = new System.Drawing.Size(191, 24);
+            this.lblEstadoContrato1.TabIndex = 12;
+            this.lblEstadoContrato1.Text = "Estado de contrato:";
+            // 
+            // lblFechaFin2
+            // 
+            this.lblFechaFin2.AutoSize = true;
+            this.lblFechaFin2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaFin2.Location = new System.Drawing.Point(151, 103);
+            this.lblFechaFin2.Name = "lblFechaFin2";
+            this.lblFechaFin2.Size = new System.Drawing.Size(59, 24);
+            this.lblFechaFin2.TabIndex = 11;
+            this.lblFechaFin2.Text = "*******";
+            // 
+            // lblfechaInicio2
+            // 
+            this.lblfechaInicio2.AutoSize = true;
+            this.lblfechaInicio2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfechaInicio2.Location = new System.Drawing.Point(151, 79);
+            this.lblfechaInicio2.Name = "lblfechaInicio2";
+            this.lblfechaInicio2.Size = new System.Drawing.Size(66, 24);
+            this.lblfechaInicio2.TabIndex = 10;
+            this.lblfechaInicio2.Text = "********";
+            // 
+            // lblValor2
+            // 
+            this.lblValor2.AutoSize = true;
+            this.lblValor2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValor2.Location = new System.Drawing.Point(151, 55);
+            this.lblValor2.Name = "lblValor2";
+            this.lblValor2.Size = new System.Drawing.Size(59, 24);
+            this.lblValor2.TabIndex = 7;
+            this.lblValor2.Text = "*******";
+            // 
+            // lblNumero2
+            // 
+            this.lblNumero2.AutoSize = true;
+            this.lblNumero2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumero2.Location = new System.Drawing.Point(151, 31);
+            this.lblNumero2.Name = "lblNumero2";
+            this.lblNumero2.Size = new System.Drawing.Size(66, 24);
+            this.lblNumero2.TabIndex = 6;
+            this.lblNumero2.Text = "********";
+            // 
+            // lblNumero1
+            // 
+            this.lblNumero1.AutoSize = true;
+            this.lblNumero1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumero1.Location = new System.Drawing.Point(46, 34);
+            this.lblNumero1.Name = "lblNumero1";
+            this.lblNumero1.Size = new System.Drawing.Size(91, 24);
+            this.lblNumero1.TabIndex = 0;
+            this.lblNumero1.Text = "Numero:";
+            // 
+            // lblFechaFin1
+            // 
+            this.lblFechaFin1.AutoSize = true;
+            this.lblFechaFin1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaFin1.Location = new System.Drawing.Point(26, 103);
+            this.lblFechaFin1.Name = "lblFechaFin1";
+            this.lblFechaFin1.Size = new System.Drawing.Size(111, 24);
+            this.lblFechaFin1.TabIndex = 5;
+            this.lblFechaFin1.Text = "Fecha Fin:";
+            // 
+            // lblFechaInicio1
+            // 
+            this.lblFechaInicio1.AutoSize = true;
+            this.lblFechaInicio1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaInicio1.Location = new System.Drawing.Point(6, 82);
+            this.lblFechaInicio1.Name = "lblFechaInicio1";
+            this.lblFechaInicio1.Size = new System.Drawing.Size(131, 24);
+            this.lblFechaInicio1.TabIndex = 4;
+            this.lblFechaInicio1.Text = "Fecha Inicio:";
+            // 
+            // lblValor1
+            // 
+            this.lblValor1.AutoSize = true;
+            this.lblValor1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValor1.Location = new System.Drawing.Point(72, 58);
+            this.lblValor1.Name = "lblValor1";
+            this.lblValor1.Size = new System.Drawing.Size(65, 24);
+            this.lblValor1.TabIndex = 1;
+            this.lblValor1.Text = "Valor:";
             // 
             // DetalleClienteView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(965, 542);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbCliente);
             this.Name = "DetalleClienteView";
             this.Text = "DetalleClienteView";
             this.gbCliente.ResumeLayout(false);
             this.gbCliente.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -215,5 +374,18 @@
         public System.Windows.Forms.Label lblCorreo2;
         public System.Windows.Forms.Label lblNombreCliente2;
         public System.Windows.Forms.Label lblId2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        public System.Windows.Forms.Label lblFechaFin2;
+        public System.Windows.Forms.Label lblfechaInicio2;
+        public System.Windows.Forms.Label lblValor2;
+        public System.Windows.Forms.Label lblNumero2;
+        public System.Windows.Forms.Label lblNumero1;
+        public System.Windows.Forms.Label lblFechaFin1;
+        public System.Windows.Forms.Label lblFechaInicio1;
+        public System.Windows.Forms.Label lblValor1;
+        public System.Windows.Forms.Label lblEstadoTrabajo2;
+        public System.Windows.Forms.Label lblEstadoTrabajo1;
+        public System.Windows.Forms.Label lblEstadoContrato2;
+        public System.Windows.Forms.Label lblEstadoContrato1;
     }
 }

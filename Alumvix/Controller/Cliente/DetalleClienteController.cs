@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Alumvix.Model.Dao;
+using Alumvix.Model.Dto;
+using Alumvix.Model.Logica.Util;
 using Alumvix.View.Cliente;
 
 namespace Alumvix.Controller.Cliente
@@ -16,6 +16,7 @@ namespace Alumvix.Controller.Cliente
         {
             detalleClienteVista = detalleClienteView;
             detalleClienteVista.Load += new EventHandler(MostrarClienteSeleccionado);
+            detalleClienteVista.Load += new EventHandler(MostrarContrato);
         }
 
 
@@ -30,9 +31,16 @@ namespace Alumvix.Controller.Cliente
             detalleClienteVista.lblDireccion2.Text = registroCliente[5].ToString();
         }
 
-        private void MostrarContratos(object sender, EventArgs e)
+        //metodo para mostrar la info de un contrato en la vista DetalleClienteView
+        private void MostrarContrato(object sender, EventArgs e)
         {
-
+            ContratoDto contrato = new ContratoDao().ObtenerContrato(ClienteController.ObtenerIdCliente());
+            detalleClienteVista.lblNumero2.Text = contrato.IdContrato.ToString();
+            detalleClienteVista.lblValor2.Text = FormatoAValor.DarFormatoANumero(contrato.ValorContrato);
+            detalleClienteVista.lblfechaInicio2.Text = contrato.FechaInicioContrato.ToString();
+            detalleClienteVista.lblFechaFin2.Text = contrato.FechaTerminacionContrato.ToString();
+            detalleClienteVista.lblEstadoContrato2.Text = contrato.EstadoContrato.ToString();
+            detalleClienteVista.lblEstadoTrabajo2.Text = contrato.EstadoTrabajo.ToString();
         }
 
     }
