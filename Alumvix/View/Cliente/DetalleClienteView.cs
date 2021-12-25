@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Alumvix.Controller;
+using Alumvix.Controller.Cliente;
 
 namespace Alumvix.View.Cliente
 {
@@ -16,7 +17,7 @@ namespace Alumvix.View.Cliente
         public DetalleClienteView()
         {
             InitializeComponent();
-            ClienteController clienteController = new ClienteController(this);
+            DetalleClienteController detalleClienteController = new DetalleClienteController(this);
         }
     }
 }

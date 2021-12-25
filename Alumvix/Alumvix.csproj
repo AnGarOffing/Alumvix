@@ -47,7 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\Cliente\ClienteController.cs" />
+    <Compile Include="Controller\Cliente\DetalleClienteController.cs" />
     <Compile Include="Model\Dao\ClienteDao.cs" />
+    <Compile Include="Model\Dao\ContratoDao.cs" />
     <Compile Include="Model\Dao\DbContext.cs" />
     <Compile Include="Model\Dto\Cliente.cs" />
     <Compile Include="Program.cs" />
