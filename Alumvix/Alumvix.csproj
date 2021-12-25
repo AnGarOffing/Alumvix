@@ -52,6 +52,7 @@
     <Compile Include="Model\Dao\ContratoDao.cs" />
     <Compile Include="Model\Dao\DbContext.cs" />
     <Compile Include="Model\Dto\Cliente.cs" />
+    <Compile Include="Model\Dto\Contrato.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\Cliente\ClienteView.cs">

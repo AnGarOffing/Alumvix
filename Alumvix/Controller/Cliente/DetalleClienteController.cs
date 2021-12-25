@@ -22,12 +22,17 @@ namespace Alumvix.Controller.Cliente
         //metodo para mostrar el detalle de un cliente en la vista "DetalleClienteView"
         private void MostrarClienteSeleccionado(object sender, EventArgs e)
         {
-            detalleClienteVista.txtIdentificacion.Text = registroCliente[0].ToString();
-            detalleClienteVista.txtNombre.Text = registroCliente[1].ToString();
-            detalleClienteVista.txtCorreo.Text = registroCliente[2].ToString();
-            detalleClienteVista.txtCelular.Text = registroCliente[3].ToString();
-            detalleClienteVista.txtFijo.Text = registroCliente[4].ToString();
-            detalleClienteVista.txtDireccion.Text = registroCliente[5].ToString();
+            detalleClienteVista.lblId2.Text = registroCliente[0].ToString();
+            detalleClienteVista.lblNombreCliente2.Text = registroCliente[1].ToString();
+            detalleClienteVista.lblCorreo2.Text = registroCliente[2].ToString();
+            detalleClienteVista.lblCelular2.Text = registroCliente[3].ToString();
+            detalleClienteVista.lblFijo2.Text = registroCliente[4].ToString();
+            detalleClienteVista.lblDireccion2.Text = registroCliente[5].ToString();
+        }
+
+        private void MostrarContratos(object sender, EventArgs e)
+        {
+
         }
 
     }
