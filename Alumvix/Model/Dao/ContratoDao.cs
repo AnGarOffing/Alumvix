@@ -24,8 +24,8 @@ namespace Alumvix.Model.Dao
             lectorFilas.Read();
             contrato.IdContrato = lectorFilas.GetInt32(0);
             contrato.ValorContrato = lectorFilas.GetInt32(1);
-            contrato.FechaInicioContrato = lectorFilas.GetDateTime(2).ToString().Substring(0,9);
-            contrato.FechaTerminacionContrato = lectorFilas.GetDateTime(3).ToString().Substring(0,9);
+            contrato.FechaInicioContrato = lectorFilas.GetDateTime(2).ToString().Substring(0,10);
+            contrato.FechaTerminacionContrato = lectorFilas.GetDateTime(3).ToString().Substring(0,10);
             contrato.EstadoContrato = lectorFilas.GetString(4);
             contrato.EstadoTrabajo = lectorFilas.GetString(5);
             lectorFilas.Close();

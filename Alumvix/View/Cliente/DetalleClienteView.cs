@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Alumvix.Controller;
 using Alumvix.Controller.Cliente;
+using Alumvix.Model.Logica.Util;
 
 namespace Alumvix.View.Cliente
 {
@@ -18,6 +19,7 @@ namespace Alumvix.View.Cliente
         {
             InitializeComponent();
             DetalleClienteController detalleClienteController = new DetalleClienteController(this);
+            CopyPasteEnDetalleClienteVista copyPasteEnDetalleClienteVista = new CopyPasteEnDetalleClienteVista(this);
         }
 
         
