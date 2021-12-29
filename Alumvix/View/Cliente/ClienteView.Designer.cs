@@ -72,6 +72,7 @@
             this.Controls.Add(this.btnDetalleCliente);
             this.Controls.Add(this.dataGridClientes);
             this.Name = "ClienteView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridClientes)).EndInit();
             this.ResumeLayout(false);

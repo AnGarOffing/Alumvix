@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using Alumvix.Model.Dao;
+using Alumvix.Model.Dto;
 using Alumvix.View;
 using Alumvix.View.Cliente;
 
@@ -9,7 +10,7 @@ namespace Alumvix.Controller
 {
     internal class ClienteController
     {
-        static List<string> registroCliente = new List<string>();
+        static List<ClienteDto> registroCliente = new List<ClienteDto>();
         ClienteView clienteVista;
         DetalleClienteView detalleClienteVista;
         static int idCliente;
@@ -31,7 +32,7 @@ namespace Alumvix.Controller
             clienteVista.dataGridClientes.ClearSelection();
         }
 
-        public static List<string> CargarRegistroCliente()
+        public static List<ClienteDto> CargarRegistroCliente()
         {
             return registroCliente;
         }
@@ -40,15 +41,17 @@ namespace Alumvix.Controller
         //metodo para agregar las celdas de una fila seleccionada a la lista "registroCliente"
         private void ObtenerRegistroCliente(object sender, DataGridViewCellEventArgs e)
         {
+            ClienteDto clienteDto = new ClienteDto();
             registroCliente.Clear();
             clienteVista.dataGridClientes.CurrentRow.Selected = true;
             idCliente = Convert.ToInt32(clienteVista.dataGridClientes.Rows[e.RowIndex].Cells["IdCliente"].Value);
-            registroCliente.Add(clienteVista.dataGridClientes.Rows[e.RowIndex].Cells["identificacionCliente"].Value.ToString());
-            registroCliente.Add(clienteVista.dataGridClientes.Rows[e.RowIndex].Cells["nombreCliente"].Value.ToString());
-            registroCliente.Add(clienteVista.dataGridClientes.Rows[e.RowIndex].Cells["correoElectronicoCliente"].Value.ToString());
-            registroCliente.Add(clienteVista.dataGridClientes.Rows[e.RowIndex].Cells["celularCliente"].Value.ToString());
-            registroCliente.Add(clienteVista.dataGridClientes.Rows[e.RowIndex].Cells["telefonoFijoCliente"].Value.ToString());
-            registroCliente.Add(clienteVista.dataGridClientes.Rows[e.RowIndex].Cells["direccionCliente"].Value.ToString());
+            clienteDto.IdentificacionCliente = clienteVista.dataGridClientes.Rows[e.RowIndex].Cells["identificacionCliente"].Value.ToString();
+            clienteDto.NombreCliente = clienteVista.dataGridClientes.Rows[e.RowIndex].Cells["nombreCliente"].Value.ToString();
+            clienteDto.CorreoElectronicoCliente = clienteVista.dataGridClientes.Rows[e.RowIndex].Cells["correoElectronicoCliente"].Value.ToString();
+            clienteDto.CelularCliente = clienteVista.dataGridClientes.Rows[e.RowIndex].Cells["celularCliente"].Value.ToString();
+            clienteDto.TelefonoFijoCliente = clienteVista.dataGridClientes.Rows[e.RowIndex].Cells["telefonoFijoCliente"].Value.ToString();
+            clienteDto.DireccionCliente = clienteVista.dataGridClientes.Rows[e.RowIndex].Cells["direccionCliente"].Value.ToString();
+            registroCliente.Add(clienteDto);   
         }
 
         private void AbrirDetalleClienteForm(object sender, EventArgs e)

@@ -22,6 +22,6 @@ namespace Alumvix.View.Cliente
             CopyPasteEnDetalleClienteVista copyPasteEnDetalleClienteVista = new CopyPasteEnDetalleClienteVista(this);
         }
 
-        
+
     }
 }
