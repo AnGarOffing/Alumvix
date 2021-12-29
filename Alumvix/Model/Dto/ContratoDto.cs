@@ -15,7 +15,7 @@ namespace Alumvix.Model.Dto
         string estadoContrato;
         string estadoTrabajo;
         int idCliente;
-        List<GastoDto> gastos = new List<GastoDto>();
+        List<AbonoDto> gastos = new List<AbonoDto>();
         
 
         public int IdContrato { get => idContrato; set => idContrato = value; }
@@ -25,7 +25,7 @@ namespace Alumvix.Model.Dto
         public string EstadoContrato { get => estadoContrato; set => estadoContrato = value; }
         public string EstadoTrabajo { get => estadoTrabajo; set => estadoTrabajo = value; }
         public int Cliente { get => idCliente; set => idCliente = value; }
-        public List<GastoDto> Gastos { get => gastos; set => gastos = value; }
+        public List<AbonoDto> Gastos { get => gastos; set => gastos = value; }
     }
 }
 

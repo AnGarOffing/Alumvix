@@ -12,7 +12,6 @@ namespace Alumvix.Controller.Cliente
     {
         DetalleClienteView detalleClienteVista;
         List<ClienteDto> registroCliente = ClienteController.CargarRegistroCliente();
-        ContratoDao contrato = new ContratoDao();
         ContratoDto contratoDto = new ContratoDao().ObtenerContrato(ClienteController.ObtenerIdCliente());
 
         public DetalleClienteController(DetalleClienteView detalleClienteView)
@@ -21,6 +20,7 @@ namespace Alumvix.Controller.Cliente
             detalleClienteVista.Load += new EventHandler(MostrarClienteSeleccionado);
             detalleClienteVista.Load += new EventHandler(MostrarContrato);
             detalleClienteVista.Load += new EventHandler(MostrarGastos);
+            detalleClienteVista.Load += new EventHandler(MostrarAbonos);
 
         }
 
@@ -55,11 +55,23 @@ namespace Alumvix.Controller.Cliente
             List<GastoDto> gastos = new GastoDao().ObtenerGastos(contratoDto.IdContrato);
             int cont = 1;
             foreach  (GastoDto gasto in gastos)
-            {
-                
-                string[] row = { cont.ToString(), gasto.ValorGasto.ToString() };
+            {              
+                string[] row = { cont.ToString(), FormatoAValor.DarFormatoANumero(gasto.ValorGasto).ToString()};
                 ListViewItem itemGasto = new ListViewItem(row);
                 detalleClienteVista.lstvGastos.Items.Add(itemGasto);
+                cont++;
+            }
+        }
+
+        private void MostrarAbonos(object sender, EventArgs e)
+        {
+            List<AbonoDto> gastos = new AbonoDao().ObtenerAbonos(contratoDto.IdContrato);
+            int cont = 1;
+            foreach (AbonoDto gasto in gastos)
+            {
+                string[] row = { cont.ToString(), FormatoAValor.DarFormatoANumero(gasto.ValorAbono).ToString()};
+                ListViewItem itemGasto = new ListViewItem(row);
+                detalleClienteVista.lstvAbonos.Items.Add(itemGasto);
                 cont++;
             }
         }

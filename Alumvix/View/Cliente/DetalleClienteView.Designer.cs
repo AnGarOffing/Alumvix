@@ -40,14 +40,16 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlGastos = new System.Windows.Forms.Panel();
             this.lstvGastos = new System.Windows.Forms.ListView();
+            this.columnaNumero = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnaValor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblGastos = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlAbonos = new System.Windows.Forms.Panel();
             this.lblAbonos = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnlCliente = new System.Windows.Forms.Panel();
             this.lblSeccionCliente = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.pnlContrato = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
@@ -61,12 +63,13 @@
             this.lblFechaInicio1 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.lblValor1 = new System.Windows.Forms.Label();
-            this.columnaNumero = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnaValor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.lstvAbonos = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.pnlGastos.SuspendLayout();
+            this.pnlAbonos.SuspendLayout();
+            this.pnlCliente.SuspendLayout();
+            this.pnlContrato.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblId
@@ -184,29 +187,40 @@
             this.textBox3.TabIndex = 16;
             this.textBox3.Text = "***************";
             // 
-            // panel1
+            // pnlGastos
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.lstvGastos);
-            this.panel1.Controls.Add(this.lblGastos);
-            this.panel1.Location = new System.Drawing.Point(748, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(345, 207);
-            this.panel1.TabIndex = 14;
+            this.pnlGastos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlGastos.Controls.Add(this.lstvGastos);
+            this.pnlGastos.Controls.Add(this.lblGastos);
+            this.pnlGastos.Location = new System.Drawing.Point(748, 12);
+            this.pnlGastos.Name = "pnlGastos";
+            this.pnlGastos.Size = new System.Drawing.Size(345, 207);
+            this.pnlGastos.TabIndex = 14;
             // 
             // lstvGastos
             // 
             this.lstvGastos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnaNumero,
             this.columnaValor});
-            this.lstvGastos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstvGastos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstvGastos.HideSelection = false;
-            this.lstvGastos.Location = new System.Drawing.Point(31, 51);
+            this.lstvGastos.Location = new System.Drawing.Point(31, 46);
             this.lstvGastos.Name = "lstvGastos";
             this.lstvGastos.Size = new System.Drawing.Size(279, 132);
             this.lstvGastos.TabIndex = 22;
             this.lstvGastos.UseCompatibleStateImageBehavior = false;
             this.lstvGastos.View = System.Windows.Forms.View.Details;
+            // 
+            // columnaNumero
+            // 
+            this.columnaNumero.Text = "#";
+            this.columnaNumero.Width = 25;
+            // 
+            // columnaValor
+            // 
+            this.columnaValor.Text = "Valor";
+            this.columnaValor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnaValor.Width = 147;
             // 
             // lblGastos
             // 
@@ -218,14 +232,15 @@
             this.lblGastos.TabIndex = 21;
             this.lblGastos.Text = "Gastos";
             // 
-            // panel2
+            // pnlAbonos
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.lblAbonos);
-            this.panel2.Location = new System.Drawing.Point(748, 234);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(345, 198);
-            this.panel2.TabIndex = 15;
+            this.pnlAbonos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlAbonos.Controls.Add(this.lstvAbonos);
+            this.pnlAbonos.Controls.Add(this.lblAbonos);
+            this.pnlAbonos.Location = new System.Drawing.Point(748, 234);
+            this.pnlAbonos.Name = "pnlAbonos";
+            this.pnlAbonos.Size = new System.Drawing.Size(345, 198);
+            this.pnlAbonos.TabIndex = 15;
             // 
             // lblAbonos
             // 
@@ -237,26 +252,26 @@
             this.lblAbonos.TabIndex = 21;
             this.lblAbonos.Text = "Abonos";
             // 
-            // panel3
+            // pnlCliente
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.lblSeccionCliente);
-            this.panel3.Controls.Add(this.lblId);
-            this.panel3.Controls.Add(this.textBox5);
-            this.panel3.Controls.Add(this.textBox2);
-            this.panel3.Controls.Add(this.lblDireccion);
-            this.panel3.Controls.Add(this.textBox4);
-            this.panel3.Controls.Add(this.textBox6);
-            this.panel3.Controls.Add(this.lblFijo);
-            this.panel3.Controls.Add(this.textBox3);
-            this.panel3.Controls.Add(this.lblCelular);
-            this.panel3.Controls.Add(this.lblCorreo);
-            this.panel3.Controls.Add(this.textBox1);
-            this.panel3.Controls.Add(this.lblNombreCliente);
-            this.panel3.Location = new System.Drawing.Point(12, 12);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(711, 207);
-            this.panel3.TabIndex = 20;
+            this.pnlCliente.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlCliente.Controls.Add(this.lblSeccionCliente);
+            this.pnlCliente.Controls.Add(this.lblId);
+            this.pnlCliente.Controls.Add(this.textBox5);
+            this.pnlCliente.Controls.Add(this.textBox2);
+            this.pnlCliente.Controls.Add(this.lblDireccion);
+            this.pnlCliente.Controls.Add(this.textBox4);
+            this.pnlCliente.Controls.Add(this.textBox6);
+            this.pnlCliente.Controls.Add(this.lblFijo);
+            this.pnlCliente.Controls.Add(this.textBox3);
+            this.pnlCliente.Controls.Add(this.lblCelular);
+            this.pnlCliente.Controls.Add(this.lblCorreo);
+            this.pnlCliente.Controls.Add(this.textBox1);
+            this.pnlCliente.Controls.Add(this.lblNombreCliente);
+            this.pnlCliente.Location = new System.Drawing.Point(12, 12);
+            this.pnlCliente.Name = "pnlCliente";
+            this.pnlCliente.Size = new System.Drawing.Size(711, 207);
+            this.pnlCliente.TabIndex = 20;
             // 
             // lblSeccionCliente
             // 
@@ -268,26 +283,26 @@
             this.lblSeccionCliente.TabIndex = 20;
             this.lblSeccionCliente.Text = "Cliente";
             // 
-            // panel4
+            // pnlContrato
             // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel4.Controls.Add(this.label1);
-            this.panel4.Controls.Add(this.textBox12);
-            this.panel4.Controls.Add(this.textBox11);
-            this.panel4.Controls.Add(this.textBox10);
-            this.panel4.Controls.Add(this.textBox9);
-            this.panel4.Controls.Add(this.lblEstadoTrabajo1);
-            this.panel4.Controls.Add(this.lblEstadoContrato1);
-            this.panel4.Controls.Add(this.lblNumero1);
-            this.panel4.Controls.Add(this.lblFechaFin1);
-            this.panel4.Controls.Add(this.textBox8);
-            this.panel4.Controls.Add(this.lblFechaInicio1);
-            this.panel4.Controls.Add(this.textBox7);
-            this.panel4.Controls.Add(this.lblValor1);
-            this.panel4.Location = new System.Drawing.Point(12, 234);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(711, 198);
-            this.panel4.TabIndex = 21;
+            this.pnlContrato.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlContrato.Controls.Add(this.label1);
+            this.pnlContrato.Controls.Add(this.textBox12);
+            this.pnlContrato.Controls.Add(this.textBox11);
+            this.pnlContrato.Controls.Add(this.textBox10);
+            this.pnlContrato.Controls.Add(this.textBox9);
+            this.pnlContrato.Controls.Add(this.lblEstadoTrabajo1);
+            this.pnlContrato.Controls.Add(this.lblEstadoContrato1);
+            this.pnlContrato.Controls.Add(this.lblNumero1);
+            this.pnlContrato.Controls.Add(this.lblFechaFin1);
+            this.pnlContrato.Controls.Add(this.textBox8);
+            this.pnlContrato.Controls.Add(this.lblFechaInicio1);
+            this.pnlContrato.Controls.Add(this.textBox7);
+            this.pnlContrato.Controls.Add(this.lblValor1);
+            this.pnlContrato.Location = new System.Drawing.Point(12, 234);
+            this.pnlContrato.Name = "pnlContrato";
+            this.pnlContrato.Size = new System.Drawing.Size(711, 198);
+            this.pnlContrato.TabIndex = 21;
             // 
             // label1
             // 
@@ -413,37 +428,51 @@
             this.lblValor1.TabIndex = 27;
             this.lblValor1.Text = "Valor:";
             // 
-            // columnaNumero
+            // lstvAbonos
             // 
-            this.columnaNumero.Text = "#";
-            this.columnaNumero.Width = 25;
+            this.lstvAbonos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
+            this.lstvAbonos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstvAbonos.HideSelection = false;
+            this.lstvAbonos.Location = new System.Drawing.Point(31, 64);
+            this.lstvAbonos.Name = "lstvAbonos";
+            this.lstvAbonos.Size = new System.Drawing.Size(279, 132);
+            this.lstvAbonos.TabIndex = 23;
+            this.lstvAbonos.UseCompatibleStateImageBehavior = false;
+            this.lstvAbonos.View = System.Windows.Forms.View.Details;
             // 
-            // columnaValor
+            // columnHeader1
             // 
-            this.columnaValor.Text = "Valor";
-            this.columnaValor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnaValor.Width = 147;
+            this.columnHeader1.Text = "#";
+            this.columnHeader1.Width = 25;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Valor";
+            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader2.Width = 147;
             // 
             // DetalleClienteView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1105, 661);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlContrato);
+            this.Controls.Add(this.pnlCliente);
+            this.Controls.Add(this.pnlAbonos);
+            this.Controls.Add(this.pnlGastos);
             this.Name = "DetalleClienteView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Información detallada";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.pnlGastos.ResumeLayout(false);
+            this.pnlGastos.PerformLayout();
+            this.pnlAbonos.ResumeLayout(false);
+            this.pnlAbonos.PerformLayout();
+            this.pnlCliente.ResumeLayout(false);
+            this.pnlCliente.PerformLayout();
+            this.pnlContrato.ResumeLayout(false);
+            this.pnlContrato.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -462,11 +491,11 @@
         public System.Windows.Forms.TextBox textBox4;
         public System.Windows.Forms.TextBox textBox5;
         public System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pnlGastos;
+        private System.Windows.Forms.Panel pnlAbonos;
+        private System.Windows.Forms.Panel pnlCliente;
         private System.Windows.Forms.Label lblSeccionCliente;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel pnlContrato;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox textBox12;
         public System.Windows.Forms.TextBox textBox11;
@@ -483,7 +512,10 @@
         public System.Windows.Forms.Label lblGastos;
         private System.Windows.Forms.Label lblAbonos;
         public System.Windows.Forms.ListView lstvGastos;
-        private System.Windows.Forms.ColumnHeader columnaNumero;
-        private System.Windows.Forms.ColumnHeader columnaValor;
+        public System.Windows.Forms.ColumnHeader columnaNumero;
+        public System.Windows.Forms.ColumnHeader columnaValor;
+        public System.Windows.Forms.ListView lstvAbonos;
+        public System.Windows.Forms.ColumnHeader columnHeader1;
+        public System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }
