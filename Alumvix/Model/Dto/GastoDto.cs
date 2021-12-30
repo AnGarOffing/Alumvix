@@ -14,8 +14,8 @@ namespace Alumvix.Model.Dto
         string descripcionGasto;
 
         public int IdGasto { get => idGasto; set => idGasto = value; }
-        public int ValorGasto { get => valorGasto; set => valorGasto = value; }
         public DateTime FechaGasto { get => fechaGasto; set => fechaGasto = value; }
         public string DescripcionGasto { get => descripcionGasto; set => descripcionGasto = value; }
+        public int ValorGasto { get => valorGasto; set => valorGasto = value; }
     }
 }

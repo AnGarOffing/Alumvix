@@ -57,6 +57,7 @@
     <Compile Include="Model\Dto\ClienteDto.cs" />
     <Compile Include="Model\Dto\ContratoDto.cs" />
     <Compile Include="Model\Dto\GastoDto.cs" />
+    <Compile Include="Model\Negocio\Logica.cs" />
     <Compile Include="Model\Negocio\Util\CopyPasteEnDetalleClienteVista.cs" />
     <Compile Include="Model\Negocio\Util\FormatoAValor.cs" />
     <Compile Include="Program.cs" />

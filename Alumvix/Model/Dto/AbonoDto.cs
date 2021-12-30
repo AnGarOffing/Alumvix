@@ -14,7 +14,7 @@ namespace Alumvix.Model.Dto
 
 
         public int IdAbono { get => idAbono; set => idAbono = value; }
-        public int ValorAbono { get => valorAbono; set => valorAbono = value; }
         public DateTime FechaAbono { get => fechaAbono; set => fechaAbono = value; }
+        public int ValorAbono { get => valorAbono; set => valorAbono = value; }
     }
 }

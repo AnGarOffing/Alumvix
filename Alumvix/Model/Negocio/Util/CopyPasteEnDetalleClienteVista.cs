@@ -19,66 +19,86 @@ namespace Alumvix.Model.Logica.Util
         private void TransformarTextBoxes(object sender, EventArgs e) 
         {
             
-            detalleClienteVista.textBox1.ReadOnly = true;
-            detalleClienteVista.textBox1.BorderStyle = 0;
-            detalleClienteVista.textBox1.BackColor = detalleClienteVista.BackColor;
-            detalleClienteVista.textBox1.TabStop = false;
+            detalleClienteVista.txtIdentificacion.ReadOnly = true;
+            detalleClienteVista.txtIdentificacion.BorderStyle = 0;
+            detalleClienteVista.txtIdentificacion.BackColor = detalleClienteVista.BackColor;
+            detalleClienteVista.txtIdentificacion.TabStop = false;
            
-            detalleClienteVista.textBox2.ReadOnly = true;
-            detalleClienteVista.textBox2.BorderStyle = 0;
-            detalleClienteVista.textBox2.BackColor = detalleClienteVista.BackColor;
-            detalleClienteVista.textBox2.TabStop = false;
+            detalleClienteVista.txtNombre.ReadOnly = true;
+            detalleClienteVista.txtNombre.BorderStyle = 0;
+            detalleClienteVista.txtNombre.BackColor = detalleClienteVista.BackColor;
+            detalleClienteVista.txtNombre.TabStop = false;
             
-            detalleClienteVista.textBox3.ReadOnly = true;
-            detalleClienteVista.textBox3.BorderStyle = 0;
-            detalleClienteVista.textBox3.BackColor = detalleClienteVista.BackColor;
-            detalleClienteVista.textBox3.TabStop = false;
+            detalleClienteVista.txtTelefono.ReadOnly = true;
+            detalleClienteVista.txtTelefono.BorderStyle = 0;
+            detalleClienteVista.txtTelefono.BackColor = detalleClienteVista.BackColor;
+            detalleClienteVista.txtTelefono.TabStop = false;
 
             
-            detalleClienteVista.textBox4.ReadOnly = true;
-            detalleClienteVista.textBox4.BorderStyle = 0;
-            detalleClienteVista.textBox4.BackColor = detalleClienteVista.BackColor;
-            detalleClienteVista.textBox4.TabStop = false;
+            detalleClienteVista.txtDireccion.ReadOnly = true;
+            detalleClienteVista.txtDireccion.BorderStyle = 0;
+            detalleClienteVista.txtDireccion.BackColor = detalleClienteVista.BackColor;
+            detalleClienteVista.txtDireccion.TabStop = false;
             
-            detalleClienteVista.textBox5.ReadOnly = true;
-            detalleClienteVista.textBox5.BorderStyle = 0;
-            detalleClienteVista.textBox5.BackColor = detalleClienteVista.BackColor;
-            detalleClienteVista.textBox5.TabStop = false;
+            detalleClienteVista.txtCorreo.ReadOnly = true;
+            detalleClienteVista.txtCorreo.BorderStyle = 0;
+            detalleClienteVista.txtCorreo.BackColor = detalleClienteVista.BackColor;
+            detalleClienteVista.txtCorreo.TabStop = false;
            
-            detalleClienteVista.textBox6.ReadOnly = true;
-            detalleClienteVista.textBox6.BorderStyle = 0;
-            detalleClienteVista.textBox6.BackColor = detalleClienteVista.BackColor;
-            detalleClienteVista.textBox6.TabStop = false;
+            detalleClienteVista.txtCelular.ReadOnly = true;
+            detalleClienteVista.txtCelular.BorderStyle = 0;
+            detalleClienteVista.txtCelular.BackColor = detalleClienteVista.BackColor;
+            detalleClienteVista.txtCelular.TabStop = false;
            
-            detalleClienteVista.textBox7.ReadOnly = true;
-            detalleClienteVista.textBox7.BorderStyle = 0;
-            detalleClienteVista.textBox7.BackColor = detalleClienteVista.BackColor;
-            detalleClienteVista.textBox7.TabStop = false;
+            detalleClienteVista.txtNumeroContrato.ReadOnly = true;
+            detalleClienteVista.txtNumeroContrato.BorderStyle = 0;
+            detalleClienteVista.txtNumeroContrato.BackColor = detalleClienteVista.BackColor;
+            detalleClienteVista.txtNumeroContrato.TabStop = false;
            
-            detalleClienteVista.textBox8.ReadOnly = true;
-            detalleClienteVista.textBox8.BorderStyle = 0;
-            detalleClienteVista.textBox8.BackColor = detalleClienteVista.BackColor;
-            detalleClienteVista.textBox8.TabStop = false;
+            detalleClienteVista.txtValorContrato.ReadOnly = true;
+            detalleClienteVista.txtValorContrato.BorderStyle = 0;
+            detalleClienteVista.txtValorContrato.BackColor = detalleClienteVista.BackColor;
+            detalleClienteVista.txtValorContrato.TabStop = false;
             
-            detalleClienteVista.textBox9.ReadOnly = true;
-            detalleClienteVista.textBox9.BorderStyle = 0;
-            detalleClienteVista.textBox9.BackColor = detalleClienteVista.BackColor;
-            detalleClienteVista.textBox9.TabStop = false;
+            detalleClienteVista.txtFechaInicioContrato.ReadOnly = true;
+            detalleClienteVista.txtFechaInicioContrato.BorderStyle = 0;
+            detalleClienteVista.txtFechaInicioContrato.BackColor = detalleClienteVista.BackColor;
+            detalleClienteVista.txtFechaInicioContrato.TabStop = false;
             
-            detalleClienteVista.textBox10.ReadOnly = true;
-            detalleClienteVista.textBox10.BorderStyle = 0;
-            detalleClienteVista.textBox10.BackColor = detalleClienteVista.BackColor;
-            detalleClienteVista.textBox10.TabStop = false;
+            detalleClienteVista.txtFechaFinContrato.ReadOnly = true;
+            detalleClienteVista.txtFechaFinContrato.BorderStyle = 0;
+            detalleClienteVista.txtFechaFinContrato.BackColor = detalleClienteVista.BackColor;
+            detalleClienteVista.txtFechaFinContrato.TabStop = false;
             
-            detalleClienteVista.textBox11.ReadOnly = true;
-            detalleClienteVista.textBox11.BorderStyle = 0;
-            detalleClienteVista.textBox11.BackColor = detalleClienteVista.BackColor;
-            detalleClienteVista.textBox11.TabStop = false;
+            detalleClienteVista.txtEstadoContrato.ReadOnly = true;
+            detalleClienteVista.txtEstadoContrato.BorderStyle = 0;
+            detalleClienteVista.txtEstadoContrato.BackColor = detalleClienteVista.BackColor;
+            detalleClienteVista.txtEstadoContrato.TabStop = false;
            
-            detalleClienteVista.textBox12.ReadOnly = true;
-            detalleClienteVista.textBox12.BorderStyle = 0;
-            detalleClienteVista.textBox12.BackColor = detalleClienteVista.BackColor;
-            detalleClienteVista.textBox12.TabStop = false;
+            detalleClienteVista.txtEstadoTrabajo.ReadOnly = true;
+            detalleClienteVista.txtEstadoTrabajo.BorderStyle = 0;
+            detalleClienteVista.txtEstadoTrabajo.BackColor = detalleClienteVista.BackColor;
+            detalleClienteVista.txtEstadoTrabajo.TabStop = false;
+
+            detalleClienteVista.txtTotalGastos.ReadOnly = true;
+            detalleClienteVista.txtTotalGastos.BorderStyle = 0;
+            detalleClienteVista.txtTotalGastos.BackColor = detalleClienteVista.BackColor;
+            detalleClienteVista.txtTotalGastos.TabStop = false;
+
+            detalleClienteVista.txtTotalAbonos.ReadOnly = true;
+            detalleClienteVista.txtTotalAbonos.BorderStyle = 0;
+            detalleClienteVista.txtTotalAbonos.BackColor = detalleClienteVista.BackColor;
+            detalleClienteVista.txtTotalAbonos.TabStop = false;
+
+            detalleClienteVista.txtRestaPorPagar.ReadOnly = true;
+            detalleClienteVista.txtRestaPorPagar.BorderStyle = 0;
+            detalleClienteVista.txtRestaPorPagar.BackColor = detalleClienteVista.BackColor;
+            detalleClienteVista.txtRestaPorPagar.TabStop = false;
+
+            detalleClienteVista.txtUtilidad.ReadOnly = true;
+            detalleClienteVista.txtUtilidad.BorderStyle = 0;
+            detalleClienteVista.txtUtilidad.BackColor = detalleClienteVista.BackColor;
+            detalleClienteVista.txtUtilidad.TabStop = false;
         }
     }
 }
