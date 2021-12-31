@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using Alumvix.Model.Dao;
 using Alumvix.Model.Dto;
 using Alumvix.View.Cliente;
+using Alumvix.View.Abono;
 using Alumvix.Model.Logica.Util;
 using Alumvix.Model.Negocio;
 
@@ -13,9 +14,10 @@ namespace Alumvix.Controller.Cliente
     {
         DetalleClienteView detalleClienteVista;
         List<ClienteDto> registroCliente;
-        ContratoDto contratoDto;
+        static ContratoDto contratoDto;
         List<GastoDto> gastos;
-        List<AbonoDto> abonos;
+        static List<AbonoDto> abonos;
+        List<ProductoDto> productos;
         Logica logica;
 
 
@@ -23,7 +25,8 @@ namespace Alumvix.Controller.Cliente
         {
             contratoDto = new ContratoDao().ObtenerContrato(ClienteController.ObtenerIdCliente());
             abonos = new AbonoDao().ObtenerAbonos(contratoDto.IdContrato);
-            gastos = new GastoDao().ObtenerGastos(contratoDto.IdContrato);          
+            gastos = new GastoDao().ObtenerGastos(contratoDto.IdContrato);
+            productos = new ProductoDao().ObtenerListadoProductos(contratoDto.IdContrato);
             registroCliente = ClienteController.CargarRegistroCliente();
             logica = new Logica();
             detalleClienteVista = detalleClienteView;
@@ -32,6 +35,8 @@ namespace Alumvix.Controller.Cliente
             detalleClienteVista.Load += new EventHandler(MostrarGastos);
             detalleClienteVista.Load += new EventHandler(MostrarAbonos);
             detalleClienteVista.Load += new EventHandler(MostrarCuentas);
+            detalleClienteVista.Load += new EventHandler(MostrarProductos);
+            detalleClienteVista.btnDetallesAbonos.Click += new EventHandler(AbrirDetalleAbonos);
         }
 
 
@@ -50,7 +55,7 @@ namespace Alumvix.Controller.Cliente
         //metodo para mostrar la info de un contrato en la vista DetalleClienteView
         private void MostrarContrato(object sender, EventArgs e)
         {
-            
+
             detalleClienteVista.txtNumeroContrato.Text = contratoDto.IdContrato.ToString();
             detalleClienteVista.txtValorContrato.Text = FormatoAValor.DarFormatoANumero(contratoDto.ValorContrato);
             detalleClienteVista.txtFechaInicioContrato.Text = contratoDto.FechaInicioContrato.ToString();
@@ -93,9 +98,29 @@ namespace Alumvix.Controller.Cliente
 
         private void MostrarProductos(object sender, EventArgs e) 
         {
-
+            foreach (ProductoDto producto in productos)
+            {
+                ListViewItem itemProducto = new ListViewItem(producto.NombreProducto);
+                detalleClienteVista.lstvProductos.Items.Add(itemProducto);
+            }          
         }
 
-        
+        private void AbrirDetalleAbonos(object sender, EventArgs e) 
+        {
+            DetalleAbonoView detalleAbono = DetalleAbonoView.ObtenerInstancia();
+            detalleAbono.ShowDialog();
+        }
+
+        public static int ObtenerIdContrato() 
+        {
+            return contratoDto.IdContrato;
+        }
+
+        public static List<AbonoDto> ObtenerDetalleAbonos()
+        {
+            return abonos;
+        }
+
+
     }
 }
