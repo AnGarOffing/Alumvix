@@ -18,15 +18,18 @@ namespace Alumvix.Controller.Abono
             idContrato = DetalleClienteController.ObtenerIdContrato();
             detalleAbonoView = detalleAbonoVista;
             detalleAbonoView.Load += new EventHandler(MostrarDetalleAbonos);
-            detalleAbonoView.btnIngresarAbono.Click += new EventHandler(MostrarIngresoAbonoView);
+            detalleAbonoView.Activated += new EventHandler(MostrarDetalleAbonos);
+            detalleAbonoView.btnIngresarAbono.Click += new EventHandler(MostrarIngresoAbonoView);      
         }
-
+      
         private void MostrarDetalleAbonos(object sender, EventArgs e) 
         {
             detalleAbonoView.lstvDetalleAbonos.Items.Clear();
+            int contadorAbonos = 0;
             foreach (AbonoDto abono in DetalleClienteController.ObtenerDetalleAbonos())
-            {        
-                string[] row = { abono.IdAbono.ToString(), FormatoAValor.DarFormatoANumero(abono.ValorAbono).ToString(), abono.FechaAbono.ToString(), abono.FormaDeAbono };
+            {     
+                contadorAbonos++;
+                string[] row = { contadorAbonos.ToString(), FormatoAValor.DarFormatoANumero(abono.ValorAbono).ToString(), abono.FechaAbono.ToString(), abono.FormaDeAbono };
                 ListViewItem itemAbono = new ListViewItem(row);
                 detalleAbonoView.lstvDetalleAbonos.Items.Add(itemAbono);
             }
@@ -37,5 +40,7 @@ namespace Alumvix.Controller.Abono
             IngresoAbonoView ingresoAbonoView = IngresoAbonoView.ObtenerInstancia();
             ingresoAbonoView.ShowDialog();
         }
+
+        
     }
 }

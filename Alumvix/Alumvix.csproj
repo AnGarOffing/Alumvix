@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\Abono\AbonoController.cs" />
+    <Compile Include="Controller\Abono\IngresoAbonoController.cs" />
     <Compile Include="Controller\Cliente\ClienteController.cs" />
     <Compile Include="Controller\Cliente\DetalleClienteController.cs" />
     <Compile Include="Model\Dao\AbonoDao.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="Model\Negocio\Logica.cs" />
     <Compile Include="Model\Negocio\Util\CopyPasteEnDetalleClienteVista.cs" />
     <Compile Include="Model\Negocio\Util\FormatoAValor.cs" />
+    <Compile Include="Model\Negocio\Util\ValidacionesDeControles.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\Abono\DetalleAbonoView.cs">

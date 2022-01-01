@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Alumvix.Controller.Abono;
+using Alumvix.Model.Negocio.Util;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,6 +20,7 @@ namespace Alumvix.View.Abono
         private IngresoAbonoView()
         {
             InitializeComponent();
+            IngresoAbonoController ingresoAbonoController = new IngresoAbonoController(this);
         }
 
         public static IngresoAbonoView ObtenerInstancia() 
@@ -28,7 +31,6 @@ namespace Alumvix.View.Abono
             }
             return instancia;
         }
-
 
     }
 }

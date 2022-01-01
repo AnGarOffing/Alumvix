@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System;
 
 namespace Alumvix.Model.Dao
 {
@@ -34,9 +35,35 @@ namespace Alumvix.Model.Dao
             return listadoAbonos;
         }
 
-        public void IngresarAbono() 
+        public bool IngresarAbono(int valorAbono, string fechaAbono, int idContrato, int formaDeAbono) 
         {
+            bool respuesta = false;
+            command.Connection = connection;
+            command.CommandText = "insert into ABONO values("+valorAbono+",'"+fechaAbono+"',"+idContrato+","+formaDeAbono+")";
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            int filasAfectadasEnBd = command.ExecuteNonQuery();
+            if (filasAfectadasEnBd > 0)
+            {
+                respuesta = true;
+            }
+            return respuesta;   
+        }
 
+        public List<string> ConsultarFormasAbono() 
+        {
+            command.Connection = connection;
+            command.CommandText = "select * from FORMA_ABONO";
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            lectorFilas = command.ExecuteReader();
+            List<string> formasAbono = new List<string>();
+            formasAbono.Add("--Seleccionar--");
+            while (lectorFilas.Read())
+            {
+                formasAbono.Add(lectorFilas.GetString(1));                   
+            }
+            return formasAbono;
         }
     }
 }
