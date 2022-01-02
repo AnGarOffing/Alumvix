@@ -38,7 +38,12 @@ namespace Alumvix.Model.Negocio
 
         public int ObtenerUtilidad(int totalAbonos, int totalGastos)
         {
-            return totalAbonos - totalGastos;
+            int utilidad = totalAbonos - totalGastos;
+            if (utilidad < 0)
+            {
+                utilidad = 0;
+            }
+            return utilidad;
         }
     }
 }

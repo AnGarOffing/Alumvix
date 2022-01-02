@@ -12,13 +12,20 @@ namespace Alumvix.Model.Negocio.Util
         public static bool ValidarBotonIngresoAbono(string valorAbono, int formaDeAbono) 
         {
             respuesta = false;  
-            if (valorAbono != null)
+            if (valorAbono != "")
             {
                 if (formaDeAbono != 0)
                 {
                     return true;
                 }
             }
+            return respuesta;
+        }
+
+        public static bool ValidarBotonIngresoGasto(string valorGasto)
+        {
+            respuesta = false;
+            if (valorGasto != "") respuesta = true;
             return respuesta;
         }
     }

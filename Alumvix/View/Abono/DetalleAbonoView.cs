@@ -19,7 +19,7 @@ namespace Alumvix.View.Abono
         public DetalleAbonoView()
         {
             InitializeComponent();
-            AbonoController abonoController = new AbonoController(this);
+            DetalleAbonoController detalleAbonoController = new DetalleAbonoController(this);
         }
 
         public static DetalleAbonoView ObtenerInstancia()

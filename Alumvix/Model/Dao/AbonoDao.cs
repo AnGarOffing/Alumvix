@@ -65,5 +65,20 @@ namespace Alumvix.Model.Dao
             }
             return formasAbono;
         }
+
+        public bool EliminarAbono(int idAbono) 
+        {
+            bool respuesta = false;
+            command.Connection = connection;
+            command.CommandText = "delete from ABONO where ID_ABONO = "+idAbono;
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            int filasAfectadasEnBd = command.ExecuteNonQuery();
+            if (filasAfectadasEnBd > 0)
+            {
+                respuesta = true;
+            }
+            return respuesta;
+        }
     }
 }

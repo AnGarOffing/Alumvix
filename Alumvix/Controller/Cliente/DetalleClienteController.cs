@@ -7,6 +7,7 @@ using Alumvix.View.Cliente;
 using Alumvix.View.Abono;
 using Alumvix.Model.Logica.Util;
 using Alumvix.Model.Negocio;
+using Alumvix.View.Gasto;
 
 namespace Alumvix.Controller.Cliente
 {
@@ -15,7 +16,7 @@ namespace Alumvix.Controller.Cliente
         DetalleClienteView detalleClienteVista;
         List<ClienteDto> registroCliente;
         static ContratoDto contratoDto;
-        List<GastoDto> gastos;
+        static List<GastoDto> gastos;
         static List<AbonoDto> abonos;
         List<ProductoDto> productos;
         Logica logica;
@@ -32,11 +33,12 @@ namespace Alumvix.Controller.Cliente
             detalleClienteVista = detalleClienteView;
             detalleClienteVista.Load += new EventHandler(MostrarClienteSeleccionado);
             detalleClienteVista.Load += new EventHandler(MostrarContrato);
-            detalleClienteVista.Load += new EventHandler(MostrarGastos);
-            detalleClienteVista.Load += new EventHandler(MostrarAbonos);
-            detalleClienteVista.Load += new EventHandler(MostrarCuentas);
+            detalleClienteVista.Activated += new EventHandler(MostrarGastos);
+            detalleClienteVista.Activated += new EventHandler(MostrarAbonos);
+            detalleClienteVista.Activated += new EventHandler(MostrarCuentas);
             detalleClienteVista.Load += new EventHandler(MostrarProductos);
             detalleClienteVista.btnDetallesAbonos.Click += new EventHandler(AbrirDetalleAbonos);
+            detalleClienteVista.btnDetallesGastos.Click += new EventHandler(AbrirDetalleGastos);
         }
 
 
@@ -67,6 +69,7 @@ namespace Alumvix.Controller.Cliente
         private void MostrarGastos(object sender, EventArgs e) 
         {
             int cont = 1;
+            detalleClienteVista.lstvGastos.Items.Clear();
             foreach  (GastoDto gasto in gastos)
             {              
                 string[] row = { cont.ToString(), FormatoAValor.DarFormatoANumero(gasto.ValorGasto).ToString()};
@@ -79,6 +82,7 @@ namespace Alumvix.Controller.Cliente
         private void MostrarAbonos(object sender, EventArgs e)
         {
             int cont = 1;
+            detalleClienteVista.lstvAbonos.Items.Clear();
             foreach (AbonoDto abono in abonos)
             {
                 string[] row = { cont.ToString(), FormatoAValor.DarFormatoANumero(abono.ValorAbono).ToString()};
@@ -118,9 +122,20 @@ namespace Alumvix.Controller.Cliente
 
         public static List<AbonoDto> ObtenerDetalleAbonos()
         {
+            abonos = new AbonoDao().ObtenerAbonos(contratoDto.IdContrato);
             return abonos;
         }
 
+        public static List<GastoDto> ObtenerDetalleGastos()
+        {
+            gastos = new GastoDao().ObtenerGastos(contratoDto.IdContrato);
+            return gastos;
+        }
 
+        private void AbrirDetalleGastos(object sender, EventArgs e)
+        {
+            DetalleGastoView detalleGasto = DetalleGastoView.ObtenerInstancia();
+            detalleGasto.ShowDialog();
+        }
     }
 }

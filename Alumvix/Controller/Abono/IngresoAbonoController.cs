@@ -22,6 +22,7 @@ namespace Alumvix.Controller.Abono
             ingresoAbonoView.btnGuardarNuevoAbono.Click += new EventHandler(IngresarAbono);
         }
 
+
         private void CargarFormasDeAbono(object sender, EventArgs e)
         {
             AbonoDao formaAbono = new AbonoDao();
@@ -39,7 +40,12 @@ namespace Alumvix.Controller.Abono
             else
             {
                 bool respuestaIngresoAbono = nuevoAbono.IngresarAbono(Convert.ToInt32(ingresoAbonoView.txtIngresarValorAbono.Text), ingresoAbonoView.dtpFechaIngresoAbono.Text, idContrato, ingresoAbonoView.cbFormaDePago.SelectedIndex);
-                if (respuestaIngresoAbono) MessageBox.Show("El abono ha sido guardado con exito");
+                if (respuestaIngresoAbono)
+                {
+                    ingresoAbonoView.txtIngresarValorAbono.Clear();
+                    ingresoAbonoView.cbFormaDePago.SelectedIndex = 0;
+                    MessageBox.Show("El abono ha sido guardado con exito");
+                } 
                 else MessageBox.Show("Error al guardar el abono");
             }                     
         }

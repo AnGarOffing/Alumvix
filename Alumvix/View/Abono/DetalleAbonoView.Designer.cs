@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DetalleAbonoView));
-            this.btnEliminarProducto = new System.Windows.Forms.Button();
+            this.btnEliminarAbono = new System.Windows.Forms.Button();
             this.btnIngresarAbono = new System.Windows.Forms.Button();
             this.lblListadoAbonos = new System.Windows.Forms.Label();
             this.lstvDetalleAbonos = new System.Windows.Forms.ListView();
@@ -39,18 +39,18 @@
             this.columnaFormaDePago = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
-            // btnEliminarProducto
+            // btnEliminarAbono
             // 
-            this.btnEliminarProducto.BackColor = System.Drawing.Color.Transparent;
-            this.btnEliminarProducto.FlatAppearance.BorderSize = 0;
-            this.btnEliminarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarProducto.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarProducto.Image")));
-            this.btnEliminarProducto.Location = new System.Drawing.Point(347, 15);
-            this.btnEliminarProducto.Name = "btnEliminarProducto";
-            this.btnEliminarProducto.Size = new System.Drawing.Size(30, 35);
-            this.btnEliminarProducto.TabIndex = 28;
-            this.btnEliminarProducto.UseVisualStyleBackColor = false;
+            this.btnEliminarAbono.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminarAbono.FlatAppearance.BorderSize = 0;
+            this.btnEliminarAbono.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarAbono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarAbono.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarAbono.Image")));
+            this.btnEliminarAbono.Location = new System.Drawing.Point(347, 15);
+            this.btnEliminarAbono.Name = "btnEliminarAbono";
+            this.btnEliminarAbono.Size = new System.Drawing.Size(30, 35);
+            this.btnEliminarAbono.TabIndex = 28;
+            this.btnEliminarAbono.UseVisualStyleBackColor = false;
             // 
             // btnIngresarAbono
             // 
@@ -86,6 +86,7 @@
             this.lstvDetalleAbonos.FullRowSelect = true;
             this.lstvDetalleAbonos.HideSelection = false;
             this.lstvDetalleAbonos.Location = new System.Drawing.Point(12, 58);
+            this.lstvDetalleAbonos.MultiSelect = false;
             this.lstvDetalleAbonos.Name = "lstvDetalleAbonos";
             this.lstvDetalleAbonos.Size = new System.Drawing.Size(418, 129);
             this.lstvDetalleAbonos.TabIndex = 32;
@@ -120,7 +121,7 @@
             this.Controls.Add(this.lstvDetalleAbonos);
             this.Controls.Add(this.lblListadoAbonos);
             this.Controls.Add(this.btnIngresarAbono);
-            this.Controls.Add(this.btnEliminarProducto);
+            this.Controls.Add(this.btnEliminarAbono);
             this.Name = "DetalleAbonoView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Abonos";
@@ -131,7 +132,7 @@
 
         #endregion
 
-        public System.Windows.Forms.Button btnEliminarProducto;
+        public System.Windows.Forms.Button btnEliminarAbono;
         public System.Windows.Forms.Button btnIngresarAbono;
         public System.Windows.Forms.Label lblListadoAbonos;
         public System.Windows.Forms.ListView lstvDetalleAbonos;
