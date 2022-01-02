@@ -63,8 +63,7 @@ namespace Alumvix.Controller.Abono
                 {
                     MessageBox.Show("Error al intentar eliminar el abono");
                 }      
-            }
-            
+            }          
         }
 
         private int EncontrarIdAbono(List<int> idsAbonos, int indice)

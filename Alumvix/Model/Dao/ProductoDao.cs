@@ -63,18 +63,45 @@ namespace Alumvix.Model.Dao
             {
                 productos.Add(lectorFilas.GetString(1));
             }
+            lectorFilas.Close();
+            connection.Close();
             return productos;
         }
 
-        public string ObtenerUnNombreProducto(int idProducto)
+        public int ObtenerIdUnProducto(string nombreProducto)
         {
             command.Connection = connection;
-            command.CommandText = "select * from PRODUCTO where ID_PRODUCTO = "+ idProducto;
+            command.CommandText = "select ID_PRODUCTO from PRODUCTO where nombreProducto = '"+nombreProducto+"'";
             command.CommandType = CommandType.Text;
             connection.Open();
             lectorFilas = command.ExecuteReader();
-            string nombreProducto = lectorFilas.GetString(1);
-            return nombreProducto;
+            int idProducto = 0;
+            while (lectorFilas.Read())
+            {
+                idProducto = lectorFilas.GetInt32(0);
+            }
+            lectorFilas.Close();
+            connection.Close();
+            return idProducto;
         }
+
+        public bool EliminarProducto(int idContrato, int idProducto)
+        {
+            bool respuesta = false;
+            command.Connection = connection;
+            command.CommandText = "delete from CONTRATO_PRODUCTO where FK_ID_CONTRATO3 = "+idContrato+" and FK_ID_PRODUCTO = "+idProducto;
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            int filasAfectadasEnBd = command.ExecuteNonQuery();
+            if (filasAfectadasEnBd > 0)
+            {
+                respuesta = true;
+            }
+            lectorFilas.Close();
+            connection.Close();
+            return respuesta;
+        }
+
+
     }
 }

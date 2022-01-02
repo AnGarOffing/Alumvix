@@ -21,6 +21,7 @@ namespace Alumvix.Controller.Cliente
         static List<AbonoDto> abonos;
         static List<ProductoDto> productos;
         Logica logica;
+        string nombreProducto;
 
 
         public DetalleClienteController(DetalleClienteView detalleClienteView)
@@ -41,6 +42,8 @@ namespace Alumvix.Controller.Cliente
             detalleClienteVista.btnDetallesAbonos.Click += new EventHandler(AbrirDetalleAbonos);
             detalleClienteVista.btnDetallesGastos.Click += new EventHandler(AbrirDetalleGastos);
             detalleClienteVista.btnAbrirIngresoProducto.Click += new EventHandler(AbrirIngresoProductoView);
+            detalleClienteVista.btnEliminarProducto.Click += new EventHandler(EliminarProducto);
+            detalleClienteVista.lstvProductos.SelectedIndexChanged += new EventHandler(ObtenerNombreProducto);
         }
 
 
@@ -149,6 +152,29 @@ namespace Alumvix.Controller.Cliente
         {
             IngresoProductoView ingresoProductoView = IngresoProductoView.ObtenerInstancia();
             ingresoProductoView.ShowDialog();   
+        }
+
+        private void EliminarProducto(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Realmente desea borrar el abono?", "BORRAR", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                ProductoDao productoDao = new ProductoDao();
+                bool respuesta = productoDao.EliminarProducto(contratoDto.IdContrato, productoDao.ObtenerIdUnProducto(nombreProducto));
+                if (respuesta)
+                {
+                    detalleClienteVista.lstvProductos.SelectedItems.Clear();
+                    MessageBox.Show("El producto ha sido eliminado con exito");
+                }
+                else
+                {
+                    MessageBox.Show("Error al intentar eliminar el producto");
+                }
+            }
+        }
+
+        private void ObtenerNombreProducto(object sender, EventArgs e)
+        {
+            nombreProducto = detalleClienteVista.lstvProductos.SelectedItems[0].Text;
         }
     }
 }

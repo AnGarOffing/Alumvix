@@ -80,10 +80,10 @@
             this.lblTotalGastos = new System.Windows.Forms.Label();
             this.lblCuentas = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnEliminarProducto = new System.Windows.Forms.Button();
             this.btnAbrirIngresoProducto = new System.Windows.Forms.Button();
             this.lblProductos = new System.Windows.Forms.Label();
             this.lstvProductos = new System.Windows.Forms.ListView();
-            this.btnEliminarProducto = new System.Windows.Forms.Button();
             this.pnlGastos.SuspendLayout();
             this.pnlAbonos.SuspendLayout();
             this.pnlCliente.SuspendLayout();
@@ -614,6 +614,19 @@
             this.panel2.Size = new System.Drawing.Size(269, 176);
             this.panel2.TabIndex = 23;
             // 
+            // btnEliminarProducto
+            // 
+            this.btnEliminarProducto.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminarProducto.FlatAppearance.BorderSize = 0;
+            this.btnEliminarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarProducto.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarProducto.Image")));
+            this.btnEliminarProducto.Location = new System.Drawing.Point(232, 83);
+            this.btnEliminarProducto.Name = "btnEliminarProducto";
+            this.btnEliminarProducto.Size = new System.Drawing.Size(30, 35);
+            this.btnEliminarProducto.TabIndex = 29;
+            this.btnEliminarProducto.UseVisualStyleBackColor = false;
+            // 
             // btnAbrirIngresoProducto
             // 
             this.btnAbrirIngresoProducto.BackColor = System.Drawing.Color.Transparent;
@@ -641,24 +654,12 @@
             this.lstvProductos.FullRowSelect = true;
             this.lstvProductos.HideSelection = false;
             this.lstvProductos.Location = new System.Drawing.Point(33, 50);
+            this.lstvProductos.MultiSelect = false;
             this.lstvProductos.Name = "lstvProductos";
             this.lstvProductos.Size = new System.Drawing.Size(190, 109);
             this.lstvProductos.TabIndex = 0;
             this.lstvProductos.UseCompatibleStateImageBehavior = false;
             this.lstvProductos.View = System.Windows.Forms.View.List;
-            // 
-            // btnEliminarProducto
-            // 
-            this.btnEliminarProducto.BackColor = System.Drawing.Color.Transparent;
-            this.btnEliminarProducto.FlatAppearance.BorderSize = 0;
-            this.btnEliminarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarProducto.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarProducto.Image")));
-            this.btnEliminarProducto.Location = new System.Drawing.Point(232, 83);
-            this.btnEliminarProducto.Name = "btnEliminarProducto";
-            this.btnEliminarProducto.Size = new System.Drawing.Size(30, 35);
-            this.btnEliminarProducto.TabIndex = 29;
-            this.btnEliminarProducto.UseVisualStyleBackColor = false;
             // 
             // DetalleClienteView
             // 
