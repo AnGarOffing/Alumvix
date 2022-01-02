@@ -35,5 +35,46 @@ namespace Alumvix.Model.Dao
             connection.Close();
             return listaProductos;
         }
+
+        public string IngresarProducto(int idContrato, int idProducto)
+        {
+            command.Connection = connection;
+            command.CommandText = "insert into CONTRATO_PRODUCTO values("+idContrato+", "+idProducto+")";
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            int filasAfectadasEnBd = command.ExecuteNonQuery();
+            if (filasAfectadasEnBd > 0)
+            {
+                return "El producto se ha guardado con exito";
+            }
+            else return "Error al intentar guardar el producto";
+        }
+
+        public List<string> ObtenerAllProducts()
+        {
+            command.Connection = connection;
+            command.CommandText = "select * from PRODUCTO";
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            lectorFilas = command.ExecuteReader();
+            List<string> productos = new List<string>();
+            productos.Add("--Seleccionar--");
+            while (lectorFilas.Read())
+            {
+                productos.Add(lectorFilas.GetString(1));
+            }
+            return productos;
+        }
+
+        public string ObtenerUnNombreProducto(int idProducto)
+        {
+            command.Connection = connection;
+            command.CommandText = "select * from PRODUCTO where ID_PRODUCTO = "+ idProducto;
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            lectorFilas = command.ExecuteReader();
+            string nombreProducto = lectorFilas.GetString(1);
+            return nombreProducto;
+        }
     }
 }

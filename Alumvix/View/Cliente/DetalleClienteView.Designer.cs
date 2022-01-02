@@ -80,10 +80,10 @@
             this.lblTotalGastos = new System.Windows.Forms.Label();
             this.lblCuentas = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnAbrirIngresoProducto = new System.Windows.Forms.Button();
             this.lblProductos = new System.Windows.Forms.Label();
             this.lstvProductos = new System.Windows.Forms.ListView();
             this.btnEliminarProducto = new System.Windows.Forms.Button();
-            this.btnIngresarProducto = new System.Windows.Forms.Button();
             this.pnlGastos.SuspendLayout();
             this.pnlAbonos.SuspendLayout();
             this.pnlCliente.SuspendLayout();
@@ -606,13 +606,24 @@
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.btnEliminarProducto);
-            this.panel2.Controls.Add(this.btnIngresarProducto);
+            this.panel2.Controls.Add(this.btnAbrirIngresoProducto);
             this.panel2.Controls.Add(this.lblProductos);
             this.panel2.Controls.Add(this.lstvProductos);
             this.panel2.Location = new System.Drawing.Point(625, 450);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(269, 176);
             this.panel2.TabIndex = 23;
+            // 
+            // btnAbrirIngresoProducto
+            // 
+            this.btnAbrirIngresoProducto.BackColor = System.Drawing.Color.Transparent;
+            this.btnAbrirIngresoProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAbrirIngresoProducto.Image = ((System.Drawing.Image)(resources.GetObject("btnAbrirIngresoProducto.Image")));
+            this.btnAbrirIngresoProducto.Location = new System.Drawing.Point(232, 124);
+            this.btnAbrirIngresoProducto.Name = "btnAbrirIngresoProducto";
+            this.btnAbrirIngresoProducto.Size = new System.Drawing.Size(30, 35);
+            this.btnAbrirIngresoProducto.TabIndex = 27;
+            this.btnAbrirIngresoProducto.UseVisualStyleBackColor = false;
             // 
             // lblProductos
             // 
@@ -639,24 +650,15 @@
             // btnEliminarProducto
             // 
             this.btnEliminarProducto.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminarProducto.FlatAppearance.BorderSize = 0;
+            this.btnEliminarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarProducto.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarProducto.Image")));
-            this.btnEliminarProducto.Location = new System.Drawing.Point(229, 82);
+            this.btnEliminarProducto.Location = new System.Drawing.Point(232, 83);
             this.btnEliminarProducto.Name = "btnEliminarProducto";
             this.btnEliminarProducto.Size = new System.Drawing.Size(30, 35);
-            this.btnEliminarProducto.TabIndex = 27;
+            this.btnEliminarProducto.TabIndex = 29;
             this.btnEliminarProducto.UseVisualStyleBackColor = false;
-            // 
-            // btnIngresarProducto
-            // 
-            this.btnIngresarProducto.BackColor = System.Drawing.Color.Transparent;
-            this.btnIngresarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIngresarProducto.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresarProducto.Image")));
-            this.btnIngresarProducto.Location = new System.Drawing.Point(229, 123);
-            this.btnIngresarProducto.Name = "btnIngresarProducto";
-            this.btnIngresarProducto.Size = new System.Drawing.Size(30, 35);
-            this.btnIngresarProducto.TabIndex = 26;
-            this.btnIngresarProducto.UseVisualStyleBackColor = false;
             // 
             // DetalleClienteView
             // 
@@ -743,7 +745,7 @@
         public System.Windows.Forms.ListView lstvProductos;
         public System.Windows.Forms.Button btnDetallesAbonos;
         public System.Windows.Forms.Button btnDetallesGastos;
+        public System.Windows.Forms.Button btnAbrirIngresoProducto;
         public System.Windows.Forms.Button btnEliminarProducto;
-        public System.Windows.Forms.Button btnIngresarProducto;
     }
 }

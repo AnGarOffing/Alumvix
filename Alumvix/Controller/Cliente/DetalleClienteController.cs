@@ -8,6 +8,7 @@ using Alumvix.View.Abono;
 using Alumvix.Model.Logica.Util;
 using Alumvix.Model.Negocio;
 using Alumvix.View.Gasto;
+using Alumvix.View.Producto;
 
 namespace Alumvix.Controller.Cliente
 {
@@ -18,7 +19,7 @@ namespace Alumvix.Controller.Cliente
         static ContratoDto contratoDto;
         static List<GastoDto> gastos;
         static List<AbonoDto> abonos;
-        List<ProductoDto> productos;
+        static List<ProductoDto> productos;
         Logica logica;
 
 
@@ -36,9 +37,10 @@ namespace Alumvix.Controller.Cliente
             detalleClienteVista.Activated += new EventHandler(MostrarGastos);
             detalleClienteVista.Activated += new EventHandler(MostrarAbonos);
             detalleClienteVista.Activated += new EventHandler(MostrarCuentas);
-            detalleClienteVista.Load += new EventHandler(MostrarProductos);
+            detalleClienteVista.Activated += new EventHandler(MostrarProductos);
             detalleClienteVista.btnDetallesAbonos.Click += new EventHandler(AbrirDetalleAbonos);
             detalleClienteVista.btnDetallesGastos.Click += new EventHandler(AbrirDetalleGastos);
+            detalleClienteVista.btnAbrirIngresoProducto.Click += new EventHandler(AbrirIngresoProductoView);
         }
 
 
@@ -53,8 +55,6 @@ namespace Alumvix.Controller.Cliente
             detalleClienteVista.txtCelular.Text = registroCliente[0].CelularCliente.ToString();
         }
 
-
-        //metodo para mostrar la info de un contrato en la vista DetalleClienteView
         private void MostrarContrato(object sender, EventArgs e)
         {
 
@@ -102,7 +102,8 @@ namespace Alumvix.Controller.Cliente
 
         private void MostrarProductos(object sender, EventArgs e) 
         {
-            foreach (ProductoDto producto in productos)
+            detalleClienteVista.lstvProductos.Clear();
+            foreach (ProductoDto producto in ObtenerProductos())
             {
                 ListViewItem itemProducto = new ListViewItem(producto.NombreProducto);
                 detalleClienteVista.lstvProductos.Items.Add(itemProducto);
@@ -126,6 +127,12 @@ namespace Alumvix.Controller.Cliente
             return abonos;
         }
 
+        private List<ProductoDto> ObtenerProductos()
+        {
+            productos = new ProductoDao().ObtenerListadoProductos(contratoDto.IdContrato);
+            return productos;
+        }
+
         public static List<GastoDto> ObtenerDetalleGastos()
         {
             gastos = new GastoDao().ObtenerGastos(contratoDto.IdContrato);
@@ -136,6 +143,12 @@ namespace Alumvix.Controller.Cliente
         {
             DetalleGastoView detalleGasto = DetalleGastoView.ObtenerInstancia();
             detalleGasto.ShowDialog();
+        }
+
+        private void AbrirIngresoProductoView(object sender, EventArgs e)
+        {
+            IngresoProductoView ingresoProductoView = IngresoProductoView.ObtenerInstancia();
+            ingresoProductoView.ShowDialog();   
         }
     }
 }

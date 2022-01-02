@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Alumvix.Controller.Cliente;
+using Alumvix.Model.Dao;
+using Alumvix.Model.Dto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,7 +19,7 @@ namespace Alumvix.Model.Negocio.Util
             {
                 if (formaDeAbono != 0)
                 {
-                    return true;
+                    respuesta = true;
                 }
             }
             return respuesta;
@@ -27,6 +30,30 @@ namespace Alumvix.Model.Negocio.Util
             respuesta = false;
             if (valorGasto != "") respuesta = true;
             return respuesta;
+        }
+
+        public static string ValidarBotonIngresoProducto(int indiceProducto, string nombreProducto)
+        {
+            string mensaje = null;
+            if (indiceProducto == 0)
+            {
+                mensaje = "Debe seleccionar un producto";
+            }
+            else
+            {
+                bool duplicado = false;
+                List<ProductoDto> listadoProductos = new List<ProductoDto>();
+                listadoProductos = new ProductoDao().ObtenerListadoProductos(DetalleClienteController.ObtenerIdContrato());
+                foreach (ProductoDto item in listadoProductos)
+                {
+                    if (item.NombreProducto.Equals(nombreProducto))
+                    {
+                        duplicado = true;
+                    }
+                    if (duplicado) mensaje = "El producto ya esta asociado al contrato";
+                }
+            }
+            return mensaje;   
         }
     }
 }
