@@ -26,24 +26,24 @@ namespace Alumvix.Controller.Abono
         private void CargarFormasDeAbono(object sender, EventArgs e)
         {
             AbonoDao formaAbono = new AbonoDao();
-            ingresoAbonoView.cbFormaDePago.DataSource = formaAbono.ConsultarFormasAbono();
-            ingresoAbonoView.cbFormaDePago.DropDownStyle = ComboBoxStyle.DropDownList;
+            ingresoAbonoView.cbIngresarFormaDePago.DataSource = formaAbono.ConsultarFormasAbono();
+            ingresoAbonoView.cbIngresarFormaDePago.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void IngresarAbono(object sender, EventArgs e)
         {
             AbonoDao nuevoAbono = new AbonoDao();
-            if (ValidacionesDeControles.ValidarBotonIngresoAbono(ingresoAbonoView.txtIngresarValorAbono.Text, ingresoAbonoView.cbFormaDePago.SelectedIndex) == false)
+            if (ValidacionesDeControles.ValidarBotonIngresoAbono(ingresoAbonoView.txtIngresarValorAbono.Text, ingresoAbonoView.cbIngresarFormaDePago.SelectedIndex) == false)
             {
                 MessageBox.Show("Debe diligenciar todos los campos");
             }
             else
             {
-                bool respuestaIngresoAbono = nuevoAbono.IngresarAbono(Convert.ToInt32(ingresoAbonoView.txtIngresarValorAbono.Text), ingresoAbonoView.dtpFechaIngresoAbono.Text, idContrato, ingresoAbonoView.cbFormaDePago.SelectedIndex);
+                bool respuestaIngresoAbono = nuevoAbono.IngresarAbono(Convert.ToInt32(ingresoAbonoView.txtIngresarValorAbono.Text), ingresoAbonoView.dtpIngresarFechaAbono.Text, idContrato, ingresoAbonoView.cbIngresarFormaDePago.SelectedIndex);
                 if (respuestaIngresoAbono)
                 {
                     ingresoAbonoView.txtIngresarValorAbono.Clear();
-                    ingresoAbonoView.cbFormaDePago.SelectedIndex = 0;
+                    ingresoAbonoView.cbIngresarFormaDePago.SelectedIndex = 0;
                     MessageBox.Show("El abono ha sido guardado con exito");
                 } 
                 else MessageBox.Show("Error al guardar el abono");
@@ -53,7 +53,7 @@ namespace Alumvix.Controller.Abono
         private void LimpiarControles(object sender, EventArgs e)
         {
             ingresoAbonoView.txtIngresarValorAbono.Clear();
-            ingresoAbonoView.cbFormaDePago.SelectedIndex = 0;
+            ingresoAbonoView.cbIngresarFormaDePago.SelectedIndex = 0;
         }
     }
 }

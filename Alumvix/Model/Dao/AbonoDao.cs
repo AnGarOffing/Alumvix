@@ -80,5 +80,23 @@ namespace Alumvix.Model.Dao
             }
             return respuesta;
         }
+
+
+        public bool ActualizarAbono(int idAbono, int valorAbono, int formaAbono, string fechaAbono)
+        {
+            bool respuesta = false;
+            command.Connection = connection;
+            command.CommandText = "update ABONO set valorAbono = " + valorAbono + ", fechaAbono = '" + fechaAbono + "', FK_ID_FORMA_ABONO = " + formaAbono
+                                + " where ID_ABONO = " + idAbono;
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            int filasAfectadasEnBd = command.ExecuteNonQuery();
+            if (filasAfectadasEnBd > 0)
+            {
+                respuesta = true;
+            }
+            connection.Close();
+            return respuesta;
+        }
     }
 }

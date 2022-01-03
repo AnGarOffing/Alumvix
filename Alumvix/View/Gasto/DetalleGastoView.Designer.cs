@@ -37,6 +37,7 @@
             this.lblListadoGastos = new System.Windows.Forms.Label();
             this.btnIngresarAbono = new System.Windows.Forms.Button();
             this.btnEliminarGasto = new System.Windows.Forms.Button();
+            this.btnEditarGasto = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstvDetalleGastos
@@ -49,9 +50,9 @@
             this.lstvDetalleGastos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstvDetalleGastos.FullRowSelect = true;
             this.lstvDetalleGastos.HideSelection = false;
-            this.lstvDetalleGastos.Location = new System.Drawing.Point(12, 65);
+            this.lstvDetalleGastos.Location = new System.Drawing.Point(16, 63);
             this.lstvDetalleGastos.Name = "lstvDetalleGastos";
-            this.lstvDetalleGastos.Size = new System.Drawing.Size(1003, 211);
+            this.lstvDetalleGastos.Size = new System.Drawing.Size(1065, 211);
             this.lstvDetalleGastos.TabIndex = 36;
             this.lstvDetalleGastos.UseCompatibleStateImageBehavior = false;
             this.lstvDetalleGastos.View = System.Windows.Forms.View.Details;
@@ -69,7 +70,7 @@
             // columnaFechaGasto
             // 
             this.columnaFechaGasto.Text = "Fecha";
-            this.columnaFechaGasto.Width = 114;
+            this.columnaFechaGasto.Width = 283;
             // 
             // columnaDescripcionGasto
             // 
@@ -94,7 +95,7 @@
             this.btnIngresarAbono.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresarAbono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresarAbono.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresarAbono.Image")));
-            this.btnIngresarAbono.Location = new System.Drawing.Point(879, 19);
+            this.btnIngresarAbono.Location = new System.Drawing.Point(1035, 14);
             this.btnIngresarAbono.Name = "btnIngresarAbono";
             this.btnIngresarAbono.Size = new System.Drawing.Size(46, 40);
             this.btnIngresarAbono.TabIndex = 34;
@@ -107,17 +108,31 @@
             this.btnEliminarGasto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarGasto.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarGasto.Image")));
-            this.btnEliminarGasto.Location = new System.Drawing.Point(843, 22);
+            this.btnEliminarGasto.Location = new System.Drawing.Point(999, 17);
             this.btnEliminarGasto.Name = "btnEliminarGasto";
             this.btnEliminarGasto.Size = new System.Drawing.Size(30, 35);
             this.btnEliminarGasto.TabIndex = 33;
             this.btnEliminarGasto.UseVisualStyleBackColor = false;
             // 
+            // btnEditarGasto
+            // 
+            this.btnEditarGasto.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditarGasto.FlatAppearance.BorderSize = 0;
+            this.btnEditarGasto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarGasto.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarGasto.Image")));
+            this.btnEditarGasto.Location = new System.Drawing.Point(953, 17);
+            this.btnEditarGasto.Name = "btnEditarGasto";
+            this.btnEditarGasto.Size = new System.Drawing.Size(30, 35);
+            this.btnEditarGasto.TabIndex = 37;
+            this.btnEditarGasto.UseVisualStyleBackColor = false;
+            // 
             // DetalleGastoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1027, 288);
+            this.ClientSize = new System.Drawing.Size(1089, 288);
+            this.Controls.Add(this.btnEditarGasto);
             this.Controls.Add(this.lstvDetalleGastos);
             this.Controls.Add(this.lblListadoGastos);
             this.Controls.Add(this.btnIngresarAbono);
@@ -140,5 +155,6 @@
         public System.Windows.Forms.Label lblListadoGastos;
         public System.Windows.Forms.Button btnIngresarAbono;
         public System.Windows.Forms.Button btnEliminarGasto;
+        public System.Windows.Forms.Button btnEditarGasto;
     }
 }

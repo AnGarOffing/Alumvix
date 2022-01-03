@@ -11,10 +11,11 @@ namespace Alumvix.Controller.Abono
 {
     internal class DetalleAbonoController
     {
-        DetalleAbonoView detalleAbonoView;
+        static DetalleAbonoView detalleAbonoView;
         int idContrato;
         int indice;
-        List<int> idsAbonos = new List<int>();
+        static List<int> idsAbonos = new List<int>();
+        public static int idAbono;
 
         public DetalleAbonoController(DetalleAbonoView detalleAbonoVista) 
         {
@@ -24,8 +25,8 @@ namespace Alumvix.Controller.Abono
             detalleAbonoView.btnIngresarAbono.Click += new EventHandler(MostrarIngresoAbonoView);
             detalleAbonoView.btnEliminarAbono.Click += new EventHandler(EliminarAbono);
             detalleAbonoView.lstvDetalleAbonos.SelectedIndexChanged += new EventHandler(ObtenerIndice);
+            detalleAbonoView.btnEditarAbono.Click += new EventHandler(MostarEditarAbonoView);
         }
-
 
         private void MostrarDetalleAbonos(object sender, EventArgs e) 
         {
@@ -36,7 +37,7 @@ namespace Alumvix.Controller.Abono
             {               
                 idsAbonos.Add(abono.IdAbono); //almacenamos ids de los abonos que se muestran 
                 contadorAbonos++;
-                string[] row = { contadorAbonos.ToString(), FormatoAValor.DarFormatoANumero(abono.ValorAbono).ToString(), abono.FechaAbono.ToString(), abono.FormaDeAbono };
+                string[] row = { contadorAbonos.ToString(), CambioDeFormato.DarFormatoANumero(abono.ValorAbono).ToString(), CambioDeFormato.CambiarFormatoDeFecha(abono.FechaAbono), abono.FormaDeAbono };
                 ListViewItem itemAbono = new ListViewItem(row);
                 detalleAbonoView.lstvDetalleAbonos.Items.Add(itemAbono);
             }
@@ -66,14 +67,32 @@ namespace Alumvix.Controller.Abono
             }          
         }
 
-        private int EncontrarIdAbono(List<int> idsAbonos, int indice)
+
+        private static int EncontrarIdAbono(List<int> idsAbonos, int indice)
         {
             return idsAbonos[indice];
         }
 
+
         private void ObtenerIndice(object sender, EventArgs e) 
         {
             indice = detalleAbonoView.lstvDetalleAbonos.Items.IndexOf(detalleAbonoView.lstvDetalleAbonos.SelectedItems[0]);
+            idAbono = EncontrarIdAbono(idsAbonos, indice);
+        }
+
+        private void MostarEditarAbonoView(object sender, EventArgs e)
+        {
+            if (detalleAbonoView.lstvDetalleAbonos.SelectedItems.Count > 0)
+            {
+                EditarAbonoView editarAbonoView = EditarAbonoView.ObtenerInstancia();
+                editarAbonoView.ShowDialog();
+            }
+            else MessageBox.Show("Debe seleccionar un abono de la lista para editarlo");
+        }
+
+        public static  DetalleAbonoView ObtenerInstanciaDetalleAbono() 
+        {
+            return detalleAbonoView;
         }
     }
 }

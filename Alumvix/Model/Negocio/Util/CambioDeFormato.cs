@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Alumvix.Model.Logica.Util
 {
-    internal class FormatoAValor
+    internal class CambioDeFormato
     {
         public static string DarFormatoANumero(int valor)
         {
@@ -26,6 +26,12 @@ namespace Alumvix.Model.Logica.Util
                 
             }
             return resultado;
+        }
+
+        public static string CambiarFormatoDeFecha(DateTime date) 
+        {
+            string dateString = date.ToLongDateString();
+            return dateString;
         }
     }
 }

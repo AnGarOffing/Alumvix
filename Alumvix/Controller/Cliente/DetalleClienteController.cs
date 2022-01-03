@@ -62,7 +62,7 @@ namespace Alumvix.Controller.Cliente
         {
 
             detalleClienteVista.txtNumeroContrato.Text = contratoDto.IdContrato.ToString();
-            detalleClienteVista.txtValorContrato.Text = FormatoAValor.DarFormatoANumero(contratoDto.ValorContrato);
+            detalleClienteVista.txtValorContrato.Text = CambioDeFormato.DarFormatoANumero(contratoDto.ValorContrato);
             detalleClienteVista.txtFechaInicioContrato.Text = contratoDto.FechaInicioContrato.ToString();
             detalleClienteVista.txtFechaFinContrato.Text = contratoDto.FechaTerminacionContrato.ToString();
             detalleClienteVista.txtEstadoContrato.Text = contratoDto.EstadoContrato.ToString();
@@ -75,7 +75,7 @@ namespace Alumvix.Controller.Cliente
             detalleClienteVista.lstvGastos.Items.Clear();
             foreach  (GastoDto gasto in gastos)
             {              
-                string[] row = { cont.ToString(), FormatoAValor.DarFormatoANumero(gasto.ValorGasto).ToString()};
+                string[] row = { cont.ToString(), CambioDeFormato.DarFormatoANumero(gasto.ValorGasto).ToString()};
                 ListViewItem itemGasto = new ListViewItem(row);
                 detalleClienteVista.lstvGastos.Items.Add(itemGasto);
                 cont++;
@@ -88,7 +88,7 @@ namespace Alumvix.Controller.Cliente
             detalleClienteVista.lstvAbonos.Items.Clear();
             foreach (AbonoDto abono in abonos)
             {
-                string[] row = { cont.ToString(), FormatoAValor.DarFormatoANumero(abono.ValorAbono).ToString()};
+                string[] row = { cont.ToString(), CambioDeFormato.DarFormatoANumero(abono.ValorAbono).ToString()};
                 ListViewItem itemAbono = new ListViewItem(row);
                 detalleClienteVista.lstvAbonos.Items.Add(itemAbono);
                 cont++;
@@ -97,10 +97,10 @@ namespace Alumvix.Controller.Cliente
 
         private void MostrarCuentas(object sender, EventArgs e)
         {
-            detalleClienteVista.txtTotalGastos.Text = FormatoAValor.DarFormatoANumero(logica.SumarGastos(gastos)).ToString();
-            detalleClienteVista.txtTotalAbonos.Text = FormatoAValor.DarFormatoANumero(logica.SumarAbonos(abonos)).ToString();
-            detalleClienteVista.txtRestaPorPagar.Text = FormatoAValor.DarFormatoANumero(logica.ObtenerRestantePorPagar(logica.SumarAbonos(abonos), contratoDto.ValorContrato)).ToString();
-            detalleClienteVista.txtUtilidad.Text = FormatoAValor.DarFormatoANumero(logica.ObtenerUtilidad(logica.SumarAbonos(abonos), logica.SumarGastos(gastos))).ToString();
+            detalleClienteVista.txtTotalGastos.Text = CambioDeFormato.DarFormatoANumero(logica.SumarGastos(gastos)).ToString();
+            detalleClienteVista.txtTotalAbonos.Text = CambioDeFormato.DarFormatoANumero(logica.SumarAbonos(abonos)).ToString();
+            detalleClienteVista.txtRestaPorPagar.Text = CambioDeFormato.DarFormatoANumero(logica.ObtenerRestantePorPagar(logica.SumarAbonos(abonos), contratoDto.ValorContrato)).ToString();
+            detalleClienteVista.txtUtilidad.Text = CambioDeFormato.DarFormatoANumero(logica.ObtenerUtilidad(logica.SumarAbonos(abonos), logica.SumarGastos(gastos))).ToString();
         }
 
         private void MostrarProductos(object sender, EventArgs e) 

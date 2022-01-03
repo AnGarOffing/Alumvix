@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClienteView));
             this.dataGridClientes = new System.Windows.Forms.DataGridView();
             this.btnDetalleCliente = new System.Windows.Forms.Button();
             this.txtFiltrarCliente = new System.Windows.Forms.TextBox();
+            this.btnEditarCliente = new System.Windows.Forms.Button();
+            this.btnEliminarGasto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +52,7 @@
             // btnDetalleCliente
             // 
             this.btnDetalleCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetalleCliente.Location = new System.Drawing.Point(258, 58);
+            this.btnDetalleCliente.Location = new System.Drawing.Point(272, 58);
             this.btnDetalleCliente.Name = "btnDetalleCliente";
             this.btnDetalleCliente.Size = new System.Drawing.Size(139, 25);
             this.btnDetalleCliente.TabIndex = 2;
@@ -63,11 +66,39 @@
             this.txtFiltrarCliente.Size = new System.Drawing.Size(170, 20);
             this.txtFiltrarCliente.TabIndex = 3;
             // 
+            // btnEditarCliente
+            // 
+            this.btnEditarCliente.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditarCliente.FlatAppearance.BorderSize = 0;
+            this.btnEditarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarCliente.Image")));
+            this.btnEditarCliente.Location = new System.Drawing.Point(431, 52);
+            this.btnEditarCliente.Name = "btnEditarCliente";
+            this.btnEditarCliente.Size = new System.Drawing.Size(30, 35);
+            this.btnEditarCliente.TabIndex = 35;
+            this.btnEditarCliente.UseVisualStyleBackColor = false;
+            // 
+            // btnEliminarGasto
+            // 
+            this.btnEliminarGasto.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminarGasto.FlatAppearance.BorderSize = 0;
+            this.btnEliminarGasto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarGasto.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarGasto.Image")));
+            this.btnEliminarGasto.Location = new System.Drawing.Point(482, 48);
+            this.btnEliminarGasto.Name = "btnEliminarGasto";
+            this.btnEliminarGasto.Size = new System.Drawing.Size(30, 35);
+            this.btnEliminarGasto.TabIndex = 36;
+            this.btnEliminarGasto.UseVisualStyleBackColor = false;
+            // 
             // ClienteView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnEliminarGasto);
+            this.Controls.Add(this.btnEditarCliente);
             this.Controls.Add(this.txtFiltrarCliente);
             this.Controls.Add(this.btnDetalleCliente);
             this.Controls.Add(this.dataGridClientes);
@@ -85,5 +116,7 @@
         public System.Windows.Forms.DataGridView dataGridClientes;
         public System.Windows.Forms.Button btnDetalleCliente;
         public System.Windows.Forms.TextBox txtFiltrarCliente;
+        public System.Windows.Forms.Button btnEditarCliente;
+        public System.Windows.Forms.Button btnEliminarGasto;
     }
 }

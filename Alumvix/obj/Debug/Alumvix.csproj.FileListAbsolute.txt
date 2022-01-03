@@ -15,3 +15,4 @@ D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug
 D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug\Alumvix.View.Gasto.DetalleGastoView.resources
 D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug\Alumvix.View.Gasto.IngresoGastoView.resources
 D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug\Alumvix.View.Producto.IngresoProductoView.resources
+D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug\Alumvix.View.Abono.EditarAbonoView.resources

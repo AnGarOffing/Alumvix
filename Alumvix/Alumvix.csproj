@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\Abono\DetalleAbonoController.cs" />
+    <Compile Include="Controller\Abono\EditarAbonoController.cs" />
     <Compile Include="Controller\Abono\IngresoAbonoController.cs" />
     <Compile Include="Controller\Cliente\ClienteController.cs" />
     <Compile Include="Controller\Cliente\DetalleClienteController.cs" />
@@ -66,7 +67,7 @@
     <Compile Include="Model\Dto\ProductoDto.cs" />
     <Compile Include="Model\Negocio\Logica.cs" />
     <Compile Include="Model\Negocio\Util\CopyPasteEnDetalleClienteVista.cs" />
-    <Compile Include="Model\Negocio\Util\FormatoAValor.cs" />
+    <Compile Include="Model\Negocio\Util\CambioDeFormato.cs" />
     <Compile Include="Model\Negocio\Util\ValidacionesDeControles.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,6 +76,12 @@
     </Compile>
     <Compile Include="View\Abono\DetalleAbonoView.Designer.cs">
       <DependentUpon>DetalleAbonoView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Abono\EditarAbonoView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Abono\EditarAbonoView.Designer.cs">
+      <DependentUpon>EditarAbonoView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Abono\IngresoAbonoView.cs">
       <SubType>Form</SubType>
@@ -123,6 +130,9 @@
     </Compile>
     <EmbeddedResource Include="View\Abono\DetalleAbonoView.resx">
       <DependentUpon>DetalleAbonoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Abono\EditarAbonoView.resx">
+      <DependentUpon>EditarAbonoView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Abono\IngresoAbonoView.resx">
       <DependentUpon>IngresoAbonoView.cs</DependentUpon>
