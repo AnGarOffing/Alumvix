@@ -30,5 +30,10 @@ namespace Alumvix.View.Gasto
             }
             return instancia;
         }
+
+        private void lstvDetalleGastos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

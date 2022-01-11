@@ -54,7 +54,7 @@ namespace Alumvix.Controller.Abono
         {
             if (MessageBox.Show("¿Realmente desea borrar el abono?", "BORRAR", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                bool respuesta = new AbonoDao().EliminarAbono(EncontrarIdAbono(idsAbonos, indice));
+                bool respuesta = new AbonoDao().EliminarAbono(idAbono);
                 if (respuesta) 
                 {
                     detalleAbonoView.lstvDetalleAbonos.SelectedItems.Clear();
@@ -76,8 +76,11 @@ namespace Alumvix.Controller.Abono
 
         private void ObtenerIndice(object sender, EventArgs e) 
         {
-            indice = detalleAbonoView.lstvDetalleAbonos.Items.IndexOf(detalleAbonoView.lstvDetalleAbonos.SelectedItems[0]);
-            idAbono = EncontrarIdAbono(idsAbonos, indice);
+            if (detalleAbonoView.lstvDetalleAbonos.SelectedItems.Count > 0)
+            {
+                indice = detalleAbonoView.lstvDetalleAbonos.Items.IndexOf(detalleAbonoView.lstvDetalleAbonos.SelectedItems[0]);
+                idAbono = EncontrarIdAbono(idsAbonos, indice);
+            }         
         }
 
         private void MostarEditarAbonoView(object sender, EventArgs e)

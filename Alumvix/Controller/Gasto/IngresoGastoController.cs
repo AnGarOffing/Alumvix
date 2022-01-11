@@ -16,6 +16,7 @@ namespace Alumvix.Controller.Gasto
         {
             idContrato = DetalleClienteController.ObtenerIdContrato();
             ingresoGastoView = ingresoGastoVista;
+            ingresoGastoView.Load += new EventHandler(CargarTiposDeGastoMaterial);
             ingresoGastoView.btnGuardarNuevoGasto.Click += new EventHandler(IngresarGasto);
         }
 
@@ -37,6 +38,13 @@ namespace Alumvix.Controller.Gasto
                 } 
                 else MessageBox.Show("Error al guardar el gasto");
             }
+        }
+
+        private void CargarTiposDeGastoMaterial(object sender, EventArgs e)
+        {
+            GastoDao tipoGasto = new GastoDao();
+            ingresoGastoView.cbIngresarTipoGasto.DataSource = tipoGasto.ObtenerTiposDeGastoMaterial();
+            ingresoGastoView.cbIngresarTipoGasto.DropDownStyle = ComboBoxStyle.DropDownList;
         }
     }
 }

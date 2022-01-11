@@ -52,6 +52,7 @@
     <Compile Include="Controller\Cliente\ClienteController.cs" />
     <Compile Include="Controller\Cliente\DetalleClienteController.cs" />
     <Compile Include="Controller\Gasto\DetalleGastoController.cs" />
+    <Compile Include="Controller\Gasto\EditarGastoController.cs" />
     <Compile Include="Controller\Gasto\IngresoGastoController.cs" />
     <Compile Include="Controller\Producto\IngresoProductoController.cs" />
     <Compile Include="Model\Dao\AbonoDao.cs" />
@@ -107,6 +108,12 @@
     <Compile Include="View\Gasto\DetalleGastoView.Designer.cs">
       <DependentUpon>DetalleGastoView.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Gasto\EditarGastoView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Gasto\EditarGastoView.Designer.cs">
+      <DependentUpon>EditarGastoView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Gasto\IngresoGastoView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Gasto\DetalleGastoView.resx">
       <DependentUpon>DetalleGastoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Gasto\EditarGastoView.resx">
+      <DependentUpon>EditarGastoView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Gasto\IngresoGastoView.resx">
       <DependentUpon>IngresoGastoView.cs</DependentUpon>

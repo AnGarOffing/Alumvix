@@ -50,16 +50,21 @@ namespace Alumvix.Model.Logica.Util
             detalleClienteVista.txtCelular.BackColor = detalleClienteVista.BackColor;
             detalleClienteVista.txtCelular.TabStop = false;
            
-            detalleClienteVista.txtNumeroContrato.ReadOnly = true;
-            detalleClienteVista.txtNumeroContrato.BorderStyle = 0;
-            detalleClienteVista.txtNumeroContrato.BackColor = detalleClienteVista.BackColor;
-            detalleClienteVista.txtNumeroContrato.TabStop = false;
+            detalleClienteVista.txtNumeroFactura.ReadOnly = true;
+            detalleClienteVista.txtNumeroFactura.BorderStyle = 0;
+            detalleClienteVista.txtNumeroFactura.BackColor = detalleClienteVista.BackColor;
+            detalleClienteVista.txtNumeroFactura.TabStop = false;
            
             detalleClienteVista.txtValorContrato.ReadOnly = true;
             detalleClienteVista.txtValorContrato.BorderStyle = 0;
             detalleClienteVista.txtValorContrato.BackColor = detalleClienteVista.BackColor;
             detalleClienteVista.txtValorContrato.TabStop = false;
-            
+
+            detalleClienteVista.txtTipoFactura.ReadOnly = true;
+            detalleClienteVista.txtTipoFactura.BorderStyle = 0;
+            detalleClienteVista.txtTipoFactura.BackColor = detalleClienteVista.BackColor;
+            detalleClienteVista.txtTipoFactura.TabStop = false;
+
             detalleClienteVista.txtFechaInicioContrato.ReadOnly = true;
             detalleClienteVista.txtFechaInicioContrato.BorderStyle = 0;
             detalleClienteVista.txtFechaInicioContrato.BackColor = detalleClienteVista.BackColor;

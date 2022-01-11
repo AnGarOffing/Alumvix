@@ -12,6 +12,8 @@ namespace Alumvix.Model.Negocio.Util
     internal class ValidacionesDeControles
     {
         static bool respuesta;
+
+        //metodo que valida las entradas de un ingreso o un abono
         public static bool ValidarBotonIngresoAbono(string valorAbono, int formaDeAbono) 
         {
             respuesta = false;  

@@ -11,24 +11,23 @@ using System.Windows.Forms;
 
 namespace Alumvix.View.Gasto
 {
-    public partial class IngresoGastoView : Form
+    public partial class EditarGastoView : Form
     {
 
-        private static IngresoGastoView instancia = null;
-        public IngresoGastoView()
+        private static EditarGastoView instancia = null;
+        public EditarGastoView()
         {
             InitializeComponent();
-            IngresoGastoController ingresoGastoController = new IngresoGastoController(this);
+            EditarGastoController editarGastoController = new EditarGastoController(this);
         }
 
-        public static IngresoGastoView ObtenerInstancia()
+        public static EditarGastoView ObtenerInstancia()
         {
             if (instancia == null)
             {
-                instancia = new IngresoGastoView();
+                instancia = new EditarGastoView();
             }
             return instancia;
         }
-
     }
 }

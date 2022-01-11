@@ -42,11 +42,12 @@ namespace Alumvix.Controller.Abono
             }
             else
             {
-                bool respuestaActualizacionAbono = abonoActualizado.ActualizarAbono(DetalleAbonoController.idAbono, Convert.ToInt32(editarAbonoView.txtIActualizarValorAbono.Text), editarAbonoView.cbActualizarFormaDePago.SelectedIndex,  editarAbonoView.dtpActualizarFechaAbono.Text);
+                bool respuestaActualizacionAbono = abonoActualizado.ActualizarAbono(DetalleAbonoController.idAbono, Convert.ToInt32(editarAbonoView.txtIActualizarValorAbono.Text), editarAbonoView.cbActualizarFormaDePago.SelectedIndex, editarAbonoView.dtpActualizarFechaAbono.Text);
                 if (respuestaActualizacionAbono)
                 {
                     editarAbonoView.txtIActualizarValorAbono.Clear();
                     editarAbonoView.cbActualizarFormaDePago.SelectedIndex = 0;
+                    editarAbonoView.Close();
                     MessageBox.Show("El abono ha sido actualizado con exito");
                 }
                 else MessageBox.Show("Error al actualizar el abono");

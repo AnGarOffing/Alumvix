@@ -60,8 +60,8 @@ namespace Alumvix.Controller.Cliente
 
         private void MostrarContrato(object sender, EventArgs e)
         {
-
-            detalleClienteVista.txtNumeroContrato.Text = contratoDto.IdContrato.ToString();
+            detalleClienteVista.txtNumeroFactura.Text = contratoDto.NumeroFactura.ToString();
+            detalleClienteVista.txtTipoFactura.Text = contratoDto.TipoFactura.ToString();
             detalleClienteVista.txtValorContrato.Text = CambioDeFormato.DarFormatoANumero(contratoDto.ValorContrato);
             detalleClienteVista.txtFechaInicioContrato.Text = contratoDto.FechaInicioContrato.ToString();
             detalleClienteVista.txtFechaFinContrato.Text = contratoDto.FechaTerminacionContrato.ToString();

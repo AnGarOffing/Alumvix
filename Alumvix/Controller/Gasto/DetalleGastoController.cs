@@ -14,9 +14,11 @@ namespace Alumvix.Controller.Gasto
 {
     internal class DetalleGastoController
     {
-        DetalleGastoView detalleGastoView;
+        static DetalleGastoView detalleGastoView;
         int indice;
         List<int> idsGastos = new List<int>();
+        public static int idGasto;
+
         public DetalleGastoController(DetalleGastoView detalleGastoVista) 
         {
             detalleGastoView = detalleGastoVista;
@@ -24,8 +26,8 @@ namespace Alumvix.Controller.Gasto
             detalleGastoView.btnIngresarAbono.Click += new EventHandler(MostrarIngresoGastoView);
             detalleGastoView.btnEliminarGasto.Click += new EventHandler(EliminarGasto);
             detalleGastoView.lstvDetalleGastos.SelectedIndexChanged += new EventHandler(ObtenerIndice);
+            detalleGastoView.btnEditarGasto.Click += new EventHandler(MostarEditarGastoView);
         }
-
 
         private void MostrarDetalleGastos(object sender, EventArgs e)
         {
@@ -35,7 +37,7 @@ namespace Alumvix.Controller.Gasto
             {
                 idsGastos.Add(gasto.IdGasto); //almacenamos ids de los gastos que se muestran 
                 contadorGastos++;
-                string[] row = { contadorGastos.ToString(), CambioDeFormato.DarFormatoANumero(gasto.ValorGasto).ToString(), CambioDeFormato.CambiarFormatoDeFecha(gasto.FechaGasto), gasto.DescripcionGasto };
+                string[] row = { contadorGastos.ToString(), gasto.NumeroFactura, CambioDeFormato.DarFormatoANumero(gasto.ValorGasto).ToString(), CambioDeFormato.CambiarFormatoDeFecha(gasto.FechaGasto), gasto.DescripcionGasto, gasto.Proveedor, gasto.TipoGasto};
                 ListViewItem itemGasto = new ListViewItem(row);
                 detalleGastoView.lstvDetalleGastos.Items.Add(itemGasto);
             }
@@ -62,7 +64,6 @@ namespace Alumvix.Controller.Gasto
                     MessageBox.Show("Error al intentar eliminar el gasto");
                 }
             }
-
         }
 
         private int EncontrarIdGasto(List<int> idsGastos, int indice)
@@ -72,7 +73,27 @@ namespace Alumvix.Controller.Gasto
 
         private void ObtenerIndice(object sender, EventArgs e)
         {
-            indice = detalleGastoView.lstvDetalleGastos.Items.IndexOf(detalleGastoView.lstvDetalleGastos.SelectedItems[0]);
+            if (detalleGastoView.lstvDetalleGastos.SelectedItems.Count > 0)
+            {
+                indice = detalleGastoView.lstvDetalleGastos.Items.IndexOf(detalleGastoView.lstvDetalleGastos.SelectedItems[0]);
+                idGasto = EncontrarIdGasto(idsGastos, indice);
+            }
+            
+        }
+
+        public static DetalleGastoView ObtenerInstanciaDetalleGasto()
+        {
+            return detalleGastoView;
+        }
+
+        private void MostarEditarGastoView(object sender, EventArgs e)
+        {
+            if (detalleGastoView.lstvDetalleGastos.SelectedItems.Count > 0)
+            {
+                EditarGastoView editarGastoView = EditarGastoView.ObtenerInstancia();
+                editarGastoView.ShowDialog();
+            }
+            else MessageBox.Show("Debe seleccionar un gasto de la lista para editarlo");
         }
     }
 }

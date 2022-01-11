@@ -44,6 +44,7 @@ namespace Alumvix.Controller.Abono
                 {
                     ingresoAbonoView.txtIngresarValorAbono.Clear();
                     ingresoAbonoView.cbIngresarFormaDePago.SelectedIndex = 0;
+                    ingresoAbonoView.Close();
                     MessageBox.Show("El abono ha sido guardado con exito");
                 } 
                 else MessageBox.Show("Error al guardar el abono");

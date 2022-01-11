@@ -9,6 +9,8 @@ namespace Alumvix.Model.Dto
     internal class ContratoDto
     {
         int idContrato;
+        string numeroFactura;
+        string tipoFactura;
         int valorContrato;
         string fechaInicioContrato;
         string fechaTerminacionContrato;
@@ -26,6 +28,8 @@ namespace Alumvix.Model.Dto
         public string EstadoTrabajo { get => estadoTrabajo; set => estadoTrabajo = value; }
         public int Cliente { get => idCliente; set => idCliente = value; }
         public List<AbonoDto> Gastos { get => gastos; set => gastos = value; }
+        public string NumeroFactura { get => numeroFactura; set => numeroFactura = value; }
+        public string TipoFactura { get => tipoFactura; set => tipoFactura = value; }
     }
 }
 

@@ -34,6 +34,9 @@
             this.columnaValorGasto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnaFechaGasto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnaDescripcionGasto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnaNumeroFactura = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnaProveedor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnaTipoGasto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblListadoGastos = new System.Windows.Forms.Label();
             this.btnIngresarAbono = new System.Windows.Forms.Button();
             this.btnEliminarGasto = new System.Windows.Forms.Button();
@@ -44,39 +47,63 @@
             // 
             this.lstvDetalleGastos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnaNumeroGasto,
+            this.columnaNumeroFactura,
             this.columnaValorGasto,
             this.columnaFechaGasto,
-            this.columnaDescripcionGasto});
+            this.columnaDescripcionGasto,
+            this.columnaProveedor,
+            this.columnaTipoGasto});
             this.lstvDetalleGastos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstvDetalleGastos.FullRowSelect = true;
             this.lstvDetalleGastos.HideSelection = false;
-            this.lstvDetalleGastos.Location = new System.Drawing.Point(16, 63);
+            this.lstvDetalleGastos.Location = new System.Drawing.Point(12, 60);
             this.lstvDetalleGastos.Name = "lstvDetalleGastos";
-            this.lstvDetalleGastos.Size = new System.Drawing.Size(1065, 211);
+            this.lstvDetalleGastos.Size = new System.Drawing.Size(1263, 277);
             this.lstvDetalleGastos.TabIndex = 36;
             this.lstvDetalleGastos.UseCompatibleStateImageBehavior = false;
             this.lstvDetalleGastos.View = System.Windows.Forms.View.Details;
+            this.lstvDetalleGastos.SelectedIndexChanged += new System.EventHandler(this.lstvDetalleGastos_SelectedIndexChanged);
             // 
             // columnaNumeroGasto
             // 
             this.columnaNumeroGasto.Text = "Gasto #";
-            this.columnaNumeroGasto.Width = 72;
+            this.columnaNumeroGasto.Width = 80;
             // 
             // columnaValorGasto
             // 
             this.columnaValorGasto.Text = "Valor";
-            this.columnaValorGasto.Width = 93;
+            this.columnaValorGasto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnaValorGasto.Width = 85;
             // 
             // columnaFechaGasto
             // 
             this.columnaFechaGasto.Text = "Fecha";
-            this.columnaFechaGasto.Width = 283;
+            this.columnaFechaGasto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnaFechaGasto.Width = 270;
             // 
             // columnaDescripcionGasto
             // 
             this.columnaDescripcionGasto.Text = "Descripcion";
             this.columnaDescripcionGasto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnaDescripcionGasto.Width = 712;
+            this.columnaDescripcionGasto.Width = 400;
+            // 
+            // columnaNumeroFactura
+            // 
+            this.columnaNumeroFactura.Text = "# Factura";
+            this.columnaNumeroFactura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnaNumeroFactura.Width = 95;
+            // 
+            // columnaProveedor
+            // 
+            this.columnaProveedor.Text = "Proveedor";
+            this.columnaProveedor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnaProveedor.Width = 150;
+            // 
+            // columnaTipoGasto
+            // 
+            this.columnaTipoGasto.Text = "Tipo de Gasto";
+            this.columnaTipoGasto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnaTipoGasto.Width = 176;
             // 
             // lblListadoGastos
             // 
@@ -95,7 +122,7 @@
             this.btnIngresarAbono.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresarAbono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresarAbono.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresarAbono.Image")));
-            this.btnIngresarAbono.Location = new System.Drawing.Point(1035, 14);
+            this.btnIngresarAbono.Location = new System.Drawing.Point(1229, 12);
             this.btnIngresarAbono.Name = "btnIngresarAbono";
             this.btnIngresarAbono.Size = new System.Drawing.Size(46, 40);
             this.btnIngresarAbono.TabIndex = 34;
@@ -108,7 +135,7 @@
             this.btnEliminarGasto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarGasto.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarGasto.Image")));
-            this.btnEliminarGasto.Location = new System.Drawing.Point(999, 17);
+            this.btnEliminarGasto.Location = new System.Drawing.Point(1193, 15);
             this.btnEliminarGasto.Name = "btnEliminarGasto";
             this.btnEliminarGasto.Size = new System.Drawing.Size(30, 35);
             this.btnEliminarGasto.TabIndex = 33;
@@ -121,7 +148,7 @@
             this.btnEditarGasto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarGasto.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarGasto.Image")));
-            this.btnEditarGasto.Location = new System.Drawing.Point(953, 17);
+            this.btnEditarGasto.Location = new System.Drawing.Point(1147, 15);
             this.btnEditarGasto.Name = "btnEditarGasto";
             this.btnEditarGasto.Size = new System.Drawing.Size(30, 35);
             this.btnEditarGasto.TabIndex = 37;
@@ -131,7 +158,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1089, 288);
+            this.ClientSize = new System.Drawing.Size(1291, 352);
             this.Controls.Add(this.btnEditarGasto);
             this.Controls.Add(this.lstvDetalleGastos);
             this.Controls.Add(this.lblListadoGastos);
@@ -156,5 +183,8 @@
         public System.Windows.Forms.Button btnIngresarAbono;
         public System.Windows.Forms.Button btnEliminarGasto;
         public System.Windows.Forms.Button btnEditarGasto;
+        private System.Windows.Forms.ColumnHeader columnaNumeroFactura;
+        private System.Windows.Forms.ColumnHeader columnaProveedor;
+        private System.Windows.Forms.ColumnHeader columnaTipoGasto;
     }
 }
