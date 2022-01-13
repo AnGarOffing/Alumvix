@@ -69,7 +69,7 @@ namespace Alumvix.Model.Dao
         {
             bool respuesta = false;
             command.Connection = connection;
-            command.CommandText = "insert into GASTO values('" + numeroFactura + "' " + valorGasto + ",'" + fechaGasto + "','" + descripcionGasto + "'," + proveedor + ","+ tipoGasto +"," + idContrato + ")";
+            command.CommandText = "insert into GASTO values('" + numeroFactura + "', " + valorGasto + ",'" + fechaGasto + "','" + descripcionGasto + "'," + proveedor + ","+ tipoGasto +"," + idContrato + ")";
             command.CommandType = CommandType.Text;
             connection.Open();
             int filasAfectadasEnBd = command.ExecuteNonQuery();
@@ -95,11 +95,11 @@ namespace Alumvix.Model.Dao
             return respuesta;
         }
 
-        public bool ActualizarGasto(string numeroFactura, int valorGasto, string fechaGasto, string descripcionGasto, int? proveedor, int tipoGasto, int idGasto)
+        public bool ActualizarGasto(string numeroFactura, int valorGasto, string fechaGasto, string descripcionGasto, int proveedor, int tipoGasto, int idGasto)
         {
             bool respuesta = false;
             command.Connection = connection;
-            command.CommandText = "update GASTO set numeroFactura = '" + numeroFactura + "', valorGasto = " + valorGasto + ", fechaGasto = '" + fechaGasto + "', descripcionGasto = '" + descripcionGasto+ "', ID_PROVEEDOR1 = "+proveedor + ", FK_ID_TIPO_GASTO = " + tipoGasto 
+            command.CommandText = "update GASTO set numeroFactura = '" + numeroFactura + "', valorGasto = " + valorGasto + ", fechaGasto = '" + fechaGasto + "', descripcionGasto = '" + descripcionGasto+ "', ID_PROVEEDOR1 = " + proveedor + ", FK_ID_TIPO_GASTO = " + tipoGasto 
                                 + " where ID_GASTO = " + idGasto;
             command.CommandType = CommandType.Text;
             connection.Open();

@@ -33,6 +33,13 @@ namespace Alumvix.Model.Negocio.Util
             if (valorGasto != "" && numeroFactura != "" && tipoGasto != 0) respuesta = true;
             return respuesta;
         }
+        public static bool ValidarBotonIngresoGastoSinFactura(string valorGasto, int tipoGasto)
+        {
+            respuesta = false;
+            if (valorGasto != "" && tipoGasto != 0) respuesta = true;
+            return respuesta;
+        }
+
 
         public static string ValidarBotonIngresoProducto(int indiceProducto, string nombreProducto)
         {

@@ -1,4 +1,5 @@
 ﻿using Alumvix.Model.Dao;
+using Alumvix.Model.Logica.Util;
 using Alumvix.Model.Negocio.Util;
 using Alumvix.View.Gasto;
 using System;
@@ -36,22 +37,23 @@ namespace Alumvix.Controller.Gasto
 
         private void ActualizarGastoEnBD(object sender, EventArgs e)
         {
+            bool respuesta = false;
             GastoDao GastoActualizado = new GastoDao();
-            if (ValidacionesDeControles.ValidarBotonIngresoGasto(editarGastoView.txtActualizarValorGasto.Text, editarGastoView.txtEditarNumeroFactura.Text, editarGastoView.cbEditarTipoGasto.SelectedIndex) == false)
+            if (editarGastoView.txtEditarNumeroFactura.Enabled == false)
             {
-                MessageBox.Show("Debe diligenciar todos los campos");
+                respuesta = ValidacionesDeControles.ValidarBotonIngresoGastoSinFactura(editarGastoView.txtActualizarValorGasto.Text, editarGastoView.cbEditarTipoGasto.SelectedIndex);
             }
             else
             {
-                //TODO : CORREGIR BUG
-                int? idProveedor = null;
-                if (editarGastoView.cbEditarProveedor.Enabled == true)
-                {
-                    idProveedor = editarGastoView.cbEditarProveedor.SelectedIndex;
-                } 
+                respuesta = ValidacionesDeControles.ValidarBotonIngresoGasto(editarGastoView.txtActualizarValorGasto.Text, editarGastoView.txtEditarNumeroFactura.Text, editarGastoView.cbEditarTipoGasto.SelectedIndex);
+            }
+            if (respuesta)
+            {
+                //TODO Buscar la forma de enviar idProveedor con valor null hacia la BD        
                 GastoDao gastoDao = new GastoDao();
+                string valorSinFormato = CambioDeFormato.QuitarFormatoANumero(editarGastoView.txtActualizarValorGasto.Text);
                 int idTipoGasto = gastoDao.ObtenerTipoGastoPorNombre(editarGastoView.cbEditarTipoGasto.GetItemText(editarGastoView.cbEditarTipoGasto.SelectedItem));
-                bool respuestaActualizacionGasto = GastoActualizado.ActualizarGasto(editarGastoView.txtEditarNumeroFactura.Text, Convert.ToInt32(editarGastoView.txtActualizarValorGasto.Text), editarGastoView.dtpActualizarFechaGasto.Text, editarGastoView.txtActualizarDescripcionGasto.Text, idProveedor, idTipoGasto, DetalleGastoController.idGasto);
+                bool respuestaActualizacionGasto = GastoActualizado.ActualizarGasto(editarGastoView.txtEditarNumeroFactura.Text, Convert.ToInt32(valorSinFormato), editarGastoView.dtpActualizarFechaGasto.Text, editarGastoView.txtActualizarDescripcionGasto.Text, editarGastoView.cbEditarProveedor.SelectedIndex, idTipoGasto, DetalleGastoController.idGasto);
                 if (respuestaActualizacionGasto)
                 {
                     //editarGastoView.txtActualizarValorGasto.Clear();
@@ -60,6 +62,16 @@ namespace Alumvix.Controller.Gasto
                 }
                 else MessageBox.Show("Error al actualizar el gasto");
             }
+            else
+            {
+                MessageBox.Show("Debe diligenciar todos los campos");
+            }
+            
+                
+                    
+                
+            
+            
         }
 
         private void HabilitarProveedores(object sender, EventArgs e)
@@ -67,12 +79,18 @@ namespace Alumvix.Controller.Gasto
             if (editarGastoView.cbEditarTipoGasto.SelectedIndex == 2)
             {
                 editarGastoView.cbEditarProveedor.Enabled = true;
-                editarGastoView.cbEditarProveedor.SelectedIndex = 0;
+                ProveedorDao proveedorDao = new ProveedorDao();
+                editarGastoView.cbEditarProveedor.DataSource = proveedorDao.ConsultarProveedoresParaCB();
+                editarGastoView.cbEditarProveedor.Text = detalleGastoView.lstvDetalleGastos.SelectedItems[0].SubItems[5].Text;
+                editarGastoView.txtEditarNumeroFactura.Enabled = true;
+                editarGastoView.txtEditarNumeroFactura.Text = detalleGastoView.lstvDetalleGastos.SelectedItems[0].SubItems[1].Text;
             }
             else
             {
                 editarGastoView.cbEditarProveedor.Enabled = false;
-                editarGastoView.cbEditarProveedor.SelectedIndex = -1;
+                editarGastoView.cbEditarProveedor.SelectedIndex = 1;
+                editarGastoView.txtEditarNumeroFactura.Text = "No Aplica";
+                editarGastoView.txtEditarNumeroFactura.Enabled = false;
             }
         }
 

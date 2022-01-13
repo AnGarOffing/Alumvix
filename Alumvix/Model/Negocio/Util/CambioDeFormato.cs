@@ -10,13 +10,11 @@ namespace Alumvix.Model.Logica.Util
     {
         public static string DarFormatoANumero(int valor)
         {
-            string numero = "";
             string resultado = "";
-            int cantidad = 0;
             int conteo = 0;
 
-            numero = Convert.ToString(valor);
-            cantidad = numero.Length;
+            string numero = Convert.ToString(valor);
+            int cantidad = numero.Length;
             while (conteo < cantidad)
             {
                 resultado += numero[conteo];
@@ -26,6 +24,13 @@ namespace Alumvix.Model.Logica.Util
                 
             }
             return resultado;
+        }
+
+        public static string QuitarFormatoANumero(string valor)
+        {
+            string str = valor.ToString();
+            str = string.Join("", str.Split(','));
+            return str;
         }
 
         public static string CambiarFormatoDeFecha(DateTime date) 
