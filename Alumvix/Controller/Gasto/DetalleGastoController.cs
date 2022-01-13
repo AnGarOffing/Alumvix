@@ -77,8 +77,7 @@ namespace Alumvix.Controller.Gasto
             {
                 indice = detalleGastoView.lstvDetalleGastos.Items.IndexOf(detalleGastoView.lstvDetalleGastos.SelectedItems[0]);
                 idGasto = EncontrarIdGasto(idsGastos, indice);
-            }
-            
+            }        
         }
 
         public static DetalleGastoView ObtenerInstanciaDetalleGasto()

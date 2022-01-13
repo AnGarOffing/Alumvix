@@ -65,7 +65,7 @@ namespace Alumvix.Model.Dao
             return listadoGastos;
         }
 
-        public bool IngresarGasto(string numeroFactura, int valorGasto, string fechaGasto, string descripcionGasto, int? proveedor, int tipoGasto,  int idContrato)
+        public bool IngresarGasto(string numeroFactura, int valorGasto, string fechaGasto, string descripcionGasto, int proveedor, int tipoGasto,  int idContrato)
         {
             bool respuesta = false;
             command.Connection = connection;

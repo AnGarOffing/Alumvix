@@ -17,7 +17,7 @@ namespace Alumvix.Controller.Gasto
         {
             editarGastoView = editarGastoVista;
             editarGastoView.Activated += new EventHandler(CargarDatosGasto);
-            editarGastoView.cbEditarTipoGasto.SelectedIndexChanged += new EventHandler(HabilitarProveedores);
+            editarGastoView.cbEditarTipoGasto.SelectedIndexChanged += new EventHandler(HabilitarControlesFactyProv);
             editarGastoView.btnActualizarGasto.Click += new EventHandler(ActualizarGastoEnBD);
         }
 
@@ -65,16 +65,10 @@ namespace Alumvix.Controller.Gasto
             else
             {
                 MessageBox.Show("Debe diligenciar todos los campos");
-            }
-            
-                
-                    
-                
-            
-            
+            }                                                                      
         }
 
-        private void HabilitarProveedores(object sender, EventArgs e)
+        private void HabilitarControlesFactyProv(object sender, EventArgs e)
         {
             if (editarGastoView.cbEditarTipoGasto.SelectedIndex == 2)
             {
