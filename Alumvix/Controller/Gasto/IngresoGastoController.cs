@@ -17,19 +17,21 @@ namespace Alumvix.Controller.Gasto
             idContrato = DetalleClienteController.ObtenerIdContrato();
             ingresoGastoView = ingresoGastoVista;
             ingresoGastoView.Load += new EventHandler(CargarTiposDeGastoMaterial);
+            ingresoGastoView.Load += new EventHandler(CargarProveedores);
+            ingresoGastoView.cbIngresarTipoGasto.SelectedIndexChanged += new EventHandler(HabilitarProveedores);
             ingresoGastoView.btnGuardarNuevoGasto.Click += new EventHandler(IngresarGasto);
-        }
+        }   
 
         private void IngresarGasto(object sender, EventArgs e)
         {
             GastoDao nuevoGasto = new GastoDao();
-            if (ValidacionesDeControles.ValidarBotonIngresoGasto(ingresoGastoView.txtIngresarValorGasto.Text) == false)
+            if (ValidacionesDeControles.ValidarBotonIngresoGasto(ingresoGastoView.txtIngresarValorGasto.Text, ingresoGastoView.txtNumeroFactura.Text, ingresoGastoView.cbIngresarTipoGasto.SelectedIndex) == false)
             {
                 MessageBox.Show("Debe diligenciar todos los campos");
             }
             else
             {
-                bool respuestaIngresoAbono = nuevoGasto.IngresarGasto(Convert.ToInt32(ingresoGastoView.txtIngresarValorGasto.Text), ingresoGastoView.dtpFechaIngresoGasto.Text, ingresoGastoView.txtDescripcionGasto.Text, idContrato);
+                bool respuestaIngresoAbono = nuevoGasto.IngresarGasto(ingresoGastoView.txtNumeroFactura.Text, Convert.ToInt32(ingresoGastoView.txtIngresarValorGasto.Text), ingresoGastoView.dtpFechaIngresoGasto.Text, ingresoGastoView.txtDescripcionGasto.Text, ingresoGastoView.cbIngresarProveedor.SelectedIndex, ingresoGastoView.cbIngresarTipoGasto.SelectedIndex, idContrato);
                 if (respuestaIngresoAbono)
                 {
                     ingresoGastoView.txtIngresarValorGasto.Clear();
@@ -45,6 +47,27 @@ namespace Alumvix.Controller.Gasto
             GastoDao tipoGasto = new GastoDao();
             ingresoGastoView.cbIngresarTipoGasto.DataSource = tipoGasto.ObtenerTiposDeGastoMaterial();
             ingresoGastoView.cbIngresarTipoGasto.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void CargarProveedores(object sender, EventArgs e)
+        {
+            ProveedorDao proveedor = new ProveedorDao();
+            ingresoGastoView.cbIngresarProveedor.DataSource = proveedor.ConsultarProveedoresParaCB();
+            ingresoGastoView.cbIngresarProveedor.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void HabilitarProveedores(object sender, EventArgs e)
+        {
+            if (ingresoGastoView.cbIngresarTipoGasto.SelectedIndex == 2)
+            {
+                ingresoGastoView.cbIngresarProveedor.Enabled = true;
+                ingresoGastoView.cbIngresarProveedor.SelectedIndex = 0;
+            }
+            else 
+            {
+                ingresoGastoView.cbIngresarProveedor.Enabled = false;
+                ingresoGastoView.cbIngresarProveedor.SelectedIndex = -1;
+            } 
         }
     }
 }

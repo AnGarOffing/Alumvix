@@ -61,11 +61,13 @@
     <Compile Include="Model\Dao\DbContext.cs" />
     <Compile Include="Model\Dao\GastoDao.cs" />
     <Compile Include="Model\Dao\ProductoDao.cs" />
+    <Compile Include="Model\Dao\ProveedorDao.cs" />
     <Compile Include="Model\Dto\AbonoDto.cs" />
     <Compile Include="Model\Dto\ClienteDto.cs" />
     <Compile Include="Model\Dto\ContratoDto.cs" />
     <Compile Include="Model\Dto\GastoDto.cs" />
     <Compile Include="Model\Dto\ProductoDto.cs" />
+    <Compile Include="Model\Dto\ProveedorDto.cs" />
     <Compile Include="Model\Negocio\Logica.cs" />
     <Compile Include="Model\Negocio\Util\CopyPasteEnDetalleClienteVista.cs" />
     <Compile Include="Model\Negocio\Util\CambioDeFormato.cs" />
@@ -175,6 +177,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Controller\Proveedor\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

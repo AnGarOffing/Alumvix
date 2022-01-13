@@ -41,14 +41,14 @@
             this.cbIngresarTipoGasto = new System.Windows.Forms.ComboBox();
             this.cbIngresarProveedor = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNumeroFactura = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtNumeroFactura);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.cbIngresarProveedor);
             this.panel1.Controls.Add(this.label1);
@@ -181,13 +181,13 @@
             this.label1.TabIndex = 44;
             this.label1.Text = "Proveedor:";
             // 
-            // textBox1
+            // txtNumeroFactura
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(233, 160);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 26);
-            this.textBox1.TabIndex = 47;
+            this.txtNumeroFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumeroFactura.Location = new System.Drawing.Point(233, 160);
+            this.txtNumeroFactura.Name = "txtNumeroFactura";
+            this.txtNumeroFactura.Size = new System.Drawing.Size(100, 26);
+            this.txtNumeroFactura.TabIndex = 47;
             // 
             // label2
             // 
@@ -228,7 +228,7 @@
         public System.Windows.Forms.Label lblIngresarGasto;
         public System.Windows.Forms.TextBox txtDescripcionGasto;
         private System.Windows.Forms.Label lblTipoGasto;
-        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox txtNumeroFactura;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.ComboBox cbIngresarProveedor;
         private System.Windows.Forms.Label label1;

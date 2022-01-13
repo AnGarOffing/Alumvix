@@ -41,6 +41,17 @@ namespace Alumvix.Controller.Gasto
                 ListViewItem itemGasto = new ListViewItem(row);
                 detalleGastoView.lstvDetalleGastos.Items.Add(itemGasto);
             }
+
+            GastoDao gastoDao = new GastoDao();
+
+            foreach (GastoDto gasto in gastoDao.ObtenerGastosSinProveedor())
+            {
+                idsGastos.Add(gasto.IdGasto);
+                contadorGastos++;
+                string[] row = { contadorGastos.ToString(), "N/A", CambioDeFormato.DarFormatoANumero(gasto.ValorGasto).ToString(), CambioDeFormato.CambiarFormatoDeFecha(gasto.FechaGasto), gasto.DescripcionGasto, "N/A", gasto.TipoGasto };
+                ListViewItem itemGasto = new ListViewItem(row);
+                detalleGastoView.lstvDetalleGastos.Items.Add(itemGasto);
+            }
         }
 
         private void MostrarIngresoGastoView(object sender, EventArgs e)

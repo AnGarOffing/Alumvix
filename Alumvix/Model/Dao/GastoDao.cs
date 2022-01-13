@@ -39,11 +39,37 @@ namespace Alumvix.Model.Dao
             return listadoGastos;
         }
 
-        public bool IngresarGasto(int valorGasto, string fechaGasto, string descripcionGasto, int idContrato)
+        public List<GastoDto> ObtenerGastosSinProveedor()
+        {
+            command.Connection = connection;
+            command.CommandText = "select ID_GASTO, valorGasto, fechaGasto, descripcionGasto, NombreTipoGasto from GASTO" 
+                                +" inner join TIPO_GASTO on GASTO.FK_ID_TIPO_GASTO = TIPO_GASTO.ID_TIPO_GASTO"
+                                +" where FK_ID_TIPO_GASTO<> 4";
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            lectorFilas = command.ExecuteReader();
+            List<GastoDto> listadoGastos = new List<GastoDto>();
+            while (lectorFilas.Read())
+            {
+                listadoGastos.Add(new GastoDto()
+                {
+                    IdGasto = lectorFilas.GetInt32(0),
+                    ValorGasto = lectorFilas.GetInt32(1),
+                    FechaGasto = lectorFilas.GetDateTime(2),
+                    DescripcionGasto = lectorFilas.GetString(3),
+                    TipoGasto = lectorFilas.GetString(4),
+                });
+            }
+            lectorFilas.Close();
+            connection.Close();
+            return listadoGastos;
+        }
+
+        public bool IngresarGasto(string numeroFactura, int valorGasto, string fechaGasto, string descripcionGasto, int? proveedor, int tipoGasto,  int idContrato)
         {
             bool respuesta = false;
             command.Connection = connection;
-            command.CommandText = "insert into GASTO values(" + valorGasto + ",'" + fechaGasto + "','" + descripcionGasto + "'," + idContrato + ")";
+            command.CommandText = "insert into GASTO values('" + numeroFactura + "' " + valorGasto + ",'" + fechaGasto + "','" + descripcionGasto + "'," + proveedor + ","+ tipoGasto +"," + idContrato + ")";
             command.CommandType = CommandType.Text;
             connection.Open();
             int filasAfectadasEnBd = command.ExecuteNonQuery();
@@ -69,11 +95,11 @@ namespace Alumvix.Model.Dao
             return respuesta;
         }
 
-        public bool ActualizarGasto(int idGasto, int valorGasto, string fechaGasto, string descripcionGasto)
+        public bool ActualizarGasto(string numeroFactura, int valorGasto, string fechaGasto, string descripcionGasto, int? proveedor, int tipoGasto, int idGasto)
         {
             bool respuesta = false;
             command.Connection = connection;
-            command.CommandText = "update GASTO set valorGasto = " + valorGasto + ", fechaGasto = '" + fechaGasto + "', descripcionGasto = '" + descripcionGasto+"'"
+            command.CommandText = "update GASTO set numeroFactura = '" + numeroFactura + "', valorGasto = " + valorGasto + ", fechaGasto = '" + fechaGasto + "', descripcionGasto = '" + descripcionGasto+ "', ID_PROVEEDOR1 = "+proveedor + ", FK_ID_TIPO_GASTO = " + tipoGasto 
                                 + " where ID_GASTO = " + idGasto;
             command.CommandType = CommandType.Text;
             connection.Open();
@@ -100,6 +126,21 @@ namespace Alumvix.Model.Dao
                 tiposDeGasto.Add(lectorFilas.GetString(1));
             }
             return tiposDeGasto;
+        }
+
+        public int ObtenerTipoGastoPorNombre(string nombreTipoGasto)
+        {
+            int idGasto = 0;
+            command.Connection = connection;
+            command.CommandText = "select ID_TIPO_GASTO from TIPO_GASTO where NombreTipoGasto = '"+nombreTipoGasto+"'";
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            lectorFilas = command.ExecuteReader();
+            lectorFilas.Read();
+            idGasto = lectorFilas.GetInt32(0);
+            lectorFilas.Close();
+            connection.Close();
+            return idGasto;
         }
     }
 }
