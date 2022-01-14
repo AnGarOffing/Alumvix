@@ -69,5 +69,13 @@ namespace Alumvix.Model.Negocio.Util
             }
             return mensaje;   
         }
+
+        public static bool ValidarBotonIngresoContrato(string valorContrato, int tipoFactura)
+        {
+            respuesta = false;
+            if (valorContrato != "" && tipoFactura != 0) respuesta = true;
+            return respuesta;
+        }
+
     }
 }

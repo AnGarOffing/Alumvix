@@ -59,7 +59,7 @@
             this.lblTipoFactura = new System.Windows.Forms.Label();
             this.txtTipoFactura = new System.Windows.Forms.TextBox();
             this.btnEditarAbono = new System.Windows.Forms.Button();
-            this.btnIngresarAbono = new System.Windows.Forms.Button();
+            this.btnIngresarContrato = new System.Windows.Forms.Button();
             this.btnEliminarAbono = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtEstadoTrabajo = new System.Windows.Forms.TextBox();
@@ -365,7 +365,7 @@
             this.pnlContrato.Controls.Add(this.lblTipoFactura);
             this.pnlContrato.Controls.Add(this.txtTipoFactura);
             this.pnlContrato.Controls.Add(this.btnEditarAbono);
-            this.pnlContrato.Controls.Add(this.btnIngresarAbono);
+            this.pnlContrato.Controls.Add(this.btnIngresarContrato);
             this.pnlContrato.Controls.Add(this.btnEliminarAbono);
             this.pnlContrato.Controls.Add(this.label1);
             this.pnlContrato.Controls.Add(this.txtEstadoTrabajo);
@@ -417,18 +417,18 @@
             this.btnEditarAbono.TabIndex = 41;
             this.btnEditarAbono.UseVisualStyleBackColor = false;
             // 
-            // btnIngresarAbono
+            // btnIngresarContrato
             // 
-            this.btnIngresarAbono.BackColor = System.Drawing.Color.Transparent;
-            this.btnIngresarAbono.FlatAppearance.BorderSize = 0;
-            this.btnIngresarAbono.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIngresarAbono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIngresarAbono.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresarAbono.Image")));
-            this.btnIngresarAbono.Location = new System.Drawing.Point(569, 9);
-            this.btnIngresarAbono.Name = "btnIngresarAbono";
-            this.btnIngresarAbono.Size = new System.Drawing.Size(46, 40);
-            this.btnIngresarAbono.TabIndex = 40;
-            this.btnIngresarAbono.UseVisualStyleBackColor = false;
+            this.btnIngresarContrato.BackColor = System.Drawing.Color.Transparent;
+            this.btnIngresarContrato.FlatAppearance.BorderSize = 0;
+            this.btnIngresarContrato.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIngresarContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngresarContrato.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresarContrato.Image")));
+            this.btnIngresarContrato.Location = new System.Drawing.Point(569, 9);
+            this.btnIngresarContrato.Name = "btnIngresarContrato";
+            this.btnIngresarContrato.Size = new System.Drawing.Size(46, 40);
+            this.btnIngresarContrato.TabIndex = 40;
+            this.btnIngresarContrato.UseVisualStyleBackColor = false;
             // 
             // btnEliminarAbono
             // 
@@ -817,7 +817,7 @@
         public System.Windows.Forms.Button btnAbrirIngresoProducto;
         public System.Windows.Forms.Button btnEliminarProducto;
         public System.Windows.Forms.Button btnEditarAbono;
-        public System.Windows.Forms.Button btnIngresarAbono;
+        public System.Windows.Forms.Button btnIngresarContrato;
         public System.Windows.Forms.Button btnEliminarAbono;
         public System.Windows.Forms.Label lblTipoFactura;
         public System.Windows.Forms.TextBox txtTipoFactura;

@@ -33,8 +33,8 @@
             this.lblIngresarTipoFactura = new System.Windows.Forms.Label();
             this.dtpFechaInicioContrato = new System.Windows.Forms.DateTimePicker();
             this.btnGuardarNuevoContrato = new System.Windows.Forms.Button();
-            this.txtIngresarValorGasto = new System.Windows.Forms.TextBox();
-            this.lvlValorIngresoGasto = new System.Windows.Forms.Label();
+            this.txtIngresarValorContrato = new System.Windows.Forms.TextBox();
+            this.lblValorIngresoGasto = new System.Windows.Forms.Label();
             this.lblIngresarFechaInicioContrato = new System.Windows.Forms.Label();
             this.lblTituloIngresarContrato = new System.Windows.Forms.Label();
             this.lblIngresarFechaFinalContrato = new System.Windows.Forms.Label();
@@ -50,8 +50,8 @@
             this.pnlIngresarContrato.Controls.Add(this.lblIngresarTipoFactura);
             this.pnlIngresarContrato.Controls.Add(this.dtpFechaInicioContrato);
             this.pnlIngresarContrato.Controls.Add(this.btnGuardarNuevoContrato);
-            this.pnlIngresarContrato.Controls.Add(this.txtIngresarValorGasto);
-            this.pnlIngresarContrato.Controls.Add(this.lvlValorIngresoGasto);
+            this.pnlIngresarContrato.Controls.Add(this.txtIngresarValorContrato);
+            this.pnlIngresarContrato.Controls.Add(this.lblValorIngresoGasto);
             this.pnlIngresarContrato.Controls.Add(this.lblIngresarFechaInicioContrato);
             this.pnlIngresarContrato.Location = new System.Drawing.Point(12, 61);
             this.pnlIngresarContrato.Name = "pnlIngresarContrato";
@@ -97,23 +97,23 @@
             this.btnGuardarNuevoContrato.Text = "Guardar";
             this.btnGuardarNuevoContrato.UseVisualStyleBackColor = true;
             // 
-            // txtIngresarValorGasto
+            // txtIngresarValorContrato
             // 
-            this.txtIngresarValorGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIngresarValorGasto.Location = new System.Drawing.Point(177, 30);
-            this.txtIngresarValorGasto.Name = "txtIngresarValorGasto";
-            this.txtIngresarValorGasto.Size = new System.Drawing.Size(100, 26);
-            this.txtIngresarValorGasto.TabIndex = 34;
+            this.txtIngresarValorContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIngresarValorContrato.Location = new System.Drawing.Point(177, 30);
+            this.txtIngresarValorContrato.Name = "txtIngresarValorContrato";
+            this.txtIngresarValorContrato.Size = new System.Drawing.Size(100, 26);
+            this.txtIngresarValorContrato.TabIndex = 34;
             // 
-            // lvlValorIngresoGasto
+            // lblValorIngresoGasto
             // 
-            this.lvlValorIngresoGasto.AutoSize = true;
-            this.lvlValorIngresoGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvlValorIngresoGasto.Location = new System.Drawing.Point(106, 30);
-            this.lvlValorIngresoGasto.Name = "lvlValorIngresoGasto";
-            this.lvlValorIngresoGasto.Size = new System.Drawing.Size(65, 24);
-            this.lvlValorIngresoGasto.TabIndex = 33;
-            this.lvlValorIngresoGasto.Text = "Valor:";
+            this.lblValorIngresoGasto.AutoSize = true;
+            this.lblValorIngresoGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValorIngresoGasto.Location = new System.Drawing.Point(106, 30);
+            this.lblValorIngresoGasto.Name = "lblValorIngresoGasto";
+            this.lblValorIngresoGasto.Size = new System.Drawing.Size(65, 24);
+            this.lblValorIngresoGasto.TabIndex = 33;
+            this.lblValorIngresoGasto.Text = "Valor:";
             // 
             // lblIngresarFechaInicioContrato
             // 
@@ -163,6 +163,7 @@
             this.Controls.Add(this.pnlIngresarContrato);
             this.Controls.Add(this.lblTituloIngresarContrato);
             this.Name = "IngresoContratoView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IngresoContratoView";
             this.pnlIngresarContrato.ResumeLayout(false);
             this.pnlIngresarContrato.PerformLayout();
@@ -178,8 +179,8 @@
         private System.Windows.Forms.Label lblIngresarTipoFactura;
         public System.Windows.Forms.DateTimePicker dtpFechaInicioContrato;
         public System.Windows.Forms.Button btnGuardarNuevoContrato;
-        public System.Windows.Forms.TextBox txtIngresarValorGasto;
-        private System.Windows.Forms.Label lvlValorIngresoGasto;
+        public System.Windows.Forms.TextBox txtIngresarValorContrato;
+        private System.Windows.Forms.Label lblValorIngresoGasto;
         private System.Windows.Forms.Label lblIngresarFechaInicioContrato;
         public System.Windows.Forms.Label lblTituloIngresarContrato;
         public System.Windows.Forms.DateTimePicker dtpFechaTerminacionContrato;

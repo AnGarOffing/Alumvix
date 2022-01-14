@@ -9,6 +9,7 @@ using Alumvix.Model.Logica.Util;
 using Alumvix.Model.Negocio;
 using Alumvix.View.Gasto;
 using Alumvix.View.Producto;
+using Alumvix.View.Contrato;
 
 namespace Alumvix.Controller.Cliente
 {
@@ -44,6 +45,7 @@ namespace Alumvix.Controller.Cliente
             detalleClienteVista.btnAbrirIngresoProducto.Click += new EventHandler(AbrirIngresoProductoView);
             detalleClienteVista.btnEliminarProducto.Click += new EventHandler(EliminarProducto);
             detalleClienteVista.lstvProductos.SelectedIndexChanged += new EventHandler(ObtenerNombreProducto);
+            detalleClienteVista.btnIngresarContrato.Click += new EventHandler(AbrirIngresoContratoView);
         }
 
 
@@ -175,6 +177,12 @@ namespace Alumvix.Controller.Cliente
         private void ObtenerNombreProducto(object sender, EventArgs e)
         {
             nombreProducto = detalleClienteVista.lstvProductos.SelectedItems[0].Text;
+        }
+
+        private void AbrirIngresoContratoView(object sender, EventArgs e)
+        {
+            IngresoContratoView ingresoContratoView = IngresoContratoView.ObtenerInstancia();
+            ingresoContratoView.ShowDialog();
         }
     }
 }

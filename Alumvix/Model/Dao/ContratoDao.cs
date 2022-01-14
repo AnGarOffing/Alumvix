@@ -25,8 +25,8 @@ namespace Alumvix.Model.Dao
             lectorFilas.Read();
             contrato.IdContrato = lectorFilas.GetInt32(0);
             contrato.ValorContrato = lectorFilas.GetInt32(1);
-            contrato.FechaInicioContrato = lectorFilas.GetDateTime(2).ToString().Substring(0,10);
-            contrato.FechaTerminacionContrato = lectorFilas.GetDateTime(3).ToString().Substring(0,10);
+            contrato.FechaInicioContrato = lectorFilas.GetDateTime(2).ToString().Substring(0, 10);
+            contrato.FechaTerminacionContrato = lectorFilas.GetDateTime(3).ToString().Substring(0, 10);
             contrato.EstadoContrato = lectorFilas.GetString(4);
             contrato.EstadoTrabajo = lectorFilas.GetString(5);
             contrato.TipoFactura = lectorFilas.GetString(6);
@@ -34,7 +34,39 @@ namespace Alumvix.Model.Dao
             connection.Close();
             return contrato;
         }
+
+        public bool GuardarContrato(int valorContrato, string fechaInicio, string fechaFin, int estadoContrato, int estadoTrabajo, int tipoFactura, int idCliente)
+        {
+            bool respuesta = false;
+            command.Connection = connection;
+            command.CommandText = "insert into CONTRATO values(" + valorContrato + ",'" + fechaInicio + "','" + fechaFin + "'," + estadoContrato + ", " + estadoTrabajo + ", " + tipoFactura + ", " + idCliente + ")";
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            int filasAfectadasEnBd = command.ExecuteNonQuery();
+            if (filasAfectadasEnBd > 0)
+            {
+                respuesta = true;
+            }
+            return respuesta;
+        }
+
+        public List<string> ObtenerTiposFactura()
+        {
+            command.Connection = connection;
+            command.CommandText = "select * from TIPO_FACTURA";
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            List<string> tiposFactura = new List<string>();
+            lectorFilas = command.ExecuteReader();
+            tiposFactura.Add("--Seleccionar--");
+            while (lectorFilas.Read())
+            {
+                tiposFactura.Add(lectorFilas.GetString(1));
+            }
+            return tiposFactura;
+        }
     }
-
-
 }
+
+
+

@@ -51,6 +51,7 @@
     <Compile Include="Controller\Abono\IngresoAbonoController.cs" />
     <Compile Include="Controller\Cliente\ClienteController.cs" />
     <Compile Include="Controller\Cliente\DetalleClienteController.cs" />
+    <Compile Include="Controller\Contrato\IngresoContratoController.cs" />
     <Compile Include="Controller\Gasto\DetalleGastoController.cs" />
     <Compile Include="Controller\Gasto\EditarGastoController.cs" />
     <Compile Include="Controller\Gasto\IngresoGastoController.cs" />
