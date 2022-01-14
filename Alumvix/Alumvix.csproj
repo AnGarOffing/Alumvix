@@ -104,6 +104,12 @@
     <Compile Include="View\Cliente\DetalleClienteView.Designer.cs">
       <DependentUpon>DetalleClienteView.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Contrato\IngresoContratoView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Contrato\IngresoContratoView.Designer.cs">
+      <DependentUpon>IngresoContratoView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Gasto\DetalleGastoView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Cliente\DetalleClienteView.resx">
       <DependentUpon>DetalleClienteView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Contrato\IngresoContratoView.resx">
+      <DependentUpon>IngresoContratoView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Gasto\DetalleGastoView.resx">
       <DependentUpon>DetalleGastoView.cs</DependentUpon>
