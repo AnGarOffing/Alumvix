@@ -33,6 +33,7 @@ namespace Alumvix.Controller.Gasto
         {
             detalleGastoView.lstvDetalleGastos.Items.Clear();
             int contadorGastos = 0;
+            idsGastos.Clear();
             foreach (GastoDto gasto in DetalleClienteController.ObtenerDetalleGastos())
             {
                 idsGastos.Add(gasto.IdGasto); //almacenamos ids de los gastos que se muestran 
@@ -51,23 +52,28 @@ namespace Alumvix.Controller.Gasto
 
         private void EliminarGasto(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Realmente desea borrar el gasto?", "BORRAR", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (detalleGastoView.lstvDetalleGastos.SelectedItems.Count > 0)
             {
-                bool respuesta = new GastoDao().EliminarGasto(EncontrarIdGasto(idsGastos, indice));
-                if (respuesta)
+                if (MessageBox.Show("¿Realmente desea borrar el gasto?", "BORRAR", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    detalleGastoView.lstvDetalleGastos.SelectedItems.Clear();
-                    MessageBox.Show("El gasto ha sido eliminado con exito");
-                }
-                else
-                {
-                    MessageBox.Show("Error al intentar eliminar el gasto");
+                    bool respuesta = new GastoDao().EliminarGasto(EncontrarIdGasto(idsGastos, indice));
+                    if (respuesta)
+                    {
+                        detalleGastoView.lstvDetalleGastos.SelectedItems.Clear();
+                        MessageBox.Show("El gasto ha sido eliminado con exito");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al intentar eliminar el gasto");
+                    }
                 }
             }
+            else MessageBox.Show("Debe seleccionar un gasto de la lista");
         }
 
         private int EncontrarIdGasto(List<int> idsGastos, int indice)
         {
+            Console.WriteLine(idsGastos[indice]);
             return idsGastos[indice];
         }
 

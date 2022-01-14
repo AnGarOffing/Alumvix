@@ -45,7 +45,7 @@ namespace Alumvix.Controller.Gasto
             }
             else
             {
-                respuesta = ValidacionesDeControles.ValidarBotonIngresoGasto(editarGastoView.txtActualizarValorGasto.Text, editarGastoView.txtEditarNumeroFactura.Text, editarGastoView.cbEditarTipoGasto.SelectedIndex);
+                respuesta = ValidacionesDeControles.ValidarBotonIngresoGasto(editarGastoView.txtActualizarValorGasto.Text, editarGastoView.txtEditarNumeroFactura.Text, editarGastoView.cbEditarTipoGasto.SelectedIndex, editarGastoView.cbEditarProveedor.SelectedIndex);
             }
             if (respuesta)
             {

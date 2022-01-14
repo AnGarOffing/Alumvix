@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Alumvix.Model.Negocio.Util
 {
@@ -27,10 +28,14 @@ namespace Alumvix.Model.Negocio.Util
             return respuesta;
         }
 
-        public static bool ValidarBotonIngresoGasto(string valorGasto, string numeroFactura, int tipoGasto)
+        public static bool ValidarBotonIngresoGasto(string valorGasto, string numeroFactura, int tipoGasto, int proveedor)
         {
             respuesta = false;
-            if (valorGasto != "" && numeroFactura != "" && tipoGasto != 0) respuesta = true;
+            if (valorGasto != "" && numeroFactura != "" && tipoGasto != 0 && proveedor != 0) 
+            {
+                if (proveedor == 1) MessageBox.Show("No ha elegido un proveedor valido");
+                else respuesta = true;
+            }
             return respuesta;
         }
         public static bool ValidarBotonIngresoGastoSinFactura(string valorGasto, int tipoGasto)

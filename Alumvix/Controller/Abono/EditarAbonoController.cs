@@ -1,5 +1,6 @@
 ﻿using Alumvix.Controller.Cliente;
 using Alumvix.Model.Dao;
+using Alumvix.Model.Logica.Util;
 using Alumvix.Model.Negocio.Util;
 using Alumvix.View.Abono;
 using System;
@@ -42,7 +43,8 @@ namespace Alumvix.Controller.Abono
             }
             else
             {
-                bool respuestaActualizacionAbono = abonoActualizado.ActualizarAbono(DetalleAbonoController.idAbono, Convert.ToInt32(editarAbonoView.txtIActualizarValorAbono.Text), editarAbonoView.cbActualizarFormaDePago.SelectedIndex, editarAbonoView.dtpActualizarFechaAbono.Text);
+                string valorSinFormato = CambioDeFormato.QuitarFormatoANumero(editarAbonoView.txtIActualizarValorAbono.Text);
+                bool respuestaActualizacionAbono = abonoActualizado.ActualizarAbono(DetalleAbonoController.idAbono, Convert.ToInt32(valorSinFormato), editarAbonoView.cbActualizarFormaDePago.SelectedIndex, editarAbonoView.dtpActualizarFechaAbono.Text);
                 if (respuestaActualizacionAbono)
                 {
                     editarAbonoView.txtIActualizarValorAbono.Clear();

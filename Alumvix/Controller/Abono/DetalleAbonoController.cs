@@ -52,19 +52,24 @@ namespace Alumvix.Controller.Abono
 
         private void EliminarAbono(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Realmente desea borrar el abono?", "BORRAR", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (detalleAbonoView.lstvDetalleAbonos.SelectedItems.Count > 0)
             {
-                bool respuesta = new AbonoDao().EliminarAbono(idAbono);
-                if (respuesta) 
+                if (MessageBox.Show("¿Realmente desea borrar el abono?", "BORRAR", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    detalleAbonoView.lstvDetalleAbonos.SelectedItems.Clear();
-                    MessageBox.Show("El abono ha sido eliminado con exito");           
+                    bool respuesta = new AbonoDao().EliminarAbono(idAbono);
+                    if (respuesta)
+                    {
+                        detalleAbonoView.lstvDetalleAbonos.SelectedItems.Clear();
+                        MessageBox.Show("El abono ha sido eliminado con exito");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al intentar eliminar el abono");
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Error al intentar eliminar el abono");
-                }      
-            }          
+            }
+            else MessageBox.Show("Debe seleccionar un abono de la lista");
+                    
         }
 
 
