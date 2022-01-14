@@ -15,9 +15,11 @@ namespace Alumvix.Controller
         static List<ClienteDto> registroCliente = new List<ClienteDto>();
         ClienteView clienteVista;
         DetalleClienteView detalleClienteVista;
+        SeleccionarContratoView seleccionarContratoView;
         static int idCliente;
         static string nombreCliente;
         Logica logica;
+  
 
         public ClienteController(ClienteView view)
         {
@@ -76,13 +78,12 @@ namespace Alumvix.Controller
                 else if (contadorContratos > 0 && contadorContratos <= 1)
                 {
                     detalleClienteVista = new DetalleClienteView();
-                    detalleClienteVista.Show();
+                    detalleClienteVista.ShowDialog();
                 }
                 else
                 {
-                    SeleccionarContratoView seleccionarContratoView  = SeleccionarContratoView.ObtenerInstancia();
+                    seleccionarContratoView = new SeleccionarContratoView();
                     seleccionarContratoView.ShowDialog();
-                    
                 } 
             }
             else

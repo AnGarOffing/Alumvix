@@ -120,6 +120,21 @@ namespace Alumvix.Model.Dao
             connection.Close();
             return contrato;
         }
+
+        public bool EliminarContrato(int idContrato)
+        {
+            bool respuesta = false;
+            command.Connection = connection;
+            command.CommandText = "delete from CONTRATO where ID_CONTRATO = " + idContrato;
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            int filasAfectadasEnBd = command.ExecuteNonQuery();
+            if (filasAfectadasEnBd > 0)
+            {
+                respuesta = true;
+            }
+            return respuesta;
+        }
     }
 }
 

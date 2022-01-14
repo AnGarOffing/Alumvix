@@ -49,6 +49,24 @@ namespace Alumvix.Controller.Cliente
             detalleClienteVista.lstvProductos.SelectedIndexChanged += new EventHandler(ObtenerNombreProducto);
             detalleClienteVista.btnIngresarContrato.Click += new EventHandler(AbrirIngresoContratoView);
             detalleClienteVista.FormClosed += new FormClosedEventHandler(CerrarFormularioContratos);
+            detalleClienteVista.btnEliminarContrato.Click += new EventHandler(EliminarContrato);
+        }
+
+        private void EliminarContrato(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Realmente desea borrar el contrato?", "BORRAR", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                bool respuesta = new ContratoDao().EliminarContrato(contratoDto.IdContrato);
+                if (respuesta)
+                {
+                    MessageBox.Show("El contrato ha sido eliminado con exito");
+                    detalleClienteVista.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Error al intentar eliminar el contrato");
+                }
+            }
         }
 
         private void CerrarFormularioContratos(object sender, EventArgs e)

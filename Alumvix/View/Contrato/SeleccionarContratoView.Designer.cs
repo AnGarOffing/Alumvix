@@ -118,6 +118,7 @@
             this.Controls.Add(this.lstvListadoContratos);
             this.Controls.Add(this.lblTituloSeleccionarContrato);
             this.Name = "SeleccionarContratoView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SeleccionarContratoView";
             this.ResumeLayout(false);
             this.PerformLayout();
