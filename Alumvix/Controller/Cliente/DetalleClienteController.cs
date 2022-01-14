@@ -10,6 +10,7 @@ using Alumvix.Model.Negocio;
 using Alumvix.View.Gasto;
 using Alumvix.View.Producto;
 using Alumvix.View.Contrato;
+using Alumvix.Controller.Contrato;
 
 namespace Alumvix.Controller.Cliente
 {
@@ -23,11 +24,12 @@ namespace Alumvix.Controller.Cliente
         static List<ProductoDto> productos;
         Logica logica;
         string nombreProducto;
+        SeleccionarContratoView seleccionarContratoView = SeleccionarContratoController.ObtenerInstanciaSeleccionarContratoView();
 
 
         public DetalleClienteController(DetalleClienteView detalleClienteView)
         {
-            contratoDto = new ContratoDao().ObtenerContrato(ClienteController.ObtenerIdCliente());
+            contratoDto = SeleccionarContrato();
             abonos = new AbonoDao().ObtenerAbonos(contratoDto.IdContrato);
             gastos = new GastoDao().ObtenerGastos(contratoDto.IdContrato);
             productos = new ProductoDao().ObtenerListadoProductos(contratoDto.IdContrato);
@@ -46,8 +48,30 @@ namespace Alumvix.Controller.Cliente
             detalleClienteVista.btnEliminarProducto.Click += new EventHandler(EliminarProducto);
             detalleClienteVista.lstvProductos.SelectedIndexChanged += new EventHandler(ObtenerNombreProducto);
             detalleClienteVista.btnIngresarContrato.Click += new EventHandler(AbrirIngresoContratoView);
+            detalleClienteVista.FormClosed += new FormClosedEventHandler(CerrarFormularioContratos);
         }
 
+        private void CerrarFormularioContratos(object sender, EventArgs e)
+        {
+            seleccionarContratoView.Close();
+        }
+
+        private ContratoDto SeleccionarContrato()
+        {
+            ContratoDto contratoARetornar = null;
+            ContratoDao contrato = new ContratoDao();
+            List<ContratoDto> listadoContratos= contrato.ObtenerContratos(ClienteController.ObtenerIdCliente());
+            int sumaContratos = listadoContratos.Count;
+            if (sumaContratos == 1)
+            {
+                contratoARetornar = contrato.ObtenerContrato(ClienteController.ObtenerIdCliente());
+            }
+            else if (sumaContratos > 1)
+            {
+                contratoARetornar = contrato.ObtenerContratoPorIdContrato(Convert.ToInt32(seleccionarContratoView.lstvListadoContratos.SelectedItems[0].SubItems[0].Text));
+            }
+            return contratoARetornar;
+        }
 
         //metodo para mostrar info de un cliente en la vista "DetalleClienteView"
         private void MostrarClienteSeleccionado(object sender, EventArgs e)

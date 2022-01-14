@@ -16,6 +16,7 @@ namespace Alumvix.Controller
         ClienteView clienteVista;
         DetalleClienteView detalleClienteVista;
         static int idCliente;
+        static string nombreCliente;
         Logica logica;
 
         public ClienteController(ClienteView view)
@@ -55,7 +56,8 @@ namespace Alumvix.Controller
             clienteDto.CelularCliente = clienteVista.dataGridClientes.Rows[e.RowIndex].Cells["celularCliente"].Value.ToString();
             clienteDto.TelefonoFijoCliente = clienteVista.dataGridClientes.Rows[e.RowIndex].Cells["telefonoFijoCliente"].Value.ToString();
             clienteDto.DireccionCliente = clienteVista.dataGridClientes.Rows[e.RowIndex].Cells["direccionCliente"].Value.ToString();
-            registroCliente.Add(clienteDto);   
+            registroCliente.Add(clienteDto);
+            nombreCliente = clienteVista.dataGridClientes.Rows[e.RowIndex].Cells["nombreCliente"].Value.ToString();
         }
 
         private void AbrirDetalleClienteView(object sender, EventArgs e)
@@ -93,6 +95,11 @@ namespace Alumvix.Controller
         public static int ObtenerIdCliente()
         {
             return idCliente;
+        }
+
+        public static string ObtenerNombreCliente()
+        {
+            return nombreCliente;
         }
     }
 }
