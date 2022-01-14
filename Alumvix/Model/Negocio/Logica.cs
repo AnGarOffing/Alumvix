@@ -1,4 +1,5 @@
-﻿using Alumvix.Model.Dto;
+﻿using Alumvix.Model.Dao;
+using Alumvix.Model.Dto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,6 +45,13 @@ namespace Alumvix.Model.Negocio
                 utilidad = 0;
             }
             return utilidad;
+        }
+
+        public int ConsultarCantidadContratos(int idCliente)
+        {
+            ContratoDao contratoDao = new ContratoDao();
+            int contadorContratos = contratoDao.ObtenerContratos(idCliente).Count;
+            return contadorContratos;
         }
     }
 }

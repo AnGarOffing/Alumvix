@@ -52,6 +52,7 @@
     <Compile Include="Controller\Cliente\ClienteController.cs" />
     <Compile Include="Controller\Cliente\DetalleClienteController.cs" />
     <Compile Include="Controller\Contrato\IngresoContratoController.cs" />
+    <Compile Include="Controller\Contrato\SeleccionarContratoController.cs" />
     <Compile Include="Controller\Gasto\DetalleGastoController.cs" />
     <Compile Include="Controller\Gasto\EditarGastoController.cs" />
     <Compile Include="Controller\Gasto\IngresoGastoController.cs" />
@@ -111,6 +112,12 @@
     <Compile Include="View\Contrato\IngresoContratoView.Designer.cs">
       <DependentUpon>IngresoContratoView.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Contrato\SeleccionarContratoView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Contrato\SeleccionarContratoView.Designer.cs">
+      <DependentUpon>SeleccionarContratoView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Gasto\DetalleGastoView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Contrato\IngresoContratoView.resx">
       <DependentUpon>IngresoContratoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Contrato\SeleccionarContratoView.resx">
+      <DependentUpon>SeleccionarContratoView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Gasto\DetalleGastoView.resx">
       <DependentUpon>DetalleGastoView.cs</DependentUpon>

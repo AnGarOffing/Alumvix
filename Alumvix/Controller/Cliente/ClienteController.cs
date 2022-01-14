@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using Alumvix.Model.Dao;
 using Alumvix.Model.Dto;
+using Alumvix.Model.Negocio;
 using Alumvix.View;
 using Alumvix.View.Cliente;
+using Alumvix.View.Contrato;
 
 namespace Alumvix.Controller
 {
@@ -14,14 +16,16 @@ namespace Alumvix.Controller
         ClienteView clienteVista;
         DetalleClienteView detalleClienteVista;
         static int idCliente;
+        Logica logica;
 
         public ClienteController(ClienteView view)
         {
+            logica = new Logica();
             clienteVista = view;
             clienteVista.Load += new EventHandler(ObtenerListadoClientes);
             clienteVista.txtFiltrarCliente.TextChanged += new EventHandler(ObtenerListadoClientes);
             clienteVista.dataGridClientes.CellClick += new DataGridViewCellEventHandler(ObtenerRegistroCliente);
-            clienteVista.btnDetalleCliente.Click += new EventHandler(AbrirDetalleClienteForm);  
+            clienteVista.btnDetalleCliente.Click += new EventHandler(AbrirDetalleClienteView);  
         }
 
 
@@ -54,12 +58,30 @@ namespace Alumvix.Controller
             registroCliente.Add(clienteDto);   
         }
 
-        private void AbrirDetalleClienteForm(object sender, EventArgs e)
+        private void AbrirDetalleClienteView(object sender, EventArgs e)
         {
             if (registroCliente.Count > 0)
             {
-                detalleClienteVista = new DetalleClienteView();
-                detalleClienteVista.Show();
+                int contadorContratos = logica.ConsultarCantidadContratos(ObtenerIdCliente());
+                if (contadorContratos == 0)
+                {
+                    if (MessageBox.Show("El cliente no tiene contratos ¿Desea crear uno?", "CREAR", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        IngresoContratoView ingresoContratoView = IngresoContratoView.ObtenerInstancia();
+                        ingresoContratoView.ShowDialog();
+                    }
+                }
+                else if (contadorContratos > 0 && contadorContratos <= 1)
+                {
+                    detalleClienteVista = new DetalleClienteView();
+                    detalleClienteVista.Show();
+                }
+                else
+                {
+                    SeleccionarContratoView seleccionarContratoView  = SeleccionarContratoView.ObtenerInstancia();
+                    seleccionarContratoView.ShowDialog();
+                    
+                } 
             }
             else
             {

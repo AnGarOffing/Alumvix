@@ -62,7 +62,6 @@
             this.lstvDetalleGastos.TabIndex = 36;
             this.lstvDetalleGastos.UseCompatibleStateImageBehavior = false;
             this.lstvDetalleGastos.View = System.Windows.Forms.View.Details;
-            this.lstvDetalleGastos.SelectedIndexChanged += new System.EventHandler(this.lstvDetalleGastos_SelectedIndexChanged);
             // 
             // columnaNumeroGasto
             // 
