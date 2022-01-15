@@ -50,6 +50,22 @@ namespace Alumvix.Model.Dao
             return respuesta;
         }
 
+        public bool ActualizarContrato(int valorContrato, string fechaInicio, string fechaFin, int estadoTrabajo, int tipoFactura, int idContrato)
+        {
+            bool respuesta = false;
+            command.Connection = connection;
+            command.CommandText = "update CONTRATO set valorContrato = " + valorContrato + ", fechaInicioContrato = '" + fechaInicio + "', fechaTerminacionContrato = '" + fechaFin + "',  FK_ID_ESTADO_TRABAJO = " + estadoTrabajo + ", FK_ID_TIPO_FACTURA = " + tipoFactura 
+                                + " where ID_CONTRATO = " + idContrato;
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            int filasAfectadasEnBd = command.ExecuteNonQuery();
+            if (filasAfectadasEnBd > 0)
+            {
+                respuesta = true;
+            }
+            return respuesta;
+        }
+
         public List<string> ObtenerTiposFactura()
         {
             command.Connection = connection;
@@ -57,12 +73,14 @@ namespace Alumvix.Model.Dao
             command.CommandType = CommandType.Text;
             connection.Open();
             List<string> tiposFactura = new List<string>();
-            lectorFilas = command.ExecuteReader();
+            lectorFilas = command.ExecuteReader();           
             tiposFactura.Add("--Seleccionar--");
             while (lectorFilas.Read())
             {
                 tiposFactura.Add(lectorFilas.GetString(1));
             }
+            lectorFilas.Close();
+            connection.Close();
             return tiposFactura;
         }
 
@@ -148,6 +166,23 @@ namespace Alumvix.Model.Dao
             lectorFilas.Close();
             connection.Close();
             return valorIva;
+        }
+
+        public List<string> ObtenerEstadosTrabajo()
+        {
+            command.Connection = connection;
+            command.CommandText = "select * from ESTADO_TRABAJO";
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            List<string> tiposFactura = new List<string>();
+            lectorFilas = command.ExecuteReader();
+            while (lectorFilas.Read())
+            {
+                tiposFactura.Add(lectorFilas.GetString(1));
+            }
+            lectorFilas.Close();
+            connection.Close();
+            return tiposFactura;
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Alumvix.Controller.Cliente
 {
     internal class DetalleClienteController
     {
-        DetalleClienteView detalleClienteVista;
+        static DetalleClienteView detalleClienteVista;
         List<ClienteDto> registroCliente;
         static ContratoDto contratoDto;
         static List<GastoDto> gastos;
@@ -37,7 +37,7 @@ namespace Alumvix.Controller.Cliente
             logica = new Logica();
             detalleClienteVista = detalleClienteView;
             detalleClienteVista.Load += new EventHandler(MostrarClienteSeleccionado);
-            detalleClienteVista.Load += new EventHandler(MostrarContrato);
+            detalleClienteVista.Activated += new EventHandler(MostrarContrato);
             detalleClienteVista.Activated += new EventHandler(MostrarGastos);
             detalleClienteVista.Activated += new EventHandler(MostrarAbonos);
             detalleClienteVista.Activated += new EventHandler(MostrarCuentas);
@@ -117,6 +117,7 @@ namespace Alumvix.Controller.Cliente
 
         private void MostrarContrato(object sender, EventArgs e)
         {
+            contratoDto = SeleccionarContrato();
             detalleClienteVista.txtNumeroFactura.Text = contratoDto.IdContrato.ToString();
             detalleClienteVista.txtTipoFactura.Text = contratoDto.TipoFactura.ToString();
             detalleClienteVista.txtValorContrato.Text = CambioDeFormato.DarFormatoANumero(contratoDto.ValorContrato);
@@ -239,5 +240,12 @@ namespace Alumvix.Controller.Cliente
             IngresoContratoView ingresoContratoView = IngresoContratoView.ObtenerInstancia();
             ingresoContratoView.ShowDialog();
         }
+
+        public static DetalleClienteView ObtenerInstanciaDetalleClienteView()
+        {
+            return detalleClienteVista;
+        }
+
+
     }
 }

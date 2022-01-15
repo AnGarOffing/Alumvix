@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.pnlEditarContrato = new System.Windows.Forms.Panel();
+            this.cbEditarEstadoTrabajo = new System.Windows.Forms.ComboBox();
+            this.lblEditarEstadoTrabajo = new System.Windows.Forms.Label();
             this.dtpEditarFechaTerminacionContrato = new System.Windows.Forms.DateTimePicker();
             this.lblEditarFechaFinalContrato = new System.Windows.Forms.Label();
             this.cbEditarTipoFactura = new System.Windows.Forms.ComboBox();
             this.lblEditarTipoFactura = new System.Windows.Forms.Label();
             this.dtpEditarFechaInicioContrato = new System.Windows.Forms.DateTimePicker();
-            this.btnGuardarNuevoContrato = new System.Windows.Forms.Button();
+            this.btnActualizarContrato = new System.Windows.Forms.Button();
             this.txtEditarValorContrato = new System.Windows.Forms.TextBox();
             this.lblEditarValorContrato = new System.Windows.Forms.Label();
             this.lblEditarFechaInicioContrato = new System.Windows.Forms.Label();
             this.lblTituloEditarContrato = new System.Windows.Forms.Label();
-            this.lblEditarEstadoTrabajo = new System.Windows.Forms.Label();
-            this.cbEditarEstadoTrabajo = new System.Windows.Forms.ComboBox();
             this.pnlEditarContrato.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,14 +53,33 @@
             this.pnlEditarContrato.Controls.Add(this.cbEditarTipoFactura);
             this.pnlEditarContrato.Controls.Add(this.lblEditarTipoFactura);
             this.pnlEditarContrato.Controls.Add(this.dtpEditarFechaInicioContrato);
-            this.pnlEditarContrato.Controls.Add(this.btnGuardarNuevoContrato);
+            this.pnlEditarContrato.Controls.Add(this.btnActualizarContrato);
             this.pnlEditarContrato.Controls.Add(this.txtEditarValorContrato);
             this.pnlEditarContrato.Controls.Add(this.lblEditarValorContrato);
             this.pnlEditarContrato.Controls.Add(this.lblEditarFechaInicioContrato);
             this.pnlEditarContrato.Location = new System.Drawing.Point(12, 56);
             this.pnlEditarContrato.Name = "pnlEditarContrato";
-            this.pnlEditarContrato.Size = new System.Drawing.Size(577, 255);
+            this.pnlEditarContrato.Size = new System.Drawing.Size(589, 255);
             this.pnlEditarContrato.TabIndex = 43;
+            // 
+            // cbEditarEstadoTrabajo
+            // 
+            this.cbEditarEstadoTrabajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbEditarEstadoTrabajo.FormattingEnabled = true;
+            this.cbEditarEstadoTrabajo.Location = new System.Drawing.Point(241, 215);
+            this.cbEditarEstadoTrabajo.Name = "cbEditarEstadoTrabajo";
+            this.cbEditarEstadoTrabajo.Size = new System.Drawing.Size(218, 28);
+            this.cbEditarEstadoTrabajo.TabIndex = 51;
+            // 
+            // lblEditarEstadoTrabajo
+            // 
+            this.lblEditarEstadoTrabajo.AutoSize = true;
+            this.lblEditarEstadoTrabajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditarEstadoTrabajo.Location = new System.Drawing.Point(48, 215);
+            this.lblEditarEstadoTrabajo.Name = "lblEditarEstadoTrabajo";
+            this.lblEditarEstadoTrabajo.Size = new System.Drawing.Size(187, 24);
+            this.lblEditarEstadoTrabajo.TabIndex = 50;
+            this.lblEditarEstadoTrabajo.Text = "Estado de Trabajo:";
             // 
             // dtpEditarFechaTerminacionContrato
             // 
@@ -86,7 +105,7 @@
             // 
             this.cbEditarTipoFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbEditarTipoFactura.FormattingEnabled = true;
-            this.cbEditarTipoFactura.Location = new System.Drawing.Point(177, 74);
+            this.cbEditarTipoFactura.Location = new System.Drawing.Point(241, 74);
             this.cbEditarTipoFactura.Name = "cbEditarTipoFactura";
             this.cbEditarTipoFactura.Size = new System.Drawing.Size(218, 28);
             this.cbEditarTipoFactura.TabIndex = 43;
@@ -95,7 +114,7 @@
             // 
             this.lblEditarTipoFactura.AutoSize = true;
             this.lblEditarTipoFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditarTipoFactura.Location = new System.Drawing.Point(15, 74);
+            this.lblEditarTipoFactura.Location = new System.Drawing.Point(79, 74);
             this.lblEditarTipoFactura.Name = "lblEditarTipoFactura";
             this.lblEditarTipoFactura.Size = new System.Drawing.Size(156, 24);
             this.lblEditarTipoFactura.TabIndex = 42;
@@ -106,25 +125,25 @@
             this.dtpEditarFechaInicioContrato.CustomFormat = "yyyy/MM/dd";
             this.dtpEditarFechaInicioContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpEditarFechaInicioContrato.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpEditarFechaInicioContrato.Location = new System.Drawing.Point(182, 121);
+            this.dtpEditarFechaInicioContrato.Location = new System.Drawing.Point(241, 121);
             this.dtpEditarFechaInicioContrato.Name = "dtpEditarFechaInicioContrato";
             this.dtpEditarFechaInicioContrato.Size = new System.Drawing.Size(120, 26);
             this.dtpEditarFechaInicioContrato.TabIndex = 40;
             // 
-            // btnGuardarNuevoContrato
+            // btnActualizarContrato
             // 
-            this.btnGuardarNuevoContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarNuevoContrato.Location = new System.Drawing.Point(483, 210);
-            this.btnGuardarNuevoContrato.Name = "btnGuardarNuevoContrato";
-            this.btnGuardarNuevoContrato.Size = new System.Drawing.Size(83, 33);
-            this.btnGuardarNuevoContrato.TabIndex = 39;
-            this.btnGuardarNuevoContrato.Text = "Guardar";
-            this.btnGuardarNuevoContrato.UseVisualStyleBackColor = true;
+            this.btnActualizarContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizarContrato.Location = new System.Drawing.Point(474, 212);
+            this.btnActualizarContrato.Name = "btnActualizarContrato";
+            this.btnActualizarContrato.Size = new System.Drawing.Size(100, 33);
+            this.btnActualizarContrato.TabIndex = 39;
+            this.btnActualizarContrato.Text = "Actualizar";
+            this.btnActualizarContrato.UseVisualStyleBackColor = true;
             // 
             // txtEditarValorContrato
             // 
             this.txtEditarValorContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEditarValorContrato.Location = new System.Drawing.Point(177, 30);
+            this.txtEditarValorContrato.Location = new System.Drawing.Point(241, 30);
             this.txtEditarValorContrato.Name = "txtEditarValorContrato";
             this.txtEditarValorContrato.Size = new System.Drawing.Size(100, 26);
             this.txtEditarValorContrato.TabIndex = 34;
@@ -133,7 +152,7 @@
             // 
             this.lblEditarValorContrato.AutoSize = true;
             this.lblEditarValorContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditarValorContrato.Location = new System.Drawing.Point(106, 30);
+            this.lblEditarValorContrato.Location = new System.Drawing.Point(170, 30);
             this.lblEditarValorContrato.Name = "lblEditarValorContrato";
             this.lblEditarValorContrato.Size = new System.Drawing.Size(65, 24);
             this.lblEditarValorContrato.TabIndex = 33;
@@ -143,7 +162,7 @@
             // 
             this.lblEditarFechaInicioContrato.AutoSize = true;
             this.lblEditarFechaInicioContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditarFechaInicioContrato.Location = new System.Drawing.Point(15, 121);
+            this.lblEditarFechaInicioContrato.Location = new System.Drawing.Point(74, 123);
             this.lblEditarFechaInicioContrato.Name = "lblEditarFechaInicioContrato";
             this.lblEditarFechaInicioContrato.Size = new System.Drawing.Size(161, 24);
             this.lblEditarFechaInicioContrato.TabIndex = 35;
@@ -159,30 +178,11 @@
             this.lblTituloEditarContrato.TabIndex = 42;
             this.lblTituloEditarContrato.Text = "Editar Contrato";
             // 
-            // lblEditarEstadoTrabajo
-            // 
-            this.lblEditarEstadoTrabajo.AutoSize = true;
-            this.lblEditarEstadoTrabajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditarEstadoTrabajo.Location = new System.Drawing.Point(48, 215);
-            this.lblEditarEstadoTrabajo.Name = "lblEditarEstadoTrabajo";
-            this.lblEditarEstadoTrabajo.Size = new System.Drawing.Size(187, 24);
-            this.lblEditarEstadoTrabajo.TabIndex = 50;
-            this.lblEditarEstadoTrabajo.Text = "Estado de Trabajo:";
-            // 
-            // cbEditarEstadoTrabajo
-            // 
-            this.cbEditarEstadoTrabajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbEditarEstadoTrabajo.FormattingEnabled = true;
-            this.cbEditarEstadoTrabajo.Location = new System.Drawing.Point(241, 215);
-            this.cbEditarEstadoTrabajo.Name = "cbEditarEstadoTrabajo";
-            this.cbEditarEstadoTrabajo.Size = new System.Drawing.Size(218, 28);
-            this.cbEditarEstadoTrabajo.TabIndex = 51;
-            // 
             // EditarContratoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 323);
+            this.ClientSize = new System.Drawing.Size(613, 323);
             this.Controls.Add(this.pnlEditarContrato);
             this.Controls.Add(this.lblTituloEditarContrato);
             this.Name = "EditarContratoView";
@@ -203,7 +203,7 @@
         public System.Windows.Forms.ComboBox cbEditarTipoFactura;
         private System.Windows.Forms.Label lblEditarTipoFactura;
         public System.Windows.Forms.DateTimePicker dtpEditarFechaInicioContrato;
-        public System.Windows.Forms.Button btnGuardarNuevoContrato;
+        public System.Windows.Forms.Button btnActualizarContrato;
         public System.Windows.Forms.TextBox txtEditarValorContrato;
         private System.Windows.Forms.Label lblEditarValorContrato;
         private System.Windows.Forms.Label lblEditarFechaInicioContrato;
