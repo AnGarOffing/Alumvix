@@ -1,4 +1,5 @@
 ﻿using Alumvix.Model.Dao;
+using Alumvix.Model.Negocio;
 using Alumvix.Model.Negocio.Util;
 using Alumvix.View.Contrato;
 using System;
@@ -28,8 +29,14 @@ namespace Alumvix.Controller.Contrato
             }
             else
             {
+                int valorContratoCalculado;
                 ContratoDao contratoDao = new ContratoDao();
-                bool respuestaIngresoContrato = contratoDao.GuardarContrato(Convert.ToInt32(ingresoContratoView.txtIngresarValorContrato.Text), ingresoContratoView.dtpFechaInicioContrato.Text, ingresoContratoView.dtpFechaTerminacionContrato.Text, 1, 1, ingresoContratoView.cbIngresarTipoFactura.SelectedIndex, ClienteController.ObtenerIdCliente());
+                if (ingresoContratoView.cbIngresarTipoFactura.SelectedIndex == 1)
+                {
+                    valorContratoCalculado = Logica.AplicarIVA(Convert.ToInt32(ingresoContratoView.txtIngresarValorContrato.Text), 1);
+                }else valorContratoCalculado = Convert.ToInt32(ingresoContratoView.txtIngresarValorContrato.Text);
+
+                bool respuestaIngresoContrato = contratoDao.GuardarContrato(valorContratoCalculado, ingresoContratoView.dtpFechaInicioContrato.Text, ingresoContratoView.dtpFechaTerminacionContrato.Text, 1, 1, ingresoContratoView.cbIngresarTipoFactura.SelectedIndex, ClienteController.ObtenerIdCliente());
                 if (respuestaIngresoContrato)
                 {
                     ingresoContratoView.txtIngresarValorContrato.Clear();
@@ -37,9 +44,7 @@ namespace Alumvix.Controller.Contrato
                     ingresoContratoView.Close();
                     MessageBox.Show("El contrato ha sido guardado con exito");
                 }else MessageBox.Show("Error al guardar el contrato");
-
-            }
-            
+            }      
         }
 
         private void CargarTiposFactura(object sender, EventArgs e)

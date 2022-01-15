@@ -50,6 +50,13 @@ namespace Alumvix.Controller.Cliente
             detalleClienteVista.btnIngresarContrato.Click += new EventHandler(AbrirIngresoContratoView);
             detalleClienteVista.FormClosed += new FormClosedEventHandler(CerrarFormularioContratos);
             detalleClienteVista.btnEliminarContrato.Click += new EventHandler(EliminarContrato);
+            detalleClienteVista.btnEditarContrato.Click += new EventHandler(AbrirEditarContratoView);
+        }
+
+        private void AbrirEditarContratoView(object sender, EventArgs e)
+        {
+            EditarContratoView editarAbonoView = new EditarContratoView();
+            editarAbonoView.ShowDialog();   
         }
 
         private void EliminarContrato(object sender, EventArgs e)
@@ -71,7 +78,13 @@ namespace Alumvix.Controller.Cliente
 
         private void CerrarFormularioContratos(object sender, EventArgs e)
         {
-            seleccionarContratoView.Close();
+            foreach (Form frm in Application.OpenForms)
+            {
+                if (frm.GetType() == typeof(SeleccionarContratoView))
+                {
+                    frm.Close();
+                }
+            }       
         }
 
         private ContratoDto SeleccionarContrato()

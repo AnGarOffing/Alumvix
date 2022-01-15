@@ -53,5 +53,12 @@ namespace Alumvix.Model.Negocio
             int contadorContratos = contratoDao.ObtenerContratos(idCliente).Count;
             return contadorContratos;
         }
+
+        public static int AplicarIVA(int valor, int idIva)
+        {
+            ContratoDao contratoDao = new ContratoDao();
+            double iva = contratoDao.ConsultarIVA(idIva);
+            return (int)(valor * iva) + valor;
+        }
     }
 }

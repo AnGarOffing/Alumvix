@@ -19,3 +19,4 @@ D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug
 D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug\Alumvix.View.Gasto.EditarGastoView.resources
 D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug\Alumvix.View.Contrato.IngresoContratoView.resources
 D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug\Alumvix.View.Contrato.SeleccionarContratoView.resources
+D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug\Alumvix.View.Contrato.EditarContratoView.resources

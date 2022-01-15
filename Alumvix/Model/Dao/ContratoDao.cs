@@ -135,6 +135,20 @@ namespace Alumvix.Model.Dao
             }
             return respuesta;
         }
+
+        public double ConsultarIVA(int idIva)
+        {
+            command.Connection = connection;
+            command.CommandText = "select valor from VALOR_UTIL where ID_VALOR_UTIL = " + idIva;
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            lectorFilas = command.ExecuteReader();
+            lectorFilas.Read();
+            double valorIva = lectorFilas.GetDouble(0);
+            lectorFilas.Close();
+            connection.Close();
+            return valorIva;
+        }
     }
 }
 
