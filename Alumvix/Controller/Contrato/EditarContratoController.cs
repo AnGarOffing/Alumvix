@@ -1,15 +1,12 @@
 ﻿using Alumvix.Controller.Cliente;
 using Alumvix.Model.Dao;
+using Alumvix.Model.Dto;
 using Alumvix.Model.Logica.Util;
 using Alumvix.Model.Negocio;
 using Alumvix.Model.Negocio.Util;
 using Alumvix.View.Cliente;
 using Alumvix.View.Contrato;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Alumvix.Controller.Contrato
@@ -28,7 +25,7 @@ namespace Alumvix.Controller.Contrato
             editarContratoView = editarContratoVista;
             detalleClienteView = DetalleClienteController.ObtenerInstanciaDetalleClienteView();
             editarContratoView.Load += new EventHandler(CargarDatosAEditar);
-            editarContratoView.btnActualizarContrato.Click += new EventHandler(ActualizarContrato);
+            editarContratoView.btnActualizarContrato.Click += new EventHandler(ActualizarContrato);          
         }
 
         private void CargarDatosAEditar(object sender, EventArgs e)
@@ -63,7 +60,6 @@ namespace Alumvix.Controller.Contrato
                     valorContratoCalculado = Logica.AplicarIVA(Convert.ToInt32(CambioDeFormato.QuitarFormatoANumero(editarContratoView.txtEditarValorContrato.Text)), 1);
                 }
                 else valorContratoCalculado = Convert.ToInt32(CambioDeFormato.QuitarFormatoANumero(editarContratoView.txtEditarValorContrato.Text));
-
                 bool respuestaActualizacionContrato = contratoDao.ActualizarContrato(Convert.ToInt32(CambioDeFormato.QuitarFormatoANumero(valorContratoCalculado.ToString())), editarContratoView.dtpEditarFechaInicioContrato.Text, editarContratoView.dtpEditarFechaTerminacionContrato.Text, editarContratoView.cbEditarEstadoTrabajo.SelectedIndex + 1, editarContratoView.cbEditarTipoFactura.SelectedIndex,Convert.ToInt32(detalleClienteView.txtNumeroFactura.Text));
                 if (respuestaActualizacionContrato)
                 {

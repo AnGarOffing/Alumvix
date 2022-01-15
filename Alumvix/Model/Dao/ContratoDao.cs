@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 using Alumvix.Model.Dto;
 
 namespace Alumvix.Model.Dao
@@ -63,7 +64,48 @@ namespace Alumvix.Model.Dao
             {
                 respuesta = true;
             }
+            connection.Close();
             return respuesta;
+        }
+
+        public void ActualizarEstadoContrato(int estadoContrato, int idContrato)
+        {
+            command.Connection = connection;
+            command.CommandText = "update CONTRATO set FK_ID_ESTADO_CONTRATO = " + estadoContrato + " where ID_CONTRATO = " + idContrato;
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            command.ExecuteNonQuery();
+            connection.Close();
+        }
+
+        public int ConsultarEstadoTrabajo(int idContrato)
+        {
+            command.Connection = connection;
+            command.CommandText = "select FK_ID_ESTADO_TRABAJO from CONTRATO where ID_CONTRATO = " + idContrato;
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            lectorFilas = command.ExecuteReader();
+            lectorFilas.Read();
+            int idEstadoTrabajo = lectorFilas.GetInt32(0);      
+            lectorFilas.Close();
+            connection.Close();
+            return idEstadoTrabajo;
+        }
+
+        internal string ConsultarEstadoContrato(int idContrato)
+        {
+            command.Connection = connection;
+            command.CommandText = "select nombreEstadoContrato from CONTRATO inner join ESTADO_CONTRATO"
+                                +" on CONTRATO.FK_ID_ESTADO_CONTRATO = ESTADO_CONTRATO.ID_ESTADO_CONTRATO"
+                                +" where ID_CONTRATO = " + idContrato;
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            lectorFilas = command.ExecuteReader();
+            lectorFilas.Read();
+            string estadoContrato = lectorFilas.GetString(0);
+            lectorFilas.Close();
+            connection.Close();
+            return estadoContrato;
         }
 
         public List<string> ObtenerTiposFactura()
@@ -114,6 +156,7 @@ namespace Alumvix.Model.Dao
             connection.Close();
             return listadoContratos;
         }
+
 
         public ContratoDto ObtenerContratoPorIdContrato(int idContrato)
         {

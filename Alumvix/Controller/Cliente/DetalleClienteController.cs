@@ -26,7 +26,6 @@ namespace Alumvix.Controller.Cliente
         string nombreProducto;
         SeleccionarContratoView seleccionarContratoView = SeleccionarContratoController.ObtenerInstanciaSeleccionarContratoView();
 
-
         public DetalleClienteController(DetalleClienteView detalleClienteView)
         {
             contratoDto = SeleccionarContrato();
@@ -52,6 +51,7 @@ namespace Alumvix.Controller.Cliente
             detalleClienteVista.btnEliminarContrato.Click += new EventHandler(EliminarContrato);
             detalleClienteVista.btnEditarContrato.Click += new EventHandler(AbrirEditarContratoView);
         }
+
 
         private void AbrirEditarContratoView(object sender, EventArgs e)
         {
@@ -115,9 +115,29 @@ namespace Alumvix.Controller.Cliente
             detalleClienteVista.txtCelular.Text = registroCliente[0].CelularCliente.ToString();
         }
 
+        private void ValidarEstadoContrato()
+        {
+            ContratoDao contratoDao = new ContratoDao();
+            int sumaAbonos = 0;
+            foreach (AbonoDto abono in abonos)
+            {
+                sumaAbonos += abono.ValorAbono;
+            }
+            int estadoTrabajo = contratoDao.ConsultarEstadoTrabajo(Convert.ToInt32(contratoDto.IdContrato));
+            if (sumaAbonos >= DetalleClienteController.contratoDto.ValorContrato)
+            {
+                if (estadoTrabajo == 2)
+                {
+                    contratoDao.ActualizarEstadoContrato(2, DetalleClienteController.contratoDto.IdContrato);
+                    contratoDto.EstadoContrato = contratoDao.ConsultarEstadoContrato(contratoDto.IdContrato);
+                }
+            }
+        }
+
         private void MostrarContrato(object sender, EventArgs e)
         {
             contratoDto = SeleccionarContrato();
+            ValidarEstadoContrato();
             detalleClienteVista.txtNumeroFactura.Text = contratoDto.IdContrato.ToString();
             detalleClienteVista.txtTipoFactura.Text = contratoDto.TipoFactura.ToString();
             detalleClienteVista.txtValorContrato.Text = CambioDeFormato.DarFormatoANumero(contratoDto.ValorContrato);
