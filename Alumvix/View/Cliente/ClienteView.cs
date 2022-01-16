@@ -13,10 +13,21 @@ namespace Alumvix.View
 {
     public partial class ClienteView : Form
     {
+
+        private static ClienteView instancia = null;
         public ClienteView()
         {
             InitializeComponent();
             ClienteController clienteController = new ClienteController(this);
+        }
+
+        public static ClienteView ObtenerInstancia()
+        {
+            if (instancia == null)
+            {
+                instancia = new ClienteView();
+            }
+            return instancia;
         }
     }
 }

@@ -38,5 +38,38 @@ namespace Alumvix.Model.Dao
             connection.Close();
             return listaClientes;
         }
+
+        public bool EliminarCliente(int idCliente)
+        {
+            bool respuesta = false;
+            command.Connection = connection;
+            command.CommandText = "delete from CLIENTE where ID_CLIENTE = " + idCliente;
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            int filasAfectadasEnBd = command.ExecuteNonQuery();
+            if (filasAfectadasEnBd > 0)
+            {
+                respuesta = true;
+            }
+            return respuesta;
+        }
+
+        public bool ActualizarCliente(int idCliente, string identificacionCliente, string nombreCliente, string email, string celularCliente, string telefonoFijo, string direccionCliente)
+        {
+            bool respuesta = false;
+            command.Connection = connection;
+            command.CommandText = "update CLIENTE set identificacionCliente = " + identificacionCliente + ", nombreCliente = '"+ nombreCliente +"'"
+             + ", correoElectronicoCliente = '" + email + "', celularCliente = '" + celularCliente
+             + "', telefonoFijoCliente = '" + telefonoFijo + "', direccionCliente = '" + direccionCliente + "' where ID_CLIENTE = " + idCliente;
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            int filasAfectadasEnBd = command.ExecuteNonQuery();
+            if (filasAfectadasEnBd > 0)
+            {
+                respuesta = true;
+            }
+            connection.Close();
+            return respuesta;
+        }
     }
 }

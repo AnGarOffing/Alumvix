@@ -77,5 +77,13 @@ namespace Alumvix.Model.Negocio.Util
             return respuesta;
         }
 
+        public static bool ValidarBotonIngresoCliente(string nombreCliente)
+        {
+            respuesta = false;
+            if (nombreCliente != "") respuesta = true;
+            return respuesta;
+
+        }
+
     }
 }

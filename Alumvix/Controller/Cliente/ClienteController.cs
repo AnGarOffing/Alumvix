@@ -25,12 +25,42 @@ namespace Alumvix.Controller
         {
             logica = new Logica();
             clienteVista = view;
-            clienteVista.Load += new EventHandler(ObtenerListadoClientes);
+            clienteVista.Activated += new EventHandler(ObtenerListadoClientes);
             clienteVista.txtFiltrarCliente.TextChanged += new EventHandler(ObtenerListadoClientes);
             clienteVista.dataGridClientes.CellClick += new DataGridViewCellEventHandler(ObtenerRegistroCliente);
-            clienteVista.btnDetalleCliente.Click += new EventHandler(AbrirDetalleClienteView);  
+            clienteVista.btnDetalleCliente.Click += new EventHandler(AbrirDetalleClienteView);
+            clienteVista.btnEliminarCliente.Click += new EventHandler(EliminarCliente);
+            clienteVista.btnActualizarCliente.Click += new EventHandler(AbrirEditarClienteView);
         }
 
+        private void AbrirEditarClienteView(object sender, EventArgs e)
+        {
+            if (registroCliente.Count > 0)
+            {
+                EditarClienteView editarClienteView = EditarClienteView.ObtenerInstancia();
+                editarClienteView.ShowDialog();
+            }
+            else MessageBox.Show("No ha seleccionado un cliente");
+        }
+
+        private void EliminarCliente(object sender, EventArgs e)
+        {
+            if (registroCliente.Count > 0)
+            {
+                if (MessageBox.Show("¿Realmente desea borrar el cliente?", "BORRAR", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    bool respuesta = new ClienteDao().EliminarCliente(idCliente);
+                    if (respuesta)
+                    {
+                        MessageBox.Show("El cliente ha sido eliminado con exito");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al intentar eliminar el cliente");
+                    }
+                }
+            }else MessageBox.Show("No ha seleccionado un cliente");
+        }
 
         private void ObtenerListadoClientes(object sender, EventArgs e)
         {

@@ -51,6 +51,7 @@
     <Compile Include="Controller\Abono\IngresoAbonoController.cs" />
     <Compile Include="Controller\Cliente\ClienteController.cs" />
     <Compile Include="Controller\Cliente\DetalleClienteController.cs" />
+    <Compile Include="Controller\Cliente\EditarClienteController.cs" />
     <Compile Include="Controller\Contrato\EditarContratoController.cs" />
     <Compile Include="Controller\Contrato\IngresoContratoController.cs" />
     <Compile Include="Controller\Contrato\SeleccionarContratoController.cs" />
@@ -106,6 +107,12 @@
     </Compile>
     <Compile Include="View\Cliente\DetalleClienteView.Designer.cs">
       <DependentUpon>DetalleClienteView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Cliente\EditarClienteView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Cliente\EditarClienteView.Designer.cs">
+      <DependentUpon>EditarClienteView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Contrato\EditarContratoView.cs">
       <SubType>Form</SubType>
@@ -172,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Cliente\DetalleClienteView.resx">
       <DependentUpon>DetalleClienteView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Cliente\EditarClienteView.resx">
+      <DependentUpon>EditarClienteView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Contrato\EditarContratoView.resx">
       <DependentUpon>EditarContratoView.cs</DependentUpon>

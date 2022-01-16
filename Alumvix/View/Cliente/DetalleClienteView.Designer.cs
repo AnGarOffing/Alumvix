@@ -56,6 +56,7 @@
             this.pnlCliente = new System.Windows.Forms.Panel();
             this.lblSeccionCliente = new System.Windows.Forms.Label();
             this.pnlContrato = new System.Windows.Forms.Panel();
+            this.btnEditarContrato = new System.Windows.Forms.Button();
             this.lblTipoFactura = new System.Windows.Forms.Label();
             this.txtTipoFactura = new System.Windows.Forms.TextBox();
             this.btnIngresarContrato = new System.Windows.Forms.Button();
@@ -88,7 +89,6 @@
             this.btnAbrirIngresoProducto = new System.Windows.Forms.Button();
             this.lblProductos = new System.Windows.Forms.Label();
             this.lstvProductos = new System.Windows.Forms.ListView();
-            this.btnEditarContrato = new System.Windows.Forms.Button();
             this.pnlGastos.SuspendLayout();
             this.pnlAbonos.SuspendLayout();
             this.pnlCliente.SuspendLayout();
@@ -111,7 +111,7 @@
             // 
             this.lblNombreCliente.AutoSize = true;
             this.lblNombreCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreCliente.Location = new System.Drawing.Point(51, 84);
+            this.lblNombreCliente.Location = new System.Drawing.Point(51, 86);
             this.lblNombreCliente.Name = "lblNombreCliente";
             this.lblNombreCliente.Size = new System.Drawing.Size(91, 24);
             this.lblNombreCliente.TabIndex = 1;
@@ -121,7 +121,7 @@
             // 
             this.lblCorreo.AutoSize = true;
             this.lblCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCorreo.Location = new System.Drawing.Point(62, 118);
+            this.lblCorreo.Location = new System.Drawing.Point(62, 123);
             this.lblCorreo.Name = "lblCorreo";
             this.lblCorreo.Size = new System.Drawing.Size(80, 24);
             this.lblCorreo.TabIndex = 2;
@@ -151,7 +151,7 @@
             // 
             this.lblDireccion.AutoSize = true;
             this.lblDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDireccion.Location = new System.Drawing.Point(37, 154);
+            this.lblDireccion.Location = new System.Drawing.Point(37, 163);
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(105, 24);
             this.lblDireccion.TabIndex = 5;
@@ -179,27 +179,29 @@
             // txtCorreo
             // 
             this.txtCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreo.Location = new System.Drawing.Point(148, 119);
+            this.txtCorreo.Location = new System.Drawing.Point(148, 124);
+            this.txtCorreo.Multiline = true;
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(198, 29);
+            this.txtCorreo.Size = new System.Drawing.Size(198, 31);
             this.txtCorreo.TabIndex = 18;
             this.txtCorreo.Text = "***************";
             // 
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(148, 84);
+            this.txtNombre.Location = new System.Drawing.Point(148, 86);
+            this.txtNombre.Multiline = true;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(198, 29);
+            this.txtNombre.Size = new System.Drawing.Size(198, 31);
             this.txtNombre.TabIndex = 15;
             this.txtNombre.Text = "***************";
             // 
             // txtDireccion
             // 
             this.txtDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDireccion.Location = new System.Drawing.Point(148, 154);
+            this.txtDireccion.Location = new System.Drawing.Point(148, 163);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(198, 29);
+            this.txtDireccion.Size = new System.Drawing.Size(475, 29);
             this.txtDireccion.TabIndex = 17;
             this.txtDireccion.Text = "***************";
             // 
@@ -384,6 +386,19 @@
             this.pnlContrato.Name = "pnlContrato";
             this.pnlContrato.Size = new System.Drawing.Size(670, 198);
             this.pnlContrato.TabIndex = 21;
+            // 
+            // btnEditarContrato
+            // 
+            this.btnEditarContrato.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditarContrato.FlatAppearance.BorderSize = 0;
+            this.btnEditarContrato.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarContrato.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarContrato.Image")));
+            this.btnEditarContrato.Location = new System.Drawing.Point(514, 14);
+            this.btnEditarContrato.Name = "btnEditarContrato";
+            this.btnEditarContrato.Size = new System.Drawing.Size(30, 35);
+            this.btnEditarContrato.TabIndex = 44;
+            this.btnEditarContrato.UseVisualStyleBackColor = false;
             // 
             // lblTipoFactura
             // 
@@ -715,19 +730,6 @@
             this.lstvProductos.TabIndex = 0;
             this.lstvProductos.UseCompatibleStateImageBehavior = false;
             this.lstvProductos.View = System.Windows.Forms.View.List;
-            // 
-            // btnEditarContrato
-            // 
-            this.btnEditarContrato.BackColor = System.Drawing.Color.Transparent;
-            this.btnEditarContrato.FlatAppearance.BorderSize = 0;
-            this.btnEditarContrato.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarContrato.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarContrato.Image")));
-            this.btnEditarContrato.Location = new System.Drawing.Point(514, 14);
-            this.btnEditarContrato.Name = "btnEditarContrato";
-            this.btnEditarContrato.Size = new System.Drawing.Size(30, 35);
-            this.btnEditarContrato.TabIndex = 44;
-            this.btnEditarContrato.UseVisualStyleBackColor = false;
             // 
             // DetalleClienteView
             // 

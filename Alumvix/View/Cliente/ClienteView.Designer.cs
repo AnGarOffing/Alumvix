@@ -32,8 +32,8 @@
             this.dataGridClientes = new System.Windows.Forms.DataGridView();
             this.btnDetalleCliente = new System.Windows.Forms.Button();
             this.txtFiltrarCliente = new System.Windows.Forms.TextBox();
-            this.btnEditarCliente = new System.Windows.Forms.Button();
-            this.btnEliminarGasto = new System.Windows.Forms.Button();
+            this.btnActualizarCliente = new System.Windows.Forms.Button();
+            this.btnEliminarCliente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,10 +51,10 @@
             // 
             // btnDetalleCliente
             // 
-            this.btnDetalleCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetalleCliente.Location = new System.Drawing.Point(272, 58);
+            this.btnDetalleCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDetalleCliente.Location = new System.Drawing.Point(250, 59);
             this.btnDetalleCliente.Name = "btnDetalleCliente";
-            this.btnDetalleCliente.Size = new System.Drawing.Size(139, 25);
+            this.btnDetalleCliente.Size = new System.Drawing.Size(97, 25);
             this.btnDetalleCliente.TabIndex = 2;
             this.btnDetalleCliente.Text = "Detalle";
             this.btnDetalleCliente.UseVisualStyleBackColor = true;
@@ -66,39 +66,39 @@
             this.txtFiltrarCliente.Size = new System.Drawing.Size(170, 20);
             this.txtFiltrarCliente.TabIndex = 3;
             // 
-            // btnEditarCliente
+            // btnActualizarCliente
             // 
-            this.btnEditarCliente.BackColor = System.Drawing.Color.Transparent;
-            this.btnEditarCliente.FlatAppearance.BorderSize = 0;
-            this.btnEditarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarCliente.Image")));
-            this.btnEditarCliente.Location = new System.Drawing.Point(431, 52);
-            this.btnEditarCliente.Name = "btnEditarCliente";
-            this.btnEditarCliente.Size = new System.Drawing.Size(30, 35);
-            this.btnEditarCliente.TabIndex = 35;
-            this.btnEditarCliente.UseVisualStyleBackColor = false;
+            this.btnActualizarCliente.BackColor = System.Drawing.Color.Transparent;
+            this.btnActualizarCliente.FlatAppearance.BorderSize = 0;
+            this.btnActualizarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizarCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizarCliente.Image")));
+            this.btnActualizarCliente.Location = new System.Drawing.Point(374, 49);
+            this.btnActualizarCliente.Name = "btnActualizarCliente";
+            this.btnActualizarCliente.Size = new System.Drawing.Size(30, 35);
+            this.btnActualizarCliente.TabIndex = 35;
+            this.btnActualizarCliente.UseVisualStyleBackColor = false;
             // 
-            // btnEliminarGasto
+            // btnEliminarCliente
             // 
-            this.btnEliminarGasto.BackColor = System.Drawing.Color.Transparent;
-            this.btnEliminarGasto.FlatAppearance.BorderSize = 0;
-            this.btnEliminarGasto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarGasto.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarGasto.Image")));
-            this.btnEliminarGasto.Location = new System.Drawing.Point(482, 48);
-            this.btnEliminarGasto.Name = "btnEliminarGasto";
-            this.btnEliminarGasto.Size = new System.Drawing.Size(30, 35);
-            this.btnEliminarGasto.TabIndex = 36;
-            this.btnEliminarGasto.UseVisualStyleBackColor = false;
+            this.btnEliminarCliente.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminarCliente.FlatAppearance.BorderSize = 0;
+            this.btnEliminarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarCliente.Image")));
+            this.btnEliminarCliente.Location = new System.Drawing.Point(420, 48);
+            this.btnEliminarCliente.Name = "btnEliminarCliente";
+            this.btnEliminarCliente.Size = new System.Drawing.Size(30, 35);
+            this.btnEliminarCliente.TabIndex = 36;
+            this.btnEliminarCliente.UseVisualStyleBackColor = false;
             // 
             // ClienteView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnEliminarGasto);
-            this.Controls.Add(this.btnEditarCliente);
+            this.Controls.Add(this.btnEliminarCliente);
+            this.Controls.Add(this.btnActualizarCliente);
             this.Controls.Add(this.txtFiltrarCliente);
             this.Controls.Add(this.btnDetalleCliente);
             this.Controls.Add(this.dataGridClientes);
@@ -116,7 +116,7 @@
         public System.Windows.Forms.DataGridView dataGridClientes;
         public System.Windows.Forms.Button btnDetalleCliente;
         public System.Windows.Forms.TextBox txtFiltrarCliente;
-        public System.Windows.Forms.Button btnEditarCliente;
-        public System.Windows.Forms.Button btnEliminarGasto;
+        public System.Windows.Forms.Button btnActualizarCliente;
+        public System.Windows.Forms.Button btnEliminarCliente;
     }
 }
