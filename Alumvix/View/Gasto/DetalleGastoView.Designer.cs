@@ -31,14 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DetalleGastoView));
             this.lstvDetalleGastos = new System.Windows.Forms.ListView();
             this.columnaNumeroGasto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnaNumeroFactura = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnaValorGasto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnaFechaGasto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnaDescripcionGasto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnaNumeroFactura = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnaProveedor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnaTipoGasto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblListadoGastos = new System.Windows.Forms.Label();
-            this.btnIngresarAbono = new System.Windows.Forms.Button();
+            this.btnIngresarGasto = new System.Windows.Forms.Button();
             this.btnEliminarGasto = new System.Windows.Forms.Button();
             this.btnEditarGasto = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -68,6 +68,12 @@
             this.columnaNumeroGasto.Text = "Gasto #";
             this.columnaNumeroGasto.Width = 80;
             // 
+            // columnaNumeroFactura
+            // 
+            this.columnaNumeroFactura.Text = "# Factura";
+            this.columnaNumeroFactura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnaNumeroFactura.Width = 95;
+            // 
             // columnaValorGasto
             // 
             this.columnaValorGasto.Text = "Valor";
@@ -85,12 +91,6 @@
             this.columnaDescripcionGasto.Text = "Descripcion";
             this.columnaDescripcionGasto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnaDescripcionGasto.Width = 400;
-            // 
-            // columnaNumeroFactura
-            // 
-            this.columnaNumeroFactura.Text = "# Factura";
-            this.columnaNumeroFactura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnaNumeroFactura.Width = 95;
             // 
             // columnaProveedor
             // 
@@ -114,18 +114,18 @@
             this.lblListadoGastos.TabIndex = 35;
             this.lblListadoGastos.Text = "Listado de Gastos";
             // 
-            // btnIngresarAbono
+            // btnIngresarGasto
             // 
-            this.btnIngresarAbono.BackColor = System.Drawing.Color.Transparent;
-            this.btnIngresarAbono.FlatAppearance.BorderSize = 0;
-            this.btnIngresarAbono.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIngresarAbono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIngresarAbono.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresarAbono.Image")));
-            this.btnIngresarAbono.Location = new System.Drawing.Point(1229, 12);
-            this.btnIngresarAbono.Name = "btnIngresarAbono";
-            this.btnIngresarAbono.Size = new System.Drawing.Size(46, 40);
-            this.btnIngresarAbono.TabIndex = 34;
-            this.btnIngresarAbono.UseVisualStyleBackColor = false;
+            this.btnIngresarGasto.BackColor = System.Drawing.Color.Transparent;
+            this.btnIngresarGasto.FlatAppearance.BorderSize = 0;
+            this.btnIngresarGasto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIngresarGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngresarGasto.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresarGasto.Image")));
+            this.btnIngresarGasto.Location = new System.Drawing.Point(1229, 12);
+            this.btnIngresarGasto.Name = "btnIngresarGasto";
+            this.btnIngresarGasto.Size = new System.Drawing.Size(46, 40);
+            this.btnIngresarGasto.TabIndex = 34;
+            this.btnIngresarGasto.UseVisualStyleBackColor = false;
             // 
             // btnEliminarGasto
             // 
@@ -161,7 +161,7 @@
             this.Controls.Add(this.btnEditarGasto);
             this.Controls.Add(this.lstvDetalleGastos);
             this.Controls.Add(this.lblListadoGastos);
-            this.Controls.Add(this.btnIngresarAbono);
+            this.Controls.Add(this.btnIngresarGasto);
             this.Controls.Add(this.btnEliminarGasto);
             this.Name = "DetalleGastoView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -179,7 +179,7 @@
         private System.Windows.Forms.ColumnHeader columnaFechaGasto;
         private System.Windows.Forms.ColumnHeader columnaDescripcionGasto;
         public System.Windows.Forms.Label lblListadoGastos;
-        public System.Windows.Forms.Button btnIngresarAbono;
+        public System.Windows.Forms.Button btnIngresarGasto;
         public System.Windows.Forms.Button btnEliminarGasto;
         public System.Windows.Forms.Button btnEditarGasto;
         private System.Windows.Forms.ColumnHeader columnaNumeroFactura;

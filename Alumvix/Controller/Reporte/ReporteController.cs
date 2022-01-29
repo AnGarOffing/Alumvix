@@ -15,6 +15,9 @@ namespace Alumvix.Controller.Reporte
         public ReporteController(ReporteView reporteVista) 
         {
             reporteView = reporteVista;
+            reporteView.dtpFechaInicioReporte.Enabled = false;
+            reporteView.dtpFechaFinalReporte.Enabled = false;
+            reporteView.cbSeleccionarAnio.Enabled = false;
         }
     }
 }

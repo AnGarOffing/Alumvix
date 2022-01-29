@@ -23,7 +23,7 @@ namespace Alumvix.Controller.Gasto
         {
             detalleGastoView = detalleGastoVista;
             detalleGastoView.Activated += new EventHandler(MostrarDetalleGastos);
-            detalleGastoView.btnIngresarAbono.Click += new EventHandler(MostrarIngresoGastoView);
+            detalleGastoView.btnIngresarGasto.Click += new EventHandler(MostrarIngresoGastoView);
             detalleGastoView.btnEliminarGasto.Click += new EventHandler(EliminarGasto);
             detalleGastoView.lstvDetalleGastos.SelectedIndexChanged += new EventHandler(ObtenerIndice);
             detalleGastoView.btnEditarGasto.Click += new EventHandler(MostarEditarGastoView);

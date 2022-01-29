@@ -20,8 +20,14 @@ namespace Alumvix.Controller.Gasto
             ingresoGastoView.Load += new EventHandler(LimpiarCampos);
             ingresoGastoView.Load += new EventHandler(CargarTiposDeGastoMaterial);
             ingresoGastoView.Load += new EventHandler(CargarProveedores);
+            ingresoGastoView.Activated += new EventHandler(ActualizarIdContrato);
             ingresoGastoView.cbIngresarTipoGasto.SelectedIndexChanged += new EventHandler(HabilitarControlesFactyProv);
             ingresoGastoView.btnGuardarNuevoGasto.Click += new EventHandler(IngresarGasto);
+        }
+
+        private void ActualizarIdContrato(object sender, EventArgs e)
+        {
+            idContrato = DetalleClienteController.ObtenerIdContrato();
         }
 
         private void LimpiarCampos(object sender, EventArgs e)
@@ -33,7 +39,7 @@ namespace Alumvix.Controller.Gasto
         private void IngresarGasto(object sender, EventArgs e)
         {
             bool respuesta = false;
-            GastoDao GastoActualizado = new GastoDao();
+            GastoDao gastoActualizado = new GastoDao();
             if (ingresoGastoView.txtNumeroFactura.Enabled == false)
             {
                 respuesta = ValidacionesDeControles.ValidarBotonIngresoGastoSinFactura(ingresoGastoView.txtIngresarValorGasto.Text, ingresoGastoView.cbIngresarTipoGasto.SelectedIndex);
@@ -48,7 +54,7 @@ namespace Alumvix.Controller.Gasto
                 GastoDao nuevoGasto = new GastoDao();
                 string valorSinFormato = CambioDeFormato.QuitarFormatoANumero(ingresoGastoView.txtIngresarValorGasto.Text);
                 int idTipoGasto = nuevoGasto.ObtenerTipoGastoPorNombre(ingresoGastoView.cbIngresarTipoGasto.GetItemText(ingresoGastoView.cbIngresarTipoGasto.SelectedItem));
-                bool respuestaIngresoGasto = GastoActualizado.IngresarGasto(ingresoGastoView.txtNumeroFactura.Text, Convert.ToInt32(valorSinFormato), ingresoGastoView.dtpFechaIngresoGasto.Text, ingresoGastoView.txtDescripcionGasto.Text, ingresoGastoView.cbIngresarProveedor.SelectedIndex, idTipoGasto, idContrato);
+                bool respuestaIngresoGasto = gastoActualizado.IngresarGasto(ingresoGastoView.txtNumeroFactura.Text, Convert.ToInt32(valorSinFormato), ingresoGastoView.dtpFechaIngresoGasto.Text, ingresoGastoView.txtDescripcionGasto.Text, ingresoGastoView.cbIngresarProveedor.SelectedIndex, idTipoGasto, idContrato);
                 if (respuestaIngresoGasto)
                 {
                     //editarGastoView.txtActualizarValorGasto.Clear();

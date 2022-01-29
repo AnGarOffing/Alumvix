@@ -15,6 +15,8 @@ namespace Alumvix.View.Cliente
 {
     public partial class DetalleClienteView : Form
     {
+        private static DetalleClienteView instancia = null;
+
         public DetalleClienteView()
         {
             InitializeComponent();
@@ -22,6 +24,13 @@ namespace Alumvix.View.Cliente
             CopyPasteEnDetalleClienteVista copyPasteEnDetalleClienteVista = new CopyPasteEnDetalleClienteVista(this);
         }
 
-
+        public static DetalleClienteView ObtenerInstancia()
+        {
+            if (instancia == null)
+            {
+                instancia = new DetalleClienteView();
+            }
+            return instancia;
+        }
     }
 }

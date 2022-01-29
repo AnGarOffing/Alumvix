@@ -126,6 +126,8 @@ namespace Alumvix.Controller
                 {
                     detalleClienteVista = new DetalleClienteView();
                     detalleClienteVista.ShowDialog();
+
+                    
                 }
                 else
                 {
