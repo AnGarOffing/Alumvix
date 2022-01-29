@@ -4,9 +4,11 @@ using System.Windows.Forms;
 using Alumvix.Model.Dao;
 using Alumvix.Model.Dto;
 using Alumvix.Model.Negocio;
+using Alumvix.Model.Negocio.Util;
 using Alumvix.View;
 using Alumvix.View.Cliente;
 using Alumvix.View.Contrato;
+using Alumvix.View.Reporte;
 
 namespace Alumvix.Controller
 {
@@ -19,7 +21,8 @@ namespace Alumvix.Controller
         static int idCliente;
         static string nombreCliente;
         Logica logica;
-  
+
+        public bool Validaciones { get; private set; }
 
         public ClienteController(ClienteView view)
         {
@@ -30,7 +33,21 @@ namespace Alumvix.Controller
             clienteVista.dataGridClientes.CellClick += new DataGridViewCellEventHandler(ObtenerRegistroCliente);
             clienteVista.btnDetalleCliente.Click += new EventHandler(AbrirDetalleClienteView);
             clienteVista.btnEliminarCliente.Click += new EventHandler(EliminarCliente);
+            clienteVista.btnReporte.Click += new EventHandler(AbrirReporteView);
             clienteVista.btnActualizarCliente.Click += new EventHandler(AbrirEditarClienteView);
+            clienteVista.txtFiltrarCliente.KeyPress += new KeyPressEventHandler(ValidarEntrada);
+        }
+
+        private void AbrirReporteView(object sender, EventArgs e)
+        {
+            ReporteView reporteView = ReporteView.ObtenerInstancia();
+            reporteView.ShowDialog();
+        }
+
+        private void ValidarEntrada(object sender, KeyPressEventArgs e)
+        {
+            bool respuesta = ValidacionesDeControles.ValidarNumerosyLetras(e);
+            if (respuesta == true) MessageBox.Show("El campo solo permite numeros y letras");
         }
 
         private void AbrirEditarClienteView(object sender, EventArgs e)

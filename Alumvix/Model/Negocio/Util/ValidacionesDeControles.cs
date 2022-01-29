@@ -85,5 +85,17 @@ namespace Alumvix.Model.Negocio.Util
 
         }
 
+        public static bool ValidarNumerosyLetras(KeyPressEventArgs e)
+        {
+            if((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96)  || (e.KeyChar >= 123 && e.KeyChar <= 255))
+                {
+                    e.Handled = true;
+                }             
+            }
+            return e.Handled;
+        }
+
     }
 }

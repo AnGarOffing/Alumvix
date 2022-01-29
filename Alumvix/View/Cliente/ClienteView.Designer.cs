@@ -34,6 +34,7 @@
             this.txtFiltrarCliente = new System.Windows.Forms.TextBox();
             this.btnActualizarCliente = new System.Windows.Forms.Button();
             this.btnEliminarCliente = new System.Windows.Forms.Button();
+            this.btnReporte = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,18 +44,18 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridClientes.Location = new System.Drawing.Point(27, 100);
+            this.dataGridClientes.Location = new System.Drawing.Point(12, 102);
             this.dataGridClientes.Name = "dataGridClientes";
             this.dataGridClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridClientes.Size = new System.Drawing.Size(735, 148);
+            this.dataGridClientes.Size = new System.Drawing.Size(776, 249);
             this.dataGridClientes.TabIndex = 0;
             // 
             // btnDetalleCliente
             // 
             this.btnDetalleCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetalleCliente.Location = new System.Drawing.Point(250, 59);
+            this.btnDetalleCliente.Location = new System.Drawing.Point(250, 49);
             this.btnDetalleCliente.Name = "btnDetalleCliente";
-            this.btnDetalleCliente.Size = new System.Drawing.Size(97, 25);
+            this.btnDetalleCliente.Size = new System.Drawing.Size(101, 35);
             this.btnDetalleCliente.TabIndex = 2;
             this.btnDetalleCliente.Text = "Detalle";
             this.btnDetalleCliente.UseVisualStyleBackColor = true;
@@ -92,11 +93,22 @@
             this.btnEliminarCliente.TabIndex = 36;
             this.btnEliminarCliente.UseVisualStyleBackColor = false;
             // 
+            // btnReporte
+            // 
+            this.btnReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporte.Location = new System.Drawing.Point(12, 376);
+            this.btnReporte.Name = "btnReporte";
+            this.btnReporte.Size = new System.Drawing.Size(99, 34);
+            this.btnReporte.TabIndex = 37;
+            this.btnReporte.Text = "Reporte";
+            this.btnReporte.UseVisualStyleBackColor = true;
+            // 
             // ClienteView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnReporte);
             this.Controls.Add(this.btnEliminarCliente);
             this.Controls.Add(this.btnActualizarCliente);
             this.Controls.Add(this.txtFiltrarCliente);
@@ -118,5 +130,6 @@
         public System.Windows.Forms.TextBox txtFiltrarCliente;
         public System.Windows.Forms.Button btnActualizarCliente;
         public System.Windows.Forms.Button btnEliminarCliente;
+        public System.Windows.Forms.Button btnReporte;
     }
 }
