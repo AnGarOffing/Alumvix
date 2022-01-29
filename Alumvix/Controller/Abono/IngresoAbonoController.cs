@@ -19,9 +19,14 @@ namespace Alumvix.Controller.Abono
             idContrato = DetalleClienteController.ObtenerIdContrato();
             ingresoAbonoView.Load += new EventHandler(CargarFormasDeAbono);
             ingresoAbonoView.Load += new EventHandler(LimpiarControles);
+            ingresoAbonoView.Activated += new EventHandler(ActualizarIdContrato);
             ingresoAbonoView.btnGuardarNuevoAbono.Click += new EventHandler(IngresarAbono);
         }
 
+        private void ActualizarIdContrato(object sender, EventArgs e)
+        {
+            idContrato = DetalleClienteController.ObtenerIdContrato();
+        }
 
         private void CargarFormasDeAbono(object sender, EventArgs e)
         {
