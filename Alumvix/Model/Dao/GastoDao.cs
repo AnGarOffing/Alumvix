@@ -1,4 +1,5 @@
-﻿    using Alumvix.Model.Dto;
+﻿using Alumvix.Model.Dto;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -38,6 +39,8 @@ namespace Alumvix.Model.Dao
             connection.Close();
             return listadoGastos;
         }
+
+        
 
         public List<GastoDto> ObtenerGastosSinProveedor()
         {
@@ -141,6 +144,52 @@ namespace Alumvix.Model.Dao
             lectorFilas.Close();
             connection.Close();
             return idGasto;
+        }
+
+        public List<GastoDto> ObtenerGastosPorMes(int mes, int anio)
+        {
+            command.Connection = connection;
+            command.CommandText = "select NombreTipoGasto as Tipo, SUM(valorGasto) as Valor from GASTO" 
+                                  +" inner join TIPO_GASTO on GASTO.FK_ID_TIPO_GASTO = TIPO_GASTO.ID_TIPO_GASTO where FK_ID_CONTRATO2 in"
+                                  +" (select ID_CONTRATO from CONTRATO where MONTH(fechaInicioContrato) = "+ mes + " and YEAR(fechaInicioContrato) = "+ anio +") group by NombreTipoGasto";
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            lectorFilas = command.ExecuteReader();
+            List<GastoDto> listadoGastos = new List<GastoDto>();
+            while (lectorFilas.Read())
+            {
+                listadoGastos.Add(new GastoDto()
+                {
+                    TipoGasto = lectorFilas.GetString(0),
+                    ValorGasto = lectorFilas.GetInt32(1),
+                });
+            }
+            lectorFilas.Close();
+            connection.Close();
+            return listadoGastos;
+        }
+
+        public List<GastoDto> ObtenerGastosPorAnio(int anio)
+        {
+            command.Connection = connection;
+            command.CommandText = "select NombreTipoGasto as Tipo, SUM(valorGasto) as Valor from GASTO"
+                                  + " inner join TIPO_GASTO on GASTO.FK_ID_TIPO_GASTO = TIPO_GASTO.ID_TIPO_GASTO where FK_ID_CONTRATO2 in"
+                                  + " (select ID_CONTRATO from CONTRATO where YEAR(fechaInicioContrato) = " + anio + ") group by NombreTipoGasto";
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            lectorFilas = command.ExecuteReader();
+            List<GastoDto> listadoGastos = new List<GastoDto>();
+            while (lectorFilas.Read())
+            {
+                listadoGastos.Add(new GastoDto()
+                {
+                    TipoGasto = lectorFilas.GetString(0),
+                    ValorGasto = lectorFilas.GetInt32(1),
+                });
+            }
+            lectorFilas.Close();
+            connection.Close();
+            return listadoGastos;
         }
     }
 }

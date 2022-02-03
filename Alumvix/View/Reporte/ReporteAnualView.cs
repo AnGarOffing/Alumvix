@@ -11,20 +11,20 @@ using System.Windows.Forms;
 
 namespace Alumvix.View.Reporte
 {
-    public partial class ReporteView : Form
+    public partial class ReporteAnualView : Form
     {
-        private static ReporteView instancia = null;
-        public ReporteView()
+        private static ReporteAnualView instancia = null;
+        public ReporteAnualView()
         {
             InitializeComponent();
-            ReporteController reporteController = new ReporteController(this);
+            ReporteAnualController reporteAnualController = new ReporteAnualController(this);
         }
 
-        public static ReporteView ObtenerInstancia()
+        public static ReporteAnualView ObtenerInstancia()
         {
             if (instancia == null)
             {
-                instancia = new ReporteView();
+                instancia = new ReporteAnualView();
             }
             return instancia;
         }

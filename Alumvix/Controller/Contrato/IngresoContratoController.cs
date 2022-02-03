@@ -1,6 +1,7 @@
 ﻿using Alumvix.Model.Dao;
 using Alumvix.Model.Negocio;
 using Alumvix.Model.Negocio.Util;
+using Alumvix.View.Cliente;
 using Alumvix.View.Contrato;
 using System;
 using System.Collections.Generic;
@@ -54,6 +55,5 @@ namespace Alumvix.Controller.Contrato
             ingresoContratoView.cbIngresarTipoFactura.DataSource = contratoDao.ObtenerTiposFactura();
         }
 
-        
     }
 }

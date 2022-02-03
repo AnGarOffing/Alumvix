@@ -9,6 +9,7 @@ using Alumvix.View;
 using Alumvix.View.Cliente;
 using Alumvix.View.Contrato;
 using Alumvix.View.Reporte;
+using Alumvix.View.Gasto;
 
 namespace Alumvix.Controller
 {
@@ -35,12 +36,19 @@ namespace Alumvix.Controller
             clienteVista.btnEliminarCliente.Click += new EventHandler(EliminarCliente);
             clienteVista.btnReporte.Click += new EventHandler(AbrirReporteView);
             clienteVista.btnActualizarCliente.Click += new EventHandler(AbrirEditarClienteView);
+            clienteVista.btnGastosInternos.Click += new EventHandler(AbrirGastoInternoView);
             clienteVista.txtFiltrarCliente.KeyPress += new KeyPressEventHandler(ValidarEntrada);
+        }
+
+        private void AbrirGastoInternoView(object sender, EventArgs e)
+        {
+            GastoInternoView gastoInternoView = GastoInternoView.ObtenerInstancia();
+            gastoInternoView.ShowDialog();
         }
 
         private void AbrirReporteView(object sender, EventArgs e)
         {
-            ReporteView reporteView = ReporteView.ObtenerInstancia();
+            AdministradorReportesView reporteView = AdministradorReportesView.ObtenerInstancia();
             reporteView.ShowDialog();
         }
 

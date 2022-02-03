@@ -25,7 +25,7 @@ namespace Alumvix.Controller.Abono
             detalleAbonoView.btnIngresarAbono.Click += new EventHandler(MostrarIngresoAbonoView);
             detalleAbonoView.btnEliminarAbono.Click += new EventHandler(EliminarAbono);
             detalleAbonoView.lstvDetalleAbonos.SelectedIndexChanged += new EventHandler(ObtenerIndice);
-            detalleAbonoView.btnEditarAbono.Click += new EventHandler(MostarEditarAbonoView);
+            detalleAbonoView.btnEditarAbono.Click += new EventHandler(MostrarEditarAbonoView);
         }
 
         private void MostrarDetalleAbonos(object sender, EventArgs e) 
@@ -88,7 +88,7 @@ namespace Alumvix.Controller.Abono
             }         
         }
 
-        private void MostarEditarAbonoView(object sender, EventArgs e)
+        private void MostrarEditarAbonoView(object sender, EventArgs e)
         {
             if (detalleAbonoView.lstvDetalleAbonos.SelectedItems.Count > 0)
             {

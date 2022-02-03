@@ -13,10 +13,10 @@ namespace Alumvix.Model.Logica.Util
         public CopyPasteEnDetalleClienteVista(DetalleClienteView detalleClienteView)
         {
             detalleClienteVista = detalleClienteView;
-            detalleClienteVista.Load += new EventHandler(TransformarTextBoxes);
+            detalleClienteVista.Load += new EventHandler(TransformarTextBoxesDetalleClienteView);
         }
 
-        private void TransformarTextBoxes(object sender, EventArgs e) 
+        private void TransformarTextBoxesDetalleClienteView(object sender, EventArgs e) 
         {
             
             detalleClienteVista.txtIdentificacion.ReadOnly = true;
@@ -105,5 +105,6 @@ namespace Alumvix.Model.Logica.Util
             detalleClienteVista.txtUtilidad.BackColor = detalleClienteVista.BackColor;
             detalleClienteVista.txtUtilidad.TabStop = false;
         }
+
     }
 }

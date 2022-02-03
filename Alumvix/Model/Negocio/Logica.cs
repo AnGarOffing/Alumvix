@@ -60,5 +60,23 @@ namespace Alumvix.Model.Negocio
             double iva = contratoDao.ConsultarIVA(idIva);
             return (int)(valor * iva) + valor;
         }
+
+        public int SumarTiposDeGastos(int mes, int anio) 
+        {
+            ReporteDao reporteDao = new ReporteDao();
+            int totalGastosPorMes = reporteDao.ObtenerTotalGastosPorMes(mes, anio);
+            int totalGastosInternos = reporteDao.ObtenerTotalGastosInternosPorMes(mes, anio);
+            int sumaGastos = totalGastosPorMes + totalGastosInternos;
+            return sumaGastos;          
+        }
+
+        public int SumarTiposDeGastos(int anio)
+        {
+            ReporteDao reporteDao = new ReporteDao();
+            int totalGastosPorAnio = reporteDao.ObtenerTotalGastosPorAnio(anio);
+            int totalGastosInternos = reporteDao.ObtenerTotalGastosInternosPorAnio(anio);
+            int sumaGastos = totalGastosPorAnio + totalGastosInternos;
+            return sumaGastos;
+        }
     }
 }

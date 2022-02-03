@@ -75,14 +75,19 @@
     <Compile Include="Controller\Contrato\SeleccionarContratoController.cs" />
     <Compile Include="Controller\Gasto\DetalleGastoController.cs" />
     <Compile Include="Controller\Gasto\EditarGastoController.cs" />
+    <Compile Include="Controller\Gasto\GastoInternoController.cs" />
+    <Compile Include="Controller\Gasto\GastosPorPeriodoController.cs" />
     <Compile Include="Controller\Gasto\IngresoGastoController.cs" />
     <Compile Include="Controller\Producto\IngresoProductoController.cs" />
-    <Compile Include="Controller\Reporte\ReporteController.cs" />
+    <Compile Include="Controller\Reporte\AdministradorReportesController.cs" />
+    <Compile Include="Controller\Reporte\ReporteAnualController.cs" />
+    <Compile Include="Controller\Reporte\ReporteMensualController.cs" />
     <Compile Include="Model\Dao\AbonoDao.cs" />
     <Compile Include="Model\Dao\ClienteDao.cs" />
     <Compile Include="Model\Dao\ContratoDao.cs" />
     <Compile Include="Model\Dao\DbContext.cs" />
     <Compile Include="Model\Dao\GastoDao.cs" />
+    <Compile Include="Model\Dao\GastoInternoDao.cs" />
     <Compile Include="Model\Dao\ProductoDao.cs" />
     <Compile Include="Model\Dao\ProveedorDao.cs" />
     <Compile Include="Model\Dao\ReporteDao.cs" />
@@ -90,12 +95,14 @@
     <Compile Include="Model\Dto\ClienteDto.cs" />
     <Compile Include="Model\Dto\ContratoDto.cs" />
     <Compile Include="Model\Dto\GastoDto.cs" />
+    <Compile Include="Model\Dto\GastoInternoDto.cs" />
     <Compile Include="Model\Dto\ProductoDto.cs" />
     <Compile Include="Model\Dto\ProveedorDto.cs" />
     <Compile Include="Model\Dto\ReporteDto.cs" />
     <Compile Include="Model\Negocio\Logica.cs" />
-    <Compile Include="Model\Negocio\Util\CopyPasteEnDetalleClienteVista.cs" />
+    <Compile Include="Model\Negocio\Util\CopyPaste\CopyPasteEnDetalleClienteVista.cs" />
     <Compile Include="Model\Negocio\Util\CambioDeFormato.cs" />
+    <Compile Include="Model\Negocio\Util\CopyPaste\CopyPasteEnReporteMensual.cs" />
     <Compile Include="Model\Negocio\Util\ValidacionesDeControles.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -153,6 +160,12 @@
     <Compile Include="View\Contrato\SeleccionarContratoView.Designer.cs">
       <DependentUpon>SeleccionarContratoView.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Gasto\GastoInternoView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Gasto\GastoInternoView.Designer.cs">
+      <DependentUpon>GastoInternoView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Gasto\DetalleGastoView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +177,12 @@
     </Compile>
     <Compile Include="View\Gasto\EditarGastoView.Designer.cs">
       <DependentUpon>EditarGastoView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Gasto\GastosPorPeriodoView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Gasto\GastosPorPeriodoView.Designer.cs">
+      <DependentUpon>GastosPorPeriodoView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Gasto\IngresoGastoView.cs">
       <SubType>Form</SubType>
@@ -177,11 +196,23 @@
     <Compile Include="View\Producto\IngresoProductoView.Designer.cs">
       <DependentUpon>IngresoProductoView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Reporte\ReporteView.cs">
+    <Compile Include="View\Reporte\AdministradorReportesView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Reporte\ReporteView.Designer.cs">
-      <DependentUpon>ReporteView.cs</DependentUpon>
+    <Compile Include="View\Reporte\AdministradorReportesView.Designer.cs">
+      <DependentUpon>AdministradorReportesView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Reporte\ReporteAnualView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Reporte\ReporteAnualView.Designer.cs">
+      <DependentUpon>ReporteAnualView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Reporte\ReporteMensualView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Reporte\ReporteMensualView.Designer.cs">
+      <DependentUpon>ReporteMensualView.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -219,11 +250,17 @@
     <EmbeddedResource Include="View\Contrato\SeleccionarContratoView.resx">
       <DependentUpon>SeleccionarContratoView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Gasto\GastoInternoView.resx">
+      <DependentUpon>GastoInternoView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Gasto\DetalleGastoView.resx">
       <DependentUpon>DetalleGastoView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Gasto\EditarGastoView.resx">
       <DependentUpon>EditarGastoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Gasto\GastosPorPeriodoView.resx">
+      <DependentUpon>GastosPorPeriodoView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Gasto\IngresoGastoView.resx">
       <DependentUpon>IngresoGastoView.cs</DependentUpon>
@@ -231,8 +268,14 @@
     <EmbeddedResource Include="View\Producto\IngresoProductoView.resx">
       <DependentUpon>IngresoProductoView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Reporte\ReporteView.resx">
-      <DependentUpon>ReporteView.cs</DependentUpon>
+    <EmbeddedResource Include="View\Reporte\AdministradorReportesView.resx">
+      <DependentUpon>AdministradorReportesView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Reporte\ReporteAnualView.resx">
+      <DependentUpon>ReporteAnualView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Reporte\ReporteMensualView.resx">
+      <DependentUpon>ReporteMensualView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
