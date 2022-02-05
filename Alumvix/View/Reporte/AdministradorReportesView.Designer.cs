@@ -34,10 +34,6 @@
             this.rbMensual = new System.Windows.Forms.RadioButton();
             this.btnConsultarReporte = new System.Windows.Forms.Button();
             this.lblTituloReporteGeneral = new System.Windows.Forms.Label();
-            this.dtpFechaFinalReporte = new System.Windows.Forms.DateTimePicker();
-            this.dtpFechaInicioReporte = new System.Windows.Forms.DateTimePicker();
-            this.lblFechaInicioReporte = new System.Windows.Forms.Label();
-            this.lblFechaFinalReporte = new System.Windows.Forms.Label();
             this.cbSeleccionarMes = new System.Windows.Forms.ComboBox();
             this.lblSeleccionarMes = new System.Windows.Forms.Label();
             this.lblSeleccionarAnio = new System.Windows.Forms.Label();
@@ -94,7 +90,7 @@
             // btnConsultarReporte
             // 
             this.btnConsultarReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultarReporte.Location = new System.Drawing.Point(781, 252);
+            this.btnConsultarReporte.Location = new System.Drawing.Point(774, 173);
             this.btnConsultarReporte.Name = "btnConsultarReporte";
             this.btnConsultarReporte.Size = new System.Drawing.Size(117, 38);
             this.btnConsultarReporte.TabIndex = 45;
@@ -111,51 +107,11 @@
             this.lblTituloReporteGeneral.TabIndex = 23;
             this.lblTituloReporteGeneral.Text = "ADMINISTRADOR DE REPORTES";
             // 
-            // dtpFechaFinalReporte
-            // 
-            this.dtpFechaFinalReporte.CustomFormat = "yyyy/MM/dd";
-            this.dtpFechaFinalReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaFinalReporte.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFechaFinalReporte.Location = new System.Drawing.Point(611, 189);
-            this.dtpFechaFinalReporte.Name = "dtpFechaFinalReporte";
-            this.dtpFechaFinalReporte.Size = new System.Drawing.Size(120, 26);
-            this.dtpFechaFinalReporte.TabIndex = 46;
-            // 
-            // dtpFechaInicioReporte
-            // 
-            this.dtpFechaInicioReporte.CustomFormat = "yyyy/MM/dd";
-            this.dtpFechaInicioReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaInicioReporte.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFechaInicioReporte.Location = new System.Drawing.Point(296, 189);
-            this.dtpFechaInicioReporte.Name = "dtpFechaInicioReporte";
-            this.dtpFechaInicioReporte.Size = new System.Drawing.Size(120, 26);
-            this.dtpFechaInicioReporte.TabIndex = 47;
-            // 
-            // lblFechaInicioReporte
-            // 
-            this.lblFechaInicioReporte.AutoSize = true;
-            this.lblFechaInicioReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaInicioReporte.Location = new System.Drawing.Point(155, 191);
-            this.lblFechaInicioReporte.Name = "lblFechaInicioReporte";
-            this.lblFechaInicioReporte.Size = new System.Drawing.Size(135, 24);
-            this.lblFechaInicioReporte.TabIndex = 48;
-            this.lblFechaInicioReporte.Text = "Fecha Inicial:";
-            // 
-            // lblFechaFinalReporte
-            // 
-            this.lblFechaFinalReporte.AutoSize = true;
-            this.lblFechaFinalReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaFinalReporte.Location = new System.Drawing.Point(478, 189);
-            this.lblFechaFinalReporte.Name = "lblFechaFinalReporte";
-            this.lblFechaFinalReporte.Size = new System.Drawing.Size(127, 24);
-            this.lblFechaFinalReporte.TabIndex = 49;
-            this.lblFechaFinalReporte.Text = "Fecha Final:";
-            // 
             // cbSeleccionarMes
             // 
             this.cbSeleccionarMes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSeleccionarMes.FormattingEnabled = true;
-            this.cbSeleccionarMes.Location = new System.Drawing.Point(251, 262);
+            this.cbSeleccionarMes.Location = new System.Drawing.Point(244, 183);
             this.cbSeleccionarMes.Name = "cbSeleccionarMes";
             this.cbSeleccionarMes.Size = new System.Drawing.Size(131, 28);
             this.cbSeleccionarMes.TabIndex = 50;
@@ -164,7 +120,7 @@
             // 
             this.lblSeleccionarMes.AutoSize = true;
             this.lblSeleccionarMes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSeleccionarMes.Location = new System.Drawing.Point(73, 262);
+            this.lblSeleccionarMes.Location = new System.Drawing.Point(66, 183);
             this.lblSeleccionarMes.Name = "lblSeleccionarMes";
             this.lblSeleccionarMes.Size = new System.Drawing.Size(172, 24);
             this.lblSeleccionarMes.TabIndex = 51;
@@ -174,7 +130,7 @@
             // 
             this.lblSeleccionarAnio.AutoSize = true;
             this.lblSeleccionarAnio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSeleccionarAnio.Location = new System.Drawing.Point(425, 262);
+            this.lblSeleccionarAnio.Location = new System.Drawing.Point(418, 183);
             this.lblSeleccionarAnio.Name = "lblSeleccionarAnio";
             this.lblSeleccionarAnio.Size = new System.Drawing.Size(171, 24);
             this.lblSeleccionarAnio.TabIndex = 53;
@@ -184,7 +140,7 @@
             // 
             this.cbSeleccionarAnio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSeleccionarAnio.FormattingEnabled = true;
-            this.cbSeleccionarAnio.Location = new System.Drawing.Point(602, 258);
+            this.cbSeleccionarAnio.Location = new System.Drawing.Point(595, 179);
             this.cbSeleccionarAnio.Name = "cbSeleccionarAnio";
             this.cbSeleccionarAnio.Size = new System.Drawing.Size(145, 28);
             this.cbSeleccionarAnio.TabIndex = 52;
@@ -193,15 +149,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(920, 320);
+            this.ClientSize = new System.Drawing.Size(920, 235);
             this.Controls.Add(this.lblSeleccionarAnio);
             this.Controls.Add(this.cbSeleccionarAnio);
             this.Controls.Add(this.lblSeleccionarMes);
             this.Controls.Add(this.cbSeleccionarMes);
-            this.Controls.Add(this.lblFechaFinalReporte);
-            this.Controls.Add(this.lblFechaInicioReporte);
-            this.Controls.Add(this.dtpFechaInicioReporte);
-            this.Controls.Add(this.dtpFechaFinalReporte);
             this.Controls.Add(this.btnConsultarReporte);
             this.Controls.Add(this.gbPeriodicidad);
             this.Controls.Add(this.lblTituloReporteGeneral);
@@ -218,10 +170,6 @@
         #endregion
         public System.Windows.Forms.Button btnConsultarReporte;
         private System.Windows.Forms.Label lblTituloReporteGeneral;
-        public System.Windows.Forms.DateTimePicker dtpFechaFinalReporte;
-        public System.Windows.Forms.DateTimePicker dtpFechaInicioReporte;
-        private System.Windows.Forms.Label lblFechaInicioReporte;
-        private System.Windows.Forms.Label lblFechaFinalReporte;
         public System.Windows.Forms.ComboBox cbSeleccionarMes;
         private System.Windows.Forms.Label lblSeleccionarMes;
         private System.Windows.Forms.Label lblSeleccionarAnio;

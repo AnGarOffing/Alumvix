@@ -8,6 +8,8 @@ namespace Alumvix.Model.Dto
 {
     internal class ReporteDto
     {
+        int indiceMes;
+        string mes;
         int cantidadContratos;
         int totalVentas;
         int totalGastos;
@@ -17,5 +19,7 @@ namespace Alumvix.Model.Dto
         public int TotalVentas { get => totalVentas; set => totalVentas = value; }
         public int TotalGastos { get => totalGastos; set => totalGastos = value; }
         public int UtilidadGeneral { get => utilidadGeneral; set => utilidadGeneral = value; }
+        public string Mes { get => mes; set => mes = value; }
+        public int IndiceMes { get => indiceMes; set => indiceMes = value; }
     }
 }

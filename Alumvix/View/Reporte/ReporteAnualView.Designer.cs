@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lstvGastosPeriodo = new System.Windows.Forms.ListView();
+            this.lstvGastosTotalesMensuales = new System.Windows.Forms.ListView();
             this.columnaTipoGastoPeriodo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnaTotalGasto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.gbTituloGastosDelMes = new System.Windows.Forms.GroupBox();
@@ -42,29 +42,29 @@
             this.lblTotalVentas = new System.Windows.Forms.Label();
             this.btnDetalleGastos = new System.Windows.Forms.Button();
             this.lblTituloReporteAnual = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lstvReporteMensualPorAnio = new System.Windows.Forms.ListView();
             this.columnaMes = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnaTotalVentas = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnaTotalGastos = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnaUtilidadMes = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnaUtilidad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.gbTituloGastosDelMes.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lstvGastosPeriodo
+            // lstvGastosTotalesMensuales
             // 
-            this.lstvGastosPeriodo.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lstvGastosTotalesMensuales.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnaTipoGastoPeriodo,
             this.columnaTotalGasto});
-            this.lstvGastosPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstvGastosPeriodo.FullRowSelect = true;
-            this.lstvGastosPeriodo.HideSelection = false;
-            this.lstvGastosPeriodo.Location = new System.Drawing.Point(791, 125);
-            this.lstvGastosPeriodo.MultiSelect = false;
-            this.lstvGastosPeriodo.Name = "lstvGastosPeriodo";
-            this.lstvGastosPeriodo.Size = new System.Drawing.Size(376, 434);
-            this.lstvGastosPeriodo.TabIndex = 53;
-            this.lstvGastosPeriodo.UseCompatibleStateImageBehavior = false;
-            this.lstvGastosPeriodo.View = System.Windows.Forms.View.Details;
+            this.lstvGastosTotalesMensuales.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstvGastosTotalesMensuales.FullRowSelect = true;
+            this.lstvGastosTotalesMensuales.HideSelection = false;
+            this.lstvGastosTotalesMensuales.Location = new System.Drawing.Point(791, 125);
+            this.lstvGastosTotalesMensuales.MultiSelect = false;
+            this.lstvGastosTotalesMensuales.Name = "lstvGastosTotalesMensuales";
+            this.lstvGastosTotalesMensuales.Size = new System.Drawing.Size(376, 434);
+            this.lstvGastosTotalesMensuales.TabIndex = 53;
+            this.lstvGastosTotalesMensuales.UseCompatibleStateImageBehavior = false;
+            this.lstvGastosTotalesMensuales.View = System.Windows.Forms.View.Details;
             // 
             // columnaTipoGastoPeriodo
             // 
@@ -92,7 +92,7 @@
             this.gbTituloGastosDelMes.Size = new System.Drawing.Size(757, 191);
             this.gbTituloGastosDelMes.TabIndex = 52;
             this.gbTituloGastosDelMes.TabStop = false;
-            this.gbTituloGastosDelMes.Text = "Datos del mes";
+            this.gbTituloGastosDelMes.Text = "Datos del año";
             // 
             // lblTotalContratos
             // 
@@ -194,55 +194,56 @@
             this.lblTituloReporteAnual.TabIndex = 50;
             this.lblTituloReporteAnual.Text = "REPORTE: AÑO";
             // 
-            // listView1
+            // lstvReporteMensualPorAnio
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lstvReporteMensualPorAnio.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnaMes,
             this.columnaTotalVentas,
             this.columnaTotalGastos,
-            this.columnaUtilidadMes});
-            this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listView1.FullRowSelect = true;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(14, 302);
-            this.listView1.MultiSelect = false;
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(757, 257);
-            this.listView1.TabIndex = 54;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.columnaUtilidad});
+            this.lstvReporteMensualPorAnio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstvReporteMensualPorAnio.FullRowSelect = true;
+            this.lstvReporteMensualPorAnio.HideSelection = false;
+            this.lstvReporteMensualPorAnio.Location = new System.Drawing.Point(14, 283);
+            this.lstvReporteMensualPorAnio.MultiSelect = false;
+            this.lstvReporteMensualPorAnio.Name = "lstvReporteMensualPorAnio";
+            this.lstvReporteMensualPorAnio.Size = new System.Drawing.Size(759, 276);
+            this.lstvReporteMensualPorAnio.TabIndex = 54;
+            this.lstvReporteMensualPorAnio.UseCompatibleStateImageBehavior = false;
+            this.lstvReporteMensualPorAnio.View = System.Windows.Forms.View.Details;
             // 
             // columnaMes
             // 
             this.columnaMes.Text = "Mes";
-            this.columnaMes.Width = 194;
+            this.columnaMes.Width = 205;
             // 
             // columnaTotalVentas
             // 
-            this.columnaTotalVentas.Text = "Total Ventas";
-            this.columnaTotalVentas.Width = 178;
+            this.columnaTotalVentas.Text = "Ventas";
+            this.columnaTotalVentas.Width = 189;
             // 
             // columnaTotalGastos
             // 
-            this.columnaTotalGastos.Text = "Total Gastos";
-            this.columnaTotalGastos.Width = 188;
+            this.columnaTotalGastos.Text = "Gastos";
+            this.columnaTotalGastos.Width = 172;
             // 
-            // columnaUtilidadMes
+            // columnaUtilidad
             // 
-            this.columnaUtilidadMes.Text = "Utilidad Mes";
-            this.columnaUtilidadMes.Width = 192;
+            this.columnaUtilidad.Text = "Utilidad";
+            this.columnaUtilidad.Width = 189;
             // 
             // ReporteAnualView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1179, 571);
-            this.Controls.Add(this.listView1);
-            this.Controls.Add(this.lstvGastosPeriodo);
+            this.Controls.Add(this.lstvReporteMensualPorAnio);
+            this.Controls.Add(this.lstvGastosTotalesMensuales);
             this.Controls.Add(this.gbTituloGastosDelMes);
             this.Controls.Add(this.btnDetalleGastos);
             this.Controls.Add(this.lblTituloReporteAnual);
             this.Name = "ReporteAnualView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReporteAnual";
             this.gbTituloGastosDelMes.ResumeLayout(false);
             this.gbTituloGastosDelMes.PerformLayout();
@@ -253,7 +254,7 @@
 
         #endregion
 
-        public System.Windows.Forms.ListView lstvGastosPeriodo;
+        public System.Windows.Forms.ListView lstvGastosTotalesMensuales;
         private System.Windows.Forms.ColumnHeader columnaTipoGastoPeriodo;
         private System.Windows.Forms.ColumnHeader columnaTotalGasto;
         public System.Windows.Forms.GroupBox gbTituloGastosDelMes;
@@ -267,10 +268,10 @@
         public System.Windows.Forms.Label lblTotalVentas;
         public System.Windows.Forms.Button btnDetalleGastos;
         public System.Windows.Forms.Label lblTituloReporteAnual;
-        public System.Windows.Forms.ListView listView1;
+        public System.Windows.Forms.ListView lstvReporteMensualPorAnio;
+        private System.Windows.Forms.ColumnHeader columnaMes;
         private System.Windows.Forms.ColumnHeader columnaTotalVentas;
         private System.Windows.Forms.ColumnHeader columnaTotalGastos;
-        private System.Windows.Forms.ColumnHeader columnaUtilidadMes;
-        public System.Windows.Forms.ColumnHeader columnaMes;
+        private System.Windows.Forms.ColumnHeader columnaUtilidad;
     }
 }

@@ -21,14 +21,14 @@ namespace Alumvix.Controller.Reporte
         public static int MesSeleccionado { get => mesSeleccionado; set => mesSeleccionado = value; }
         public static int AnioSeleccionado { get => anioSeleccionado; set => anioSeleccionado = value; }
 
-        public AdministradorReportesController(AdministradorReportesView administradorReporteVista)
+        public AdministradorReportesController(AdministradorReportesView administradorReportesVista)
         {
-            administradorReporteView = administradorReporteVista;
+            administradorReporteView = administradorReportesVista;
             administradorReporteView.Activated += new EventHandler(CargarCombos);
             administradorReporteView.rbAnual.CheckedChanged += new EventHandler(ActivarComboAnios);
             administradorReporteView.rbMensual.CheckedChanged += new EventHandler(ActivarComboMeses);
             administradorReporteView.rbRangoDeFechas.CheckedChanged += new EventHandler(ActivarRangoDeFecha);
-            administradorReporteView.btnConsultarReporte.Click += new EventHandler(AbrirReporteMensualView);
+            administradorReporteView.btnConsultarReporte.Click += new EventHandler(AbrirReporte);
         }
 
        
@@ -43,7 +43,6 @@ namespace Alumvix.Controller.Reporte
             }
             if (administradorReporteView.cbSeleccionarAnio.Items.Count == 0)
             {
-                //TODO: cargar los años consultando en BD los años en los que se han hecho contratos)
                 int anioActual = DateTime.Now.Year;
                 int anioInicial = 2022;
                 List<int> listadoAnios = new List<int>();
@@ -56,7 +55,7 @@ namespace Alumvix.Controller.Reporte
             }
         }
 
-        private void AbrirReporteMensualView(object sender, EventArgs e)
+        private void AbrirReporte(object sender, EventArgs e)
         {
             if (administradorReporteView.rbMensual.Checked == true)
             {                             
@@ -68,12 +67,17 @@ namespace Alumvix.Controller.Reporte
                 ReporteAnualView reporteAnualView = ReporteAnualView.ObtenerInstancia();
                 reporteAnualView.ShowDialog();
             }
+            if (administradorReporteView.rbRangoDeFechas.Checked == true)
+            {
+                ReportePorPeriodoView reportePorPeriodoView = ReportePorPeriodoView.ObtenerInstancia();
+                reportePorPeriodoView.ShowDialog();
+            }
         }
 
         private void ActivarRangoDeFecha(object sender, EventArgs e)
         {
-            administradorReporteView.dtpFechaInicioReporte.Enabled = true;
-            administradorReporteView.dtpFechaFinalReporte.Enabled = true;
+            //administradorReporteView.dtpFechaInicioReporte.Enabled = true;
+            //administradorReporteView.dtpFechaFinalReporte.Enabled = true;
             administradorReporteView.cbSeleccionarAnio.Enabled = false;
             administradorReporteView.cbSeleccionarMes.Enabled = false;
         }
@@ -82,16 +86,16 @@ namespace Alumvix.Controller.Reporte
         {
             administradorReporteView.cbSeleccionarAnio.Enabled = true;
             administradorReporteView.cbSeleccionarMes.Enabled = false;
-            administradorReporteView.dtpFechaInicioReporte.Enabled = false;
-            administradorReporteView.dtpFechaFinalReporte.Enabled = false;        
+            //administradorReporteView.dtpFechaInicioReporte.Enabled = false;
+            //administradorReporteView.dtpFechaFinalReporte.Enabled = false;        
         }
 
         private void ActivarComboMeses(object sender, EventArgs e)
         {
             administradorReporteView.cbSeleccionarMes.Enabled = true;
             administradorReporteView.cbSeleccionarAnio.Enabled = true;
-            administradorReporteView.dtpFechaInicioReporte.Enabled = false;
-            administradorReporteView.dtpFechaFinalReporte.Enabled = false;
+            //administradorReporteView.dtpFechaInicioReporte.Enabled = false;
+            //administradorReporteView.dtpFechaFinalReporte.Enabled = false;
         }
 
         public static AdministradorReportesView ObtenerInstancia()

@@ -25,6 +25,7 @@ namespace Alumvix.Controller.Reporte
 
         private void MostrarReporteMensual(object sender, EventArgs e)
         {
+            reporteMensualView.lstvGastosPeriodo.Items.Clear();
             AdministradorReportesView administradorReportesView = AdministradorReportesController.ObtenerInstancia();
             AdministradorReportesController.MesSeleccionado = administradorReportesView.cbSeleccionarMes.SelectedIndex;
             AdministradorReportesController.AnioSeleccionado = Convert.ToInt32(administradorReportesView.cbSeleccionarAnio.SelectedValue);

@@ -70,6 +70,20 @@ namespace Alumvix.Model.Dao
             return totalVentas;
         }
 
+        public int ObtenerTotalVentasMesesDeAnio(int anio)
+        {
+            command.Connection = connection;
+            command.CommandText = "select SUM(valorContrato) from CONTRATO where YEAR(fechaInicioContrato) = " + anio;
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            lectorFilas = command.ExecuteReader();
+            lectorFilas.Read();
+            int totalVentas = lectorFilas.GetInt32(0);
+            lectorFilas.Close();
+            connection.Close();
+            return totalVentas;
+        }
+
         public int ObtenerTotalGastosPorMes(int mes, int anio)
         {
             command.Connection = connection;
@@ -126,6 +140,47 @@ namespace Alumvix.Model.Dao
             lectorFilas.Close();
             connection.Close();
             return totalGastosInternos;
+        }
+
+        public List<ReporteDto> ObtenerCuentasMesDeUnAnio(int anio)
+        {
+            command.Connection = connection;
+            command.CommandText = "MostrarcuentasMensualesPorAnio";        
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@anio", anio);
+            connection.Open();
+            lectorFilas = command.ExecuteReader();
+            List<ReporteDto> listadoCuentas = new List<ReporteDto>();
+            while (lectorFilas.Read())
+            {
+                listadoCuentas.Add(new ReporteDto()
+                {
+                    
+                    Mes = lectorFilas.GetString(0),
+                    TotalVentas = lectorFilas.GetInt32(1),
+                    TotalGastos = lectorFilas.GetInt32(2),
+                });
+            }
+            lectorFilas.Close();
+            connection.Close();
+            return listadoCuentas;
+        }
+
+        public List<int> ObtenerIndicesDeMeses(int anio)
+        {
+            command.Connection = connection;
+            command.CommandText = "select MONTH(fechaInicioContrato) as Mes from CONTRATO where YEAR(fechaInicioContrato) = " + anio + " group by MONTH(fechaInicioContrato)";
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            List<int> listadoIndicesMeses = new List<int>();
+            lectorFilas = command.ExecuteReader();        
+            while (lectorFilas.Read())
+            {
+                listadoIndicesMeses.Add(lectorFilas.GetInt32(0));
+            }
+            lectorFilas.Close();
+            connection.Close();
+            return listadoIndicesMeses;
         }
     }
 }
