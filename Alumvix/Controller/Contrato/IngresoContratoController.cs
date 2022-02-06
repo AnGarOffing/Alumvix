@@ -54,6 +54,5 @@ namespace Alumvix.Controller.Contrato
             ContratoDao contratoDao = new ContratoDao();
             ingresoContratoView.cbIngresarTipoFactura.DataSource = contratoDao.ObtenerTiposFactura();
         }
-
     }
 }

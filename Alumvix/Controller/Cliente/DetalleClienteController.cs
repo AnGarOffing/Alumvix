@@ -90,16 +90,23 @@ namespace Alumvix.Controller.Cliente
         private ContratoDto SeleccionarContrato()
         {
             ContratoDto contratoARetornar = null;
-            ContratoDao contrato = new ContratoDao();
-            List<ContratoDto> listadoContratos= contrato.ObtenerContratos(ClienteController.ObtenerIdCliente());
+            ContratoDao contratoDao = new ContratoDao();
+            List<ContratoDto> listadoContratos= contratoDao.ObtenerContratos(ClienteController.ObtenerIdCliente());
             int sumaContratos = listadoContratos.Count;
             if (sumaContratos == 1)
             {
-                contratoARetornar = contrato.ObtenerContrato(ClienteController.ObtenerIdCliente());
+                contratoARetornar = contratoDao.ObtenerContrato(ClienteController.ObtenerIdCliente());
             }
             else if (sumaContratos > 1)
             {
-                contratoARetornar = contrato.ObtenerContratoPorIdContrato(Convert.ToInt32(seleccionarContratoView.lstvListadoContratos.SelectedItems[0].SubItems[0].Text));
+                foreach (Form frm in Application.OpenForms)
+                {
+                    if (frm.GetType() == typeof(SeleccionarContratoView))
+                    {
+                        contratoARetornar = contratoDao.ObtenerContratoPorIdContrato(Convert.ToInt32(seleccionarContratoView.lstvListadoContratos.SelectedItems[0].SubItems[0].Text));
+                        break;
+                    }else contratoARetornar = contratoDao.ObtenerContrato(ClienteController.ObtenerIdCliente());
+                }                
             }
             return contratoARetornar;
         }

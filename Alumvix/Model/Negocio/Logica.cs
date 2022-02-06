@@ -61,6 +61,11 @@ namespace Alumvix.Model.Negocio
             return (int)(valor * iva) + valor;
         }
 
+        public static int QuitarIVA(int valor)
+        {
+            return Convert.ToInt32(valor / (1 + new ContratoDao().ConsultarIVA(1)));
+        }
+
         public int SumarTiposDeGastos(int mes, int anio) 
         {
             ReporteDao reporteDao = new ReporteDao();

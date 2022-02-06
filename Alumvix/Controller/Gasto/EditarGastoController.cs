@@ -48,8 +48,7 @@ namespace Alumvix.Controller.Gasto
                 respuesta = ValidacionesDeControles.ValidarBotonIngresoGasto(editarGastoView.txtActualizarValorGasto.Text, editarGastoView.txtEditarNumeroFactura.Text, editarGastoView.cbEditarTipoGasto.SelectedIndex, editarGastoView.cbEditarProveedor.SelectedIndex);
             }
             if (respuesta)
-            {
-                //TODO Buscar la forma de enviar idProveedor con valor null hacia la BD        
+            {       
                 GastoDao gastoDao = new GastoDao();
                 string valorSinFormato = CambioDeFormato.QuitarFormatoANumero(editarGastoView.txtActualizarValorGasto.Text);
                 int idTipoGasto = gastoDao.ObtenerTipoGastoPorNombre(editarGastoView.cbEditarTipoGasto.GetItemText(editarGastoView.cbEditarTipoGasto.SelectedItem));

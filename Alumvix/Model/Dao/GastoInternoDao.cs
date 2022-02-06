@@ -82,5 +82,41 @@ namespace Alumvix.Model.Dao
             connection.Close();
             return listadoGastosInternos;
         }
+
+        public List<GastoInternoDto> ObtenerGastosInternosPorPeriodo(string fechaInicial, string fechaFinal)
+        {
+            command.Connection = connection;
+            command.CommandText = "select NombreTipoGasto as Tipo, SUM(valorGastoInterno) as Valor from GASTO_INTERNO" 
+                                +" inner join TIPO_GASTO on GASTO_INTERNO.FK_ID_TIPO_GASTO1 = TIPO_GASTO.ID_TIPO_GASTO where fechaGastoInterno between " + fechaInicial + " and " + fechaInicial + " group by NombreTipoGasto";
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            lectorFilas = command.ExecuteReader();
+            List<GastoInternoDto> listadoGastosInternos = new List<GastoInternoDto>();
+            while (lectorFilas.Read())
+            {
+                listadoGastosInternos.Add(new GastoInternoDto()
+                {
+                    TipoGastoInterno = lectorFilas.GetString(0),
+                    ValorGastoInterno = lectorFilas.GetInt32(1),
+                });
+            }
+            lectorFilas.Close();
+            connection.Close();
+            return listadoGastosInternos;
+        }
+
+        public int ObtenerTotalGastosInternosPorPeriodo(string fechaInicial, string fechaFinal)
+        {
+            command.Connection = connection;
+            command.CommandText = "select SUM(valorGastoInterno) from GASTO_INTERNO where fechaGastoInterno between '" + fechaInicial + "' and '" + fechaFinal + "'";
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            lectorFilas = command.ExecuteReader();
+            lectorFilas.Read();
+            int totalGastosInternos = lectorFilas.GetInt32(0);
+            lectorFilas.Close();
+            connection.Close();
+            return totalGastosInternos;
+        }
     }
 }

@@ -191,5 +191,28 @@ namespace Alumvix.Model.Dao
             connection.Close();
             return listadoGastos;
         }
+
+        public List<GastoDto> ObtenerGastosPorPeriodo(string fechaInicial, string fechaFinal)
+        {
+            command.Connection = connection;
+            command.CommandText = "select NombreTipoGasto as Tipo, SUM(valorGasto) as Valor from GASTO" 
+                                +" inner join TIPO_GASTO on GASTO.FK_ID_TIPO_GASTO = TIPO_GASTO.ID_TIPO_GASTO where FK_ID_CONTRATO2 in"
+                                +" (select ID_CONTRATO from CONTRATO where fechaInicioContrato between " + fechaInicial + " and " + fechaFinal +") group by NombreTipoGasto";
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            lectorFilas = command.ExecuteReader();
+            List<GastoDto> listadoGastos = new List<GastoDto>();
+            while (lectorFilas.Read())
+            {
+                listadoGastos.Add(new GastoDto()
+                {
+                    TipoGasto = lectorFilas.GetString(0),
+                    ValorGasto = lectorFilas.GetInt32(1),
+                });
+            }
+            lectorFilas.Close();
+            connection.Close();
+            return listadoGastos;
+        }
     }
 }

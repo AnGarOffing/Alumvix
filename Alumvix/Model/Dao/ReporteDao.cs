@@ -182,5 +182,40 @@ namespace Alumvix.Model.Dao
             connection.Close();
             return listadoIndicesMeses;
         }
+
+        public ReporteDto ObtenerCuentasPorPeriodo(string fechaInicial, string fechaFinal )
+        {
+            //command.Connection = connection;
+            //command.CommandText = "MostrarCuentasPorPeriodo";
+            //command.CommandType = CommandType.StoredProcedure;
+            //command.Parameters.AddWithValue("@fechaInicial", fechaInicial);
+            //command.Parameters.AddWithValue("@fechaFinal", fechaFinal);
+            //connection.Open();
+            //lectorFilas = command.ExecuteReader();
+            //ReporteDto reporteDto = new ReporteDto();
+            //lectorFilas.Read();
+            //reporteDto.CantidadContratos = lectorFilas.GetInt32(0);
+            //reporteDto.TotalVentas = lectorFilas.GetInt32(1);
+            //reporteDto.TotalGastos = lectorFilas.GetInt32(2);
+            //lectorFilas.Close();
+            //connection.Close();
+            //return reporteDto;
+
+            command.Connection = connection;
+            command.CommandText = "select COUNT(ID_CONTRATO) as CantidadContratos, SUM(valorContrato) as TotalVentas, SUM(valorGasto) as TotalGastosContratos from CONTRATO"
+                                +" inner join GASTO on CONTRATO.ID_CONTRATO = GASTO.FK_ID_CONTRATO2"
+                                +" where fechaInicioContrato >= '" + fechaInicial + "' and fechaInicioContrato <= '" + fechaFinal + "'";
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            lectorFilas = command.ExecuteReader();
+            ReporteDto reporteDto = new ReporteDto();
+            lectorFilas.Read();
+            reporteDto.CantidadContratos = lectorFilas.GetInt32(0);
+            reporteDto.TotalVentas = lectorFilas.GetInt32(1);
+            reporteDto.TotalGastos = lectorFilas.GetInt32(2);
+            lectorFilas.Close();
+            connection.Close();
+            return reporteDto;
+        }
     }
 }

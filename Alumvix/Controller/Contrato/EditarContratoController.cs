@@ -17,7 +17,8 @@ namespace Alumvix.Controller.Contrato
         EditarContratoView editarContratoView;
         DetalleClienteView detalleClienteView;
         ContratoDao contratoDao;
-        string valorContratoAComparar;
+        string valorContratoAnterior;
+        string tipoFacturaAnterior;
 
         public EditarContratoController(EditarContratoView editarContratoVista)
         {
@@ -33,12 +34,13 @@ namespace Alumvix.Controller.Contrato
             editarContratoView.txtEditarValorContrato.Clear();
             editarContratoView.cbEditarTipoFactura.DataSource = contratoDao.ObtenerTiposFactura();
             editarContratoView.cbEditarTipoFactura.Text = DetalleClienteController.ObtenerInstanciaDetalleClienteView().txtTipoFactura.Text;
+            tipoFacturaAnterior = editarContratoView.cbEditarTipoFactura.Text;
 
             editarContratoView.cbEditarEstadoTrabajo.DataSource = contratoDao.ObtenerEstadosTrabajo();
             editarContratoView.cbEditarEstadoTrabajo.Text = detalleClienteView.txtEstadoTrabajo.Text;
 
             editarContratoView.txtEditarValorContrato.Text = detalleClienteView.txtValorContrato.Text;
-            valorContratoAComparar = editarContratoView.txtEditarValorContrato.Text;
+            valorContratoAnterior = editarContratoView.txtEditarValorContrato.Text;
 
             editarContratoView.dtpEditarFechaInicioContrato.Text = detalleClienteView.txtFechaInicioContrato.Text;
             editarContratoView.dtpEditarFechaTerminacionContrato.Text = detalleClienteView.txtFechaFinContrato.Text;
@@ -55,9 +57,13 @@ namespace Alumvix.Controller.Contrato
             {
                 int valorContratoCalculado;
                 ContratoDao contratoDao = new ContratoDao();
-                if (editarContratoView.cbEditarTipoFactura.SelectedIndex == 1 && valorContratoAComparar != editarContratoView.txtEditarValorContrato.Text)
+                if ((editarContratoView.cbEditarTipoFactura.SelectedIndex == 1 && valorContratoAnterior != editarContratoView.txtEditarValorContrato.Text) || (editarContratoView.cbEditarTipoFactura.Text != tipoFacturaAnterior && editarContratoView.cbEditarTipoFactura.Text == "LEGAL"))
                 {
                     valorContratoCalculado = Logica.AplicarIVA(Convert.ToInt32(CambioDeFormato.QuitarFormatoANumero(editarContratoView.txtEditarValorContrato.Text)), 1);
+                }else
+                if ((tipoFacturaAnterior != editarContratoView.cbEditarTipoFactura.Text && tipoFacturaAnterior == "LEGAL") && (valorContratoAnterior == editarContratoView.txtEditarValorContrato.Text))
+                {
+                    valorContratoCalculado = Logica.QuitarIVA(Convert.ToInt32(CambioDeFormato.QuitarFormatoANumero(editarContratoView.txtEditarValorContrato.Text)));
                 }
                 else valorContratoCalculado = Convert.ToInt32(CambioDeFormato.QuitarFormatoANumero(editarContratoView.txtEditarValorContrato.Text));
                 bool respuestaActualizacionContrato = contratoDao.ActualizarContrato(Convert.ToInt32(CambioDeFormato.QuitarFormatoANumero(valorContratoCalculado.ToString())), editarContratoView.dtpEditarFechaInicioContrato.Text, editarContratoView.dtpEditarFechaTerminacionContrato.Text, editarContratoView.cbEditarEstadoTrabajo.SelectedIndex + 1, editarContratoView.cbEditarTipoFactura.SelectedIndex,Convert.ToInt32(detalleClienteView.txtNumeroFactura.Text));
