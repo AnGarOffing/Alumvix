@@ -2,6 +2,7 @@
 using Alumvix.Model.Dao;
 using Alumvix.Model.Dto;
 using Alumvix.Model.Logica.Util;
+using Alumvix.Model.Negocio.Util;
 using Alumvix.View.Gasto;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace Alumvix.Controller.Gasto
 {
     internal class GastoInternoController
     {
-        GastoInternoView gastoInternoView;
+        static GastoInternoView gastoInternoView;
         List<int> idsGastosInternos = new List<int>();
         public int idGastoInterno;
         int indice;
@@ -23,9 +24,28 @@ namespace Alumvix.Controller.Gasto
         {
             gastoInternoView = gastoInternoVista;
             gastoInternoView.Activated += new EventHandler(MostrarGastosInternos);
-            gastoInternoView.lstvGastosInternos.SelectedIndexChanged += new EventHandler(ObtenerIndice); 
+            gastoInternoView.lstvGastosInternos.SelectedIndexChanged += new EventHandler(ObtenerIndice);
+            gastoInternoView.btnIngresarGastoInterno.Click += new EventHandler(AbrirIngresoGastoInternoView);
             gastoInternoView.btnEliminarGastoInterno.Click += new EventHandler(EliminarGastoInterno);
+            gastoInternoView.btnEditarGastoInterno.Click += new EventHandler(AbrirEditarGastoInternoView);
         }
+
+        private void AbrirEditarGastoInternoView(object sender, EventArgs e)
+        {
+            if (gastoInternoView.lstvGastosInternos.SelectedItems.Count > 0)
+            {
+                EditarGastoInternoView editarGastoInternoView = EditarGastoInternoView.ObtenerInstancia();
+                editarGastoInternoView.ShowDialog();
+            }
+            else MessageBox.Show("Debe seleccionar un gasto de la lista");
+        }
+
+        public void AbrirIngresoGastoInternoView(object sender, EventArgs e)
+        {
+            IngresoGastoInternoView ingresoGastoInternoView = IngresoGastoInternoView.ObtenerInstancia();
+            ingresoGastoInternoView.ShowDialog();
+        }
+
 
         private void EliminarGastoInterno(object sender, EventArgs e)
         {
@@ -76,6 +96,11 @@ namespace Alumvix.Controller.Gasto
                 indice = gastoInternoView.lstvGastosInternos.Items.IndexOf(gastoInternoView.lstvGastosInternos.SelectedItems[0]);
                 idGastoInterno = EncontrarIdGastoInterno(idsGastosInternos, indice);
             }
+        }
+
+        public static GastoInternoView ObtenerInstancia()
+        {
+            return gastoInternoView;
         }
     }
 }

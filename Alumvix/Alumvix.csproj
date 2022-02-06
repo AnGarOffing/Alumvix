@@ -70,14 +70,17 @@
     <Compile Include="Controller\Cliente\ClienteController.cs" />
     <Compile Include="Controller\Cliente\DetalleClienteController.cs" />
     <Compile Include="Controller\Cliente\EditarClienteController.cs" />
+    <Compile Include="Controller\Cliente\IngresoClienteController.cs" />
     <Compile Include="Controller\Contrato\EditarContratoController.cs" />
     <Compile Include="Controller\Contrato\IngresoContratoController.cs" />
     <Compile Include="Controller\Contrato\SeleccionarContratoController.cs" />
     <Compile Include="Controller\Gasto\DetalleGastoController.cs" />
     <Compile Include="Controller\Gasto\EditarGastoController.cs" />
+    <Compile Include="Controller\Gasto\EditarGastoInternoController.cs" />
     <Compile Include="Controller\Gasto\GastoInternoController.cs" />
     <Compile Include="Controller\Gasto\GastosPorPeriodoController.cs" />
     <Compile Include="Controller\Gasto\IngresoGastoController.cs" />
+    <Compile Include="Controller\Gasto\IngresoGastoInternoController.cs" />
     <Compile Include="Controller\Producto\IngresoProductoController.cs" />
     <Compile Include="Controller\Reporte\AdministradorReportesController.cs" />
     <Compile Include="Controller\Reporte\ReporteAnualController.cs" />
@@ -143,6 +146,12 @@
     <Compile Include="View\Cliente\EditarClienteView.Designer.cs">
       <DependentUpon>EditarClienteView.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Cliente\IngresoClienteView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Cliente\IngresoClienteView.Designer.cs">
+      <DependentUpon>IngresoClienteView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Contrato\EditarContratoView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +169,12 @@
     </Compile>
     <Compile Include="View\Contrato\SeleccionarContratoView.Designer.cs">
       <DependentUpon>SeleccionarContratoView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Gasto\EditarGastoInternoView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Gasto\EditarGastoInternoView.Designer.cs">
+      <DependentUpon>EditarGastoInternoView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Gasto\GastoInternoView.cs">
       <SubType>Form</SubType>
@@ -184,6 +199,12 @@
     </Compile>
     <Compile Include="View\Gasto\GastosPorPeriodoView.Designer.cs">
       <DependentUpon>GastosPorPeriodoView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Gasto\IngresoGastoInternoView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Gasto\IngresoGastoInternoView.Designer.cs">
+      <DependentUpon>IngresoGastoInternoView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Gasto\IngresoGastoView.cs">
       <SubType>Form</SubType>
@@ -248,6 +269,9 @@
     <EmbeddedResource Include="View\Cliente\EditarClienteView.resx">
       <DependentUpon>EditarClienteView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Cliente\IngresoClienteView.resx">
+      <DependentUpon>IngresoClienteView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Contrato\EditarContratoView.resx">
       <DependentUpon>EditarContratoView.cs</DependentUpon>
     </EmbeddedResource>
@@ -256,6 +280,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Contrato\SeleccionarContratoView.resx">
       <DependentUpon>SeleccionarContratoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Gasto\EditarGastoInternoView.resx">
+      <DependentUpon>EditarGastoInternoView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Gasto\GastoInternoView.resx">
       <DependentUpon>GastoInternoView.cs</DependentUpon>
@@ -268,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Gasto\GastosPorPeriodoView.resx">
       <DependentUpon>GastosPorPeriodoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Gasto\IngresoGastoInternoView.resx">
+      <DependentUpon>IngresoGastoInternoView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Gasto\IngresoGastoView.resx">
       <DependentUpon>IngresoGastoView.cs</DependentUpon>

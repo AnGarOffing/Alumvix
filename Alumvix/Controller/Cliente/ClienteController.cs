@@ -38,6 +38,13 @@ namespace Alumvix.Controller
             clienteVista.btnActualizarCliente.Click += new EventHandler(AbrirEditarClienteView);
             clienteVista.btnGastosInternos.Click += new EventHandler(AbrirGastoInternoView);
             clienteVista.txtFiltrarCliente.KeyPress += new KeyPressEventHandler(ValidarEntrada);
+            clienteVista.btnIngresarCliente.Click += new EventHandler(AbrirIngresoClienteView);
+        }
+
+        private void AbrirIngresoClienteView(object sender, EventArgs e)
+        {
+            IngresoClienteView ingresoClienteView = IngresoClienteView.ObtenerInstancia();
+            ingresoClienteView.ShowDialog();
         }
 
         private void AbrirGastoInternoView(object sender, EventArgs e)
@@ -92,6 +99,7 @@ namespace Alumvix.Controller
             ClienteDao clienteDao = new ClienteDao();
             clienteVista.dataGridClientes.DataSource = clienteDao.ObtenerListadoClientes(clienteVista.txtFiltrarCliente.Text);
             clienteVista.dataGridClientes.ClearSelection();
+            registroCliente.Clear();
         }
 
         public static List<ClienteDto> CargarRegistroCliente()

@@ -71,5 +71,20 @@ namespace Alumvix.Model.Dao
             connection.Close();
             return respuesta;
         }
+
+        public bool GuardarCliente(string identificacionCliente, string nombreCliente, string correoCliente, string celularCliente, string telefonoCliente, string direccionCliente)
+        {
+            bool respuesta = false;
+            command.Connection = connection;
+            command.CommandText = "insert into CLIENTE values('" + identificacionCliente + "',' "+ nombreCliente + "','" + correoCliente + "','" + celularCliente + "','" + telefonoCliente + "','" + direccionCliente + "')";
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            int filasAfectadasEnBd = command.ExecuteNonQuery();
+            if (filasAfectadasEnBd > 0)
+            {
+                respuesta = true;
+            }
+            return respuesta;
+        }
     }
 }

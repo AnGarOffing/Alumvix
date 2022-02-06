@@ -76,3 +76,6 @@ D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug
 D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug\Alumvix.View.Reporte.AdministradorReportesView.resources
 D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug\Alumvix.View.Reporte.ReporteAnualView.resources
 D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug\Alumvix.View.Reporte.ReportePorPeriodoView.resources
+D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug\Alumvix.View.Gasto.IngresoGastoInternoView.resources
+D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug\Alumvix.View.Gasto.EditarGastoInternoView.resources
+D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug\Alumvix.View.Cliente.IngresoClienteView.resources

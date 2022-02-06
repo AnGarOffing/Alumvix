@@ -37,6 +37,7 @@
             this.btnReporte = new System.Windows.Forms.Button();
             this.btnGastosInternos = new System.Windows.Forms.Button();
             this.lblTituloClientes = new System.Windows.Forms.Label();
+            this.btnIngresarCliente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,9 +56,9 @@
             // btnDetalleCliente
             // 
             this.btnDetalleCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetalleCliente.Location = new System.Drawing.Point(250, 70);
+            this.btnDetalleCliente.Location = new System.Drawing.Point(556, 75);
             this.btnDetalleCliente.Name = "btnDetalleCliente";
-            this.btnDetalleCliente.Size = new System.Drawing.Size(79, 35);
+            this.btnDetalleCliente.Size = new System.Drawing.Size(88, 35);
             this.btnDetalleCliente.TabIndex = 2;
             this.btnDetalleCliente.Text = "Detalle";
             this.btnDetalleCliente.UseVisualStyleBackColor = true;
@@ -76,7 +77,7 @@
             this.btnActualizarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizarCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizarCliente.Image")));
-            this.btnActualizarCliente.Location = new System.Drawing.Point(343, 70);
+            this.btnActualizarCliente.Location = new System.Drawing.Point(658, 75);
             this.btnActualizarCliente.Name = "btnActualizarCliente";
             this.btnActualizarCliente.Size = new System.Drawing.Size(30, 35);
             this.btnActualizarCliente.TabIndex = 35;
@@ -89,7 +90,7 @@
             this.btnEliminarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarCliente.Image")));
-            this.btnEliminarCliente.Location = new System.Drawing.Point(389, 69);
+            this.btnEliminarCliente.Location = new System.Drawing.Point(703, 74);
             this.btnEliminarCliente.Name = "btnEliminarCliente";
             this.btnEliminarCliente.Size = new System.Drawing.Size(30, 35);
             this.btnEliminarCliente.TabIndex = 36;
@@ -118,18 +119,32 @@
             // lblTituloClientes
             // 
             this.lblTituloClientes.AutoSize = true;
-            this.lblTituloClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloClientes.Location = new System.Drawing.Point(312, 18);
             this.lblTituloClientes.Name = "lblTituloClientes";
             this.lblTituloClientes.Size = new System.Drawing.Size(156, 31);
             this.lblTituloClientes.TabIndex = 39;
             this.lblTituloClientes.Text = "CLIENTES";
             // 
+            // btnIngresarCliente
+            // 
+            this.btnIngresarCliente.BackColor = System.Drawing.Color.Transparent;
+            this.btnIngresarCliente.FlatAppearance.BorderSize = 0;
+            this.btnIngresarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIngresarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngresarCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresarCliente.Image")));
+            this.btnIngresarCliente.Location = new System.Drawing.Point(742, 72);
+            this.btnIngresarCliente.Name = "btnIngresarCliente";
+            this.btnIngresarCliente.Size = new System.Drawing.Size(46, 40);
+            this.btnIngresarCliente.TabIndex = 41;
+            this.btnIngresarCliente.UseVisualStyleBackColor = false;
+            // 
             // ClienteView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnIngresarCliente);
             this.Controls.Add(this.lblTituloClientes);
             this.Controls.Add(this.btnGastosInternos);
             this.Controls.Add(this.btnReporte);
@@ -157,5 +172,6 @@
         public System.Windows.Forms.Button btnReporte;
         public System.Windows.Forms.Button btnGastosInternos;
         private System.Windows.Forms.Label lblTituloClientes;
+        public System.Windows.Forms.Button btnIngresarCliente;
     }
 }

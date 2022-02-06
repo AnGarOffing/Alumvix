@@ -11,6 +11,52 @@ namespace Alumvix.Model.Dao
         SqlDataReader lectorFilas;
         SqlCommand command = new SqlCommand();
 
+        public bool IngresarGastoInterno(int valorGastoInterno, string fechaGastoInterno, string descripcionGastoInterno, int tipoGastoInterno)
+        {
+            bool respuesta = false;
+            command.Connection = connection;
+            command.CommandText = "insert into GASTO_INTERNO values(" + valorGastoInterno + ",'" + fechaGastoInterno + "','" + descripcionGastoInterno + "'," + tipoGastoInterno + ")";
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            int filasAfectadasEnBd = command.ExecuteNonQuery();
+            if (filasAfectadasEnBd > 0)
+            {
+                respuesta = true;
+            }
+            return respuesta;
+        }
+
+        public List<string> ObtenerTiposDeGastoInterno()
+        {
+            command.Connection = connection;
+            command.CommandText = "select * from TIPO_GASTO where ID_TIPO_GASTO <> 3 and ID_TIPO_GASTO <> 4 and ID_TIPO_GASTO <> 8";
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            lectorFilas = command.ExecuteReader();
+            List<string> tiposDeGastoInterno = new List<string>();
+            tiposDeGastoInterno.Add("--Seleccionar--");
+            while (lectorFilas.Read())
+            {
+                tiposDeGastoInterno.Add(lectorFilas.GetString(1));
+            }
+            return tiposDeGastoInterno;
+        }
+
+        public int ObtenerTipoGastoInternoPorNombre(string nombreTipoGasto)
+        {
+            int idGastoInterno = 0;
+            command.Connection = connection;
+            command.CommandText = "select ID_TIPO_GASTO from TIPO_GASTO where NombreTipoGasto = '" + nombreTipoGasto + "'";
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            lectorFilas = command.ExecuteReader();
+            lectorFilas.Read();
+            idGastoInterno = lectorFilas.GetInt32(0);
+            lectorFilas.Close();
+            connection.Close();
+            return idGastoInterno;
+        }
+
         public List<GastoInternoDto> ObtenerGastosInternos()
         {
             command.Connection = connection;
@@ -133,6 +179,24 @@ namespace Alumvix.Model.Dao
             lectorFilas.Close();
             connection.Close();
             return totalGastosInternos;
+        }
+
+        public bool ActualizarGastoInterno(int valorGastoInterno, string fechaGastoInterno, string descripcionGastoInterno, int idGastoInterno)
+        {
+            bool respuesta = false;
+            command.Connection = connection;
+            command.CommandText = "update GASTO_INTERNO set valorGastoInterno = " + valorGastoInterno + ","
+                +" fechaGastoInterno = '" + fechaGastoInterno + "', descripcionGastoInterno = '" + descripcionGastoInterno + "'" 
+                +" where FK_ID_TIPO_GASTO1 = " + idGastoInterno;
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            int filasAfectadasEnBd = command.ExecuteNonQuery();
+            if (filasAfectadasEnBd > 0)
+            {
+                respuesta = true;
+            }
+            connection.Close();
+            return respuesta;
         }
     }
 }
