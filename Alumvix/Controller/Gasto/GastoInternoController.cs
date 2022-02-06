@@ -15,27 +15,66 @@ namespace Alumvix.Controller.Gasto
     internal class GastoInternoController
     {
         GastoInternoView gastoInternoView;
-        //static List<int> idsGastosInternos = new List<int>();
-        //public static int idGastoInterno;
+        List<int> idsGastosInternos = new List<int>();
+        public int idGastoInterno;
+        int indice;
 
         public GastoInternoController(GastoInternoView gastoInternoVista)
         {
             gastoInternoView = gastoInternoVista;
             gastoInternoView.Activated += new EventHandler(MostrarGastosInternos);
+            gastoInternoView.lstvGastosInternos.SelectedIndexChanged += new EventHandler(ObtenerIndice); 
+            gastoInternoView.btnEliminarGastoInterno.Click += new EventHandler(EliminarGastoInterno);
+        }
+
+        private void EliminarGastoInterno(object sender, EventArgs e)
+        {
+            if (gastoInternoView.lstvGastosInternos.SelectedItems.Count > 0)
+            {
+                if (MessageBox.Show("¿Realmente desea borrar el gasto?", "BORRAR", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    bool respuesta = new GastoInternoDao().EliminarGastoInterno(idGastoInterno);
+                    if (respuesta)
+                    {
+                        gastoInternoView.lstvGastosInternos.SelectedItems.Clear();
+                        MessageBox.Show("El gasto ha sido eliminado con exito");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al intentar eliminar el gasto");
+                    }
+                }
+            }
+            else MessageBox.Show("Debe seleccionar un gasto de la lista");
         }
 
         private void MostrarGastosInternos(object sender, EventArgs e)
         {
             gastoInternoView.lstvGastosInternos.Items.Clear();
-            //idsGastos.Clear();
+            idsGastosInternos.Clear();
             GastoInternoDao gastoInternoDao = new GastoInternoDao();
             List<GastoInternoDto> listadoGastosInternos = gastoInternoDao.ObtenerGastosInternos();
             foreach (GastoInternoDto gastoInternoDto in listadoGastosInternos)
             {
-                //idsGastosInternos.Add(gastoInterno.IdGastoInterno); //almacenamos ids de los gastos internos que se muestran 
+                idsGastosInternos.Add(gastoInternoDto.IdGastoInterno); //almacenamos ids de los gastos internos que se muestran 
                 string[] row = { gastoInternoDto.TipoGastoInterno,CambioDeFormato.DarFormatoANumero(gastoInternoDto.ValorGastoInterno), CambioDeFormato.CambiarFormatoDeFecha(gastoInternoDto.FechaGastoInterno), gastoInternoDto.DescripcionGastoInterno};
                 ListViewItem itemGastoInterno = new ListViewItem(row);
                 gastoInternoView.lstvGastosInternos.Items.Add(itemGastoInterno);
+            }
+        }
+
+        private int EncontrarIdGastoInterno(List<int> idsGastosInternos, int indice)
+        {
+            return idsGastosInternos[indice];
+        }
+
+
+        private void ObtenerIndice(object sender, EventArgs e)
+        {
+            if (gastoInternoView.lstvGastosInternos.SelectedItems.Count > 0)
+            {
+                indice = gastoInternoView.lstvGastosInternos.Items.IndexOf(gastoInternoView.lstvGastosInternos.SelectedItems[0]);
+                idGastoInterno = EncontrarIdGastoInterno(idsGastosInternos, indice);
             }
         }
     }

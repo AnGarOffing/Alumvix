@@ -37,6 +37,22 @@ namespace Alumvix.Model.Dao
             return listadoGastosInternos;
         }
 
+        public bool EliminarGastoInterno(int idGastoInterno)
+        {
+            bool respuesta = false;
+            command.Connection = connection;
+            command.CommandText = "delete from GASTO_INTERNO where ID_GASTO_INTERNO = " + idGastoInterno;
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            int filasAfectadasEnBd = command.ExecuteNonQuery();
+            if (filasAfectadasEnBd > 0)
+            {
+                respuesta = true;
+            }
+            connection.Close();
+            return respuesta;
+        }
+
         public List<GastoInternoDto> ObtenerGastosInternosPorMes(int mes, int anio)
         {
             command.Connection = connection;
