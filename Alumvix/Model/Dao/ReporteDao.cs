@@ -3,9 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Alumvix.Model.Dao
 {
@@ -19,13 +21,26 @@ namespace Alumvix.Model.Dao
             command.Connection = connection;
             command.CommandText = "select count(*) from CONTRATO where MONTH(fechaInicioContrato) = " + mes + " and YEAR(fechaInicioContrato) = " + anio;
             command.CommandType = CommandType.Text;
-            connection.Open();
-            lectorFilas = command.ExecuteReader();
-            lectorFilas.Read();
-            int cantidadContratos = lectorFilas.GetInt32(0);
+            int cantidadContratos;
+            try
+            {
+                connection.Open();
+                lectorFilas = command.ExecuteReader();
+                lectorFilas.Read();
+                cantidadContratos = lectorFilas.GetInt32(0);
+            }
+            catch (SqlNullValueException ex)
+            {
+                cantidadContratos = 0;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error de conexion a Base de Datos " + ex);
+                cantidadContratos = 0;
+            }
             lectorFilas.Close();
             connection.Close();
-            return cantidadContratos;
+            return cantidadContratos;            
         }
 
         public int ObtenerCantidadContratos(int anio)
@@ -33,10 +48,23 @@ namespace Alumvix.Model.Dao
             command.Connection = connection;
             command.CommandText = "select count(*) from CONTRATO where YEAR(fechaInicioContrato) = " + anio;
             command.CommandType = CommandType.Text;
-            connection.Open();
-            lectorFilas = command.ExecuteReader();
-            lectorFilas.Read();
-            int cantidadContratos = lectorFilas.GetInt32(0);
+            int cantidadContratos;
+            try
+            {
+                connection.Open();
+                lectorFilas = command.ExecuteReader();
+                lectorFilas.Read();
+                cantidadContratos = lectorFilas.GetInt32(0);
+            }
+            catch (SqlNullValueException ex)
+            {
+                cantidadContratos = 0;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error de conexion a Base de Datos " + ex);
+                cantidadContratos = 0;
+            }
             lectorFilas.Close();
             connection.Close();
             return cantidadContratos;
@@ -47,10 +75,23 @@ namespace Alumvix.Model.Dao
             command.Connection = connection;
             command.CommandText = "select SUM(valorContrato) from CONTRATO where MONTH(fechaInicioContrato) = " + mes + " and YEAR(fechaInicioContrato) = " + anio;
             command.CommandType = CommandType.Text;
-            connection.Open();
-            lectorFilas = command.ExecuteReader();
-            lectorFilas.Read();
-            int totalVentas = lectorFilas.GetInt32(0);
+            int totalVentas;
+            try
+            {
+                connection.Open();
+                lectorFilas = command.ExecuteReader();
+                lectorFilas.Read();
+                totalVentas = lectorFilas.GetInt32(0);
+            }
+            catch (SqlNullValueException ex)
+            {
+                totalVentas = 0;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error de conexion a Base de Datos " + ex);
+                totalVentas = 0;
+            }
             lectorFilas.Close();
             connection.Close();
             return totalVentas;
@@ -61,10 +102,23 @@ namespace Alumvix.Model.Dao
             command.Connection = connection;
             command.CommandText = "select SUM(valorContrato) from CONTRATO where YEAR(fechaInicioContrato) = " + anio;
             command.CommandType = CommandType.Text;
-            connection.Open();
-            lectorFilas = command.ExecuteReader();
-            lectorFilas.Read();
-            int totalVentas = lectorFilas.GetInt32(0);
+            int totalVentas;
+            try
+            {
+                connection.Open();
+                lectorFilas = command.ExecuteReader();
+                lectorFilas.Read();
+                totalVentas = lectorFilas.GetInt32(0);
+            }
+            catch (SqlNullValueException ex)
+            {
+                totalVentas = 0;
+            }
+            catch(SqlException ex)
+            {
+                totalVentas = 0;
+                MessageBox.Show("Error de conexion a Base de Datos " + ex);
+            }
             lectorFilas.Close();
             connection.Close();
             return totalVentas;
@@ -75,10 +129,23 @@ namespace Alumvix.Model.Dao
             command.Connection = connection;
             command.CommandText = "select SUM(valorContrato) from CONTRATO where YEAR(fechaInicioContrato) = " + anio;
             command.CommandType = CommandType.Text;
-            connection.Open();
-            lectorFilas = command.ExecuteReader();
-            lectorFilas.Read();
-            int totalVentas = lectorFilas.GetInt32(0);
+            int totalVentas;
+            try
+            {
+                connection.Open();
+                lectorFilas = command.ExecuteReader();
+                lectorFilas.Read();
+                totalVentas = lectorFilas.GetInt32(0);
+            }
+            catch (SqlNullValueException ex)
+            {
+                totalVentas = 0;
+            }
+            catch (SqlException ex)
+            {
+                totalVentas = 0;
+                MessageBox.Show("Error de conexion a Base de Datos " + ex);
+            }
             lectorFilas.Close();
             connection.Close();
             return totalVentas;
@@ -87,13 +154,26 @@ namespace Alumvix.Model.Dao
         public int ObtenerTotalGastosPorMes(int mes, int anio)
         {
             command.Connection = connection;
-            command.CommandText = "select SUM(valorGasto) from GASTO where FK_ID_CONTRATO2 in" 
-                                +" (select ID_CONTRATO from CONTRATO where MONTH(fechaInicioContrato) = " + mes + " and YEAR(fechaInicioContrato) = " + anio + ")";
+            command.CommandText = "select SUM(valorGasto) from GASTO where FK_ID_CONTRATO2 in"
+                                + " (select ID_CONTRATO from CONTRATO where MONTH(fechaInicioContrato) = " + mes + " and YEAR(fechaInicioContrato) = " + anio + ")";
             command.CommandType = CommandType.Text;
-            connection.Open();
-            lectorFilas = command.ExecuteReader();
-            lectorFilas.Read();
-            int totalGastos = lectorFilas.GetInt32(0);
+            int totalGastos;
+            try
+            {
+                connection.Open();
+                lectorFilas = command.ExecuteReader();
+                lectorFilas.Read();
+                totalGastos = lectorFilas.GetInt32(0);
+            }
+            catch (SqlNullValueException ex)
+            {
+                totalGastos = 0;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error de conexion a Base de Datos " + ex);
+                totalGastos = 0;
+            }
             lectorFilas.Close();
             connection.Close();
             return totalGastos;
@@ -105,10 +185,23 @@ namespace Alumvix.Model.Dao
             command.CommandText = "select SUM(valorGasto) from GASTO where FK_ID_CONTRATO2 in"
                                 + " (select ID_CONTRATO from CONTRATO where YEAR(fechaInicioContrato) = " + anio + ")";
             command.CommandType = CommandType.Text;
-            connection.Open();
-            lectorFilas = command.ExecuteReader();
-            lectorFilas.Read();
-            int totalGastos = lectorFilas.GetInt32(0);
+            int totalGastos;
+            try
+            {
+                connection.Open();
+                lectorFilas = command.ExecuteReader();
+                lectorFilas.Read();
+                totalGastos = lectorFilas.GetInt32(0);
+            }
+            catch (SqlNullValueException ex)
+            {
+                totalGastos = 0;
+            }
+            catch(SqlException ex)
+            {
+                totalGastos = 0;
+                MessageBox.Show("Error de conexion a Base de Datos " + ex);
+            }
             lectorFilas.Close();
             connection.Close();
             return totalGastos;
@@ -119,10 +212,23 @@ namespace Alumvix.Model.Dao
             command.Connection = connection;
             command.CommandText = "select SUM(valorGastoInterno) from GASTO_INTERNO where MONTH(fechaGastoInterno) = " + mes + " and YEAR(fechaGastoInterno) = " + anio;
             command.CommandType = CommandType.Text;
-            connection.Open();
-            lectorFilas = command.ExecuteReader();
-            lectorFilas.Read();
-            int totalGastosInternos = lectorFilas.GetInt32(0);
+            int totalGastosInternos;
+            try
+            {
+                connection.Open();
+                lectorFilas = command.ExecuteReader();
+                lectorFilas.Read();
+                totalGastosInternos = lectorFilas.GetInt32(0);
+            }
+            catch (SqlNullValueException ex)
+            {
+                totalGastosInternos = 0;
+            }
+            catch (SqlException ex)
+            {
+                totalGastosInternos = 0;
+                MessageBox.Show("Error de conexion a Base de Datos " + ex);
+            }
             lectorFilas.Close();
             connection.Close();
             return totalGastosInternos;
@@ -133,10 +239,23 @@ namespace Alumvix.Model.Dao
             command.Connection = connection;
             command.CommandText = "select SUM(valorGastoInterno) from GASTO_INTERNO where YEAR(fechaGastoInterno) = " + anio;
             command.CommandType = CommandType.Text;
-            connection.Open();
-            lectorFilas = command.ExecuteReader();
-            lectorFilas.Read();
-            int totalGastosInternos = lectorFilas.GetInt32(0);
+            int totalGastosInternos;
+            try
+            {
+                connection.Open();
+                lectorFilas = command.ExecuteReader();
+                lectorFilas.Read();
+                totalGastosInternos = lectorFilas.GetInt32(0);
+            }
+            catch (SqlNullValueException ex)
+            {
+                totalGastosInternos = 0;
+            }
+            catch (SqlException ex)
+            {
+                totalGastosInternos = 0;
+                MessageBox.Show("Error de conexion a Base de Datos " + ex);
+            }
             lectorFilas.Close();
             connection.Close();
             return totalGastosInternos;
@@ -154,8 +273,7 @@ namespace Alumvix.Model.Dao
             while (lectorFilas.Read())
             {
                 listadoCuentas.Add(new ReporteDto()
-                {
-                    
+                {                   
                     Mes = lectorFilas.GetString(0),
                     TotalVentas = lectorFilas.GetInt32(1),
                     TotalGastos = lectorFilas.GetInt32(2),

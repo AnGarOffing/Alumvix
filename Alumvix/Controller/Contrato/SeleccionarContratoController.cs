@@ -29,6 +29,7 @@ namespace Alumvix.Controller.Contrato
         {
             detalleClienteView = new DetalleClienteView();
             detalleClienteView.Show();
+
         }
 
         private void MostrarListadoContratos(object sender, EventArgs e)
