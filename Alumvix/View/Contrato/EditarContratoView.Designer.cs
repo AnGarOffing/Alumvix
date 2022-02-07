@@ -171,12 +171,12 @@
             // lblTituloEditarContrato
             // 
             this.lblTituloEditarContrato.AutoSize = true;
-            this.lblTituloEditarContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloEditarContrato.Location = new System.Drawing.Point(7, 15);
+            this.lblTituloEditarContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloEditarContrato.Location = new System.Drawing.Point(99, 9);
             this.lblTituloEditarContrato.Name = "lblTituloEditarContrato";
-            this.lblTituloEditarContrato.Size = new System.Drawing.Size(188, 29);
+            this.lblTituloEditarContrato.Size = new System.Drawing.Size(408, 29);
             this.lblTituloEditarContrato.TabIndex = 42;
-            this.lblTituloEditarContrato.Text = "Editar Contrato";
+            this.lblTituloEditarContrato.Text = "ACTUALIZACION DE CONTRATO";
             // 
             // EditarContratoView
             // 

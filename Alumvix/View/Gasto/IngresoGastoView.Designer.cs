@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtNumeroFactura = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbIngresarProveedor = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbIngresarTipoGasto = new System.Windows.Forms.ComboBox();
             this.lblTipoGasto = new System.Windows.Forms.Label();
             this.txtDescripcionGasto = new System.Windows.Forms.TextBox();
             this.dtpFechaIngresoGasto = new System.Windows.Forms.DateTimePicker();
@@ -38,11 +43,6 @@
             this.lvlValorIngresoGasto = new System.Windows.Forms.Label();
             this.lblFechaIngresoGasto = new System.Windows.Forms.Label();
             this.lblIngresarGasto = new System.Windows.Forms.Label();
-            this.cbIngresarTipoGasto = new System.Windows.Forms.ComboBox();
-            this.cbIngresarProveedor = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtNumeroFactura = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,10 +61,56 @@
             this.panel1.Controls.Add(this.txtIngresarValorGasto);
             this.panel1.Controls.Add(this.lvlValorIngresoGasto);
             this.panel1.Controls.Add(this.lblFechaIngresoGasto);
-            this.panel1.Location = new System.Drawing.Point(34, 85);
+            this.panel1.Location = new System.Drawing.Point(12, 60);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(703, 291);
+            this.panel1.Size = new System.Drawing.Size(597, 291);
             this.panel1.TabIndex = 39;
+            // 
+            // txtNumeroFactura
+            // 
+            this.txtNumeroFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumeroFactura.Location = new System.Drawing.Point(233, 160);
+            this.txtNumeroFactura.Name = "txtNumeroFactura";
+            this.txtNumeroFactura.Size = new System.Drawing.Size(100, 26);
+            this.txtNumeroFactura.TabIndex = 47;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(124, 160);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(103, 24);
+            this.label2.TabIndex = 46;
+            this.label2.Text = "# Factura:";
+            // 
+            // cbIngresarProveedor
+            // 
+            this.cbIngresarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbIngresarProveedor.FormattingEnabled = true;
+            this.cbIngresarProveedor.Location = new System.Drawing.Point(233, 248);
+            this.cbIngresarProveedor.Name = "cbIngresarProveedor";
+            this.cbIngresarProveedor.Size = new System.Drawing.Size(218, 28);
+            this.cbIngresarProveedor.TabIndex = 45;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(114, 248);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(113, 24);
+            this.label1.TabIndex = 44;
+            this.label1.Text = "Proveedor:";
+            // 
+            // cbIngresarTipoGasto
+            // 
+            this.cbIngresarTipoGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbIngresarTipoGasto.FormattingEnabled = true;
+            this.cbIngresarTipoGasto.Location = new System.Drawing.Point(233, 204);
+            this.cbIngresarTipoGasto.Name = "cbIngresarTipoGasto";
+            this.cbIngresarTipoGasto.Size = new System.Drawing.Size(218, 28);
+            this.cbIngresarTipoGasto.TabIndex = 43;
             // 
             // lblTipoGasto
             // 
@@ -82,7 +128,7 @@
             this.txtDescripcionGasto.Location = new System.Drawing.Point(233, 84);
             this.txtDescripcionGasto.Multiline = true;
             this.txtDescripcionGasto.Name = "txtDescripcionGasto";
-            this.txtDescripcionGasto.Size = new System.Drawing.Size(452, 63);
+            this.txtDescripcionGasto.Size = new System.Drawing.Size(267, 63);
             this.txtDescripcionGasto.TabIndex = 41;
             // 
             // dtpFechaIngresoGasto
@@ -90,7 +136,7 @@
             this.dtpFechaIngresoGasto.CustomFormat = "yyyy/MM/dd";
             this.dtpFechaIngresoGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaIngresoGasto.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFechaIngresoGasto.Location = new System.Drawing.Point(502, 28);
+            this.dtpFechaIngresoGasto.Location = new System.Drawing.Point(436, 28);
             this.dtpFechaIngresoGasto.Name = "dtpFechaIngresoGasto";
             this.dtpFechaIngresoGasto.Size = new System.Drawing.Size(120, 26);
             this.dtpFechaIngresoGasto.TabIndex = 40;
@@ -98,9 +144,9 @@
             // btnGuardarNuevoGasto
             // 
             this.btnGuardarNuevoGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarNuevoGasto.Location = new System.Drawing.Point(602, 239);
+            this.btnGuardarNuevoGasto.Location = new System.Drawing.Point(472, 245);
             this.btnGuardarNuevoGasto.Name = "btnGuardarNuevoGasto";
-            this.btnGuardarNuevoGasto.Size = new System.Drawing.Size(83, 33);
+            this.btnGuardarNuevoGasto.Size = new System.Drawing.Size(110, 33);
             this.btnGuardarNuevoGasto.TabIndex = 39;
             this.btnGuardarNuevoGasto.Text = "Guardar";
             this.btnGuardarNuevoGasto.UseVisualStyleBackColor = true;
@@ -137,7 +183,7 @@
             // 
             this.lblFechaIngresoGasto.AutoSize = true;
             this.lblFechaIngresoGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaIngresoGasto.Location = new System.Drawing.Point(425, 29);
+            this.lblFechaIngresoGasto.Location = new System.Drawing.Point(359, 29);
             this.lblFechaIngresoGasto.Name = "lblFechaIngresoGasto";
             this.lblFechaIngresoGasto.Size = new System.Drawing.Size(75, 24);
             this.lblFechaIngresoGasto.TabIndex = 35;
@@ -146,64 +192,18 @@
             // lblIngresarGasto
             // 
             this.lblIngresarGasto.AutoSize = true;
-            this.lblIngresarGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIngresarGasto.Location = new System.Drawing.Point(29, 30);
+            this.lblIngresarGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIngresarGasto.Location = new System.Drawing.Point(173, 13);
             this.lblIngresarGasto.Name = "lblIngresarGasto";
-            this.lblIngresarGasto.Size = new System.Drawing.Size(184, 29);
+            this.lblIngresarGasto.Size = new System.Drawing.Size(268, 29);
             this.lblIngresarGasto.TabIndex = 38;
-            this.lblIngresarGasto.Text = "Ingresar Gasto";
-            // 
-            // cbIngresarTipoGasto
-            // 
-            this.cbIngresarTipoGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbIngresarTipoGasto.FormattingEnabled = true;
-            this.cbIngresarTipoGasto.Location = new System.Drawing.Point(233, 204);
-            this.cbIngresarTipoGasto.Name = "cbIngresarTipoGasto";
-            this.cbIngresarTipoGasto.Size = new System.Drawing.Size(218, 28);
-            this.cbIngresarTipoGasto.TabIndex = 43;
-            // 
-            // cbIngresarProveedor
-            // 
-            this.cbIngresarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbIngresarProveedor.FormattingEnabled = true;
-            this.cbIngresarProveedor.Location = new System.Drawing.Point(233, 248);
-            this.cbIngresarProveedor.Name = "cbIngresarProveedor";
-            this.cbIngresarProveedor.Size = new System.Drawing.Size(218, 28);
-            this.cbIngresarProveedor.TabIndex = 45;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(114, 248);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 24);
-            this.label1.TabIndex = 44;
-            this.label1.Text = "Proveedor:";
-            // 
-            // txtNumeroFactura
-            // 
-            this.txtNumeroFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumeroFactura.Location = new System.Drawing.Point(233, 160);
-            this.txtNumeroFactura.Name = "txtNumeroFactura";
-            this.txtNumeroFactura.Size = new System.Drawing.Size(100, 26);
-            this.txtNumeroFactura.TabIndex = 47;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(124, 160);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 24);
-            this.label2.TabIndex = 46;
-            this.label2.Text = "# Factura:";
+            this.lblIngresarGasto.Text = "INGRESO DE GASTO";
             // 
             // IngresoGastoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(621, 360);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblIngresarGasto);
             this.Name = "IngresoGastoView";

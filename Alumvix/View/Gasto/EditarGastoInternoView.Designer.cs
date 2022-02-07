@@ -55,7 +55,7 @@
             this.panel1.Controls.Add(this.lblEditarFechaGastoInterno);
             this.panel1.Location = new System.Drawing.Point(12, 73);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(608, 202);
+            this.panel1.Size = new System.Drawing.Size(596, 202);
             this.panel1.TabIndex = 43;
             // 
             // cbEditarTipoGastoInterno
@@ -98,12 +98,12 @@
             // 
             // btnActualizarGastoInterno
             // 
-            this.btnActualizarGastoInterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizarGastoInterno.Location = new System.Drawing.Point(496, 155);
+            this.btnActualizarGastoInterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizarGastoInterno.Location = new System.Drawing.Point(484, 155);
             this.btnActualizarGastoInterno.Name = "btnActualizarGastoInterno";
             this.btnActualizarGastoInterno.Size = new System.Drawing.Size(97, 33);
             this.btnActualizarGastoInterno.TabIndex = 39;
-            this.btnActualizarGastoInterno.Text = "Guardar";
+            this.btnActualizarGastoInterno.Text = "Actualizar";
             this.btnActualizarGastoInterno.UseVisualStyleBackColor = true;
             // 
             // lblEditarDescripcionGastoInterno
@@ -147,18 +147,18 @@
             // lblTituloEditarGastoInterno
             // 
             this.lblTituloEditarGastoInterno.AutoSize = true;
-            this.lblTituloEditarGastoInterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloEditarGastoInterno.Location = new System.Drawing.Point(7, 21);
+            this.lblTituloEditarGastoInterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloEditarGastoInterno.Location = new System.Drawing.Point(69, 18);
             this.lblTituloEditarGastoInterno.Name = "lblTituloEditarGastoInterno";
-            this.lblTituloEditarGastoInterno.Size = new System.Drawing.Size(245, 29);
+            this.lblTituloEditarGastoInterno.Size = new System.Drawing.Size(476, 29);
             this.lblTituloEditarGastoInterno.TabIndex = 42;
-            this.lblTituloEditarGastoInterno.Text = "Editar Gasto interno";
+            this.lblTituloEditarGastoInterno.Text = "ACTUALIZACION DE GASTO INTERNO";
             // 
             // EditarGastoInternoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 288);
+            this.ClientSize = new System.Drawing.Size(621, 288);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblTituloEditarGastoInterno);
             this.Name = "EditarGastoInternoView";

@@ -107,12 +107,12 @@
             // lblListadoGastos
             // 
             this.lblListadoGastos.AutoSize = true;
-            this.lblListadoGastos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblListadoGastos.Location = new System.Drawing.Point(12, 33);
+            this.lblListadoGastos.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblListadoGastos.Location = new System.Drawing.Point(520, 15);
             this.lblListadoGastos.Name = "lblListadoGastos";
-            this.lblListadoGastos.Size = new System.Drawing.Size(175, 24);
+            this.lblListadoGastos.Size = new System.Drawing.Size(277, 29);
             this.lblListadoGastos.TabIndex = 35;
-            this.lblListadoGastos.Text = "Listado de Gastos";
+            this.lblListadoGastos.Text = "LISTADO DE GASTOS";
             // 
             // btnIngresarGasto
             // 

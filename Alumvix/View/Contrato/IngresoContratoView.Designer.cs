@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlIngresarContrato = new System.Windows.Forms.Panel();
+            this.lblInformacionValorContrato = new System.Windows.Forms.Label();
             this.dtpFechaTerminacionContrato = new System.Windows.Forms.DateTimePicker();
             this.lblIngresarFechaFinalContrato = new System.Windows.Forms.Label();
             this.cbIngresarTipoFactura = new System.Windows.Forms.ComboBox();
@@ -39,7 +40,6 @@
             this.lblValorIngresoGasto = new System.Windows.Forms.Label();
             this.lblIngresarFechaInicioContrato = new System.Windows.Forms.Label();
             this.lblTituloIngresarContrato = new System.Windows.Forms.Label();
-            this.lblInformacionValorContrato = new System.Windows.Forms.Label();
             this.pnlIngresarContrato.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +59,16 @@
             this.pnlIngresarContrato.Name = "pnlIngresarContrato";
             this.pnlIngresarContrato.Size = new System.Drawing.Size(488, 174);
             this.pnlIngresarContrato.TabIndex = 41;
+            // 
+            // lblInformacionValorContrato
+            // 
+            this.lblInformacionValorContrato.AutoSize = true;
+            this.lblInformacionValorContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInformacionValorContrato.Location = new System.Drawing.Point(347, 54);
+            this.lblInformacionValorContrato.Name = "lblInformacionValorContrato";
+            this.lblInformacionValorContrato.Size = new System.Drawing.Size(21, 24);
+            this.lblInformacionValorContrato.TabIndex = 50;
+            this.lblInformacionValorContrato.Text = "?";
             // 
             // dtpFechaTerminacionContrato
             // 
@@ -150,22 +160,12 @@
             // lblTituloIngresarContrato
             // 
             this.lblTituloIngresarContrato.AutoSize = true;
-            this.lblTituloIngresarContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloIngresarContrato.Location = new System.Drawing.Point(7, 20);
+            this.lblTituloIngresarContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloIngresarContrato.Location = new System.Drawing.Point(94, 11);
             this.lblTituloIngresarContrato.Name = "lblTituloIngresarContrato";
-            this.lblTituloIngresarContrato.Size = new System.Drawing.Size(215, 29);
+            this.lblTituloIngresarContrato.Size = new System.Drawing.Size(324, 29);
             this.lblTituloIngresarContrato.TabIndex = 40;
-            this.lblTituloIngresarContrato.Text = "Ingresar Contrato";
-            // 
-            // lblInformacionValorContrato
-            // 
-            this.lblInformacionValorContrato.AutoSize = true;
-            this.lblInformacionValorContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInformacionValorContrato.Location = new System.Drawing.Point(347, 54);
-            this.lblInformacionValorContrato.Name = "lblInformacionValorContrato";
-            this.lblInformacionValorContrato.Size = new System.Drawing.Size(21, 24);
-            this.lblInformacionValorContrato.TabIndex = 50;
-            this.lblInformacionValorContrato.Text = "?";
+            this.lblTituloIngresarContrato.Text = "INGRESO DE CONTRATO";
             // 
             // IngresoContratoView
             // 

@@ -37,12 +37,12 @@
             // lblListadoGastosPeriodo
             // 
             this.lblListadoGastosPeriodo.AutoSize = true;
-            this.lblListadoGastosPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblListadoGastosPeriodo.Location = new System.Drawing.Point(12, 19);
+            this.lblListadoGastosPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblListadoGastosPeriodo.Location = new System.Drawing.Point(49, 9);
             this.lblListadoGastosPeriodo.Name = "lblListadoGastosPeriodo";
-            this.lblListadoGastosPeriodo.Size = new System.Drawing.Size(238, 29);
+            this.lblListadoGastosPeriodo.Size = new System.Drawing.Size(299, 29);
             this.lblListadoGastosPeriodo.TabIndex = 44;
-            this.lblListadoGastosPeriodo.Text = "Gastos del Periodo";
+            this.lblListadoGastosPeriodo.Text = "GASTOS DEL PERIODO";
             // 
             // lstvGastosPeriodo
             // 

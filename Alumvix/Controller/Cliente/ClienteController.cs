@@ -10,6 +10,7 @@ using Alumvix.View.Cliente;
 using Alumvix.View.Contrato;
 using Alumvix.View.Reporte;
 using Alumvix.View.Gasto;
+using Alumvix.View.Proveedor;
 
 namespace Alumvix.Controller
 {
@@ -39,6 +40,13 @@ namespace Alumvix.Controller
             clienteVista.btnGastosInternos.Click += new EventHandler(AbrirGastoInternoView);
             clienteVista.txtFiltrarCliente.KeyPress += new KeyPressEventHandler(ValidarEntrada);
             clienteVista.btnIngresarCliente.Click += new EventHandler(AbrirIngresoClienteView);
+            clienteVista.btnProveedores.Click += new EventHandler(AbrirProveedoresView);
+        }
+
+        private void AbrirProveedoresView(object sender, EventArgs e)
+        {
+            ProveedorView proveedoresView = ProveedorView.ObtenerInstancia();
+            proveedoresView.ShowDialog();
         }
 
         private void AbrirIngresoClienteView(object sender, EventArgs e)

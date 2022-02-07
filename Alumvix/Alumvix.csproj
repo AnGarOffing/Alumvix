@@ -82,6 +82,8 @@
     <Compile Include="Controller\Gasto\IngresoGastoController.cs" />
     <Compile Include="Controller\Gasto\IngresoGastoInternoController.cs" />
     <Compile Include="Controller\Producto\IngresoProductoController.cs" />
+    <Compile Include="Controller\Proveedor\IngresoProveedorController.cs" />
+    <Compile Include="Controller\Proveedor\ProveedorController.cs" />
     <Compile Include="Controller\Reporte\AdministradorReportesController.cs" />
     <Compile Include="Controller\Reporte\ReporteAnualController.cs" />
     <Compile Include="Controller\Reporte\ReporteMensualController.cs" />
@@ -218,6 +220,18 @@
     <Compile Include="View\Producto\IngresoProductoView.Designer.cs">
       <DependentUpon>IngresoProductoView.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Proveedor\IngresoProveedorView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Proveedor\IngresoProveedorView.Designer.cs">
+      <DependentUpon>IngresoProveedorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Proveedor\ProveedorView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Proveedor\ProveedorView.Designer.cs">
+      <DependentUpon>ProveedorView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Reporte\AdministradorReportesView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -305,6 +319,12 @@
     <EmbeddedResource Include="View\Producto\IngresoProductoView.resx">
       <DependentUpon>IngresoProductoView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Proveedor\IngresoProveedorView.resx">
+      <DependentUpon>IngresoProveedorView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Proveedor\ProveedorView.resx">
+      <DependentUpon>ProveedorView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Reporte\AdministradorReportesView.resx">
       <DependentUpon>AdministradorReportesView.cs</DependentUpon>
     </EmbeddedResource>
@@ -331,8 +351,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controller\Proveedor\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

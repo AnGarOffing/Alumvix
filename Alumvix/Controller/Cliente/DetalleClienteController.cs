@@ -241,20 +241,24 @@ namespace Alumvix.Controller.Cliente
 
         private void EliminarProducto(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Realmente desea borrar el abono?", "BORRAR", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (detalleClienteVista.lstvProductos.SelectedItems.Count > 0 && detalleClienteVista.lstvProductos.Items.Count > 0)
             {
-                ProductoDao productoDao = new ProductoDao();
-                bool respuesta = productoDao.EliminarProducto(contratoDto.IdContrato, productoDao.ObtenerIdUnProducto(nombreProducto));
-                if (respuesta)
+                if (MessageBox.Show("¿Realmente desea borrar el producto?", "BORRAR", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    detalleClienteVista.lstvProductos.SelectedItems.Clear();
-                    MessageBox.Show("El producto ha sido eliminado con exito");
-                }
-                else
-                {
-                    MessageBox.Show("Error al intentar eliminar el producto");
+                    ProductoDao productoDao = new ProductoDao();
+                    bool respuesta = productoDao.EliminarProducto(contratoDto.IdContrato, productoDao.ObtenerIdUnProducto(nombreProducto));
+                    if (respuesta)
+                    {
+                        detalleClienteVista.lstvProductos.SelectedItems.Clear();
+                        MessageBox.Show("El producto ha sido eliminado con exito");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al intentar eliminar el producto");
+                    }
                 }
             }
+            else MessageBox.Show("No ha seleccionado un producto");          
         }
 
         private void ObtenerNombreProducto(object sender, EventArgs e)

@@ -30,21 +30,31 @@ namespace Alumvix.Controller.Contrato
             }
             else
             {
-                int valorContratoCalculado;
-                ContratoDao contratoDao = new ContratoDao();
-                if (ingresoContratoView.cbIngresarTipoFactura.SelectedIndex == 1)
+                if (ingresoContratoView.dtpFechaTerminacionContrato.Value.Date <= ingresoContratoView.dtpFechaInicioContrato.Value.Date)
                 {
-                    valorContratoCalculado = Logica.AplicarIVA(Convert.ToInt32(ingresoContratoView.txtIngresarValorContrato.Text), 1);
-                }else valorContratoCalculado = Convert.ToInt32(ingresoContratoView.txtIngresarValorContrato.Text);
+                    MessageBox.Show("La fecha de Terminacion no puede ser inferior a la fecha de inicio");
+                }
+                else
+                {
+                    int valorContratoCalculado;
+                    ContratoDao contratoDao = new ContratoDao();
+                    if (ingresoContratoView.cbIngresarTipoFactura.SelectedIndex == 1)
+                    {
+                        valorContratoCalculado = Logica.AplicarIVA(Convert.ToInt32(ingresoContratoView.txtIngresarValorContrato.Text), 1);
+                    }
+                    else valorContratoCalculado = Convert.ToInt32(ingresoContratoView.txtIngresarValorContrato.Text);
 
-                bool respuestaIngresoContrato = contratoDao.GuardarContrato(valorContratoCalculado, ingresoContratoView.dtpFechaInicioContrato.Text, ingresoContratoView.dtpFechaTerminacionContrato.Text, 1, 1, ingresoContratoView.cbIngresarTipoFactura.SelectedIndex, ClienteController.ObtenerIdCliente());
-                if (respuestaIngresoContrato)
-                {
-                    ingresoContratoView.txtIngresarValorContrato.Clear();
-                    ingresoContratoView.cbIngresarTipoFactura.SelectedIndex = 0;
-                    ingresoContratoView.Close();
-                    MessageBox.Show("El contrato ha sido guardado con exito");
-                }else MessageBox.Show("Error al guardar el contrato");
+                    bool respuestaIngresoContrato = contratoDao.GuardarContrato(valorContratoCalculado, ingresoContratoView.dtpFechaInicioContrato.Text, ingresoContratoView.dtpFechaTerminacionContrato.Text, 1, 1, ingresoContratoView.cbIngresarTipoFactura.SelectedIndex, ClienteController.ObtenerIdCliente());
+                    if (respuestaIngresoContrato)
+                    {
+                        ingresoContratoView.txtIngresarValorContrato.Clear();
+                        ingresoContratoView.cbIngresarTipoFactura.SelectedIndex = 0;
+                        ingresoContratoView.Close();
+                        MessageBox.Show("El contrato ha sido guardado con exito");
+                    }
+                    else MessageBox.Show("Error al guardar el contrato");
+                }
+               
             }      
         }
 

@@ -38,6 +38,7 @@
             this.btnGastosInternos = new System.Windows.Forms.Button();
             this.lblTituloClientes = new System.Windows.Forms.Label();
             this.btnIngresarCliente = new System.Windows.Forms.Button();
+            this.btnProveedores = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,9 +66,11 @@
             // 
             // txtFiltrarCliente
             // 
-            this.txtFiltrarCliente.Location = new System.Drawing.Point(58, 84);
+            this.txtFiltrarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFiltrarCliente.Location = new System.Drawing.Point(12, 83);
+            this.txtFiltrarCliente.Multiline = true;
             this.txtFiltrarCliente.Name = "txtFiltrarCliente";
-            this.txtFiltrarCliente.Size = new System.Drawing.Size(170, 20);
+            this.txtFiltrarCliente.Size = new System.Drawing.Size(247, 29);
             this.txtFiltrarCliente.TabIndex = 3;
             // 
             // btnActualizarCliente
@@ -101,15 +104,15 @@
             this.btnReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReporte.Location = new System.Drawing.Point(12, 397);
             this.btnReporte.Name = "btnReporte";
-            this.btnReporte.Size = new System.Drawing.Size(93, 34);
+            this.btnReporte.Size = new System.Drawing.Size(102, 34);
             this.btnReporte.TabIndex = 37;
-            this.btnReporte.Text = "Reporte";
+            this.btnReporte.Text = "Reportes";
             this.btnReporte.UseVisualStyleBackColor = true;
             // 
             // btnGastosInternos
             // 
             this.btnGastosInternos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGastosInternos.Location = new System.Drawing.Point(129, 397);
+            this.btnGastosInternos.Location = new System.Drawing.Point(141, 397);
             this.btnGastosInternos.Name = "btnGastosInternos";
             this.btnGastosInternos.Size = new System.Drawing.Size(176, 34);
             this.btnGastosInternos.TabIndex = 38;
@@ -139,11 +142,22 @@
             this.btnIngresarCliente.TabIndex = 41;
             this.btnIngresarCliente.UseVisualStyleBackColor = false;
             // 
+            // btnProveedores
+            // 
+            this.btnProveedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProveedores.Location = new System.Drawing.Point(344, 397);
+            this.btnProveedores.Name = "btnProveedores";
+            this.btnProveedores.Size = new System.Drawing.Size(142, 34);
+            this.btnProveedores.TabIndex = 42;
+            this.btnProveedores.Text = "Proveedores";
+            this.btnProveedores.UseVisualStyleBackColor = true;
+            // 
             // ClienteView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnProveedores);
             this.Controls.Add(this.btnIngresarCliente);
             this.Controls.Add(this.lblTituloClientes);
             this.Controls.Add(this.btnGastosInternos);
@@ -173,5 +187,6 @@
         public System.Windows.Forms.Button btnGastosInternos;
         private System.Windows.Forms.Label lblTituloClientes;
         public System.Windows.Forms.Button btnIngresarCliente;
+        public System.Windows.Forms.Button btnProveedores;
     }
 }

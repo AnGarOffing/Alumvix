@@ -147,12 +147,12 @@
             // lblTituloIngresarGastoInterno
             // 
             this.lblTituloIngresarGastoInterno.AutoSize = true;
-            this.lblTituloIngresarGastoInterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloIngresarGastoInterno.Location = new System.Drawing.Point(7, 19);
+            this.lblTituloIngresarGastoInterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloIngresarGastoInterno.Location = new System.Drawing.Point(118, 18);
             this.lblTituloIngresarGastoInterno.Name = "lblTituloIngresarGastoInterno";
-            this.lblTituloIngresarGastoInterno.Size = new System.Drawing.Size(272, 29);
+            this.lblTituloIngresarGastoInterno.Size = new System.Drawing.Size(392, 29);
             this.lblTituloIngresarGastoInterno.TabIndex = 40;
-            this.lblTituloIngresarGastoInterno.Text = "Ingresar Gasto interno";
+            this.lblTituloIngresarGastoInterno.Text = "INGRESO DE GASTO INTERNO";
             // 
             // IngresoGastoInternoView
             // 

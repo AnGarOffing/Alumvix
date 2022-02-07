@@ -43,12 +43,12 @@
             // lblListadoGastosInternos
             // 
             this.lblListadoGastosInternos.AutoSize = true;
-            this.lblListadoGastosInternos.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblListadoGastosInternos.Location = new System.Drawing.Point(12, 18);
+            this.lblListadoGastosInternos.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblListadoGastosInternos.Location = new System.Drawing.Point(355, 12);
             this.lblListadoGastosInternos.Name = "lblListadoGastosInternos";
-            this.lblListadoGastosInternos.Size = new System.Drawing.Size(320, 29);
+            this.lblListadoGastosInternos.Size = new System.Drawing.Size(418, 29);
             this.lblListadoGastosInternos.TabIndex = 44;
-            this.lblListadoGastosInternos.Text = "Listado de gastos internos";
+            this.lblListadoGastosInternos.Text = "LISTADO DE GASTOS INTERNOS";
             // 
             // btnEditarGastoInterno
             // 

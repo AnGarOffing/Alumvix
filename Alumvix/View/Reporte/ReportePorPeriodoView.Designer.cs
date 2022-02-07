@@ -93,7 +93,7 @@
             // lblTituloReportePorPeriodo
             // 
             this.lblTituloReportePorPeriodo.AutoSize = true;
-            this.lblTituloReportePorPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloReportePorPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloReportePorPeriodo.Location = new System.Drawing.Point(230, 19);
             this.lblTituloReportePorPeriodo.Name = "lblTituloReportePorPeriodo";
             this.lblTituloReportePorPeriodo.Size = new System.Drawing.Size(364, 31);

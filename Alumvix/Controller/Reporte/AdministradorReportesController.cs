@@ -53,6 +53,7 @@ namespace Alumvix.Controller.Reporte
                 }
                 administradorReporteView.cbSeleccionarAnio.DataSource = listadoAnios.Select(a => a.ToString()).ToList();
             }
+            administradorReporteView.rbRangoDeFechas.Enabled = false;
         }
 
         private void AbrirReporte(object sender, EventArgs e)

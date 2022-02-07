@@ -29,8 +29,13 @@
         private void InitializeComponent()
         {
             this.lblTituloEditarGasto = new System.Windows.Forms.Label();
-            this.lvlActualizarValorAbono = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtEditarNumeroFactura = new System.Windows.Forms.TextBox();
+            this.lblEditarNumeroFactura = new System.Windows.Forms.Label();
+            this.cbEditarProveedor = new System.Windows.Forms.ComboBox();
+            this.lblEditarProveedor = new System.Windows.Forms.Label();
+            this.cbEditarTipoGasto = new System.Windows.Forms.ComboBox();
+            this.lblEditarTipoGasto = new System.Windows.Forms.Label();
             this.txtActualizarDescripcionGasto = new System.Windows.Forms.TextBox();
             this.dtpActualizarFechaGasto = new System.Windows.Forms.DateTimePicker();
             this.btnActualizarGasto = new System.Windows.Forms.Button();
@@ -38,34 +43,18 @@
             this.txtActualizarValorGasto = new System.Windows.Forms.TextBox();
             this.lblEditarValorGasto = new System.Windows.Forms.Label();
             this.lblActualizarFechaGasto = new System.Windows.Forms.Label();
-            this.txtEditarNumeroFactura = new System.Windows.Forms.TextBox();
-            this.lblEditarNumeroFactura = new System.Windows.Forms.Label();
-            this.cbEditarProveedor = new System.Windows.Forms.ComboBox();
-            this.lblEditarProveedor = new System.Windows.Forms.Label();
-            this.cbEditarTipoGasto = new System.Windows.Forms.ComboBox();
-            this.lblEditarTipoGasto = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTituloEditarGasto
             // 
             this.lblTituloEditarGasto.AutoSize = true;
-            this.lblTituloEditarGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloEditarGasto.Location = new System.Drawing.Point(12, 27);
+            this.lblTituloEditarGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloEditarGasto.Location = new System.Drawing.Point(199, 18);
             this.lblTituloEditarGasto.Name = "lblTituloEditarGasto";
-            this.lblTituloEditarGasto.Size = new System.Drawing.Size(157, 29);
+            this.lblTituloEditarGasto.Size = new System.Drawing.Size(352, 29);
             this.lblTituloEditarGasto.TabIndex = 45;
-            this.lblTituloEditarGasto.Text = "Editar Gasto";
-            // 
-            // lvlActualizarValorAbono
-            // 
-            this.lvlActualizarValorAbono.AutoSize = true;
-            this.lvlActualizarValorAbono.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvlActualizarValorAbono.Location = new System.Drawing.Point(37, 27);
-            this.lvlActualizarValorAbono.Name = "lvlActualizarValorAbono";
-            this.lvlActualizarValorAbono.Size = new System.Drawing.Size(65, 24);
-            this.lvlActualizarValorAbono.TabIndex = 41;
-            this.lvlActualizarValorAbono.Text = "Valor:";
+            this.lblTituloEditarGasto.Text = "ACTUALIZACION DE GASTO";
             // 
             // panel1
             // 
@@ -86,6 +75,62 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(707, 301);
             this.panel1.TabIndex = 46;
+            // 
+            // txtEditarNumeroFactura
+            // 
+            this.txtEditarNumeroFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEditarNumeroFactura.Location = new System.Drawing.Point(229, 166);
+            this.txtEditarNumeroFactura.Name = "txtEditarNumeroFactura";
+            this.txtEditarNumeroFactura.Size = new System.Drawing.Size(100, 26);
+            this.txtEditarNumeroFactura.TabIndex = 53;
+            // 
+            // lblEditarNumeroFactura
+            // 
+            this.lblEditarNumeroFactura.AutoSize = true;
+            this.lblEditarNumeroFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditarNumeroFactura.Location = new System.Drawing.Point(120, 166);
+            this.lblEditarNumeroFactura.Name = "lblEditarNumeroFactura";
+            this.lblEditarNumeroFactura.Size = new System.Drawing.Size(103, 24);
+            this.lblEditarNumeroFactura.TabIndex = 52;
+            this.lblEditarNumeroFactura.Text = "# Factura:";
+            // 
+            // cbEditarProveedor
+            // 
+            this.cbEditarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbEditarProveedor.FormattingEnabled = true;
+            this.cbEditarProveedor.Location = new System.Drawing.Point(229, 254);
+            this.cbEditarProveedor.Name = "cbEditarProveedor";
+            this.cbEditarProveedor.Size = new System.Drawing.Size(218, 28);
+            this.cbEditarProveedor.TabIndex = 51;
+            // 
+            // lblEditarProveedor
+            // 
+            this.lblEditarProveedor.AutoSize = true;
+            this.lblEditarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditarProveedor.Location = new System.Drawing.Point(110, 254);
+            this.lblEditarProveedor.Name = "lblEditarProveedor";
+            this.lblEditarProveedor.Size = new System.Drawing.Size(113, 24);
+            this.lblEditarProveedor.TabIndex = 50;
+            this.lblEditarProveedor.Text = "Proveedor:";
+            // 
+            // cbEditarTipoGasto
+            // 
+            this.cbEditarTipoGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbEditarTipoGasto.FormattingEnabled = true;
+            this.cbEditarTipoGasto.Location = new System.Drawing.Point(229, 210);
+            this.cbEditarTipoGasto.Name = "cbEditarTipoGasto";
+            this.cbEditarTipoGasto.Size = new System.Drawing.Size(218, 28);
+            this.cbEditarTipoGasto.TabIndex = 49;
+            // 
+            // lblEditarTipoGasto
+            // 
+            this.lblEditarTipoGasto.AutoSize = true;
+            this.lblEditarTipoGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditarTipoGasto.Location = new System.Drawing.Point(79, 210);
+            this.lblEditarTipoGasto.Name = "lblEditarTipoGasto";
+            this.lblEditarTipoGasto.Size = new System.Drawing.Size(144, 24);
+            this.lblEditarTipoGasto.TabIndex = 48;
+            this.lblEditarTipoGasto.Text = "Tipo de gasto:";
             // 
             // txtActualizarDescripcionGasto
             // 
@@ -154,62 +199,6 @@
             this.lblActualizarFechaGasto.TabIndex = 35;
             this.lblActualizarFechaGasto.Text = "Fecha:";
             // 
-            // txtEditarNumeroFactura
-            // 
-            this.txtEditarNumeroFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEditarNumeroFactura.Location = new System.Drawing.Point(229, 166);
-            this.txtEditarNumeroFactura.Name = "txtEditarNumeroFactura";
-            this.txtEditarNumeroFactura.Size = new System.Drawing.Size(100, 26);
-            this.txtEditarNumeroFactura.TabIndex = 53;
-            // 
-            // lblEditarNumeroFactura
-            // 
-            this.lblEditarNumeroFactura.AutoSize = true;
-            this.lblEditarNumeroFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditarNumeroFactura.Location = new System.Drawing.Point(120, 166);
-            this.lblEditarNumeroFactura.Name = "lblEditarNumeroFactura";
-            this.lblEditarNumeroFactura.Size = new System.Drawing.Size(103, 24);
-            this.lblEditarNumeroFactura.TabIndex = 52;
-            this.lblEditarNumeroFactura.Text = "# Factura:";
-            // 
-            // cbEditarProveedor
-            // 
-            this.cbEditarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbEditarProveedor.FormattingEnabled = true;
-            this.cbEditarProveedor.Location = new System.Drawing.Point(229, 254);
-            this.cbEditarProveedor.Name = "cbEditarProveedor";
-            this.cbEditarProveedor.Size = new System.Drawing.Size(218, 28);
-            this.cbEditarProveedor.TabIndex = 51;
-            // 
-            // lblEditarProveedor
-            // 
-            this.lblEditarProveedor.AutoSize = true;
-            this.lblEditarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditarProveedor.Location = new System.Drawing.Point(110, 254);
-            this.lblEditarProveedor.Name = "lblEditarProveedor";
-            this.lblEditarProveedor.Size = new System.Drawing.Size(113, 24);
-            this.lblEditarProveedor.TabIndex = 50;
-            this.lblEditarProveedor.Text = "Proveedor:";
-            // 
-            // cbEditarTipoGasto
-            // 
-            this.cbEditarTipoGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbEditarTipoGasto.FormattingEnabled = true;
-            this.cbEditarTipoGasto.Location = new System.Drawing.Point(229, 210);
-            this.cbEditarTipoGasto.Name = "cbEditarTipoGasto";
-            this.cbEditarTipoGasto.Size = new System.Drawing.Size(218, 28);
-            this.cbEditarTipoGasto.TabIndex = 49;
-            // 
-            // lblEditarTipoGasto
-            // 
-            this.lblEditarTipoGasto.AutoSize = true;
-            this.lblEditarTipoGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditarTipoGasto.Location = new System.Drawing.Point(79, 210);
-            this.lblEditarTipoGasto.Name = "lblEditarTipoGasto";
-            this.lblEditarTipoGasto.Size = new System.Drawing.Size(144, 24);
-            this.lblEditarTipoGasto.TabIndex = 48;
-            this.lblEditarTipoGasto.Text = "Tipo de gasto:";
-            // 
             // EditarGastoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -217,7 +206,6 @@
             this.ClientSize = new System.Drawing.Size(742, 418);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblTituloEditarGasto);
-            this.Controls.Add(this.lvlActualizarValorAbono);
             this.Name = "EditarGastoView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditarGastoView";
@@ -231,7 +219,6 @@
         #endregion
 
         public System.Windows.Forms.Label lblTituloEditarGasto;
-        private System.Windows.Forms.Label lvlActualizarValorAbono;
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.DateTimePicker dtpActualizarFechaGasto;
         public System.Windows.Forms.Button btnActualizarGasto;

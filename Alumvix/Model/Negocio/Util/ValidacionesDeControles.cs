@@ -39,6 +39,16 @@ namespace Alumvix.Model.Negocio.Util
             return respuesta;
         }
 
+        public static bool ValidarBotonIngresoProveedor(String nombreProveedor)
+        {
+            respuesta = false;
+            if (nombreProveedor != "")
+            {
+                respuesta = true;
+            }
+            return respuesta;
+        }
+
         public static bool ValidarBotonIngresoGastoInterno(string valorGasto, int tipoGasto)
         {
             respuesta = false;

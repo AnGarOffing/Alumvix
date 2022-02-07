@@ -40,6 +40,7 @@ namespace Alumvix.Controller.Producto
             {
                 string mensaje = producto.IngresarProducto(DetalleClienteController.ObtenerIdContrato(), ingresoProductoView.cbSeleccionarProducto.SelectedIndex);        
                 ingresoProductoView.cbSeleccionarProducto.SelectedIndex = 0;
+                ingresoProductoView.Close();
                 MessageBox.Show(mensaje);                              
             }                     
         }

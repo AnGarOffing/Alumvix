@@ -100,7 +100,7 @@
             // lblTituloReporteGeneral
             // 
             this.lblTituloReporteGeneral.AutoSize = true;
-            this.lblTituloReporteGeneral.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloReporteGeneral.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloReporteGeneral.Location = new System.Drawing.Point(238, 21);
             this.lblTituloReporteGeneral.Name = "lblTituloReporteGeneral";
             this.lblTituloReporteGeneral.Size = new System.Drawing.Size(471, 31);

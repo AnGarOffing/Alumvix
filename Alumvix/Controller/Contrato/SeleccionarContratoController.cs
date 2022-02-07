@@ -27,9 +27,12 @@ namespace Alumvix.Controller.Contrato
 
         private void MostrarContrato(object sender, EventArgs e)
         {
-            detalleClienteView = new DetalleClienteView();
-            detalleClienteView.Show();
-
+            if (seleccionarContratoView.lstvListadoContratos.SelectedItems.Count > 0)
+            {
+                detalleClienteView = new DetalleClienteView();
+                detalleClienteView.Show();
+            }
+            else MessageBox.Show("Debe seleccionar un contrato");
         }
 
         private void MostrarListadoContratos(object sender, EventArgs e)

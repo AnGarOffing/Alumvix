@@ -195,7 +195,7 @@
             // lblTituloReporteMensual
             // 
             this.lblTituloReporteMensual.AutoSize = true;
-            this.lblTituloReporteMensual.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloReporteMensual.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloReporteMensual.Location = new System.Drawing.Point(284, 22);
             this.lblTituloReporteMensual.Name = "lblTituloReporteMensual";
             this.lblTituloReporteMensual.Size = new System.Drawing.Size(284, 29);

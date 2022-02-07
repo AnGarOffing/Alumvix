@@ -68,7 +68,7 @@
             // 
             this.lblTituloIngresarCliente.AutoSize = true;
             this.lblTituloIngresarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloIngresarCliente.Location = new System.Drawing.Point(136, 24);
+            this.lblTituloIngresarCliente.Location = new System.Drawing.Point(136, 21);
             this.lblTituloIngresarCliente.Name = "lblTituloIngresarCliente";
             this.lblTituloIngresarCliente.Size = new System.Drawing.Size(260, 29);
             this.lblTituloIngresarCliente.TabIndex = 42;

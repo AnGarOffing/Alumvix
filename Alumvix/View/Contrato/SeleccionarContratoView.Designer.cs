@@ -42,12 +42,12 @@
             // lblTituloSeleccionarContrato
             // 
             this.lblTituloSeleccionarContrato.AutoSize = true;
-            this.lblTituloSeleccionarContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloSeleccionarContrato.Location = new System.Drawing.Point(12, 18);
+            this.lblTituloSeleccionarContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloSeleccionarContrato.Location = new System.Drawing.Point(379, 9);
             this.lblTituloSeleccionarContrato.Name = "lblTituloSeleccionarContrato";
-            this.lblTituloSeleccionarContrato.Size = new System.Drawing.Size(258, 29);
+            this.lblTituloSeleccionarContrato.Size = new System.Drawing.Size(346, 29);
             this.lblTituloSeleccionarContrato.TabIndex = 41;
-            this.lblTituloSeleccionarContrato.Text = "Seleccionar Contrato";
+            this.lblTituloSeleccionarContrato.Text = "SELECCIONAR CONTRATO";
             // 
             // lstvListadoContratos
             // 

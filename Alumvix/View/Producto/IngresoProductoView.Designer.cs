@@ -38,7 +38,7 @@
             // 
             this.cbSeleccionarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSeleccionarProducto.FormattingEnabled = true;
-            this.cbSeleccionarProducto.Location = new System.Drawing.Point(156, 70);
+            this.cbSeleccionarProducto.Location = new System.Drawing.Point(148, 70);
             this.cbSeleccionarProducto.Name = "cbSeleccionarProducto";
             this.cbSeleccionarProducto.Size = new System.Drawing.Size(171, 28);
             this.cbSeleccionarProducto.TabIndex = 38;
@@ -47,7 +47,7 @@
             // 
             this.lblProducto.AutoSize = true;
             this.lblProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProducto.Location = new System.Drawing.Point(50, 70);
+            this.lblProducto.Location = new System.Drawing.Point(42, 70);
             this.lblProducto.Name = "lblProducto";
             this.lblProducto.Size = new System.Drawing.Size(100, 24);
             this.lblProducto.TabIndex = 39;
@@ -56,12 +56,12 @@
             // lblIngresarProducto
             // 
             this.lblIngresarProducto.AutoSize = true;
-            this.lblIngresarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIngresarProducto.Location = new System.Drawing.Point(12, 18);
+            this.lblIngresarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIngresarProducto.Location = new System.Drawing.Point(92, 11);
             this.lblIngresarProducto.Name = "lblIngresarProducto";
-            this.lblIngresarProducto.Size = new System.Drawing.Size(221, 29);
+            this.lblIngresarProducto.Size = new System.Drawing.Size(332, 29);
             this.lblIngresarProducto.TabIndex = 40;
-            this.lblIngresarProducto.Text = "Ingresar Producto";
+            this.lblIngresarProducto.Text = "INGRESO DE  PRODUCTO";
             // 
             // btnGuardarProducto
             // 
