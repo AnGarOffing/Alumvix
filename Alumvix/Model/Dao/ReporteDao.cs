@@ -31,11 +31,12 @@ namespace Alumvix.Model.Dao
             }
             catch (SqlNullValueException ex)
             {
+                MessageBox.Show("No se encontraron registros de la consulta - " + ex);
                 cantidadContratos = 0;
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("Error de conexion a Base de Datos " + ex);
+                MessageBox.Show("Error de conexion a Base de Datos - " + ex);
                 cantidadContratos = 0;
             }
             lectorFilas.Close();
@@ -58,6 +59,7 @@ namespace Alumvix.Model.Dao
             }
             catch (SqlNullValueException ex)
             {
+                MessageBox.Show("No se encontraron registros de la consulta - " + ex);
                 cantidadContratos = 0;
             }
             catch (SqlException ex)
@@ -85,6 +87,7 @@ namespace Alumvix.Model.Dao
             }
             catch (SqlNullValueException ex)
             {
+                MessageBox.Show("No se encontraron registros de la consulta - " + ex);
                 totalVentas = 0;
             }
             catch (SqlException ex)
@@ -112,6 +115,7 @@ namespace Alumvix.Model.Dao
             }
             catch (SqlNullValueException ex)
             {
+                MessageBox.Show("No se encontraron registros de la consulta - " + ex);
                 totalVentas = 0;
             }
             catch(SqlException ex)
@@ -139,6 +143,7 @@ namespace Alumvix.Model.Dao
             }
             catch (SqlNullValueException ex)
             {
+                MessageBox.Show("No se encontraron registros de la consulta - " + ex);
                 totalVentas = 0;
             }
             catch (SqlException ex)
@@ -167,6 +172,7 @@ namespace Alumvix.Model.Dao
             }
             catch (SqlNullValueException ex)
             {
+                MessageBox.Show("No se encontraron registros de la consulta - " + ex);
                 totalGastos = 0;
             }
             catch (SqlException ex)
@@ -195,6 +201,7 @@ namespace Alumvix.Model.Dao
             }
             catch (SqlNullValueException ex)
             {
+                MessageBox.Show("No se encontraron registros de la consulta - " + ex);
                 totalGastos = 0;
             }
             catch(SqlException ex)
@@ -222,6 +229,7 @@ namespace Alumvix.Model.Dao
             }
             catch (SqlNullValueException ex)
             {
+                MessageBox.Show("No se encontraron registros de la consulta - " + ex);
                 totalGastosInternos = 0;
             }
             catch (SqlException ex)
@@ -249,6 +257,7 @@ namespace Alumvix.Model.Dao
             }
             catch (SqlNullValueException ex)
             {
+                MessageBox.Show("No se encontraron registros de la consulta - " + ex);
                 totalGastosInternos = 0;
             }
             catch (SqlException ex)
@@ -303,6 +312,7 @@ namespace Alumvix.Model.Dao
 
         public ReporteDto ObtenerCuentasPorPeriodo(string fechaInicial, string fechaFinal )
         {
+            //TODO: programar este metodo para poder habilitar la opcion de reporte por periodo
             //command.Connection = connection;
             //command.CommandText = "MostrarCuentasPorPeriodo";
             //command.CommandType = CommandType.StoredProcedure;

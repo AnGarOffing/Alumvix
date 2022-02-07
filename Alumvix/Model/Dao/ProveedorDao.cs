@@ -46,10 +46,11 @@ namespace Alumvix.Model.Dao
                 {
                     listadoProveedores.Add(new ProveedorDto()
                     {
+                        IdProveedor = lectorFilas.GetInt32(0),
                         NombreProveedor = lectorFilas.GetString(1),
                         CelularProveedor = lectorFilas.GetString(2),
                         TelefonoFijoProveedor = lectorFilas.GetString(3),
-                        DireccionProveedor = lectorFilas.GetString(4),                  
+                        DireccionProveedor = lectorFilas.GetString(4),
                     });
                 }
             }
@@ -76,6 +77,21 @@ namespace Alumvix.Model.Dao
                 });
             }
             return listadoProveedores;
+        }
+
+        public bool EliminarProveedor(int idProveedor)
+        {
+            bool respuesta = false;
+            command.Connection = connection;
+            command.CommandText = "delete from PROVEEDOR where ID_PROVEEDOR = " + idProveedor;
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            int filasAfectadasEnBd = command.ExecuteNonQuery();
+            if (filasAfectadasEnBd > 0)
+            {
+                respuesta = true;
+            }
+            return respuesta;
         }
 
         public bool GuardarProveedor(string nombreProveedor, string celularProveedor, string telefonoProveedor, string direccionProveedor)
