@@ -79,6 +79,23 @@ namespace Alumvix.Model.Dao
             return listadoProveedores;
         }
 
+        public bool ActualizarProveedor(string nombreProveedor, string celularProveedor, string telefonoProveedor, string direccionProveedor, int idProveedor)
+        {
+            bool respuesta = false;
+            command.Connection = connection;
+            command.CommandText = "update PROVEEDOR set nombreProveedor = '" + nombreProveedor + "', celularProveedor = '" + celularProveedor + "'"
+             + ", telefonoFijoProveedor = '" + telefonoProveedor + "', direccionProveedor = '" + direccionProveedor + "' where ID_PROVEEDOR = " + idProveedor;
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            int filasAfectadasEnBd = command.ExecuteNonQuery();
+            if (filasAfectadasEnBd > 0)
+            {
+                respuesta = true;
+            }
+            connection.Close();
+            return respuesta;
+        }
+
         public bool EliminarProveedor(int idProveedor)
         {
             bool respuesta = false;

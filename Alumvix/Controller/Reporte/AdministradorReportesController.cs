@@ -58,21 +58,28 @@ namespace Alumvix.Controller.Reporte
 
         private void AbrirReporte(object sender, EventArgs e)
         {
-            if (administradorReporteView.rbMensual.Checked == true)
-            {                             
-                ReporteMensualView reporteMensualView = ReporteMensualView.ObtenerInstancia();
-                reporteMensualView.ShowDialog();              
-            }
-            if (administradorReporteView.rbAnual.Checked == true)
+            if (administradorReporteView.cbSeleccionarMes.SelectedIndex == 0)
             {
-                ReporteAnualView reporteAnualView = ReporteAnualView.ObtenerInstancia();
-                reporteAnualView.ShowDialog();
+                MessageBox.Show("Debe seleccionar un mes");
             }
-            if (administradorReporteView.rbRangoDeFechas.Checked == true)
+            else
             {
-                ReportePorPeriodoView reportePorPeriodoView = ReportePorPeriodoView.ObtenerInstancia();
-                reportePorPeriodoView.ShowDialog();
-            }
+                if (administradorReporteView.rbMensual.Checked == true)
+                {
+                    ReporteMensualView reporteMensualView = ReporteMensualView.ObtenerInstancia();
+                    reporteMensualView.ShowDialog();
+                }
+                if (administradorReporteView.rbAnual.Checked == true)
+                {
+                    ReporteAnualView reporteAnualView = ReporteAnualView.ObtenerInstancia();
+                    reporteAnualView.ShowDialog();
+                }
+                if (administradorReporteView.rbRangoDeFechas.Checked == true)
+                {
+                    ReportePorPeriodoView reportePorPeriodoView = ReportePorPeriodoView.ObtenerInstancia();
+                    reportePorPeriodoView.ShowDialog();
+                }
+            }           
         }
 
         private void ActivarRangoDeFecha(object sender, EventArgs e)

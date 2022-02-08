@@ -44,7 +44,7 @@ namespace Alumvix.Controller.Cliente
             detalleClienteVista.btnDetallesAbonos.Click += new EventHandler(AbrirDetalleAbonos);
             detalleClienteVista.btnDetallesGastos.Click += new EventHandler(AbrirDetalleGastos);
             detalleClienteVista.btnAbrirIngresoProducto.Click += new EventHandler(AbrirIngresoProductoView);
-            detalleClienteVista.btnEliminarProducto.Click += new EventHandler(EliminarProducto);
+            detalleClienteVista.btnEliminarProducto.Click += new EventHandler(EliminarProducto);  
             detalleClienteVista.lstvProductos.SelectedIndexChanged += new EventHandler(ObtenerNombreProducto);
             detalleClienteVista.btnIngresarContrato.Click += new EventHandler(AbrirIngresoContratoView);
             detalleClienteVista.FormClosed += new FormClosedEventHandler(CerrarFormularioContratos);
@@ -66,8 +66,8 @@ namespace Alumvix.Controller.Cliente
                 bool respuesta = new ContratoDao().EliminarContrato(contratoDto.IdContrato);
                 if (respuesta)
                 {
-                    MessageBox.Show("El contrato ha sido eliminado con exito");
-                    detalleClienteVista.Close();
+                    detalleClienteVista.Dispose();
+                    MessageBox.Show("El contrato ha sido eliminado con exito");                  
                 }
                 else
                 {
@@ -130,7 +130,10 @@ namespace Alumvix.Controller.Cliente
             {
                 sumaAbonos += abono.ValorAbono;
             }
+
             int estadoTrabajo = contratoDao.ConsultarEstadoTrabajo(Convert.ToInt32(contratoDto.IdContrato));
+
+
             if (sumaAbonos >= DetalleClienteController.contratoDto.ValorContrato)
             {
                 if (estadoTrabajo == 2)
@@ -144,7 +147,7 @@ namespace Alumvix.Controller.Cliente
         private void MostrarContrato(object sender, EventArgs e)
         {
             contratoDto = SeleccionarContrato();
-            ValidarEstadoContrato();
+            ValidarEstadoContrato();               
             detalleClienteVista.txtNumeroFactura.Text = contratoDto.IdContrato.ToString();
             detalleClienteVista.txtTipoFactura.Text = contratoDto.TipoFactura.ToString();
             detalleClienteVista.txtValorContrato.Text = CambioDeFormato.DarFormatoANumero(contratoDto.ValorContrato);
@@ -263,7 +266,11 @@ namespace Alumvix.Controller.Cliente
 
         private void ObtenerNombreProducto(object sender, EventArgs e)
         {
-            nombreProducto = detalleClienteVista.lstvProductos.SelectedItems[0].Text;
+            if (detalleClienteVista.lstvProductos.SelectedItems.Count > 0)
+            {
+                nombreProducto = detalleClienteVista.lstvProductos.SelectedItems[0].Text;
+            }
+            
         }
 
         private void AbrirIngresoContratoView(object sender, EventArgs e)

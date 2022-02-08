@@ -12,10 +12,12 @@ namespace Alumvix.Controller.Proveedor
 {
     internal class ProveedorController
     {
-        ProveedorView proveedorView;
+        static ProveedorView proveedorView;
         static List<int> idsProveedores = new List<int>();
         int indice;
         static int idProveedor;
+
+        public static int IdProveedor { get => idProveedor; set => idProveedor = value; }
 
         public ProveedorController(ProveedorView ProveedoresVista)
         {
@@ -24,6 +26,16 @@ namespace Alumvix.Controller.Proveedor
             proveedorView.btnIngresarProveedor.Click += new EventHandler(AbrirIngresoProveedorView);
             proveedorView.lstvProveedores.SelectedIndexChanged += new EventHandler(ObtenerIndice);
             proveedorView.btnEliminarProveedor.Click += new EventHandler(EliminarProveedor);
+            proveedorView.btnEditarProveedor.Click += new EventHandler(AbrirEditarProveedorView);
+        }
+
+        private void AbrirEditarProveedorView(object sender, EventArgs e)
+        {
+            if (proveedorView.lstvProveedores.SelectedItems.Count > 0)
+            {
+                EditarProveedorView editarProveedorView = EditarProveedorView.ObtenerInstancia();
+                editarProveedorView.ShowDialog();
+            }else MessageBox.Show("No ha seleccionado un proveedor");
         }
 
         private void ObtenerIndice(object sender, EventArgs e)
@@ -31,7 +43,7 @@ namespace Alumvix.Controller.Proveedor
             if (proveedorView.lstvProveedores.SelectedItems.Count > 0)
             {
                 indice = proveedorView.lstvProveedores.Items.IndexOf(proveedorView.lstvProveedores.SelectedItems[0]);
-                idProveedor = EncontrarIdProveedor(idsProveedores, indice);
+                IdProveedor = EncontrarIdProveedor(idsProveedores, indice);
             }
         }
 
@@ -46,7 +58,7 @@ namespace Alumvix.Controller.Proveedor
             {
                 if (MessageBox.Show("¿Realmente desea borrar el proveedor?", "BORRAR", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    bool respuesta = new ProveedorDao().EliminarProveedor(idProveedor);
+                    bool respuesta = new ProveedorDao().EliminarProveedor(IdProveedor);
                     if (respuesta)
                     {
                         proveedorView.lstvProveedores.SelectedItems.Clear();
@@ -58,7 +70,7 @@ namespace Alumvix.Controller.Proveedor
                     }
                 }
             }
-            else MessageBox.Show("Debe seleccionar un proveedor de la lista");
+            else MessageBox.Show("No ha seleccionado un proveedor");
         }
 
         private void AbrirIngresoProveedorView(object sender, EventArgs e)
@@ -78,6 +90,11 @@ namespace Alumvix.Controller.Proveedor
                 ListViewItem itemContrato = new ListViewItem(row);
                 proveedorView.lstvProveedores.Items.Add(itemContrato);
             }
+        }
+
+        public static ProveedorView ObtenerInstancia()
+        {
+            return proveedorView;
         }
     }
 }

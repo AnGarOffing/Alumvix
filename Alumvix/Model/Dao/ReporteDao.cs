@@ -31,7 +31,7 @@ namespace Alumvix.Model.Dao
             }
             catch (SqlNullValueException ex)
             {
-                MessageBox.Show("No se encontraron registros de la consulta - " + ex);
+                ex = null;
                 cantidadContratos = 0;
             }
             catch (SqlException ex)
@@ -59,7 +59,7 @@ namespace Alumvix.Model.Dao
             }
             catch (SqlNullValueException ex)
             {
-                MessageBox.Show("No se encontraron registros de la consulta - " + ex);
+                ex = null;
                 cantidadContratos = 0;
             }
             catch (SqlException ex)
@@ -87,7 +87,7 @@ namespace Alumvix.Model.Dao
             }
             catch (SqlNullValueException ex)
             {
-                MessageBox.Show("No se encontraron registros de la consulta - " + ex);
+                ex = null;
                 totalVentas = 0;
             }
             catch (SqlException ex)
@@ -115,7 +115,7 @@ namespace Alumvix.Model.Dao
             }
             catch (SqlNullValueException ex)
             {
-                MessageBox.Show("No se encontraron registros de la consulta - " + ex);
+                ex = null;
                 totalVentas = 0;
             }
             catch(SqlException ex)
@@ -143,7 +143,7 @@ namespace Alumvix.Model.Dao
             }
             catch (SqlNullValueException ex)
             {
-                MessageBox.Show("No se encontraron registros de la consulta - " + ex);
+                ex = null;
                 totalVentas = 0;
             }
             catch (SqlException ex)
@@ -172,7 +172,7 @@ namespace Alumvix.Model.Dao
             }
             catch (SqlNullValueException ex)
             {
-                MessageBox.Show("No se encontraron registros de la consulta - " + ex);
+                ex = null;
                 totalGastos = 0;
             }
             catch (SqlException ex)
@@ -201,7 +201,7 @@ namespace Alumvix.Model.Dao
             }
             catch (SqlNullValueException ex)
             {
-                MessageBox.Show("No se encontraron registros de la consulta - " + ex);
+                ex = null;
                 totalGastos = 0;
             }
             catch(SqlException ex)
@@ -229,7 +229,7 @@ namespace Alumvix.Model.Dao
             }
             catch (SqlNullValueException ex)
             {
-                MessageBox.Show("No se encontraron registros de la consulta - " + ex);
+                ex = null;
                 totalGastosInternos = 0;
             }
             catch (SqlException ex)
@@ -257,7 +257,7 @@ namespace Alumvix.Model.Dao
             }
             catch (SqlNullValueException ex)
             {
-                MessageBox.Show("No se encontraron registros de la consulta - " + ex);
+                ex = null;
                 totalGastosInternos = 0;
             }
             catch (SqlException ex)

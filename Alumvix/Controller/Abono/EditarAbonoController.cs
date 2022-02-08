@@ -26,10 +26,10 @@ namespace Alumvix.Controller.Abono
 
         private void CargarDatosAbono(object sender, EventArgs e)
         {
-            AbonoDao formaAbono = new AbonoDao();
+            AbonoDao abono = new AbonoDao();
             editarAbonoView.txtIActualizarValorAbono.Text = detalleAbonoView.lstvDetalleAbonos.SelectedItems[0].SubItems[1].Text;
             editarAbonoView.dtpActualizarFechaAbono.Text= detalleAbonoView.lstvDetalleAbonos.SelectedItems[0].SubItems[2].Text;          
-            editarAbonoView.cbActualizarFormaDePago.DataSource = formaAbono.ConsultarFormasAbono();
+            editarAbonoView.cbActualizarFormaDePago.DataSource = abono.ConsultarFormasAbono();
             editarAbonoView.cbActualizarFormaDePago.Text = detalleAbonoView.lstvDetalleAbonos.SelectedItems[0].SubItems[3].Text;
             editarAbonoView.cbActualizarFormaDePago.DropDownStyle = ComboBoxStyle.DropDownList;
         }

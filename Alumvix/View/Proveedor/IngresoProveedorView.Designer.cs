@@ -46,7 +46,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(481, 87);
+            this.label1.Location = new System.Drawing.Point(444, 87);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(24, 29);
             this.label1.TabIndex = 76;
@@ -55,7 +55,7 @@
             // txtIngresarCelularProveedor
             // 
             this.txtIngresarCelularProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIngresarCelularProveedor.Location = new System.Drawing.Point(160, 123);
+            this.txtIngresarCelularProveedor.Location = new System.Drawing.Point(123, 123);
             this.txtIngresarCelularProveedor.Multiline = true;
             this.txtIngresarCelularProveedor.Name = "txtIngresarCelularProveedor";
             this.txtIngresarCelularProveedor.Size = new System.Drawing.Size(198, 31);
@@ -64,7 +64,7 @@
             // txtIngresarTelefonoProveedor
             // 
             this.txtIngresarTelefonoProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIngresarTelefonoProveedor.Location = new System.Drawing.Point(160, 160);
+            this.txtIngresarTelefonoProveedor.Location = new System.Drawing.Point(123, 160);
             this.txtIngresarTelefonoProveedor.Multiline = true;
             this.txtIngresarTelefonoProveedor.Name = "txtIngresarTelefonoProveedor";
             this.txtIngresarTelefonoProveedor.Size = new System.Drawing.Size(306, 31);
@@ -73,7 +73,7 @@
             // txtIngresarDireccionProveedor
             // 
             this.txtIngresarDireccionProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIngresarDireccionProveedor.Location = new System.Drawing.Point(160, 197);
+            this.txtIngresarDireccionProveedor.Location = new System.Drawing.Point(123, 197);
             this.txtIngresarDireccionProveedor.Multiline = true;
             this.txtIngresarDireccionProveedor.Name = "txtIngresarDireccionProveedor";
             this.txtIngresarDireccionProveedor.Size = new System.Drawing.Size(358, 31);
@@ -83,7 +83,7 @@
             // 
             this.lblNombreProveedor.AutoSize = true;
             this.lblNombreProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreProveedor.Location = new System.Drawing.Point(69, 85);
+            this.lblNombreProveedor.Location = new System.Drawing.Point(32, 85);
             this.lblNombreProveedor.Name = "lblNombreProveedor";
             this.lblNombreProveedor.Size = new System.Drawing.Size(85, 24);
             this.lblNombreProveedor.TabIndex = 65;
@@ -93,7 +93,7 @@
             // 
             this.lblDireccionProveedor.AutoSize = true;
             this.lblDireccionProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDireccionProveedor.Location = new System.Drawing.Point(55, 197);
+            this.lblDireccionProveedor.Location = new System.Drawing.Point(18, 197);
             this.lblDireccionProveedor.Name = "lblDireccionProveedor";
             this.lblDireccionProveedor.Size = new System.Drawing.Size(99, 24);
             this.lblDireccionProveedor.TabIndex = 70;
@@ -102,7 +102,7 @@
             // btnGuardarNuevoProveedor
             // 
             this.btnGuardarNuevoProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarNuevoProveedor.Location = new System.Drawing.Point(402, 234);
+            this.btnGuardarNuevoProveedor.Location = new System.Drawing.Point(365, 234);
             this.btnGuardarNuevoProveedor.Name = "btnGuardarNuevoProveedor";
             this.btnGuardarNuevoProveedor.Size = new System.Drawing.Size(116, 33);
             this.btnGuardarNuevoProveedor.TabIndex = 63;
@@ -113,7 +113,7 @@
             // 
             this.lblTelefonoProveedor.AutoSize = true;
             this.lblTelefonoProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefonoProveedor.Location = new System.Drawing.Point(61, 160);
+            this.lblTelefonoProveedor.Location = new System.Drawing.Point(24, 160);
             this.lblTelefonoProveedor.Name = "lblTelefonoProveedor";
             this.lblTelefonoProveedor.Size = new System.Drawing.Size(93, 24);
             this.lblTelefonoProveedor.TabIndex = 69;
@@ -122,7 +122,7 @@
             // txtIngresarNombreProveedor
             // 
             this.txtIngresarNombreProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIngresarNombreProveedor.Location = new System.Drawing.Point(160, 85);
+            this.txtIngresarNombreProveedor.Location = new System.Drawing.Point(123, 85);
             this.txtIngresarNombreProveedor.Multiline = true;
             this.txtIngresarNombreProveedor.Name = "txtIngresarNombreProveedor";
             this.txtIngresarNombreProveedor.Size = new System.Drawing.Size(318, 31);
@@ -132,7 +132,7 @@
             // 
             this.lblCelularProveedor.AutoSize = true;
             this.lblCelularProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCelularProveedor.Location = new System.Drawing.Point(78, 123);
+            this.lblCelularProveedor.Location = new System.Drawing.Point(41, 123);
             this.lblCelularProveedor.Name = "lblCelularProveedor";
             this.lblCelularProveedor.Size = new System.Drawing.Size(76, 24);
             this.lblCelularProveedor.TabIndex = 66;
@@ -142,7 +142,7 @@
             // 
             this.lblTituloIngresarProveedor.AutoSize = true;
             this.lblTituloIngresarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloIngresarProveedor.Location = new System.Drawing.Point(136, 24);
+            this.lblTituloIngresarProveedor.Location = new System.Drawing.Point(99, 24);
             this.lblTituloIngresarProveedor.Name = "lblTituloIngresarProveedor";
             this.lblTituloIngresarProveedor.Size = new System.Drawing.Size(312, 29);
             this.lblTituloIngresarProveedor.TabIndex = 64;
@@ -152,7 +152,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(529, 274);
+            this.ClientSize = new System.Drawing.Size(499, 274);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtIngresarCelularProveedor);
             this.Controls.Add(this.txtIngresarTelefonoProveedor);
@@ -165,6 +165,7 @@
             this.Controls.Add(this.lblCelularProveedor);
             this.Controls.Add(this.lblTituloIngresarProveedor);
             this.Name = "IngresoProveedorView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IngresoProveedorView";
             this.ResumeLayout(false);
             this.PerformLayout();

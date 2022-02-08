@@ -58,7 +58,7 @@ namespace Alumvix.Model.Dao
         {
             bool respuesta = false;
             command.Connection = connection;
-            command.CommandText = "update CLIENTE set identificacionCliente = " + identificacionCliente + ", nombreCliente = '"+ nombreCliente +"'"
+            command.CommandText = "update CLIENTE set identificacionCliente = '" + identificacionCliente + "', nombreCliente = '"+ nombreCliente +"'"
              + ", correoElectronicoCliente = '" + email + "', celularCliente = '" + celularCliente
              + "', telefonoFijoCliente = '" + telefonoFijo + "', direccionCliente = '" + direccionCliente + "' where ID_CLIENTE = " + idCliente;
             command.CommandType = CommandType.Text;

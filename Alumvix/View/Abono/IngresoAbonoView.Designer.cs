@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblTituloIngresarAbono = new System.Windows.Forms.Label();
             this.lvlIngresarValorAbono = new System.Windows.Forms.Label();
             this.txtIngresarValorAbono = new System.Windows.Forms.TextBox();
             this.lblIngresarFechaAbono = new System.Windows.Forms.Label();
@@ -37,18 +36,9 @@
             this.btnGuardarNuevoAbono = new System.Windows.Forms.Button();
             this.lblIngresarFormaDePago = new System.Windows.Forms.Label();
             this.cbIngresarFormaDePago = new System.Windows.Forms.ComboBox();
+            this.lblTituloEditarProveedor = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblTituloIngresarAbono
-            // 
-            this.lblTituloIngresarAbono.AutoSize = true;
-            this.lblTituloIngresarAbono.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloIngresarAbono.Location = new System.Drawing.Point(12, 21);
-            this.lblTituloIngresarAbono.Name = "lblTituloIngresarAbono";
-            this.lblTituloIngresarAbono.Size = new System.Drawing.Size(191, 29);
-            this.lblTituloIngresarAbono.TabIndex = 32;
-            this.lblTituloIngresarAbono.Text = "Ingresar Abono";
             // 
             // lvlIngresarValorAbono
             // 
@@ -131,13 +121,23 @@
             this.cbIngresarFormaDePago.Size = new System.Drawing.Size(145, 28);
             this.cbIngresarFormaDePago.TabIndex = 37;
             // 
+            // lblTituloEditarProveedor
+            // 
+            this.lblTituloEditarProveedor.AutoSize = true;
+            this.lblTituloEditarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloEditarProveedor.Location = new System.Drawing.Point(137, 13);
+            this.lblTituloEditarProveedor.Name = "lblTituloEditarProveedor";
+            this.lblTituloEditarProveedor.Size = new System.Drawing.Size(243, 29);
+            this.lblTituloEditarProveedor.TabIndex = 80;
+            this.lblTituloEditarProveedor.Text = "INGRESAR ABONO";
+            // 
             // IngresoAbonoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(506, 204);
+            this.Controls.Add(this.lblTituloEditarProveedor);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lblTituloIngresarAbono);
             this.Name = "IngresoAbonoView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IngresoAbonoView";
@@ -149,8 +149,6 @@
         }
 
         #endregion
-
-        public System.Windows.Forms.Label lblTituloIngresarAbono;
         private System.Windows.Forms.Label lvlIngresarValorAbono;
         private System.Windows.Forms.Label lblIngresarFechaAbono;
         private System.Windows.Forms.Panel panel1;
@@ -159,5 +157,6 @@
         public System.Windows.Forms.Button btnGuardarNuevoAbono;
         public System.Windows.Forms.TextBox txtIngresarValorAbono;
         public System.Windows.Forms.DateTimePicker dtpIngresarFechaAbono;
+        public System.Windows.Forms.Label lblTituloEditarProveedor;
     }
 }

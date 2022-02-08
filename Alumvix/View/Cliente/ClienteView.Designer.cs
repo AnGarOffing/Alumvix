@@ -48,16 +48,16 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridClientes.Location = new System.Drawing.Point(12, 123);
+            this.dataGridClientes.Location = new System.Drawing.Point(11, 123);
             this.dataGridClientes.Name = "dataGridClientes";
             this.dataGridClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridClientes.Size = new System.Drawing.Size(776, 249);
+            this.dataGridClientes.Size = new System.Drawing.Size(1008, 249);
             this.dataGridClientes.TabIndex = 0;
             // 
             // btnDetalleCliente
             // 
             this.btnDetalleCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetalleCliente.Location = new System.Drawing.Point(556, 75);
+            this.btnDetalleCliente.Location = new System.Drawing.Point(778, 75);
             this.btnDetalleCliente.Name = "btnDetalleCliente";
             this.btnDetalleCliente.Size = new System.Drawing.Size(88, 35);
             this.btnDetalleCliente.TabIndex = 2;
@@ -80,7 +80,7 @@
             this.btnActualizarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizarCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizarCliente.Image")));
-            this.btnActualizarCliente.Location = new System.Drawing.Point(658, 75);
+            this.btnActualizarCliente.Location = new System.Drawing.Point(880, 75);
             this.btnActualizarCliente.Name = "btnActualizarCliente";
             this.btnActualizarCliente.Size = new System.Drawing.Size(30, 35);
             this.btnActualizarCliente.TabIndex = 35;
@@ -93,7 +93,7 @@
             this.btnEliminarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarCliente.Image")));
-            this.btnEliminarCliente.Location = new System.Drawing.Point(703, 74);
+            this.btnEliminarCliente.Location = new System.Drawing.Point(925, 74);
             this.btnEliminarCliente.Name = "btnEliminarCliente";
             this.btnEliminarCliente.Size = new System.Drawing.Size(30, 35);
             this.btnEliminarCliente.TabIndex = 36;
@@ -102,7 +102,7 @@
             // btnReporte
             // 
             this.btnReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporte.Location = new System.Drawing.Point(12, 397);
+            this.btnReporte.Location = new System.Drawing.Point(20, 394);
             this.btnReporte.Name = "btnReporte";
             this.btnReporte.Size = new System.Drawing.Size(102, 34);
             this.btnReporte.TabIndex = 37;
@@ -112,7 +112,7 @@
             // btnGastosInternos
             // 
             this.btnGastosInternos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGastosInternos.Location = new System.Drawing.Point(141, 397);
+            this.btnGastosInternos.Location = new System.Drawing.Point(149, 394);
             this.btnGastosInternos.Name = "btnGastosInternos";
             this.btnGastosInternos.Size = new System.Drawing.Size(176, 34);
             this.btnGastosInternos.TabIndex = 38;
@@ -123,7 +123,7 @@
             // 
             this.lblTituloClientes.AutoSize = true;
             this.lblTituloClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloClientes.Location = new System.Drawing.Point(312, 18);
+            this.lblTituloClientes.Location = new System.Drawing.Point(431, 19);
             this.lblTituloClientes.Name = "lblTituloClientes";
             this.lblTituloClientes.Size = new System.Drawing.Size(156, 31);
             this.lblTituloClientes.TabIndex = 39;
@@ -136,7 +136,7 @@
             this.btnIngresarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresarCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresarCliente.Image")));
-            this.btnIngresarCliente.Location = new System.Drawing.Point(742, 72);
+            this.btnIngresarCliente.Location = new System.Drawing.Point(964, 72);
             this.btnIngresarCliente.Name = "btnIngresarCliente";
             this.btnIngresarCliente.Size = new System.Drawing.Size(46, 40);
             this.btnIngresarCliente.TabIndex = 41;
@@ -145,7 +145,7 @@
             // btnProveedores
             // 
             this.btnProveedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProveedores.Location = new System.Drawing.Point(344, 397);
+            this.btnProveedores.Location = new System.Drawing.Point(352, 394);
             this.btnProveedores.Name = "btnProveedores";
             this.btnProveedores.Size = new System.Drawing.Size(142, 34);
             this.btnProveedores.TabIndex = 42;
@@ -156,7 +156,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1032, 450);
             this.Controls.Add(this.btnProveedores);
             this.Controls.Add(this.btnIngresarCliente);
             this.Controls.Add(this.lblTituloClientes);

@@ -82,6 +82,7 @@
     <Compile Include="Controller\Gasto\IngresoGastoController.cs" />
     <Compile Include="Controller\Gasto\IngresoGastoInternoController.cs" />
     <Compile Include="Controller\Producto\IngresoProductoController.cs" />
+    <Compile Include="Controller\Proveedor\EditarProveedorController.cs" />
     <Compile Include="Controller\Proveedor\IngresoProveedorController.cs" />
     <Compile Include="Controller\Proveedor\ProveedorController.cs" />
     <Compile Include="Controller\Reporte\AdministradorReportesController.cs" />
@@ -220,6 +221,12 @@
     <Compile Include="View\Producto\IngresoProductoView.Designer.cs">
       <DependentUpon>IngresoProductoView.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Proveedor\EditarProveedorView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Proveedor\EditarProveedorView.Designer.cs">
+      <DependentUpon>EditarProveedorView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Proveedor\IngresoProveedorView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -318,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Producto\IngresoProductoView.resx">
       <DependentUpon>IngresoProductoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Proveedor\EditarProveedorView.resx">
+      <DependentUpon>EditarProveedorView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Proveedor\IngresoProveedorView.resx">
       <DependentUpon>IngresoProveedorView.cs</DependentUpon>

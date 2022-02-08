@@ -36,7 +36,7 @@
             this.txtIActualizarValorAbono = new System.Windows.Forms.TextBox();
             this.lvlActualizarValorAbono = new System.Windows.Forms.Label();
             this.lblActualizarFechaAbono = new System.Windows.Forms.Label();
-            this.lblTituloEditarAbono = new System.Windows.Forms.Label();
+            this.lblTituloEditarProveedor = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -121,23 +121,23 @@
             this.lblActualizarFechaAbono.TabIndex = 35;
             this.lblActualizarFechaAbono.Text = "Fecha:";
             // 
-            // lblTituloEditarAbono
+            // lblTituloEditarProveedor
             // 
-            this.lblTituloEditarAbono.AutoSize = true;
-            this.lblTituloEditarAbono.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloEditarAbono.Location = new System.Drawing.Point(12, 20);
-            this.lblTituloEditarAbono.Name = "lblTituloEditarAbono";
-            this.lblTituloEditarAbono.Size = new System.Drawing.Size(164, 29);
-            this.lblTituloEditarAbono.TabIndex = 38;
-            this.lblTituloEditarAbono.Text = "Editar Abono";
+            this.lblTituloEditarProveedor.AutoSize = true;
+            this.lblTituloEditarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloEditarProveedor.Location = new System.Drawing.Point(116, 11);
+            this.lblTituloEditarProveedor.Name = "lblTituloEditarProveedor";
+            this.lblTituloEditarProveedor.Size = new System.Drawing.Size(267, 29);
+            this.lblTituloEditarProveedor.TabIndex = 80;
+            this.lblTituloEditarProveedor.Text = "ACTUALIZAR ABONO";
             // 
             // EditarAbonoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(506, 204);
+            this.Controls.Add(this.lblTituloEditarProveedor);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lblTituloEditarAbono);
             this.Name = "EditarAbonoView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditarAbonoView";
@@ -158,6 +158,6 @@
         public System.Windows.Forms.TextBox txtIActualizarValorAbono;
         private System.Windows.Forms.Label lvlActualizarValorAbono;
         private System.Windows.Forms.Label lblActualizarFechaAbono;
-        public System.Windows.Forms.Label lblTituloEditarAbono;
+        public System.Windows.Forms.Label lblTituloEditarProveedor;
     }
 }

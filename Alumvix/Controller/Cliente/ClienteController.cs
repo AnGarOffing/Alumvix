@@ -11,6 +11,7 @@ using Alumvix.View.Contrato;
 using Alumvix.View.Reporte;
 using Alumvix.View.Gasto;
 using Alumvix.View.Proveedor;
+using System.Drawing;
 
 namespace Alumvix.Controller
 {
@@ -31,6 +32,7 @@ namespace Alumvix.Controller
             logica = new Logica();
             clienteVista = view;
             clienteVista.Activated += new EventHandler(ObtenerListadoClientes);
+            clienteVista.Activated += new EventHandler(PersonalizarFormulario);
             clienteVista.txtFiltrarCliente.TextChanged += new EventHandler(ObtenerListadoClientes);
             clienteVista.dataGridClientes.CellClick += new DataGridViewCellEventHandler(ObtenerRegistroCliente);
             clienteVista.btnDetalleCliente.Click += new EventHandler(AbrirDetalleClienteView);
@@ -41,6 +43,21 @@ namespace Alumvix.Controller
             clienteVista.txtFiltrarCliente.KeyPress += new KeyPressEventHandler(ValidarEntrada);
             clienteVista.btnIngresarCliente.Click += new EventHandler(AbrirIngresoClienteView);
             clienteVista.btnProveedores.Click += new EventHandler(AbrirProveedoresView);
+        }
+
+        private void PersonalizarFormulario(object sender, EventArgs e)
+        {
+            clienteVista.dataGridClientes.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12);
+            clienteVista.dataGridClientes.AutoResizeColumns();
+            clienteVista.dataGridClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            clienteVista.dataGridClientes.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12, FontStyle.Bold);
+            clienteVista.dataGridClientes.Columns[0].HeaderText = "Id";
+            clienteVista.dataGridClientes.Columns[1].HeaderText = "Identificación";
+            clienteVista.dataGridClientes.Columns[2].HeaderText = "Nombre";
+            clienteVista.dataGridClientes.Columns[3].HeaderText = "Email";
+            clienteVista.dataGridClientes.Columns[4].HeaderText = "Celular";
+            clienteVista.dataGridClientes.Columns[5].HeaderText = "Telefono";
+            clienteVista.dataGridClientes.Columns[6].HeaderText = "Dirección";
         }
 
         private void AbrirProveedoresView(object sender, EventArgs e)
