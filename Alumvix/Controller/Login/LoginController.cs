@@ -1,4 +1,8 @@
-﻿using Alumvix.View.Login;
+﻿using Alumvix.Model.Dao;
+using Alumvix.Model.Dto;
+using Alumvix.Model.Negocio.Util;
+using Alumvix.View;
+using Alumvix.View.Login;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -15,13 +19,49 @@ namespace Alumvix.Controller.Login
 
         public LoginController(LoginView loginVista)
         {
-            this.loginView = loginVista;
+            loginView = loginVista;
             loginView.txtUsuario.Enter += new EventHandler(VaciarYResaltarCampoUsuario);
             loginView.txtUsuario.Leave += new EventHandler(EstablecerCampoUsuarioPorDefecto);
             loginView.txtPassword.Enter += new EventHandler(VaciarYResaltarCampoPassword);
             loginView.txtPassword.Leave += new EventHandler(EstablecerCampoPasswordPorDefecto);
             loginView.btnCerrarLogin.Click += new EventHandler(CerrarLogin);
             loginView.btnMinimizarLogin.Click += new EventHandler(MinimizarLogin);
+            loginView.btnAcceder.Click += new EventHandler(IniciarSesion);
+        }
+
+        private void ValidarCredenciales() { }
+
+        private void IniciarSesion(object sender, EventArgs e)
+        {
+            bool respuesta = ValidacionesDeControles.ValidarBotonInicioDeSesion(loginView.txtUsuario.Text, loginView.txtPassword.Text);
+            if (respuesta)
+            {
+                bool usuarioEncontrado = false;
+                UsuarioDao usuarioDao = new UsuarioDao();
+                List<UsuarioDto> listadoUsuarios = usuarioDao.ObtenerListadoUsuarios();
+                foreach (UsuarioDto usuarioDto in listadoUsuarios)
+                {
+                    if (usuarioDto.Usuario == loginView.txtUsuario.Text && usuarioDto.Password == loginView.txtPassword.Text)
+                    {
+                        usuarioEncontrado = true;
+                        break;
+                    }
+                }
+                if (usuarioEncontrado)
+                {
+                    ClienteView clienteView = ClienteView.ObtenerInstancia();
+                    clienteView.ShowDialog();
+                    loginView.Close();
+                }
+                else
+                {
+                    MessageBox.Show("El usuario o la contraseña son incorrectos, verifique nuevamente");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe diligenciar todos los campos");
+            }
         }
 
         private void MinimizarLogin(object sender, EventArgs e)

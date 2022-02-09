@@ -126,5 +126,15 @@ namespace Alumvix.Model.Negocio.Util
             }
             return e.Handled;
         }
+
+        public static bool ValidarBotonInicioDeSesion(string usuario, string password)
+        {
+            bool respuesta = false;
+            if (usuario != "USUARIO" && password != "CONTRASEÑA")
+            {
+                respuesta = true;
+            }
+            return respuesta;
+        }
     }
 }

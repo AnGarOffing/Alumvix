@@ -12,6 +12,7 @@ using Alumvix.View.Reporte;
 using Alumvix.View.Gasto;
 using Alumvix.View.Proveedor;
 using System.Drawing;
+using Alumvix.View.Login;
 
 namespace Alumvix.Controller
 {
@@ -43,6 +44,15 @@ namespace Alumvix.Controller
             clienteVista.txtFiltrarCliente.KeyPress += new KeyPressEventHandler(ValidarEntrada);
             clienteVista.btnIngresarCliente.Click += new EventHandler(AbrirIngresoClienteView);
             clienteVista.btnProveedores.Click += new EventHandler(AbrirProveedoresView);
+            clienteVista.FormClosed += new FormClosedEventHandler(AbrirLogin);
+        }
+
+        private void AbrirLogin(object sender, FormClosedEventArgs e)
+        {
+            LoginView loginView = LoginView.ObtenerInstancia();
+            clienteVista.Dispose();
+            loginView.ShowDialog();
+            
         }
 
         private void PersonalizarFormulario(object sender, EventArgs e)
