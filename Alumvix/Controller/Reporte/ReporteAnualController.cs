@@ -24,8 +24,9 @@ namespace Alumvix.Controller.Reporte
             reporteAnualView.Load += new EventHandler(MostrarReporteAnual);
             reporteAnualView.Load += new EventHandler(MostrarReporteMensualPorAnio);
             reporteAnualView.btnDetalleGastos.Click += new EventHandler(MostrarGastosTotalesPorAnio);
+            reporteAnualView.btnExportarReporte.Click += new EventHandler(ExportarReporteAExcel);
         }
-        
+
         private void MostrarReporteMensualPorAnio(object sender, EventArgs e)
         {
             administradorReportesView = AdministradorReportesController.ObtenerInstancia();
@@ -84,6 +85,12 @@ namespace Alumvix.Controller.Reporte
                 ListViewItem itemGastoInterno = new ListViewItem(row);
                 reporteAnualView.lstvGastosTotalesMensuales.Items.Add(itemGastoInterno);
             }
+        }
+
+        private void ExportarReporteAExcel(object sender, EventArgs e)
+        {
+            Logica logica = new Logica();
+            logica.ExportToExcel(reporteAnualView.lstvReporteMensualPorAnio);
         }
     }
 }

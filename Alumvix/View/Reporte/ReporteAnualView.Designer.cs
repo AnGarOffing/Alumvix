@@ -47,6 +47,7 @@
             this.columnaTotalVentas = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnaTotalGastos = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnaUtilidad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnExportarReporte = new System.Windows.Forms.Button();
             this.gbTituloGastosDelMes.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,9 +88,9 @@
             this.gbTituloGastosDelMes.Controls.Add(this.txtUtilidadGeneral);
             this.gbTituloGastosDelMes.Controls.Add(this.lblTotalVentas);
             this.gbTituloGastosDelMes.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbTituloGastosDelMes.Location = new System.Drawing.Point(14, 86);
+            this.gbTituloGastosDelMes.Location = new System.Drawing.Point(16, 72);
             this.gbTituloGastosDelMes.Name = "gbTituloGastosDelMes";
-            this.gbTituloGastosDelMes.Size = new System.Drawing.Size(757, 191);
+            this.gbTituloGastosDelMes.Size = new System.Drawing.Size(757, 144);
             this.gbTituloGastosDelMes.TabIndex = 52;
             this.gbTituloGastosDelMes.TabStop = false;
             this.gbTituloGastosDelMes.Text = "Datos del año";
@@ -98,7 +99,7 @@
             // 
             this.lblTotalContratos.AutoSize = true;
             this.lblTotalContratos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalContratos.Location = new System.Drawing.Point(22, 67);
+            this.lblTotalContratos.Location = new System.Drawing.Point(22, 42);
             this.lblTotalContratos.Name = "lblTotalContratos";
             this.lblTotalContratos.Size = new System.Drawing.Size(222, 24);
             this.lblTotalContratos.TabIndex = 21;
@@ -108,7 +109,7 @@
             // 
             this.txtCantidadContratos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCantidadContratos.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.txtCantidadContratos.Location = new System.Drawing.Point(259, 69);
+            this.txtCantidadContratos.Location = new System.Drawing.Point(259, 44);
             this.txtCantidadContratos.Name = "txtCantidadContratos";
             this.txtCantidadContratos.Size = new System.Drawing.Size(76, 29);
             this.txtCantidadContratos.TabIndex = 22;
@@ -118,7 +119,7 @@
             // 
             this.lblTotalGastos.AutoSize = true;
             this.lblTotalGastos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalGastos.Location = new System.Drawing.Point(410, 72);
+            this.lblTotalGastos.Location = new System.Drawing.Point(410, 47);
             this.lblTotalGastos.Name = "lblTotalGastos";
             this.lblTotalGastos.Size = new System.Drawing.Size(161, 24);
             this.lblTotalGastos.TabIndex = 26;
@@ -128,7 +129,7 @@
             // 
             this.txtTotalVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalVentas.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.txtTotalVentas.Location = new System.Drawing.Point(235, 127);
+            this.txtTotalVentas.Location = new System.Drawing.Point(235, 91);
             this.txtTotalVentas.Name = "txtTotalVentas";
             this.txtTotalVentas.Size = new System.Drawing.Size(121, 29);
             this.txtTotalVentas.TabIndex = 25;
@@ -138,7 +139,7 @@
             // 
             this.txtTotalGastos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalGastos.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.txtTotalGastos.Location = new System.Drawing.Point(577, 72);
+            this.txtTotalGastos.Location = new System.Drawing.Point(577, 47);
             this.txtTotalGastos.Name = "txtTotalGastos";
             this.txtTotalGastos.Size = new System.Drawing.Size(122, 29);
             this.txtTotalGastos.TabIndex = 27;
@@ -148,7 +149,7 @@
             // 
             this.lblUtilidadGeneral.AutoSize = true;
             this.lblUtilidadGeneral.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUtilidadGeneral.Location = new System.Drawing.Point(406, 133);
+            this.lblUtilidadGeneral.Location = new System.Drawing.Point(406, 97);
             this.lblUtilidadGeneral.Name = "lblUtilidadGeneral";
             this.lblUtilidadGeneral.Size = new System.Drawing.Size(165, 24);
             this.lblUtilidadGeneral.TabIndex = 28;
@@ -158,7 +159,7 @@
             // 
             this.txtUtilidadGeneral.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUtilidadGeneral.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.txtUtilidadGeneral.Location = new System.Drawing.Point(577, 133);
+            this.txtUtilidadGeneral.Location = new System.Drawing.Point(577, 97);
             this.txtUtilidadGeneral.Name = "txtUtilidadGeneral";
             this.txtUtilidadGeneral.Size = new System.Drawing.Size(122, 29);
             this.txtUtilidadGeneral.TabIndex = 29;
@@ -168,7 +169,7 @@
             // 
             this.lblTotalVentas.AutoSize = true;
             this.lblTotalVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalVentas.Location = new System.Drawing.Point(67, 127);
+            this.lblTotalVentas.Location = new System.Drawing.Point(67, 91);
             this.lblTotalVentas.Name = "lblTotalVentas";
             this.lblTotalVentas.Size = new System.Drawing.Size(162, 24);
             this.lblTotalVentas.TabIndex = 24;
@@ -204,10 +205,10 @@
             this.lstvReporteMensualPorAnio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstvReporteMensualPorAnio.FullRowSelect = true;
             this.lstvReporteMensualPorAnio.HideSelection = false;
-            this.lstvReporteMensualPorAnio.Location = new System.Drawing.Point(14, 283);
+            this.lstvReporteMensualPorAnio.Location = new System.Drawing.Point(14, 276);
             this.lstvReporteMensualPorAnio.MultiSelect = false;
             this.lstvReporteMensualPorAnio.Name = "lstvReporteMensualPorAnio";
-            this.lstvReporteMensualPorAnio.Size = new System.Drawing.Size(759, 276);
+            this.lstvReporteMensualPorAnio.Size = new System.Drawing.Size(759, 283);
             this.lstvReporteMensualPorAnio.TabIndex = 54;
             this.lstvReporteMensualPorAnio.UseCompatibleStateImageBehavior = false;
             this.lstvReporteMensualPorAnio.View = System.Windows.Forms.View.Details;
@@ -232,11 +233,22 @@
             this.columnaUtilidad.Text = "Utilidad";
             this.columnaUtilidad.Width = 189;
             // 
+            // btnExportarReporte
+            // 
+            this.btnExportarReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportarReporte.Location = new System.Drawing.Point(16, 232);
+            this.btnExportarReporte.Name = "btnExportarReporte";
+            this.btnExportarReporte.Size = new System.Drawing.Size(97, 38);
+            this.btnExportarReporte.TabIndex = 55;
+            this.btnExportarReporte.Text = "Exportar";
+            this.btnExportarReporte.UseVisualStyleBackColor = true;
+            // 
             // ReporteAnualView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1179, 571);
+            this.Controls.Add(this.btnExportarReporte);
             this.Controls.Add(this.lstvReporteMensualPorAnio);
             this.Controls.Add(this.lstvGastosTotalesMensuales);
             this.Controls.Add(this.gbTituloGastosDelMes);
@@ -273,5 +285,6 @@
         private System.Windows.Forms.ColumnHeader columnaTotalVentas;
         private System.Windows.Forms.ColumnHeader columnaTotalGastos;
         private System.Windows.Forms.ColumnHeader columnaUtilidad;
+        public System.Windows.Forms.Button btnExportarReporte;
     }
 }
