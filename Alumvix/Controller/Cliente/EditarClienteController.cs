@@ -17,7 +17,28 @@ namespace Alumvix.Controller.Cliente
             editarClienteView = editarClienteVista;
             datosCliente = ClienteController.CargarRegistroCliente();
             editarClienteView.Load += new EventHandler(CargarDatosCliente);
+            editarClienteView.txtActualizarIdentificacionCliente.KeyPress += new KeyPressEventHandler(ValidarEntradaNumeros);
+            editarClienteView.txtEditarNombreCliente.KeyPress += new KeyPressEventHandler(ValidarEntradaLetrasYNumeros);
+            editarClienteView.txtEditarTelefonoCliente.KeyPress += new KeyPressEventHandler(ValidarEntradaNumeros);
+            editarClienteView.txtEditarCelularCliente.KeyPress += new KeyPressEventHandler(ValidarEntradaNumeros);
             editarClienteView.btnActualizarCliente.Click += new EventHandler(ActualizarCliente);
+        }
+
+        private void ValidarEntradaLetrasYNumeros(object sender, KeyPressEventArgs e)
+        {
+            bool respuesta = ValidacionesDeControles.ValidarEntradaNumerosyLetras(e);
+            if (respuesta == true) MessageBox.Show("El campo solo permite numeros y letras");
+        }
+
+        private void ValidarEntradaNumeros(object sender, KeyPressEventArgs e)
+        {
+            bool respuesta = ValidacionesDeControles.ValidarEntradaNumeros(e);
+            if (respuesta == true) MessageBox.Show("El campo solo permite numeros");
+        }
+
+        private void ValidarEntrada(object sender, KeyPressEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void ActualizarCliente(object sender, EventArgs e)

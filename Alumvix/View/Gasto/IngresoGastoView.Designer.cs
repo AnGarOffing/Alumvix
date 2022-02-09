@@ -68,10 +68,11 @@
             // 
             // txtNumeroFactura
             // 
+            this.txtNumeroFactura.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNumeroFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumeroFactura.Location = new System.Drawing.Point(233, 160);
             this.txtNumeroFactura.Name = "txtNumeroFactura";
-            this.txtNumeroFactura.Size = new System.Drawing.Size(100, 26);
+            this.txtNumeroFactura.Size = new System.Drawing.Size(155, 26);
             this.txtNumeroFactura.TabIndex = 47;
             // 
             // label2

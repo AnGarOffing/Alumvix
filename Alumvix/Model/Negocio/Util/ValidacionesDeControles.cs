@@ -106,7 +106,7 @@ namespace Alumvix.Model.Negocio.Util
 
         }
 
-        public static bool ValidarNumerosyLetras(KeyPressEventArgs e)
+        public static bool ValidarEntradaNumerosyLetras(KeyPressEventArgs e)
         {
             if((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
             {
@@ -118,5 +118,13 @@ namespace Alumvix.Model.Negocio.Util
             return e.Handled;
         }
 
+        public static bool ValidarEntradaNumeros(KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                e.Handled = true;
+            }
+            return e.Handled;
+        }
     }
 }

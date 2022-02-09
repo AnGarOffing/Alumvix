@@ -17,7 +17,22 @@ namespace Alumvix.Controller.Proveedor
         public IngresoProveedorController(IngresoProveedorView ingresoProveedorVista)
         {
             ingresoProveedorView = ingresoProveedorVista;
+            ingresoProveedorView.txtIngresarNombreProveedor.KeyPress += new KeyPressEventHandler(ValidarEntradaNumerosyLetras);
+            ingresoProveedorView.txtIngresarCelularProveedor.KeyPress += new KeyPressEventHandler(ValidarEntradaNumeros);
+            ingresoProveedorView.txtIngresarTelefonoProveedor.KeyPress += new KeyPressEventHandler(ValidarEntradaNumeros);
             ingresoProveedorView.btnGuardarNuevoProveedor.Click += new EventHandler(GuardarProveedor);
+        }
+
+        private void ValidarEntradaNumeros(object sender, KeyPressEventArgs e)
+        {
+            bool respuesta = ValidacionesDeControles.ValidarEntradaNumeros(e);
+            if (respuesta == true) MessageBox.Show("El campo solo permite numeros");
+        }
+
+        private void ValidarEntradaNumerosyLetras(object sender, KeyPressEventArgs e)
+        {
+            bool respuesta = ValidacionesDeControles.ValidarEntradaNumerosyLetras(e);
+            if (respuesta == true) MessageBox.Show("El campo solo permite numeros y letras");
         }
 
         private void GuardarProveedor(object sender, EventArgs e)

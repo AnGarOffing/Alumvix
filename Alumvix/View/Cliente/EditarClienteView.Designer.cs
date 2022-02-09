@@ -80,6 +80,7 @@
             // 
             this.txtEditarCelularCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEditarCelularCliente.Location = new System.Drawing.Point(169, 152);
+            this.txtEditarCelularCliente.MaxLength = 10;
             this.txtEditarCelularCliente.Name = "txtEditarCelularCliente";
             this.txtEditarCelularCliente.Size = new System.Drawing.Size(233, 26);
             this.txtEditarCelularCliente.TabIndex = 51;
@@ -88,6 +89,7 @@
             // 
             this.txtEditarTelefonoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEditarTelefonoCliente.Location = new System.Drawing.Point(169, 192);
+            this.txtEditarTelefonoCliente.MaxLength = 7;
             this.txtEditarTelefonoCliente.Name = "txtEditarTelefonoCliente";
             this.txtEditarTelefonoCliente.Size = new System.Drawing.Size(139, 26);
             this.txtEditarTelefonoCliente.TabIndex = 47;

@@ -46,7 +46,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(443, 81);
+            this.label1.Location = new System.Drawing.Point(467, 81);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(24, 29);
             this.label1.TabIndex = 87;
@@ -56,18 +56,20 @@
             // 
             this.txtEditarCelularProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEditarCelularProveedor.Location = new System.Drawing.Point(122, 117);
+            this.txtEditarCelularProveedor.MaxLength = 10;
             this.txtEditarCelularProveedor.Multiline = true;
             this.txtEditarCelularProveedor.Name = "txtEditarCelularProveedor";
-            this.txtEditarCelularProveedor.Size = new System.Drawing.Size(198, 31);
+            this.txtEditarCelularProveedor.Size = new System.Drawing.Size(155, 31);
             this.txtEditarCelularProveedor.TabIndex = 86;
             // 
             // txtEditarTelefonoProveedor
             // 
             this.txtEditarTelefonoProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEditarTelefonoProveedor.Location = new System.Drawing.Point(122, 154);
+            this.txtEditarTelefonoProveedor.MaxLength = 7;
             this.txtEditarTelefonoProveedor.Multiline = true;
             this.txtEditarTelefonoProveedor.Name = "txtEditarTelefonoProveedor";
-            this.txtEditarTelefonoProveedor.Size = new System.Drawing.Size(306, 31);
+            this.txtEditarTelefonoProveedor.Size = new System.Drawing.Size(131, 31);
             this.txtEditarTelefonoProveedor.TabIndex = 85;
             // 
             // txtEditarDireccionProveedor
@@ -125,7 +127,7 @@
             this.txtEditarNombreProveedor.Location = new System.Drawing.Point(122, 79);
             this.txtEditarNombreProveedor.Multiline = true;
             this.txtEditarNombreProveedor.Name = "txtEditarNombreProveedor";
-            this.txtEditarNombreProveedor.Size = new System.Drawing.Size(318, 31);
+            this.txtEditarNombreProveedor.Size = new System.Drawing.Size(344, 31);
             this.txtEditarNombreProveedor.TabIndex = 77;
             // 
             // lblEditarCelularProveedor

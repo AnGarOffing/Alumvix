@@ -17,7 +17,23 @@ namespace Alumvix.Controller.Cliente
         public IngresoClienteController(IngresoClienteView ingresoClienteVista)
         {
             ingresoClienteView = ingresoClienteVista;
+            ingresoClienteView.txtIngresarIdCliente.KeyPress += new KeyPressEventHandler(ValidarEntradaNumeros);
+            ingresoClienteView.txtIngresarNombreCliente.KeyPress += new KeyPressEventHandler(ValidarEntradaLetrasYNumeros);
+            ingresoClienteView.txtIngresarTelefonoCliente.KeyPress += new KeyPressEventHandler(ValidarEntradaNumeros);
+            ingresoClienteView.txtIngresarCelularCliente.KeyPress += new KeyPressEventHandler(ValidarEntradaNumeros);
             ingresoClienteView.btnGuardarNuevoCliente.Click += new EventHandler(GuardarCliente);
+        }
+
+        private void ValidarEntradaLetrasYNumeros(object sender, KeyPressEventArgs e)
+        {
+            bool respuesta = ValidacionesDeControles.ValidarEntradaNumerosyLetras(e);
+            if (respuesta == true) MessageBox.Show("El campo solo permite numeros y letras");
+        }
+
+        private void ValidarEntradaNumeros(object sender, KeyPressEventArgs e)
+        {
+            bool respuesta = ValidacionesDeControles.ValidarEntradaNumeros(e);
+            if (respuesta == true) MessageBox.Show("El campo solo permite numeros");
         }
 
         private void GuardarCliente(object sender, EventArgs e)

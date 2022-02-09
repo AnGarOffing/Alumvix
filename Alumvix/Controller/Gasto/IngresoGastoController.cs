@@ -21,8 +21,22 @@ namespace Alumvix.Controller.Gasto
             ingresoGastoView.Load += new EventHandler(CargarTiposDeGastoMaterial);
             ingresoGastoView.Load += new EventHandler(CargarProveedores);
             ingresoGastoView.Activated += new EventHandler(ActualizarIdContrato);
+            ingresoGastoView.txtIngresarValorGasto.KeyPress += new KeyPressEventHandler(ValidarEntradaNumeros);
+            ingresoGastoView.txtNumeroFactura.KeyPress += new KeyPressEventHandler(ValidarEntradaLetrasYNumeros);
             ingresoGastoView.cbIngresarTipoGasto.SelectedIndexChanged += new EventHandler(HabilitarControlesFactyProv);
             ingresoGastoView.btnGuardarNuevoGasto.Click += new EventHandler(IngresarGasto);
+        }
+
+        private void ValidarEntradaLetrasYNumeros(object sender, KeyPressEventArgs e)
+        {
+            bool respuesta = ValidacionesDeControles.ValidarEntradaNumerosyLetras(e);
+            if (respuesta == true) MessageBox.Show("El campo solo permite numeros y letras");
+        }
+
+        private void ValidarEntradaNumeros(object sender, KeyPressEventArgs e)
+        {
+            bool respuesta = ValidacionesDeControles.ValidarEntradaNumeros(e);
+            if (respuesta == true) MessageBox.Show("El campo solo permite numeros");
         }
 
         private void ActualizarIdContrato(object sender, EventArgs e)

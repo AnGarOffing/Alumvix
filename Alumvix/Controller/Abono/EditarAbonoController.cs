@@ -21,7 +21,14 @@ namespace Alumvix.Controller.Abono
         {
             editarAbonoView = editarAbonoVista;
             editarAbonoView.Load += new EventHandler(CargarDatosAbono);
+            editarAbonoView.txtIActualizarValorAbono.KeyPress += new KeyPressEventHandler(ValidarEntrada);
             editarAbonoView.btnActualizarAbono.Click += new EventHandler(ActualizarAbonoEnBD);
+        }
+
+        private void ValidarEntrada(object sender, KeyPressEventArgs e)
+        {
+            bool respuesta = ValidacionesDeControles.ValidarEntradaNumeros(e);
+            if (respuesta == true) MessageBox.Show("El campo solo permite numeros");
         }
 
         private void CargarDatosAbono(object sender, EventArgs e)
@@ -55,6 +62,5 @@ namespace Alumvix.Controller.Abono
                 else MessageBox.Show("Error al actualizar el abono");
             }
         }
-
     }
 }

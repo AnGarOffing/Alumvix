@@ -26,7 +26,14 @@ namespace Alumvix.Controller.Contrato
             editarContratoView = editarContratoVista;
             detalleClienteView = DetalleClienteController.ObtenerInstanciaDetalleClienteView();
             editarContratoView.Load += new EventHandler(CargarDatosAEditar);
+            editarContratoView.txtEditarValorContrato.KeyPress += new KeyPressEventHandler(ValidarEntradaNumeros);
             editarContratoView.btnActualizarContrato.Click += new EventHandler(ActualizarContrato);          
+        }
+
+        private void ValidarEntradaNumeros(object sender, KeyPressEventArgs e)
+        {
+            bool respuesta = ValidacionesDeControles.ValidarEntradaNumeros(e);
+            if (respuesta == true) MessageBox.Show("El campo solo permite numeros");
         }
 
         private void CargarDatosAEditar(object sender, EventArgs e)

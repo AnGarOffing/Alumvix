@@ -19,7 +19,14 @@ namespace Alumvix.Controller.Contrato
         {
             ingresoContratoView = ingresoContratoVista;
             ingresoContratoView.Load += new EventHandler(CargarTiposFactura);
+            ingresoContratoView.txtIngresarValorContrato.KeyPress += new KeyPressEventHandler(ValidarEntradaNumeros);
             ingresoContratoView.btnGuardarNuevoContrato.Click += new EventHandler(GuardarContrato);
+        }
+
+        private void ValidarEntradaNumeros(object sender, KeyPressEventArgs e)
+        {
+            bool respuesta = ValidacionesDeControles.ValidarEntradaNumeros(e);
+            if (respuesta == true) MessageBox.Show("El campo solo permite numeros");
         }
 
         private void GuardarContrato(object sender, EventArgs e)

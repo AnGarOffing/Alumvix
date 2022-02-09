@@ -58,7 +58,7 @@ namespace Alumvix.Controller.Reporte
 
         private void AbrirReporte(object sender, EventArgs e)
         {
-            if (administradorReporteView.cbSeleccionarMes.SelectedIndex == 0)
+            if (administradorReporteView.rbMensual.Checked && administradorReporteView.cbSeleccionarMes.SelectedIndex == 0)
             {
                 MessageBox.Show("Debe seleccionar un mes");
             }

@@ -20,7 +20,14 @@ namespace Alumvix.Controller.Abono
             ingresoAbonoView.Load += new EventHandler(CargarFormasDeAbono);
             ingresoAbonoView.Load += new EventHandler(LimpiarControles);
             ingresoAbonoView.Activated += new EventHandler(ActualizarIdContrato);
+            ingresoAbonoView.txtIngresarValorAbono.KeyPress += new KeyPressEventHandler(ValidarEntrada);
             ingresoAbonoView.btnGuardarNuevoAbono.Click += new EventHandler(IngresarAbono);
+        }
+
+        private void ValidarEntrada(object sender, KeyPressEventArgs e)
+        {
+            bool respuesta = ValidacionesDeControles.ValidarEntradaNumeros(e);
+            if (respuesta == true) MessageBox.Show("El campo solo permite numeros");
         }
 
         private void ActualizarIdContrato(object sender, EventArgs e)

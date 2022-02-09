@@ -165,6 +165,7 @@
             // 
             this.txtIngresarTelefonoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIngresarTelefonoCliente.Location = new System.Drawing.Point(160, 231);
+            this.txtIngresarTelefonoCliente.MaxLength = 7;
             this.txtIngresarTelefonoCliente.Multiline = true;
             this.txtIngresarTelefonoCliente.Name = "txtIngresarTelefonoCliente";
             this.txtIngresarTelefonoCliente.Size = new System.Drawing.Size(162, 31);
@@ -174,6 +175,7 @@
             // 
             this.txtIngresarCelularCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIngresarCelularCliente.Location = new System.Drawing.Point(160, 268);
+            this.txtIngresarCelularCliente.MaxLength = 10;
             this.txtIngresarCelularCliente.Multiline = true;
             this.txtIngresarCelularCliente.Name = "txtIngresarCelularCliente";
             this.txtIngresarCelularCliente.Size = new System.Drawing.Size(198, 31);

@@ -20,7 +20,14 @@ namespace Alumvix.Controller.Gasto
         {
             editarGastoInternoView = editarGastoInternoVista;
             editarGastoInternoView.Load += new EventHandler(CargarDatos);
+            editarGastoInternoView.txtEditarValorGastoInterno.KeyPress += new KeyPressEventHandler(ValidarEntradaNumeros);
             editarGastoInternoView.btnActualizarGastoInterno.Click += new EventHandler(ActualizarGastoInterno);
+        }
+
+        private void ValidarEntradaNumeros(object sender, KeyPressEventArgs e)
+        {
+            bool respuesta = ValidacionesDeControles.ValidarEntradaNumeros(e);
+            if (respuesta == true) MessageBox.Show("El campo solo permite numeros");
         }
 
         private void ActualizarGastoInterno(object sender, EventArgs e)

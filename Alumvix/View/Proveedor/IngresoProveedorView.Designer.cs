@@ -56,18 +56,20 @@
             // 
             this.txtIngresarCelularProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIngresarCelularProveedor.Location = new System.Drawing.Point(123, 123);
+            this.txtIngresarCelularProveedor.MaxLength = 10;
             this.txtIngresarCelularProveedor.Multiline = true;
             this.txtIngresarCelularProveedor.Name = "txtIngresarCelularProveedor";
-            this.txtIngresarCelularProveedor.Size = new System.Drawing.Size(198, 31);
+            this.txtIngresarCelularProveedor.Size = new System.Drawing.Size(138, 31);
             this.txtIngresarCelularProveedor.TabIndex = 73;
             // 
             // txtIngresarTelefonoProveedor
             // 
             this.txtIngresarTelefonoProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIngresarTelefonoProveedor.Location = new System.Drawing.Point(123, 160);
+            this.txtIngresarTelefonoProveedor.MaxLength = 7;
             this.txtIngresarTelefonoProveedor.Multiline = true;
             this.txtIngresarTelefonoProveedor.Name = "txtIngresarTelefonoProveedor";
-            this.txtIngresarTelefonoProveedor.Size = new System.Drawing.Size(306, 31);
+            this.txtIngresarTelefonoProveedor.Size = new System.Drawing.Size(110, 31);
             this.txtIngresarTelefonoProveedor.TabIndex = 72;
             // 
             // txtIngresarDireccionProveedor

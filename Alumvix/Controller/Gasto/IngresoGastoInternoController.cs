@@ -17,7 +17,14 @@ namespace Alumvix.Controller.Gasto
         {
             ingresoGastoInternoView = ingresoGastoInternoVista;
             ingresoGastoInternoView.Load += new EventHandler(CargarComboTiposDeGastoInterno);
+            ingresoGastoInternoView.txtIngresarValorGastoInterno.KeyPress += new KeyPressEventHandler(ValidarEntradaNumeros);
             ingresoGastoInternoView.btnGuardarNuevoGastoInterno.Click += new EventHandler(IngresarGastoInterno);
+        }
+
+        private void ValidarEntradaNumeros(object sender, KeyPressEventArgs e)
+        {
+            bool respuesta = ValidacionesDeControles.ValidarEntradaNumeros(e);
+            if (respuesta == true) MessageBox.Show("El campo solo permite numeros");
         }
 
         private void CargarComboTiposDeGastoInterno(object sender, EventArgs e)

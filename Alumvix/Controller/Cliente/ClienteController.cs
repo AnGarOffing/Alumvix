@@ -86,7 +86,7 @@ namespace Alumvix.Controller
 
         private void ValidarEntrada(object sender, KeyPressEventArgs e)
         {
-            bool respuesta = ValidacionesDeControles.ValidarNumerosyLetras(e);
+            bool respuesta = ValidacionesDeControles.ValidarEntradaNumerosyLetras(e);
             if (respuesta == true) MessageBox.Show("El campo solo permite numeros y letras");
         }
 
