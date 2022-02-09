@@ -112,10 +112,6 @@ namespace Alumvix.Model.Negocio
                         }
                         i++;
                     }
-                    //for (int j = 1; j <= ws.Columns.Count; j++)
-                    //{
-                    //    ws.Columns[j].AutoFit();
-                    //}
                     wb.SaveAs(sfd.FileName, XlFileFormat.xlWorkbookDefault, Type.Missing, Type.Missing, false, false, XlSaveAsAccessMode.xlNoChange, XlSaveConflictResolution.xlLocalSessionChanges, Type.Missing, Type.Missing);
                     app.Quit();
                     MessageBox.Show("Exported Successfully.");
