@@ -27,6 +27,26 @@ namespace Alumvix.Controller.Login
             loginView.btnCerrarLogin.Click += new EventHandler(CerrarLogin);
             loginView.btnMinimizarLogin.Click += new EventHandler(MinimizarLogin);
             loginView.btnAcceder.Click += new EventHandler(IniciarSesion);
+            loginView.txtUsuario.KeyPress += new KeyPressEventHandler(ValidarEntradaNumerosYLetras);
+            loginView.btnVerPassword.Click += new EventHandler(ModificarCaracteresDePassword);
+        }
+
+        private void ModificarCaracteresDePassword(object sender, EventArgs e)
+        {
+            if (loginView.txtPassword.UseSystemPasswordChar == true)
+            {
+                loginView.txtPassword.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                loginView.txtPassword.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void ValidarEntradaNumerosYLetras(object sender, KeyPressEventArgs e)
+        {
+            bool respuesta = ValidacionesDeControles.ValidarEntradaNumerosyLetras(e);
+            if (respuesta == true) MessageBox.Show("El campo solo permite numeros y letras");
         }
 
         private void ValidarCredenciales() { }

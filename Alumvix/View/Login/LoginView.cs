@@ -28,6 +28,5 @@ namespace Alumvix.View.Login
             }
             return instancia;
         }
-
     }
 }
