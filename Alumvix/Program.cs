@@ -16,8 +16,8 @@ namespace Alumvix
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new View.ClienteView());
-            //Application.Run(new View.Login.LoginView());
+            //Application.Run(new View.ClienteView());
+            Application.Run(new View.Login.LoginView());
         }
     }
 }

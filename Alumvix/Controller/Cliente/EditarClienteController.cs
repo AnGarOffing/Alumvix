@@ -1,9 +1,11 @@
 ﻿using Alumvix.Model.Dao;
 using Alumvix.Model.Dto;
 using Alumvix.Model.Negocio.Util;
+using Alumvix.View;
 using Alumvix.View.Cliente;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Alumvix.Controller.Cliente
@@ -11,17 +13,55 @@ namespace Alumvix.Controller.Cliente
     internal class EditarClienteController
     {
         EditarClienteView editarClienteView;
+        ClienteView clienteView = ClienteController.ObtenerInstanciaClienteView();
         List<ClienteDto> datosCliente;
         public EditarClienteController(EditarClienteView editarClienteVista)
         {
             editarClienteView = editarClienteVista;
             datosCliente = ClienteController.CargarRegistroCliente();
-            editarClienteView.Load += new EventHandler(CargarDatosCliente);
+            editarClienteView.Activated += new EventHandler(CargarDatosCliente);
             editarClienteView.txtActualizarIdentificacionCliente.KeyPress += new KeyPressEventHandler(ValidarEntradaNumeros);
             editarClienteView.txtEditarNombreCliente.KeyPress += new KeyPressEventHandler(ValidarEntradaLetrasYNumeros);
             editarClienteView.txtEditarTelefonoCliente.KeyPress += new KeyPressEventHandler(ValidarEntradaNumeros);
             editarClienteView.txtEditarCelularCliente.KeyPress += new KeyPressEventHandler(ValidarEntradaNumeros);
+            editarClienteView.btnMinimizarEditarClienteView.MouseHover += new EventHandler(ResaltarBotonMinimizar);
+            editarClienteView.btnMinimizarEditarClienteView.MouseLeave += new EventHandler(QuitarResaltadoBotonMinimizar);
+            editarClienteView.btnCerrarEditarClienteView.MouseHover += new EventHandler(ResaltarBotonCerrar);
+            editarClienteView.btnCerrarEditarClienteView.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrar);
+            editarClienteView.btnCerrarEditarClienteView.Click += new EventHandler(CerrarFormularioEditarClienteView);
+            editarClienteView.btnMinimizarEditarClienteView.Click += new EventHandler(MinimizarFormularioEditarClienteView);
             editarClienteView.btnActualizarCliente.Click += new EventHandler(ActualizarCliente);
+        }
+
+        private void MinimizarFormularioEditarClienteView(object sender, EventArgs e)
+        {
+            editarClienteView.WindowState = FormWindowState.Minimized;
+        }
+
+        private void CerrarFormularioEditarClienteView(object sender, EventArgs e)
+        {
+            editarClienteView.Hide();
+            clienteView.Show();
+        }
+
+        private void ResaltarBotonMinimizar(object sender, EventArgs e)
+        {
+            editarClienteView.btnMinimizarEditarClienteView.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonMinimizar(object sender, EventArgs e)
+        {
+            editarClienteView.btnMinimizarEditarClienteView.BackColor = Color.Transparent;
+        }
+
+        private void QuitarResaltadoBotonCerrar(object sender, EventArgs e)
+        {
+            editarClienteView.btnCerrarEditarClienteView.BackColor = Color.Transparent;
+        }
+
+        private void ResaltarBotonCerrar(object sender, EventArgs e)
+        {
+            editarClienteView.btnCerrarEditarClienteView.BackColor = Color.FromArgb(223, 240, 254);
         }
 
         private void ValidarEntradaLetrasYNumeros(object sender, KeyPressEventArgs e)
@@ -60,8 +100,9 @@ namespace Alumvix.Controller.Cliente
                     editarClienteView.txtEditarDireccionCliente.Text);
                 if (respuestaActualizacionCliente)
                 {
-                    editarClienteView.Close();
+                    editarClienteView.Hide();
                     MessageBox.Show("El cliente ha sido actualizado con exito");
+                    clienteView.Show();
                 }
                 else MessageBox.Show("Error al intentar actualizar el cliente");
             }

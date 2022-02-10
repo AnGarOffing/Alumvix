@@ -13,6 +13,7 @@ using Alumvix.View.Gasto;
 using Alumvix.View.Proveedor;
 using System.Drawing;
 using Alumvix.View.Login;
+using Alumvix.Controller.Login;
 
 namespace Alumvix.Controller
 {
@@ -20,6 +21,7 @@ namespace Alumvix.Controller
     {
         static List<ClienteDto> registroCliente = new List<ClienteDto>();
         static ClienteView clienteVista;
+        static LoginView loginView = LoginController.ObtenerInstancia(); 
         DetalleClienteView detalleClienteVista;
         SeleccionarContratoView seleccionarContratoView;
         static int idCliente;
@@ -80,7 +82,8 @@ namespace Alumvix.Controller
 
         private void CerrarFormularioClienteView(object sender, EventArgs e)
         {
-            clienteVista.Close();
+            clienteVista.Hide();
+            loginView.Show();
         }
 
         private void AbrirLogin(object sender, FormClosedEventArgs e)
@@ -142,7 +145,8 @@ namespace Alumvix.Controller
             if (registroCliente.Count > 0)
             {
                 EditarClienteView editarClienteView = EditarClienteView.ObtenerInstancia();
-                editarClienteView.ShowDialog();
+                clienteVista.Hide();
+                editarClienteView.Show();
             }
             else MessageBox.Show("No ha seleccionado un cliente");
         }

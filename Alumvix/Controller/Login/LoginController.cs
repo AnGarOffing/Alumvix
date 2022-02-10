@@ -16,11 +16,12 @@ namespace Alumvix.Controller.Login
 {
     internal class LoginController
     {
-        LoginView loginView;
+        static LoginView loginView;
 
         public LoginController(LoginView loginVista)
         {
             loginView = loginVista;
+            loginView.Activated += new EventHandler(LimpiarControles);
             loginView.txtUsuario.Enter += new EventHandler(VaciarYResaltarCampoUsuario);
             loginView.txtUsuario.Leave += new EventHandler(EstablecerCampoUsuarioPorDefecto);
             loginView.txtPassword.Enter += new EventHandler(VaciarYResaltarCampoPassword);
@@ -31,6 +32,18 @@ namespace Alumvix.Controller.Login
             loginView.txtUsuario.KeyPress += new KeyPressEventHandler(ValidarEntradaNumerosYLetras);
             loginView.btnVerPassword.Click += new EventHandler(ModificarCaracteresDePassword);
             loginView.MouseDown += new MouseEventHandler(PermitirMovimientoDeForm);
+        }
+
+        private void LimpiarControles(object sender, EventArgs e)
+        {
+            loginView.txtUsuario.Text = "USUARIO";
+            loginView.txtPassword.Text = "CONTRASEÑA";
+            loginView.txtPassword.UseSystemPasswordChar = false;
+        }
+
+        public static LoginView ObtenerInstancia()
+        {
+            return loginView;
         }
 
         private void PermitirMovimientoDeForm(object sender, MouseEventArgs e)
@@ -83,8 +96,8 @@ namespace Alumvix.Controller.Login
                 if (usuarioEncontrado)
                 {
                     ClienteView clienteView = ClienteView.ObtenerInstancia();
-                    clienteView.ShowDialog();
-                    loginView.Dispose();
+                    clienteView.Show();
+                    loginView.Hide();
                 }
                 else
                 {
@@ -104,6 +117,7 @@ namespace Alumvix.Controller.Login
 
         private void CerrarLogin(object sender, EventArgs e)
         {
+            loginView.Dispose();
             Application.Exit();
         }
 

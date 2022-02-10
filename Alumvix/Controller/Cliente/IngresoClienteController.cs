@@ -20,6 +20,7 @@ namespace Alumvix.Controller.Cliente
         public IngresoClienteController(IngresoClienteView ingresoClienteVista)
         {
             ingresoClienteView = ingresoClienteVista;
+            ingresoClienteView.Activated += new EventHandler(LimpiarControles);
             ingresoClienteView.txtIngresarIdCliente.KeyPress += new KeyPressEventHandler(ValidarEntradaNumeros);
             ingresoClienteView.txtIngresarNombreCliente.KeyPress += new KeyPressEventHandler(ValidarEntradaLetrasYNumeros);
             ingresoClienteView.txtIngresarTelefonoCliente.KeyPress += new KeyPressEventHandler(ValidarEntradaNumeros);
@@ -31,6 +32,16 @@ namespace Alumvix.Controller.Cliente
             ingresoClienteView.btnCerrarIngresoClienteView.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrar);
             ingresoClienteView.btnCerrarIngresoClienteView.Click += new EventHandler(CerrarFormularioIngresoClienteView);
             ingresoClienteView.btnMinimizarIngresoClienteView.Click += new EventHandler(MinimizarFormularioIngresoClienteView);
+        }
+
+        private void LimpiarControles(object sender, EventArgs e)
+        {
+            ingresoClienteView.txtIngresarIdCliente.Clear();
+            ingresoClienteView.txtIngresarNombreCliente.Clear();
+            ingresoClienteView.txtIngresarDireccionCliente.Clear();
+            ingresoClienteView.txtIngresarCorreoCliente.Clear();
+            ingresoClienteView.txtIngresarTelefonoCliente.Clear();
+            ingresoClienteView.txtIngresarCelularCliente.Clear();
         }
 
         private void MinimizarFormularioIngresoClienteView(object sender, EventArgs e)
