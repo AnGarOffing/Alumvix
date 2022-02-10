@@ -108,9 +108,9 @@ namespace Alumvix.Model.Negocio.Util
 
         public static bool ValidarEntradaNumerosyLetras(KeyPressEventArgs e)
         {
-            if((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            if((e.KeyChar >= 33 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
             {
-                if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96)  || (e.KeyChar >= 123 && e.KeyChar <= 255))
+                if ((e.KeyChar >= 33 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96)  || (e.KeyChar >= 123 && e.KeyChar <= 255))
                 {
                     e.Handled = true;
                 }             

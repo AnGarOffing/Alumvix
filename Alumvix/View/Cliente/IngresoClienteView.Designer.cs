@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnGuardarNuevoCliente = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IngresoClienteView));
             this.txtIngresarIdCliente = new System.Windows.Forms.TextBox();
             this.lblTituloIngresarCliente = new System.Windows.Forms.Label();
             this.lblIdCliente = new System.Windows.Forms.Label();
@@ -43,17 +43,14 @@
             this.txtIngresarTelefonoCliente = new System.Windows.Forms.TextBox();
             this.txtIngresarCelularCliente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pnlSuperiorIngresoClienteView = new System.Windows.Forms.Panel();
+            this.btnMinimizarIngresoClienteView = new System.Windows.Forms.PictureBox();
+            this.btnCerrarIngresoClienteView = new System.Windows.Forms.PictureBox();
+            this.btnGuardarNuevoCliente = new System.Windows.Forms.Button();
+            this.pnlSuperiorIngresoClienteView.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarIngresoClienteView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarIngresoClienteView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnGuardarNuevoCliente
-            // 
-            this.btnGuardarNuevoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarNuevoCliente.Location = new System.Drawing.Point(402, 266);
-            this.btnGuardarNuevoCliente.Name = "btnGuardarNuevoCliente";
-            this.btnGuardarNuevoCliente.Size = new System.Drawing.Size(116, 33);
-            this.btnGuardarNuevoCliente.TabIndex = 39;
-            this.btnGuardarNuevoCliente.Text = "Guardar";
-            this.btnGuardarNuevoCliente.UseVisualStyleBackColor = true;
             // 
             // txtIngresarIdCliente
             // 
@@ -68,7 +65,8 @@
             // 
             this.lblTituloIngresarCliente.AutoSize = true;
             this.lblTituloIngresarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloIngresarCliente.Location = new System.Drawing.Point(136, 21);
+            this.lblTituloIngresarCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.lblTituloIngresarCliente.Location = new System.Drawing.Point(138, 14);
             this.lblTituloIngresarCliente.Name = "lblTituloIngresarCliente";
             this.lblTituloIngresarCliente.Size = new System.Drawing.Size(260, 29);
             this.lblTituloIngresarCliente.TabIndex = 42;
@@ -78,61 +76,67 @@
             // 
             this.lblIdCliente.AutoSize = true;
             this.lblIdCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIdCliente.Location = new System.Drawing.Point(15, 84);
+            this.lblIdCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.lblIdCliente.Location = new System.Drawing.Point(21, 82);
             this.lblIdCliente.Name = "lblIdCliente";
-            this.lblIdCliente.Size = new System.Drawing.Size(139, 24);
+            this.lblIdCliente.Size = new System.Drawing.Size(133, 24);
             this.lblIdCliente.TabIndex = 44;
-            this.lblIdCliente.Text = "Identificacion:";
+            this.lblIdCliente.Text = "Identificacion";
             // 
             // lblDireccionCliente
             // 
             this.lblDireccionCliente.AutoSize = true;
             this.lblDireccionCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDireccionCliente.Location = new System.Drawing.Point(49, 157);
+            this.lblDireccionCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.lblDireccionCliente.Location = new System.Drawing.Point(55, 157);
             this.lblDireccionCliente.Name = "lblDireccionCliente";
-            this.lblDireccionCliente.Size = new System.Drawing.Size(105, 24);
+            this.lblDireccionCliente.Size = new System.Drawing.Size(99, 24);
             this.lblDireccionCliente.TabIndex = 49;
-            this.lblDireccionCliente.Text = "Direccion:";
+            this.lblDireccionCliente.Text = "Direccion";
             // 
             // lblTelefonoCliente
             // 
             this.lblTelefonoCliente.AutoSize = true;
             this.lblTelefonoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelefonoCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             this.lblTelefonoCliente.Location = new System.Drawing.Point(55, 231);
             this.lblTelefonoCliente.Name = "lblTelefonoCliente";
-            this.lblTelefonoCliente.Size = new System.Drawing.Size(99, 24);
+            this.lblTelefonoCliente.Size = new System.Drawing.Size(93, 24);
             this.lblTelefonoCliente.TabIndex = 48;
-            this.lblTelefonoCliente.Text = "Telefono:";
+            this.lblTelefonoCliente.Text = "Telefono";
             // 
             // lblCelularCliente
             // 
             this.lblCelularCliente.AutoSize = true;
             this.lblCelularCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCelularCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             this.lblCelularCliente.Location = new System.Drawing.Point(72, 268);
             this.lblCelularCliente.Name = "lblCelularCliente";
-            this.lblCelularCliente.Size = new System.Drawing.Size(82, 24);
+            this.lblCelularCliente.Size = new System.Drawing.Size(76, 24);
             this.lblCelularCliente.TabIndex = 47;
-            this.lblCelularCliente.Text = "Celular:";
+            this.lblCelularCliente.Text = "Celular";
             // 
             // lblCorreoCliente
             // 
             this.lblCorreoCliente.AutoSize = true;
             this.lblCorreoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCorreoCliente.Location = new System.Drawing.Point(74, 194);
+            this.lblCorreoCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.lblCorreoCliente.Location = new System.Drawing.Point(80, 194);
             this.lblCorreoCliente.Name = "lblCorreoCliente";
-            this.lblCorreoCliente.Size = new System.Drawing.Size(80, 24);
+            this.lblCorreoCliente.Size = new System.Drawing.Size(74, 24);
             this.lblCorreoCliente.TabIndex = 46;
-            this.lblCorreoCliente.Text = "Correo:";
+            this.lblCorreoCliente.Text = "Correo";
             // 
             // lblNombreCliente
             // 
             this.lblNombreCliente.AutoSize = true;
             this.lblNombreCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreCliente.Location = new System.Drawing.Point(63, 121);
+            this.lblNombreCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.lblNombreCliente.Location = new System.Drawing.Point(69, 120);
             this.lblNombreCliente.Name = "lblNombreCliente";
-            this.lblNombreCliente.Size = new System.Drawing.Size(91, 24);
+            this.lblNombreCliente.Size = new System.Drawing.Size(85, 24);
             this.lblNombreCliente.TabIndex = 45;
-            this.lblNombreCliente.Text = "Nombre:";
+            this.lblNombreCliente.Text = "Nombre";
             // 
             // txtIngresarCorreoCliente
             // 
@@ -192,11 +196,59 @@
             this.label1.TabIndex = 61;
             this.label1.Text = "*";
             // 
+            // pnlSuperiorIngresoClienteView
+            // 
+            this.pnlSuperiorIngresoClienteView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pnlSuperiorIngresoClienteView.Controls.Add(this.btnMinimizarIngresoClienteView);
+            this.pnlSuperiorIngresoClienteView.Controls.Add(this.btnCerrarIngresoClienteView);
+            this.pnlSuperiorIngresoClienteView.Controls.Add(this.lblTituloIngresarCliente);
+            this.pnlSuperiorIngresoClienteView.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSuperiorIngresoClienteView.Location = new System.Drawing.Point(0, 0);
+            this.pnlSuperiorIngresoClienteView.Name = "pnlSuperiorIngresoClienteView";
+            this.pnlSuperiorIngresoClienteView.Size = new System.Drawing.Size(530, 59);
+            this.pnlSuperiorIngresoClienteView.TabIndex = 62;
+            // 
+            // btnMinimizarIngresoClienteView
+            // 
+            this.btnMinimizarIngresoClienteView.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarIngresoClienteView.Image")));
+            this.btnMinimizarIngresoClienteView.Location = new System.Drawing.Point(451, 14);
+            this.btnMinimizarIngresoClienteView.Name = "btnMinimizarIngresoClienteView";
+            this.btnMinimizarIngresoClienteView.Size = new System.Drawing.Size(33, 30);
+            this.btnMinimizarIngresoClienteView.TabIndex = 44;
+            this.btnMinimizarIngresoClienteView.TabStop = false;
+            // 
+            // btnCerrarIngresoClienteView
+            // 
+            this.btnCerrarIngresoClienteView.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarIngresoClienteView.Image")));
+            this.btnCerrarIngresoClienteView.Location = new System.Drawing.Point(493, 14);
+            this.btnCerrarIngresoClienteView.Name = "btnCerrarIngresoClienteView";
+            this.btnCerrarIngresoClienteView.Size = new System.Drawing.Size(33, 30);
+            this.btnCerrarIngresoClienteView.TabIndex = 43;
+            this.btnCerrarIngresoClienteView.TabStop = false;
+            // 
+            // btnGuardarNuevoCliente
+            // 
+            this.btnGuardarNuevoCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarNuevoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarNuevoCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.btnGuardarNuevoCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarNuevoCliente.Image")));
+            this.btnGuardarNuevoCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardarNuevoCliente.Location = new System.Drawing.Point(395, 255);
+            this.btnGuardarNuevoCliente.Name = "btnGuardarNuevoCliente";
+            this.btnGuardarNuevoCliente.Size = new System.Drawing.Size(123, 44);
+            this.btnGuardarNuevoCliente.TabIndex = 63;
+            this.btnGuardarNuevoCliente.Text = "Guardar";
+            this.btnGuardarNuevoCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGuardarNuevoCliente.UseVisualStyleBackColor = true;
+            // 
             // IngresoClienteView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(530, 312);
+            this.Controls.Add(this.btnGuardarNuevoCliente);
+            this.Controls.Add(this.pnlSuperiorIngresoClienteView);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtIngresarCelularCliente);
             this.Controls.Add(this.txtIngresarTelefonoCliente);
@@ -205,23 +257,25 @@
             this.Controls.Add(this.txtIngresarCorreoCliente);
             this.Controls.Add(this.lblIdCliente);
             this.Controls.Add(this.lblDireccionCliente);
-            this.Controls.Add(this.btnGuardarNuevoCliente);
             this.Controls.Add(this.lblTelefonoCliente);
             this.Controls.Add(this.txtIngresarIdCliente);
             this.Controls.Add(this.lblCelularCliente);
             this.Controls.Add(this.lblCorreoCliente);
             this.Controls.Add(this.lblNombreCliente);
-            this.Controls.Add(this.lblTituloIngresarCliente);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "IngresoClienteView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IngresoClienteView";
+            this.pnlSuperiorIngresoClienteView.ResumeLayout(false);
+            this.pnlSuperiorIngresoClienteView.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarIngresoClienteView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarIngresoClienteView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        public System.Windows.Forms.Button btnGuardarNuevoCliente;
         public System.Windows.Forms.TextBox txtIngresarIdCliente;
         public System.Windows.Forms.Label lblTituloIngresarCliente;
         public System.Windows.Forms.Label lblIdCliente;
@@ -236,5 +290,9 @@
         public System.Windows.Forms.TextBox txtIngresarTelefonoCliente;
         public System.Windows.Forms.TextBox txtIngresarCelularCliente;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel pnlSuperiorIngresoClienteView;
+        public System.Windows.Forms.PictureBox btnMinimizarIngresoClienteView;
+        public System.Windows.Forms.PictureBox btnCerrarIngresoClienteView;
+        public System.Windows.Forms.Button btnGuardarNuevoCliente;
     }
 }

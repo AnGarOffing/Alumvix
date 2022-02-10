@@ -19,7 +19,7 @@ namespace Alumvix.Controller
     internal class ClienteController
     {
         static List<ClienteDto> registroCliente = new List<ClienteDto>();
-        ClienteView clienteVista;
+        static ClienteView clienteVista;
         DetalleClienteView detalleClienteVista;
         SeleccionarContratoView seleccionarContratoView;
         static int idCliente;
@@ -63,16 +63,6 @@ namespace Alumvix.Controller
             clienteVista.btnMinimizarClienteView.BackColor = Color.Transparent;
         }
 
-        private void MinimizarFormularioClienteView(object sender, EventArgs e)
-        {
-            clienteVista.WindowState = FormWindowState.Minimized;
-        }
-
-        private void CerrarFormularioClienteView(object sender, EventArgs e)
-        {
-            clienteVista.Close();
-        }
-
         private void QuitarResaltadoBotonCerrar(object sender, EventArgs e)
         {
             clienteVista.btnCerrarClienteView.BackColor = Color.Transparent;
@@ -81,6 +71,16 @@ namespace Alumvix.Controller
         private void ResaltarBotonCerrar(object sender, EventArgs e)
         {
             clienteVista.btnCerrarClienteView.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void MinimizarFormularioClienteView(object sender, EventArgs e)
+        {
+            clienteVista.WindowState = FormWindowState.Minimized;
+        }
+
+        private void CerrarFormularioClienteView(object sender, EventArgs e)
+        {
+            clienteVista.Close();
         }
 
         private void AbrirLogin(object sender, FormClosedEventArgs e)
@@ -114,9 +114,9 @@ namespace Alumvix.Controller
 
         private void AbrirIngresoClienteView(object sender, EventArgs e)
         {
-            IngresoClienteView ingresoClienteView = IngresoClienteView.ObtenerInstancia();
-            clienteVista.WindowState = FormWindowState.Minimized;
-            ingresoClienteView.ShowDialog();
+            IngresoClienteView ingresoClienteView = IngresoClienteView.ObtenerInstancia();          
+            ingresoClienteView.Show();
+            clienteVista.Hide();
         }
 
         private void AbrirGastoInternoView(object sender, EventArgs e)
@@ -238,6 +238,11 @@ namespace Alumvix.Controller
         public static string ObtenerNombreCliente()
         {
             return nombreCliente;
+        }
+
+        public static ClienteView ObtenerInstanciaClienteView()
+        {
+            return clienteVista;
         }
     }
 }
