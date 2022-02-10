@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace Alumvix.Controller.Login
 {
@@ -29,7 +30,19 @@ namespace Alumvix.Controller.Login
             loginView.btnAcceder.Click += new EventHandler(IniciarSesion);
             loginView.txtUsuario.KeyPress += new KeyPressEventHandler(ValidarEntradaNumerosYLetras);
             loginView.btnVerPassword.Click += new EventHandler(ModificarCaracteresDePassword);
+            loginView.MouseDown += new MouseEventHandler(PermitirMovimientoDeForm);
         }
+
+        private void PermitirMovimientoDeForm(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(loginView.Handle, 0x112, 0xf012, 0);
+        }
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
         private void ModificarCaracteresDePassword(object sender, EventArgs e)
         {
@@ -71,7 +84,7 @@ namespace Alumvix.Controller.Login
                 {
                     ClienteView clienteView = ClienteView.ObtenerInstancia();
                     clienteView.ShowDialog();
-                    loginView.Close();
+                    loginView.Dispose();
                 }
                 else
                 {

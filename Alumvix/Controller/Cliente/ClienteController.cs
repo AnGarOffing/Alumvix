@@ -45,6 +45,42 @@ namespace Alumvix.Controller
             clienteVista.btnIngresarCliente.Click += new EventHandler(AbrirIngresoClienteView);
             clienteVista.btnProveedores.Click += new EventHandler(AbrirProveedoresView);
             clienteVista.FormClosed += new FormClosedEventHandler(AbrirLogin);
+            clienteVista.btnMinimizarClienteView.MouseHover += new EventHandler(ResaltarBotonMinimizar);
+            clienteVista.btnMinimizarClienteView.MouseLeave += new EventHandler(QuitarResaltadoBotonMinimizar);
+            clienteVista.btnCerrarClienteView.MouseHover += new EventHandler(ResaltarBotonCerrar);
+            clienteVista.btnCerrarClienteView.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrar);
+            clienteVista.btnCerrarClienteView.Click += new EventHandler(CerrarFormularioClienteView);
+            clienteVista.btnMinimizarClienteView.Click += new EventHandler(MinimizarFormularioClienteView);
+        }
+
+        private void ResaltarBotonMinimizar(object sender, EventArgs e)
+        {
+            clienteVista.btnMinimizarClienteView.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonMinimizar(object sender, EventArgs e)
+        {
+            clienteVista.btnMinimizarClienteView.BackColor = Color.Transparent;
+        }
+
+        private void MinimizarFormularioClienteView(object sender, EventArgs e)
+        {
+            clienteVista.WindowState = FormWindowState.Minimized;
+        }
+
+        private void CerrarFormularioClienteView(object sender, EventArgs e)
+        {
+            clienteVista.Close();
+        }
+
+        private void QuitarResaltadoBotonCerrar(object sender, EventArgs e)
+        {
+            clienteVista.btnCerrarClienteView.BackColor = Color.Transparent;
+        }
+
+        private void ResaltarBotonCerrar(object sender, EventArgs e)
+        {
+            clienteVista.btnCerrarClienteView.BackColor = Color.FromArgb(223, 240, 254);
         }
 
         private void AbrirLogin(object sender, FormClosedEventArgs e)
@@ -79,6 +115,7 @@ namespace Alumvix.Controller
         private void AbrirIngresoClienteView(object sender, EventArgs e)
         {
             IngresoClienteView ingresoClienteView = IngresoClienteView.ObtenerInstancia();
+            clienteVista.WindowState = FormWindowState.Minimized;
             ingresoClienteView.ShowDialog();
         }
 
