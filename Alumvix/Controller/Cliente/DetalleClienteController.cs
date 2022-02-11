@@ -47,7 +47,7 @@ namespace Alumvix.Controller.Cliente
             registroCliente = ClienteController.CargarRegistroCliente();
             logica = new Logica();
             detalleClienteVista = detalleClienteView;
-            detalleClienteVista.Load += new EventHandler(MostrarClienteSeleccionado);
+            detalleClienteVista.Activated += new EventHandler(MostrarClienteSeleccionado);
             detalleClienteVista.Activated += new EventHandler(MostrarContrato);
             detalleClienteVista.Activated += new EventHandler(MostrarGastos);
             detalleClienteVista.Activated += new EventHandler(MostrarAbonos);
@@ -134,8 +134,14 @@ namespace Alumvix.Controller.Cliente
                 bool respuesta = new ContratoDao().EliminarContrato(contratoDto.IdContrato);
                 if (respuesta)
                 {
-                    detalleClienteVista.Dispose();
-                    MessageBox.Show("El contrato ha sido eliminado con exito");                  
+                    //detalleClienteVista.Dispose();
+                    detalleClienteVista.Hide();
+                    MessageBox.Show("El contrato ha sido eliminado con exito");
+                    
+                    clienteView = ClienteView.ObtenerInstancia();
+                    clienteView.Show();
+
+
                 }
                 else
                 {
@@ -171,6 +177,7 @@ namespace Alumvix.Controller.Cliente
                 {
                     if (frm.GetType() == typeof(SeleccionarContratoView))
                     {
+                        seleccionarContratoView = (SeleccionarContratoView)frm;
                         contratoARetornar = contratoDao.ObtenerContratoPorIdContrato(Convert.ToInt32(seleccionarContratoView.lstvListadoContratos.SelectedItems[0].SubItems[0].Text));
                         break;
                     }else contratoARetornar = contratoDao.ObtenerContrato(ClienteController.ObtenerIdCliente());
@@ -192,22 +199,23 @@ namespace Alumvix.Controller.Cliente
 
         private void ValidarEstadoContrato()
         {
+            int estadoTrabajo = 0;
             ContratoDao contratoDao = new ContratoDao();
             int sumaAbonos = 0;
             foreach (AbonoDto abono in abonos)
             {
                 sumaAbonos += abono.ValorAbono;
             }
-
-            int estadoTrabajo = contratoDao.ConsultarEstadoTrabajo(Convert.ToInt32(contratoDto.IdContrato));
-
-
-            if (sumaAbonos >= DetalleClienteController.contratoDto.ValorContrato)
+            if (contratoDto != null)
             {
-                if (estadoTrabajo == 2)
+                estadoTrabajo = contratoDao.ConsultarEstadoTrabajo(Convert.ToInt32(contratoDto.IdContrato));
+                if (sumaAbonos >= DetalleClienteController.contratoDto.ValorContrato)
                 {
-                    contratoDao.ActualizarEstadoContrato(2, DetalleClienteController.contratoDto.IdContrato);
-                    contratoDto.EstadoContrato = contratoDao.ConsultarEstadoContrato(contratoDto.IdContrato);
+                    if (estadoTrabajo == 2)
+                    {
+                        contratoDao.ActualizarEstadoContrato(2, DetalleClienteController.contratoDto.IdContrato);
+                        contratoDto.EstadoContrato = contratoDao.ConsultarEstadoContrato(contratoDto.IdContrato);
+                    }
                 }
             }
         }
