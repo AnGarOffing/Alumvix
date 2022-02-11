@@ -19,7 +19,7 @@ namespace Alumvix.View.Gasto
         public DetalleGastoView()
         {
             InitializeComponent();
-            DetalleGastoController detalleGastoController = new DetalleGastoController(this);
+            DetalleGastoController detalleGastoController = new DetalleGastoController(this);           
         }
 
         public static DetalleGastoView ObtenerInstancia()

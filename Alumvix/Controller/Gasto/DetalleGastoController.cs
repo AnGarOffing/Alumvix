@@ -48,7 +48,7 @@ namespace Alumvix.Controller.Gasto
             {
                 idsGastos.Add(gasto.IdGasto); //almacenamos ids de los gastos que se muestran 
                 contadorGastos++;
-                string[] row = { contadorGastos.ToString(), gasto.NumeroFactura, CambioDeFormato.DarFormatoANumero(gasto.ValorGasto).ToString(), CambioDeFormato.CambiarFormatoDeFecha(gasto.FechaGasto), gasto.DescripcionGasto, gasto.Proveedor, gasto.TipoGasto };
+                string[] row = { contadorGastos.ToString(), gasto.NumeroFactura, CambioDeFormato.DarFormatoANumero(gasto.ValorGasto).ToString(), CambioDeFormato.CambiarFormatoDeFecha(gasto.FechaGasto), gasto.TipoGasto, gasto.Proveedor, gasto.DescripcionGasto };
                 ListViewItem itemGasto = new ListViewItem(row);
                 detalleGastoView.lstvDetalleGastos.Items.Add(itemGasto);
             }        

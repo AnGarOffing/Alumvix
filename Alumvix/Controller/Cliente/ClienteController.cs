@@ -189,6 +189,7 @@ namespace Alumvix.Controller
         //metodo para agregar las celdas de una fila seleccionada a la lista "registroCliente"
         private void ObtenerRegistroCliente(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex == -1) return;
             ClienteDto clienteDto = new ClienteDto();
             registroCliente.Clear();
             clienteVista.dataGridClientes.CurrentRow.Selected = true;
@@ -226,8 +227,11 @@ namespace Alumvix.Controller
                 }
                 else
                 {
-                    seleccionarContratoView = new SeleccionarContratoView();
-                    seleccionarContratoView.ShowDialog();
+                    //seleccionarContratoView = new SeleccionarContratoView();
+                    //seleccionarContratoView.ShowDialog();
+                    seleccionarContratoView = SeleccionarContratoView.ObtenerInstancia();
+                    seleccionarContratoView.Show();
+                    clienteVista.Hide();
                 } 
             }
             else

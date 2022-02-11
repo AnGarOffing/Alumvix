@@ -1,4 +1,6 @@
-﻿namespace Alumvix.View.Gasto
+﻿using System.Windows.Forms;
+
+namespace Alumvix.View.Gasto
 {
     partial class DetalleGastoView
     {
@@ -34,17 +36,16 @@
             this.columnaNumeroFactura = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnaValorGasto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnaFechaGasto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnaDescripcionGasto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnaProveedor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnaTipoGasto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lblListadoGastos = new System.Windows.Forms.Label();
+            this.columnaProveedor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnaDescripcion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnEliminarGasto = new System.Windows.Forms.Button();
             this.btnEditarGasto = new System.Windows.Forms.Button();
             this.btnIngresarGasto = new System.Windows.Forms.Button();
             this.pnlSuperiorDetalleGastoView = new System.Windows.Forms.Panel();
-            this.lblTituloDetalleGastosView = new System.Windows.Forms.Label();
             this.btnMinimizarDetalleGastoView = new System.Windows.Forms.PictureBox();
             this.btnCerrarDetalleGastoView = new System.Windows.Forms.PictureBox();
+            this.lblTituloDetalleGastosView = new System.Windows.Forms.Label();
             this.pnlSuperiorDetalleGastoView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarDetalleGastoView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarDetalleGastoView)).BeginInit();
@@ -52,18 +53,20 @@
             // 
             // lstvDetalleGastos
             // 
+            this.lstvDetalleGastos.Alignment = System.Windows.Forms.ListViewAlignment.Default;
             this.lstvDetalleGastos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnaNumeroGasto,
             this.columnaNumeroFactura,
             this.columnaValorGasto,
             this.columnaFechaGasto,
-            this.columnaDescripcionGasto,
+            this.columnaTipoGasto,
             this.columnaProveedor,
-            this.columnaTipoGasto});
+            this.columnaDescripcion});
             this.lstvDetalleGastos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstvDetalleGastos.FullRowSelect = true;
             this.lstvDetalleGastos.HideSelection = false;
-            this.lstvDetalleGastos.Location = new System.Drawing.Point(16, 109);
+            this.lstvDetalleGastos.Location = new System.Drawing.Point(14, 111);
+            this.lstvDetalleGastos.MultiSelect = false;
             this.lstvDetalleGastos.Name = "lstvDetalleGastos";
             this.lstvDetalleGastos.Size = new System.Drawing.Size(1263, 277);
             this.lstvDetalleGastos.TabIndex = 36;
@@ -72,14 +75,14 @@
             // 
             // columnaNumeroGasto
             // 
-            this.columnaNumeroGasto.Text = "Gasto #";
-            this.columnaNumeroGasto.Width = 80;
+            this.columnaNumeroGasto.Text = "#";
+            this.columnaNumeroGasto.Width = 35;
             // 
             // columnaNumeroFactura
             // 
             this.columnaNumeroFactura.Text = "# Factura";
             this.columnaNumeroFactura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnaNumeroFactura.Width = 95;
+            this.columnaNumeroFactura.Width = 120;
             // 
             // columnaValorGasto
             // 
@@ -93,33 +96,23 @@
             this.columnaFechaGasto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnaFechaGasto.Width = 270;
             // 
-            // columnaDescripcionGasto
+            // columnaTipoGasto
             // 
-            this.columnaDescripcionGasto.Text = "Descripcion";
-            this.columnaDescripcionGasto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnaDescripcionGasto.Width = 400;
+            this.columnaTipoGasto.Text = "Tipo de Gasto";
+            this.columnaTipoGasto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnaTipoGasto.Width = 250;
             // 
             // columnaProveedor
             // 
             this.columnaProveedor.Text = "Proveedor";
             this.columnaProveedor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnaProveedor.Width = 150;
+            this.columnaProveedor.Width = 159;
             // 
-            // columnaTipoGasto
+            // columnaDescripcion
             // 
-            this.columnaTipoGasto.Text = "Tipo de Gasto";
-            this.columnaTipoGasto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnaTipoGasto.Width = 176;
-            // 
-            // lblListadoGastos
-            // 
-            this.lblListadoGastos.AutoSize = true;
-            this.lblListadoGastos.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblListadoGastos.Location = new System.Drawing.Point(529, 212);
-            this.lblListadoGastos.Name = "lblListadoGastos";
-            this.lblListadoGastos.Size = new System.Drawing.Size(277, 29);
-            this.lblListadoGastos.TabIndex = 35;
-            this.lblListadoGastos.Text = "LISTADO DE GASTOS";
+            this.columnaDescripcion.Text = "Descripcion";
+            this.columnaDescripcion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnaDescripcion.Width = 350;
             // 
             // btnEliminarGasto
             // 
@@ -172,17 +165,6 @@
             this.pnlSuperiorDetalleGastoView.Size = new System.Drawing.Size(1291, 59);
             this.pnlSuperiorDetalleGastoView.TabIndex = 43;
             // 
-            // lblTituloDetalleGastosView
-            // 
-            this.lblTituloDetalleGastosView.AutoSize = true;
-            this.lblTituloDetalleGastosView.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloDetalleGastosView.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.lblTituloDetalleGastosView.Location = new System.Drawing.Point(486, 12);
-            this.lblTituloDetalleGastosView.Name = "lblTituloDetalleGastosView";
-            this.lblTituloDetalleGastosView.Size = new System.Drawing.Size(313, 31);
-            this.lblTituloDetalleGastosView.TabIndex = 40;
-            this.lblTituloDetalleGastosView.Text = "LISTADO DE GASTOS";
-            // 
             // btnMinimizarDetalleGastoView
             // 
             this.btnMinimizarDetalleGastoView.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarDetalleGastoView.Image")));
@@ -201,6 +183,17 @@
             this.btnCerrarDetalleGastoView.TabIndex = 42;
             this.btnCerrarDetalleGastoView.TabStop = false;
             // 
+            // lblTituloDetalleGastosView
+            // 
+            this.lblTituloDetalleGastosView.AutoSize = true;
+            this.lblTituloDetalleGastosView.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloDetalleGastosView.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.lblTituloDetalleGastosView.Location = new System.Drawing.Point(486, 12);
+            this.lblTituloDetalleGastosView.Name = "lblTituloDetalleGastosView";
+            this.lblTituloDetalleGastosView.Size = new System.Drawing.Size(313, 31);
+            this.lblTituloDetalleGastosView.TabIndex = 40;
+            this.lblTituloDetalleGastosView.Text = "LISTADO DE GASTOS";
+            // 
             // DetalleGastoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -211,7 +204,6 @@
             this.Controls.Add(this.btnIngresarGasto);
             this.Controls.Add(this.btnEditarGasto);
             this.Controls.Add(this.lstvDetalleGastos);
-            this.Controls.Add(this.lblListadoGastos);
             this.Controls.Add(this.btnEliminarGasto);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DetalleGastoView";
@@ -222,7 +214,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarDetalleGastoView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarDetalleGastoView)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -232,13 +223,12 @@
         private System.Windows.Forms.ColumnHeader columnaNumeroGasto;
         private System.Windows.Forms.ColumnHeader columnaValorGasto;
         private System.Windows.Forms.ColumnHeader columnaFechaGasto;
-        private System.Windows.Forms.ColumnHeader columnaDescripcionGasto;
-        public System.Windows.Forms.Label lblListadoGastos;
+        private System.Windows.Forms.ColumnHeader columnaTipoGasto;
         public System.Windows.Forms.Button btnEliminarGasto;
         public System.Windows.Forms.Button btnEditarGasto;
         private System.Windows.Forms.ColumnHeader columnaNumeroFactura;
         private System.Windows.Forms.ColumnHeader columnaProveedor;
-        private System.Windows.Forms.ColumnHeader columnaTipoGasto;
+        private System.Windows.Forms.ColumnHeader columnaDescripcion;
         public System.Windows.Forms.Button btnIngresarGasto;
         private System.Windows.Forms.Panel pnlSuperiorDetalleGastoView;
         private System.Windows.Forms.Label lblTituloDetalleGastosView;

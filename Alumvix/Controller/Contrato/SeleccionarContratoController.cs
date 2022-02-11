@@ -1,6 +1,7 @@
 ﻿using Alumvix.Model.Dao;
 using Alumvix.Model.Dto;
 using Alumvix.Model.Logica.Util;
+using Alumvix.View;
 using Alumvix.View.Cliente;
 using Alumvix.View.Contrato;
 using System;
@@ -12,12 +13,21 @@ namespace Alumvix.Controller.Contrato
     {
         static SeleccionarContratoView seleccionarContratoView;
         DetalleClienteView detalleClienteView;
+        ClienteView clienteView;
         public SeleccionarContratoController(SeleccionarContratoView seleccionarContratoVista)
         {
             seleccionarContratoView = seleccionarContratoVista;
+            clienteView = ClienteController.ObtenerInstanciaClienteView();
             seleccionarContratoView.Activated += new EventHandler(MostrarListadoContratos);
             seleccionarContratoView.Activated += new EventHandler(MostrarNombreClienteEnTitulo);
             seleccionarContratoView.btnMostrarContrato.Click += new EventHandler(MostrarContrato);
+            seleccionarContratoView.btnCerrarSeleccionarContratoView.Click += new EventHandler(CerrarSeleccionarContratoView);
+        }
+
+        private void CerrarSeleccionarContratoView(object sender, EventArgs e)
+        {
+            seleccionarContratoView.Hide();
+            clienteView.Show();
         }
 
         private void MostrarNombreClienteEnTitulo(object sender, EventArgs e)
@@ -29,8 +39,11 @@ namespace Alumvix.Controller.Contrato
         {
             if (seleccionarContratoView.lstvListadoContratos.SelectedItems.Count > 0)
             {
-                detalleClienteView = new DetalleClienteView();
+                //detalleClienteView = new DetalleClienteView();
+                //detalleClienteView.Show();
+                detalleClienteView = DetalleClienteView.ObtenerInstancia();
                 detalleClienteView.Show();
+                seleccionarContratoView.Hide();
             }
             else MessageBox.Show("Debe seleccionar un contrato");
         }

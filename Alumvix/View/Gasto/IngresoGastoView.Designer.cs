@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IngresoGastoView));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnGuardarNuevoGasto = new System.Windows.Forms.Button();
             this.txtNumeroFactura = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cbIngresarProveedor = new System.Windows.Forms.ComboBox();
@@ -46,7 +47,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnMinimizarIngresoGastoView = new System.Windows.Forms.PictureBox();
             this.btnCerrarIngresoGastoView = new System.Windows.Forms.PictureBox();
-            this.btnGuardarNuevoGasto = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarIngresoGastoView)).BeginInit();
@@ -73,11 +73,26 @@
             this.panel1.Size = new System.Drawing.Size(597, 291);
             this.panel1.TabIndex = 39;
             // 
+            // btnGuardarNuevoGasto
+            // 
+            this.btnGuardarNuevoGasto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarNuevoGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarNuevoGasto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.btnGuardarNuevoGasto.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarNuevoGasto.Image")));
+            this.btnGuardarNuevoGasto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardarNuevoGasto.Location = new System.Drawing.Point(473, 227);
+            this.btnGuardarNuevoGasto.Name = "btnGuardarNuevoGasto";
+            this.btnGuardarNuevoGasto.Size = new System.Drawing.Size(121, 44);
+            this.btnGuardarNuevoGasto.TabIndex = 48;
+            this.btnGuardarNuevoGasto.Text = "Guardar";
+            this.btnGuardarNuevoGasto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGuardarNuevoGasto.UseVisualStyleBackColor = true;
+            // 
             // txtNumeroFactura
             // 
             this.txtNumeroFactura.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNumeroFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumeroFactura.Location = new System.Drawing.Point(233, 160);
+            this.txtNumeroFactura.Location = new System.Drawing.Point(233, 149);
             this.txtNumeroFactura.Name = "txtNumeroFactura";
             this.txtNumeroFactura.Size = new System.Drawing.Size(155, 26);
             this.txtNumeroFactura.TabIndex = 47;
@@ -86,7 +101,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(124, 160);
+            this.label2.Location = new System.Drawing.Point(124, 149);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 24);
             this.label2.TabIndex = 46;
@@ -96,7 +111,7 @@
             // 
             this.cbIngresarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbIngresarProveedor.FormattingEnabled = true;
-            this.cbIngresarProveedor.Location = new System.Drawing.Point(233, 248);
+            this.cbIngresarProveedor.Location = new System.Drawing.Point(233, 243);
             this.cbIngresarProveedor.Name = "cbIngresarProveedor";
             this.cbIngresarProveedor.Size = new System.Drawing.Size(218, 28);
             this.cbIngresarProveedor.TabIndex = 45;
@@ -105,7 +120,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(114, 248);
+            this.label1.Location = new System.Drawing.Point(114, 243);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 24);
             this.label1.TabIndex = 44;
@@ -115,7 +130,7 @@
             // 
             this.cbIngresarTipoGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbIngresarTipoGasto.FormattingEnabled = true;
-            this.cbIngresarTipoGasto.Location = new System.Drawing.Point(233, 204);
+            this.cbIngresarTipoGasto.Location = new System.Drawing.Point(233, 195);
             this.cbIngresarTipoGasto.Name = "cbIngresarTipoGasto";
             this.cbIngresarTipoGasto.Size = new System.Drawing.Size(218, 28);
             this.cbIngresarTipoGasto.TabIndex = 43;
@@ -124,7 +139,7 @@
             // 
             this.lblTipoGasto.AutoSize = true;
             this.lblTipoGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoGasto.Location = new System.Drawing.Point(83, 204);
+            this.lblTipoGasto.Location = new System.Drawing.Point(83, 195);
             this.lblTipoGasto.Name = "lblTipoGasto";
             this.lblTipoGasto.Size = new System.Drawing.Size(144, 24);
             this.lblTipoGasto.TabIndex = 42;
@@ -133,10 +148,11 @@
             // txtDescripcionGasto
             // 
             this.txtDescripcionGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripcionGasto.Location = new System.Drawing.Point(233, 84);
+            this.txtDescripcionGasto.Location = new System.Drawing.Point(233, 79);
+            this.txtDescripcionGasto.MaxLength = 70;
             this.txtDescripcionGasto.Multiline = true;
             this.txtDescripcionGasto.Name = "txtDescripcionGasto";
-            this.txtDescripcionGasto.Size = new System.Drawing.Size(267, 63);
+            this.txtDescripcionGasto.Size = new System.Drawing.Size(267, 49);
             this.txtDescripcionGasto.TabIndex = 41;
             // 
             // dtpFechaIngresoGasto
@@ -153,7 +169,7 @@
             // 
             this.lblDescripcionGasto.AutoSize = true;
             this.lblDescripcionGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcionGasto.Location = new System.Drawing.Point(11, 84);
+            this.lblDescripcionGasto.Location = new System.Drawing.Point(11, 79);
             this.lblDescripcionGasto.Name = "lblDescripcionGasto";
             this.lblDescripcionGasto.Size = new System.Drawing.Size(216, 24);
             this.lblDescripcionGasto.TabIndex = 38;
@@ -227,21 +243,6 @@
             this.btnCerrarIngresoGastoView.Size = new System.Drawing.Size(33, 30);
             this.btnCerrarIngresoGastoView.TabIndex = 44;
             this.btnCerrarIngresoGastoView.TabStop = false;
-            // 
-            // btnGuardarNuevoGasto
-            // 
-            this.btnGuardarNuevoGasto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarNuevoGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarNuevoGasto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.btnGuardarNuevoGasto.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarNuevoGasto.Image")));
-            this.btnGuardarNuevoGasto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardarNuevoGasto.Location = new System.Drawing.Point(471, 232);
-            this.btnGuardarNuevoGasto.Name = "btnGuardarNuevoGasto";
-            this.btnGuardarNuevoGasto.Size = new System.Drawing.Size(121, 44);
-            this.btnGuardarNuevoGasto.TabIndex = 48;
-            this.btnGuardarNuevoGasto.Text = "Guardar";
-            this.btnGuardarNuevoGasto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGuardarNuevoGasto.UseVisualStyleBackColor = true;
             // 
             // IngresoGastoView
             // 
