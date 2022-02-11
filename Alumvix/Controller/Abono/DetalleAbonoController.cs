@@ -61,9 +61,9 @@ namespace Alumvix.Controller.Abono
 
         private void MostrarIngresoAbonoView(object sender, EventArgs e) 
         {
-            IngresoAbonoView ingresoAbonoView = IngresoAbonoView.ObtenerInstancia();         
+            IngresoAbonoView ingresoAbonoView = IngresoAbonoView.ObtenerInstancia();
             detalleAbonoView.Hide();
-            ingresoAbonoView.ShowDialog();
+            ingresoAbonoView.Show();
         }
 
         private void EliminarAbono(object sender, EventArgs e)

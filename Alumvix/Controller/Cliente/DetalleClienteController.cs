@@ -302,6 +302,7 @@ namespace Alumvix.Controller.Cliente
         private void AbrirDetalleGastos(object sender, EventArgs e)
         {
             DetalleGastoView detalleGasto = DetalleGastoView.ObtenerInstancia();
+            detalleClienteVista.Hide();
             detalleGasto.ShowDialog();
         }
 

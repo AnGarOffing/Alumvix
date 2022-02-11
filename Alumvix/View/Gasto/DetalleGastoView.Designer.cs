@@ -38,9 +38,16 @@
             this.columnaProveedor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnaTipoGasto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblListadoGastos = new System.Windows.Forms.Label();
-            this.btnIngresarGasto = new System.Windows.Forms.Button();
             this.btnEliminarGasto = new System.Windows.Forms.Button();
             this.btnEditarGasto = new System.Windows.Forms.Button();
+            this.btnIngresarGasto = new System.Windows.Forms.Button();
+            this.pnlSuperiorDetalleGastoView = new System.Windows.Forms.Panel();
+            this.lblTituloDetalleGastosView = new System.Windows.Forms.Label();
+            this.btnMinimizarDetalleGastoView = new System.Windows.Forms.PictureBox();
+            this.btnCerrarDetalleGastoView = new System.Windows.Forms.PictureBox();
+            this.pnlSuperiorDetalleGastoView.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarDetalleGastoView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarDetalleGastoView)).BeginInit();
             this.SuspendLayout();
             // 
             // lstvDetalleGastos
@@ -56,7 +63,7 @@
             this.lstvDetalleGastos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstvDetalleGastos.FullRowSelect = true;
             this.lstvDetalleGastos.HideSelection = false;
-            this.lstvDetalleGastos.Location = new System.Drawing.Point(12, 60);
+            this.lstvDetalleGastos.Location = new System.Drawing.Point(16, 109);
             this.lstvDetalleGastos.Name = "lstvDetalleGastos";
             this.lstvDetalleGastos.Size = new System.Drawing.Size(1263, 277);
             this.lstvDetalleGastos.TabIndex = 36;
@@ -108,24 +115,11 @@
             // 
             this.lblListadoGastos.AutoSize = true;
             this.lblListadoGastos.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblListadoGastos.Location = new System.Drawing.Point(520, 15);
+            this.lblListadoGastos.Location = new System.Drawing.Point(529, 212);
             this.lblListadoGastos.Name = "lblListadoGastos";
             this.lblListadoGastos.Size = new System.Drawing.Size(277, 29);
             this.lblListadoGastos.TabIndex = 35;
             this.lblListadoGastos.Text = "LISTADO DE GASTOS";
-            // 
-            // btnIngresarGasto
-            // 
-            this.btnIngresarGasto.BackColor = System.Drawing.Color.Transparent;
-            this.btnIngresarGasto.FlatAppearance.BorderSize = 0;
-            this.btnIngresarGasto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIngresarGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIngresarGasto.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresarGasto.Image")));
-            this.btnIngresarGasto.Location = new System.Drawing.Point(1229, 12);
-            this.btnIngresarGasto.Name = "btnIngresarGasto";
-            this.btnIngresarGasto.Size = new System.Drawing.Size(46, 40);
-            this.btnIngresarGasto.TabIndex = 34;
-            this.btnIngresarGasto.UseVisualStyleBackColor = false;
             // 
             // btnEliminarGasto
             // 
@@ -134,7 +128,7 @@
             this.btnEliminarGasto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarGasto.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarGasto.Image")));
-            this.btnEliminarGasto.Location = new System.Drawing.Point(1193, 15);
+            this.btnEliminarGasto.Location = new System.Drawing.Point(1146, 68);
             this.btnEliminarGasto.Name = "btnEliminarGasto";
             this.btnEliminarGasto.Size = new System.Drawing.Size(30, 35);
             this.btnEliminarGasto.TabIndex = 33;
@@ -147,25 +141,86 @@
             this.btnEditarGasto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarGasto.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarGasto.Image")));
-            this.btnEditarGasto.Location = new System.Drawing.Point(1147, 15);
+            this.btnEditarGasto.Location = new System.Drawing.Point(1192, 68);
             this.btnEditarGasto.Name = "btnEditarGasto";
             this.btnEditarGasto.Size = new System.Drawing.Size(30, 35);
             this.btnEditarGasto.TabIndex = 37;
             this.btnEditarGasto.UseVisualStyleBackColor = false;
             // 
+            // btnIngresarGasto
+            // 
+            this.btnIngresarGasto.BackColor = System.Drawing.Color.Transparent;
+            this.btnIngresarGasto.FlatAppearance.BorderSize = 0;
+            this.btnIngresarGasto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIngresarGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngresarGasto.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresarGasto.Image")));
+            this.btnIngresarGasto.Location = new System.Drawing.Point(1237, 66);
+            this.btnIngresarGasto.Name = "btnIngresarGasto";
+            this.btnIngresarGasto.Size = new System.Drawing.Size(37, 39);
+            this.btnIngresarGasto.TabIndex = 42;
+            this.btnIngresarGasto.UseVisualStyleBackColor = false;
+            // 
+            // pnlSuperiorDetalleGastoView
+            // 
+            this.pnlSuperiorDetalleGastoView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pnlSuperiorDetalleGastoView.Controls.Add(this.btnMinimizarDetalleGastoView);
+            this.pnlSuperiorDetalleGastoView.Controls.Add(this.btnCerrarDetalleGastoView);
+            this.pnlSuperiorDetalleGastoView.Controls.Add(this.lblTituloDetalleGastosView);
+            this.pnlSuperiorDetalleGastoView.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSuperiorDetalleGastoView.Location = new System.Drawing.Point(0, 0);
+            this.pnlSuperiorDetalleGastoView.Name = "pnlSuperiorDetalleGastoView";
+            this.pnlSuperiorDetalleGastoView.Size = new System.Drawing.Size(1291, 59);
+            this.pnlSuperiorDetalleGastoView.TabIndex = 43;
+            // 
+            // lblTituloDetalleGastosView
+            // 
+            this.lblTituloDetalleGastosView.AutoSize = true;
+            this.lblTituloDetalleGastosView.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloDetalleGastosView.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.lblTituloDetalleGastosView.Location = new System.Drawing.Point(486, 12);
+            this.lblTituloDetalleGastosView.Name = "lblTituloDetalleGastosView";
+            this.lblTituloDetalleGastosView.Size = new System.Drawing.Size(313, 31);
+            this.lblTituloDetalleGastosView.TabIndex = 40;
+            this.lblTituloDetalleGastosView.Text = "LISTADO DE GASTOS";
+            // 
+            // btnMinimizarDetalleGastoView
+            // 
+            this.btnMinimizarDetalleGastoView.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarDetalleGastoView.Image")));
+            this.btnMinimizarDetalleGastoView.Location = new System.Drawing.Point(1215, 14);
+            this.btnMinimizarDetalleGastoView.Name = "btnMinimizarDetalleGastoView";
+            this.btnMinimizarDetalleGastoView.Size = new System.Drawing.Size(33, 30);
+            this.btnMinimizarDetalleGastoView.TabIndex = 43;
+            this.btnMinimizarDetalleGastoView.TabStop = false;
+            // 
+            // btnCerrarDetalleGastoView
+            // 
+            this.btnCerrarDetalleGastoView.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarDetalleGastoView.Image")));
+            this.btnCerrarDetalleGastoView.Location = new System.Drawing.Point(1257, 14);
+            this.btnCerrarDetalleGastoView.Name = "btnCerrarDetalleGastoView";
+            this.btnCerrarDetalleGastoView.Size = new System.Drawing.Size(33, 30);
+            this.btnCerrarDetalleGastoView.TabIndex = 42;
+            this.btnCerrarDetalleGastoView.TabStop = false;
+            // 
             // DetalleGastoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1291, 352);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.ClientSize = new System.Drawing.Size(1291, 396);
+            this.Controls.Add(this.pnlSuperiorDetalleGastoView);
+            this.Controls.Add(this.btnIngresarGasto);
             this.Controls.Add(this.btnEditarGasto);
             this.Controls.Add(this.lstvDetalleGastos);
             this.Controls.Add(this.lblListadoGastos);
-            this.Controls.Add(this.btnIngresarGasto);
             this.Controls.Add(this.btnEliminarGasto);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DetalleGastoView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DetalleGastoView";
+            this.pnlSuperiorDetalleGastoView.ResumeLayout(false);
+            this.pnlSuperiorDetalleGastoView.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarDetalleGastoView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarDetalleGastoView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,11 +234,15 @@
         private System.Windows.Forms.ColumnHeader columnaFechaGasto;
         private System.Windows.Forms.ColumnHeader columnaDescripcionGasto;
         public System.Windows.Forms.Label lblListadoGastos;
-        public System.Windows.Forms.Button btnIngresarGasto;
         public System.Windows.Forms.Button btnEliminarGasto;
         public System.Windows.Forms.Button btnEditarGasto;
         private System.Windows.Forms.ColumnHeader columnaNumeroFactura;
         private System.Windows.Forms.ColumnHeader columnaProveedor;
         private System.Windows.Forms.ColumnHeader columnaTipoGasto;
+        public System.Windows.Forms.Button btnIngresarGasto;
+        private System.Windows.Forms.Panel pnlSuperiorDetalleGastoView;
+        private System.Windows.Forms.Label lblTituloDetalleGastosView;
+        public System.Windows.Forms.PictureBox btnMinimizarDetalleGastoView;
+        public System.Windows.Forms.PictureBox btnCerrarDetalleGastoView;
     }
 }

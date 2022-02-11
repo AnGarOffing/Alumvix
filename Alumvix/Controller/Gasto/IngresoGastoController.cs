@@ -2,6 +2,7 @@
 using Alumvix.Model.Dao;
 using Alumvix.Model.Logica.Util;
 using Alumvix.Model.Negocio.Util;
+using Alumvix.View.Cliente;
 using Alumvix.View.Gasto;
 using System;
 using System.Windows.Forms;
@@ -11,12 +12,14 @@ namespace Alumvix.Controller.Gasto
     internal class IngresoGastoController
     {
         IngresoGastoView ingresoGastoView;
+        DetalleGastoView detalleGastoView;
         int idContrato;
 
         public IngresoGastoController(IngresoGastoView ingresoGastoVista) 
         {
             idContrato = DetalleClienteController.ObtenerIdContrato();
             ingresoGastoView = ingresoGastoVista;
+            detalleGastoView = DetalleGastoController.ObtenerInstanciaDetalleGasto();
             ingresoGastoView.Load += new EventHandler(LimpiarCampos);
             ingresoGastoView.Load += new EventHandler(CargarTiposDeGastoMaterial);
             ingresoGastoView.Load += new EventHandler(CargarProveedores);
@@ -24,7 +27,14 @@ namespace Alumvix.Controller.Gasto
             ingresoGastoView.txtIngresarValorGasto.KeyPress += new KeyPressEventHandler(ValidarEntradaNumeros);
             ingresoGastoView.txtNumeroFactura.KeyPress += new KeyPressEventHandler(ValidarEntradaLetrasYNumeros);
             ingresoGastoView.cbIngresarTipoGasto.SelectedIndexChanged += new EventHandler(HabilitarControlesFactyProv);
+            ingresoGastoView.btnCerrarIngresoGastoView.Click += new EventHandler(CerrarIngresoGastoView);
             ingresoGastoView.btnGuardarNuevoGasto.Click += new EventHandler(IngresarGasto);
+        }
+
+        private void CerrarIngresoGastoView(object sender, EventArgs e)
+        {
+            ingresoGastoView.Hide();
+            detalleGastoView.Show();
         }
 
         private void ValidarEntradaLetrasYNumeros(object sender, KeyPressEventArgs e)
@@ -71,8 +81,10 @@ namespace Alumvix.Controller.Gasto
                 if (respuestaIngresoGasto)
                 {
                     //editarGastoView.txtActualizarValorGasto.Clear();
-                    ingresoGastoView.Close();
+                    //ingresoGastoView.Close();
                     MessageBox.Show("El gasto ha sido guardado con exito");
+                    ingresoGastoView.Hide();
+                    detalleGastoView.Show();
                 }
                 else MessageBox.Show("Error al guardar el gasto");
             }

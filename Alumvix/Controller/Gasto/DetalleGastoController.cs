@@ -2,6 +2,7 @@
 using Alumvix.Model.Dao;
 using Alumvix.Model.Dto;
 using Alumvix.Model.Logica.Util;
+using Alumvix.View.Cliente;
 using Alumvix.View.Gasto;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace Alumvix.Controller.Gasto
     internal class DetalleGastoController
     {
         static DetalleGastoView detalleGastoView;
+        DetalleClienteView detalleClienteView;
         int indice;
         List<int> idsGastos = new List<int>();
         public static int idGasto;
@@ -22,11 +24,19 @@ namespace Alumvix.Controller.Gasto
         public DetalleGastoController(DetalleGastoView detalleGastoVista) 
         {
             detalleGastoView = detalleGastoVista;
+            detalleClienteView = DetalleClienteController.ObtenerInstanciaDetalleClienteView();
             detalleGastoView.Activated += new EventHandler(MostrarDetalleGastos);
             detalleGastoView.btnIngresarGasto.Click += new EventHandler(MostrarIngresoGastoView);
             detalleGastoView.btnEliminarGasto.Click += new EventHandler(EliminarGasto);
             detalleGastoView.lstvDetalleGastos.SelectedIndexChanged += new EventHandler(ObtenerIndice);
             detalleGastoView.btnEditarGasto.Click += new EventHandler(MostarEditarGastoView);
+            detalleGastoView.btnCerrarDetalleGastoView.Click += new EventHandler(CerrarDetalleGastoView);
+        }
+
+        private void CerrarDetalleGastoView(object sender, EventArgs e)
+        {
+            detalleGastoView.Hide();
+            detalleClienteView.Show();
         }
 
         private void MostrarDetalleGastos(object sender, EventArgs e)
@@ -47,6 +57,7 @@ namespace Alumvix.Controller.Gasto
         private void MostrarIngresoGastoView(object sender, EventArgs e)
         {
             IngresoGastoView ingresoGastoView = IngresoGastoView.ObtenerInstancia();
+            detalleGastoView.Hide();
             ingresoGastoView.ShowDialog();
         }
 
