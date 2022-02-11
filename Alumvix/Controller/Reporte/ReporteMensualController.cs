@@ -5,6 +5,7 @@ using Alumvix.Model.Negocio;
 using Alumvix.View.Reporte;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,12 +16,51 @@ namespace Alumvix.Controller.Reporte
     internal class ReporteMensualController
     {
         ReporteMensualView reporteMensualView;
+        AdministradorReportesView administradorReportesView;
 
         public ReporteMensualController(ReporteMensualView reporteMensualVista)
         {
             reporteMensualView = reporteMensualVista;
+            administradorReportesView = AdministradorReportesController.ObtenerInstancia();
             reporteMensualView.Load += new EventHandler(MostrarReporteMensual);
+            reporteMensualView.btnCerrarReporteMensualView.MouseHover += new EventHandler(ResaltarBotonCerrar);
+            reporteMensualView.btnCerrarReporteMensualView.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrar);
+            reporteMensualView.btnCerrarReporteMensualView.Click += new EventHandler(CerrarReporteMensualView);
+            reporteMensualView.btnMinimizarReporteMensualView.MouseHover += new EventHandler(ResaltarBotonMinimizar);
+            reporteMensualView.btnMinimizarReporteMensualView.MouseLeave += new EventHandler(QuitarResaltadoBotonMinimizar);
+            reporteMensualView.btnMinimizarReporteMensualView.Click += new EventHandler(MinimizarReporteMensualView);
             reporteMensualView.btnDetalleGastos.Click += new EventHandler(MostrarGastosTotalesPorMes);
+        }
+
+        private void MinimizarReporteMensualView(object sender, EventArgs e)
+        {
+            reporteMensualView.WindowState = FormWindowState.Minimized;
+        }
+
+        private void CerrarReporteMensualView(object sender, EventArgs e)
+        {
+            reporteMensualView.Hide();
+            administradorReportesView.Show();
+        }
+
+        private void ResaltarBotonCerrar(object sender, EventArgs e)
+        {
+            reporteMensualView.btnCerrarReporteMensualView.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonCerrar(object sender, EventArgs e)
+        {
+            reporteMensualView.btnCerrarReporteMensualView.BackColor = Color.Transparent;
+        }
+
+        private void ResaltarBotonMinimizar(object sender, EventArgs e)
+        {
+            reporteMensualView.btnMinimizarReporteMensualView.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonMinimizar(object sender, EventArgs e)
+        {
+            reporteMensualView.btnMinimizarReporteMensualView.BackColor = Color.Transparent;
         }
 
         private void MostrarReporteMensual(object sender, EventArgs e)

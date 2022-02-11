@@ -26,12 +26,36 @@ namespace Alumvix.Controller.Login
             loginView.txtUsuario.Leave += new EventHandler(EstablecerCampoUsuarioPorDefecto);
             loginView.txtPassword.Enter += new EventHandler(VaciarYResaltarCampoPassword);
             loginView.txtPassword.Leave += new EventHandler(EstablecerCampoPasswordPorDefecto);
+            loginView.btnCerrarLogin.MouseHover += new EventHandler(ResaltarBotonCerrar);
+            loginView.btnCerrarLogin.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrar);
             loginView.btnCerrarLogin.Click += new EventHandler(CerrarLogin);
+            loginView.btnMinimizarLogin.MouseHover += new EventHandler(ResaltarBotonMinimizar);
+            loginView.btnMinimizarLogin.MouseLeave += new EventHandler(QuitarResaltadoBotonMinimizar);
             loginView.btnMinimizarLogin.Click += new EventHandler(MinimizarLogin);
             loginView.btnAcceder.Click += new EventHandler(IniciarSesion);
             loginView.txtUsuario.KeyPress += new KeyPressEventHandler(ValidarEntradaNumerosYLetras);
             loginView.btnVerPassword.Click += new EventHandler(ModificarCaracteresDePassword);
             loginView.MouseDown += new MouseEventHandler(PermitirMovimientoDeForm);
+        }
+
+        private void ResaltarBotonCerrar(object sender, EventArgs e)
+        {
+            loginView.btnCerrarLogin.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonCerrar(object sender, EventArgs e)
+        {
+            loginView.btnCerrarLogin.BackColor = Color.Transparent;
+        }
+
+        private void ResaltarBotonMinimizar(object sender, EventArgs e)
+        {
+            loginView.btnMinimizarLogin.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonMinimizar(object sender, EventArgs e)
+        {
+            loginView.btnMinimizarLogin.BackColor = Color.Transparent;
         }
 
         private void LimpiarControles(object sender, EventArgs e)
@@ -79,35 +103,38 @@ namespace Alumvix.Controller.Login
 
         private void IniciarSesion(object sender, EventArgs e)
         {
-            bool respuesta = ValidacionesDeControles.ValidarBotonInicioDeSesion(loginView.txtUsuario.Text, loginView.txtPassword.Text);
-            if (respuesta)
-            {
-                bool usuarioEncontrado = false;
-                UsuarioDao usuarioDao = new UsuarioDao();
-                List<UsuarioDto> listadoUsuarios = usuarioDao.ObtenerListadoUsuarios();
-                foreach (UsuarioDto usuarioDto in listadoUsuarios)
-                {
-                    if (usuarioDto.Usuario == loginView.txtUsuario.Text && usuarioDto.Password == loginView.txtPassword.Text)
-                    {
-                        usuarioEncontrado = true;
-                        break;
-                    }
-                }
-                if (usuarioEncontrado)
-                {
-                    ClienteView clienteView = ClienteView.ObtenerInstancia();
-                    clienteView.Show();
-                    loginView.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("El usuario o la contraseña son incorrectos, verifique nuevamente");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Debe diligenciar todos los campos");
-            }
+            //bool respuesta = ValidacionesDeControles.ValidarBotonInicioDeSesion(loginView.txtUsuario.Text, loginView.txtPassword.Text);
+            //if (respuesta)
+            //{
+            //    bool usuarioEncontrado = false;
+            //    UsuarioDao usuarioDao = new UsuarioDao();
+            //    List<UsuarioDto> listadoUsuarios = usuarioDao.ObtenerListadoUsuarios();
+            //    foreach (UsuarioDto usuarioDto in listadoUsuarios)
+            //    {
+            //        if (usuarioDto.Usuario == loginView.txtUsuario.Text && usuarioDto.Password == loginView.txtPassword.Text)
+            //        {
+            //            usuarioEncontrado = true;
+            //            break;
+            //        }
+            //    }
+            //    if (usuarioEncontrado)
+            //    {
+            //        ClienteView clienteView = ClienteView.ObtenerInstancia();
+            //        clienteView.Show();
+            //        loginView.Hide();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("El usuario o la contraseña son incorrectos, verifique nuevamente");
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Debe diligenciar todos los campos");
+            //}
+            ClienteView clienteView = ClienteView.ObtenerInstancia();
+            clienteView.Show();
+            loginView.Hide();
         }
 
         private void MinimizarLogin(object sender, EventArgs e)

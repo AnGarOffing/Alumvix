@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Alumvix.Model.Negocio;
 using System.Windows.Forms;
+using System.Drawing;
+using Alumvix.View;
 
 namespace Alumvix.Controller.Reporte
 {
@@ -15,6 +17,7 @@ namespace Alumvix.Controller.Reporte
     internal class AdministradorReportesController
     {
         static AdministradorReportesView administradorReporteView;
+        ClienteView clienteView;
         static int mesSeleccionado;
         static int anioSeleccionado;
 
@@ -24,14 +27,50 @@ namespace Alumvix.Controller.Reporte
         public AdministradorReportesController(AdministradorReportesView administradorReportesVista)
         {
             administradorReporteView = administradorReportesVista;
+            clienteView = ClienteController.ObtenerInstanciaClienteView();
             administradorReporteView.Activated += new EventHandler(CargarCombos);
             administradorReporteView.rbAnual.CheckedChanged += new EventHandler(ActivarComboAnios);
             administradorReporteView.rbMensual.CheckedChanged += new EventHandler(ActivarComboMeses);
             administradorReporteView.rbRangoDeFechas.CheckedChanged += new EventHandler(ActivarRangoDeFecha);
+            administradorReporteView.btnCerrarAdministradorReportesView.MouseHover += new EventHandler(ResaltarBotonCerrar);
+            administradorReporteView.btnCerrarAdministradorReportesView.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrar);
+            administradorReporteView.btnCerrarAdministradorReportesView.Click += new EventHandler(CerrarAdministradorReportesView);
+            administradorReporteView.btnMinimizarAdministradorReportesView.MouseHover += new EventHandler(ResaltarBotonMinimizar);
+            administradorReporteView.btnMinimizarAdministradorReportesView.MouseLeave += new EventHandler(QuitarResaltadoBotonMinimizar);
+            administradorReporteView.btnMinimizarAdministradorReportesView.Click += new EventHandler(MinimizarAdministradorReportesView);
             administradorReporteView.btnConsultarReporte.Click += new EventHandler(AbrirReporte);
         }
 
-       
+        private void MinimizarAdministradorReportesView(object sender, EventArgs e)
+        {
+            administradorReporteView.WindowState = FormWindowState.Minimized;
+        }
+
+        private void CerrarAdministradorReportesView(object sender, EventArgs e)
+        {
+            administradorReporteView.Hide();
+            clienteView.Show();
+        }
+
+        private void ResaltarBotonCerrar(object sender, EventArgs e)
+        {
+            administradorReporteView.btnCerrarAdministradorReportesView.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonCerrar(object sender, EventArgs e)
+        {
+            administradorReporteView.btnCerrarAdministradorReportesView.BackColor = Color.Transparent;
+        }
+
+        private void ResaltarBotonMinimizar(object sender, EventArgs e)
+        {
+            administradorReporteView.btnMinimizarAdministradorReportesView.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonMinimizar(object sender, EventArgs e)
+        {
+            administradorReporteView.btnMinimizarAdministradorReportesView.BackColor = Color.Transparent;
+        }
 
         private void CargarCombos(object sender, EventArgs e)
         {
@@ -66,18 +105,23 @@ namespace Alumvix.Controller.Reporte
             {
                 if (administradorReporteView.rbMensual.Checked == true)
                 {
+                    //ReporteMensualView reporteMensualView = ReporteMensualView.ObtenerInstancia();
+                    //reporteMensualView.ShowDialog();
                     ReporteMensualView reporteMensualView = ReporteMensualView.ObtenerInstancia();
-                    reporteMensualView.ShowDialog();
+                    reporteMensualView.Show();
+                    administradorReporteView.Hide();
                 }
                 if (administradorReporteView.rbAnual.Checked == true)
                 {
+                    //ReporteAnualView reporteAnualView = ReporteAnualView.ObtenerInstancia();
+                    //reporteAnualView.ShowDialog();
                     ReporteAnualView reporteAnualView = ReporteAnualView.ObtenerInstancia();
-                    reporteAnualView.ShowDialog();
+                    reporteAnualView.Show();
+                    administradorReporteView.Hide();
                 }
                 if (administradorReporteView.rbRangoDeFechas.Checked == true)
                 {
-                    ReportePorPeriodoView reportePorPeriodoView = ReportePorPeriodoView.ObtenerInstancia();
-                    reportePorPeriodoView.ShowDialog();
+                    
                 }
             }           
         }

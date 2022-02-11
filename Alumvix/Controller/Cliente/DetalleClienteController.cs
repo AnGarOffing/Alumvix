@@ -11,6 +11,10 @@ using Alumvix.View.Gasto;
 using Alumvix.View.Producto;
 using Alumvix.View.Contrato;
 using Alumvix.Controller.Contrato;
+using Alumvix.View.Login;
+using Alumvix.Controller.Login;
+using Alumvix.View;
+using System.Drawing;
 
 namespace Alumvix.Controller.Cliente
 {
@@ -24,10 +28,18 @@ namespace Alumvix.Controller.Cliente
         static List<ProductoDto> productos;
         Logica logica;
         string nombreProducto;
-        SeleccionarContratoView seleccionarContratoView = SeleccionarContratoController.ObtenerInstanciaSeleccionarContratoView();
+        //LoginView loginView = LoginController.ObtenerInstancia();
+        //ClienteView clienteView = ClienteController.ObtenerInstanciaClienteView();
+        //SeleccionarContratoView seleccionarContratoView = SeleccionarContratoController.ObtenerInstanciaSeleccionarContratoView();
+        SeleccionarContratoView seleccionarContratoView;
+        ClienteView clienteView;
+        LoginView loginView;
 
         public DetalleClienteController(DetalleClienteView detalleClienteView)
         {
+            loginView = LoginController.ObtenerInstancia();
+            clienteView = ClienteController.ObtenerInstanciaClienteView();
+            seleccionarContratoView = SeleccionarContratoController.ObtenerInstanciaSeleccionarContratoView();
             contratoDto = SeleccionarContrato();
             abonos = new AbonoDao().ObtenerAbonos(contratoDto.IdContrato);
             gastos = new GastoDao().ObtenerGastos(contratoDto.IdContrato);
@@ -48,10 +60,66 @@ namespace Alumvix.Controller.Cliente
             detalleClienteVista.lstvProductos.SelectedIndexChanged += new EventHandler(ObtenerNombreProducto);
             detalleClienteVista.btnIngresarContrato.Click += new EventHandler(AbrirIngresoContratoView);
             detalleClienteVista.FormClosed += new FormClosedEventHandler(CerrarFormularioContratos);
+            detalleClienteVista.btnMinimizarDetalleClienteView.MouseHover += new EventHandler(ResaltarBotonMinimizar);
+            detalleClienteVista.btnMinimizarDetalleClienteView.MouseLeave += new EventHandler(QuitarResaltadoBotonMinimizar);
+            detalleClienteVista.btnMinimizarDetalleClienteView.Click += new EventHandler(MinimizarDetalleClienteView);
+            detalleClienteVista.btnCerrarDetalleClienteView.MouseHover += new EventHandler(ResaltarBotonCerrar);
+            detalleClienteVista.btnCerrarDetalleClienteView.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrar);
+            detalleClienteVista.btnCerrarSesion.MouseHover += new EventHandler(ResaltarBotonCerrarSesion);
+            detalleClienteVista.btnCerrarSesion.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrarSesion);
             detalleClienteVista.btnEliminarContrato.Click += new EventHandler(EliminarContrato);
             detalleClienteVista.btnEditarContrato.Click += new EventHandler(AbrirEditarContratoView);
+            detalleClienteVista.btnCerrarSesion.Click += new EventHandler(CerrarSesion);
+            detalleClienteVista.btnCerrarDetalleClienteView.Click += new EventHandler(CerrarDetalleClienteView);
         }
 
+        private void MinimizarDetalleClienteView(object sender, EventArgs e)
+        {
+            detalleClienteVista.WindowState = FormWindowState.Minimized;
+        }
+
+        private void ResaltarBotonCerrarSesion(object sender, EventArgs e)
+        {
+            detalleClienteVista.btnCerrarSesion.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonCerrarSesion(object sender, EventArgs e)
+        {
+            detalleClienteVista.btnCerrarSesion.BackColor = Color.Transparent;
+        }
+
+        private void ResaltarBotonMinimizar(object sender, EventArgs e)
+        {
+            detalleClienteVista.btnMinimizarDetalleClienteView.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonMinimizar(object sender, EventArgs e)
+        {
+            detalleClienteVista.btnMinimizarDetalleClienteView.BackColor = Color.Transparent;
+        }
+
+        private void ResaltarBotonCerrar(object sender, EventArgs e)
+        {
+            detalleClienteVista.btnCerrarDetalleClienteView.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonCerrar(object sender, EventArgs e)
+        {
+            detalleClienteVista.btnCerrarDetalleClienteView.BackColor = Color.Transparent;
+        }
+
+        private void CerrarDetalleClienteView(object sender, EventArgs e)
+        {
+            detalleClienteVista.Hide();
+            clienteView.Show();
+        }
+
+        private void CerrarSesion(object sender, EventArgs e)
+        {
+            detalleClienteVista.Hide();
+            clienteView.Hide();
+            loginView.Show();
+        }
 
         private void AbrirEditarContratoView(object sender, EventArgs e)
         {

@@ -46,7 +46,7 @@ namespace Alumvix.Controller
             clienteVista.txtFiltrarCliente.KeyPress += new KeyPressEventHandler(ValidarEntrada);
             clienteVista.btnIngresarCliente.Click += new EventHandler(AbrirIngresoClienteView);
             clienteVista.btnProveedores.Click += new EventHandler(AbrirProveedoresView);
-            clienteVista.FormClosed += new FormClosedEventHandler(AbrirLogin);
+            //clienteVista.FormClosed += new FormClosedEventHandler(AbrirLogin);
             clienteVista.btnMinimizarClienteView.MouseHover += new EventHandler(ResaltarBotonMinimizar);
             clienteVista.btnMinimizarClienteView.MouseLeave += new EventHandler(QuitarResaltadoBotonMinimizar);
             clienteVista.btnCerrarClienteView.MouseHover += new EventHandler(ResaltarBotonCerrar);
@@ -65,14 +65,14 @@ namespace Alumvix.Controller
             clienteVista.btnMinimizarClienteView.BackColor = Color.Transparent;
         }
 
-        private void QuitarResaltadoBotonCerrar(object sender, EventArgs e)
-        {
-            clienteVista.btnCerrarClienteView.BackColor = Color.Transparent;
-        }
-
         private void ResaltarBotonCerrar(object sender, EventArgs e)
         {
             clienteVista.btnCerrarClienteView.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonCerrar(object sender, EventArgs e)
+        {
+            clienteVista.btnCerrarClienteView.BackColor = Color.Transparent;
         }
 
         private void MinimizarFormularioClienteView(object sender, EventArgs e)
@@ -88,9 +88,8 @@ namespace Alumvix.Controller
 
         private void AbrirLogin(object sender, FormClosedEventArgs e)
         {
-            LoginView loginView = LoginView.ObtenerInstancia();
-            clienteVista.Dispose();
-            loginView.ShowDialog();
+            clienteVista.Hide();
+            loginView.Show();
             
         }
 
@@ -130,8 +129,11 @@ namespace Alumvix.Controller
 
         private void AbrirReporteView(object sender, EventArgs e)
         {
+            //AdministradorReportesView reporteView = AdministradorReportesView.ObtenerInstancia();
+            //reporteView.ShowDialog();
             AdministradorReportesView reporteView = AdministradorReportesView.ObtenerInstancia();
-            reporteView.ShowDialog();
+            clienteVista.Hide();
+            reporteView.Show();
         }
 
         private void ValidarEntrada(object sender, KeyPressEventArgs e)
@@ -218,6 +220,7 @@ namespace Alumvix.Controller
                 {
                     detalleClienteVista = new DetalleClienteView();
                     detalleClienteVista.ShowDialog();
+
 
                     
                 }

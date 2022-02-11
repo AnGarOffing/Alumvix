@@ -112,6 +112,7 @@
     <Compile Include="Model\Negocio\Logica.cs" />
     <Compile Include="Model\Negocio\Util\CopyPaste\CopyPasteEnDetalleClienteVista.cs" />
     <Compile Include="Model\Negocio\Util\CambioDeFormato.cs" />
+    <Compile Include="Model\Negocio\Util\CopyPaste\CopyPasteEnReporteAnualView.cs" />
     <Compile Include="Model\Negocio\Util\CopyPaste\CopyPasteEnReporteMensual.cs" />
     <Compile Include="Model\Negocio\Util\ValidacionesDeControles.cs" />
     <Compile Include="Program.cs" />

@@ -5,6 +5,7 @@ using Alumvix.Model.Negocio;
 using Alumvix.View.Reporte;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,8 +24,45 @@ namespace Alumvix.Controller.Reporte
             administradorReportesView = AdministradorReportesController.ObtenerInstancia();
             reporteAnualView.Load += new EventHandler(MostrarReporteAnual);
             reporteAnualView.Load += new EventHandler(MostrarReporteMensualPorAnio);
+            reporteAnualView.btnCerrarReporteAnualView.MouseHover += new EventHandler(ResaltarBotonCerrar);
+            reporteAnualView.btnCerrarReporteAnualView.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrar);
+            reporteAnualView.btnCerrarReporteAnualView.Click += new EventHandler(CerrarReporteAnualView);
+            reporteAnualView.btnMinimizarReporteAnualView.MouseHover += new EventHandler(ResaltarBotonMinimizar);
+            reporteAnualView.btnMinimizarReporteAnualView.MouseLeave += new EventHandler(QuitarResaltadoBotonMinimizar);
+            reporteAnualView.btnMinimizarReporteAnualView.Click += new EventHandler(MinimizarReporteAnualView);
             reporteAnualView.btnDetalleGastos.Click += new EventHandler(MostrarGastosTotalesPorAnio);
-            reporteAnualView.btnExportarReporte.Click += new EventHandler(ExportarReporteAExcel);
+            reporteAnualView.btnExportarReporteAExcel.Click += new EventHandler(ExportarReporteAExcel);
+        }
+
+        private void MinimizarReporteAnualView(object sender, EventArgs e)
+        {
+            reporteAnualView.WindowState = FormWindowState.Minimized;
+        }
+
+        private void CerrarReporteAnualView(object sender, EventArgs e)
+        {
+            reporteAnualView.Hide();
+            administradorReportesView.Show();
+        }
+
+        private void ResaltarBotonCerrar(object sender, EventArgs e)
+        {
+            reporteAnualView.btnCerrarReporteAnualView.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonCerrar(object sender, EventArgs e)
+        {
+            reporteAnualView.btnCerrarReporteAnualView.BackColor = Color.Transparent;
+        }
+
+        private void ResaltarBotonMinimizar(object sender, EventArgs e)
+        {
+            reporteAnualView.btnMinimizarReporteAnualView.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonMinimizar(object sender, EventArgs e)
+        {
+            reporteAnualView.btnMinimizarReporteAnualView.BackColor = Color.Transparent;
         }
 
         private void MostrarReporteMensualPorAnio(object sender, EventArgs e)

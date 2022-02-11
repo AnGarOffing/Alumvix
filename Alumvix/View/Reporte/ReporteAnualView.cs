@@ -1,4 +1,5 @@
 ﻿using Alumvix.Controller.Reporte;
+using Alumvix.Model.Negocio.Util.CopyPaste;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,7 @@ namespace Alumvix.View.Reporte
         {
             InitializeComponent();
             ReporteAnualController reporteAnualController = new ReporteAnualController(this);
+            CopyPasteEnReporteAnualView copyPasteEnReporteAnualView = new CopyPasteEnReporteAnualView(this);
         }
 
         public static ReporteAnualView ObtenerInstancia()
