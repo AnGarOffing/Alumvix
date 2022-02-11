@@ -218,11 +218,11 @@ namespace Alumvix.Controller
                 }
                 else if (contadorContratos > 0 && contadorContratos <= 1)
                 {
-                    detalleClienteVista = new DetalleClienteView();
-                    detalleClienteVista.ShowDialog();
-
-
-                    
+                    //detalleClienteVista = new DetalleClienteView();
+                    //detalleClienteVista.ShowDialog();
+                    detalleClienteVista = DetalleClienteView.ObtenerInstancia();
+                    detalleClienteVista.Show();
+                    clienteVista.Hide();
                 }
                 else
                 {

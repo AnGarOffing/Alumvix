@@ -1,9 +1,13 @@
 ﻿using Alumvix.Controller.Cliente;
+using Alumvix.Controller.Reporte;
 using Alumvix.Model;
 using Alumvix.Model.Dao;
 using Alumvix.Model.Negocio.Util;
 using Alumvix.View.Abono;
+using Alumvix.View.Cliente;
+using Alumvix.View.Reporte;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Alumvix.Controller.Abono
@@ -11,17 +15,58 @@ namespace Alumvix.Controller.Abono
     internal class IngresoAbonoController
     {
         IngresoAbonoView ingresoAbonoView;
+        AdministradorReportesView administradorReportesView;
+        DetalleAbonoView detalleAbonoView;
         int idContrato;
 
         public IngresoAbonoController(IngresoAbonoView ingresoAbonoVista)
         {
             ingresoAbonoView = ingresoAbonoVista;
+            detalleAbonoView = DetalleAbonoController.ObtenerInstancia();
+            administradorReportesView = AdministradorReportesController.ObtenerInstancia();
             idContrato = DetalleClienteController.ObtenerIdContrato();
-            ingresoAbonoView.Load += new EventHandler(CargarFormasDeAbono);
-            ingresoAbonoView.Load += new EventHandler(LimpiarControles);
+            ingresoAbonoView.Activated += new EventHandler(CargarFormasDeAbono);
+            ingresoAbonoView.Activated += new EventHandler(LimpiarControles);
             ingresoAbonoView.Activated += new EventHandler(ActualizarIdContrato);
             ingresoAbonoView.txtIngresarValorAbono.KeyPress += new KeyPressEventHandler(ValidarEntrada);
+            ingresoAbonoView.btnCerrarIngresoAbonoView.MouseHover += new EventHandler(ResaltarBotonCerrar);
+            ingresoAbonoView.btnCerrarIngresoAbonoView.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrar);
+            ingresoAbonoView.btnCerrarIngresoAbonoView.Click += new EventHandler(CerrarIngresoAbonoView);
+            ingresoAbonoView.btnMinimizarIngresoAbonoView.MouseHover += new EventHandler(ResaltarBotonMinimizar);
+            ingresoAbonoView.btnMinimizarIngresoAbonoView.MouseLeave += new EventHandler(QuitarResaltadoBotonMinimizar);
+            ingresoAbonoView.btnMinimizarIngresoAbonoView.Click += new EventHandler(MinimizarIngresoAbonoView);
             ingresoAbonoView.btnGuardarNuevoAbono.Click += new EventHandler(IngresarAbono);
+        }
+
+        private void MinimizarIngresoAbonoView(object sender, EventArgs e)
+        {
+            ingresoAbonoView.WindowState = FormWindowState.Minimized;
+        }
+
+        private void CerrarIngresoAbonoView(object sender, EventArgs e)
+        {
+            ingresoAbonoView.Hide();
+            detalleAbonoView.Show();
+        }
+
+        private void ResaltarBotonCerrar(object sender, EventArgs e)
+        {
+            ingresoAbonoView.btnCerrarIngresoAbonoView.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonCerrar(object sender, EventArgs e)
+        {
+            ingresoAbonoView.btnCerrarIngresoAbonoView.BackColor = Color.Transparent;
+        }
+
+        private void ResaltarBotonMinimizar(object sender, EventArgs e)
+        {
+            ingresoAbonoView.btnMinimizarIngresoAbonoView.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonMinimizar(object sender, EventArgs e)
+        {
+            ingresoAbonoView.btnMinimizarIngresoAbonoView.BackColor = Color.Transparent;
         }
 
         private void ValidarEntrada(object sender, KeyPressEventArgs e)
@@ -56,8 +101,9 @@ namespace Alumvix.Controller.Abono
                 {
                     ingresoAbonoView.txtIngresarValorAbono.Clear();
                     ingresoAbonoView.cbIngresarFormaDePago.SelectedIndex = 0;
-                    ingresoAbonoView.Close();
+                    ingresoAbonoView.Hide();
                     MessageBox.Show("El abono ha sido guardado con exito");
+                    detalleAbonoView.Show();
                 } 
                 else MessageBox.Show("Error al guardar el abono");
             }                     

@@ -52,7 +52,7 @@ namespace Alumvix.Controller.Cliente
             detalleClienteVista.Activated += new EventHandler(MostrarGastos);
             detalleClienteVista.Activated += new EventHandler(MostrarAbonos);
             detalleClienteVista.Activated += new EventHandler(MostrarCuentas);
-            detalleClienteVista.Activated += new EventHandler(MostrarProductos);
+            detalleClienteVista.Activated += new EventHandler(MostrarProductos);           
             detalleClienteVista.btnDetallesAbonos.Click += new EventHandler(AbrirDetalleAbonos);
             detalleClienteVista.btnDetallesGastos.Click += new EventHandler(AbrirDetalleGastos);
             detalleClienteVista.btnAbrirIngresoProducto.Click += new EventHandler(AbrirIngresoProductoView);
@@ -272,6 +272,7 @@ namespace Alumvix.Controller.Cliente
         private void AbrirDetalleAbonos(object sender, EventArgs e) 
         {
             DetalleAbonoView detalleAbono = DetalleAbonoView.ObtenerInstancia();
+            detalleClienteVista.Hide();
             detalleAbono.ShowDialog();
         }
 

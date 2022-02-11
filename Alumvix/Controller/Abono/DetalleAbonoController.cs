@@ -6,12 +6,14 @@ using Alumvix.View.Abono;
 using System;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using Alumvix.View.Cliente;
 
 namespace Alumvix.Controller.Abono
 {
     internal class DetalleAbonoController
     {
         static DetalleAbonoView detalleAbonoView;
+        DetalleClienteView detalleClienteView;
         int idContrato;
         int indice;
         static List<int> idsAbonos = new List<int>();
@@ -20,12 +22,25 @@ namespace Alumvix.Controller.Abono
         public DetalleAbonoController(DetalleAbonoView detalleAbonoVista) 
         {
             idContrato = DetalleClienteController.ObtenerIdContrato();
+            detalleClienteView = DetalleClienteController.ObtenerInstanciaDetalleClienteView();
             detalleAbonoView = detalleAbonoVista;
             detalleAbonoView.Activated += new EventHandler(MostrarDetalleAbonos);
             detalleAbonoView.btnIngresarAbono.Click += new EventHandler(MostrarIngresoAbonoView);
             detalleAbonoView.btnEliminarAbono.Click += new EventHandler(EliminarAbono);
             detalleAbonoView.lstvDetalleAbonos.SelectedIndexChanged += new EventHandler(ObtenerIndice);
             detalleAbonoView.btnEditarAbono.Click += new EventHandler(MostrarEditarAbonoView);
+            detalleAbonoView.btnCerrarDetalleAbonoView.Click += new EventHandler(CerrarDetalleAbonoView);
+        }
+
+        private void CerrarDetalleAbonoView(object sender, EventArgs e)
+        {
+            detalleAbonoView.Hide();
+            detalleClienteView.Show();
+        }
+
+        public static DetalleAbonoView ObtenerInstancia()
+        {
+            return detalleAbonoView;
         }
 
         private void MostrarDetalleAbonos(object sender, EventArgs e) 
@@ -46,7 +61,8 @@ namespace Alumvix.Controller.Abono
 
         private void MostrarIngresoAbonoView(object sender, EventArgs e) 
         {
-            IngresoAbonoView ingresoAbonoView = IngresoAbonoView.ObtenerInstancia();
+            IngresoAbonoView ingresoAbonoView = IngresoAbonoView.ObtenerInstancia();         
+            detalleAbonoView.Hide();
             ingresoAbonoView.ShowDialog();
         }
 
