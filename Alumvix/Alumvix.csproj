@@ -85,7 +85,7 @@
     <Compile Include="Controller\Producto\IngresoProductoController.cs" />
     <Compile Include="Controller\Proveedor\EditarProveedorController.cs" />
     <Compile Include="Controller\Proveedor\IngresoProveedorController.cs" />
-    <Compile Include="Controller\Proveedor\ProveedorController.cs" />
+    <Compile Include="Controller\Proveedor\ProveedoresController.cs" />
     <Compile Include="Controller\Reporte\AdministradorReportesController.cs" />
     <Compile Include="Controller\Reporte\ReporteAnualController.cs" />
     <Compile Include="Controller\Reporte\ReporteMensualController.cs" />

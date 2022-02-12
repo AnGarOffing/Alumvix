@@ -17,7 +17,7 @@ namespace Alumvix.View.Proveedor
         public ProveedoresView()
         {
             InitializeComponent();
-            ProveedorController proveedoresController = new ProveedorController(this);
+            ProveedoresController proveedoresController = new ProveedoresController(this);
         }
         public static ProveedoresView ObtenerInstancia()
         {

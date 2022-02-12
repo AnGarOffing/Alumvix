@@ -13,7 +13,7 @@ namespace Alumvix.Controller.Proveedor
     internal class EditarProveedorController
     {
         EditarProveedorView editarProveedorView;
-        ProveedoresView proveedorView = ProveedorController.ObtenerInstancia();
+        ProveedoresView proveedorView = ProveedoresController.ObtenerInstancia();
 
         public EditarProveedorController(EditarProveedorView editarProveedorVista)
         {
@@ -51,7 +51,7 @@ namespace Alumvix.Controller.Proveedor
                     editarProveedorView.txtEditarCelularProveedor.Text,
                     editarProveedorView.txtEditarTelefonoProveedor.Text,
                     editarProveedorView.txtEditarDireccionProveedor.Text,
-                    ProveedorController.IdProveedor);
+                    ProveedoresController.IdProveedor);
                 if (respuestaActualizacionProveedor)
                 {
                     editarProveedorView.Close();
