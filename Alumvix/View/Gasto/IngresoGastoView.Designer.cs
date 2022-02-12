@@ -70,7 +70,7 @@
             this.panel1.Controls.Add(this.lblFechaIngresoGasto);
             this.panel1.Location = new System.Drawing.Point(0, 65);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(618, 289);
+            this.panel1.Size = new System.Drawing.Size(527, 280);
             this.panel1.TabIndex = 39;
             // 
             // btnGuardarNuevoGasto
@@ -80,7 +80,7 @@
             this.btnGuardarNuevoGasto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             this.btnGuardarNuevoGasto.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarNuevoGasto.Image")));
             this.btnGuardarNuevoGasto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardarNuevoGasto.Location = new System.Drawing.Point(473, 227);
+            this.btnGuardarNuevoGasto.Location = new System.Drawing.Point(393, 227);
             this.btnGuardarNuevoGasto.Name = "btnGuardarNuevoGasto";
             this.btnGuardarNuevoGasto.Size = new System.Drawing.Size(121, 44);
             this.btnGuardarNuevoGasto.TabIndex = 48;
@@ -92,7 +92,7 @@
             // 
             this.txtNumeroFactura.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNumeroFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumeroFactura.Location = new System.Drawing.Point(233, 149);
+            this.txtNumeroFactura.Location = new System.Drawing.Point(153, 149);
             this.txtNumeroFactura.Name = "txtNumeroFactura";
             this.txtNumeroFactura.Size = new System.Drawing.Size(155, 26);
             this.txtNumeroFactura.TabIndex = 47;
@@ -102,7 +102,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.label2.Location = new System.Drawing.Point(130, 149);
+            this.label2.Location = new System.Drawing.Point(50, 149);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 24);
             this.label2.TabIndex = 46;
@@ -112,7 +112,7 @@
             // 
             this.cbIngresarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbIngresarProveedor.FormattingEnabled = true;
-            this.cbIngresarProveedor.Location = new System.Drawing.Point(233, 243);
+            this.cbIngresarProveedor.Location = new System.Drawing.Point(153, 243);
             this.cbIngresarProveedor.Name = "cbIngresarProveedor";
             this.cbIngresarProveedor.Size = new System.Drawing.Size(218, 28);
             this.cbIngresarProveedor.TabIndex = 45;
@@ -122,7 +122,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.label1.Location = new System.Drawing.Point(120, 243);
+            this.label1.Location = new System.Drawing.Point(40, 243);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(107, 24);
             this.label1.TabIndex = 44;
@@ -132,7 +132,7 @@
             // 
             this.cbIngresarTipoGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbIngresarTipoGasto.FormattingEnabled = true;
-            this.cbIngresarTipoGasto.Location = new System.Drawing.Point(233, 195);
+            this.cbIngresarTipoGasto.Location = new System.Drawing.Point(153, 195);
             this.cbIngresarTipoGasto.Name = "cbIngresarTipoGasto";
             this.cbIngresarTipoGasto.Size = new System.Drawing.Size(218, 28);
             this.cbIngresarTipoGasto.TabIndex = 43;
@@ -142,7 +142,7 @@
             this.lblTipoGasto.AutoSize = true;
             this.lblTipoGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTipoGasto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.lblTipoGasto.Location = new System.Drawing.Point(89, 195);
+            this.lblTipoGasto.Location = new System.Drawing.Point(9, 195);
             this.lblTipoGasto.Name = "lblTipoGasto";
             this.lblTipoGasto.Size = new System.Drawing.Size(138, 24);
             this.lblTipoGasto.TabIndex = 42;
@@ -151,7 +151,7 @@
             // txtDescripcionGasto
             // 
             this.txtDescripcionGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripcionGasto.Location = new System.Drawing.Point(233, 79);
+            this.txtDescripcionGasto.Location = new System.Drawing.Point(153, 79);
             this.txtDescripcionGasto.MaxLength = 70;
             this.txtDescripcionGasto.Multiline = true;
             this.txtDescripcionGasto.Name = "txtDescripcionGasto";
@@ -163,7 +163,7 @@
             this.dtpFechaIngresoGasto.CustomFormat = "yyyy/MM/dd";
             this.dtpFechaIngresoGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaIngresoGasto.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFechaIngresoGasto.Location = new System.Drawing.Point(436, 28);
+            this.dtpFechaIngresoGasto.Location = new System.Drawing.Point(356, 28);
             this.dtpFechaIngresoGasto.Name = "dtpFechaIngresoGasto";
             this.dtpFechaIngresoGasto.Size = new System.Drawing.Size(120, 26);
             this.dtpFechaIngresoGasto.TabIndex = 40;
@@ -173,7 +173,7 @@
             this.lblDescripcionGasto.AutoSize = true;
             this.lblDescripcionGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescripcionGasto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.lblDescripcionGasto.Location = new System.Drawing.Point(106, 79);
+            this.lblDescripcionGasto.Location = new System.Drawing.Point(26, 79);
             this.lblDescripcionGasto.Name = "lblDescripcionGasto";
             this.lblDescripcionGasto.Size = new System.Drawing.Size(121, 24);
             this.lblDescripcionGasto.TabIndex = 38;
@@ -182,7 +182,7 @@
             // txtIngresarValorGasto
             // 
             this.txtIngresarValorGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIngresarValorGasto.Location = new System.Drawing.Point(233, 30);
+            this.txtIngresarValorGasto.Location = new System.Drawing.Point(153, 30);
             this.txtIngresarValorGasto.Name = "txtIngresarValorGasto";
             this.txtIngresarValorGasto.Size = new System.Drawing.Size(100, 26);
             this.txtIngresarValorGasto.TabIndex = 34;
@@ -192,7 +192,7 @@
             this.lvlValorIngresoGasto.AutoSize = true;
             this.lvlValorIngresoGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvlValorIngresoGasto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.lvlValorIngresoGasto.Location = new System.Drawing.Point(168, 30);
+            this.lvlValorIngresoGasto.Location = new System.Drawing.Point(88, 30);
             this.lvlValorIngresoGasto.Name = "lvlValorIngresoGasto";
             this.lvlValorIngresoGasto.Size = new System.Drawing.Size(59, 24);
             this.lvlValorIngresoGasto.TabIndex = 33;
@@ -203,7 +203,7 @@
             this.lblFechaIngresoGasto.AutoSize = true;
             this.lblFechaIngresoGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaIngresoGasto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.lblFechaIngresoGasto.Location = new System.Drawing.Point(361, 28);
+            this.lblFechaIngresoGasto.Location = new System.Drawing.Point(281, 28);
             this.lblFechaIngresoGasto.Name = "lblFechaIngresoGasto";
             this.lblFechaIngresoGasto.Size = new System.Drawing.Size(69, 24);
             this.lblFechaIngresoGasto.TabIndex = 35;
@@ -214,7 +214,7 @@
             this.lblIngresarGasto.AutoSize = true;
             this.lblIngresarGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIngresarGasto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.lblIngresarGasto.Location = new System.Drawing.Point(174, 15);
+            this.lblIngresarGasto.Location = new System.Drawing.Point(127, 14);
             this.lblIngresarGasto.Name = "lblIngresarGasto";
             this.lblIngresarGasto.Size = new System.Drawing.Size(268, 29);
             this.lblIngresarGasto.TabIndex = 38;
@@ -229,13 +229,13 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(620, 59);
+            this.panel2.Size = new System.Drawing.Size(526, 59);
             this.panel2.TabIndex = 40;
             // 
             // btnMinimizarIngresoGastoView
             // 
             this.btnMinimizarIngresoGastoView.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarIngresoGastoView.Image")));
-            this.btnMinimizarIngresoGastoView.Location = new System.Drawing.Point(543, 13);
+            this.btnMinimizarIngresoGastoView.Location = new System.Drawing.Point(449, 12);
             this.btnMinimizarIngresoGastoView.Name = "btnMinimizarIngresoGastoView";
             this.btnMinimizarIngresoGastoView.Size = new System.Drawing.Size(33, 30);
             this.btnMinimizarIngresoGastoView.TabIndex = 45;
@@ -244,7 +244,7 @@
             // btnCerrarIngresoGastoView
             // 
             this.btnCerrarIngresoGastoView.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarIngresoGastoView.Image")));
-            this.btnCerrarIngresoGastoView.Location = new System.Drawing.Point(585, 13);
+            this.btnCerrarIngresoGastoView.Location = new System.Drawing.Point(491, 12);
             this.btnCerrarIngresoGastoView.Name = "btnCerrarIngresoGastoView";
             this.btnCerrarIngresoGastoView.Size = new System.Drawing.Size(33, 30);
             this.btnCerrarIngresoGastoView.TabIndex = 44;
@@ -255,7 +255,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.ClientSize = new System.Drawing.Size(620, 357);
+            this.ClientSize = new System.Drawing.Size(526, 344);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

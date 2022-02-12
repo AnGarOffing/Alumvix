@@ -29,6 +29,5 @@ namespace Alumvix.View.Gasto
             }
             return instancia;
         }
-
     }
 }

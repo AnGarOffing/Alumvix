@@ -3,9 +3,11 @@ using Alumvix.Model.Dao;
 using Alumvix.Model.Dto;
 using Alumvix.Model.Logica.Util;
 using Alumvix.Model.Negocio.Util;
+using Alumvix.View;
 using Alumvix.View.Gasto;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +18,7 @@ namespace Alumvix.Controller.Gasto
     internal class GastoInternoController
     {
         static GastoInternoView gastoInternoView;
+        ClienteView clienteView;
         List<int> idsGastosInternos = new List<int>();
         public int idGastoInterno;
         int indice;
@@ -23,11 +26,54 @@ namespace Alumvix.Controller.Gasto
         public GastoInternoController(GastoInternoView gastoInternoVista)
         {
             gastoInternoView = gastoInternoVista;
+            clienteView = ClienteController.ObtenerInstanciaClienteView();
             gastoInternoView.Activated += new EventHandler(MostrarGastosInternos);
             gastoInternoView.lstvGastosInternos.SelectedIndexChanged += new EventHandler(ObtenerIndice);
+            gastoInternoView.btnCerrarGastoInternoView.MouseHover += new EventHandler(ResaltarBotonCerrar);
+            gastoInternoView.btnCerrarGastoInternoView.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrar);
+            gastoInternoView.btnCerrarGastoInternoView.Click += new EventHandler(CerrarGastoInternoView);
+            gastoInternoView.btnMinimizarGastoInternoView.MouseHover += new EventHandler(ResaltarBotonMinimizar);
+            gastoInternoView.btnMinimizarGastoInternoView.MouseLeave += new EventHandler(QuitarResaltadoBotonMinimizar);
+            gastoInternoView.btnMinimizarGastoInternoView.Click += new EventHandler(MinimizarGastoInternoView);
             gastoInternoView.btnIngresarGastoInterno.Click += new EventHandler(AbrirIngresoGastoInternoView);
             gastoInternoView.btnEliminarGastoInterno.Click += new EventHandler(EliminarGastoInterno);
             gastoInternoView.btnEditarGastoInterno.Click += new EventHandler(AbrirEditarGastoInternoView);
+        }
+
+        public static GastoInternoView ObtenerInstanciaClienteView()
+        {
+            return gastoInternoView;
+        }
+
+        private void MinimizarGastoInternoView(object sender, EventArgs e)
+        {
+            gastoInternoView.WindowState = FormWindowState.Minimized;
+        }
+
+        private void ResaltarBotonCerrar(object sender, EventArgs e)
+        {
+            gastoInternoView.btnCerrarGastoInternoView.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonCerrar(object sender, EventArgs e)
+        {
+            gastoInternoView.btnCerrarGastoInternoView.BackColor = Color.Transparent;
+        }
+
+        private void ResaltarBotonMinimizar(object sender, EventArgs e)
+        {
+            gastoInternoView.btnMinimizarGastoInternoView.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonMinimizar(object sender, EventArgs e)
+        {
+            gastoInternoView.btnMinimizarGastoInternoView.BackColor = Color.Transparent;
+        }
+
+        private void CerrarGastoInternoView(object sender, EventArgs e)
+        {
+            gastoInternoView.Hide();
+            clienteView.Show();
         }
 
         private void AbrirEditarGastoInternoView(object sender, EventArgs e)
@@ -43,7 +89,8 @@ namespace Alumvix.Controller.Gasto
         public void AbrirIngresoGastoInternoView(object sender, EventArgs e)
         {
             IngresoGastoInternoView ingresoGastoInternoView = IngresoGastoInternoView.ObtenerInstancia();
-            ingresoGastoInternoView.ShowDialog();
+            gastoInternoView.Hide();
+            ingresoGastoInternoView.Show();
         }
 
 

@@ -5,6 +5,7 @@ using Alumvix.Model.Negocio.Util;
 using Alumvix.View.Cliente;
 using Alumvix.View.Gasto;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Alumvix.Controller.Gasto
@@ -27,14 +28,44 @@ namespace Alumvix.Controller.Gasto
             ingresoGastoView.txtIngresarValorGasto.KeyPress += new KeyPressEventHandler(ValidarEntradaNumeros);
             ingresoGastoView.txtNumeroFactura.KeyPress += new KeyPressEventHandler(ValidarEntradaLetrasYNumeros);
             ingresoGastoView.cbIngresarTipoGasto.SelectedIndexChanged += new EventHandler(HabilitarControlesFactyProv);
+            ingresoGastoView.btnCerrarIngresoGastoView.MouseHover += new EventHandler(ResaltarBotonCerrar);
+            ingresoGastoView.btnCerrarIngresoGastoView.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrar);
             ingresoGastoView.btnCerrarIngresoGastoView.Click += new EventHandler(CerrarIngresoGastoView);
+            ingresoGastoView.btnMinimizarIngresoGastoView.MouseHover += new EventHandler(ResaltarBotonMinimizar);
+            ingresoGastoView.btnMinimizarIngresoGastoView.MouseLeave += new EventHandler(QuitarResaltadoBotonMinimizar);
+            ingresoGastoView.btnMinimizarIngresoGastoView.Click += new EventHandler(MinimizarIngresoGastoView);
             ingresoGastoView.btnGuardarNuevoGasto.Click += new EventHandler(IngresarGasto);
+        }
+
+        private void MinimizarIngresoGastoView(object sender, EventArgs e)
+        {
+            ingresoGastoView.WindowState = FormWindowState.Minimized;
         }
 
         private void CerrarIngresoGastoView(object sender, EventArgs e)
         {
             ingresoGastoView.Hide();
             detalleGastoView.Show();
+        }
+
+        private void ResaltarBotonCerrar(object sender, EventArgs e)
+        {
+            ingresoGastoView.btnCerrarIngresoGastoView.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonCerrar(object sender, EventArgs e)
+        {
+            ingresoGastoView.btnCerrarIngresoGastoView.BackColor = Color.Transparent;
+        }
+
+        private void ResaltarBotonMinimizar(object sender, EventArgs e)
+        {
+            ingresoGastoView.btnMinimizarIngresoGastoView.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonMinimizar(object sender, EventArgs e)
+        {
+            ingresoGastoView.btnMinimizarIngresoGastoView.BackColor = Color.Transparent;
         }
 
         private void ValidarEntradaLetrasYNumeros(object sender, KeyPressEventArgs e)
