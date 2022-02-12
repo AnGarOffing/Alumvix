@@ -68,9 +68,9 @@
             this.panel1.Controls.Add(this.txtIngresarValorGasto);
             this.panel1.Controls.Add(this.lvlValorIngresoGasto);
             this.panel1.Controls.Add(this.lblFechaIngresoGasto);
-            this.panel1.Location = new System.Drawing.Point(12, 74);
+            this.panel1.Location = new System.Drawing.Point(0, 65);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(597, 291);
+            this.panel1.Size = new System.Drawing.Size(618, 289);
             this.panel1.TabIndex = 39;
             // 
             // btnGuardarNuevoGasto
@@ -101,11 +101,12 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(124, 149);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.label2.Location = new System.Drawing.Point(130, 149);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 24);
+            this.label2.Size = new System.Drawing.Size(97, 24);
             this.label2.TabIndex = 46;
-            this.label2.Text = "# Factura:";
+            this.label2.Text = "# Factura";
             // 
             // cbIngresarProveedor
             // 
@@ -120,11 +121,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(114, 243);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.label1.Location = new System.Drawing.Point(120, 243);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 24);
+            this.label1.Size = new System.Drawing.Size(107, 24);
             this.label1.TabIndex = 44;
-            this.label1.Text = "Proveedor:";
+            this.label1.Text = "Proveedor";
             // 
             // cbIngresarTipoGasto
             // 
@@ -139,11 +141,12 @@
             // 
             this.lblTipoGasto.AutoSize = true;
             this.lblTipoGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoGasto.Location = new System.Drawing.Point(83, 195);
+            this.lblTipoGasto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.lblTipoGasto.Location = new System.Drawing.Point(89, 195);
             this.lblTipoGasto.Name = "lblTipoGasto";
-            this.lblTipoGasto.Size = new System.Drawing.Size(144, 24);
+            this.lblTipoGasto.Size = new System.Drawing.Size(138, 24);
             this.lblTipoGasto.TabIndex = 42;
-            this.lblTipoGasto.Text = "Tipo de gasto:";
+            this.lblTipoGasto.Text = "Tipo de gasto";
             // 
             // txtDescripcionGasto
             // 
@@ -169,11 +172,12 @@
             // 
             this.lblDescripcionGasto.AutoSize = true;
             this.lblDescripcionGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcionGasto.Location = new System.Drawing.Point(11, 79);
+            this.lblDescripcionGasto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.lblDescripcionGasto.Location = new System.Drawing.Point(106, 79);
             this.lblDescripcionGasto.Name = "lblDescripcionGasto";
-            this.lblDescripcionGasto.Size = new System.Drawing.Size(216, 24);
+            this.lblDescripcionGasto.Size = new System.Drawing.Size(121, 24);
             this.lblDescripcionGasto.TabIndex = 38;
-            this.lblDescripcionGasto.Text = "Descripcion de Gasto:";
+            this.lblDescripcionGasto.Text = "Descripción";
             // 
             // txtIngresarValorGasto
             // 
@@ -187,21 +191,23 @@
             // 
             this.lvlValorIngresoGasto.AutoSize = true;
             this.lvlValorIngresoGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvlValorIngresoGasto.Location = new System.Drawing.Point(162, 30);
+            this.lvlValorIngresoGasto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.lvlValorIngresoGasto.Location = new System.Drawing.Point(168, 30);
             this.lvlValorIngresoGasto.Name = "lvlValorIngresoGasto";
-            this.lvlValorIngresoGasto.Size = new System.Drawing.Size(65, 24);
+            this.lvlValorIngresoGasto.Size = new System.Drawing.Size(59, 24);
             this.lvlValorIngresoGasto.TabIndex = 33;
-            this.lvlValorIngresoGasto.Text = "Valor:";
+            this.lvlValorIngresoGasto.Text = "Valor";
             // 
             // lblFechaIngresoGasto
             // 
             this.lblFechaIngresoGasto.AutoSize = true;
             this.lblFechaIngresoGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaIngresoGasto.Location = new System.Drawing.Point(359, 29);
+            this.lblFechaIngresoGasto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.lblFechaIngresoGasto.Location = new System.Drawing.Point(361, 28);
             this.lblFechaIngresoGasto.Name = "lblFechaIngresoGasto";
-            this.lblFechaIngresoGasto.Size = new System.Drawing.Size(75, 24);
+            this.lblFechaIngresoGasto.Size = new System.Drawing.Size(69, 24);
             this.lblFechaIngresoGasto.TabIndex = 35;
-            this.lblFechaIngresoGasto.Text = "Fecha:";
+            this.lblFechaIngresoGasto.Text = "Fecha";
             // 
             // lblIngresarGasto
             // 
@@ -223,7 +229,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(621, 59);
+            this.panel2.Size = new System.Drawing.Size(620, 59);
             this.panel2.TabIndex = 40;
             // 
             // btnMinimizarIngresoGastoView
@@ -249,7 +255,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.ClientSize = new System.Drawing.Size(621, 377);
+            this.ClientSize = new System.Drawing.Size(620, 357);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

@@ -4,6 +4,7 @@ using Alumvix.Model.Negocio.Util;
 using Alumvix.View.Gasto;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Alumvix.Controller.Gasto
@@ -11,14 +12,52 @@ namespace Alumvix.Controller.Gasto
     internal class EditarGastoController
     {
         EditarGastoView editarGastoView;
-        DetalleGastoView detalleGastoView = DetalleGastoController.ObtenerInstanciaDetalleGasto();
+        DetalleGastoView detalleGastoView;
 
         public EditarGastoController(EditarGastoView editarGastoVista) 
         {
             editarGastoView = editarGastoVista;
+            detalleGastoView = DetalleGastoController.ObtenerInstanciaDetalleGasto();
             editarGastoView.Activated += new EventHandler(CargarDatosGasto);
             editarGastoView.cbEditarTipoGasto.SelectedIndexChanged += new EventHandler(HabilitarControlesFactyProv);
+            editarGastoView.btnMinimizarEditarGastoView.MouseHover += new EventHandler(ResaltarBotonMinimizar);
+            editarGastoView.btnMinimizarEditarGastoView.MouseLeave += new EventHandler(QuitarResaltadoBotonMinimizar);
+            editarGastoView.btnCerrarEditarGastoView.MouseHover += new EventHandler(ResaltarBotonCerrar);
+            editarGastoView.btnCerrarEditarGastoView.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrar);
+            editarGastoView.btnCerrarEditarGastoView.Click += new EventHandler(CerrarEditarGastoView);
+            editarGastoView.btnMinimizarEditarGastoView.Click += new EventHandler(MinimizarEditarGastoView);
             editarGastoView.btnActualizarGasto.Click += new EventHandler(ActualizarGastoEnBD);
+        }
+
+        private void ResaltarBotonMinimizar(object sender, EventArgs e)
+        {
+            editarGastoView.btnMinimizarEditarGastoView.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonMinimizar(object sender, EventArgs e)
+        {
+            editarGastoView.btnMinimizarEditarGastoView.BackColor = Color.Transparent;
+        }
+
+        private void ResaltarBotonCerrar(object sender, EventArgs e)
+        {
+            editarGastoView.btnCerrarEditarGastoView.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonCerrar(object sender, EventArgs e)
+        {
+            editarGastoView.btnCerrarEditarGastoView.BackColor = Color.Transparent;
+        }
+
+        private void MinimizarEditarGastoView(object sender, EventArgs e)
+        {
+            editarGastoView.WindowState = FormWindowState.Minimized;
+        }
+
+        private void CerrarEditarGastoView(object sender, EventArgs e)
+        {
+            editarGastoView.Hide();
+            detalleGastoView.Show();    
         }
 
         private void CargarDatosGasto(object sender, EventArgs e)
@@ -28,11 +67,11 @@ namespace Alumvix.Controller.Gasto
             editarGastoView.txtEditarNumeroFactura.Text = detalleGastoView.lstvDetalleGastos.SelectedItems[0].SubItems[1].Text;
             editarGastoView.txtActualizarValorGasto.Text = detalleGastoView.lstvDetalleGastos.SelectedItems[0].SubItems[2].Text;
             editarGastoView.dtpActualizarFechaGasto.Text = detalleGastoView.lstvDetalleGastos.SelectedItems[0].SubItems[3].Text;
-            editarGastoView.txtActualizarDescripcionGasto.Text = detalleGastoView.lstvDetalleGastos.SelectedItems[0].SubItems[4].Text;
+            editarGastoView.txtActualizarDescripcionGasto.Text = detalleGastoView.lstvDetalleGastos.SelectedItems[0].SubItems[6].Text; 
             editarGastoView.cbEditarProveedor.DataSource = proveedorDao.ConsultarProveedoresParaCB();
             editarGastoView.cbEditarProveedor.Text = detalleGastoView.lstvDetalleGastos.SelectedItems[0].SubItems[5].Text;
             editarGastoView.cbEditarTipoGasto.DataSource = gastoDao.ObtenerTiposDeGastoMaterial();
-            editarGastoView.cbEditarTipoGasto.Text = detalleGastoView.lstvDetalleGastos.SelectedItems[0].SubItems[6].Text;
+            editarGastoView.cbEditarTipoGasto.Text = detalleGastoView.lstvDetalleGastos.SelectedItems[0].SubItems[4].Text;
         }
 
         private void ActualizarGastoEnBD(object sender, EventArgs e)

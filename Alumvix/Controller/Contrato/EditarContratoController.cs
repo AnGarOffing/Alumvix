@@ -7,6 +7,7 @@ using Alumvix.Model.Negocio.Util;
 using Alumvix.View.Cliente;
 using Alumvix.View.Contrato;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Alumvix.Controller.Contrato
@@ -27,7 +28,45 @@ namespace Alumvix.Controller.Contrato
             detalleClienteView = DetalleClienteController.ObtenerInstanciaDetalleClienteView();
             editarContratoView.Load += new EventHandler(CargarDatosAEditar);
             editarContratoView.txtEditarValorContrato.KeyPress += new KeyPressEventHandler(ValidarEntradaNumeros);
+            editarContratoView.btnMinimizarEditarContratoView.MouseHover += new EventHandler(ResaltarBotonMinimizar);
+            editarContratoView.btnMinimizarEditarContratoView.MouseLeave += new EventHandler(QuitarResaltadoBotonMinimizar);
+            editarContratoView.btnCerrarEditarContratoView.MouseHover += new EventHandler(ResaltarBotonCerrar);
+            editarContratoView.btnCerrarEditarContratoView.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrar);
+            editarContratoView.btnCerrarEditarContratoView.Click += new EventHandler(CerrarEditarContratoView);
+            editarContratoView.btnMinimizarEditarContratoView.Click += new EventHandler(MinimizarEditarContratoView);
             editarContratoView.btnActualizarContrato.Click += new EventHandler(ActualizarContrato);          
+        }
+
+        private void ResaltarBotonMinimizar(object sender, EventArgs e)
+        {
+            editarContratoView.btnMinimizarEditarContratoView.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonMinimizar(object sender, EventArgs e)
+        {
+            editarContratoView.btnMinimizarEditarContratoView.BackColor = Color.Transparent;
+        }
+
+        private void ResaltarBotonCerrar(object sender, EventArgs e)
+        {
+            editarContratoView.btnCerrarEditarContratoView.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonCerrar(object sender, EventArgs e)
+        {
+            editarContratoView.btnCerrarEditarContratoView.BackColor = Color.Transparent;
+        }
+
+        private void MinimizarEditarContratoView(object sender, EventArgs e)
+        {
+            editarContratoView.WindowState = FormWindowState.Minimized;
+        }
+
+        private void CerrarEditarContratoView(object sender, EventArgs e)
+        {
+            editarContratoView.Hide();
+            detalleClienteView = DetalleClienteView.ObtenerInstancia();
+            detalleClienteView.Show();
         }
 
         private void ValidarEntradaNumeros(object sender, KeyPressEventArgs e)
@@ -78,8 +117,11 @@ namespace Alumvix.Controller.Contrato
                 {
                     editarContratoView.txtEditarValorContrato.Clear();
                     editarContratoView.cbEditarTipoFactura.SelectedIndex = 0;
-                    editarContratoView.Close();
+                    //editarContratoView.Close();
+                    editarContratoView.Hide();
                     MessageBox.Show("El contrato ha sido actualizado con exito");
+                    detalleClienteView = DetalleClienteView.ObtenerInstancia();
+                    detalleClienteView.Show();
                 }
                 else MessageBox.Show("Error al intentar actualizar el contrato");
             }

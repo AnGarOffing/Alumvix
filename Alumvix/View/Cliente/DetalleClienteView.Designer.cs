@@ -56,6 +56,13 @@
             this.lblFijo = new System.Windows.Forms.Label();
             this.lblTituloCliente = new System.Windows.Forms.Label();
             this.pnlContrato = new System.Windows.Forms.Panel();
+            this.lblEstadoTrabajo = new System.Windows.Forms.Label();
+            this.lblEstadoContrato = new System.Windows.Forms.Label();
+            this.lblFechaFin = new System.Windows.Forms.Label();
+            this.lblTipoFactura = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblNumeroFactura = new System.Windows.Forms.Label();
+            this.lblValorContrato = new System.Windows.Forms.Label();
             this.btnIngresarContrato = new System.Windows.Forms.Button();
             this.btnEditarContrato = new System.Windows.Forms.Button();
             this.txtTipoFactura = new System.Windows.Forms.TextBox();
@@ -68,12 +75,17 @@
             this.txtValorContrato = new System.Windows.Forms.TextBox();
             this.txtNumeroFactura = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblRestaPorPagar = new System.Windows.Forms.Label();
+            this.lblTotalGastos = new System.Windows.Forms.Label();
+            this.lblTotalAbonos = new System.Windows.Forms.Label();
             this.txtUtilidad = new System.Windows.Forms.TextBox();
             this.txtRestaPorPagar = new System.Windows.Forms.TextBox();
             this.txtTotalAbonos = new System.Windows.Forms.TextBox();
             this.txtTotalGastos = new System.Windows.Forms.TextBox();
             this.lblCuentas = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnAbrirIngresoProducto = new System.Windows.Forms.Button();
             this.btnEliminarProducto = new System.Windows.Forms.Button();
             this.lblProductos = new System.Windows.Forms.Label();
             this.lstvProductos = new System.Windows.Forms.ListView();
@@ -82,18 +94,6 @@
             this.btnMinimizarDetalleClienteView = new System.Windows.Forms.PictureBox();
             this.btnCerrarDetalleClienteView = new System.Windows.Forms.PictureBox();
             this.lblTituloDetalleCliente = new System.Windows.Forms.Label();
-            this.btnAbrirIngresoProducto = new System.Windows.Forms.Button();
-            this.lblValorContrato = new System.Windows.Forms.Label();
-            this.lblNumeroFactura = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblTipoFactura = new System.Windows.Forms.Label();
-            this.lblFechaFin = new System.Windows.Forms.Label();
-            this.lblEstadoTrabajo = new System.Windows.Forms.Label();
-            this.lblEstadoContrato = new System.Windows.Forms.Label();
-            this.lblTotalAbonos = new System.Windows.Forms.Label();
-            this.lblTotalGastos = new System.Windows.Forms.Label();
-            this.lblRestaPorPagar = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.pnlGastos.SuspendLayout();
             this.pnlAbonos.SuspendLayout();
             this.pnlCliente.SuspendLayout();
@@ -115,11 +115,12 @@
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(133, 24);
             this.lblId.TabIndex = 0;
-            this.lblId.Text = "Identificacion";
+            this.lblId.Text = "Identificación";
             // 
             // txtCelular
             // 
             this.txtCelular.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCelular.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             this.txtCelular.Location = new System.Drawing.Point(501, 85);
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(122, 29);
@@ -129,7 +130,7 @@
             // txtIdentificacion
             // 
             this.txtIdentificacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdentificacion.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.txtIdentificacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             this.txtIdentificacion.Location = new System.Drawing.Point(148, 49);
             this.txtIdentificacion.Name = "txtIdentificacion";
             this.txtIdentificacion.Size = new System.Drawing.Size(198, 29);
@@ -139,6 +140,7 @@
             // txtCorreo
             // 
             this.txtCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCorreo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             this.txtCorreo.Location = new System.Drawing.Point(148, 124);
             this.txtCorreo.Multiline = true;
             this.txtCorreo.Name = "txtCorreo";
@@ -149,6 +151,7 @@
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             this.txtNombre.Location = new System.Drawing.Point(148, 86);
             this.txtNombre.Multiline = true;
             this.txtNombre.Name = "txtNombre";
@@ -159,6 +162,7 @@
             // txtDireccion
             // 
             this.txtDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDireccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             this.txtDireccion.Location = new System.Drawing.Point(148, 163);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(475, 29);
@@ -168,6 +172,7 @@
             // txtTelefono
             // 
             this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             this.txtTelefono.Location = new System.Drawing.Point(501, 46);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(122, 29);
@@ -405,6 +410,83 @@
             this.pnlContrato.Size = new System.Drawing.Size(670, 192);
             this.pnlContrato.TabIndex = 21;
             // 
+            // lblEstadoTrabajo
+            // 
+            this.lblEstadoTrabajo.AutoSize = true;
+            this.lblEstadoTrabajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstadoTrabajo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.lblEstadoTrabajo.Location = new System.Drawing.Point(339, 149);
+            this.lblEstadoTrabajo.Name = "lblEstadoTrabajo";
+            this.lblEstadoTrabajo.Size = new System.Drawing.Size(173, 24);
+            this.lblEstadoTrabajo.TabIndex = 51;
+            this.lblEstadoTrabajo.Text = "Estado de trabajo";
+            // 
+            // lblEstadoContrato
+            // 
+            this.lblEstadoContrato.AutoSize = true;
+            this.lblEstadoContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstadoContrato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.lblEstadoContrato.Location = new System.Drawing.Point(329, 114);
+            this.lblEstadoContrato.Name = "lblEstadoContrato";
+            this.lblEstadoContrato.Size = new System.Drawing.Size(185, 24);
+            this.lblEstadoContrato.TabIndex = 51;
+            this.lblEstadoContrato.Text = "Estado de contrato";
+            // 
+            // lblFechaFin
+            // 
+            this.lblFechaFin.AutoSize = true;
+            this.lblFechaFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaFin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.lblFechaFin.Location = new System.Drawing.Point(392, 81);
+            this.lblFechaFin.Name = "lblFechaFin";
+            this.lblFechaFin.Size = new System.Drawing.Size(105, 24);
+            this.lblFechaFin.TabIndex = 50;
+            this.lblFechaFin.Text = "Fecha Fin";
+            // 
+            // lblTipoFactura
+            // 
+            this.lblTipoFactura.AutoSize = true;
+            this.lblTipoFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipoFactura.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.lblTipoFactura.Location = new System.Drawing.Point(9, 117);
+            this.lblTipoFactura.Name = "lblTipoFactura";
+            this.lblTipoFactura.Size = new System.Drawing.Size(158, 24);
+            this.lblTipoFactura.TabIndex = 49;
+            this.lblTipoFactura.Text = "Tipo de Factura";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.label4.Location = new System.Drawing.Point(42, 152);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(125, 24);
+            this.label4.TabIndex = 48;
+            this.label4.Text = "Fecha Inicio";
+            // 
+            // lblNumeroFactura
+            // 
+            this.lblNumeroFactura.AutoSize = true;
+            this.lblNumeroFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumeroFactura.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.lblNumeroFactura.Location = new System.Drawing.Point(70, 51);
+            this.lblNumeroFactura.Name = "lblNumeroFactura";
+            this.lblNumeroFactura.Size = new System.Drawing.Size(97, 24);
+            this.lblNumeroFactura.TabIndex = 47;
+            this.lblNumeroFactura.Text = "# Factura";
+            // 
+            // lblValorContrato
+            // 
+            this.lblValorContrato.AutoSize = true;
+            this.lblValorContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValorContrato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.lblValorContrato.Location = new System.Drawing.Point(108, 86);
+            this.lblValorContrato.Name = "lblValorContrato";
+            this.lblValorContrato.Size = new System.Drawing.Size(59, 24);
+            this.lblValorContrato.TabIndex = 46;
+            this.lblValorContrato.Text = "Valor";
+            // 
             // btnIngresarContrato
             // 
             this.btnIngresarContrato.BackColor = System.Drawing.Color.Transparent;
@@ -434,6 +516,7 @@
             // txtTipoFactura
             // 
             this.txtTipoFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTipoFactura.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             this.txtTipoFactura.Location = new System.Drawing.Point(173, 118);
             this.txtTipoFactura.Name = "txtTipoFactura";
             this.txtTipoFactura.Size = new System.Drawing.Size(124, 29);
@@ -467,6 +550,7 @@
             // txtEstadoTrabajo
             // 
             this.txtEstadoTrabajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEstadoTrabajo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             this.txtEstadoTrabajo.Location = new System.Drawing.Point(518, 152);
             this.txtEstadoTrabajo.Name = "txtEstadoTrabajo";
             this.txtEstadoTrabajo.Size = new System.Drawing.Size(120, 29);
@@ -476,6 +560,7 @@
             // txtEstadoContrato
             // 
             this.txtEstadoContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEstadoContrato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             this.txtEstadoContrato.Location = new System.Drawing.Point(518, 117);
             this.txtEstadoContrato.Name = "txtEstadoContrato";
             this.txtEstadoContrato.Size = new System.Drawing.Size(120, 29);
@@ -485,6 +570,7 @@
             // txtFechaFinContrato
             // 
             this.txtFechaFinContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFechaFinContrato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             this.txtFechaFinContrato.Location = new System.Drawing.Point(503, 82);
             this.txtFechaFinContrato.Name = "txtFechaFinContrato";
             this.txtFechaFinContrato.Size = new System.Drawing.Size(135, 29);
@@ -494,6 +580,7 @@
             // txtFechaInicioContrato
             // 
             this.txtFechaInicioContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFechaInicioContrato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             this.txtFechaInicioContrato.Location = new System.Drawing.Point(173, 153);
             this.txtFechaInicioContrato.Name = "txtFechaInicioContrato";
             this.txtFechaInicioContrato.Size = new System.Drawing.Size(124, 29);
@@ -503,6 +590,7 @@
             // txtValorContrato
             // 
             this.txtValorContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValorContrato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             this.txtValorContrato.Location = new System.Drawing.Point(173, 86);
             this.txtValorContrato.Name = "txtValorContrato";
             this.txtValorContrato.Size = new System.Drawing.Size(124, 29);
@@ -512,6 +600,7 @@
             // txtNumeroFactura
             // 
             this.txtNumeroFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumeroFactura.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             this.txtNumeroFactura.Location = new System.Drawing.Point(173, 51);
             this.txtNumeroFactura.Name = "txtNumeroFactura";
             this.txtNumeroFactura.Size = new System.Drawing.Size(124, 29);
@@ -535,10 +624,55 @@
             this.panel1.Size = new System.Drawing.Size(670, 133);
             this.panel1.TabIndex = 22;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.label7.Location = new System.Drawing.Point(405, 90);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(79, 24);
+            this.label7.TabIndex = 51;
+            this.label7.Text = "Utilidad";
+            // 
+            // lblRestaPorPagar
+            // 
+            this.lblRestaPorPagar.AutoSize = true;
+            this.lblRestaPorPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRestaPorPagar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.lblRestaPorPagar.Location = new System.Drawing.Point(326, 51);
+            this.lblRestaPorPagar.Name = "lblRestaPorPagar";
+            this.lblRestaPorPagar.Size = new System.Drawing.Size(158, 24);
+            this.lblRestaPorPagar.TabIndex = 50;
+            this.lblRestaPorPagar.Text = "Resta por pagar";
+            // 
+            // lblTotalGastos
+            // 
+            this.lblTotalGastos.AutoSize = true;
+            this.lblTotalGastos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalGastos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.lblTotalGastos.Location = new System.Drawing.Point(49, 51);
+            this.lblTotalGastos.Name = "lblTotalGastos";
+            this.lblTotalGastos.Size = new System.Drawing.Size(122, 24);
+            this.lblTotalGastos.TabIndex = 49;
+            this.lblTotalGastos.Text = "Total gastos";
+            // 
+            // lblTotalAbonos
+            // 
+            this.lblTotalAbonos.AutoSize = true;
+            this.lblTotalAbonos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalAbonos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.lblTotalAbonos.Location = new System.Drawing.Point(40, 91);
+            this.lblTotalAbonos.Name = "lblTotalAbonos";
+            this.lblTotalAbonos.Size = new System.Drawing.Size(131, 24);
+            this.lblTotalAbonos.TabIndex = 48;
+            this.lblTotalAbonos.Text = "Total abonos";
+            // 
             // txtUtilidad
             // 
             this.txtUtilidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUtilidad.Location = new System.Drawing.Point(490, 87);
+            this.txtUtilidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.txtUtilidad.Location = new System.Drawing.Point(490, 91);
             this.txtUtilidad.Name = "txtUtilidad";
             this.txtUtilidad.Size = new System.Drawing.Size(116, 29);
             this.txtUtilidad.TabIndex = 47;
@@ -547,7 +681,8 @@
             // txtRestaPorPagar
             // 
             this.txtRestaPorPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRestaPorPagar.Location = new System.Drawing.Point(490, 47);
+            this.txtRestaPorPagar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.txtRestaPorPagar.Location = new System.Drawing.Point(490, 51);
             this.txtRestaPorPagar.Name = "txtRestaPorPagar";
             this.txtRestaPorPagar.Size = new System.Drawing.Size(116, 29);
             this.txtRestaPorPagar.TabIndex = 46;
@@ -556,7 +691,8 @@
             // txtTotalAbonos
             // 
             this.txtTotalAbonos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalAbonos.Location = new System.Drawing.Point(177, 87);
+            this.txtTotalAbonos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.txtTotalAbonos.Location = new System.Drawing.Point(177, 91);
             this.txtTotalAbonos.Name = "txtTotalAbonos";
             this.txtTotalAbonos.Size = new System.Drawing.Size(118, 29);
             this.txtTotalAbonos.TabIndex = 43;
@@ -565,7 +701,8 @@
             // txtTotalGastos
             // 
             this.txtTotalGastos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalGastos.Location = new System.Drawing.Point(177, 47);
+            this.txtTotalGastos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.txtTotalGastos.Location = new System.Drawing.Point(177, 51);
             this.txtTotalGastos.Name = "txtTotalGastos";
             this.txtTotalGastos.Size = new System.Drawing.Size(118, 29);
             this.txtTotalGastos.TabIndex = 42;
@@ -593,6 +730,19 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(227, 156);
             this.panel2.TabIndex = 23;
+            // 
+            // btnAbrirIngresoProducto
+            // 
+            this.btnAbrirIngresoProducto.BackColor = System.Drawing.Color.Transparent;
+            this.btnAbrirIngresoProducto.FlatAppearance.BorderSize = 0;
+            this.btnAbrirIngresoProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbrirIngresoProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAbrirIngresoProducto.Image = ((System.Drawing.Image)(resources.GetObject("btnAbrirIngresoProducto.Image")));
+            this.btnAbrirIngresoProducto.Location = new System.Drawing.Point(181, 33);
+            this.btnAbrirIngresoProducto.Name = "btnAbrirIngresoProducto";
+            this.btnAbrirIngresoProducto.Size = new System.Drawing.Size(37, 37);
+            this.btnAbrirIngresoProducto.TabIndex = 46;
+            this.btnAbrirIngresoProducto.UseVisualStyleBackColor = false;
             // 
             // btnEliminarProducto
             // 
@@ -676,145 +826,11 @@
             this.lblTituloDetalleCliente.AutoSize = true;
             this.lblTituloDetalleCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloDetalleCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.lblTituloDetalleCliente.Location = new System.Drawing.Point(290, 16);
+            this.lblTituloDetalleCliente.Location = new System.Drawing.Point(241, 16);
             this.lblTituloDetalleCliente.Name = "lblTituloDetalleCliente";
-            this.lblTituloDetalleCliente.Size = new System.Drawing.Size(356, 29);
+            this.lblTituloDetalleCliente.Size = new System.Drawing.Size(478, 29);
             this.lblTituloDetalleCliente.TabIndex = 43;
-            this.lblTituloDetalleCliente.Text = "CLIENTE <===> CONTRATO";
-            // 
-            // btnAbrirIngresoProducto
-            // 
-            this.btnAbrirIngresoProducto.BackColor = System.Drawing.Color.Transparent;
-            this.btnAbrirIngresoProducto.FlatAppearance.BorderSize = 0;
-            this.btnAbrirIngresoProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAbrirIngresoProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAbrirIngresoProducto.Image = ((System.Drawing.Image)(resources.GetObject("btnAbrirIngresoProducto.Image")));
-            this.btnAbrirIngresoProducto.Location = new System.Drawing.Point(181, 33);
-            this.btnAbrirIngresoProducto.Name = "btnAbrirIngresoProducto";
-            this.btnAbrirIngresoProducto.Size = new System.Drawing.Size(37, 37);
-            this.btnAbrirIngresoProducto.TabIndex = 46;
-            this.btnAbrirIngresoProducto.UseVisualStyleBackColor = false;
-            // 
-            // lblValorContrato
-            // 
-            this.lblValorContrato.AutoSize = true;
-            this.lblValorContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValorContrato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.lblValorContrato.Location = new System.Drawing.Point(36, 89);
-            this.lblValorContrato.Name = "lblValorContrato";
-            this.lblValorContrato.Size = new System.Drawing.Size(133, 24);
-            this.lblValorContrato.TabIndex = 46;
-            this.lblValorContrato.Text = "Identificacion";
-            // 
-            // lblNumeroFactura
-            // 
-            this.lblNumeroFactura.AutoSize = true;
-            this.lblNumeroFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumeroFactura.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.lblNumeroFactura.Location = new System.Drawing.Point(70, 55);
-            this.lblNumeroFactura.Name = "lblNumeroFactura";
-            this.lblNumeroFactura.Size = new System.Drawing.Size(97, 24);
-            this.lblNumeroFactura.TabIndex = 47;
-            this.lblNumeroFactura.Text = "# Factura";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.label4.Location = new System.Drawing.Point(42, 152);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(125, 24);
-            this.label4.TabIndex = 48;
-            this.label4.Text = "Fecha Inicio";
-            // 
-            // lblTipoFactura
-            // 
-            this.lblTipoFactura.AutoSize = true;
-            this.lblTipoFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoFactura.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.lblTipoFactura.Location = new System.Drawing.Point(9, 120);
-            this.lblTipoFactura.Name = "lblTipoFactura";
-            this.lblTipoFactura.Size = new System.Drawing.Size(158, 24);
-            this.lblTipoFactura.TabIndex = 49;
-            this.lblTipoFactura.Text = "Tipo de Factura";
-            // 
-            // lblFechaFin
-            // 
-            this.lblFechaFin.AutoSize = true;
-            this.lblFechaFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaFin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.lblFechaFin.Location = new System.Drawing.Point(395, 82);
-            this.lblFechaFin.Name = "lblFechaFin";
-            this.lblFechaFin.Size = new System.Drawing.Size(105, 24);
-            this.lblFechaFin.TabIndex = 50;
-            this.lblFechaFin.Text = "Fecha Fin";
-            // 
-            // lblEstadoTrabajo
-            // 
-            this.lblEstadoTrabajo.AutoSize = true;
-            this.lblEstadoTrabajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstadoTrabajo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.lblEstadoTrabajo.Location = new System.Drawing.Point(341, 153);
-            this.lblEstadoTrabajo.Name = "lblEstadoTrabajo";
-            this.lblEstadoTrabajo.Size = new System.Drawing.Size(173, 24);
-            this.lblEstadoTrabajo.TabIndex = 51;
-            this.lblEstadoTrabajo.Text = "Estado de trabajo";
-            // 
-            // lblEstadoContrato
-            // 
-            this.lblEstadoContrato.AutoSize = true;
-            this.lblEstadoContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstadoContrato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.lblEstadoContrato.Location = new System.Drawing.Point(329, 120);
-            this.lblEstadoContrato.Name = "lblEstadoContrato";
-            this.lblEstadoContrato.Size = new System.Drawing.Size(185, 24);
-            this.lblEstadoContrato.TabIndex = 51;
-            this.lblEstadoContrato.Text = "Estado de contrato";
-            // 
-            // lblTotalAbonos
-            // 
-            this.lblTotalAbonos.AutoSize = true;
-            this.lblTotalAbonos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalAbonos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.lblTotalAbonos.Location = new System.Drawing.Point(40, 87);
-            this.lblTotalAbonos.Name = "lblTotalAbonos";
-            this.lblTotalAbonos.Size = new System.Drawing.Size(131, 24);
-            this.lblTotalAbonos.TabIndex = 48;
-            this.lblTotalAbonos.Text = "Total abonos";
-            // 
-            // lblTotalGastos
-            // 
-            this.lblTotalGastos.AutoSize = true;
-            this.lblTotalGastos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalGastos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.lblTotalGastos.Location = new System.Drawing.Point(49, 47);
-            this.lblTotalGastos.Name = "lblTotalGastos";
-            this.lblTotalGastos.Size = new System.Drawing.Size(122, 24);
-            this.lblTotalGastos.TabIndex = 49;
-            this.lblTotalGastos.Text = "Total gastos";
-            // 
-            // lblRestaPorPagar
-            // 
-            this.lblRestaPorPagar.AutoSize = true;
-            this.lblRestaPorPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRestaPorPagar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.lblRestaPorPagar.Location = new System.Drawing.Point(326, 50);
-            this.lblRestaPorPagar.Name = "lblRestaPorPagar";
-            this.lblRestaPorPagar.Size = new System.Drawing.Size(158, 24);
-            this.lblRestaPorPagar.TabIndex = 50;
-            this.lblRestaPorPagar.Text = "Resta por pagar";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.label7.Location = new System.Drawing.Point(405, 87);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 24);
-            this.label7.TabIndex = 51;
-            this.label7.Text = "Utilidad";
+            this.lblTituloDetalleCliente.Text = "INFORMACIÓN CLIENTE - CONTRATO";
             // 
             // DetalleClienteView
             // 

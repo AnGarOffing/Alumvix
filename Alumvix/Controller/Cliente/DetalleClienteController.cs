@@ -123,8 +123,11 @@ namespace Alumvix.Controller.Cliente
 
         private void AbrirEditarContratoView(object sender, EventArgs e)
         {
+            //EditarContratoView editarAbonoView = new EditarContratoView();
+            //editarAbonoView.ShowDialog();   
             EditarContratoView editarAbonoView = new EditarContratoView();
-            editarAbonoView.ShowDialog();   
+            detalleClienteVista.Hide();
+            editarAbonoView.Show();
         }
 
         private void EliminarContrato(object sender, EventArgs e)
@@ -237,6 +240,7 @@ namespace Alumvix.Controller.Cliente
         {
             int cont = 1;
             detalleClienteVista.lstvGastos.Items.Clear();
+            gastos = new GastoDao().ObtenerGastos(contratoDto.IdContrato);
             foreach  (GastoDto gasto in gastos)
             {              
                 string[] row = { cont.ToString(), CambioDeFormato.DarFormatoANumero(gasto.ValorGasto).ToString()};
@@ -250,6 +254,7 @@ namespace Alumvix.Controller.Cliente
         {
             int cont = 1;
             detalleClienteVista.lstvAbonos.Items.Clear();
+            abonos = new AbonoDao().ObtenerAbonos(contratoDto.IdContrato);
             foreach (AbonoDto abono in abonos)
             {
                 string[] row = { cont.ToString(), CambioDeFormato.DarFormatoANumero(abono.ValorAbono).ToString()};
