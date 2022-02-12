@@ -7,6 +7,7 @@ using System;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using Alumvix.View.Cliente;
+using System.Drawing;
 
 namespace Alumvix.Controller.Abono
 {
@@ -29,7 +30,37 @@ namespace Alumvix.Controller.Abono
             detalleAbonoView.btnEliminarAbono.Click += new EventHandler(EliminarAbono);
             detalleAbonoView.lstvDetalleAbonos.SelectedIndexChanged += new EventHandler(ObtenerIndice);
             detalleAbonoView.btnEditarAbono.Click += new EventHandler(MostrarEditarAbonoView);
+            detalleAbonoView.btnCerrarDetalleAbonoView.MouseHover += new EventHandler(ResaltarBotonCerrar);
+            detalleAbonoView.btnCerrarDetalleAbonoView.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrar);
             detalleAbonoView.btnCerrarDetalleAbonoView.Click += new EventHandler(CerrarDetalleAbonoView);
+            detalleAbonoView.btnMinimizarDetalleAbonoView.MouseHover += new EventHandler(ResaltarBotonMinimizar);
+            detalleAbonoView.btnMinimizarDetalleAbonoView.MouseLeave += new EventHandler(QuitarResaltadoBotonMinimizar);
+            detalleAbonoView.btnMinimizarDetalleAbonoView.Click += new EventHandler(MinimizarDetalleAbonoView);
+        }
+
+        private void MinimizarDetalleAbonoView(object sender, EventArgs e)
+        {
+            detalleAbonoView.WindowState = FormWindowState.Minimized;
+        }
+
+        private void ResaltarBotonCerrar(object sender, EventArgs e)
+        {
+            detalleAbonoView.btnCerrarDetalleAbonoView.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonCerrar(object sender, EventArgs e)
+        {
+            detalleAbonoView.btnCerrarDetalleAbonoView.BackColor = Color.Transparent;
+        }
+
+        private void ResaltarBotonMinimizar(object sender, EventArgs e)
+        {
+            detalleAbonoView.btnMinimizarDetalleAbonoView.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonMinimizar(object sender, EventArgs e)
+        {
+            detalleAbonoView.btnMinimizarDetalleAbonoView.BackColor = Color.Transparent;
         }
 
         private void CerrarDetalleAbonoView(object sender, EventArgs e)
@@ -109,7 +140,8 @@ namespace Alumvix.Controller.Abono
             if (detalleAbonoView.lstvDetalleAbonos.SelectedItems.Count > 0)
             {
                 EditarAbonoView editarAbonoView = EditarAbonoView.ObtenerInstancia();
-                editarAbonoView.ShowDialog();
+                detalleAbonoView.Hide();
+                editarAbonoView.Show();
             }
             else MessageBox.Show("Debe seleccionar un abono de la lista para editarlo");
         }

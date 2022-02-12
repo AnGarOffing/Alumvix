@@ -33,6 +33,7 @@
             this.txtIngresarValorAbono = new System.Windows.Forms.TextBox();
             this.lblIngresarFechaAbono = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnGuardarNuevoAbono = new System.Windows.Forms.Button();
             this.dtpIngresarFechaAbono = new System.Windows.Forms.DateTimePicker();
             this.lblIngresarFormaDePago = new System.Windows.Forms.Label();
             this.cbIngresarFormaDePago = new System.Windows.Forms.ComboBox();
@@ -40,7 +41,6 @@
             this.pnlSuperiorIngresoAbonoView = new System.Windows.Forms.Panel();
             this.btnMinimizarIngresoAbonoView = new System.Windows.Forms.PictureBox();
             this.btnCerrarIngresoAbonoView = new System.Windows.Forms.PictureBox();
-            this.btnGuardarNuevoAbono = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnlSuperiorIngresoAbonoView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarIngresoAbonoView)).BeginInit();
@@ -86,10 +86,25 @@
             this.panel1.Controls.Add(this.txtIngresarValorAbono);
             this.panel1.Controls.Add(this.lvlIngresarValorAbono);
             this.panel1.Controls.Add(this.lblIngresarFechaAbono);
-            this.panel1.Location = new System.Drawing.Point(12, 75);
+            this.panel1.Location = new System.Drawing.Point(2, 65);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(482, 128);
+            this.panel1.Size = new System.Drawing.Size(482, 138);
             this.panel1.TabIndex = 37;
+            // 
+            // btnGuardarNuevoAbono
+            // 
+            this.btnGuardarNuevoAbono.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarNuevoAbono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarNuevoAbono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.btnGuardarNuevoAbono.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarNuevoAbono.Image")));
+            this.btnGuardarNuevoAbono.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardarNuevoAbono.Location = new System.Drawing.Point(344, 67);
+            this.btnGuardarNuevoAbono.Name = "btnGuardarNuevoAbono";
+            this.btnGuardarNuevoAbono.Size = new System.Drawing.Size(120, 44);
+            this.btnGuardarNuevoAbono.TabIndex = 59;
+            this.btnGuardarNuevoAbono.Text = "Guardar";
+            this.btnGuardarNuevoAbono.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGuardarNuevoAbono.UseVisualStyleBackColor = true;
             // 
             // dtpIngresarFechaAbono
             // 
@@ -126,7 +141,7 @@
             this.lblTituloEditarProveedor.AutoSize = true;
             this.lblTituloEditarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloEditarProveedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.lblTituloEditarProveedor.Location = new System.Drawing.Point(134, 16);
+            this.lblTituloEditarProveedor.Location = new System.Drawing.Point(123, 14);
             this.lblTituloEditarProveedor.Name = "lblTituloEditarProveedor";
             this.lblTituloEditarProveedor.Size = new System.Drawing.Size(243, 29);
             this.lblTituloEditarProveedor.TabIndex = 80;
@@ -141,13 +156,13 @@
             this.pnlSuperiorIngresoAbonoView.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSuperiorIngresoAbonoView.Location = new System.Drawing.Point(0, 0);
             this.pnlSuperiorIngresoAbonoView.Name = "pnlSuperiorIngresoAbonoView";
-            this.pnlSuperiorIngresoAbonoView.Size = new System.Drawing.Size(506, 59);
+            this.pnlSuperiorIngresoAbonoView.Size = new System.Drawing.Size(487, 59);
             this.pnlSuperiorIngresoAbonoView.TabIndex = 38;
             // 
             // btnMinimizarIngresoAbonoView
             // 
             this.btnMinimizarIngresoAbonoView.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarIngresoAbonoView.Image")));
-            this.btnMinimizarIngresoAbonoView.Location = new System.Drawing.Point(426, 14);
+            this.btnMinimizarIngresoAbonoView.Location = new System.Drawing.Point(409, 14);
             this.btnMinimizarIngresoAbonoView.Name = "btnMinimizarIngresoAbonoView";
             this.btnMinimizarIngresoAbonoView.Size = new System.Drawing.Size(33, 30);
             this.btnMinimizarIngresoAbonoView.TabIndex = 82;
@@ -156,33 +171,18 @@
             // btnCerrarIngresoAbonoView
             // 
             this.btnCerrarIngresoAbonoView.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarIngresoAbonoView.Image")));
-            this.btnCerrarIngresoAbonoView.Location = new System.Drawing.Point(468, 14);
+            this.btnCerrarIngresoAbonoView.Location = new System.Drawing.Point(451, 14);
             this.btnCerrarIngresoAbonoView.Name = "btnCerrarIngresoAbonoView";
             this.btnCerrarIngresoAbonoView.Size = new System.Drawing.Size(33, 30);
             this.btnCerrarIngresoAbonoView.TabIndex = 81;
             this.btnCerrarIngresoAbonoView.TabStop = false;
-            // 
-            // btnGuardarNuevoAbono
-            // 
-            this.btnGuardarNuevoAbono.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarNuevoAbono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarNuevoAbono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.btnGuardarNuevoAbono.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarNuevoAbono.Image")));
-            this.btnGuardarNuevoAbono.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardarNuevoAbono.Location = new System.Drawing.Point(344, 65);
-            this.btnGuardarNuevoAbono.Name = "btnGuardarNuevoAbono";
-            this.btnGuardarNuevoAbono.Size = new System.Drawing.Size(120, 44);
-            this.btnGuardarNuevoAbono.TabIndex = 59;
-            this.btnGuardarNuevoAbono.Text = "Guardar";
-            this.btnGuardarNuevoAbono.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGuardarNuevoAbono.UseVisualStyleBackColor = true;
             // 
             // IngresoAbonoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.ClientSize = new System.Drawing.Size(506, 217);
+            this.ClientSize = new System.Drawing.Size(487, 204);
             this.Controls.Add(this.pnlSuperiorIngresoAbonoView);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

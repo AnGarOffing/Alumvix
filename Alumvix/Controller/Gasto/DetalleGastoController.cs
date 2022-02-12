@@ -6,6 +6,7 @@ using Alumvix.View.Cliente;
 using Alumvix.View.Gasto;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,7 +31,37 @@ namespace Alumvix.Controller.Gasto
             detalleGastoView.btnEliminarGasto.Click += new EventHandler(EliminarGasto);
             detalleGastoView.lstvDetalleGastos.SelectedIndexChanged += new EventHandler(ObtenerIndice);
             detalleGastoView.btnEditarGasto.Click += new EventHandler(MostarEditarGastoView);
+            detalleGastoView.btnCerrarDetalleGastoView.MouseHover += new EventHandler(ResaltarBotonCerrar);
+            detalleGastoView.btnCerrarDetalleGastoView.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrar);
             detalleGastoView.btnCerrarDetalleGastoView.Click += new EventHandler(CerrarDetalleGastoView);
+            detalleGastoView.btnMinimizarDetalleGastoView.MouseHover += new EventHandler(ResaltarBotonMinimizar);
+            detalleGastoView.btnMinimizarDetalleGastoView.MouseLeave += new EventHandler(QuitarResaltadoBotonMinimizar);
+            detalleGastoView.btnMinimizarDetalleGastoView.Click += new EventHandler(MinimizarDetalleGastoView);
+        }
+
+        private void MinimizarDetalleGastoView(object sender, EventArgs e)
+        {
+            detalleGastoView.WindowState = FormWindowState.Minimized;
+        }
+
+        private void ResaltarBotonCerrar(object sender, EventArgs e)
+        {
+            detalleGastoView.btnCerrarDetalleGastoView.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonCerrar(object sender, EventArgs e)
+        {
+            detalleGastoView.btnCerrarDetalleGastoView.BackColor = Color.Transparent;
+        }
+
+        private void ResaltarBotonMinimizar(object sender, EventArgs e)
+        {
+            detalleGastoView.btnMinimizarDetalleGastoView.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonMinimizar(object sender, EventArgs e)
+        {
+            detalleGastoView.btnMinimizarDetalleGastoView.BackColor = Color.Transparent;
         }
 
         private void CerrarDetalleGastoView(object sender, EventArgs e)

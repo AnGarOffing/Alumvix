@@ -5,6 +5,7 @@ using Alumvix.Model.Negocio.Util;
 using Alumvix.View.Abono;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,14 +16,52 @@ namespace Alumvix.Controller.Abono
     internal class EditarAbonoController
     {
         EditarAbonoView editarAbonoView;
-        DetalleAbonoView detalleAbonoView = DetalleAbonoController.ObtenerInstanciaDetalleAbono();
+        DetalleAbonoView detalleAbonoView; 
 
         public EditarAbonoController(EditarAbonoView editarAbonoVista) 
         {
             editarAbonoView = editarAbonoVista;
-            editarAbonoView.Load += new EventHandler(CargarDatosAbono);
+            detalleAbonoView = DetalleAbonoController.ObtenerInstanciaDetalleAbono();
+            editarAbonoView.Activated += new EventHandler(CargarDatosAbono);
             editarAbonoView.txtIActualizarValorAbono.KeyPress += new KeyPressEventHandler(ValidarEntrada);
+            editarAbonoView.btnCerrarEditarAbonoView.MouseHover += new EventHandler(ResaltarBotonCerrar);
+            editarAbonoView.btnCerrarEditarAbonoView.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrar);
+            editarAbonoView.btnCerrarEditarAbonoView.Click += new EventHandler(CerrarEditarAbonoView);
+            editarAbonoView.btnMinimizarEditarAbonoView.MouseHover += new EventHandler(ResaltarBotonMinimizar);
+            editarAbonoView.btnMinimizarEditarAbonoView.MouseLeave += new EventHandler(QuitarResaltadoBotonMinimizar);
+            editarAbonoView.btnMinimizarEditarAbonoView.Click += new EventHandler(MinimizarEditarAbonoView);
             editarAbonoView.btnActualizarAbono.Click += new EventHandler(ActualizarAbonoEnBD);
+        }
+
+        private void MinimizarEditarAbonoView(object sender, EventArgs e)
+        {
+            editarAbonoView.WindowState = FormWindowState.Minimized;
+        }
+
+        private void CerrarEditarAbonoView(object sender, EventArgs e)
+        {
+            editarAbonoView.Hide();
+            detalleAbonoView.Show();
+        }
+
+        private void ResaltarBotonCerrar(object sender, EventArgs e)
+        {
+            editarAbonoView.btnCerrarEditarAbonoView.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonCerrar(object sender, EventArgs e)
+        {
+            editarAbonoView.btnCerrarEditarAbonoView.BackColor = Color.Transparent;
+        }
+
+        private void ResaltarBotonMinimizar(object sender, EventArgs e)
+        {
+            editarAbonoView.btnMinimizarEditarAbonoView.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonMinimizar(object sender, EventArgs e)
+        {
+            editarAbonoView.btnMinimizarEditarAbonoView.BackColor = Color.Transparent;
         }
 
         private void ValidarEntrada(object sender, KeyPressEventArgs e)
@@ -56,8 +95,9 @@ namespace Alumvix.Controller.Abono
                 {
                     editarAbonoView.txtIActualizarValorAbono.Clear();
                     editarAbonoView.cbActualizarFormaDePago.SelectedIndex = 0;
-                    editarAbonoView.Close();
+                    editarAbonoView.Hide();
                     MessageBox.Show("El abono ha sido actualizado con exito");
+                    detalleAbonoView.Show();
                 }
                 else MessageBox.Show("Error al actualizar el abono");
             }
