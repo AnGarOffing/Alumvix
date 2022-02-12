@@ -88,12 +88,12 @@
             this.btnAbrirIngresoProducto = new System.Windows.Forms.Button();
             this.btnEliminarProducto = new System.Windows.Forms.Button();
             this.lblProductos = new System.Windows.Forms.Label();
-            this.lstvProductos = new System.Windows.Forms.ListView();
             this.pnlSuperiorDetalleClienteView = new System.Windows.Forms.Panel();
             this.btnCerrarSesion = new System.Windows.Forms.PictureBox();
             this.btnMinimizarDetalleClienteView = new System.Windows.Forms.PictureBox();
             this.btnCerrarDetalleClienteView = new System.Windows.Forms.PictureBox();
             this.lblTituloDetalleCliente = new System.Windows.Forms.Label();
+            this.lstvProductos = new System.Windows.Forms.ListView();
             this.pnlGastos.SuspendLayout();
             this.pnlAbonos.SuspendLayout();
             this.pnlCliente.SuspendLayout();
@@ -185,9 +185,9 @@
             this.pnlGastos.Controls.Add(this.btnDetallesGastos);
             this.pnlGastos.Controls.Add(this.lstvGastos);
             this.pnlGastos.Controls.Add(this.lblGastos);
-            this.pnlGastos.Location = new System.Drawing.Point(688, 80);
+            this.pnlGastos.Location = new System.Drawing.Point(688, 65);
             this.pnlGastos.Name = "pnlGastos";
-            this.pnlGastos.Size = new System.Drawing.Size(227, 193);
+            this.pnlGastos.Size = new System.Drawing.Size(227, 188);
             this.pnlGastos.TabIndex = 14;
             // 
             // btnDetallesGastos
@@ -244,9 +244,9 @@
             this.pnlAbonos.Controls.Add(this.btnDetallesAbonos);
             this.pnlAbonos.Controls.Add(this.lstvAbonos);
             this.pnlAbonos.Controls.Add(this.lblAbonos);
-            this.pnlAbonos.Location = new System.Drawing.Point(688, 287);
+            this.pnlAbonos.Location = new System.Drawing.Point(688, 259);
             this.pnlAbonos.Name = "pnlAbonos";
-            this.pnlAbonos.Size = new System.Drawing.Size(227, 181);
+            this.pnlAbonos.Size = new System.Drawing.Size(227, 206);
             this.pnlAbonos.TabIndex = 15;
             // 
             // btnDetallesAbonos
@@ -270,7 +270,7 @@
             this.lstvAbonos.HideSelection = false;
             this.lstvAbonos.Location = new System.Drawing.Point(18, 39);
             this.lstvAbonos.Name = "lstvAbonos";
-            this.lstvAbonos.Size = new System.Drawing.Size(190, 125);
+            this.lstvAbonos.Size = new System.Drawing.Size(190, 155);
             this.lstvAbonos.TabIndex = 23;
             this.lstvAbonos.UseCompatibleStateImageBehavior = false;
             this.lstvAbonos.View = System.Windows.Forms.View.Details;
@@ -313,9 +313,9 @@
             this.pnlCliente.Controls.Add(this.txtCelular);
             this.pnlCliente.Controls.Add(this.txtTelefono);
             this.pnlCliente.Controls.Add(this.txtIdentificacion);
-            this.pnlCliente.Location = new System.Drawing.Point(12, 80);
+            this.pnlCliente.Location = new System.Drawing.Point(12, 65);
             this.pnlCliente.Name = "pnlCliente";
-            this.pnlCliente.Size = new System.Drawing.Size(670, 211);
+            this.pnlCliente.Size = new System.Drawing.Size(670, 226);
             this.pnlCliente.TabIndex = 20;
             // 
             // lblCelular
@@ -722,13 +722,13 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.btnAbrirIngresoProducto);
+            this.panel2.Controls.Add(this.lstvProductos);
             this.panel2.Controls.Add(this.btnEliminarProducto);
             this.panel2.Controls.Add(this.lblProductos);
-            this.panel2.Controls.Add(this.lstvProductos);
-            this.panel2.Location = new System.Drawing.Point(688, 493);
+            this.panel2.Controls.Add(this.btnAbrirIngresoProducto);
+            this.panel2.Location = new System.Drawing.Point(688, 471);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(227, 156);
+            this.panel2.Size = new System.Drawing.Size(227, 178);
             this.panel2.TabIndex = 23;
             // 
             // btnAbrirIngresoProducto
@@ -738,7 +738,7 @@
             this.btnAbrirIngresoProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAbrirIngresoProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAbrirIngresoProducto.Image = ((System.Drawing.Image)(resources.GetObject("btnAbrirIngresoProducto.Image")));
-            this.btnAbrirIngresoProducto.Location = new System.Drawing.Point(181, 33);
+            this.btnAbrirIngresoProducto.Location = new System.Drawing.Point(181, 60);
             this.btnAbrirIngresoProducto.Name = "btnAbrirIngresoProducto";
             this.btnAbrirIngresoProducto.Size = new System.Drawing.Size(37, 37);
             this.btnAbrirIngresoProducto.TabIndex = 46;
@@ -751,7 +751,7 @@
             this.btnEliminarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarProducto.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarProducto.Image")));
-            this.btnEliminarProducto.Location = new System.Drawing.Point(186, 73);
+            this.btnEliminarProducto.Location = new System.Drawing.Point(185, 103);
             this.btnEliminarProducto.Name = "btnEliminarProducto";
             this.btnEliminarProducto.Size = new System.Drawing.Size(30, 35);
             this.btnEliminarProducto.TabIndex = 29;
@@ -768,19 +768,6 @@
             this.lblProductos.TabIndex = 22;
             this.lblProductos.Text = "PRODUCTOS";
             // 
-            // lstvProductos
-            // 
-            this.lstvProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstvProductos.FullRowSelect = true;
-            this.lstvProductos.HideSelection = false;
-            this.lstvProductos.Location = new System.Drawing.Point(9, 38);
-            this.lstvProductos.MultiSelect = false;
-            this.lstvProductos.Name = "lstvProductos";
-            this.lstvProductos.Size = new System.Drawing.Size(162, 73);
-            this.lstvProductos.TabIndex = 0;
-            this.lstvProductos.UseCompatibleStateImageBehavior = false;
-            this.lstvProductos.View = System.Windows.Forms.View.List;
-            // 
             // pnlSuperiorDetalleClienteView
             // 
             this.pnlSuperiorDetalleClienteView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -791,13 +778,13 @@
             this.pnlSuperiorDetalleClienteView.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSuperiorDetalleClienteView.Location = new System.Drawing.Point(0, 0);
             this.pnlSuperiorDetalleClienteView.Name = "pnlSuperiorDetalleClienteView";
-            this.pnlSuperiorDetalleClienteView.Size = new System.Drawing.Size(944, 59);
+            this.pnlSuperiorDetalleClienteView.Size = new System.Drawing.Size(931, 59);
             this.pnlSuperiorDetalleClienteView.TabIndex = 24;
             // 
             // btnCerrarSesion
             // 
             this.btnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Image")));
-            this.btnCerrarSesion.Location = new System.Drawing.Point(829, 12);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(816, 12);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(33, 33);
             this.btnCerrarSesion.TabIndex = 47;
@@ -806,7 +793,7 @@
             // btnMinimizarDetalleClienteView
             // 
             this.btnMinimizarDetalleClienteView.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarDetalleClienteView.Image")));
-            this.btnMinimizarDetalleClienteView.Location = new System.Drawing.Point(868, 15);
+            this.btnMinimizarDetalleClienteView.Location = new System.Drawing.Point(855, 15);
             this.btnMinimizarDetalleClienteView.Name = "btnMinimizarDetalleClienteView";
             this.btnMinimizarDetalleClienteView.Size = new System.Drawing.Size(33, 30);
             this.btnMinimizarDetalleClienteView.TabIndex = 46;
@@ -815,7 +802,7 @@
             // btnCerrarDetalleClienteView
             // 
             this.btnCerrarDetalleClienteView.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarDetalleClienteView.Image")));
-            this.btnCerrarDetalleClienteView.Location = new System.Drawing.Point(910, 15);
+            this.btnCerrarDetalleClienteView.Location = new System.Drawing.Point(897, 15);
             this.btnCerrarDetalleClienteView.Name = "btnCerrarDetalleClienteView";
             this.btnCerrarDetalleClienteView.Size = new System.Drawing.Size(33, 30);
             this.btnCerrarDetalleClienteView.TabIndex = 45;
@@ -826,18 +813,29 @@
             this.lblTituloDetalleCliente.AutoSize = true;
             this.lblTituloDetalleCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloDetalleCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.lblTituloDetalleCliente.Location = new System.Drawing.Point(241, 16);
+            this.lblTituloDetalleCliente.Location = new System.Drawing.Point(225, 16);
             this.lblTituloDetalleCliente.Name = "lblTituloDetalleCliente";
             this.lblTituloDetalleCliente.Size = new System.Drawing.Size(478, 29);
             this.lblTituloDetalleCliente.TabIndex = 43;
             this.lblTituloDetalleCliente.Text = "INFORMACIÓN CLIENTE - CONTRATO";
+            // 
+            // lstvProductos
+            // 
+            this.lstvProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstvProductos.HideSelection = false;
+            this.lstvProductos.Location = new System.Drawing.Point(9, 39);
+            this.lstvProductos.Name = "lstvProductos";
+            this.lstvProductos.Size = new System.Drawing.Size(161, 134);
+            this.lstvProductos.TabIndex = 47;
+            this.lstvProductos.UseCompatibleStateImageBehavior = false;
+            this.lstvProductos.View = System.Windows.Forms.View.List;
             // 
             // DetalleClienteView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.ClientSize = new System.Drawing.Size(944, 662);
+            this.ClientSize = new System.Drawing.Size(931, 662);
             this.Controls.Add(this.pnlSuperiorDetalleClienteView);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -907,7 +905,6 @@
         public System.Windows.Forms.TextBox txtUtilidad;
         public System.Windows.Forms.TextBox txtRestaPorPagar;
         public System.Windows.Forms.Label lblProductos;
-        public System.Windows.Forms.ListView lstvProductos;
         public System.Windows.Forms.Button btnDetallesAbonos;
         public System.Windows.Forms.Button btnDetallesGastos;
         public System.Windows.Forms.Button btnEliminarProducto;
@@ -937,5 +934,6 @@
         public System.Windows.Forms.Label lblRestaPorPagar;
         public System.Windows.Forms.Label lblTotalGastos;
         public System.Windows.Forms.Label lblTotalAbonos;
+        public System.Windows.Forms.ListView lstvProductos;
     }
 }

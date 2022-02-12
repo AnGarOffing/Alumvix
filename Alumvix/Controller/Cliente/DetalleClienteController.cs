@@ -47,6 +47,7 @@ namespace Alumvix.Controller.Cliente
             registroCliente = ClienteController.CargarRegistroCliente();
             logica = new Logica();
             detalleClienteVista = detalleClienteView;
+            //detalleClienteVista.Activated += new EventHandler(EstablecerContenedorProductos);
             detalleClienteVista.Activated += new EventHandler(MostrarClienteSeleccionado);
             detalleClienteVista.Activated += new EventHandler(MostrarContrato);
             detalleClienteVista.Activated += new EventHandler(MostrarGastos);
@@ -72,6 +73,16 @@ namespace Alumvix.Controller.Cliente
             detalleClienteVista.btnCerrarSesion.Click += new EventHandler(CerrarSesion);
             detalleClienteVista.btnCerrarDetalleClienteView.Click += new EventHandler(CerrarDetalleClienteView);
         }
+
+        //private void EstablecerContenedorProductos(object sender, EventArgs e)
+        //{
+        //    detalleClienteVista.lstvProductos.Scrollable = true;
+        //    detalleClienteVista.lstvProductos.View = System.Windows.Forms.View.Details;
+        //    ColumnHeader header = new ColumnHeader();
+        //    header.Text = "";
+        //    header.Name = "col1";
+        //   detalleClienteVista.lstvProductos.Columns.Add(header);
+        //}
 
         private void MinimizarDetalleClienteView(object sender, EventArgs e)
         {
@@ -322,7 +333,8 @@ namespace Alumvix.Controller.Cliente
         private void AbrirIngresoProductoView(object sender, EventArgs e)
         {
             IngresoProductoView ingresoProductoView = IngresoProductoView.ObtenerInstancia();
-            ingresoProductoView.ShowDialog();   
+            detalleClienteVista.Hide();
+            ingresoProductoView.Show();   
         }
 
         private void EliminarProducto(object sender, EventArgs e)

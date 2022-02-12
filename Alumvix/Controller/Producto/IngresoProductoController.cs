@@ -2,9 +2,11 @@
 using Alumvix.Model.Dao;
 using Alumvix.Model.Dto;
 using Alumvix.Model.Negocio.Util;
+using Alumvix.View.Cliente;
 using Alumvix.View.Producto;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,14 +17,52 @@ namespace Alumvix.Controller.Producto
     internal class IngresoProductoController
     {
         IngresoProductoView ingresoProductoView;
+        DetalleClienteView detalleClienteView;
 
         public IngresoProductoController(IngresoProductoView ingresoProductoVista) 
         {
             ingresoProductoView = ingresoProductoVista;
+            detalleClienteView = DetalleClienteController.ObtenerInstanciaDetalleClienteView();
             ingresoProductoView.Load += new EventHandler(CargarProductos);
+            ingresoProductoView.btnCerrarIngresoProductoView.MouseHover += new EventHandler(ResaltarBotonCerrar);
+            ingresoProductoView.btnCerrarIngresoProductoView.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrar);
+            ingresoProductoView.btnCerrarIngresoProductoView.Click += new EventHandler(CerrarIngresoProductoView);
+            ingresoProductoView.btnMinimizarIngresoProductoView.MouseHover += new EventHandler(ResaltarBotonMinimizar);
+            ingresoProductoView.btnMinimizarIngresoProductoView.MouseLeave += new EventHandler(QuitarResaltadoBotonMinimizar);
+            ingresoProductoView.btnMinimizarIngresoProductoView.Click += new EventHandler(MinimizarIngresoProductoView);
             ingresoProductoView.btnGuardarProducto.Click += new EventHandler(IngresarProducto);
         }
 
+        private void MinimizarIngresoProductoView(object sender, EventArgs e)
+        {
+            ingresoProductoView.WindowState = FormWindowState.Minimized;
+        }
+
+        private void CerrarIngresoProductoView(object sender, EventArgs e)
+        {
+            ingresoProductoView.Hide();
+            detalleClienteView.Show();
+        }
+
+        private void ResaltarBotonCerrar(object sender, EventArgs e)
+        {
+            ingresoProductoView.btnCerrarIngresoProductoView.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonCerrar(object sender, EventArgs e)
+        {
+            ingresoProductoView.btnCerrarIngresoProductoView.BackColor = Color.Transparent;
+        }
+
+        private void ResaltarBotonMinimizar(object sender, EventArgs e)
+        {
+            ingresoProductoView.btnMinimizarIngresoProductoView.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonMinimizar(object sender, EventArgs e)
+        {
+            ingresoProductoView.btnMinimizarIngresoProductoView.BackColor = Color.Transparent;
+        }
 
         private void CargarProductos(object sender, EventArgs e)
         {
@@ -40,8 +80,9 @@ namespace Alumvix.Controller.Producto
             {
                 string mensaje = producto.IngresarProducto(DetalleClienteController.ObtenerIdContrato(), ingresoProductoView.cbSeleccionarProducto.SelectedIndex);        
                 ingresoProductoView.cbSeleccionarProducto.SelectedIndex = 0;
-                ingresoProductoView.Close();
-                MessageBox.Show(mensaje);                              
+                ingresoProductoView.Hide();
+                MessageBox.Show(mensaje);
+                detalleClienteView.Show();
             }                     
         }
     }
