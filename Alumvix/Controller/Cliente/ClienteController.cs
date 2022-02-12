@@ -110,8 +110,9 @@ namespace Alumvix.Controller
 
         private void AbrirProveedoresView(object sender, EventArgs e)
         {
-            ProveedorView proveedoresView = ProveedorView.ObtenerInstancia();
-            proveedoresView.ShowDialog();
+            ProveedoresView proveedoresView = ProveedoresView.ObtenerInstancia();
+            clienteVista.Hide();
+            proveedoresView.Show();
         }
 
         private void AbrirIngresoClienteView(object sender, EventArgs e)

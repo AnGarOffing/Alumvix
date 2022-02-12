@@ -1,8 +1,10 @@
 ﻿using Alumvix.Model.Dao;
 using Alumvix.Model.Dto;
+using Alumvix.View;
 using Alumvix.View.Proveedor;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,24 +14,64 @@ namespace Alumvix.Controller.Proveedor
 {
     internal class ProveedorController
     {
-        static ProveedorView proveedorView;
+        static ProveedoresView proveedorView;
+        ClienteView clienteView;
         static List<int> idsProveedores = new List<int>();
         int indice;
         static int idProveedor;
 
         public static int IdProveedor { get => idProveedor; set => idProveedor = value; }
 
-        public ProveedorController(ProveedorView ProveedoresVista)
+        public ProveedorController(ProveedoresView ProveedoresVista)
         {
             proveedorView = ProveedoresVista;
+            clienteView = ClienteController.ObtenerInstanciaClienteView();
             proveedorView.Activated += new EventHandler(MostrarProveedores);
             proveedorView.btnIngresarProveedor.Click += new EventHandler(AbrirIngresoProveedorView);
             proveedorView.lstvProveedores.SelectedIndexChanged += new EventHandler(ObtenerIndice);
+            proveedorView.btnCerrarProveedorView.MouseHover += new EventHandler(ResaltarBotonCerrar);
+            proveedorView.btnCerrarProveedorView.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrar);
+            proveedorView.btnCerrarProveedorView.Click += new EventHandler(CerrarIngresoGastoInternoView);
+            proveedorView.btnMinimizarProveedorView.MouseHover += new EventHandler(ResaltarBotonMinimizar);
+            proveedorView.btnMinimizarProveedorView.MouseLeave += new EventHandler(QuitarResaltadoBotonMinimizar);
+            proveedorView.btnMinimizarProveedorView.Click += new EventHandler(MinimizarIngresoGastoInternoView);
             proveedorView.btnEliminarProveedor.Click += new EventHandler(EliminarProveedor);
             proveedorView.btnEditarProveedor.Click += new EventHandler(AbrirEditarProveedorView);
         }
 
-        private void AbrirEditarProveedorView(object sender, EventArgs e)
+        private void MinimizarIngresoGastoInternoView(object sender, EventArgs e)
+        {
+            proveedorView.WindowState = FormWindowState.Minimized;
+        }
+
+        private void CerrarIngresoGastoInternoView(object sender, EventArgs e)
+        {
+            proveedorView.Hide();
+            clienteView.Show();
+        }
+
+        private void ResaltarBotonCerrar(object sender, EventArgs e)
+        {
+            proveedorView.btnCerrarProveedorView.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonCerrar(object sender, EventArgs e)
+        {
+            proveedorView.btnCerrarProveedorView.BackColor = Color.Transparent;
+        }
+
+        private void ResaltarBotonMinimizar(object sender, EventArgs e)
+        {
+            proveedorView.btnMinimizarProveedorView.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonMinimizar(object sender, EventArgs e)
+        {
+            proveedorView.btnMinimizarProveedorView.BackColor = Color.Transparent;
+        }
+
+
+            private void AbrirEditarProveedorView(object sender, EventArgs e)
         {
             if (proveedorView.lstvProveedores.SelectedItems.Count > 0)
             {
@@ -92,7 +134,7 @@ namespace Alumvix.Controller.Proveedor
             }
         }
 
-        public static ProveedorView ObtenerInstancia()
+        public static ProveedoresView ObtenerInstancia()
         {
             return proveedorView;
         }

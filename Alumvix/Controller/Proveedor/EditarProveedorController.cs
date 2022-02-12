@@ -13,7 +13,7 @@ namespace Alumvix.Controller.Proveedor
     internal class EditarProveedorController
     {
         EditarProveedorView editarProveedorView;
-        ProveedorView proveedorView = ProveedorController.ObtenerInstancia();
+        ProveedoresView proveedorView = ProveedorController.ObtenerInstancia();
 
         public EditarProveedorController(EditarProveedorView editarProveedorVista)
         {

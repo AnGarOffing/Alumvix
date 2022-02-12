@@ -81,7 +81,8 @@ namespace Alumvix.Controller.Gasto
             if (gastoInternoView.lstvGastosInternos.SelectedItems.Count > 0)
             {
                 EditarGastoInternoView editarGastoInternoView = EditarGastoInternoView.ObtenerInstancia();
-                editarGastoInternoView.ShowDialog();
+                gastoInternoView.Hide();
+                editarGastoInternoView.Show();
             }
             else MessageBox.Show("Debe seleccionar un gasto de la lista");
         }
@@ -92,7 +93,6 @@ namespace Alumvix.Controller.Gasto
             gastoInternoView.Hide();
             ingresoGastoInternoView.Show();
         }
-
 
         private void EliminarGastoInterno(object sender, EventArgs e)
         {

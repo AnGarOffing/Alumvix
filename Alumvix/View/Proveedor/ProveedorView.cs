@@ -11,19 +11,19 @@ using System.Windows.Forms;
 
 namespace Alumvix.View.Proveedor
 {
-    public partial class ProveedorView : Form
+    public partial class ProveedoresView : Form
     {
-        private static ProveedorView instancia = null;
-        public ProveedorView()
+        private static ProveedoresView instancia = null;
+        public ProveedoresView()
         {
             InitializeComponent();
             ProveedorController proveedoresController = new ProveedorController(this);
         }
-        public static ProveedorView ObtenerInstancia()
+        public static ProveedoresView ObtenerInstancia()
         {
             if (instancia == null)
             {
-                instancia = new ProveedorView();
+                instancia = new ProveedoresView();
             }
             return instancia;
         }

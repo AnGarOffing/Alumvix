@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IngresoGastoInternoView));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnGuardarNuevoGastoInterno = new System.Windows.Forms.Button();
             this.cbIngresarTipoGastoInterno = new System.Windows.Forms.ComboBox();
             this.lblTipoGastoInterno = new System.Windows.Forms.Label();
             this.txtDescripcionGastoInterno = new System.Windows.Forms.TextBox();
@@ -42,7 +43,6 @@
             this.pnlSuperiorIngresoGastoInterno = new System.Windows.Forms.Panel();
             this.btnMinimizarIngresoGastoInternoView = new System.Windows.Forms.PictureBox();
             this.btnCerrarIngresoGastoInternoView = new System.Windows.Forms.PictureBox();
-            this.btnGuardarNuevoGastoInterno = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnlSuperiorIngresoGastoInterno.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarIngresoGastoInternoView)).BeginInit();
@@ -64,6 +64,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(626, 197);
             this.panel1.TabIndex = 41;
+            // 
+            // btnGuardarNuevoGastoInterno
+            // 
+            this.btnGuardarNuevoGastoInterno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarNuevoGastoInterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarNuevoGastoInterno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.btnGuardarNuevoGastoInterno.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarNuevoGastoInterno.Image")));
+            this.btnGuardarNuevoGastoInterno.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardarNuevoGastoInterno.Location = new System.Drawing.Point(490, 139);
+            this.btnGuardarNuevoGastoInterno.Name = "btnGuardarNuevoGastoInterno";
+            this.btnGuardarNuevoGastoInterno.Size = new System.Drawing.Size(121, 44);
+            this.btnGuardarNuevoGastoInterno.TabIndex = 49;
+            this.btnGuardarNuevoGastoInterno.Text = "Guardar";
+            this.btnGuardarNuevoGastoInterno.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGuardarNuevoGastoInterno.UseVisualStyleBackColor = true;
             // 
             // cbIngresarTipoGastoInterno
             // 
@@ -185,21 +200,6 @@
             this.btnCerrarIngresoGastoInternoView.Size = new System.Drawing.Size(33, 30);
             this.btnCerrarIngresoGastoInternoView.TabIndex = 46;
             this.btnCerrarIngresoGastoInternoView.TabStop = false;
-            // 
-            // btnGuardarNuevoGastoInterno
-            // 
-            this.btnGuardarNuevoGastoInterno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarNuevoGastoInterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarNuevoGastoInterno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.btnGuardarNuevoGastoInterno.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarNuevoGastoInterno.Image")));
-            this.btnGuardarNuevoGastoInterno.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardarNuevoGastoInterno.Location = new System.Drawing.Point(490, 139);
-            this.btnGuardarNuevoGastoInterno.Name = "btnGuardarNuevoGastoInterno";
-            this.btnGuardarNuevoGastoInterno.Size = new System.Drawing.Size(121, 44);
-            this.btnGuardarNuevoGastoInterno.TabIndex = 49;
-            this.btnGuardarNuevoGastoInterno.Text = "Guardar";
-            this.btnGuardarNuevoGastoInterno.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGuardarNuevoGastoInterno.UseVisualStyleBackColor = true;
             // 
             // IngresoGastoInternoView
             // 
