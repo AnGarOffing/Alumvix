@@ -1,10 +1,12 @@
 ﻿using Alumvix.Model.Dao;
 using Alumvix.Model.Negocio;
 using Alumvix.Model.Negocio.Util;
+using Alumvix.View;
 using Alumvix.View.Cliente;
 using Alumvix.View.Contrato;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,12 +17,52 @@ namespace Alumvix.Controller.Contrato
     internal class IngresoContratoController
     {
         IngresoContratoView ingresoContratoView;
+        ClienteView clienteView;
+        DetalleClienteView detalleClienteView;
         public IngresoContratoController(IngresoContratoView ingresoContratoVista)
         {
             ingresoContratoView = ingresoContratoVista;
             ingresoContratoView.Load += new EventHandler(CargarTiposFactura);
             ingresoContratoView.txtIngresarValorContrato.KeyPress += new KeyPressEventHandler(ValidarEntradaNumeros);
+            ingresoContratoView.btnMinimizarIngresoContratoView.MouseHover += new EventHandler(ResaltarBotonMinimizar);
+            ingresoContratoView.btnMinimizarIngresoContratoView.MouseLeave += new EventHandler(QuitarResaltadoBotonMinimizar);
+            ingresoContratoView.btnCerrarIngresoContratoView.MouseHover += new EventHandler(ResaltarBotonCerrar);
+            ingresoContratoView.btnCerrarIngresoContratoView.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrar);
+            ingresoContratoView.btnCerrarIngresoContratoView.Click += new EventHandler(CerrarIngresoContratoView);
+            ingresoContratoView.btnMinimizarIngresoContratoView.Click += new EventHandler(MinimizarIngresoContratoView);
             ingresoContratoView.btnGuardarNuevoContrato.Click += new EventHandler(GuardarContrato);
+        }
+
+        private void ResaltarBotonMinimizar(object sender, EventArgs e)
+        {
+            ingresoContratoView.btnMinimizarIngresoContratoView.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonMinimizar(object sender, EventArgs e)
+        {
+            ingresoContratoView.btnMinimizarIngresoContratoView.BackColor = Color.Transparent;
+        }
+
+        private void ResaltarBotonCerrar(object sender, EventArgs e)
+        {
+            ingresoContratoView.btnCerrarIngresoContratoView.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonCerrar(object sender, EventArgs e)
+        {
+            ingresoContratoView.btnCerrarIngresoContratoView.BackColor = Color.Transparent;
+        }
+
+        private void MinimizarIngresoContratoView(object sender, EventArgs e)
+        {
+            ingresoContratoView.WindowState = FormWindowState.Minimized;
+        }
+
+        private void CerrarIngresoContratoView(object sender, EventArgs e)
+        {
+            ingresoContratoView.Hide();
+            detalleClienteView = DetalleClienteView.ObtenerInstancia();
+            detalleClienteView.Show();
         }
 
         private void ValidarEntradaNumeros(object sender, KeyPressEventArgs e)
@@ -56,8 +98,11 @@ namespace Alumvix.Controller.Contrato
                     {
                         ingresoContratoView.txtIngresarValorContrato.Clear();
                         ingresoContratoView.cbIngresarTipoFactura.SelectedIndex = 0;
-                        ingresoContratoView.Close();
+                        //ingresoContratoView.Close();
+                        ingresoContratoView.Hide();
                         MessageBox.Show("El contrato ha sido guardado con exito");
+                        clienteView = ClienteView.ObtenerInstancia();
+                        clienteView.Show();
                     }
                     else MessageBox.Show("Error al guardar el contrato");
                 }

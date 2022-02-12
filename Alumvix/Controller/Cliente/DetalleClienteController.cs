@@ -354,7 +354,8 @@ namespace Alumvix.Controller.Cliente
         private void AbrirIngresoContratoView(object sender, EventArgs e)
         {
             IngresoContratoView ingresoContratoView = IngresoContratoView.ObtenerInstancia();
-            ingresoContratoView.ShowDialog();
+            detalleClienteVista.Hide();
+            ingresoContratoView.Show();
         }
 
         public static DetalleClienteView ObtenerInstanciaDetalleClienteView()
