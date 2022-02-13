@@ -11,10 +11,153 @@ namespace Alumvix.Model.Dao
         SqlDataReader lectorFilas;
         SqlCommand command = new SqlCommand();
 
+        public List<ClienteDto> ObtenerAllClientes()
+        {
+            command.Connection = connection;
+            command.CommandText = "select * from CLIENTE";
+            command.CommandType = CommandType.Text;
+            connection.Open();
+
+            lectorFilas = command.ExecuteReader();
+            List<ClienteDto> listaClientes = new List<ClienteDto>();
+            while (lectorFilas.Read())
+            {
+                listaClientes.Add(new ClienteDto
+                {
+                    IdCliente = lectorFilas.GetInt32(0),
+                    IdentificacionCliente = lectorFilas.GetString(1),
+                    NombreCliente = lectorFilas.GetString(2),
+                    CorreoElectronicoCliente = lectorFilas.GetString(3),
+                    CelularCliente = lectorFilas.GetString(4),
+                    TelefonoFijoCliente = lectorFilas.GetString(5),
+                    DireccionCliente = lectorFilas.GetString(6)
+                });
+            }
+            lectorFilas.Close();
+            connection.Close();
+            return listaClientes;
+        }
+
         public List<ClienteDto> ObtenerListadoClientes(string condicion)
         {
             command.Connection = connection;
             command.CommandText = "MostrarClientes";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@Condicion", condicion);
+            connection.Open();
+
+            lectorFilas = command.ExecuteReader();
+            List<ClienteDto> listaClientes = new List<ClienteDto>();
+            while (lectorFilas.Read())
+            {
+                listaClientes.Add(new ClienteDto
+                {
+                    IdCliente = lectorFilas.GetInt32(0),
+                    IdentificacionCliente = lectorFilas.GetString(1),
+                    NombreCliente = lectorFilas.GetString(2),
+                    CorreoElectronicoCliente = lectorFilas.GetString(3),
+                    CelularCliente = lectorFilas.GetString(4),
+                    TelefonoFijoCliente = lectorFilas.GetString(5),
+                    DireccionCliente = lectorFilas.GetString(6)
+                });
+            }
+            lectorFilas.Close();
+            connection.Close();
+            return listaClientes;
+        }
+
+        public List<ClienteDto> ObtenerClientesContratoAbierto()
+        {
+            command.Connection = connection;
+            command.CommandText = "select ID_CLIENTE, identificacionCliente, nombreCliente,"
+                                +"correoElectronicoCliente, celularCliente, telefonoFijoCliente, direccionCliente from CLIENTE" 
+                                +" inner join CONTRATO on CLIENTE.ID_CLIENTE = CONTRATO.FK_ID_CLIENTE"
+                                + " where FK_ID_ESTADO_CONTRATO = 1 group by ID_CLIENTE, identificacionCliente, nombreCliente, correoElectronicoCliente, celularCliente, telefonoFijoCliente, direccionCliente";
+            command.CommandType = CommandType.Text;
+            connection.Open();
+
+            lectorFilas = command.ExecuteReader();
+            List<ClienteDto> listaClientes = new List<ClienteDto>();
+            while (lectorFilas.Read())
+            {
+                listaClientes.Add(new ClienteDto
+                {
+                    IdCliente = lectorFilas.GetInt32(0),
+                    IdentificacionCliente = lectorFilas.GetString(1),
+                    NombreCliente = lectorFilas.GetString(2),
+                    CorreoElectronicoCliente = lectorFilas.GetString(3),
+                    CelularCliente = lectorFilas.GetString(4),
+                    TelefonoFijoCliente = lectorFilas.GetString(5),
+                    DireccionCliente = lectorFilas.GetString(6)
+                });
+            }
+            lectorFilas.Close();
+            connection.Close();
+            return listaClientes;
+        }
+
+        public List<ClienteDto> ObtenerClientesContratoCerrado()
+        {
+            command.Connection = connection;
+            command.CommandText = "select ID_CLIENTE, identificacionCliente, nombreCliente,"
+                                + "correoElectronicoCliente, celularCliente, telefonoFijoCliente, direccionCliente from CLIENTE"
+                                + " inner join CONTRATO on CLIENTE.ID_CLIENTE = CONTRATO.FK_ID_CLIENTE"
+                                + " where FK_ID_ESTADO_CONTRATO = 2 group by ID_CLIENTE, identificacionCliente, nombreCliente, correoElectronicoCliente, celularCliente, telefonoFijoCliente, direccionCliente ";
+            command.CommandType = CommandType.Text;
+            connection.Open();
+
+            lectorFilas = command.ExecuteReader();
+            List<ClienteDto> listaClientes = new List<ClienteDto>();
+            while (lectorFilas.Read())
+            {
+                listaClientes.Add(new ClienteDto
+                {
+                    IdCliente = lectorFilas.GetInt32(0),
+                    IdentificacionCliente = lectorFilas.GetString(1),
+                    NombreCliente = lectorFilas.GetString(2),
+                    CorreoElectronicoCliente = lectorFilas.GetString(3),
+                    CelularCliente = lectorFilas.GetString(4),
+                    TelefonoFijoCliente = lectorFilas.GetString(5),
+                    DireccionCliente = lectorFilas.GetString(6)
+                });
+            }
+            lectorFilas.Close();
+            connection.Close();
+            return listaClientes;
+        }
+
+        public List<ClienteDto> ObtenerClientesContratoAbiertoYFiltro(string condicion)
+        {
+            command.Connection = connection;
+            command.CommandText = "MostrarClientesContratoAbiertoFiltro";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@Condicion", condicion);
+            connection.Open();
+
+            lectorFilas = command.ExecuteReader();
+            List<ClienteDto> listaClientes = new List<ClienteDto>();
+            while (lectorFilas.Read())
+            {
+                listaClientes.Add(new ClienteDto
+                {
+                    IdCliente = lectorFilas.GetInt32(0),
+                    IdentificacionCliente = lectorFilas.GetString(1),
+                    NombreCliente = lectorFilas.GetString(2),
+                    CorreoElectronicoCliente = lectorFilas.GetString(3),
+                    CelularCliente = lectorFilas.GetString(4),
+                    TelefonoFijoCliente = lectorFilas.GetString(5),
+                    DireccionCliente = lectorFilas.GetString(6)
+                });
+            }
+            lectorFilas.Close();
+            connection.Close();
+            return listaClientes;
+        }
+
+        public List<ClienteDto> ObtenerClientesContratoCerradoYFiltro(string condicion)
+        {
+            command.Connection = connection;
+            command.CommandText = "MostrarClientesContratoCerradoFiltro";
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.AddWithValue("@Condicion", condicion);
             connection.Open();

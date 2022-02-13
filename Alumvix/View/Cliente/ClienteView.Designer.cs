@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClienteView));
-            this.dataGridClientes = new System.Windows.Forms.DataGridView();
             this.txtFiltrarCliente = new System.Windows.Forms.TextBox();
             this.btnActualizarCliente = new System.Windows.Forms.Button();
             this.btnEliminarCliente = new System.Windows.Forms.Button();
@@ -42,23 +41,17 @@
             this.btnGastosInternos = new System.Windows.Forms.Button();
             this.btnProveedores = new System.Windows.Forms.Button();
             this.btnDetalleCliente = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridClientes)).BeginInit();
+            this.gbEstadoContrato = new System.Windows.Forms.GroupBox();
+            this.rbContratoCerrado = new System.Windows.Forms.RadioButton();
+            this.rbContratoAbierto = new System.Windows.Forms.RadioButton();
+            this.dataGridClientes = new System.Windows.Forms.DataGridView();
+            this.rbCualquierContrato = new System.Windows.Forms.RadioButton();
             this.pnlSuperiorClienteView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarClienteView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarClienteView)).BeginInit();
+            this.gbEstadoContrato.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridClientes)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridClientes
-            // 
-            this.dataGridClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridClientes.Location = new System.Drawing.Point(11, 123);
-            this.dataGridClientes.Name = "dataGridClientes";
-            this.dataGridClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridClientes.Size = new System.Drawing.Size(1008, 249);
-            this.dataGridClientes.TabIndex = 0;
             // 
             // txtFiltrarCliente
             // 
@@ -66,7 +59,7 @@
             this.txtFiltrarCliente.Location = new System.Drawing.Point(12, 83);
             this.txtFiltrarCliente.Multiline = true;
             this.txtFiltrarCliente.Name = "txtFiltrarCliente";
-            this.txtFiltrarCliente.Size = new System.Drawing.Size(247, 29);
+            this.txtFiltrarCliente.Size = new System.Drawing.Size(212, 29);
             this.txtFiltrarCliente.TabIndex = 3;
             // 
             // btnActualizarCliente
@@ -209,12 +202,72 @@
             this.btnDetalleCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDetalleCliente.UseVisualStyleBackColor = true;
             // 
+            // gbEstadoContrato
+            // 
+            this.gbEstadoContrato.Controls.Add(this.rbCualquierContrato);
+            this.gbEstadoContrato.Controls.Add(this.rbContratoCerrado);
+            this.gbEstadoContrato.Controls.Add(this.rbContratoAbierto);
+            this.gbEstadoContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbEstadoContrato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.gbEstadoContrato.Location = new System.Drawing.Point(230, 63);
+            this.gbEstadoContrato.Name = "gbEstadoContrato";
+            this.gbEstadoContrato.Size = new System.Drawing.Size(425, 53);
+            this.gbEstadoContrato.TabIndex = 47;
+            this.gbEstadoContrato.TabStop = false;
+            this.gbEstadoContrato.Text = "Estado de Contrato";
+            // 
+            // rbContratoCerrado
+            // 
+            this.rbContratoCerrado.AutoSize = true;
+            this.rbContratoCerrado.Location = new System.Drawing.Point(136, 22);
+            this.rbContratoCerrado.Name = "rbContratoCerrado";
+            this.rbContratoCerrado.Size = new System.Drawing.Size(115, 24);
+            this.rbContratoCerrado.TabIndex = 1;
+            this.rbContratoCerrado.TabStop = true;
+            this.rbContratoCerrado.Text = "CERRADO";
+            this.rbContratoCerrado.UseVisualStyleBackColor = true;
+            // 
+            // rbContratoAbierto
+            // 
+            this.rbContratoAbierto.AutoSize = true;
+            this.rbContratoAbierto.Location = new System.Drawing.Point(11, 22);
+            this.rbContratoAbierto.Name = "rbContratoAbierto";
+            this.rbContratoAbierto.Size = new System.Drawing.Size(105, 24);
+            this.rbContratoAbierto.TabIndex = 0;
+            this.rbContratoAbierto.TabStop = true;
+            this.rbContratoAbierto.Text = "ABIERTO";
+            this.rbContratoAbierto.UseVisualStyleBackColor = true;
+            // 
+            // dataGridClientes
+            // 
+            this.dataGridClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridClientes.Location = new System.Drawing.Point(11, 123);
+            this.dataGridClientes.Name = "dataGridClientes";
+            this.dataGridClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridClientes.Size = new System.Drawing.Size(1008, 249);
+            this.dataGridClientes.TabIndex = 0;
+            // 
+            // rbCualquierContrato
+            // 
+            this.rbCualquierContrato.AutoSize = true;
+            this.rbCualquierContrato.Location = new System.Drawing.Point(271, 22);
+            this.rbCualquierContrato.Name = "rbCualquierContrato";
+            this.rbCualquierContrato.Size = new System.Drawing.Size(143, 24);
+            this.rbCualquierContrato.TabIndex = 2;
+            this.rbCualquierContrato.TabStop = true;
+            this.rbCualquierContrato.Text = "CUALQUIERA";
+            this.rbCualquierContrato.UseVisualStyleBackColor = true;
+            // 
             // ClienteView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(1032, 450);
+            this.Controls.Add(this.gbEstadoContrato);
             this.Controls.Add(this.btnDetalleCliente);
             this.Controls.Add(this.btnProveedores);
             this.Controls.Add(this.btnGastosInternos);
@@ -230,19 +283,19 @@
             this.Name = "ClienteView";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridClientes)).EndInit();
             this.pnlSuperiorClienteView.ResumeLayout(false);
             this.pnlSuperiorClienteView.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarClienteView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarClienteView)).EndInit();
+            this.gbEstadoContrato.ResumeLayout(false);
+            this.gbEstadoContrato.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        public System.Windows.Forms.DataGridView dataGridClientes;
         public System.Windows.Forms.TextBox txtFiltrarCliente;
         public System.Windows.Forms.Button btnActualizarCliente;
         public System.Windows.Forms.Button btnEliminarCliente;
@@ -255,5 +308,10 @@
         public System.Windows.Forms.Button btnGastosInternos;
         public System.Windows.Forms.Button btnProveedores;
         public System.Windows.Forms.Button btnDetalleCliente;
+        public System.Windows.Forms.GroupBox gbEstadoContrato;
+        public System.Windows.Forms.RadioButton rbContratoCerrado;
+        public System.Windows.Forms.RadioButton rbContratoAbierto;
+        public System.Windows.Forms.DataGridView dataGridClientes;
+        public System.Windows.Forms.RadioButton rbCualquierContrato;
     }
 }

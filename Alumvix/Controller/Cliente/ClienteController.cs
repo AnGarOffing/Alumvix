@@ -53,6 +53,37 @@ namespace Alumvix.Controller
             clienteVista.btnCerrarClienteView.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrar);
             clienteVista.btnCerrarClienteView.Click += new EventHandler(CerrarFormularioClienteView);
             clienteVista.btnMinimizarClienteView.Click += new EventHandler(MinimizarFormularioClienteView);
+            clienteVista.rbContratoAbierto.CheckedChanged += new EventHandler(FiltarCLientesContratosAbiertos);
+            clienteVista.rbContratoCerrado.CheckedChanged += new EventHandler(FiltarCLientesContratoCerrado);
+            clienteVista.rbCualquierContrato.CheckedChanged += new EventHandler(MostrarAllClientes);
+        }
+
+        private void MostrarAllClientes(object sender, EventArgs e)
+        {
+            clienteVista.txtFiltrarCliente.Text = "";
+            ClienteDao clienteDao = new ClienteDao();
+            clienteVista.dataGridClientes.DataSource = clienteDao.ObtenerAllClientes();
+            clienteVista.dataGridClientes.ClearSelection();
+            registroCliente.Clear();
+
+        }
+
+        private void FiltarCLientesContratoCerrado(object sender, EventArgs e)
+        {
+            clienteVista.txtFiltrarCliente.Text = "";
+            ClienteDao clienteDao = new ClienteDao();
+            clienteVista.dataGridClientes.DataSource = clienteDao.ObtenerClientesContratoCerrado();
+            clienteVista.dataGridClientes.ClearSelection();
+            registroCliente.Clear();
+        }
+
+        private void FiltarCLientesContratosAbiertos(object sender, EventArgs e)
+        {
+            clienteVista.txtFiltrarCliente.Text = "";
+            ClienteDao clienteDao = new ClienteDao();
+            clienteVista.dataGridClientes.DataSource = clienteDao.ObtenerClientesContratoAbierto();
+            clienteVista.dataGridClientes.ClearSelection();
+            registroCliente.Clear();
         }
 
         private void ResaltarBotonMinimizar(object sender, EventArgs e)
@@ -176,10 +207,28 @@ namespace Alumvix.Controller
 
         private void ObtenerListadoClientes(object sender, EventArgs e)
         {
-            ClienteDao clienteDao = new ClienteDao();
-            clienteVista.dataGridClientes.DataSource = clienteDao.ObtenerListadoClientes(clienteVista.txtFiltrarCliente.Text);
-            clienteVista.dataGridClientes.ClearSelection();
-            registroCliente.Clear();
+            if (clienteVista.rbContratoAbierto.Checked)
+            {
+                ClienteDao clienteDao = new ClienteDao();
+                clienteVista.dataGridClientes.DataSource = clienteDao.ObtenerClientesContratoAbiertoYFiltro(clienteVista.txtFiltrarCliente.Text);
+                clienteVista.dataGridClientes.ClearSelection();
+                registroCliente.Clear();
+            }
+            else if (clienteVista.rbContratoCerrado.Checked)
+            {
+                ClienteDao clienteDao = new ClienteDao();
+                clienteVista.dataGridClientes.DataSource = clienteDao.ObtenerClientesContratoCerradoYFiltro(clienteVista.txtFiltrarCliente.Text);
+                clienteVista.dataGridClientes.ClearSelection();
+                registroCliente.Clear();
+            }
+            else
+            {
+                ClienteDao clienteDao = new ClienteDao();
+                clienteVista.dataGridClientes.DataSource = clienteDao.ObtenerListadoClientes(clienteVista.txtFiltrarCliente.Text);
+                clienteVista.dataGridClientes.ClearSelection();
+                registroCliente.Clear();
+            }
+            
         }
 
         public static List<ClienteDto> CargarRegistroCliente()
