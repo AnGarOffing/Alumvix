@@ -24,6 +24,7 @@ namespace Alumvix.Controller.Contrato
             ingresoContratoView = ingresoContratoVista;
             ingresoContratoView.Load += new EventHandler(CargarTiposFactura);
             ingresoContratoView.txtIngresarValorContrato.KeyPress += new KeyPressEventHandler(ValidarEntradaNumeros);
+            ingresoContratoView.txtIngresarValorContrato.TextChanged += new EventHandler(AplicarSeparadoresAValor);
             ingresoContratoView.btnMinimizarIngresoContratoView.MouseHover += new EventHandler(ResaltarBotonMinimizar);
             ingresoContratoView.btnMinimizarIngresoContratoView.MouseLeave += new EventHandler(QuitarResaltadoBotonMinimizar);
             ingresoContratoView.btnCerrarIngresoContratoView.MouseHover += new EventHandler(ResaltarBotonCerrar);
@@ -31,6 +32,16 @@ namespace Alumvix.Controller.Contrato
             ingresoContratoView.btnCerrarIngresoContratoView.Click += new EventHandler(CerrarIngresoContratoView);
             ingresoContratoView.btnMinimizarIngresoContratoView.Click += new EventHandler(MinimizarIngresoContratoView);
             ingresoContratoView.btnGuardarNuevoContrato.Click += new EventHandler(GuardarContrato);
+        }
+
+        private void AplicarSeparadoresAValor(object sender, EventArgs e)
+        {
+            TextBox txtValor = ingresoContratoView.txtIngresarValorContrato;
+            if (txtValor.Text == "" || txtValor.Text == "0") return;
+            decimal price;
+            price = decimal.Parse(txtValor.Text, System.Globalization.NumberStyles.Currency);
+            txtValor.Text = price.ToString("#,#");
+            txtValor.SelectionStart = txtValor.Text.Length;
         }
 
         private void ResaltarBotonMinimizar(object sender, EventArgs e)
@@ -73,7 +84,8 @@ namespace Alumvix.Controller.Contrato
 
         private void GuardarContrato(object sender, EventArgs e)
         {
-            if (ValidacionesDeControles.ValidarBotonIngresoContrato(ingresoContratoView.txtIngresarValorContrato.Text, ingresoContratoView.cbIngresarTipoFactura.SelectedIndex) == false)
+            int valorSinFormato = Convert.ToInt32(ingresoContratoView.txtIngresarValorContrato.Text.Replace(".", ""));
+            if (ValidacionesDeControles.ValidarBotonIngresoContrato(valorSinFormato.ToString(), ingresoContratoView.cbIngresarTipoFactura.SelectedIndex) == false)
             {
                 MessageBox.Show("Debe diligenciar todos los campos");
             }
@@ -89,9 +101,9 @@ namespace Alumvix.Controller.Contrato
                     ContratoDao contratoDao = new ContratoDao();
                     if (ingresoContratoView.cbIngresarTipoFactura.SelectedIndex == 1)
                     {
-                        valorContratoCalculado = Logica.AplicarIVA(Convert.ToInt32(ingresoContratoView.txtIngresarValorContrato.Text), 1);
+                        valorContratoCalculado = Logica.AplicarIVA(Convert.ToInt32(valorSinFormato.ToString()), 1);
                     }
-                    else valorContratoCalculado = Convert.ToInt32(ingresoContratoView.txtIngresarValorContrato.Text);
+                    else valorContratoCalculado = Convert.ToInt32(valorSinFormato.ToString());
 
                     bool respuestaIngresoContrato = contratoDao.GuardarContrato(valorContratoCalculado, ingresoContratoView.dtpFechaInicioContrato.Text, ingresoContratoView.dtpFechaTerminacionContrato.Text, 1, 1, ingresoContratoView.cbIngresarTipoFactura.SelectedIndex, ClienteController.ObtenerIdCliente());
                     if (respuestaIngresoContrato)

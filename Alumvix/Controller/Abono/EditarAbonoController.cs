@@ -24,6 +24,7 @@ namespace Alumvix.Controller.Abono
             detalleAbonoView = DetalleAbonoController.ObtenerInstanciaDetalleAbono();
             editarAbonoView.Activated += new EventHandler(CargarDatosAbono);
             editarAbonoView.txtIActualizarValorAbono.KeyPress += new KeyPressEventHandler(ValidarEntrada);
+            editarAbonoView.txtIActualizarValorAbono.TextChanged += new EventHandler(AplicarSeparadoresAValor);
             editarAbonoView.btnCerrarEditarAbonoView.MouseHover += new EventHandler(ResaltarBotonCerrar);
             editarAbonoView.btnCerrarEditarAbonoView.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrar);
             editarAbonoView.btnCerrarEditarAbonoView.Click += new EventHandler(CerrarEditarAbonoView);
@@ -31,6 +32,16 @@ namespace Alumvix.Controller.Abono
             editarAbonoView.btnMinimizarEditarAbonoView.MouseLeave += new EventHandler(QuitarResaltadoBotonMinimizar);
             editarAbonoView.btnMinimizarEditarAbonoView.Click += new EventHandler(MinimizarEditarAbonoView);
             editarAbonoView.btnActualizarAbono.Click += new EventHandler(ActualizarAbonoEnBD);
+        }
+
+        private void AplicarSeparadoresAValor(object sender, EventArgs e)
+        {
+            TextBox txtValor = editarAbonoView.txtIActualizarValorAbono;
+            if (txtValor.Text == "" || txtValor.Text == "0") return;
+            decimal price;
+            price = decimal.Parse(txtValor.Text, System.Globalization.NumberStyles.Currency);
+            txtValor.Text = price.ToString("#,#");
+            txtValor.SelectionStart = txtValor.Text.Length;
         }
 
         private void MinimizarEditarAbonoView(object sender, EventArgs e)
@@ -73,7 +84,7 @@ namespace Alumvix.Controller.Abono
         private void CargarDatosAbono(object sender, EventArgs e)
         {
             AbonoDao abono = new AbonoDao();
-            editarAbonoView.txtIActualizarValorAbono.Text = detalleAbonoView.lstvDetalleAbonos.SelectedItems[0].SubItems[1].Text;
+            editarAbonoView.txtIActualizarValorAbono.Text = CambioDeFormato.QuitarFormatoANumero(detalleAbonoView.lstvDetalleAbonos.SelectedItems[0].SubItems[1].Text);
             editarAbonoView.dtpActualizarFechaAbono.Text= detalleAbonoView.lstvDetalleAbonos.SelectedItems[0].SubItems[2].Text;          
             editarAbonoView.cbActualizarFormaDePago.DataSource = abono.ConsultarFormasAbono();
             editarAbonoView.cbActualizarFormaDePago.Text = detalleAbonoView.lstvDetalleAbonos.SelectedItems[0].SubItems[3].Text;
@@ -89,7 +100,8 @@ namespace Alumvix.Controller.Abono
             }
             else
             {
-                string valorSinFormato = CambioDeFormato.QuitarFormatoANumero(editarAbonoView.txtIActualizarValorAbono.Text);
+                int valorSinFormato = Convert.ToInt32(editarAbonoView.txtIActualizarValorAbono.Text.Replace(".", ""));
+                //string valorSinFormato = CambioDeFormato.QuitarFormatoANumero(editarAbonoView.txtIActualizarValorAbono.Text);
                 bool respuestaActualizacionAbono = abonoActualizado.ActualizarAbono(DetalleAbonoController.idAbono, Convert.ToInt32(valorSinFormato), editarAbonoView.cbActualizarFormaDePago.SelectedIndex, editarAbonoView.dtpActualizarFechaAbono.Text);
                 if (respuestaActualizacionAbono)
                 {

@@ -124,7 +124,7 @@ namespace Alumvix.Controller
 
         private void AbrirGastoInternoView(object sender, EventArgs e)
         {
-            GastoInternoView gastoInternoView = GastoInternoView.ObtenerInstancia();
+            GastosInternosView gastoInternoView = GastosInternosView.ObtenerInstancia();
             clienteVista.Hide();
             gastoInternoView.Show();
         }

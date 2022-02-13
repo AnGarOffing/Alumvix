@@ -70,7 +70,6 @@ D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\bin\Debug
 D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug\Alumvix.csproj.CopyComplete
-D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug\Alumvix.View.Gasto.GastoInternoView.resources
 D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug\Alumvix.View.Gasto.GastosPorPeriodoView.resources
 D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug\Alumvix.View.Reporte.ReporteMensualView.resources
 D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug\Alumvix.View.Reporte.AdministradorReportesView.resources
@@ -84,3 +83,4 @@ D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug
 D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug\Alumvix.csproj.ResolveComReference.cache
 D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug\Alumvix.View.Login.LoginView.resources
 D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug\Alumvix.View.Proveedor.ProveedoresView.resources
+D:\Biblioteca\MyProyects\Visual Studio Projects\AlumvixProject\Alumvix\obj\Debug\Alumvix.View.Gasto.GastosInternosView.resources

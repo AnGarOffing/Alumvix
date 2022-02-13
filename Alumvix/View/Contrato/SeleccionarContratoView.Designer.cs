@@ -37,25 +37,26 @@
             this.columnaFechaTerminacion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnaEstadoContrato = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnaEstadoTrabajo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnMostrarContrato = new System.Windows.Forms.Button();
+            this.pnlSuperiorSeleccionarContratoView = new System.Windows.Forms.Panel();
             this.btnMinimizarSeleccionarContratoView = new System.Windows.Forms.PictureBox();
             this.btnCerrarSeleccionarContratoView = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
+            this.btnMostrarContrato = new System.Windows.Forms.Button();
+            this.pnlSuperiorSeleccionarContratoView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarSeleccionarContratoView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSeleccionarContratoView)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTituloSeleccionarContrato
             // 
-            this.lblTituloSeleccionarContrato.AutoSize = true;
+            this.lblTituloSeleccionarContrato.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTituloSeleccionarContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloSeleccionarContrato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.lblTituloSeleccionarContrato.Location = new System.Drawing.Point(239, 16);
+            this.lblTituloSeleccionarContrato.Location = new System.Drawing.Point(355, 17);
             this.lblTituloSeleccionarContrato.Name = "lblTituloSeleccionarContrato";
             this.lblTituloSeleccionarContrato.Size = new System.Drawing.Size(346, 29);
             this.lblTituloSeleccionarContrato.TabIndex = 41;
             this.lblTituloSeleccionarContrato.Text = "SELECCIONAR CONTRATO";
+            this.lblTituloSeleccionarContrato.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lstvListadoContratos
             // 
@@ -107,32 +108,17 @@
             this.columnaEstadoTrabajo.Text = "Estado de Trabajo";
             this.columnaEstadoTrabajo.Width = 164;
             // 
-            // panel1
+            // pnlSuperiorSeleccionarContratoView
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel1.Controls.Add(this.btnMinimizarSeleccionarContratoView);
-            this.panel1.Controls.Add(this.btnCerrarSeleccionarContratoView);
-            this.panel1.Controls.Add(this.lblTituloSeleccionarContrato);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1102, 59);
-            this.panel1.TabIndex = 44;
-            // 
-            // btnMostrarContrato
-            // 
-            this.btnMostrarContrato.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMostrarContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMostrarContrato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.btnMostrarContrato.Image = ((System.Drawing.Image)(resources.GetObject("btnMostrarContrato.Image")));
-            this.btnMostrarContrato.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMostrarContrato.Location = new System.Drawing.Point(464, 63);
-            this.btnMostrarContrato.Name = "btnMostrarContrato";
-            this.btnMostrarContrato.Size = new System.Drawing.Size(159, 44);
-            this.btnMostrarContrato.TabIndex = 47;
-            this.btnMostrarContrato.Text = "Ver Contrato";
-            this.btnMostrarContrato.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnMostrarContrato.UseVisualStyleBackColor = true;
+            this.pnlSuperiorSeleccionarContratoView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pnlSuperiorSeleccionarContratoView.Controls.Add(this.btnMinimizarSeleccionarContratoView);
+            this.pnlSuperiorSeleccionarContratoView.Controls.Add(this.btnCerrarSeleccionarContratoView);
+            this.pnlSuperiorSeleccionarContratoView.Controls.Add(this.lblTituloSeleccionarContrato);
+            this.pnlSuperiorSeleccionarContratoView.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSuperiorSeleccionarContratoView.Location = new System.Drawing.Point(0, 0);
+            this.pnlSuperiorSeleccionarContratoView.Name = "pnlSuperiorSeleccionarContratoView";
+            this.pnlSuperiorSeleccionarContratoView.Size = new System.Drawing.Size(1102, 59);
+            this.pnlSuperiorSeleccionarContratoView.TabIndex = 44;
             // 
             // btnMinimizarSeleccionarContratoView
             // 
@@ -152,6 +138,21 @@
             this.btnCerrarSeleccionarContratoView.TabIndex = 42;
             this.btnCerrarSeleccionarContratoView.TabStop = false;
             // 
+            // btnMostrarContrato
+            // 
+            this.btnMostrarContrato.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMostrarContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMostrarContrato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.btnMostrarContrato.Image = ((System.Drawing.Image)(resources.GetObject("btnMostrarContrato.Image")));
+            this.btnMostrarContrato.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMostrarContrato.Location = new System.Drawing.Point(464, 63);
+            this.btnMostrarContrato.Name = "btnMostrarContrato";
+            this.btnMostrarContrato.Size = new System.Drawing.Size(159, 44);
+            this.btnMostrarContrato.TabIndex = 47;
+            this.btnMostrarContrato.Text = "Ver Contrato";
+            this.btnMostrarContrato.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnMostrarContrato.UseVisualStyleBackColor = true;
+            // 
             // SeleccionarContratoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -160,13 +161,12 @@
             this.ClientSize = new System.Drawing.Size(1102, 297);
             this.Controls.Add(this.btnMostrarContrato);
             this.Controls.Add(this.lstvListadoContratos);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlSuperiorSeleccionarContratoView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SeleccionarContratoView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SeleccionarContratoView";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlSuperiorSeleccionarContratoView.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarSeleccionarContratoView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSeleccionarContratoView)).EndInit();
             this.ResumeLayout(false);
@@ -183,9 +183,9 @@
         private System.Windows.Forms.ColumnHeader columnaFechaTerminacion;
         private System.Windows.Forms.ColumnHeader columnaEstadoContrato;
         private System.Windows.Forms.ColumnHeader columnaEstadoTrabajo;
-        private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.Button btnMostrarContrato;
         public System.Windows.Forms.PictureBox btnMinimizarSeleccionarContratoView;
         public System.Windows.Forms.PictureBox btnCerrarSeleccionarContratoView;
+        public System.Windows.Forms.Panel pnlSuperiorSeleccionarContratoView;
     }
 }

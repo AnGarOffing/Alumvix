@@ -41,9 +41,11 @@
             this.pnlSuperiorProveedoresView = new System.Windows.Forms.Panel();
             this.btnMinimizarProveedorView = new System.Windows.Forms.PictureBox();
             this.btnCerrarProveedorView = new System.Windows.Forms.PictureBox();
+            this.btnCerrarSesionProveedores = new System.Windows.Forms.PictureBox();
             this.pnlSuperiorProveedoresView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarProveedorView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarProveedorView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesionProveedores)).BeginInit();
             this.SuspendLayout();
             // 
             // lstvProveedores
@@ -137,6 +139,7 @@
             // pnlSuperiorProveedoresView
             // 
             this.pnlSuperiorProveedoresView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pnlSuperiorProveedoresView.Controls.Add(this.btnCerrarSesionProveedores);
             this.pnlSuperiorProveedoresView.Controls.Add(this.btnMinimizarProveedorView);
             this.pnlSuperiorProveedoresView.Controls.Add(this.btnCerrarProveedorView);
             this.pnlSuperiorProveedoresView.Controls.Add(this.lblTituloProveedores);
@@ -164,6 +167,15 @@
             this.btnCerrarProveedorView.TabIndex = 46;
             this.btnCerrarProveedorView.TabStop = false;
             // 
+            // btnCerrarSesionProveedores
+            // 
+            this.btnCerrarSesionProveedores.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesionProveedores.Image")));
+            this.btnCerrarSesionProveedores.Location = new System.Drawing.Point(730, 11);
+            this.btnCerrarSesionProveedores.Name = "btnCerrarSesionProveedores";
+            this.btnCerrarSesionProveedores.Size = new System.Drawing.Size(33, 33);
+            this.btnCerrarSesionProveedores.TabIndex = 50;
+            this.btnCerrarSesionProveedores.TabStop = false;
+            // 
             // ProveedoresView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -183,6 +195,7 @@
             this.pnlSuperiorProveedoresView.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarProveedorView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarProveedorView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesionProveedores)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -201,5 +214,6 @@
         private System.Windows.Forms.Panel pnlSuperiorProveedoresView;
         public System.Windows.Forms.PictureBox btnMinimizarProveedorView;
         public System.Windows.Forms.PictureBox btnCerrarProveedorView;
+        public System.Windows.Forms.PictureBox btnCerrarSesionProveedores;
     }
 }

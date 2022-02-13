@@ -38,6 +38,11 @@ namespace Alumvix.Controller.Login
             loginView.MouseDown += new MouseEventHandler(PermitirMovimientoDeForm);
         }
 
+        public static LoginView ObtenerInstanciaLoginView()
+        {
+            return loginView;
+        }
+
         private void ResaltarBotonCerrar(object sender, EventArgs e)
         {
             loginView.btnCerrarLogin.BackColor = Color.FromArgb(223, 240, 254);

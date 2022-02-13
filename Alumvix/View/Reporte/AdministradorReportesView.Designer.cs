@@ -39,13 +39,15 @@
             this.lblSeleccionarAnio = new System.Windows.Forms.Label();
             this.cbSeleccionarAnio = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnConsultarReporte = new System.Windows.Forms.Button();
             this.btnMinimizarAdministradorReportesView = new System.Windows.Forms.PictureBox();
             this.btnCerrarAdministradorReportesView = new System.Windows.Forms.PictureBox();
+            this.btnConsultarReporte = new System.Windows.Forms.Button();
+            this.btnCerrarSesionAdminReportes = new System.Windows.Forms.PictureBox();
             this.gbPeriodicidad.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarAdministradorReportesView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarAdministradorReportesView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesionAdminReportes)).BeginInit();
             this.SuspendLayout();
             // 
             // gbPeriodicidad
@@ -149,6 +151,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.btnCerrarSesionAdminReportes);
             this.panel1.Controls.Add(this.btnMinimizarAdministradorReportesView);
             this.panel1.Controls.Add(this.btnCerrarAdministradorReportesView);
             this.panel1.Controls.Add(this.lblTituloReporteGeneral);
@@ -157,21 +160,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(907, 59);
             this.panel1.TabIndex = 54;
-            // 
-            // btnConsultarReporte
-            // 
-            this.btnConsultarReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultarReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultarReporte.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.btnConsultarReporte.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultarReporte.Image")));
-            this.btnConsultarReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConsultarReporte.Location = new System.Drawing.Point(728, 167);
-            this.btnConsultarReporte.Name = "btnConsultarReporte";
-            this.btnConsultarReporte.Size = new System.Drawing.Size(159, 44);
-            this.btnConsultarReporte.TabIndex = 55;
-            this.btnConsultarReporte.Text = "Ver Reporte";
-            this.btnConsultarReporte.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnConsultarReporte.UseVisualStyleBackColor = true;
             // 
             // btnMinimizarAdministradorReportesView
             // 
@@ -190,6 +178,30 @@
             this.btnCerrarAdministradorReportesView.Size = new System.Drawing.Size(33, 30);
             this.btnCerrarAdministradorReportesView.TabIndex = 42;
             this.btnCerrarAdministradorReportesView.TabStop = false;
+            // 
+            // btnConsultarReporte
+            // 
+            this.btnConsultarReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultarReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultarReporte.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.btnConsultarReporte.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultarReporte.Image")));
+            this.btnConsultarReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConsultarReporte.Location = new System.Drawing.Point(728, 167);
+            this.btnConsultarReporte.Name = "btnConsultarReporte";
+            this.btnConsultarReporte.Size = new System.Drawing.Size(159, 44);
+            this.btnConsultarReporte.TabIndex = 55;
+            this.btnConsultarReporte.Text = "Ver Reporte";
+            this.btnConsultarReporte.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnConsultarReporte.UseVisualStyleBackColor = true;
+            // 
+            // btnCerrarSesionAdminReportes
+            // 
+            this.btnCerrarSesionAdminReportes.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesionAdminReportes.Image")));
+            this.btnCerrarSesionAdminReportes.Location = new System.Drawing.Point(788, 12);
+            this.btnCerrarSesionAdminReportes.Name = "btnCerrarSesionAdminReportes";
+            this.btnCerrarSesionAdminReportes.Size = new System.Drawing.Size(33, 33);
+            this.btnCerrarSesionAdminReportes.TabIndex = 48;
+            this.btnCerrarSesionAdminReportes.TabStop = false;
             // 
             // AdministradorReportesView
             // 
@@ -214,6 +226,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarAdministradorReportesView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarAdministradorReportesView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesionAdminReportes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,5 +246,6 @@
         public System.Windows.Forms.Button btnConsultarReporte;
         public System.Windows.Forms.PictureBox btnMinimizarAdministradorReportesView;
         public System.Windows.Forms.PictureBox btnCerrarAdministradorReportesView;
+        public System.Windows.Forms.PictureBox btnCerrarSesionAdminReportes;
     }
 }

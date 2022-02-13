@@ -1,6 +1,8 @@
-﻿using Alumvix.Model.Dao;
+﻿using Alumvix.Controller.Login;
+using Alumvix.Model.Dao;
 using Alumvix.Model.Dto;
 using Alumvix.View;
+using Alumvix.View.Login;
 using Alumvix.View.Proveedor;
 using System;
 using System.Collections.Generic;
@@ -16,6 +18,7 @@ namespace Alumvix.Controller.Proveedor
     {
         static ProveedoresView proveedoresView;
         ClienteView clienteView;
+        LoginView loginView;
         static List<int> idsProveedores = new List<int>();
         int indice;
         static int idProveedor;
@@ -26,6 +29,7 @@ namespace Alumvix.Controller.Proveedor
         {
             proveedoresView = ProveedoresVista;
             clienteView = ClienteController.ObtenerInstanciaClienteView();
+            loginView = LoginController.ObtenerInstanciaLoginView(); 
             proveedoresView.Activated += new EventHandler(MostrarProveedores);
             proveedoresView.btnIngresarProveedor.Click += new EventHandler(AbrirIngresoProveedorView);
             proveedoresView.lstvProveedores.SelectedIndexChanged += new EventHandler(ObtenerIndice);
@@ -37,6 +41,26 @@ namespace Alumvix.Controller.Proveedor
             proveedoresView.btnMinimizarProveedorView.Click += new EventHandler(MinimizarIngresoGastoInternoView);
             proveedoresView.btnEliminarProveedor.Click += new EventHandler(EliminarProveedor);
             proveedoresView.btnEditarProveedor.Click += new EventHandler(AbrirEditarProveedorView);
+            proveedoresView.btnCerrarSesionProveedores.Click += new EventHandler(CerrarSesion);
+            proveedoresView.btnCerrarSesionProveedores.MouseHover += new EventHandler(ResaltarBotonCerrarSesion);
+            proveedoresView.btnCerrarSesionProveedores.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrarSesion);
+        }
+
+        private void QuitarResaltadoBotonCerrarSesion(object sender, EventArgs e)
+        {
+            proveedoresView.btnCerrarSesionProveedores.BackColor = Color.Transparent;
+        }
+
+        private void ResaltarBotonCerrarSesion(object sender, EventArgs e)
+        {
+            proveedoresView.btnCerrarSesionProveedores.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void CerrarSesion(object sender, EventArgs e)
+        {
+            proveedoresView.Hide();
+            clienteView.Hide();
+            loginView.Show();
         }
 
         private void MinimizarIngresoGastoInternoView(object sender, EventArgs e)
@@ -76,7 +100,8 @@ namespace Alumvix.Controller.Proveedor
             if (proveedoresView.lstvProveedores.SelectedItems.Count > 0)
             {
                 EditarProveedorView editarProveedorView = EditarProveedorView.ObtenerInstancia();
-                editarProveedorView.ShowDialog();
+                proveedoresView.Hide();
+                editarProveedorView.Show();
             }else MessageBox.Show("No ha seleccionado un proveedor");
         }
 

@@ -138,7 +138,8 @@ namespace Alumvix.Controller.Gasto
             if (detalleGastoView.lstvDetalleGastos.SelectedItems.Count > 0)
             {
                 EditarGastoView editarGastoView = EditarGastoView.ObtenerInstancia();
-                editarGastoView.ShowDialog();
+                detalleGastoView.Hide();
+                editarGastoView.Show();
             }
             else MessageBox.Show("Debe seleccionar un gasto de la lista para editarlo");
         }

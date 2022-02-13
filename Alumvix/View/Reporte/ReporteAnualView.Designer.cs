@@ -52,10 +52,12 @@
             this.btnCerrarReporteAnualView = new System.Windows.Forms.PictureBox();
             this.btnExportarReporteAExcel = new System.Windows.Forms.Button();
             this.btnDetalleGastos = new System.Windows.Forms.Button();
+            this.btnCerrarSesionReporteAnual = new System.Windows.Forms.PictureBox();
             this.gbTituloGastosDelMes.SuspendLayout();
             this.pnlSuperiorReporteAnualView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarReporteAnualView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarReporteAnualView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesionReporteAnual)).BeginInit();
             this.SuspendLayout();
             // 
             // lstvGastosTotalesMensuales
@@ -235,6 +237,7 @@
             // pnlSuperiorReporteAnualView
             // 
             this.pnlSuperiorReporteAnualView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pnlSuperiorReporteAnualView.Controls.Add(this.btnCerrarSesionReporteAnual);
             this.pnlSuperiorReporteAnualView.Controls.Add(this.btnMinimizarReporteAnualView);
             this.pnlSuperiorReporteAnualView.Controls.Add(this.btnCerrarReporteAnualView);
             this.pnlSuperiorReporteAnualView.Controls.Add(this.lblTituloReporteAnual);
@@ -292,6 +295,15 @@
             this.btnDetalleGastos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDetalleGastos.UseVisualStyleBackColor = true;
             // 
+            // btnCerrarSesionReporteAnual
+            // 
+            this.btnCerrarSesionReporteAnual.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesionReporteAnual.Image")));
+            this.btnCerrarSesionReporteAnual.Location = new System.Drawing.Point(1059, 12);
+            this.btnCerrarSesionReporteAnual.Name = "btnCerrarSesionReporteAnual";
+            this.btnCerrarSesionReporteAnual.Size = new System.Drawing.Size(33, 33);
+            this.btnCerrarSesionReporteAnual.TabIndex = 53;
+            this.btnCerrarSesionReporteAnual.TabStop = false;
+            // 
             // ReporteAnualView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -314,6 +326,7 @@
             this.pnlSuperiorReporteAnualView.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarReporteAnualView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarReporteAnualView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesionReporteAnual)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -343,5 +356,6 @@
         public System.Windows.Forms.PictureBox btnCerrarReporteAnualView;
         public System.Windows.Forms.Button btnExportarReporteAExcel;
         public System.Windows.Forms.Button btnDetalleGastos;
+        public System.Windows.Forms.PictureBox btnCerrarSesionReporteAnual;
     }
 }

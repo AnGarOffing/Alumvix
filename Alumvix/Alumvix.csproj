@@ -77,7 +77,7 @@
     <Compile Include="Controller\Gasto\DetalleGastoController.cs" />
     <Compile Include="Controller\Gasto\EditarGastoController.cs" />
     <Compile Include="Controller\Gasto\EditarGastoInternoController.cs" />
-    <Compile Include="Controller\Gasto\GastoInternoController.cs" />
+    <Compile Include="Controller\Gasto\GastosInternosController.cs" />
     <Compile Include="Controller\Gasto\GastosPorPeriodoController.cs" />
     <Compile Include="Controller\Gasto\IngresoGastoController.cs" />
     <Compile Include="Controller\Gasto\IngresoGastoInternoController.cs" />
@@ -183,11 +183,11 @@
     <Compile Include="View\Gasto\EditarGastoInternoView.Designer.cs">
       <DependentUpon>EditarGastoInternoView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Gasto\GastoInternoView.cs">
+    <Compile Include="View\Gasto\GastosInternosView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Gasto\GastoInternoView.Designer.cs">
-      <DependentUpon>GastoInternoView.cs</DependentUpon>
+    <Compile Include="View\Gasto\GastosInternosView.Designer.cs">
+      <DependentUpon>GastosInternosView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Gasto\DetalleGastoView.cs">
       <SubType>Form</SubType>
@@ -243,11 +243,11 @@
     <Compile Include="View\Proveedor\IngresoProveedorView.Designer.cs">
       <DependentUpon>IngresoProveedorView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Proveedor\ProveedorView.cs">
+    <Compile Include="View\Proveedor\ProveedoresView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Proveedor\ProveedorView.Designer.cs">
-      <DependentUpon>ProveedorView.cs</DependentUpon>
+    <Compile Include="View\Proveedor\ProveedoresView.Designer.cs">
+      <DependentUpon>ProveedoresView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Reporte\AdministradorReportesView.cs">
       <SubType>Form</SubType>
@@ -315,8 +315,8 @@
     <EmbeddedResource Include="View\Gasto\EditarGastoInternoView.resx">
       <DependentUpon>EditarGastoInternoView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Gasto\GastoInternoView.resx">
-      <DependentUpon>GastoInternoView.cs</DependentUpon>
+    <EmbeddedResource Include="View\Gasto\GastosInternosView.resx">
+      <DependentUpon>GastosInternosView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Gasto\DetalleGastoView.resx">
       <DependentUpon>DetalleGastoView.cs</DependentUpon>
@@ -345,8 +345,8 @@
     <EmbeddedResource Include="View\Proveedor\IngresoProveedorView.resx">
       <DependentUpon>IngresoProveedorView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Proveedor\ProveedorView.resx">
-      <DependentUpon>ProveedorView.cs</DependentUpon>
+    <EmbeddedResource Include="View\Proveedor\ProveedoresView.resx">
+      <DependentUpon>ProveedoresView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Reporte\AdministradorReportesView.resx">
       <DependentUpon>AdministradorReportesView.cs</DependentUpon>

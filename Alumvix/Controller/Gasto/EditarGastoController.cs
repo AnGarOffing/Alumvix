@@ -19,6 +19,8 @@ namespace Alumvix.Controller.Gasto
             editarGastoView = editarGastoVista;
             detalleGastoView = DetalleGastoController.ObtenerInstanciaDetalleGasto();
             editarGastoView.Activated += new EventHandler(CargarDatosGasto);
+            editarGastoView.txtActualizarValorGasto.KeyPress += new KeyPressEventHandler(ValidarEntradaNumeros);
+            editarGastoView.txtActualizarValorGasto.TextChanged += new EventHandler(AplicarSeparadoresAValor);
             editarGastoView.cbEditarTipoGasto.SelectedIndexChanged += new EventHandler(HabilitarControlesFactyProv);
             editarGastoView.btnMinimizarEditarGastoView.MouseHover += new EventHandler(ResaltarBotonMinimizar);
             editarGastoView.btnMinimizarEditarGastoView.MouseLeave += new EventHandler(QuitarResaltadoBotonMinimizar);
@@ -27,6 +29,22 @@ namespace Alumvix.Controller.Gasto
             editarGastoView.btnCerrarEditarGastoView.Click += new EventHandler(CerrarEditarGastoView);
             editarGastoView.btnMinimizarEditarGastoView.Click += new EventHandler(MinimizarEditarGastoView);
             editarGastoView.btnActualizarGasto.Click += new EventHandler(ActualizarGastoEnBD);
+        }
+
+        private void AplicarSeparadoresAValor(object sender, EventArgs e)
+        {
+            TextBox txtValor = editarGastoView.txtActualizarValorGasto;
+            if (txtValor.Text == "" || txtValor.Text == "0") return;
+            decimal price;
+            price = decimal.Parse(txtValor.Text, System.Globalization.NumberStyles.Currency);
+            txtValor.Text = price.ToString("#,#");
+            txtValor.SelectionStart = txtValor.Text.Length;
+        }
+
+        private void ValidarEntradaNumeros(object sender, KeyPressEventArgs e)
+        {
+            bool respuesta = ValidacionesDeControles.ValidarEntradaNumeros(e);
+            if (respuesta == true) MessageBox.Show("El campo solo permite numeros");
         }
 
         private void ResaltarBotonMinimizar(object sender, EventArgs e)
@@ -65,7 +83,7 @@ namespace Alumvix.Controller.Gasto
             ProveedorDao proveedorDao = new ProveedorDao();
             GastoDao gastoDao = new GastoDao();
             editarGastoView.txtEditarNumeroFactura.Text = detalleGastoView.lstvDetalleGastos.SelectedItems[0].SubItems[1].Text;
-            editarGastoView.txtActualizarValorGasto.Text = detalleGastoView.lstvDetalleGastos.SelectedItems[0].SubItems[2].Text;
+            editarGastoView.txtActualizarValorGasto.Text = CambioDeFormato.QuitarFormatoANumero(detalleGastoView.lstvDetalleGastos.SelectedItems[0].SubItems[2].Text);
             editarGastoView.dtpActualizarFechaGasto.Text = detalleGastoView.lstvDetalleGastos.SelectedItems[0].SubItems[3].Text;
             editarGastoView.txtActualizarDescripcionGasto.Text = detalleGastoView.lstvDetalleGastos.SelectedItems[0].SubItems[6].Text; 
             editarGastoView.cbEditarProveedor.DataSource = proveedorDao.ConsultarProveedoresParaCB();
@@ -89,14 +107,16 @@ namespace Alumvix.Controller.Gasto
             if (respuesta)
             {       
                 GastoDao gastoDao = new GastoDao();
-                string valorSinFormato = CambioDeFormato.QuitarFormatoANumero(editarGastoView.txtActualizarValorGasto.Text);
+                //string valorSinFormato = CambioDeFormato.QuitarFormatoANumero(editarGastoView.txtActualizarValorGasto.Text);
+                int valorSinFormato = Convert.ToInt32(editarGastoView.txtActualizarValorGasto.Text.Replace(".", ""));
                 int idTipoGasto = gastoDao.ObtenerTipoGastoPorNombre(editarGastoView.cbEditarTipoGasto.GetItemText(editarGastoView.cbEditarTipoGasto.SelectedItem));
                 bool respuestaActualizacionGasto = GastoActualizado.ActualizarGasto(editarGastoView.txtEditarNumeroFactura.Text, Convert.ToInt32(valorSinFormato), editarGastoView.dtpActualizarFechaGasto.Text, editarGastoView.txtActualizarDescripcionGasto.Text, editarGastoView.cbEditarProveedor.SelectedIndex, idTipoGasto, DetalleGastoController.idGasto);
                 if (respuestaActualizacionGasto)
                 {
                     //editarGastoView.txtActualizarValorGasto.Clear();
-                    editarGastoView.Close();
+                    editarGastoView.Hide();
                     MessageBox.Show("El gasto ha sido actualizado con exito");
+                    detalleGastoView.Show();
                 }
                 else MessageBox.Show("Error al actualizar el gasto");
             }

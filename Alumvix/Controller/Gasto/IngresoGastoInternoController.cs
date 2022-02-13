@@ -1,4 +1,5 @@
 ﻿using Alumvix.Model.Dao;
+using Alumvix.Model.Logica.Util;
 using Alumvix.Model.Negocio.Util;
 using Alumvix.View;
 using Alumvix.View.Gasto;
@@ -15,13 +16,14 @@ namespace Alumvix.Controller.Gasto
     internal class IngresoGastoInternoController
     {
         IngresoGastoInternoView ingresoGastoInternoView;
-        GastoInternoView gastoInternoView;
+        GastosInternosView gastoInternoView;
         public IngresoGastoInternoController(IngresoGastoInternoView ingresoGastoInternoVista)
         {
             ingresoGastoInternoView = ingresoGastoInternoVista;
-            gastoInternoView = GastoInternoController.ObtenerInstanciaClienteView();
+            gastoInternoView = GastosInternosController.ObtenerInstanciaClienteView();
             ingresoGastoInternoView.Activated += new EventHandler(CargarYLimpiarControles);
-            ingresoGastoInternoView.txtIngresarValorGastoInterno.KeyPress += new KeyPressEventHandler(ValidarEntradaNumeros);
+            ingresoGastoInternoView.txtIngresarValorGastoInterno.KeyPress += new KeyPressEventHandler(AplicarFormatoAValor);
+            ingresoGastoInternoView.txtIngresarValorGastoInterno.TextChanged += new EventHandler(AplicarSeparadoresAValor);
             ingresoGastoInternoView.btnCerrarIngresoGastoInternoView.MouseHover += new EventHandler(ResaltarBotonCerrar);
             ingresoGastoInternoView.btnCerrarIngresoGastoInternoView.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrar);
             ingresoGastoInternoView.btnCerrarIngresoGastoInternoView.Click += new EventHandler(CerrarIngresoGastoInternoView);
@@ -29,6 +31,16 @@ namespace Alumvix.Controller.Gasto
             ingresoGastoInternoView.btnMinimizarIngresoGastoInternoView.MouseLeave += new EventHandler(QuitarResaltadoBotonMinimizar);
             ingresoGastoInternoView.btnMinimizarIngresoGastoInternoView.Click += new EventHandler(MinimizarIngresoGastoInternoView);
             ingresoGastoInternoView.btnGuardarNuevoGastoInterno.Click += new EventHandler(IngresarGastoInterno);
+        }
+
+        private void AplicarSeparadoresAValor(object sender, EventArgs e)
+        {
+            TextBox txtValor = ingresoGastoInternoView.txtIngresarValorGastoInterno;
+            if (txtValor.Text == "" || txtValor.Text == "0") return;
+            decimal price;
+            price = decimal.Parse(txtValor.Text, System.Globalization.NumberStyles.Currency);
+            txtValor.Text = price.ToString("#,#");
+            txtValor.SelectionStart = txtValor.Text.Length;
         }
 
         private void MinimizarIngresoGastoInternoView(object sender, EventArgs e)
@@ -62,7 +74,7 @@ namespace Alumvix.Controller.Gasto
             ingresoGastoInternoView.btnMinimizarIngresoGastoInternoView.BackColor = Color.Transparent;
         }
 
-        private void ValidarEntradaNumeros(object sender, KeyPressEventArgs e)
+        private void AplicarFormatoAValor(object sender, KeyPressEventArgs e)
         {
             bool respuesta = ValidacionesDeControles.ValidarEntradaNumeros(e);
             if (respuesta == true) MessageBox.Show("El campo solo permite numeros");
@@ -79,6 +91,7 @@ namespace Alumvix.Controller.Gasto
 
         private void IngresarGastoInterno(object sender, EventArgs e)
         {
+            
             GastoInternoDao nuevoGastoInterno = new GastoInternoDao();
             if (ValidacionesDeControles.ValidarBotonIngresoGastoInterno(ingresoGastoInternoView.txtIngresarValorGastoInterno.Text, ingresoGastoInternoView.cbIngresarTipoGastoInterno.SelectedIndex) == false)
             {
@@ -86,8 +99,9 @@ namespace Alumvix.Controller.Gasto
             }
             else
             {
+                int valorSinFormato = Convert.ToInt32(ingresoGastoInternoView.txtIngresarValorGastoInterno.Text.Replace(".", ""));
                 int idTipoGastoInterno = nuevoGastoInterno.ObtenerTipoGastoInternoPorNombre(ingresoGastoInternoView.cbIngresarTipoGastoInterno.GetItemText(ingresoGastoInternoView.cbIngresarTipoGastoInterno.SelectedItem));
-                bool respuestaIngresoGastoInterno = nuevoGastoInterno.IngresarGastoInterno(Convert.ToInt32(ingresoGastoInternoView.txtIngresarValorGastoInterno.Text), ingresoGastoInternoView.dtpFechaIngresoGastoInterno.Text, ingresoGastoInternoView.txtDescripcionGastoInterno.Text, idTipoGastoInterno);
+                bool respuestaIngresoGastoInterno = nuevoGastoInterno.IngresarGastoInterno(valorSinFormato, ingresoGastoInternoView.dtpFechaIngresoGastoInterno.Text, ingresoGastoInternoView.txtDescripcionGastoInterno.Text, idTipoGastoInterno);
                 if (respuestaIngresoGastoInterno)
                 {
                     ingresoGastoInternoView.txtIngresarValorGastoInterno.Clear();

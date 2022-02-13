@@ -5,6 +5,7 @@ using Alumvix.View;
 using Alumvix.View.Cliente;
 using Alumvix.View.Contrato;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Alumvix.Controller.Contrato
@@ -20,8 +21,45 @@ namespace Alumvix.Controller.Contrato
             clienteView = ClienteController.ObtenerInstanciaClienteView();
             seleccionarContratoView.Activated += new EventHandler(MostrarListadoContratos);
             seleccionarContratoView.Activated += new EventHandler(MostrarNombreClienteEnTitulo);
+            seleccionarContratoView.Activated += new EventHandler(CentrarTitulo);
             seleccionarContratoView.btnMostrarContrato.Click += new EventHandler(MostrarContrato);
+            seleccionarContratoView.btnMinimizarSeleccionarContratoView.MouseHover += new EventHandler(ResaltarBotonMinimizar);
+            seleccionarContratoView.btnMinimizarSeleccionarContratoView.MouseLeave += new EventHandler(QuitarResaltadoBotonMinimizar);
+            seleccionarContratoView.btnMinimizarSeleccionarContratoView.Click += new EventHandler(MinimizarSeleccionarContratoView);
+            seleccionarContratoView.btnCerrarSeleccionarContratoView.MouseHover += new EventHandler(ResaltarBotonCerrar);
+            seleccionarContratoView.btnCerrarSeleccionarContratoView.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrar);
             seleccionarContratoView.btnCerrarSeleccionarContratoView.Click += new EventHandler(CerrarSeleccionarContratoView);
+        }
+
+        private void ResaltarBotonMinimizar(object sender, EventArgs e)
+        {
+            seleccionarContratoView.btnMinimizarSeleccionarContratoView.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonMinimizar(object sender, EventArgs e)
+        {
+            seleccionarContratoView.btnMinimizarSeleccionarContratoView.BackColor = Color.Transparent;
+        }
+
+        private void ResaltarBotonCerrar(object sender, EventArgs e)
+        {
+            seleccionarContratoView.btnCerrarSeleccionarContratoView.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonCerrar(object sender, EventArgs e)
+        {
+            seleccionarContratoView.btnCerrarSeleccionarContratoView.BackColor = Color.Transparent;
+        }
+
+        private void MinimizarSeleccionarContratoView(object sender, EventArgs e)
+        {
+            seleccionarContratoView.WindowState = FormWindowState.Minimized;
+        }
+
+        private void CentrarTitulo(object sender, EventArgs e)
+        {
+            int x = (seleccionarContratoView.pnlSuperiorSeleccionarContratoView.Size.Width - seleccionarContratoView.lblTituloSeleccionarContrato.Size.Width) / 2;
+            seleccionarContratoView.lblTituloSeleccionarContrato.Location = new Point(x, seleccionarContratoView.lblTituloSeleccionarContrato.Location.Y);
         }
 
         private void CerrarSeleccionarContratoView(object sender, EventArgs e)

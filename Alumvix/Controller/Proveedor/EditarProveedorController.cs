@@ -3,6 +3,7 @@ using Alumvix.Model.Negocio.Util;
 using Alumvix.View.Proveedor;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,16 +14,54 @@ namespace Alumvix.Controller.Proveedor
     internal class EditarProveedorController
     {
         EditarProveedorView editarProveedorView;
-        ProveedoresView proveedorView = ProveedoresController.ObtenerInstancia();
+        ProveedoresView proveedoresView;
 
         public EditarProveedorController(EditarProveedorView editarProveedorVista)
         {
             editarProveedorView = editarProveedorVista;
-            editarProveedorView.Load += new EventHandler(CargarDatos);
+            proveedoresView = ProveedoresController.ObtenerInstancia();
+            editarProveedorView.Activated += new EventHandler(CargarDatos);
             editarProveedorView.txtEditarNombreProveedor.KeyPress += new KeyPressEventHandler(ValidarEntradaNumerosyLetras);
             editarProveedorView.txtEditarCelularProveedor.KeyPress += new KeyPressEventHandler(ValidarEntradaNumeros);
             editarProveedorView.txtEditarTelefonoProveedor.KeyPress += new KeyPressEventHandler(ValidarEntradaNumeros);
+            editarProveedorView.btnCerrarEditarProveedorView.MouseHover += new EventHandler(ResaltarBotonCerrar);
+            editarProveedorView.btnCerrarEditarProveedorView.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrar);
+            editarProveedorView.btnCerrarEditarProveedorView.Click += new EventHandler(CerrarIngresoGastoInternoView);
+            editarProveedorView.btnMinimizarEditarProveedorView.MouseHover += new EventHandler(ResaltarBotonMinimizar);
+            editarProveedorView.btnMinimizarEditarProveedorView.MouseLeave += new EventHandler(QuitarResaltadoBotonMinimizar);
+            editarProveedorView.btnMinimizarEditarProveedorView.Click += new EventHandler(MinimizarIngresoGastoInternoView);
             editarProveedorView.btnActualizarProveedor.Click += new EventHandler(ActualizarProveedor);
+        }
+
+        private void MinimizarIngresoGastoInternoView(object sender, EventArgs e)
+        {
+            editarProveedorView.WindowState = FormWindowState.Minimized;
+        }
+
+        private void CerrarIngresoGastoInternoView(object sender, EventArgs e)
+        {
+            editarProveedorView.Hide();
+            proveedoresView.Show();
+        }
+
+        private void ResaltarBotonCerrar(object sender, EventArgs e)
+        {
+            editarProveedorView.btnCerrarEditarProveedorView.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonCerrar(object sender, EventArgs e)
+        {
+            editarProveedorView.btnCerrarEditarProveedorView.BackColor = Color.Transparent;
+        }
+
+        private void ResaltarBotonMinimizar(object sender, EventArgs e)
+        {
+            editarProveedorView.btnMinimizarEditarProveedorView.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void QuitarResaltadoBotonMinimizar(object sender, EventArgs e)
+        {
+            editarProveedorView.btnMinimizarEditarProveedorView.BackColor = Color.Transparent;
         }
 
         private void ValidarEntradaNumeros(object sender, KeyPressEventArgs e)
@@ -54,8 +93,9 @@ namespace Alumvix.Controller.Proveedor
                     ProveedoresController.IdProveedor);
                 if (respuestaActualizacionProveedor)
                 {
-                    editarProveedorView.Close();
+                    editarProveedorView.Hide();
                     MessageBox.Show("El proveedor ha sido actualizado con exito");
+                    proveedoresView.Show();
                 }
                 else MessageBox.Show("Error al intentar actualizar el proveedor");
             }
@@ -63,10 +103,10 @@ namespace Alumvix.Controller.Proveedor
 
         private void CargarDatos(object sender, EventArgs e)
         {
-            editarProveedorView.txtEditarNombreProveedor.Text = proveedorView.lstvProveedores.SelectedItems[0].SubItems[0].Text;
-            editarProveedorView.txtEditarCelularProveedor.Text = proveedorView.lstvProveedores.SelectedItems[0].SubItems[1].Text;
-            editarProveedorView.txtEditarTelefonoProveedor.Text = proveedorView.lstvProveedores.SelectedItems[0].SubItems[2].Text;
-            editarProveedorView.txtEditarDireccionProveedor.Text = proveedorView.lstvProveedores.SelectedItems[0].SubItems[3].Text;
+            editarProveedorView.txtEditarNombreProveedor.Text = proveedoresView.lstvProveedores.SelectedItems[0].SubItems[0].Text;
+            editarProveedorView.txtEditarCelularProveedor.Text = proveedoresView.lstvProveedores.SelectedItems[0].SubItems[1].Text;
+            editarProveedorView.txtEditarTelefonoProveedor.Text = proveedoresView.lstvProveedores.SelectedItems[0].SubItems[2].Text;
+            editarProveedorView.txtEditarDireccionProveedor.Text = proveedoresView.lstvProveedores.SelectedItems[0].SubItems[3].Text;
         }
     }
 }

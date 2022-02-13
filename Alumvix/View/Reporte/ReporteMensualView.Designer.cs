@@ -30,6 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteMensualView));
             this.pnlReporteGeneral = new System.Windows.Forms.Panel();
+            this.btnDetalleGastos = new System.Windows.Forms.Button();
+            this.pnlSuperiorReporteMensualView = new System.Windows.Forms.Panel();
+            this.btnMinimizarReporteMensualView = new System.Windows.Forms.PictureBox();
+            this.btnCerrarReporteMensualView = new System.Windows.Forms.PictureBox();
+            this.lblTituloReporteMensual = new System.Windows.Forms.Label();
             this.lstvGastosPeriodo = new System.Windows.Forms.ListView();
             this.columnaTipoGastoPeriodo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnaTotalGasto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -42,16 +47,13 @@
             this.lblUtilidadGeneral = new System.Windows.Forms.Label();
             this.txtUtilidadGeneral = new System.Windows.Forms.TextBox();
             this.lblTotalVentas = new System.Windows.Forms.Label();
-            this.lblTituloReporteMensual = new System.Windows.Forms.Label();
-            this.pnlSuperiorReporteMensualView = new System.Windows.Forms.Panel();
-            this.btnMinimizarReporteMensualView = new System.Windows.Forms.PictureBox();
-            this.btnCerrarReporteMensualView = new System.Windows.Forms.PictureBox();
-            this.btnDetalleGastos = new System.Windows.Forms.Button();
+            this.btnCerrarSesionReporteMensual = new System.Windows.Forms.PictureBox();
             this.pnlReporteGeneral.SuspendLayout();
-            this.gbTituloGastosDelMes.SuspendLayout();
             this.pnlSuperiorReporteMensualView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarReporteMensualView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarReporteMensualView)).BeginInit();
+            this.gbTituloGastosDelMes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesionReporteMensual)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlReporteGeneral
@@ -64,6 +66,63 @@
             this.pnlReporteGeneral.Name = "pnlReporteGeneral";
             this.pnlReporteGeneral.Size = new System.Drawing.Size(831, 413);
             this.pnlReporteGeneral.TabIndex = 45;
+            // 
+            // btnDetalleGastos
+            // 
+            this.btnDetalleGastos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDetalleGastos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDetalleGastos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.btnDetalleGastos.Image = ((System.Drawing.Image)(resources.GetObject("btnDetalleGastos.Image")));
+            this.btnDetalleGastos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDetalleGastos.Location = new System.Drawing.Point(518, 78);
+            this.btnDetalleGastos.Name = "btnDetalleGastos";
+            this.btnDetalleGastos.Size = new System.Drawing.Size(202, 44);
+            this.btnDetalleGastos.TabIndex = 58;
+            this.btnDetalleGastos.Text = "Detalle de Gastos";
+            this.btnDetalleGastos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDetalleGastos.UseVisualStyleBackColor = true;
+            // 
+            // pnlSuperiorReporteMensualView
+            // 
+            this.pnlSuperiorReporteMensualView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pnlSuperiorReporteMensualView.Controls.Add(this.btnCerrarSesionReporteMensual);
+            this.pnlSuperiorReporteMensualView.Controls.Add(this.btnMinimizarReporteMensualView);
+            this.pnlSuperiorReporteMensualView.Controls.Add(this.btnCerrarReporteMensualView);
+            this.pnlSuperiorReporteMensualView.Controls.Add(this.lblTituloReporteMensual);
+            this.pnlSuperiorReporteMensualView.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSuperiorReporteMensualView.Location = new System.Drawing.Point(0, 0);
+            this.pnlSuperiorReporteMensualView.Name = "pnlSuperiorReporteMensualView";
+            this.pnlSuperiorReporteMensualView.Size = new System.Drawing.Size(831, 59);
+            this.pnlSuperiorReporteMensualView.TabIndex = 50;
+            // 
+            // btnMinimizarReporteMensualView
+            // 
+            this.btnMinimizarReporteMensualView.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarReporteMensualView.Image")));
+            this.btnMinimizarReporteMensualView.Location = new System.Drawing.Point(752, 13);
+            this.btnMinimizarReporteMensualView.Name = "btnMinimizarReporteMensualView";
+            this.btnMinimizarReporteMensualView.Size = new System.Drawing.Size(33, 30);
+            this.btnMinimizarReporteMensualView.TabIndex = 54;
+            this.btnMinimizarReporteMensualView.TabStop = false;
+            // 
+            // btnCerrarReporteMensualView
+            // 
+            this.btnCerrarReporteMensualView.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarReporteMensualView.Image")));
+            this.btnCerrarReporteMensualView.Location = new System.Drawing.Point(794, 13);
+            this.btnCerrarReporteMensualView.Name = "btnCerrarReporteMensualView";
+            this.btnCerrarReporteMensualView.Size = new System.Drawing.Size(33, 30);
+            this.btnCerrarReporteMensualView.TabIndex = 53;
+            this.btnCerrarReporteMensualView.TabStop = false;
+            // 
+            // lblTituloReporteMensual
+            // 
+            this.lblTituloReporteMensual.AutoSize = true;
+            this.lblTituloReporteMensual.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloReporteMensual.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.lblTituloReporteMensual.Location = new System.Drawing.Point(276, 13);
+            this.lblTituloReporteMensual.Name = "lblTituloReporteMensual";
+            this.lblTituloReporteMensual.Size = new System.Drawing.Size(284, 29);
+            this.lblTituloReporteMensual.TabIndex = 44;
+            this.lblTituloReporteMensual.Text = "REPORTE: MES - AÑO";
             // 
             // lstvGastosPeriodo
             // 
@@ -190,61 +249,14 @@
             this.lblTotalVentas.TabIndex = 24;
             this.lblTotalVentas.Text = "Total de Ventas =";
             // 
-            // lblTituloReporteMensual
+            // btnCerrarSesionReporteMensual
             // 
-            this.lblTituloReporteMensual.AutoSize = true;
-            this.lblTituloReporteMensual.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloReporteMensual.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.lblTituloReporteMensual.Location = new System.Drawing.Point(276, 13);
-            this.lblTituloReporteMensual.Name = "lblTituloReporteMensual";
-            this.lblTituloReporteMensual.Size = new System.Drawing.Size(284, 29);
-            this.lblTituloReporteMensual.TabIndex = 44;
-            this.lblTituloReporteMensual.Text = "REPORTE: MES - AÑO";
-            // 
-            // pnlSuperiorReporteMensualView
-            // 
-            this.pnlSuperiorReporteMensualView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pnlSuperiorReporteMensualView.Controls.Add(this.btnMinimizarReporteMensualView);
-            this.pnlSuperiorReporteMensualView.Controls.Add(this.btnCerrarReporteMensualView);
-            this.pnlSuperiorReporteMensualView.Controls.Add(this.lblTituloReporteMensual);
-            this.pnlSuperiorReporteMensualView.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSuperiorReporteMensualView.Location = new System.Drawing.Point(0, 0);
-            this.pnlSuperiorReporteMensualView.Name = "pnlSuperiorReporteMensualView";
-            this.pnlSuperiorReporteMensualView.Size = new System.Drawing.Size(831, 59);
-            this.pnlSuperiorReporteMensualView.TabIndex = 50;
-            // 
-            // btnMinimizarReporteMensualView
-            // 
-            this.btnMinimizarReporteMensualView.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarReporteMensualView.Image")));
-            this.btnMinimizarReporteMensualView.Location = new System.Drawing.Point(752, 13);
-            this.btnMinimizarReporteMensualView.Name = "btnMinimizarReporteMensualView";
-            this.btnMinimizarReporteMensualView.Size = new System.Drawing.Size(33, 30);
-            this.btnMinimizarReporteMensualView.TabIndex = 54;
-            this.btnMinimizarReporteMensualView.TabStop = false;
-            // 
-            // btnCerrarReporteMensualView
-            // 
-            this.btnCerrarReporteMensualView.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarReporteMensualView.Image")));
-            this.btnCerrarReporteMensualView.Location = new System.Drawing.Point(794, 13);
-            this.btnCerrarReporteMensualView.Name = "btnCerrarReporteMensualView";
-            this.btnCerrarReporteMensualView.Size = new System.Drawing.Size(33, 30);
-            this.btnCerrarReporteMensualView.TabIndex = 53;
-            this.btnCerrarReporteMensualView.TabStop = false;
-            // 
-            // btnDetalleGastos
-            // 
-            this.btnDetalleGastos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetalleGastos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetalleGastos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.btnDetalleGastos.Image = ((System.Drawing.Image)(resources.GetObject("btnDetalleGastos.Image")));
-            this.btnDetalleGastos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDetalleGastos.Location = new System.Drawing.Point(518, 78);
-            this.btnDetalleGastos.Name = "btnDetalleGastos";
-            this.btnDetalleGastos.Size = new System.Drawing.Size(202, 44);
-            this.btnDetalleGastos.TabIndex = 58;
-            this.btnDetalleGastos.Text = "Detalle de Gastos";
-            this.btnDetalleGastos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDetalleGastos.UseVisualStyleBackColor = true;
+            this.btnCerrarSesionReporteMensual.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesionReporteMensual.Image")));
+            this.btnCerrarSesionReporteMensual.Location = new System.Drawing.Point(710, 11);
+            this.btnCerrarSesionReporteMensual.Name = "btnCerrarSesionReporteMensual";
+            this.btnCerrarSesionReporteMensual.Size = new System.Drawing.Size(33, 33);
+            this.btnCerrarSesionReporteMensual.TabIndex = 55;
+            this.btnCerrarSesionReporteMensual.TabStop = false;
             // 
             // ReporteMensualView
             // 
@@ -258,12 +270,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReporteMensualView";
             this.pnlReporteGeneral.ResumeLayout(false);
-            this.gbTituloGastosDelMes.ResumeLayout(false);
-            this.gbTituloGastosDelMes.PerformLayout();
             this.pnlSuperiorReporteMensualView.ResumeLayout(false);
             this.pnlSuperiorReporteMensualView.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarReporteMensualView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarReporteMensualView)).EndInit();
+            this.gbTituloGastosDelMes.ResumeLayout(false);
+            this.gbTituloGastosDelMes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesionReporteMensual)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -288,5 +301,6 @@
         public System.Windows.Forms.PictureBox btnMinimizarReporteMensualView;
         public System.Windows.Forms.PictureBox btnCerrarReporteMensualView;
         public System.Windows.Forms.Button btnDetalleGastos;
+        public System.Windows.Forms.PictureBox btnCerrarSesionReporteMensual;
     }
 }

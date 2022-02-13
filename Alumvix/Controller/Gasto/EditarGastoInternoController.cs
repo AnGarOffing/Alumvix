@@ -15,14 +15,15 @@ namespace Alumvix.Controller.Gasto
     internal class EditarGastoInternoController
     {
         EditarGastoInternoView editarGastoInternoView;
-        GastoInternoView gastoInternoView;
+        GastosInternosView gastoInternoView;
 
         public EditarGastoInternoController(EditarGastoInternoView editarGastoInternoVista)
         {
             editarGastoInternoView = editarGastoInternoVista;
-            gastoInternoView = GastoInternoController.ObtenerInstancia();
+            gastoInternoView = GastosInternosController.ObtenerInstancia();
             editarGastoInternoView.Activated += new EventHandler(CargarDatos);
             editarGastoInternoView.txtEditarValorGastoInterno.KeyPress += new KeyPressEventHandler(ValidarEntradaNumeros);
+            editarGastoInternoView.txtEditarValorGastoInterno.TextChanged += new EventHandler(AplicarSeparadoresAValor);
             editarGastoInternoView.btnCerrarActualizarGastoInternoView.MouseHover += new EventHandler(ResaltarBotonCerrar);
             editarGastoInternoView.btnCerrarActualizarGastoInternoView.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrar);
             editarGastoInternoView.btnCerrarActualizarGastoInternoView.Click += new EventHandler(CerrarIngresoGastoInternoView);
@@ -30,6 +31,16 @@ namespace Alumvix.Controller.Gasto
             editarGastoInternoView.btnMinimizarActualizarGastoInternoView.MouseLeave += new EventHandler(QuitarResaltadoBotonMinimizar);
             editarGastoInternoView.btnMinimizarActualizarGastoInternoView.Click += new EventHandler(MinimizarIngresoGastoInternoView);
             editarGastoInternoView.btnActualizarGastoInterno.Click += new EventHandler(ActualizarGastoInterno);
+        }
+
+        private void AplicarSeparadoresAValor(object sender, EventArgs e)
+        {
+            TextBox txtValor = editarGastoInternoView.txtEditarValorGastoInterno;
+            if (txtValor.Text == "" || txtValor.Text == "0") return;
+            decimal price;
+            price = decimal.Parse(txtValor.Text, System.Globalization.NumberStyles.Currency);
+            txtValor.Text = price.ToString("#,#");
+            txtValor.SelectionStart = txtValor.Text.Length;
         }
 
         private void MinimizarIngresoGastoInternoView(object sender, EventArgs e)
@@ -77,8 +88,9 @@ namespace Alumvix.Controller.Gasto
             if (respuesta)
             {
                 int idTipoGastoInterno = gastoActualizado.ObtenerTipoGastoInternoPorNombre(editarGastoInternoView.cbEditarTipoGastoInterno.GetItemText(editarGastoInternoView.cbEditarTipoGastoInterno.SelectedItem));
-                string valorSinFormato = CambioDeFormato.QuitarFormatoANumero(editarGastoInternoView.txtEditarValorGastoInterno.Text);
-                bool respuestaIngresoGastoInterno = gastoActualizado.ActualizarGastoInterno(Convert.ToInt32(valorSinFormato), editarGastoInternoView.dtpEditarFechaGastoInterno.Text, editarGastoInternoView.txtEditarDescripcionGastoInterno.Text, idTipoGastoInterno);
+                //string valorSinFormato = CambioDeFormato.QuitarFormatoANumero(editarGastoInternoView.txtEditarValorGastoInterno.Text);
+                int valorSinFormato = Convert.ToInt32(editarGastoInternoView.txtEditarValorGastoInterno.Text.Replace(".", ""));
+                bool respuestaIngresoGastoInterno = gastoActualizado.ActualizarGastoInterno(valorSinFormato, editarGastoInternoView.dtpEditarFechaGastoInterno.Text, editarGastoInternoView.txtEditarDescripcionGastoInterno.Text, idTipoGastoInterno);
                 if (respuestaIngresoGastoInterno)
                 {
                     editarGastoInternoView.Hide();
@@ -99,7 +111,7 @@ namespace Alumvix.Controller.Gasto
             editarGastoInternoView.cbEditarTipoGastoInterno.DataSource = tipoGastoInterno.ObtenerTiposDeGastoInterno();
             editarGastoInternoView.cbEditarTipoGastoInterno.DropDownStyle = ComboBoxStyle.DropDownList;
             editarGastoInternoView.cbEditarTipoGastoInterno.Text = gastoInternoView.lstvGastosInternos.SelectedItems[0].SubItems[0].Text;
-            editarGastoInternoView.txtEditarValorGastoInterno.Text = gastoInternoView.lstvGastosInternos.SelectedItems[0].SubItems[1].Text;
+            editarGastoInternoView.txtEditarValorGastoInterno.Text = CambioDeFormato.QuitarFormatoANumero(gastoInternoView.lstvGastosInternos.SelectedItems[0].SubItems[1].Text);
             editarGastoInternoView.txtEditarDescripcionGastoInterno.Text = gastoInternoView.lstvGastosInternos.SelectedItems[0].SubItems[3].Text;
             editarGastoInternoView.dtpEditarFechaGastoInterno.Text = gastoInternoView.lstvGastosInternos.SelectedItems[0].SubItems[2].Text;
         }

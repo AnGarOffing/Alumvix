@@ -26,6 +26,7 @@ namespace Alumvix.Controller.Gasto
             ingresoGastoView.Load += new EventHandler(CargarProveedores);
             ingresoGastoView.Activated += new EventHandler(ActualizarIdContrato);
             ingresoGastoView.txtIngresarValorGasto.KeyPress += new KeyPressEventHandler(ValidarEntradaNumeros);
+            ingresoGastoView.txtIngresarValorGasto.TextChanged += new EventHandler(AplicarSeparadoresAValor);
             ingresoGastoView.txtNumeroFactura.KeyPress += new KeyPressEventHandler(ValidarEntradaLetrasYNumeros);
             ingresoGastoView.cbIngresarTipoGasto.SelectedIndexChanged += new EventHandler(HabilitarControlesFactyProv);
             ingresoGastoView.btnCerrarIngresoGastoView.MouseHover += new EventHandler(ResaltarBotonCerrar);
@@ -35,6 +36,16 @@ namespace Alumvix.Controller.Gasto
             ingresoGastoView.btnMinimizarIngresoGastoView.MouseLeave += new EventHandler(QuitarResaltadoBotonMinimizar);
             ingresoGastoView.btnMinimizarIngresoGastoView.Click += new EventHandler(MinimizarIngresoGastoView);
             ingresoGastoView.btnGuardarNuevoGasto.Click += new EventHandler(IngresarGasto);
+        }
+
+        private void AplicarSeparadoresAValor(object sender, EventArgs e)
+        {
+            TextBox txtValor = ingresoGastoView.txtIngresarValorGasto;
+            if (txtValor.Text == "" || txtValor.Text == "0") return;
+            decimal price;
+            price = decimal.Parse(txtValor.Text, System.Globalization.NumberStyles.Currency);
+            txtValor.Text = price.ToString("#,#");
+            txtValor.SelectionStart = txtValor.Text.Length;
         }
 
         private void MinimizarIngresoGastoView(object sender, EventArgs e)
@@ -106,9 +117,10 @@ namespace Alumvix.Controller.Gasto
             if (respuesta)
             {        
                 GastoDao nuevoGasto = new GastoDao();
-                string valorSinFormato = CambioDeFormato.QuitarFormatoANumero(ingresoGastoView.txtIngresarValorGasto.Text);
+                //string valorSinFormato = CambioDeFormato.QuitarFormatoANumero(ingresoGastoView.txtIngresarValorGasto.Text);
+                int valorSinFormato = Convert.ToInt32(ingresoGastoView.txtIngresarValorGasto.Text.Replace(".", ""));
                 int idTipoGasto = nuevoGasto.ObtenerTipoGastoPorNombre(ingresoGastoView.cbIngresarTipoGasto.GetItemText(ingresoGastoView.cbIngresarTipoGasto.SelectedItem));
-                bool respuestaIngresoGasto = gastoActualizado.IngresarGasto(ingresoGastoView.txtNumeroFactura.Text, Convert.ToInt32(valorSinFormato), ingresoGastoView.dtpFechaIngresoGasto.Text, ingresoGastoView.txtDescripcionGasto.Text, ingresoGastoView.cbIngresarProveedor.SelectedIndex, idTipoGasto, idContrato);
+                bool respuestaIngresoGasto = gastoActualizado.IngresarGasto(ingresoGastoView.txtNumeroFactura.Text, valorSinFormato, ingresoGastoView.dtpFechaIngresoGasto.Text, ingresoGastoView.txtDescripcionGasto.Text, ingresoGastoView.cbIngresarProveedor.SelectedIndex, idTipoGasto, idContrato);
                 if (respuestaIngresoGasto)
                 {
                     //editarGastoView.txtActualizarValorGasto.Clear();

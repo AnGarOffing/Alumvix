@@ -19,6 +19,7 @@ namespace Alumvix.Controller.Contrato
         DetalleClienteView detalleClienteView;
         ContratoDao contratoDao;
         string valorContratoAnterior;
+        string valorContratoAnteriorSinFormato;
         string tipoFacturaAnterior;
 
         public EditarContratoController(EditarContratoView editarContratoVista)
@@ -28,6 +29,7 @@ namespace Alumvix.Controller.Contrato
             detalleClienteView = DetalleClienteController.ObtenerInstanciaDetalleClienteView();
             editarContratoView.Load += new EventHandler(CargarDatosAEditar);
             editarContratoView.txtEditarValorContrato.KeyPress += new KeyPressEventHandler(ValidarEntradaNumeros);
+            editarContratoView.txtEditarValorContrato.TextChanged += new EventHandler(AplicarSeparadoresAValor);
             editarContratoView.btnMinimizarEditarContratoView.MouseHover += new EventHandler(ResaltarBotonMinimizar);
             editarContratoView.btnMinimizarEditarContratoView.MouseLeave += new EventHandler(QuitarResaltadoBotonMinimizar);
             editarContratoView.btnCerrarEditarContratoView.MouseHover += new EventHandler(ResaltarBotonCerrar);
@@ -35,6 +37,16 @@ namespace Alumvix.Controller.Contrato
             editarContratoView.btnCerrarEditarContratoView.Click += new EventHandler(CerrarEditarContratoView);
             editarContratoView.btnMinimizarEditarContratoView.Click += new EventHandler(MinimizarEditarContratoView);
             editarContratoView.btnActualizarContrato.Click += new EventHandler(ActualizarContrato);          
+        }
+
+        private void AplicarSeparadoresAValor(object sender, EventArgs e)
+        {
+            TextBox txtValor = editarContratoView.txtEditarValorContrato;
+            if (txtValor.Text == "" || txtValor.Text == "0") return;
+            decimal price;
+            price = decimal.Parse(txtValor.Text, System.Globalization.NumberStyles.Currency);
+            txtValor.Text = price.ToString("#,#");
+            txtValor.SelectionStart = txtValor.Text.Length;
         }
 
         private void ResaltarBotonMinimizar(object sender, EventArgs e)
@@ -85,8 +97,8 @@ namespace Alumvix.Controller.Contrato
             editarContratoView.cbEditarEstadoTrabajo.DataSource = contratoDao.ObtenerEstadosTrabajo();
             editarContratoView.cbEditarEstadoTrabajo.Text = detalleClienteView.txtEstadoTrabajo.Text;
 
-            editarContratoView.txtEditarValorContrato.Text = detalleClienteView.txtValorContrato.Text;
-            valorContratoAnterior = editarContratoView.txtEditarValorContrato.Text;
+            editarContratoView.txtEditarValorContrato.Text = CambioDeFormato.QuitarFormatoANumero(detalleClienteView.txtValorContrato.Text);
+            valorContratoAnterior = editarContratoView.txtEditarValorContrato.Text.Replace(".", "");
 
             editarContratoView.dtpEditarFechaInicioContrato.Text = detalleClienteView.txtFechaInicioContrato.Text;
             editarContratoView.dtpEditarFechaTerminacionContrato.Text = detalleClienteView.txtFechaFinContrato.Text;
@@ -101,18 +113,19 @@ namespace Alumvix.Controller.Contrato
             }
             else
             {
+                string valorModificado = editarContratoView.txtEditarValorContrato.Text.Replace(".", "");
                 int valorContratoCalculado;
                 ContratoDao contratoDao = new ContratoDao();
-                if ((editarContratoView.cbEditarTipoFactura.SelectedIndex == 1 && valorContratoAnterior != editarContratoView.txtEditarValorContrato.Text) || (editarContratoView.cbEditarTipoFactura.Text != tipoFacturaAnterior && editarContratoView.cbEditarTipoFactura.Text == "LEGAL"))
+                if ((editarContratoView.cbEditarTipoFactura.SelectedIndex == 1 && valorContratoAnterior != valorModificado) || (editarContratoView.cbEditarTipoFactura.SelectedItem.ToString() != tipoFacturaAnterior && editarContratoView.cbEditarTipoFactura.SelectedItem.ToString() == "LEGAL"))
                 {
-                    valorContratoCalculado = Logica.AplicarIVA(Convert.ToInt32(CambioDeFormato.QuitarFormatoANumero(editarContratoView.txtEditarValorContrato.Text)), 1);
+                    valorContratoCalculado = Logica.AplicarIVA(Convert.ToInt32(valorModificado), 1);
                 }else
-                if ((tipoFacturaAnterior != editarContratoView.cbEditarTipoFactura.Text && tipoFacturaAnterior == "LEGAL") && (valorContratoAnterior == editarContratoView.txtEditarValorContrato.Text))
+                if ((tipoFacturaAnterior != valorModificado && tipoFacturaAnterior == "LEGAL") && (valorContratoAnterior == valorModificado))
                 {
-                    valorContratoCalculado = Logica.QuitarIVA(Convert.ToInt32(CambioDeFormato.QuitarFormatoANumero(editarContratoView.txtEditarValorContrato.Text)));
+                    valorContratoCalculado = Logica.QuitarIVA(Convert.ToInt32(valorModificado));
                 }
-                else valorContratoCalculado = Convert.ToInt32(CambioDeFormato.QuitarFormatoANumero(editarContratoView.txtEditarValorContrato.Text));
-                bool respuestaActualizacionContrato = contratoDao.ActualizarContrato(Convert.ToInt32(CambioDeFormato.QuitarFormatoANumero(valorContratoCalculado.ToString())), editarContratoView.dtpEditarFechaInicioContrato.Text, editarContratoView.dtpEditarFechaTerminacionContrato.Text, editarContratoView.cbEditarEstadoTrabajo.SelectedIndex + 1, editarContratoView.cbEditarTipoFactura.SelectedIndex,Convert.ToInt32(detalleClienteView.txtNumeroFactura.Text));
+                else valorContratoCalculado = Convert.ToInt32(valorModificado);
+                bool respuestaActualizacionContrato = contratoDao.ActualizarContrato(Convert.ToInt32(valorContratoCalculado.ToString()), editarContratoView.dtpEditarFechaInicioContrato.Text, editarContratoView.dtpEditarFechaTerminacionContrato.Text, editarContratoView.cbEditarEstadoTrabajo.SelectedIndex + 1, editarContratoView.cbEditarTipoFactura.SelectedIndex,Convert.ToInt32(detalleClienteView.txtNumeroFactura.Text));
                 if (respuestaActualizacionContrato)
                 {
                     editarContratoView.txtEditarValorContrato.Clear();

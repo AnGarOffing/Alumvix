@@ -1,6 +1,6 @@
 ﻿namespace Alumvix.View.Gasto
 {
-    partial class GastoInternoView
+    partial class GastosInternosView
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GastoInternoView));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GastosInternosView));
             this.lblListadoGastosInternos = new System.Windows.Forms.Label();
             this.btnEditarGastoInterno = new System.Windows.Forms.Button();
             this.lstvGastosInternos = new System.Windows.Forms.ListView();
@@ -41,9 +41,11 @@
             this.btnMinimizarGastoInternoView = new System.Windows.Forms.PictureBox();
             this.btnCerrarGastoInternoView = new System.Windows.Forms.PictureBox();
             this.btnIngresarGastoInterno = new System.Windows.Forms.Button();
+            this.btnCerrarSesionGastosInternos = new System.Windows.Forms.PictureBox();
             this.pnlSuperiorGastoInternoView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarGastoInternoView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarGastoInternoView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesionGastosInternos)).BeginInit();
             this.SuspendLayout();
             // 
             // lblListadoGastosInternos
@@ -124,6 +126,7 @@
             // pnlSuperiorGastoInternoView
             // 
             this.pnlSuperiorGastoInternoView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pnlSuperiorGastoInternoView.Controls.Add(this.btnCerrarSesionGastosInternos);
             this.pnlSuperiorGastoInternoView.Controls.Add(this.btnMinimizarGastoInternoView);
             this.pnlSuperiorGastoInternoView.Controls.Add(this.btnCerrarGastoInternoView);
             this.pnlSuperiorGastoInternoView.Controls.Add(this.lblListadoGastosInternos);
@@ -164,7 +167,16 @@
             this.btnIngresarGastoInterno.TabIndex = 46;
             this.btnIngresarGastoInterno.UseVisualStyleBackColor = false;
             // 
-            // GastoInternoView
+            // btnCerrarSesionGastosInternos
+            // 
+            this.btnCerrarSesionGastosInternos.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesionGastosInternos.Image")));
+            this.btnCerrarSesionGastosInternos.Location = new System.Drawing.Point(1064, 11);
+            this.btnCerrarSesionGastosInternos.Name = "btnCerrarSesionGastosInternos";
+            this.btnCerrarSesionGastosInternos.Size = new System.Drawing.Size(33, 33);
+            this.btnCerrarSesionGastosInternos.TabIndex = 49;
+            this.btnCerrarSesionGastosInternos.TabStop = false;
+            // 
+            // GastosInternosView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -176,13 +188,14 @@
             this.Controls.Add(this.lstvGastosInternos);
             this.Controls.Add(this.btnEliminarGastoInterno);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "GastoInternoView";
+            this.Name = "GastosInternosView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GastoInternoView";
             this.pnlSuperiorGastoInternoView.ResumeLayout(false);
             this.pnlSuperiorGastoInternoView.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarGastoInternoView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarGastoInternoView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesionGastosInternos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -201,5 +214,6 @@
         public System.Windows.Forms.PictureBox btnMinimizarGastoInternoView;
         public System.Windows.Forms.PictureBox btnCerrarGastoInternoView;
         public System.Windows.Forms.Button btnIngresarGastoInterno;
+        public System.Windows.Forms.PictureBox btnCerrarSesionGastosInternos;
     }
 }

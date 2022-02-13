@@ -29,6 +29,7 @@ namespace Alumvix.Controller.Abono
             ingresoAbonoView.Activated += new EventHandler(LimpiarControles);
             ingresoAbonoView.Activated += new EventHandler(ActualizarIdContrato);
             ingresoAbonoView.txtIngresarValorAbono.KeyPress += new KeyPressEventHandler(ValidarEntrada);
+            ingresoAbonoView.txtIngresarValorAbono.TextChanged += new EventHandler(AplicarSeparadoresAValor);
             ingresoAbonoView.btnCerrarIngresoAbonoView.MouseHover += new EventHandler(ResaltarBotonCerrar);
             ingresoAbonoView.btnCerrarIngresoAbonoView.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrar);
             ingresoAbonoView.btnCerrarIngresoAbonoView.Click += new EventHandler(CerrarIngresoAbonoView);
@@ -36,6 +37,16 @@ namespace Alumvix.Controller.Abono
             ingresoAbonoView.btnMinimizarIngresoAbonoView.MouseLeave += new EventHandler(QuitarResaltadoBotonMinimizar);
             ingresoAbonoView.btnMinimizarIngresoAbonoView.Click += new EventHandler(MinimizarIngresoAbonoView);
             ingresoAbonoView.btnGuardarNuevoAbono.Click += new EventHandler(IngresarAbono);
+        }
+
+        private void AplicarSeparadoresAValor(object sender, EventArgs e)
+        {
+            TextBox txtValor = ingresoAbonoView.txtIngresarValorAbono;
+            if (txtValor.Text == "" || txtValor.Text == "0") return;
+            decimal price;
+            price = decimal.Parse(txtValor.Text, System.Globalization.NumberStyles.Currency);
+            txtValor.Text = price.ToString("#,#");
+            txtValor.SelectionStart = txtValor.Text.Length;
         }
 
         private void MinimizarIngresoAbonoView(object sender, EventArgs e)
@@ -53,7 +64,7 @@ namespace Alumvix.Controller.Abono
         {
             ingresoAbonoView.btnCerrarIngresoAbonoView.BackColor = Color.FromArgb(223, 240, 254);
         }
-
+            
         private void QuitarResaltadoBotonCerrar(object sender, EventArgs e)
         {
             ingresoAbonoView.btnCerrarIngresoAbonoView.BackColor = Color.Transparent;
@@ -96,7 +107,8 @@ namespace Alumvix.Controller.Abono
             }
             else
             {
-                bool respuestaIngresoAbono = nuevoAbono.IngresarAbono(Convert.ToInt32(ingresoAbonoView.txtIngresarValorAbono.Text), ingresoAbonoView.dtpIngresarFechaAbono.Text, idContrato, ingresoAbonoView.cbIngresarFormaDePago.SelectedIndex);
+                int valorSinFormato = Convert.ToInt32(ingresoAbonoView.txtIngresarValorAbono.Text.Replace(".", ""));
+                bool respuestaIngresoAbono = nuevoAbono.IngresarAbono(valorSinFormato, ingresoAbonoView.dtpIngresarFechaAbono.Text, idContrato, ingresoAbonoView.cbIngresarFormaDePago.SelectedIndex);
                 if (respuestaIngresoAbono)
                 {
                     ingresoAbonoView.txtIngresarValorAbono.Clear();

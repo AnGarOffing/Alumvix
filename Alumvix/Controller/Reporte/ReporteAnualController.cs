@@ -1,7 +1,10 @@
-﻿using Alumvix.Model.Dao;
+﻿using Alumvix.Controller.Login;
+using Alumvix.Model.Dao;
 using Alumvix.Model.Dto;
 using Alumvix.Model.Logica.Util;
 using Alumvix.Model.Negocio;
+using Alumvix.View;
+using Alumvix.View.Login;
 using Alumvix.View.Reporte;
 using System;
 using System.Collections.Generic;
@@ -17,13 +20,18 @@ namespace Alumvix.Controller.Reporte
     {
         ReporteAnualView reporteAnualView;
         AdministradorReportesView administradorReportesView;
+        ClienteView clienteView;
+        LoginView loginView;
 
         public ReporteAnualController(ReporteAnualView reporteAnualVista)
         {
             reporteAnualView = reporteAnualVista;
             administradorReportesView = AdministradorReportesController.ObtenerInstancia();
-            reporteAnualView.Load += new EventHandler(MostrarReporteAnual);
-            reporteAnualView.Load += new EventHandler(MostrarReporteMensualPorAnio);
+            clienteView = ClienteController.ObtenerInstanciaClienteView();
+            loginView = LoginController.ObtenerInstanciaLoginView();    
+            reporteAnualView.Activated += new EventHandler(MostrarReporteAnual);
+            reporteAnualView.Activated += new EventHandler(MostrarReporteMensualPorAnio);
+            reporteAnualView.Activated += new EventHandler(LimpiarListadoGastos);
             reporteAnualView.btnCerrarReporteAnualView.MouseHover += new EventHandler(ResaltarBotonCerrar);
             reporteAnualView.btnCerrarReporteAnualView.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrar);
             reporteAnualView.btnCerrarReporteAnualView.Click += new EventHandler(CerrarReporteAnualView);
@@ -32,6 +40,32 @@ namespace Alumvix.Controller.Reporte
             reporteAnualView.btnMinimizarReporteAnualView.Click += new EventHandler(MinimizarReporteAnualView);
             reporteAnualView.btnDetalleGastos.Click += new EventHandler(MostrarGastosTotalesPorAnio);
             reporteAnualView.btnExportarReporteAExcel.Click += new EventHandler(ExportarReporteAExcel);
+            reporteAnualView.btnCerrarSesionReporteAnual.Click += new EventHandler(CerrarSesion);
+            reporteAnualView.btnCerrarSesionReporteAnual.MouseHover += new EventHandler(ResaltarBotonCerrarSesion);
+            reporteAnualView.btnCerrarSesionReporteAnual.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrarSesion);
+        }
+
+        private void LimpiarListadoGastos(object sender, EventArgs e)
+        {
+            reporteAnualView.lstvGastosTotalesMensuales.Items.Clear();
+        }
+
+        private void QuitarResaltadoBotonCerrarSesion(object sender, EventArgs e)
+        {
+            reporteAnualView.btnCerrarSesionReporteAnual.BackColor = Color.Transparent;
+        }
+
+        private void ResaltarBotonCerrarSesion(object sender, EventArgs e)
+        {
+            reporteAnualView.btnCerrarSesionReporteAnual.BackColor = Color.FromArgb(223, 240, 254);
+        }
+
+        private void CerrarSesion(object sender, EventArgs e)
+        {
+            reporteAnualView.Hide();
+            administradorReportesView.Hide();
+            clienteView.Hide();
+            loginView.Show();
         }
 
         private void MinimizarReporteAnualView(object sender, EventArgs e)
@@ -98,9 +132,9 @@ namespace Alumvix.Controller.Reporte
             int totalVentasAnio = reporteDao.ObtenerTotalVentasPorAnio(AdministradorReportesController.AnioSeleccionado);
             int totalGastosAnio = new Logica().SumarTiposDeGastos(AdministradorReportesController.AnioSeleccionado);
             reporteAnualView.txtCantidadContratos.Text = reporteDao.ObtenerCantidadContratos(AdministradorReportesController.AnioSeleccionado).ToString();
-            reporteAnualView.txtTotalVentas.Text = totalVentasAnio.ToString();
-            reporteAnualView.txtTotalGastos.Text = totalGastosAnio.ToString();
-            reporteAnualView.txtUtilidadGeneral.Text = (totalVentasAnio - totalGastosAnio).ToString();
+            reporteAnualView.txtTotalVentas.Text = CambioDeFormato.DarFormatoANumero(totalVentasAnio);
+            reporteAnualView.txtTotalGastos.Text = CambioDeFormato.DarFormatoANumero(totalGastosAnio);
+            reporteAnualView.txtUtilidadGeneral.Text = CambioDeFormato.DarFormatoANumero((totalVentasAnio - totalGastosAnio));
         }
 
         private void MostrarGastosTotalesPorAnio(object sender, EventArgs e)

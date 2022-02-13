@@ -11,20 +11,20 @@ using System.Windows.Forms;
 
 namespace Alumvix.View.Gasto
 {
-    public partial class GastoInternoView : Form
+    public partial class GastosInternosView : Form
     {
-        private static GastoInternoView instancia = null;
-        public GastoInternoView()
+        private static GastosInternosView instancia = null;
+        public GastosInternosView()
         {
             InitializeComponent();
-            GastoInternoController gastoInternoController = new GastoInternoController(this);
+            GastosInternosController gastoInternoController = new GastosInternosController(this);
         }
 
-        public static GastoInternoView ObtenerInstancia()
+        public static GastosInternosView ObtenerInstancia()
         {
             if (instancia == null)
             {
-                instancia = new GastoInternoView();
+                instancia = new GastosInternosView();
             }
             return instancia;
         }
