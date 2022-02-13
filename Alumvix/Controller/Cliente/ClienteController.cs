@@ -207,6 +207,7 @@ namespace Alumvix.Controller
 
         private void ObtenerListadoClientes(object sender, EventArgs e)
         {
+            clienteVista.btnModificarIVA.Enabled = false;
             if (clienteVista.rbContratoAbierto.Checked)
             {
                 ClienteDao clienteDao = new ClienteDao();

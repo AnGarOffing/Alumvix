@@ -46,6 +46,7 @@
             this.rbContratoAbierto = new System.Windows.Forms.RadioButton();
             this.dataGridClientes = new System.Windows.Forms.DataGridView();
             this.rbCualquierContrato = new System.Windows.Forms.RadioButton();
+            this.btnModificarIVA = new System.Windows.Forms.Button();
             this.pnlSuperiorClienteView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarClienteView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarClienteView)).BeginInit();
@@ -59,7 +60,7 @@
             this.txtFiltrarCliente.Location = new System.Drawing.Point(12, 83);
             this.txtFiltrarCliente.Multiline = true;
             this.txtFiltrarCliente.Name = "txtFiltrarCliente";
-            this.txtFiltrarCliente.Size = new System.Drawing.Size(212, 29);
+            this.txtFiltrarCliente.Size = new System.Drawing.Size(151, 29);
             this.txtFiltrarCliente.TabIndex = 3;
             // 
             // btnActualizarCliente
@@ -209,7 +210,7 @@
             this.gbEstadoContrato.Controls.Add(this.rbContratoAbierto);
             this.gbEstadoContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbEstadoContrato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.gbEstadoContrato.Location = new System.Drawing.Point(230, 63);
+            this.gbEstadoContrato.Location = new System.Drawing.Point(213, 63);
             this.gbEstadoContrato.Name = "gbEstadoContrato";
             this.gbEstadoContrato.Size = new System.Drawing.Size(425, 53);
             this.gbEstadoContrato.TabIndex = 47;
@@ -261,12 +262,28 @@
             this.rbCualquierContrato.Text = "CUALQUIERA";
             this.rbCualquierContrato.UseVisualStyleBackColor = true;
             // 
+            // btnModificarIVA
+            // 
+            this.btnModificarIVA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificarIVA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificarIVA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.btnModificarIVA.Image = ((System.Drawing.Image)(resources.GetObject("btnModificarIVA.Image")));
+            this.btnModificarIVA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificarIVA.Location = new System.Drawing.Point(630, 394);
+            this.btnModificarIVA.Name = "btnModificarIVA";
+            this.btnModificarIVA.Size = new System.Drawing.Size(164, 44);
+            this.btnModificarIVA.TabIndex = 48;
+            this.btnModificarIVA.Text = "Modificar IVA";
+            this.btnModificarIVA.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnModificarIVA.UseVisualStyleBackColor = true;
+            // 
             // ClienteView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(1032, 450);
+            this.Controls.Add(this.btnModificarIVA);
             this.Controls.Add(this.gbEstadoContrato);
             this.Controls.Add(this.btnDetalleCliente);
             this.Controls.Add(this.btnProveedores);
@@ -313,5 +330,6 @@
         public System.Windows.Forms.RadioButton rbContratoAbierto;
         public System.Windows.Forms.DataGridView dataGridClientes;
         public System.Windows.Forms.RadioButton rbCualquierContrato;
+        public System.Windows.Forms.Button btnModificarIVA;
     }
 }
