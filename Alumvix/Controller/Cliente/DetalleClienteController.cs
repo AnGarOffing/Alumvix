@@ -127,9 +127,12 @@ namespace Alumvix.Controller.Cliente
 
         private void CerrarSesion(object sender, EventArgs e)
         {
-            detalleClienteVista.Hide();
-            clienteView.Hide();
-            loginView.Show();
+            if (MessageBox.Show("¿Desea cerrar sesion?", "BORRAR", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                detalleClienteVista.Hide();
+                clienteView.Hide();
+                loginView.Show();
+            }          
         }
 
         private void AbrirEditarContratoView(object sender, EventArgs e)

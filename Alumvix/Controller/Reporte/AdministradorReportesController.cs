@@ -50,9 +50,12 @@ namespace Alumvix.Controller.Reporte
 
         private void CerrarSesion(object sender, EventArgs e)
         {
-            administradorReportesView.Hide();
-            clienteView.Hide();
-            loginView.Show();
+            if (MessageBox.Show("¿Desea cerrar sesion?", "BORRAR", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                administradorReportesView.Hide();
+                clienteView.Hide();
+                loginView.Show();
+            }           
         }
 
         private void MinimizarAdministradorReportesView(object sender, EventArgs e)

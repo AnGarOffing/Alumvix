@@ -58,9 +58,12 @@ namespace Alumvix.Controller.Proveedor
 
         private void CerrarSesion(object sender, EventArgs e)
         {
-            proveedoresView.Hide();
-            clienteView.Hide();
-            loginView.Show();
+            if (MessageBox.Show("¿Desea cerrar sesion?", "BORRAR", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                proveedoresView.Hide();
+                clienteView.Hide();
+                loginView.Show();
+            }   
         }
 
         private void MinimizarIngresoGastoInternoView(object sender, EventArgs e)
@@ -93,7 +96,6 @@ namespace Alumvix.Controller.Proveedor
         {
             proveedoresView.btnMinimizarProveedorView.BackColor = Color.Transparent;
         }
-
 
             private void AbrirEditarProveedorView(object sender, EventArgs e)
         {

@@ -59,9 +59,12 @@ namespace Alumvix.Controller.Gasto
 
         private void CerraSesion(object sender, EventArgs e)
         {
-            gastosInternosView.Hide();
-            clienteView.Hide();
-            loginView.Show();
+            if (MessageBox.Show("¿Desea cerrar sesion?", "BORRAR", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                gastosInternosView.Hide();
+                clienteView.Hide();
+                loginView.Show();
+            }         
         }
 
         public static GastosInternosView ObtenerInstanciaClienteView()
