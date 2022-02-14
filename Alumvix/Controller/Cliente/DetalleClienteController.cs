@@ -41,7 +41,7 @@ namespace Alumvix.Controller.Cliente
             clienteView = ClienteController.ObtenerInstanciaClienteView();
             seleccionarContratoView = SeleccionarContratoController.ObtenerInstanciaSeleccionarContratoView();
             contratoDto = SeleccionarContrato();
-            abonos = new AbonoDao().ObtenerAbonos(contratoDto.IdContrato);
+            //abonos = new AbonoDao().ObtenerAbonos(contratoDto.IdContrato);
             gastos = new GastoDao().ObtenerGastos(contratoDto.IdContrato);
             productos = new ProductoDao().ObtenerListadoProductos(contratoDto.IdContrato);
             registroCliente = ClienteController.CargarRegistroCliente();
@@ -219,6 +219,7 @@ namespace Alumvix.Controller.Cliente
             int estadoTrabajo = 0;
             ContratoDao contratoDao = new ContratoDao();
             int sumaAbonos = 0;
+            abonos = new AbonoDao().ObtenerAbonos(contratoDto.IdContrato);
             foreach (AbonoDto abono in abonos)
             {
                 sumaAbonos += abono.ValorAbono;

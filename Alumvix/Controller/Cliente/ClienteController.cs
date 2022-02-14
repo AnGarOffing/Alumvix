@@ -36,6 +36,7 @@ namespace Alumvix.Controller
             clienteVista = view;
             clienteVista.Activated += new EventHandler(ObtenerListadoClientes);
             clienteVista.Activated += new EventHandler(PersonalizarFormulario);
+            clienteVista.Activated += new EventHandler(SeleccionarFiltroCualquiera);
             clienteVista.txtFiltrarCliente.TextChanged += new EventHandler(ObtenerListadoClientes);
             clienteVista.dataGridClientes.CellClick += new DataGridViewCellEventHandler(ObtenerRegistroCliente);
             clienteVista.btnDetalleCliente.Click += new EventHandler(AbrirDetalleClienteView);
@@ -56,6 +57,11 @@ namespace Alumvix.Controller
             clienteVista.rbContratoAbierto.CheckedChanged += new EventHandler(FiltarCLientesContratosAbiertos);
             clienteVista.rbContratoCerrado.CheckedChanged += new EventHandler(FiltarCLientesContratoCerrado);
             clienteVista.rbCualquierContrato.CheckedChanged += new EventHandler(MostrarAllClientes);
+        }
+
+        private void SeleccionarFiltroCualquiera(object sender, EventArgs e)
+        {
+            clienteVista.rbCualquierContrato.Checked = true;
         }
 
         private void MostrarAllClientes(object sender, EventArgs e)
@@ -229,7 +235,6 @@ namespace Alumvix.Controller
                 clienteVista.dataGridClientes.ClearSelection();
                 registroCliente.Clear();
             }
-            
         }
 
         public static List<ClienteDto> CargarRegistroCliente()
