@@ -203,6 +203,7 @@
             // 
             // IngresoGastoInternoView
             // 
+            this.AcceptButton = this.btnGuardarNuevoGastoInterno;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));

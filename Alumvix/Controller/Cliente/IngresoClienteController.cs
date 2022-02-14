@@ -1,4 +1,5 @@
 ﻿using Alumvix.Model.Dao;
+using Alumvix.Model.Dto;
 using Alumvix.Model.Negocio.Util;
 using Alumvix.View;
 using Alumvix.View.Cliente;
@@ -21,6 +22,7 @@ namespace Alumvix.Controller.Cliente
         {
             ingresoClienteView = ingresoClienteVista;
             ingresoClienteView.Activated += new EventHandler(LimpiarControles);
+            ingresoClienteView.LostFocus += new EventHandler(PersistirDatos);
             ingresoClienteView.txtIngresarIdCliente.KeyPress += new KeyPressEventHandler(ValidarEntradaNumeros);
             ingresoClienteView.txtIngresarNombreCliente.KeyPress += new KeyPressEventHandler(ValidarEntradaLetrasYNumeros);
             ingresoClienteView.txtIngresarTelefonoCliente.KeyPress += new KeyPressEventHandler(ValidarEntradaNumeros);
@@ -32,6 +34,14 @@ namespace Alumvix.Controller.Cliente
             ingresoClienteView.btnCerrarIngresoClienteView.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrar);
             ingresoClienteView.btnCerrarIngresoClienteView.Click += new EventHandler(CerrarFormularioIngresoClienteView);
             ingresoClienteView.btnMinimizarIngresoClienteView.Click += new EventHandler(MinimizarFormularioIngresoClienteView);
+        }
+
+        private void PersistirDatos(object sender, EventArgs e)
+        {
+            ClienteDto clienteDto = new ClienteDto();
+            clienteDto.IdentificacionCliente =  ingresoClienteView.txtIngresarIdCliente.Text;
+
+            
         }
 
         private void LimpiarControles(object sender, EventArgs e)
@@ -83,8 +93,7 @@ namespace Alumvix.Controller.Cliente
 
         private void ValidarEntradaNumeros(object sender, KeyPressEventArgs e)
         {
-            bool respuesta = ValidacionesDeControles.ValidarEntradaNumeros(e);
-            if (respuesta == true) MessageBox.Show("El campo solo permite numeros");
+            e.Handled = ValidacionesDeControles.ValidarEntradaNumeros(e);
         }
 
         private void GuardarCliente(object sender, EventArgs e)

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditarGastoInternoView));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnActualizarGastoInterno = new System.Windows.Forms.Button();
             this.cbEditarTipoGastoInterno = new System.Windows.Forms.ComboBox();
             this.lblEditarTipoGastoInterno = new System.Windows.Forms.Label();
             this.txtEditarDescripcionGastoInterno = new System.Windows.Forms.TextBox();
@@ -42,7 +43,6 @@
             this.pnlSuperiorEditarGastoInternoView = new System.Windows.Forms.Panel();
             this.btnMinimizarActualizarGastoInternoView = new System.Windows.Forms.PictureBox();
             this.btnCerrarActualizarGastoInternoView = new System.Windows.Forms.PictureBox();
-            this.btnActualizarGastoInterno = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnlSuperiorEditarGastoInternoView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarActualizarGastoInternoView)).BeginInit();
@@ -64,6 +64,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(623, 200);
             this.panel1.TabIndex = 43;
+            // 
+            // btnActualizarGastoInterno
+            // 
+            this.btnActualizarGastoInterno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizarGastoInterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizarGastoInterno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.btnActualizarGastoInterno.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizarGastoInterno.Image")));
+            this.btnActualizarGastoInterno.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActualizarGastoInterno.Location = new System.Drawing.Point(476, 136);
+            this.btnActualizarGastoInterno.Name = "btnActualizarGastoInterno";
+            this.btnActualizarGastoInterno.Size = new System.Drawing.Size(136, 44);
+            this.btnActualizarGastoInterno.TabIndex = 50;
+            this.btnActualizarGastoInterno.Text = "Actualizar";
+            this.btnActualizarGastoInterno.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnActualizarGastoInterno.UseVisualStyleBackColor = true;
             // 
             // cbEditarTipoGastoInterno
             // 
@@ -186,23 +201,9 @@
             this.btnCerrarActualizarGastoInternoView.TabIndex = 48;
             this.btnCerrarActualizarGastoInternoView.TabStop = false;
             // 
-            // btnActualizarGastoInterno
-            // 
-            this.btnActualizarGastoInterno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizarGastoInterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizarGastoInterno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.btnActualizarGastoInterno.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizarGastoInterno.Image")));
-            this.btnActualizarGastoInterno.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActualizarGastoInterno.Location = new System.Drawing.Point(476, 136);
-            this.btnActualizarGastoInterno.Name = "btnActualizarGastoInterno";
-            this.btnActualizarGastoInterno.Size = new System.Drawing.Size(136, 44);
-            this.btnActualizarGastoInterno.TabIndex = 50;
-            this.btnActualizarGastoInterno.Text = "Actualizar";
-            this.btnActualizarGastoInterno.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnActualizarGastoInterno.UseVisualStyleBackColor = true;
-            // 
             // EditarGastoInternoView
             // 
+            this.AcceptButton = this.btnActualizarGastoInterno;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));

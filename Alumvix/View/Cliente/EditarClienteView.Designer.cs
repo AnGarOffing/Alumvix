@@ -30,6 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditarClienteView));
             this.pnlEditarCliente = new System.Windows.Forms.Panel();
+            this.lblEditarIdentificacionCliente = new System.Windows.Forms.Label();
+            this.lblEditarDireccionCliente = new System.Windows.Forms.Label();
+            this.lblEditarTelefonoCliente = new System.Windows.Forms.Label();
+            this.lblEditarCelularCliente = new System.Windows.Forms.Label();
+            this.lblEditarEmailCliente = new System.Windows.Forms.Label();
+            this.lblEditarNombreCliente = new System.Windows.Forms.Label();
             this.btnActualizarCliente = new System.Windows.Forms.Button();
             this.txtEditarCelularCliente = new System.Windows.Forms.TextBox();
             this.txtEditarTelefonoCliente = new System.Windows.Forms.TextBox();
@@ -41,12 +47,6 @@
             this.pnlSuperiorEditarClienteView = new System.Windows.Forms.Panel();
             this.btnMinimizarEditarClienteView = new System.Windows.Forms.PictureBox();
             this.btnCerrarEditarClienteView = new System.Windows.Forms.PictureBox();
-            this.lblEditarIdentificacionCliente = new System.Windows.Forms.Label();
-            this.lblEditarDireccionCliente = new System.Windows.Forms.Label();
-            this.lblEditarTelefonoCliente = new System.Windows.Forms.Label();
-            this.lblEditarCelularCliente = new System.Windows.Forms.Label();
-            this.lblEditarEmailCliente = new System.Windows.Forms.Label();
-            this.lblEditarNombreCliente = new System.Windows.Forms.Label();
             this.pnlEditarCliente.SuspendLayout();
             this.pnlSuperiorEditarClienteView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarEditarClienteView)).BeginInit();
@@ -72,112 +72,6 @@
             this.pnlEditarCliente.Name = "pnlEditarCliente";
             this.pnlEditarCliente.Size = new System.Drawing.Size(776, 322);
             this.pnlEditarCliente.TabIndex = 41;
-            // 
-            // btnActualizarCliente
-            // 
-            this.btnActualizarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizarCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.btnActualizarCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizarCliente.Image")));
-            this.btnActualizarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActualizarCliente.Location = new System.Drawing.Point(622, 266);
-            this.btnActualizarCliente.Name = "btnActualizarCliente";
-            this.btnActualizarCliente.Size = new System.Drawing.Size(137, 44);
-            this.btnActualizarCliente.TabIndex = 64;
-            this.btnActualizarCliente.Text = "Actualizar";
-            this.btnActualizarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnActualizarCliente.UseVisualStyleBackColor = true;
-            // 
-            // txtEditarCelularCliente
-            // 
-            this.txtEditarCelularCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEditarCelularCliente.Location = new System.Drawing.Point(164, 153);
-            this.txtEditarCelularCliente.MaxLength = 10;
-            this.txtEditarCelularCliente.Name = "txtEditarCelularCliente";
-            this.txtEditarCelularCliente.Size = new System.Drawing.Size(233, 26);
-            this.txtEditarCelularCliente.TabIndex = 51;
-            // 
-            // txtEditarTelefonoCliente
-            // 
-            this.txtEditarTelefonoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEditarTelefonoCliente.Location = new System.Drawing.Point(164, 193);
-            this.txtEditarTelefonoCliente.MaxLength = 7;
-            this.txtEditarTelefonoCliente.Name = "txtEditarTelefonoCliente";
-            this.txtEditarTelefonoCliente.Size = new System.Drawing.Size(139, 26);
-            this.txtEditarTelefonoCliente.TabIndex = 47;
-            // 
-            // txtEditarEmailCliente
-            // 
-            this.txtEditarEmailCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEditarEmailCliente.Location = new System.Drawing.Point(164, 113);
-            this.txtEditarEmailCliente.Name = "txtEditarEmailCliente";
-            this.txtEditarEmailCliente.Size = new System.Drawing.Size(388, 26);
-            this.txtEditarEmailCliente.TabIndex = 45;
-            // 
-            // txtEditarDireccionCliente
-            // 
-            this.txtEditarDireccionCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEditarDireccionCliente.Location = new System.Drawing.Point(164, 233);
-            this.txtEditarDireccionCliente.Name = "txtEditarDireccionCliente";
-            this.txtEditarDireccionCliente.Size = new System.Drawing.Size(595, 26);
-            this.txtEditarDireccionCliente.TabIndex = 43;
-            // 
-            // txtEditarNombreCliente
-            // 
-            this.txtEditarNombreCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEditarNombreCliente.Location = new System.Drawing.Point(164, 72);
-            this.txtEditarNombreCliente.Name = "txtEditarNombreCliente";
-            this.txtEditarNombreCliente.Size = new System.Drawing.Size(388, 26);
-            this.txtEditarNombreCliente.TabIndex = 41;
-            // 
-            // txtActualizarIdentificacionCliente
-            // 
-            this.txtActualizarIdentificacionCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtActualizarIdentificacionCliente.Location = new System.Drawing.Point(164, 28);
-            this.txtActualizarIdentificacionCliente.Name = "txtActualizarIdentificacionCliente";
-            this.txtActualizarIdentificacionCliente.Size = new System.Drawing.Size(192, 26);
-            this.txtActualizarIdentificacionCliente.TabIndex = 34;
-            // 
-            // lblTituloEditarCliente
-            // 
-            this.lblTituloEditarCliente.AutoSize = true;
-            this.lblTituloEditarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloEditarCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.lblTituloEditarCliente.Location = new System.Drawing.Point(204, 13);
-            this.lblTituloEditarCliente.Name = "lblTituloEditarCliente";
-            this.lblTituloEditarCliente.Size = new System.Drawing.Size(372, 29);
-            this.lblTituloEditarCliente.TabIndex = 40;
-            this.lblTituloEditarCliente.Text = "ACTUALIZACION DE CLIENTE";
-            // 
-            // pnlSuperiorEditarClienteView
-            // 
-            this.pnlSuperiorEditarClienteView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pnlSuperiorEditarClienteView.Controls.Add(this.btnMinimizarEditarClienteView);
-            this.pnlSuperiorEditarClienteView.Controls.Add(this.btnCerrarEditarClienteView);
-            this.pnlSuperiorEditarClienteView.Controls.Add(this.lblTituloEditarCliente);
-            this.pnlSuperiorEditarClienteView.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSuperiorEditarClienteView.Location = new System.Drawing.Point(0, 0);
-            this.pnlSuperiorEditarClienteView.Name = "pnlSuperiorEditarClienteView";
-            this.pnlSuperiorEditarClienteView.Size = new System.Drawing.Size(779, 59);
-            this.pnlSuperiorEditarClienteView.TabIndex = 42;
-            // 
-            // btnMinimizarEditarClienteView
-            // 
-            this.btnMinimizarEditarClienteView.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarEditarClienteView.Image")));
-            this.btnMinimizarEditarClienteView.Location = new System.Drawing.Point(699, 13);
-            this.btnMinimizarEditarClienteView.Name = "btnMinimizarEditarClienteView";
-            this.btnMinimizarEditarClienteView.Size = new System.Drawing.Size(33, 30);
-            this.btnMinimizarEditarClienteView.TabIndex = 46;
-            this.btnMinimizarEditarClienteView.TabStop = false;
-            // 
-            // btnCerrarEditarClienteView
-            // 
-            this.btnCerrarEditarClienteView.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarEditarClienteView.Image")));
-            this.btnCerrarEditarClienteView.Location = new System.Drawing.Point(741, 13);
-            this.btnCerrarEditarClienteView.Name = "btnCerrarEditarClienteView";
-            this.btnCerrarEditarClienteView.Size = new System.Drawing.Size(33, 30);
-            this.btnCerrarEditarClienteView.TabIndex = 45;
-            this.btnCerrarEditarClienteView.TabStop = false;
             // 
             // lblEditarIdentificacionCliente
             // 
@@ -245,8 +139,115 @@
             this.lblEditarNombreCliente.TabIndex = 66;
             this.lblEditarNombreCliente.Text = "Nombre";
             // 
+            // btnActualizarCliente
+            // 
+            this.btnActualizarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizarCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.btnActualizarCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizarCliente.Image")));
+            this.btnActualizarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActualizarCliente.Location = new System.Drawing.Point(622, 266);
+            this.btnActualizarCliente.Name = "btnActualizarCliente";
+            this.btnActualizarCliente.Size = new System.Drawing.Size(137, 44);
+            this.btnActualizarCliente.TabIndex = 64;
+            this.btnActualizarCliente.Text = "Actualizar";
+            this.btnActualizarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnActualizarCliente.UseVisualStyleBackColor = true;
+            // 
+            // txtEditarCelularCliente
+            // 
+            this.txtEditarCelularCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEditarCelularCliente.Location = new System.Drawing.Point(164, 153);
+            this.txtEditarCelularCliente.MaxLength = 10;
+            this.txtEditarCelularCliente.Name = "txtEditarCelularCliente";
+            this.txtEditarCelularCliente.Size = new System.Drawing.Size(233, 26);
+            this.txtEditarCelularCliente.TabIndex = 3;
+            // 
+            // txtEditarTelefonoCliente
+            // 
+            this.txtEditarTelefonoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEditarTelefonoCliente.Location = new System.Drawing.Point(164, 193);
+            this.txtEditarTelefonoCliente.MaxLength = 7;
+            this.txtEditarTelefonoCliente.Name = "txtEditarTelefonoCliente";
+            this.txtEditarTelefonoCliente.Size = new System.Drawing.Size(139, 26);
+            this.txtEditarTelefonoCliente.TabIndex = 4;
+            // 
+            // txtEditarEmailCliente
+            // 
+            this.txtEditarEmailCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEditarEmailCliente.Location = new System.Drawing.Point(164, 113);
+            this.txtEditarEmailCliente.Name = "txtEditarEmailCliente";
+            this.txtEditarEmailCliente.Size = new System.Drawing.Size(388, 26);
+            this.txtEditarEmailCliente.TabIndex = 2;
+            // 
+            // txtEditarDireccionCliente
+            // 
+            this.txtEditarDireccionCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEditarDireccionCliente.Location = new System.Drawing.Point(164, 233);
+            this.txtEditarDireccionCliente.Name = "txtEditarDireccionCliente";
+            this.txtEditarDireccionCliente.Size = new System.Drawing.Size(595, 26);
+            this.txtEditarDireccionCliente.TabIndex = 5;
+            // 
+            // txtEditarNombreCliente
+            // 
+            this.txtEditarNombreCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEditarNombreCliente.Location = new System.Drawing.Point(164, 72);
+            this.txtEditarNombreCliente.Name = "txtEditarNombreCliente";
+            this.txtEditarNombreCliente.Size = new System.Drawing.Size(388, 26);
+            this.txtEditarNombreCliente.TabIndex = 1;
+            // 
+            // txtActualizarIdentificacionCliente
+            // 
+            this.txtActualizarIdentificacionCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtActualizarIdentificacionCliente.Location = new System.Drawing.Point(164, 28);
+            this.txtActualizarIdentificacionCliente.Name = "txtActualizarIdentificacionCliente";
+            this.txtActualizarIdentificacionCliente.Size = new System.Drawing.Size(192, 26);
+            this.txtActualizarIdentificacionCliente.TabIndex = 0;
+            // 
+            // lblTituloEditarCliente
+            // 
+            this.lblTituloEditarCliente.AutoSize = true;
+            this.lblTituloEditarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloEditarCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.lblTituloEditarCliente.Location = new System.Drawing.Point(204, 13);
+            this.lblTituloEditarCliente.Name = "lblTituloEditarCliente";
+            this.lblTituloEditarCliente.Size = new System.Drawing.Size(372, 29);
+            this.lblTituloEditarCliente.TabIndex = 40;
+            this.lblTituloEditarCliente.Text = "ACTUALIZACION DE CLIENTE";
+            // 
+            // pnlSuperiorEditarClienteView
+            // 
+            this.pnlSuperiorEditarClienteView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pnlSuperiorEditarClienteView.Controls.Add(this.btnMinimizarEditarClienteView);
+            this.pnlSuperiorEditarClienteView.Controls.Add(this.btnCerrarEditarClienteView);
+            this.pnlSuperiorEditarClienteView.Controls.Add(this.lblTituloEditarCliente);
+            this.pnlSuperiorEditarClienteView.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSuperiorEditarClienteView.Location = new System.Drawing.Point(0, 0);
+            this.pnlSuperiorEditarClienteView.Name = "pnlSuperiorEditarClienteView";
+            this.pnlSuperiorEditarClienteView.Size = new System.Drawing.Size(779, 59);
+            this.pnlSuperiorEditarClienteView.TabIndex = 42;
+            // 
+            // btnMinimizarEditarClienteView
+            // 
+            this.btnMinimizarEditarClienteView.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarEditarClienteView.Image")));
+            this.btnMinimizarEditarClienteView.Location = new System.Drawing.Point(699, 13);
+            this.btnMinimizarEditarClienteView.Name = "btnMinimizarEditarClienteView";
+            this.btnMinimizarEditarClienteView.Size = new System.Drawing.Size(33, 30);
+            this.btnMinimizarEditarClienteView.TabIndex = 46;
+            this.btnMinimizarEditarClienteView.TabStop = false;
+            // 
+            // btnCerrarEditarClienteView
+            // 
+            this.btnCerrarEditarClienteView.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarEditarClienteView.Image")));
+            this.btnCerrarEditarClienteView.Location = new System.Drawing.Point(741, 13);
+            this.btnCerrarEditarClienteView.Name = "btnCerrarEditarClienteView";
+            this.btnCerrarEditarClienteView.Size = new System.Drawing.Size(33, 30);
+            this.btnCerrarEditarClienteView.TabIndex = 45;
+            this.btnCerrarEditarClienteView.TabStop = false;
+            // 
             // EditarClienteView
             // 
+            this.AcceptButton = this.btnActualizarCliente;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));

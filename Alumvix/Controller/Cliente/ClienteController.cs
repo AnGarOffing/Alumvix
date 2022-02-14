@@ -34,6 +34,7 @@ namespace Alumvix.Controller
         {
             logica = new Logica();
             clienteVista = view;
+            clienteVista.btnModificarIVA.Enabled = false; //ELIMINAR ESTA LINEA CUANDO SE PROGRAME EL BOTON
             clienteVista.Activated += new EventHandler(ObtenerListadoClientes);
             clienteVista.Activated += new EventHandler(PersonalizarFormulario);
             clienteVista.Activated += new EventHandler(SeleccionarFiltroCualquiera);
@@ -47,7 +48,6 @@ namespace Alumvix.Controller
             clienteVista.txtFiltrarCliente.KeyPress += new KeyPressEventHandler(ValidarEntrada);
             clienteVista.btnIngresarCliente.Click += new EventHandler(AbrirIngresoClienteView);
             clienteVista.btnProveedores.Click += new EventHandler(AbrirProveedoresView);
-            //clienteVista.FormClosed += new FormClosedEventHandler(AbrirLogin);
             clienteVista.btnMinimizarClienteView.MouseHover += new EventHandler(ResaltarBotonMinimizar);
             clienteVista.btnMinimizarClienteView.MouseLeave += new EventHandler(QuitarResaltadoBotonMinimizar);
             clienteVista.btnCerrarClienteView.MouseHover += new EventHandler(ResaltarBotonCerrar);
@@ -177,8 +177,7 @@ namespace Alumvix.Controller
 
         private void ValidarEntrada(object sender, KeyPressEventArgs e)
         {
-            bool respuesta = ValidacionesDeControles.ValidarEntradaNumerosyLetras(e);
-            if (respuesta == true) MessageBox.Show("El campo solo permite numeros y letras");
+            e.Handled = ValidacionesDeControles.ValidarEntradaNumerosyLetras(e);
         }
 
         private void AbrirEditarClienteView(object sender, EventArgs e)
@@ -213,7 +212,6 @@ namespace Alumvix.Controller
 
         private void ObtenerListadoClientes(object sender, EventArgs e)
         {
-            clienteVista.btnModificarIVA.Enabled = false;
             if (clienteVista.rbContratoAbierto.Checked)
             {
                 ClienteDao clienteDao = new ClienteDao();

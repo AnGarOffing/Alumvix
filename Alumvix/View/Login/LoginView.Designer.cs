@@ -30,26 +30,28 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginView));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.lblTituloLogin = new System.Windows.Forms.Label();
-            this.btnAcceder = new System.Windows.Forms.Button();
             this.btnCerrarLogin = new System.Windows.Forms.PictureBox();
             this.btnMinimizarLogin = new System.Windows.Forms.PictureBox();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.pnlLogin = new System.Windows.Forms.Panel();
             this.btnVerPassword = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.btnAcceder = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarLogin)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.pnlLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnVerPassword)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,6 +66,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(250, 280);
             this.panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(250, 280);
+            this.panel2.TabIndex = 10;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(0, 73);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(250, 120);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // label1
             // 
@@ -97,22 +119,6 @@
             this.lblTituloLogin.TabIndex = 3;
             this.lblTituloLogin.Text = "LOGIN";
             // 
-            // btnAcceder
-            // 
-            this.btnAcceder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnAcceder.FlatAppearance.BorderSize = 0;
-            this.btnAcceder.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnAcceder.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAcceder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAcceder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAcceder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.btnAcceder.Location = new System.Drawing.Point(326, 201);
-            this.btnAcceder.Name = "btnAcceder";
-            this.btnAcceder.Size = new System.Drawing.Size(375, 40);
-            this.btnAcceder.TabIndex = 4;
-            this.btnAcceder.Text = "ACCEDER";
-            this.btnAcceder.UseVisualStyleBackColor = false;
-            // 
             // btnCerrarLogin
             // 
             this.btnCerrarLogin.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarLogin.Image")));
@@ -131,17 +137,47 @@
             this.btnMinimizarLogin.TabIndex = 6;
             this.btnMinimizarLogin.TabStop = false;
             // 
-            // txtUsuario
+            // pnlLogin
             // 
-            this.txtUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.txtUsuario.Location = new System.Drawing.Point(326, 102);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(346, 20);
-            this.txtUsuario.TabIndex = 7;
-            this.txtUsuario.Text = "USUARIO";
+            this.pnlLogin.Controls.Add(this.btnVerPassword);
+            this.pnlLogin.Controls.Add(this.label2);
+            this.pnlLogin.Controls.Add(this.label3);
+            this.pnlLogin.Controls.Add(this.txtPassword);
+            this.pnlLogin.Controls.Add(this.txtUsuario);
+            this.pnlLogin.Controls.Add(this.btnAcceder);
+            this.pnlLogin.Location = new System.Drawing.Point(256, 58);
+            this.pnlLogin.Name = "pnlLogin";
+            this.pnlLogin.Size = new System.Drawing.Size(521, 222);
+            this.pnlLogin.TabIndex = 7;
+            // 
+            // btnVerPassword
+            // 
+            this.btnVerPassword.Image = ((System.Drawing.Image)(resources.GetObject("btnVerPassword.Image")));
+            this.btnVerPassword.Location = new System.Drawing.Point(415, 84);
+            this.btnVerPassword.Name = "btnVerPassword";
+            this.btnVerPassword.Size = new System.Drawing.Size(33, 25);
+            this.btnVerPassword.TabIndex = 17;
+            this.btnVerPassword.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.label2.Location = new System.Drawing.Point(73, 112);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(375, 2);
+            this.label2.TabIndex = 15;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.label3.Location = new System.Drawing.Point(73, 65);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(375, 2);
+            this.label3.TabIndex = 16;
             // 
             // txtPassword
             // 
@@ -149,75 +185,50 @@
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.txtPassword.Location = new System.Drawing.Point(326, 149);
+            this.txtPassword.Location = new System.Drawing.Point(73, 89);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(346, 20);
-            this.txtPassword.TabIndex = 8;
+            this.txtPassword.TabIndex = 1;
             this.txtPassword.Text = "CONTRASEÑA";
             // 
-            // panel2
+            // txtUsuario
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(250, 280);
-            this.panel2.TabIndex = 10;
+            this.txtUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.txtUsuario.Location = new System.Drawing.Point(73, 42);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(346, 20);
+            this.txtUsuario.TabIndex = 0;
+            this.txtUsuario.Text = "USUARIO";
             // 
-            // label2
+            // btnAcceder
             // 
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.label2.Location = new System.Drawing.Point(326, 172);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(375, 2);
-            this.label2.TabIndex = 9;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(0, 73);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(250, 120);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.label3.Location = new System.Drawing.Point(326, 125);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(375, 2);
-            this.label3.TabIndex = 10;
-            // 
-            // btnVerPassword
-            // 
-            this.btnVerPassword.Image = ((System.Drawing.Image)(resources.GetObject("btnVerPassword.Image")));
-            this.btnVerPassword.Location = new System.Drawing.Point(668, 144);
-            this.btnVerPassword.Name = "btnVerPassword";
-            this.btnVerPassword.Size = new System.Drawing.Size(33, 25);
-            this.btnVerPassword.TabIndex = 11;
-            this.btnVerPassword.TabStop = false;
+            this.btnAcceder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAcceder.FlatAppearance.BorderSize = 0;
+            this.btnAcceder.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnAcceder.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAcceder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAcceder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAcceder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.btnAcceder.Location = new System.Drawing.Point(73, 141);
+            this.btnAcceder.Name = "btnAcceder";
+            this.btnAcceder.Size = new System.Drawing.Size(375, 40);
+            this.btnAcceder.TabIndex = 12;
+            this.btnAcceder.Text = "ACCEDER";
+            this.btnAcceder.UseVisualStyleBackColor = false;
             // 
             // LoginView
             // 
+            this.AcceptButton = this.btnAcceder;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(780, 280);
-            this.Controls.Add(this.btnVerPassword);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtUsuario);
+            this.Controls.Add(this.pnlLogin);
             this.Controls.Add(this.btnMinimizarLogin);
             this.Controls.Add(this.btnCerrarLogin);
-            this.Controls.Add(this.btnAcceder);
             this.Controls.Add(this.lblTituloLogin);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -226,11 +237,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginView";
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarLogin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarLogin)).EndInit();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.pnlLogin.ResumeLayout(false);
+            this.pnlLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnVerPassword)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -242,16 +255,17 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.Label lblTituloLogin;
-        public System.Windows.Forms.Button btnAcceder;
         public System.Windows.Forms.PictureBox btnCerrarLogin;
         public System.Windows.Forms.PictureBox btnMinimizarLogin;
-        public System.Windows.Forms.TextBox txtUsuario;
-        public System.Windows.Forms.TextBox txtPassword;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel pnlLogin;
+        public System.Windows.Forms.PictureBox btnVerPassword;
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label label3;
-        public System.Windows.Forms.PictureBox btnVerPassword;
+        public System.Windows.Forms.TextBox txtPassword;
+        public System.Windows.Forms.TextBox txtUsuario;
+        public System.Windows.Forms.Button btnAcceder;
     }
 }
