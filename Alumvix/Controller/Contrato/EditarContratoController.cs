@@ -19,7 +19,6 @@ namespace Alumvix.Controller.Contrato
         DetalleClienteView detalleClienteView;
         ContratoDao contratoDao;
         string valorContratoAnterior;
-        string valorContratoAnteriorSinFormato;
         string tipoFacturaAnterior;
 
         public EditarContratoController(EditarContratoView editarContratoVista)
@@ -120,7 +119,7 @@ namespace Alumvix.Controller.Contrato
                 {
                     valorContratoCalculado = Logica.AplicarIVA(Convert.ToInt32(valorModificado), 1);
                 }else
-                if ((tipoFacturaAnterior != valorModificado && tipoFacturaAnterior == "LEGAL") && (valorContratoAnterior == valorModificado))
+                if ((tipoFacturaAnterior != editarContratoView.cbEditarTipoFactura.SelectedItem.ToString() && tipoFacturaAnterior == "LEGAL") && (valorContratoAnterior == valorModificado))
                 {
                     valorContratoCalculado = Logica.QuitarIVA(Convert.ToInt32(valorModificado));
                 }

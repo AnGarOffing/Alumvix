@@ -141,7 +141,6 @@ namespace Alumvix.Controller.Login
             clienteView.Show();
             loginView.Hide();
         }
-
         private void MinimizarLogin(object sender, EventArgs e)
         {
             loginView.WindowState = FormWindowState.Minimized;

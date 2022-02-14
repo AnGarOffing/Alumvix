@@ -115,7 +115,7 @@ namespace Alumvix.Controller.Gasto
                 respuesta = ValidacionesDeControles.ValidarBotonIngresoGasto(ingresoGastoView.txtIngresarValorGasto.Text, ingresoGastoView.txtNumeroFactura.Text, ingresoGastoView.cbIngresarTipoGasto.SelectedIndex, ingresoGastoView.cbIngresarProveedor.SelectedIndex);
             }
             if (respuesta)
-            {        
+            {
                 GastoDao nuevoGasto = new GastoDao();
                 //string valorSinFormato = CambioDeFormato.QuitarFormatoANumero(ingresoGastoView.txtIngresarValorGasto.Text);
                 int valorSinFormato = Convert.ToInt32(ingresoGastoView.txtIngresarValorGasto.Text.Replace(".", ""));
@@ -133,14 +133,17 @@ namespace Alumvix.Controller.Gasto
             }
             else
             {
-                MessageBox.Show("Debe diligenciar todos los campos");
+                if (ingresoGastoView.cbIngresarProveedor.SelectedIndex == 0 || ingresoGastoView.txtIngresarValorGasto.Text == "")
+                {
+                    MessageBox.Show("Debe diligenciar todos los campos");
+                }         
             }
         }
 
         private void CargarTiposDeGastoMaterial(object sender, EventArgs e)
         {
             GastoDao tipoGasto = new GastoDao();
-            ingresoGastoView.cbIngresarTipoGasto.DataSource = tipoGasto.ObtenerTiposDeGastoMaterial();
+            ingresoGastoView.cbIngresarTipoGasto.DataSource = tipoGasto.ObtenerTiposDeGastoDeContrato();
             ingresoGastoView.cbIngresarTipoGasto.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
@@ -161,14 +164,14 @@ namespace Alumvix.Controller.Gasto
                 ingresoGastoView.txtNumeroFactura.Enabled = true;
                 ingresoGastoView.txtNumeroFactura.Text = "";
             }
-            else 
+            else
             {
                 ingresoGastoView.cbIngresarProveedor = RefrescarComboBoxProveedores(ingresoGastoView.cbIngresarProveedor);
                 ingresoGastoView.cbIngresarProveedor.Enabled = false;
                 ingresoGastoView.cbIngresarProveedor.SelectedIndex = 1;
                 ingresoGastoView.txtNumeroFactura.Text = "No Aplica";
                 ingresoGastoView.txtNumeroFactura.Enabled = false;
-            } 
+            }
         }
 
         private ComboBox RefrescarComboBoxProveedores(ComboBox comboBoxProveedores) 

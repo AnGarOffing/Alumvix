@@ -88,7 +88,7 @@ namespace Alumvix.Controller.Gasto
             editarGastoView.txtActualizarDescripcionGasto.Text = detalleGastoView.lstvDetalleGastos.SelectedItems[0].SubItems[6].Text; 
             editarGastoView.cbEditarProveedor.DataSource = proveedorDao.ConsultarProveedoresParaCB();
             editarGastoView.cbEditarProveedor.Text = detalleGastoView.lstvDetalleGastos.SelectedItems[0].SubItems[5].Text;
-            editarGastoView.cbEditarTipoGasto.DataSource = gastoDao.ObtenerTiposDeGastoMaterial();
+            editarGastoView.cbEditarTipoGasto.DataSource = gastoDao.ObtenerTiposDeGastoDeContrato();
             editarGastoView.cbEditarTipoGasto.Text = detalleGastoView.lstvDetalleGastos.SelectedItems[0].SubItems[4].Text;
         }
 

@@ -115,7 +115,7 @@ namespace Alumvix.Model.Dao
             return respuesta;
         }
 
-        public List<string> ObtenerTiposDeGastoMaterial()
+        public List<string> ObtenerTiposDeGastoDeContrato()
         {
             command.Connection = connection;
             command.CommandText = "select * from TIPO_GASTO where ID_TIPO_GASTO = 3 or ID_TIPO_GASTO = 4 or ID_TIPO_GASTO = 8";
