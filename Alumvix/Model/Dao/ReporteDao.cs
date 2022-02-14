@@ -270,27 +270,78 @@ namespace Alumvix.Model.Dao
             return totalGastosInternos;
         }
 
-        public List<ReporteDto> ObtenerCuentasMesDeUnAnio(int anio)
+        //public List<ReporteDto> ObtenerCuentasMesDeUnAnio(int anio)
+        //{
+        //    command.Connection = connection;
+        //    command.CommandText = "MostrarcuentasMensualesPorAnio";        
+        //    command.CommandType = CommandType.StoredProcedure;
+        //    command.Parameters.AddWithValue("@anio", anio);
+        //    connection.Open();
+        //    lectorFilas = command.ExecuteReader();
+        //    List<ReporteDto> listadoCuentas = new List<ReporteDto>();
+        //    while (lectorFilas.Read())
+        //    {
+        //        listadoCuentas.Add(new ReporteDto()
+        //        {                   
+        //            Mes = lectorFilas.GetString(0),
+        //            TotalVentas = lectorFilas.GetInt32(1),
+        //            TotalGastos = lectorFilas.GetInt32(2),
+        //        });
+        //    }
+        //    lectorFilas.Close();
+        //    connection.Close();
+        //    return listadoCuentas;
+        //}
+
+        public int ObtenerTotalVentasPorMesDeUnAnio(int mes, int anio)
         {
             command.Connection = connection;
-            command.CommandText = "MostrarcuentasMensualesPorAnio";        
+            command.CommandText = "select SUM(valorContrato) from CONTRATO "
+                + " where MONTH(fechaInicioContrato) = " + mes + " and YEAR(fechaInicioContrato) = " + anio;
+            command.CommandType = CommandType.Text;
+            int totalVentasPorMes;
+            try
+            {
+                connection.Open();
+                lectorFilas = command.ExecuteReader();
+                lectorFilas.Read();
+                totalVentasPorMes = lectorFilas.GetInt32(0);
+            }
+            catch (SqlNullValueException ex)
+            {
+                ex = null;
+                totalVentasPorMes = 0;
+            }
+            catch (SqlException ex)
+            {
+                totalVentasPorMes = 0;
+                MessageBox.Show("Error de conexion a Base de Datos " + ex);
+            }
+            lectorFilas.Close();
+            connection.Close();
+            return totalVentasPorMes;
+        }
+
+        public List<ReporteDto> ObtenerGastosDeContratoMensualesPorAnio(int anio)
+        {
+            command.Connection = connection;
+            command.CommandText = "MostrarGastosDeContratoMensualesPorAnio";
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.AddWithValue("@anio", anio);
             connection.Open();
             lectorFilas = command.ExecuteReader();
-            List<ReporteDto> listadoCuentas = new List<ReporteDto>();
+            List<ReporteDto> reporteGastosMensuales = new List<ReporteDto>();
             while (lectorFilas.Read())
             {
-                listadoCuentas.Add(new ReporteDto()
-                {                   
+                reporteGastosMensuales.Add(new ReporteDto()
+                {
                     Mes = lectorFilas.GetString(0),
-                    TotalVentas = lectorFilas.GetInt32(1),
-                    TotalGastos = lectorFilas.GetInt32(2),
+                    TotalGastos = lectorFilas.GetInt32(1),
                 });
             }
             lectorFilas.Close();
             connection.Close();
-            return listadoCuentas;
+            return reporteGastosMensuales;
         }
 
         public List<int> ObtenerIndicesDeMeses(int anio)

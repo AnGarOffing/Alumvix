@@ -164,6 +164,7 @@ namespace Alumvix.Controller.Reporte
         private void ActivarComboAnios(object sender, EventArgs e)
         {
             administradorReportesView.cbSeleccionarAnio.Enabled = true;
+            administradorReportesView.cbSeleccionarMes.SelectedIndex = 0;
             administradorReportesView.cbSeleccionarMes.Enabled = false;
             //administradorReporteView.dtpFechaInicioReporte.Enabled = false;
             //administradorReporteView.dtpFechaFinalReporte.Enabled = false;        

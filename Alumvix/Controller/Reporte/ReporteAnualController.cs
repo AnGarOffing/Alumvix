@@ -108,18 +108,20 @@ namespace Alumvix.Controller.Reporte
             reporteAnualView.lstvReporteMensualPorAnio.Items.Clear();
             ReporteDao reporteDao = new ReporteDao();
             AdministradorReportesController.AnioSeleccionado = Convert.ToInt32(administradorReportesView.cbSeleccionarAnio.SelectedValue);
-            List<ReporteDto> listadoCuentas = reporteDao.ObtenerCuentasMesDeUnAnio(AdministradorReportesController.AnioSeleccionado);
+            List<ReporteDto> reporteGastosMensualesPorAnio = reporteDao.ObtenerGastosDeContratoMensualesPorAnio(AdministradorReportesController.AnioSeleccionado);
             List<int> listadoIndicesMeses = reporteDao.ObtenerIndicesDeMeses(AdministradorReportesController.AnioSeleccionado);
             int[] arregloIndices = new int[listadoIndicesMeses.Count];
             arregloIndices = listadoIndicesMeses.ToArray();
             int indice = 0;
             int totalTiposDeGastos = 0;
+            int totalVentasMes = 0;
             int utilidad = 0;
-            foreach (ReporteDto reporteDto in listadoCuentas)
+            foreach (ReporteDto reporteDto in reporteGastosMensualesPorAnio)
             {
+                totalVentasMes = reporteDao.ObtenerTotalVentasPorMesDeUnAnio(arregloIndices[indice], AdministradorReportesController.AnioSeleccionado);
                 totalTiposDeGastos = reporteDto.TotalGastos + reporteDao.ObtenerTotalGastosInternosPorMes(arregloIndices[indice], AdministradorReportesController.AnioSeleccionado);
-                utilidad = reporteDto.TotalVentas - totalTiposDeGastos;
-                string[] row = { reporteDto.Mes, CambioDeFormato.DarFormatoANumero(reporteDto.TotalVentas), CambioDeFormato.DarFormatoANumero(totalTiposDeGastos), CambioDeFormato.DarFormatoANumero(utilidad) };
+                utilidad = totalVentasMes - totalTiposDeGastos;
+                string[] row = { reporteDto.Mes, CambioDeFormato.DarFormatoANumero(totalVentasMes), CambioDeFormato.DarFormatoANumero(totalTiposDeGastos), CambioDeFormato.DarFormatoANumero(utilidad) };
                 ListViewItem itemReporte = new ListViewItem(row);
                 reporteAnualView.lstvReporteMensualPorAnio.Items.Add(itemReporte);
                 indice++;
