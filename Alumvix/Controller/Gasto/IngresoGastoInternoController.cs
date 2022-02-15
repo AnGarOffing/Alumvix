@@ -22,7 +22,7 @@ namespace Alumvix.Controller.Gasto
             ingresoGastoInternoView = ingresoGastoInternoVista;
             gastoInternoView = GastosInternosController.ObtenerInstanciaClienteView();
             ingresoGastoInternoView.Activated += new EventHandler(CargarYLimpiarControles);
-            ingresoGastoInternoView.txtIngresarValorGastoInterno.KeyPress += new KeyPressEventHandler(AplicarFormatoAValor);
+            ingresoGastoInternoView.txtIngresarValorGastoInterno.KeyPress += new KeyPressEventHandler(ValidarEntradaNumeros);
             ingresoGastoInternoView.txtIngresarValorGastoInterno.TextChanged += new EventHandler(AplicarSeparadoresAValor);
             ingresoGastoInternoView.btnCerrarIngresoGastoInternoView.MouseHover += new EventHandler(ResaltarBotonCerrar);
             ingresoGastoInternoView.btnCerrarIngresoGastoInternoView.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrar);
@@ -74,10 +74,9 @@ namespace Alumvix.Controller.Gasto
             ingresoGastoInternoView.btnMinimizarIngresoGastoInternoView.BackColor = Color.Transparent;
         }
 
-        private void AplicarFormatoAValor(object sender, KeyPressEventArgs e)
+        private void ValidarEntradaNumeros(object sender, KeyPressEventArgs e)
         {
-            bool respuesta = ValidacionesDeControles.ValidarEntradaNumeros(e);
-            if (respuesta == true) MessageBox.Show("El campo solo permite numeros");
+            e.Handled = ValidacionesDeControles.ValidarEntradaNumeros(e);
         }
 
         private void CargarYLimpiarControles(object sender, EventArgs e)

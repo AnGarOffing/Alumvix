@@ -81,14 +81,12 @@ namespace Alumvix.Controller.Gasto
 
         private void ValidarEntradaLetrasYNumeros(object sender, KeyPressEventArgs e)
         {
-            bool respuesta = ValidacionesDeControles.ValidarEntradaNumerosyLetras(e);
-            if (respuesta == true) MessageBox.Show("El campo solo permite numeros y letras");
+            e.Handled = ValidacionesDeControles.ValidarEntradaNumerosyLetras(e);
         }
 
         private void ValidarEntradaNumeros(object sender, KeyPressEventArgs e)
         {
-            bool respuesta = ValidacionesDeControles.ValidarEntradaNumeros(e);
-            if (respuesta == true) MessageBox.Show("El campo solo permite numeros");
+            e.Handled = ValidacionesDeControles.ValidarEntradaNumeros(e);
         }
 
         private void ActualizarIdContrato(object sender, EventArgs e)

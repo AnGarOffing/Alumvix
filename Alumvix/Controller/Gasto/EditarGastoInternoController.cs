@@ -76,8 +76,7 @@ namespace Alumvix.Controller.Gasto
 
         private void ValidarEntradaNumeros(object sender, KeyPressEventArgs e)
         {
-            bool respuesta = ValidacionesDeControles.ValidarEntradaNumeros(e);
-            if (respuesta == true) MessageBox.Show("El campo solo permite numeros");
+            e.Handled = ValidacionesDeControles.ValidarEntradaNumeros(e);
         }
 
         private void ActualizarGastoInterno(object sender, EventArgs e)
