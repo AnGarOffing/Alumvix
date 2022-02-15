@@ -131,7 +131,7 @@ namespace Alumvix.Controller.Gasto
             }
             else
             {
-                if (ingresoGastoView.cbIngresarProveedor.SelectedIndex == 0 || ingresoGastoView.txtIngresarValorGasto.Text == "")
+                if (ingresoGastoView.cbIngresarProveedor.SelectedIndex == 0 || ingresoGastoView.txtIngresarValorGasto.Text == "" || ingresoGastoView.txtNumeroFactura.Text == "")
                 {
                     MessageBox.Show("Debe diligenciar todos los campos");
                 }         

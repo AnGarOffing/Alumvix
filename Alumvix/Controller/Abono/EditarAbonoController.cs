@@ -106,8 +106,8 @@ namespace Alumvix.Controller.Abono
                 {
                     editarAbonoView.txtIActualizarValorAbono.Clear();
                     editarAbonoView.cbActualizarFormaDePago.SelectedIndex = 0;
-                    editarAbonoView.Hide();
                     MessageBox.Show("El abono ha sido actualizado con exito");
+                    editarAbonoView.Hide();
                     detalleAbonoView.Show();
                 }
                 else MessageBox.Show("Error al actualizar el abono");

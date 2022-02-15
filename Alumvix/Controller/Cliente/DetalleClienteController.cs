@@ -235,6 +235,11 @@ namespace Alumvix.Controller.Cliente
                         contratoDto.EstadoContrato = contratoDao.ConsultarEstadoContrato(contratoDto.IdContrato);
                     }
                 }
+                if (sumaAbonos < DetalleClienteController.contratoDto.ValorContrato || estadoTrabajo == 1)
+                {
+                    contratoDao.ActualizarEstadoContrato(1, DetalleClienteController.contratoDto.IdContrato);
+                    contratoDto.EstadoContrato = contratoDao.ConsultarEstadoContrato(contratoDto.IdContrato);
+                }
             }
         }
 
