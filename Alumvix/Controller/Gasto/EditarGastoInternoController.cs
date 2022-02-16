@@ -86,14 +86,15 @@ namespace Alumvix.Controller.Gasto
             respuesta = ValidacionesDeControles.ValidarBotonIngresoGastoInterno(editarGastoInternoView.txtEditarValorGastoInterno.Text, editarGastoInternoView.cbEditarTipoGastoInterno.SelectedIndex);
             if (respuesta)
             {
-                int idTipoGastoInterno = gastoActualizado.ObtenerTipoGastoInternoPorNombre(editarGastoInternoView.cbEditarTipoGastoInterno.GetItemText(editarGastoInternoView.cbEditarTipoGastoInterno.SelectedItem));
+                //int idTipoGastoInterno = gastoActualizado.ObtenerTipoGastoInternoPorNombre(editarGastoInternoView.cbEditarTipoGastoInterno.GetItemText(editarGastoInternoView.cbEditarTipoGastoInterno.SelectedItem));
+                int idGastoInterno = GastosInternosController.idGastoInterno;
                 //string valorSinFormato = CambioDeFormato.QuitarFormatoANumero(editarGastoInternoView.txtEditarValorGastoInterno.Text);
                 int valorSinFormato = Convert.ToInt32(editarGastoInternoView.txtEditarValorGastoInterno.Text.Replace(".", ""));
-                bool respuestaIngresoGastoInterno = gastoActualizado.ActualizarGastoInterno(valorSinFormato, editarGastoInternoView.dtpEditarFechaGastoInterno.Text, editarGastoInternoView.txtEditarDescripcionGastoInterno.Text, idTipoGastoInterno);
+                bool respuestaIngresoGastoInterno = gastoActualizado.ActualizarGastoInterno(valorSinFormato, editarGastoInternoView.dtpEditarFechaGastoInterno.Text, editarGastoInternoView.txtEditarDescripcionGastoInterno.Text, idGastoInterno);
                 if (respuestaIngresoGastoInterno)
                 {
-                    editarGastoInternoView.Hide();
                     MessageBox.Show("El gasto ha sido actualizado con exito");
+                    editarGastoInternoView.Hide();
                     gastoInternoView.Show();
                 }
                 else MessageBox.Show("Error al actualizar el gasto");

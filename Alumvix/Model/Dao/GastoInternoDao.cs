@@ -187,7 +187,7 @@ namespace Alumvix.Model.Dao
             command.Connection = connection;
             command.CommandText = "update GASTO_INTERNO set valorGastoInterno = " + valorGastoInterno + ","
                 +" fechaGastoInterno = '" + fechaGastoInterno + "', descripcionGastoInterno = '" + descripcionGastoInterno + "'" 
-                +" where FK_ID_TIPO_GASTO1 = " + idGastoInterno;
+                + " where ID_GASTO_INTERNO = " + idGastoInterno;
             command.CommandType = CommandType.Text;
             connection.Open();
             int filasAfectadasEnBd = command.ExecuteNonQuery();

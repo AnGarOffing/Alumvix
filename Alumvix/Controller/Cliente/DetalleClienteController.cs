@@ -169,13 +169,20 @@ namespace Alumvix.Controller.Cliente
 
         private void CerrarFormularioContratos(object sender, EventArgs e)
         {
-            foreach (Form frm in Application.OpenForms)
+            try
             {
-                if (frm.GetType() == typeof(SeleccionarContratoView))
+                foreach (Form frm in Application.OpenForms)
                 {
-                    frm.Close();
+                    if (frm.GetType() == typeof(SeleccionarContratoView))
+                    {
+                        frm.Close();
+                    }
                 }
-            }       
+            }
+            catch (InvalidOperationException ex)
+            {
+                ex = null;
+            }         
         }
 
         private ContratoDto SeleccionarContrato()
@@ -233,12 +240,14 @@ namespace Alumvix.Controller.Cliente
                     {
                         contratoDao.ActualizarEstadoContrato(2, DetalleClienteController.contratoDto.IdContrato);
                         contratoDto.EstadoContrato = contratoDao.ConsultarEstadoContrato(contratoDto.IdContrato);
+                        detalleClienteVista.txtEstadoContrato.ForeColor = Color.YellowGreen;
                     }
                 }
                 if (sumaAbonos < DetalleClienteController.contratoDto.ValorContrato || estadoTrabajo == 1)
                 {
                     contratoDao.ActualizarEstadoContrato(1, DetalleClienteController.contratoDto.IdContrato);
                     contratoDto.EstadoContrato = contratoDao.ConsultarEstadoContrato(contratoDto.IdContrato);
+                    detalleClienteVista.txtEstadoContrato.ForeColor = Color.Tomato;
                 }
             }
         }

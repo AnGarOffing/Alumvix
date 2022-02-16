@@ -23,7 +23,7 @@ namespace Alumvix.Controller.Gasto
         ClienteView clienteView;
         LoginView loginView;
         List<int> idsGastosInternos = new List<int>();
-        public int idGastoInterno;
+        public static int idGastoInterno;
         int indice;
 
         public GastosInternosController(GastosInternosView gastoInternoVista)

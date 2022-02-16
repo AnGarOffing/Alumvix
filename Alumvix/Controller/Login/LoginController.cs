@@ -68,6 +68,7 @@ namespace Alumvix.Controller.Login
             loginView.txtUsuario.Text = "USUARIO";
             loginView.txtPassword.Text = "CONTRASEÑA";
             loginView.txtPassword.UseSystemPasswordChar = false;
+            loginView.ActiveControl = loginView.btnAcceder;
         }
 
         public static LoginView ObtenerInstancia()
@@ -108,38 +109,35 @@ namespace Alumvix.Controller.Login
 
         private void IniciarSesion(object sender, EventArgs e)
         {
-            //bool respuesta = ValidacionesDeControles.ValidarBotonInicioDeSesion(loginView.txtUsuario.Text, loginView.txtPassword.Text);
-            //if (respuesta)
-            //{
-            //    bool usuarioEncontrado = false;
-            //    UsuarioDao usuarioDao = new UsuarioDao();
-            //    List<UsuarioDto> listadoUsuarios = usuarioDao.ObtenerListadoUsuarios();
-            //    foreach (UsuarioDto usuarioDto in listadoUsuarios)
-            //    {
-            //        if (usuarioDto.Usuario == loginView.txtUsuario.Text && usuarioDto.Password == loginView.txtPassword.Text)
-            //        {
-            //            usuarioEncontrado = true;
-            //            break;
-            //        }
-            //    }
-            //    if (usuarioEncontrado)
-            //    {
-            //        ClienteView clienteView = ClienteView.ObtenerInstancia();
-            //        clienteView.Show();
-            //        loginView.Hide();
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("El usuario o la contraseña son incorrectos, verifique nuevamente");
-            //    }
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Debe diligenciar todos los campos");
-            //}
-            ClienteView clienteView = ClienteView.ObtenerInstancia();
-            clienteView.Show();
-            loginView.Hide();
+            bool respuesta = ValidacionesDeControles.ValidarBotonInicioDeSesion(loginView.txtUsuario.Text, loginView.txtPassword.Text);
+            if (respuesta)
+            {
+                bool usuarioEncontrado = false;
+                UsuarioDao usuarioDao = new UsuarioDao();
+                List<UsuarioDto> listadoUsuarios = usuarioDao.ObtenerListadoUsuarios();
+                foreach (UsuarioDto usuarioDto in listadoUsuarios)
+                {
+                    if (usuarioDto.Usuario == loginView.txtUsuario.Text && usuarioDto.Password == loginView.txtPassword.Text)
+                    {
+                        usuarioEncontrado = true;
+                        break;
+                    }
+                }
+                if (usuarioEncontrado)
+                {
+                    ClienteView clienteView = ClienteView.ObtenerInstancia();
+                    clienteView.Show();
+                    loginView.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("El usuario o la contraseña son incorrectos, verifique nuevamente");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe diligenciar todos los campos");
+            }
         }
         private void MinimizarLogin(object sender, EventArgs e)
         {

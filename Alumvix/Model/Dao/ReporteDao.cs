@@ -335,8 +335,9 @@ namespace Alumvix.Model.Dao
             {
                 reporteGastosMensuales.Add(new ReporteDto()
                 {
-                    Mes = lectorFilas.GetString(0),
-                    TotalGastos = lectorFilas.GetInt32(1),
+                    IndiceMes = lectorFilas.GetInt32(0),
+                    Mes = lectorFilas.GetString(1),
+                    TotalGastos = lectorFilas.GetInt32(2),
                 });
             }
             lectorFilas.Close();

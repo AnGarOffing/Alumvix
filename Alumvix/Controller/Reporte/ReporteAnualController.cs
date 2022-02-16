@@ -118,8 +118,8 @@ namespace Alumvix.Controller.Reporte
             int utilidad = 0;
             foreach (ReporteDto reporteDto in reporteGastosMensualesPorAnio)
             {
-                totalVentasMes = reporteDao.ObtenerTotalVentasPorMesDeUnAnio(arregloIndices[indice], AdministradorReportesController.AnioSeleccionado);
-                totalTiposDeGastos = reporteDto.TotalGastos + reporteDao.ObtenerTotalGastosInternosPorMes(arregloIndices[indice], AdministradorReportesController.AnioSeleccionado);
+                totalVentasMes = reporteDao.ObtenerTotalVentasPorMesDeUnAnio(reporteDto.IndiceMes, AdministradorReportesController.AnioSeleccionado);
+                totalTiposDeGastos = reporteDto.TotalGastos + reporteDao.ObtenerTotalGastosInternosPorMes(reporteDto.IndiceMes, AdministradorReportesController.AnioSeleccionado);
                 utilidad = totalVentasMes - totalTiposDeGastos;
                 string[] row = { reporteDto.Mes, CambioDeFormato.DarFormatoANumero(totalVentasMes), CambioDeFormato.DarFormatoANumero(totalTiposDeGastos), CambioDeFormato.DarFormatoANumero(utilidad) };
                 ListViewItem itemReporte = new ListViewItem(row);
