@@ -48,16 +48,16 @@
             this.columnaTotalGastos = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnaUtilidad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnlSuperiorReporteAnualView = new System.Windows.Forms.Panel();
+            this.btnCerrarSesionReporteAnual = new System.Windows.Forms.PictureBox();
             this.btnMinimizarReporteAnualView = new System.Windows.Forms.PictureBox();
             this.btnCerrarReporteAnualView = new System.Windows.Forms.PictureBox();
             this.btnExportarReporteAExcel = new System.Windows.Forms.Button();
-            this.btnDetalleGastos = new System.Windows.Forms.Button();
-            this.btnCerrarSesionReporteAnual = new System.Windows.Forms.PictureBox();
+            this.lblTituloDetalleTiposGastosRA = new System.Windows.Forms.Label();
             this.gbTituloGastosDelMes.SuspendLayout();
             this.pnlSuperiorReporteAnualView.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesionReporteAnual)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarReporteAnualView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarReporteAnualView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesionReporteAnual)).BeginInit();
             this.SuspendLayout();
             // 
             // lstvGastosTotalesMensuales
@@ -247,6 +247,15 @@
             this.pnlSuperiorReporteAnualView.Size = new System.Drawing.Size(1179, 59);
             this.pnlSuperiorReporteAnualView.TabIndex = 56;
             // 
+            // btnCerrarSesionReporteAnual
+            // 
+            this.btnCerrarSesionReporteAnual.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesionReporteAnual.Image")));
+            this.btnCerrarSesionReporteAnual.Location = new System.Drawing.Point(1059, 12);
+            this.btnCerrarSesionReporteAnual.Name = "btnCerrarSesionReporteAnual";
+            this.btnCerrarSesionReporteAnual.Size = new System.Drawing.Size(33, 33);
+            this.btnCerrarSesionReporteAnual.TabIndex = 53;
+            this.btnCerrarSesionReporteAnual.TabStop = false;
+            // 
             // btnMinimizarReporteAnualView
             // 
             this.btnMinimizarReporteAnualView.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarReporteAnualView.Image")));
@@ -272,37 +281,24 @@
             this.btnExportarReporteAExcel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             this.btnExportarReporteAExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExportarReporteAExcel.Image")));
             this.btnExportarReporteAExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExportarReporteAExcel.Location = new System.Drawing.Point(300, 222);
+            this.btnExportarReporteAExcel.Location = new System.Drawing.Point(323, 222);
             this.btnExportarReporteAExcel.Name = "btnExportarReporteAExcel";
-            this.btnExportarReporteAExcel.Size = new System.Drawing.Size(185, 44);
+            this.btnExportarReporteAExcel.Size = new System.Drawing.Size(122, 44);
             this.btnExportarReporteAExcel.TabIndex = 57;
-            this.btnExportarReporteAExcel.Text = "Exportar a Excel";
+            this.btnExportarReporteAExcel.Text = "Exportar";
             this.btnExportarReporteAExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExportarReporteAExcel.UseVisualStyleBackColor = true;
             // 
-            // btnDetalleGastos
+            // lblTituloDetalleTiposGastosRA
             // 
-            this.btnDetalleGastos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetalleGastos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetalleGastos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.btnDetalleGastos.Image = ((System.Drawing.Image)(resources.GetObject("btnDetalleGastos.Image")));
-            this.btnDetalleGastos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDetalleGastos.Location = new System.Drawing.Point(873, 72);
-            this.btnDetalleGastos.Name = "btnDetalleGastos";
-            this.btnDetalleGastos.Size = new System.Drawing.Size(204, 44);
-            this.btnDetalleGastos.TabIndex = 58;
-            this.btnDetalleGastos.Text = "Detalle de Gastos";
-            this.btnDetalleGastos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDetalleGastos.UseVisualStyleBackColor = true;
-            // 
-            // btnCerrarSesionReporteAnual
-            // 
-            this.btnCerrarSesionReporteAnual.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesionReporteAnual.Image")));
-            this.btnCerrarSesionReporteAnual.Location = new System.Drawing.Point(1059, 12);
-            this.btnCerrarSesionReporteAnual.Name = "btnCerrarSesionReporteAnual";
-            this.btnCerrarSesionReporteAnual.Size = new System.Drawing.Size(33, 33);
-            this.btnCerrarSesionReporteAnual.TabIndex = 53;
-            this.btnCerrarSesionReporteAnual.TabStop = false;
+            this.lblTituloDetalleTiposGastosRA.AutoSize = true;
+            this.lblTituloDetalleTiposGastosRA.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloDetalleTiposGastosRA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.lblTituloDetalleTiposGastosRA.Location = new System.Drawing.Point(869, 84);
+            this.lblTituloDetalleTiposGastosRA.Name = "lblTituloDetalleTiposGastosRA";
+            this.lblTituloDetalleTiposGastosRA.Size = new System.Drawing.Size(221, 29);
+            this.lblTituloDetalleTiposGastosRA.TabIndex = 62;
+            this.lblTituloDetalleTiposGastosRA.Text = "Detalle de Gastos";
             // 
             // ReporteAnualView
             // 
@@ -310,7 +306,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(1179, 571);
-            this.Controls.Add(this.btnDetalleGastos);
+            this.Controls.Add(this.lblTituloDetalleTiposGastosRA);
             this.Controls.Add(this.btnExportarReporteAExcel);
             this.Controls.Add(this.pnlSuperiorReporteAnualView);
             this.Controls.Add(this.lstvReporteMensualPorAnio);
@@ -324,10 +320,11 @@
             this.gbTituloGastosDelMes.PerformLayout();
             this.pnlSuperiorReporteAnualView.ResumeLayout(false);
             this.pnlSuperiorReporteAnualView.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesionReporteAnual)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarReporteAnualView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarReporteAnualView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesionReporteAnual)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -355,7 +352,7 @@
         public System.Windows.Forms.PictureBox btnMinimizarReporteAnualView;
         public System.Windows.Forms.PictureBox btnCerrarReporteAnualView;
         public System.Windows.Forms.Button btnExportarReporteAExcel;
-        public System.Windows.Forms.Button btnDetalleGastos;
         public System.Windows.Forms.PictureBox btnCerrarSesionReporteAnual;
+        public System.Windows.Forms.Label lblTituloDetalleTiposGastosRA;
     }
 }

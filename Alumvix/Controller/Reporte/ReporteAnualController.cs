@@ -38,7 +38,8 @@ namespace Alumvix.Controller.Reporte
             reporteAnualView.btnMinimizarReporteAnualView.MouseHover += new EventHandler(ResaltarBotonMinimizar);
             reporteAnualView.btnMinimizarReporteAnualView.MouseLeave += new EventHandler(QuitarResaltadoBotonMinimizar);
             reporteAnualView.btnMinimizarReporteAnualView.Click += new EventHandler(MinimizarReporteAnualView);
-            reporteAnualView.btnDetalleGastos.Click += new EventHandler(MostrarGastosTotalesPorAnio);
+            //reporteAnualView.btnDetalleGastos.Click += new EventHandler(MostrarGastosTotalesPorAnio);
+            reporteAnualView.Activated += new EventHandler(MostrarGastosTotalesPorAnio);
             reporteAnualView.btnExportarReporteAExcel.Click += new EventHandler(ExportarReporteAExcel);
             reporteAnualView.btnCerrarSesionReporteAnual.Click += new EventHandler(CerrarSesion);
             reporteAnualView.btnCerrarSesionReporteAnual.MouseHover += new EventHandler(ResaltarBotonCerrarSesion);
@@ -165,7 +166,12 @@ namespace Alumvix.Controller.Reporte
         private void ExportarReporteAExcel(object sender, EventArgs e)
         {
             Logica logica = new Logica();
-            logica.ExportToExcel(reporteAnualView.lstvReporteMensualPorAnio);
+            List<TextBox> textBoxes = new List<TextBox>();
+            textBoxes.Add(reporteAnualView.txtCantidadContratos);
+            textBoxes.Add(reporteAnualView.txtTotalVentas);
+            textBoxes.Add(reporteAnualView.txtTotalGastos);
+            textBoxes.Add(reporteAnualView.txtUtilidadGeneral);
+            logica.ExportTextBoxesToExcel(textBoxes, reporteAnualView.lstvGastosTotalesMensuales, reporteAnualView.lstvReporteMensualPorAnio);
         }
     }
 }

@@ -48,7 +48,7 @@
             this.lstvGastosPeriodo = new System.Windows.Forms.ListView();
             this.columnaTipoGasto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnaTotalTipoGasto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lblTituloDetalleTiposGastos = new System.Windows.Forms.Label();
+            this.lblTituloDetalleTiposGastosRM = new System.Windows.Forms.Label();
             this.pnlReporteGeneral.SuspendLayout();
             this.pnlSuperiorReporteMensualView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesionReporteMensual)).BeginInit();
@@ -59,14 +59,14 @@
             // 
             // pnlReporteGeneral
             // 
-            this.pnlReporteGeneral.Controls.Add(this.lblTituloDetalleTiposGastos);
+            this.pnlReporteGeneral.Controls.Add(this.lblTituloDetalleTiposGastosRM);
             this.pnlReporteGeneral.Controls.Add(this.lstvGastosPeriodo);
             this.pnlReporteGeneral.Controls.Add(this.btnExportarReporteMensualAExcel);
             this.pnlReporteGeneral.Controls.Add(this.pnlSuperiorReporteMensualView);
             this.pnlReporteGeneral.Controls.Add(this.gbTituloGastosDelMes);
             this.pnlReporteGeneral.Location = new System.Drawing.Point(0, 0);
             this.pnlReporteGeneral.Name = "pnlReporteGeneral";
-            this.pnlReporteGeneral.Size = new System.Drawing.Size(831, 413);
+            this.pnlReporteGeneral.Size = new System.Drawing.Size(831, 495);
             this.pnlReporteGeneral.TabIndex = 45;
             // 
             // pnlSuperiorReporteMensualView
@@ -132,7 +132,7 @@
             this.gbTituloGastosDelMes.Controls.Add(this.lblTotalVentas);
             this.gbTituloGastosDelMes.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbTituloGastosDelMes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.gbTituloGastosDelMes.Location = new System.Drawing.Point(21, 84);
+            this.gbTituloGastosDelMes.Location = new System.Drawing.Point(21, 138);
             this.gbTituloGastosDelMes.Name = "gbTituloGastosDelMes";
             this.gbTituloGastosDelMes.Size = new System.Drawing.Size(384, 319);
             this.gbTituloGastosDelMes.TabIndex = 48;
@@ -226,10 +226,11 @@
             this.btnExportarReporteMensualAExcel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             this.btnExportarReporteMensualAExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExportarReporteMensualAExcel.Image")));
             this.btnExportarReporteMensualAExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExportarReporteMensualAExcel.Location = new System.Drawing.Point(752, 78);
+            this.btnExportarReporteMensualAExcel.Location = new System.Drawing.Point(368, 78);
             this.btnExportarReporteMensualAExcel.Name = "btnExportarReporteMensualAExcel";
-            this.btnExportarReporteMensualAExcel.Size = new System.Drawing.Size(48, 44);
+            this.btnExportarReporteMensualAExcel.Size = new System.Drawing.Size(123, 44);
             this.btnExportarReporteMensualAExcel.TabIndex = 59;
+            this.btnExportarReporteMensualAExcel.Text = "Exportar";
             this.btnExportarReporteMensualAExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExportarReporteMensualAExcel.UseVisualStyleBackColor = true;
             // 
@@ -241,7 +242,7 @@
             this.lstvGastosPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstvGastosPeriodo.FullRowSelect = true;
             this.lstvGastosPeriodo.HideSelection = false;
-            this.lstvGastosPeriodo.Location = new System.Drawing.Point(435, 128);
+            this.lstvGastosPeriodo.Location = new System.Drawing.Point(435, 182);
             this.lstvGastosPeriodo.MultiSelect = false;
             this.lstvGastosPeriodo.Name = "lstvGastosPeriodo";
             this.lstvGastosPeriodo.Size = new System.Drawing.Size(376, 275);
@@ -259,23 +260,23 @@
             this.columnaTotalTipoGasto.Text = "Total";
             this.columnaTotalTipoGasto.Width = 189;
             // 
-            // lblTituloDetalleTiposGastos
+            // lblTituloDetalleTiposGastosRM
             // 
-            this.lblTituloDetalleTiposGastos.AutoSize = true;
-            this.lblTituloDetalleTiposGastos.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloDetalleTiposGastos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.lblTituloDetalleTiposGastos.Location = new System.Drawing.Point(441, 89);
-            this.lblTituloDetalleTiposGastos.Name = "lblTituloDetalleTiposGastos";
-            this.lblTituloDetalleTiposGastos.Size = new System.Drawing.Size(221, 29);
-            this.lblTituloDetalleTiposGastos.TabIndex = 61;
-            this.lblTituloDetalleTiposGastos.Text = "Detalle de Gastos";
+            this.lblTituloDetalleTiposGastosRM.AutoSize = true;
+            this.lblTituloDetalleTiposGastosRM.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloDetalleTiposGastosRM.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.lblTituloDetalleTiposGastosRM.Location = new System.Drawing.Point(510, 138);
+            this.lblTituloDetalleTiposGastosRM.Name = "lblTituloDetalleTiposGastosRM";
+            this.lblTituloDetalleTiposGastosRM.Size = new System.Drawing.Size(221, 29);
+            this.lblTituloDetalleTiposGastosRM.TabIndex = 61;
+            this.lblTituloDetalleTiposGastosRM.Text = "Detalle de Gastos";
             // 
             // ReporteMensualView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.ClientSize = new System.Drawing.Size(832, 415);
+            this.ClientSize = new System.Drawing.Size(832, 496);
             this.Controls.Add(this.pnlReporteGeneral);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ReporteMensualView";
@@ -315,6 +316,6 @@
         public System.Windows.Forms.ListView lstvGastosPeriodo;
         private System.Windows.Forms.ColumnHeader columnaTipoGasto;
         private System.Windows.Forms.ColumnHeader columnaTotalTipoGasto;
-        public System.Windows.Forms.Label lblTituloDetalleTiposGastos;
+        public System.Windows.Forms.Label lblTituloDetalleTiposGastosRM;
     }
 }
