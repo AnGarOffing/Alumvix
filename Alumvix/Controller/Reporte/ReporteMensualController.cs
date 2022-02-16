@@ -36,10 +36,22 @@ namespace Alumvix.Controller.Reporte
             reporteMensualView.btnMinimizarReporteMensualView.MouseHover += new EventHandler(ResaltarBotonMinimizar);
             reporteMensualView.btnMinimizarReporteMensualView.MouseLeave += new EventHandler(QuitarResaltadoBotonMinimizar);
             reporteMensualView.btnMinimizarReporteMensualView.Click += new EventHandler(MinimizarReporteMensualView);
-            reporteMensualView.btnDetalleGastos.Click += new EventHandler(MostrarGastosTotalesPorMes);
+            reporteMensualView.Activated += new EventHandler(MostrarGastosTotalesPorMes);
             reporteMensualView.btnCerrarSesionReporteMensual.Click += new EventHandler(CerrarSesion);
             reporteMensualView.btnCerrarSesionReporteMensual.MouseHover += new EventHandler(ResaltarBotonCerrarSesion);
             reporteMensualView.btnCerrarSesionReporteMensual.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrarSesion);
+            reporteMensualView.btnExportarReporteMensualAExcel.Click += new EventHandler(ExportarReporteAExcel);
+        }
+
+        private void ExportarReporteAExcel(object sender, EventArgs e)
+        {
+            Logica logica = new Logica();
+            List<TextBox> textBoxes = new List<TextBox>();
+            textBoxes.Add(reporteMensualView.txtCantidadContratos);
+            textBoxes.Add(reporteMensualView.txtTotalVentas);
+            textBoxes.Add(reporteMensualView.txtTotalGastos);
+            textBoxes.Add(reporteMensualView.txtUtilidadGeneral);
+            logica.ExportTextBoxesToExcel(textBoxes, reporteMensualView.lstvGastosPeriodo);
         }
 
         private void QuitarResaltadoBotonCerrarSesion(object sender, EventArgs e)

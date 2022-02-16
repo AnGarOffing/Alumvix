@@ -112,7 +112,6 @@ namespace Alumvix.Controller.Reporte
             List<int> listadoIndicesMeses = reporteDao.ObtenerIndicesDeMeses(AdministradorReportesController.AnioSeleccionado);
             int[] arregloIndices = new int[listadoIndicesMeses.Count];
             arregloIndices = listadoIndicesMeses.ToArray();
-            int indice = 0;
             int totalTiposDeGastos = 0;
             int totalVentasMes = 0;
             int utilidad = 0;
@@ -124,7 +123,6 @@ namespace Alumvix.Controller.Reporte
                 string[] row = { reporteDto.Mes, CambioDeFormato.DarFormatoANumero(totalVentasMes), CambioDeFormato.DarFormatoANumero(totalTiposDeGastos), CambioDeFormato.DarFormatoANumero(utilidad) };
                 ListViewItem itemReporte = new ListViewItem(row);
                 reporteAnualView.lstvReporteMensualPorAnio.Items.Add(itemReporte);
-                indice++;
             }
         }
 

@@ -98,8 +98,6 @@ namespace Alumvix.Model.Negocio
                     app.Visible = false;
                     for (int j = 1; j <= lv.Columns.Count; j++)
                     {
-                        //var newWidth = Math.Min(255, lv.Columns[j - 1].Width / 2);
-                        //ws.Columns[j].ColumnWidth = newWidth;
                         ws.Columns[j].AutoFit();
                         ws.Cells[1, j] = lv.Columns[j - 1].Text;
                     }
@@ -114,9 +112,64 @@ namespace Alumvix.Model.Negocio
                     }
                     wb.SaveAs(sfd.FileName, XlFileFormat.xlWorkbookDefault, Type.Missing, Type.Missing, false, false, XlSaveAsAccessMode.xlNoChange, XlSaveConflictResolution.xlLocalSessionChanges, Type.Missing, Type.Missing);
                     app.Quit();
-                    MessageBox.Show("Exported Successfully.");
+                    MessageBox.Show("El archivo ha sido exportado de manera exitosa");
                 }
             }
         }
+
+        public void ExportTextBoxesToExcel(List<System.Windows.Forms.TextBox> textBoxes, ListView listView)
+        {
+            using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel Workbook|*.xlsx", ValidateNames = true })
+            {
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    Microsoft.Office.Interop.Excel.Application app = new Microsoft.Office.Interop.Excel.Application();
+                    Workbook wb = app.Workbooks.Add(XlSheetType.xlWorksheet);
+                    Worksheet ws = (Worksheet)app.ActiveSheet;
+                    app.Visible = false;
+
+                    for (int j = 1; j <= listView.Columns.Count; j++)
+                    {
+                        ws.Columns[j].AutoFit();
+                        ws.Cells[1, j] = listView.Columns[j - 1].Text;
+                    }
+                    int i = 2;
+                    foreach (ListViewItem item in listView.Items)
+                    {
+                        for (int k = 1; k <= item.SubItems.Count; k++)
+                        {
+                            ws.Cells[i, k] = item.SubItems[k - 1].Text;
+                        }
+                        i++;
+                    }
+
+                    int _lastRow = ws.Range["A" + ws.Rows.Count].End[Microsoft.Office.Interop.Excel.XlDirection.xlUp].Row + 1;
+                    ws.Cells[_lastRow, 1] = "**********";
+                    ws.Cells[_lastRow, 2] = "**********";
+                    ws.Cells[_lastRow, 3] = "**********";
+                    ws.Cells[_lastRow, 4] = "**********";
+
+                    _lastRow = ws.Range["A" + ws.Rows.Count].End[Microsoft.Office.Interop.Excel.XlDirection.xlUp].Row + 1;
+
+                    ws.Cells[_lastRow, 1] = "Cantidad de Contratos";
+                    ws.Cells[_lastRow, 2] = "Total Ventas";
+                    ws.Cells[_lastRow, 3] = "Total Gastos";
+                    ws.Cells[_lastRow, 4] = "Utilidad";
+
+                    _lastRow = ws.Range["A" + ws.Rows.Count].End[Microsoft.Office.Interop.Excel.XlDirection.xlUp].Row + 1;
+
+                    ws.Cells[_lastRow, 1] = textBoxes[0].Text;
+                    ws.Cells[_lastRow, 2] = textBoxes[1].Text;
+                    ws.Cells[_lastRow, 3] = textBoxes[2].Text;
+                    ws.Cells[_lastRow, 4] = textBoxes[3].Text;
+
+                    wb.SaveAs(sfd.FileName, XlFileFormat.xlWorkbookDefault, Type.Missing, Type.Missing, false, false, XlSaveAsAccessMode.xlNoChange, XlSaveConflictResolution.xlLocalSessionChanges, Type.Missing, Type.Missing);
+                    app.Quit();
+                    MessageBox.Show("El archivo ha sido exportado de manera exitosa");
+                }
+            }
+        }
+
+
     }
 }
