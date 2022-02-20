@@ -545,7 +545,7 @@
             this.lblTituloContrato.AutoSize = true;
             this.lblTituloContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloContrato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.lblTituloContrato.Location = new System.Drawing.Point(246, 12);
+            this.lblTituloContrato.Location = new System.Drawing.Point(247, 12);
             this.lblTituloContrato.Name = "lblTituloContrato";
             this.lblTituloContrato.Size = new System.Drawing.Size(176, 31);
             this.lblTituloContrato.TabIndex = 38;
@@ -633,7 +633,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.label7.Location = new System.Drawing.Point(405, 90);
+            this.label7.Location = new System.Drawing.Point(427, 90);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(79, 24);
             this.label7.TabIndex = 51;
@@ -644,7 +644,7 @@
             this.lblRestaPorPagar.AutoSize = true;
             this.lblRestaPorPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRestaPorPagar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.lblRestaPorPagar.Location = new System.Drawing.Point(326, 51);
+            this.lblRestaPorPagar.Location = new System.Drawing.Point(348, 51);
             this.lblRestaPorPagar.Name = "lblRestaPorPagar";
             this.lblRestaPorPagar.Size = new System.Drawing.Size(158, 24);
             this.lblRestaPorPagar.TabIndex = 50;
@@ -676,7 +676,7 @@
             // 
             this.txtUtilidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUtilidad.ForeColor = System.Drawing.Color.YellowGreen;
-            this.txtUtilidad.Location = new System.Drawing.Point(490, 91);
+            this.txtUtilidad.Location = new System.Drawing.Point(512, 91);
             this.txtUtilidad.Name = "txtUtilidad";
             this.txtUtilidad.Size = new System.Drawing.Size(116, 29);
             this.txtUtilidad.TabIndex = 47;
@@ -686,7 +686,7 @@
             // 
             this.txtRestaPorPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRestaPorPagar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.txtRestaPorPagar.Location = new System.Drawing.Point(490, 51);
+            this.txtRestaPorPagar.Location = new System.Drawing.Point(512, 51);
             this.txtRestaPorPagar.Name = "txtRestaPorPagar";
             this.txtRestaPorPagar.Size = new System.Drawing.Size(116, 29);
             this.txtRestaPorPagar.TabIndex = 46;
@@ -717,7 +717,7 @@
             this.lblCuentas.AutoSize = true;
             this.lblCuentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCuentas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.lblCuentas.Location = new System.Drawing.Point(256, 9);
+            this.lblCuentas.Location = new System.Drawing.Point(259, 9);
             this.lblCuentas.Name = "lblCuentas";
             this.lblCuentas.Size = new System.Drawing.Size(152, 31);
             this.lblCuentas.TabIndex = 39;

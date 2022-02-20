@@ -196,7 +196,6 @@
 
         public System.Windows.Forms.Button btnEliminarAbono;
         public System.Windows.Forms.ListView lstvDetalleAbonos;
-        private System.Windows.Forms.ColumnHeader columnaNumeroAbono;
         private System.Windows.Forms.ColumnHeader columnaValorAbono;
         private System.Windows.Forms.ColumnHeader columnaFechaAbono;
         private System.Windows.Forms.ColumnHeader columnaFormaDePago;
@@ -206,5 +205,6 @@
         public System.Windows.Forms.PictureBox btnMinimizarDetalleAbonoView;
         public System.Windows.Forms.PictureBox btnCerrarDetalleAbonoView;
         public System.Windows.Forms.Panel pnlSuperiorDetalleAbonoView;
+        private System.Windows.Forms.ColumnHeader columnaNumeroAbono;
     }
 }

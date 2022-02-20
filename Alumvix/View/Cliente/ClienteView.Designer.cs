@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClienteView));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtFiltrarCliente = new System.Windows.Forms.TextBox();
             this.btnActualizarCliente = new System.Windows.Forms.Button();
             this.btnEliminarCliente = new System.Windows.Forms.Button();
@@ -57,10 +60,10 @@
             // txtFiltrarCliente
             // 
             this.txtFiltrarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFiltrarCliente.Location = new System.Drawing.Point(12, 83);
+            this.txtFiltrarCliente.Location = new System.Drawing.Point(747, 80);
             this.txtFiltrarCliente.Multiline = true;
             this.txtFiltrarCliente.Name = "txtFiltrarCliente";
-            this.txtFiltrarCliente.Size = new System.Drawing.Size(151, 29);
+            this.txtFiltrarCliente.Size = new System.Drawing.Size(175, 29);
             this.txtFiltrarCliente.TabIndex = 3;
             // 
             // btnActualizarCliente
@@ -71,7 +74,7 @@
             this.btnActualizarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizarCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizarCliente.Image")));
-            this.btnActualizarCliente.Location = new System.Drawing.Point(880, 75);
+            this.btnActualizarCliente.Location = new System.Drawing.Point(1089, 76);
             this.btnActualizarCliente.Name = "btnActualizarCliente";
             this.btnActualizarCliente.Size = new System.Drawing.Size(30, 35);
             this.btnActualizarCliente.TabIndex = 35;
@@ -85,7 +88,7 @@
             this.btnEliminarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarCliente.Image")));
-            this.btnEliminarCliente.Location = new System.Drawing.Point(925, 74);
+            this.btnEliminarCliente.Location = new System.Drawing.Point(1134, 75);
             this.btnEliminarCliente.Name = "btnEliminarCliente";
             this.btnEliminarCliente.Size = new System.Drawing.Size(30, 35);
             this.btnEliminarCliente.TabIndex = 36;
@@ -99,7 +102,7 @@
             this.btnReporte.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             this.btnReporte.Image = ((System.Drawing.Image)(resources.GetObject("btnReporte.Image")));
             this.btnReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReporte.Location = new System.Drawing.Point(20, 394);
+            this.btnReporte.Location = new System.Drawing.Point(17, 598);
             this.btnReporte.Name = "btnReporte";
             this.btnReporte.Size = new System.Drawing.Size(125, 44);
             this.btnReporte.TabIndex = 37;
@@ -112,7 +115,7 @@
             this.lblTituloClientes.AutoSize = true;
             this.lblTituloClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.lblTituloClientes.Location = new System.Drawing.Point(432, 10);
+            this.lblTituloClientes.Location = new System.Drawing.Point(520, 9);
             this.lblTituloClientes.Name = "lblTituloClientes";
             this.lblTituloClientes.Size = new System.Drawing.Size(156, 31);
             this.lblTituloClientes.TabIndex = 39;
@@ -126,7 +129,7 @@
             this.btnIngresarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresarCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresarCliente.Image")));
-            this.btnIngresarCliente.Location = new System.Drawing.Point(965, 72);
+            this.btnIngresarCliente.Location = new System.Drawing.Point(1174, 73);
             this.btnIngresarCliente.Name = "btnIngresarCliente";
             this.btnIngresarCliente.Size = new System.Drawing.Size(37, 39);
             this.btnIngresarCliente.TabIndex = 41;
@@ -141,14 +144,14 @@
             this.pnlSuperiorClienteView.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSuperiorClienteView.Location = new System.Drawing.Point(0, 0);
             this.pnlSuperiorClienteView.Name = "pnlSuperiorClienteView";
-            this.pnlSuperiorClienteView.Size = new System.Drawing.Size(1032, 53);
+            this.pnlSuperiorClienteView.Size = new System.Drawing.Size(1230, 53);
             this.pnlSuperiorClienteView.TabIndex = 43;
             // 
             // btnMinimizarClienteView
             // 
             this.btnMinimizarClienteView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizarClienteView.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarClienteView.Image")));
-            this.btnMinimizarClienteView.Location = new System.Drawing.Point(949, 12);
+            this.btnMinimizarClienteView.Location = new System.Drawing.Point(1151, 12);
             this.btnMinimizarClienteView.Name = "btnMinimizarClienteView";
             this.btnMinimizarClienteView.Size = new System.Drawing.Size(33, 30);
             this.btnMinimizarClienteView.TabIndex = 41;
@@ -158,7 +161,7 @@
             // 
             this.btnCerrarClienteView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarClienteView.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarClienteView.Image")));
-            this.btnCerrarClienteView.Location = new System.Drawing.Point(991, 12);
+            this.btnCerrarClienteView.Location = new System.Drawing.Point(1193, 12);
             this.btnCerrarClienteView.Name = "btnCerrarClienteView";
             this.btnCerrarClienteView.Size = new System.Drawing.Size(33, 30);
             this.btnCerrarClienteView.TabIndex = 40;
@@ -172,7 +175,7 @@
             this.btnGastosInternos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             this.btnGastosInternos.Image = ((System.Drawing.Image)(resources.GetObject("btnGastosInternos.Image")));
             this.btnGastosInternos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGastosInternos.Location = new System.Drawing.Point(189, 394);
+            this.btnGastosInternos.Location = new System.Drawing.Point(198, 598);
             this.btnGastosInternos.Name = "btnGastosInternos";
             this.btnGastosInternos.Size = new System.Drawing.Size(184, 44);
             this.btnGastosInternos.TabIndex = 44;
@@ -188,7 +191,7 @@
             this.btnProveedores.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             this.btnProveedores.Image = ((System.Drawing.Image)(resources.GetObject("btnProveedores.Image")));
             this.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProveedores.Location = new System.Drawing.Point(421, 394);
+            this.btnProveedores.Location = new System.Drawing.Point(439, 598);
             this.btnProveedores.Name = "btnProveedores";
             this.btnProveedores.Size = new System.Drawing.Size(159, 44);
             this.btnProveedores.TabIndex = 45;
@@ -204,7 +207,7 @@
             this.btnDetalleCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             this.btnDetalleCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnDetalleCliente.Image")));
             this.btnDetalleCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDetalleCliente.Location = new System.Drawing.Point(685, 70);
+            this.btnDetalleCliente.Location = new System.Drawing.Point(18, 67);
             this.btnDetalleCliente.Name = "btnDetalleCliente";
             this.btnDetalleCliente.Size = new System.Drawing.Size(172, 44);
             this.btnDetalleCliente.TabIndex = 46;
@@ -219,7 +222,7 @@
             this.gbEstadoContrato.Controls.Add(this.rbContratoAbierto);
             this.gbEstadoContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbEstadoContrato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.gbEstadoContrato.Location = new System.Drawing.Point(213, 63);
+            this.gbEstadoContrato.Location = new System.Drawing.Point(298, 58);
             this.gbEstadoContrato.Name = "gbEstadoContrato";
             this.gbEstadoContrato.Size = new System.Drawing.Size(425, 53);
             this.gbEstadoContrato.TabIndex = 47;
@@ -267,11 +270,41 @@
             this.dataGridClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridClientes.Location = new System.Drawing.Point(11, 123);
+            this.dataGridClientes.BackgroundColor = System.Drawing.Color.DarkSlateGray;
+            this.dataGridClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridClientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataGridClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridClientes.ColumnHeadersHeight = 30;
+            this.dataGridClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridClientes.EnableHeadersVisualStyles = false;
+            this.dataGridClientes.GridColor = System.Drawing.Color.DarkSlateGray;
+            this.dataGridClientes.Location = new System.Drawing.Point(16, 129);
             this.dataGridClientes.Name = "dataGridClientes";
+            this.dataGridClientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridClientes.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridClientes.Size = new System.Drawing.Size(1008, 249);
+            this.dataGridClientes.Size = new System.Drawing.Size(1198, 452);
             this.dataGridClientes.TabIndex = 0;
             // 
             // btnModificarIVA
@@ -282,7 +315,7 @@
             this.btnModificarIVA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             this.btnModificarIVA.Image = ((System.Drawing.Image)(resources.GetObject("btnModificarIVA.Image")));
             this.btnModificarIVA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificarIVA.Location = new System.Drawing.Point(630, 394);
+            this.btnModificarIVA.Location = new System.Drawing.Point(654, 598);
             this.btnModificarIVA.Name = "btnModificarIVA";
             this.btnModificarIVA.Size = new System.Drawing.Size(164, 44);
             this.btnModificarIVA.TabIndex = 48;
@@ -295,7 +328,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.ClientSize = new System.Drawing.Size(1032, 450);
+            this.ClientSize = new System.Drawing.Size(1230, 656);
             this.Controls.Add(this.btnModificarIVA);
             this.Controls.Add(this.gbEstadoContrato);
             this.Controls.Add(this.btnDetalleCliente);
