@@ -234,6 +234,7 @@
             // 
             // btnMinimizarEditarGastoView
             // 
+            this.btnMinimizarEditarGastoView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizarEditarGastoView.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarEditarGastoView.Image")));
             this.btnMinimizarEditarGastoView.Location = new System.Drawing.Point(545, 14);
             this.btnMinimizarEditarGastoView.Name = "btnMinimizarEditarGastoView";
@@ -243,6 +244,7 @@
             // 
             // btnCerrarEditarGastoView
             // 
+            this.btnCerrarEditarGastoView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarEditarGastoView.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarEditarGastoView.Image")));
             this.btnCerrarEditarGastoView.Location = new System.Drawing.Point(586, 14);
             this.btnCerrarEditarGastoView.Name = "btnCerrarEditarGastoView";
@@ -289,8 +291,8 @@
         public System.Windows.Forms.TextBox txtActualizarValorGasto;
         private System.Windows.Forms.Label lvlValorIngresoGasto;
         private System.Windows.Forms.Label lblFechaIngresoGasto;
-        private System.Windows.Forms.Panel pnlSuperiorEditarGastoView;
         public System.Windows.Forms.PictureBox btnMinimizarEditarGastoView;
         public System.Windows.Forms.PictureBox btnCerrarEditarGastoView;
+        public System.Windows.Forms.Panel pnlSuperiorEditarGastoView;
     }
 }

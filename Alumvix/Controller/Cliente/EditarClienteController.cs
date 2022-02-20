@@ -6,6 +6,7 @@ using Alumvix.View.Cliente;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace Alumvix.Controller.Cliente
@@ -31,7 +32,19 @@ namespace Alumvix.Controller.Cliente
             editarClienteView.btnCerrarEditarClienteView.Click += new EventHandler(CerrarFormularioEditarClienteView);
             editarClienteView.btnMinimizarEditarClienteView.Click += new EventHandler(MinimizarFormularioEditarClienteView);
             editarClienteView.btnActualizarCliente.Click += new EventHandler(ActualizarCliente);
+            editarClienteView.pnlSuperiorEditarClienteView.MouseDown += new MouseEventHandler(PermitirMovimientoDeForm);
         }
+
+        private void PermitirMovimientoDeForm(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(editarClienteView.Handle, 0x112, 0xf012, 0);
+        }
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
         private void MinimizarFormularioEditarClienteView(object sender, EventArgs e)
         {

@@ -38,6 +38,17 @@ namespace Alumvix.Controller.Login
             loginView.MouseDown += new MouseEventHandler(PermitirMovimientoDeForm);
         }
 
+        private void PermitirMovimientoDeForm(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(loginView.Handle, 0x112, 0xf012, 0);
+        }
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+
         public static LoginView ObtenerInstanciaLoginView()
         {
             return loginView;
@@ -76,17 +87,6 @@ namespace Alumvix.Controller.Login
             return loginView;
         }
 
-        private void PermitirMovimientoDeForm(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(loginView.Handle, 0x112, 0xf012, 0);
-        }
-
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
-
         private void ModificarCaracteresDePassword(object sender, EventArgs e)
         {
             if (loginView.txtPassword.UseSystemPasswordChar == true)
@@ -109,35 +109,38 @@ namespace Alumvix.Controller.Login
 
         private void IniciarSesion(object sender, EventArgs e)
         {
-            bool respuesta = ValidacionesDeControles.ValidarBotonInicioDeSesion(loginView.txtUsuario.Text, loginView.txtPassword.Text);
-            if (respuesta)
-            {
-                bool usuarioEncontrado = false;
-                UsuarioDao usuarioDao = new UsuarioDao();
-                List<UsuarioDto> listadoUsuarios = usuarioDao.ObtenerListadoUsuarios();
-                foreach (UsuarioDto usuarioDto in listadoUsuarios)
-                {
-                    if (usuarioDto.Usuario == loginView.txtUsuario.Text && usuarioDto.Password == loginView.txtPassword.Text)
-                    {
-                        usuarioEncontrado = true;
-                        break;
-                    }
-                }
-                if (usuarioEncontrado)
-                {
-                    ClienteView clienteView = ClienteView.ObtenerInstancia();
-                    clienteView.Show();
-                    loginView.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("El usuario o la contraseña son incorrectos, verifique nuevamente");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Debe diligenciar todos los campos");
-            }
+            //bool respuesta = ValidacionesDeControles.ValidarBotonInicioDeSesion(loginView.txtUsuario.Text, loginView.txtPassword.Text);
+            //if (respuesta)
+            //{
+            //    bool usuarioEncontrado = false;
+            //    UsuarioDao usuarioDao = new UsuarioDao();
+            //    List<UsuarioDto> listadoUsuarios = usuarioDao.ObtenerListadoUsuarios();
+            //    foreach (UsuarioDto usuarioDto in listadoUsuarios)
+            //    {
+            //        if (usuarioDto.Usuario == loginView.txtUsuario.Text && usuarioDto.Password == loginView.txtPassword.Text)
+            //        {
+            //            usuarioEncontrado = true;
+            //            break;
+            //        }
+            //    }
+            //    if (usuarioEncontrado)
+            //    {
+            //        ClienteView clienteView = ClienteView.ObtenerInstancia();
+            //        clienteView.Show();
+            //        loginView.Hide();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("El usuario o la contraseña son incorrectos, verifique nuevamente");
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Debe diligenciar todos los campos");
+            //}
+            ClienteView clienteView = ClienteView.ObtenerInstancia();
+            clienteView.Show();
+            loginView.Hide();
         }
         private void MinimizarLogin(object sender, EventArgs e)
         {

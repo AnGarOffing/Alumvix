@@ -117,6 +117,7 @@ namespace Alumvix.View.Gasto
             // btnEliminarGasto
             // 
             this.btnEliminarGasto.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminarGasto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminarGasto.FlatAppearance.BorderSize = 0;
             this.btnEliminarGasto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -130,6 +131,7 @@ namespace Alumvix.View.Gasto
             // btnEditarGasto
             // 
             this.btnEditarGasto.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditarGasto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditarGasto.FlatAppearance.BorderSize = 0;
             this.btnEditarGasto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -143,6 +145,7 @@ namespace Alumvix.View.Gasto
             // btnIngresarGasto
             // 
             this.btnIngresarGasto.BackColor = System.Drawing.Color.Transparent;
+            this.btnIngresarGasto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIngresarGasto.FlatAppearance.BorderSize = 0;
             this.btnIngresarGasto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresarGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -159,6 +162,7 @@ namespace Alumvix.View.Gasto
             this.pnlSuperiorDetalleGastoView.Controls.Add(this.btnMinimizarDetalleGastoView);
             this.pnlSuperiorDetalleGastoView.Controls.Add(this.btnCerrarDetalleGastoView);
             this.pnlSuperiorDetalleGastoView.Controls.Add(this.lblTituloDetalleGastosView);
+            this.pnlSuperiorDetalleGastoView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnlSuperiorDetalleGastoView.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSuperiorDetalleGastoView.Location = new System.Drawing.Point(0, 0);
             this.pnlSuperiorDetalleGastoView.Name = "pnlSuperiorDetalleGastoView";
@@ -167,6 +171,7 @@ namespace Alumvix.View.Gasto
             // 
             // btnMinimizarDetalleGastoView
             // 
+            this.btnMinimizarDetalleGastoView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizarDetalleGastoView.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarDetalleGastoView.Image")));
             this.btnMinimizarDetalleGastoView.Location = new System.Drawing.Point(1215, 14);
             this.btnMinimizarDetalleGastoView.Name = "btnMinimizarDetalleGastoView";
@@ -176,6 +181,7 @@ namespace Alumvix.View.Gasto
             // 
             // btnCerrarDetalleGastoView
             // 
+            this.btnCerrarDetalleGastoView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarDetalleGastoView.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarDetalleGastoView.Image")));
             this.btnCerrarDetalleGastoView.Location = new System.Drawing.Point(1257, 14);
             this.btnCerrarDetalleGastoView.Name = "btnCerrarDetalleGastoView";
@@ -230,9 +236,9 @@ namespace Alumvix.View.Gasto
         private System.Windows.Forms.ColumnHeader columnaProveedor;
         private System.Windows.Forms.ColumnHeader columnaDescripcion;
         public System.Windows.Forms.Button btnIngresarGasto;
-        private System.Windows.Forms.Panel pnlSuperiorDetalleGastoView;
         private System.Windows.Forms.Label lblTituloDetalleGastosView;
         public System.Windows.Forms.PictureBox btnMinimizarDetalleGastoView;
         public System.Windows.Forms.PictureBox btnCerrarDetalleGastoView;
+        public Panel pnlSuperiorDetalleGastoView;
     }
 }

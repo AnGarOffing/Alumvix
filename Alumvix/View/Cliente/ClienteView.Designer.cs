@@ -42,10 +42,10 @@
             this.btnProveedores = new System.Windows.Forms.Button();
             this.btnDetalleCliente = new System.Windows.Forms.Button();
             this.gbEstadoContrato = new System.Windows.Forms.GroupBox();
+            this.rbCualquierContrato = new System.Windows.Forms.RadioButton();
             this.rbContratoCerrado = new System.Windows.Forms.RadioButton();
             this.rbContratoAbierto = new System.Windows.Forms.RadioButton();
             this.dataGridClientes = new System.Windows.Forms.DataGridView();
-            this.rbCualquierContrato = new System.Windows.Forms.RadioButton();
             this.btnModificarIVA = new System.Windows.Forms.Button();
             this.pnlSuperiorClienteView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarClienteView)).BeginInit();
@@ -66,6 +66,7 @@
             // btnActualizarCliente
             // 
             this.btnActualizarCliente.BackColor = System.Drawing.Color.Transparent;
+            this.btnActualizarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnActualizarCliente.FlatAppearance.BorderSize = 0;
             this.btnActualizarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -79,6 +80,7 @@
             // btnEliminarCliente
             // 
             this.btnEliminarCliente.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminarCliente.FlatAppearance.BorderSize = 0;
             this.btnEliminarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -91,6 +93,7 @@
             // 
             // btnReporte
             // 
+            this.btnReporte.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReporte.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
@@ -118,6 +121,7 @@
             // btnIngresarCliente
             // 
             this.btnIngresarCliente.BackColor = System.Drawing.Color.Transparent;
+            this.btnIngresarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIngresarCliente.FlatAppearance.BorderSize = 0;
             this.btnIngresarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -142,6 +146,7 @@
             // 
             // btnMinimizarClienteView
             // 
+            this.btnMinimizarClienteView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizarClienteView.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarClienteView.Image")));
             this.btnMinimizarClienteView.Location = new System.Drawing.Point(949, 12);
             this.btnMinimizarClienteView.Name = "btnMinimizarClienteView";
@@ -151,6 +156,7 @@
             // 
             // btnCerrarClienteView
             // 
+            this.btnCerrarClienteView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarClienteView.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarClienteView.Image")));
             this.btnCerrarClienteView.Location = new System.Drawing.Point(991, 12);
             this.btnCerrarClienteView.Name = "btnCerrarClienteView";
@@ -160,6 +166,7 @@
             // 
             // btnGastosInternos
             // 
+            this.btnGastosInternos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGastosInternos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGastosInternos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGastosInternos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
@@ -175,6 +182,7 @@
             // 
             // btnProveedores
             // 
+            this.btnProveedores.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProveedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProveedores.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
@@ -190,6 +198,7 @@
             // 
             // btnDetalleCliente
             // 
+            this.btnDetalleCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDetalleCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetalleCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetalleCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
@@ -217,9 +226,22 @@
             this.gbEstadoContrato.TabStop = false;
             this.gbEstadoContrato.Text = "Estado de Contrato";
             // 
+            // rbCualquierContrato
+            // 
+            this.rbCualquierContrato.AutoSize = true;
+            this.rbCualquierContrato.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rbCualquierContrato.Location = new System.Drawing.Point(271, 22);
+            this.rbCualquierContrato.Name = "rbCualquierContrato";
+            this.rbCualquierContrato.Size = new System.Drawing.Size(143, 24);
+            this.rbCualquierContrato.TabIndex = 2;
+            this.rbCualquierContrato.TabStop = true;
+            this.rbCualquierContrato.Text = "CUALQUIERA";
+            this.rbCualquierContrato.UseVisualStyleBackColor = true;
+            // 
             // rbContratoCerrado
             // 
             this.rbContratoCerrado.AutoSize = true;
+            this.rbContratoCerrado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rbContratoCerrado.Location = new System.Drawing.Point(136, 22);
             this.rbContratoCerrado.Name = "rbContratoCerrado";
             this.rbContratoCerrado.Size = new System.Drawing.Size(115, 24);
@@ -231,6 +253,7 @@
             // rbContratoAbierto
             // 
             this.rbContratoAbierto.AutoSize = true;
+            this.rbContratoAbierto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rbContratoAbierto.Location = new System.Drawing.Point(11, 22);
             this.rbContratoAbierto.Name = "rbContratoAbierto";
             this.rbContratoAbierto.Size = new System.Drawing.Size(105, 24);
@@ -251,19 +274,9 @@
             this.dataGridClientes.Size = new System.Drawing.Size(1008, 249);
             this.dataGridClientes.TabIndex = 0;
             // 
-            // rbCualquierContrato
-            // 
-            this.rbCualquierContrato.AutoSize = true;
-            this.rbCualquierContrato.Location = new System.Drawing.Point(271, 22);
-            this.rbCualquierContrato.Name = "rbCualquierContrato";
-            this.rbCualquierContrato.Size = new System.Drawing.Size(143, 24);
-            this.rbCualquierContrato.TabIndex = 2;
-            this.rbCualquierContrato.TabStop = true;
-            this.rbCualquierContrato.Text = "CUALQUIERA";
-            this.rbCualquierContrato.UseVisualStyleBackColor = true;
-            // 
             // btnModificarIVA
             // 
+            this.btnModificarIVA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnModificarIVA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificarIVA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificarIVA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
@@ -319,7 +332,6 @@
         public System.Windows.Forms.Button btnReporte;
         private System.Windows.Forms.Label lblTituloClientes;
         public System.Windows.Forms.Button btnIngresarCliente;
-        private System.Windows.Forms.Panel pnlSuperiorClienteView;
         public System.Windows.Forms.PictureBox btnMinimizarClienteView;
         public System.Windows.Forms.PictureBox btnCerrarClienteView;
         public System.Windows.Forms.Button btnGastosInternos;
@@ -331,5 +343,6 @@
         public System.Windows.Forms.DataGridView dataGridClientes;
         public System.Windows.Forms.RadioButton rbCualquierContrato;
         public System.Windows.Forms.Button btnModificarIVA;
+        public System.Windows.Forms.Panel pnlSuperiorClienteView;
     }
 }

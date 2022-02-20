@@ -166,6 +166,7 @@
             // 
             // btnMinimizarIngresoProveedorView
             // 
+            this.btnMinimizarIngresoProveedorView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizarIngresoProveedorView.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarIngresoProveedorView.Image")));
             this.btnMinimizarIngresoProveedorView.Location = new System.Drawing.Point(419, 13);
             this.btnMinimizarIngresoProveedorView.Name = "btnMinimizarIngresoProveedorView";
@@ -175,6 +176,7 @@
             // 
             // btnCerrarIngresoProveedorView
             // 
+            this.btnCerrarIngresoProveedorView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarIngresoProveedorView.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarIngresoProveedorView.Image")));
             this.btnCerrarIngresoProveedorView.Location = new System.Drawing.Point(459, 13);
             this.btnCerrarIngresoProveedorView.Name = "btnCerrarIngresoProveedorView";
@@ -184,6 +186,7 @@
             // 
             // btnGuardarNuevoProveedor
             // 
+            this.btnGuardarNuevoProveedor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuardarNuevoProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarNuevoProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarNuevoProveedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
@@ -240,9 +243,9 @@
         public System.Windows.Forms.TextBox txtIngresarNombreProveedor;
         public System.Windows.Forms.Label lblCelularProveedor;
         public System.Windows.Forms.Label lblTituloIngresarProveedor;
-        private System.Windows.Forms.Panel pnlSuperiorIngresoProveedorView;
         public System.Windows.Forms.PictureBox btnMinimizarIngresoProveedorView;
         public System.Windows.Forms.PictureBox btnCerrarIngresoProveedorView;
         public System.Windows.Forms.Button btnGuardarNuevoProveedor;
+        public System.Windows.Forms.Panel pnlSuperiorIngresoProveedorView;
     }
 }

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditarAbonoView));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnActualizarAbono = new System.Windows.Forms.Button();
             this.dtpActualizarFechaAbono = new System.Windows.Forms.DateTimePicker();
             this.lblActualizarFormaDePago = new System.Windows.Forms.Label();
             this.cbActualizarFormaDePago = new System.Windows.Forms.ComboBox();
@@ -40,7 +41,6 @@
             this.pnlSuperiorEditarAbonoView = new System.Windows.Forms.Panel();
             this.btnMinimizarEditarAbonoView = new System.Windows.Forms.PictureBox();
             this.btnCerrarEditarAbonoView = new System.Windows.Forms.PictureBox();
-            this.btnActualizarAbono = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnlSuperiorEditarAbonoView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarEditarAbonoView)).BeginInit();
@@ -60,6 +60,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(480, 127);
             this.panel1.TabIndex = 39;
+            // 
+            // btnActualizarAbono
+            // 
+            this.btnActualizarAbono.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActualizarAbono.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizarAbono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizarAbono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.btnActualizarAbono.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizarAbono.Image")));
+            this.btnActualizarAbono.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActualizarAbono.Location = new System.Drawing.Point(331, 69);
+            this.btnActualizarAbono.Name = "btnActualizarAbono";
+            this.btnActualizarAbono.Size = new System.Drawing.Size(136, 44);
+            this.btnActualizarAbono.TabIndex = 60;
+            this.btnActualizarAbono.Text = "Actualizar";
+            this.btnActualizarAbono.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnActualizarAbono.UseVisualStyleBackColor = true;
             // 
             // dtpActualizarFechaAbono
             // 
@@ -146,6 +162,7 @@
             // 
             // btnMinimizarEditarAbonoView
             // 
+            this.btnMinimizarEditarAbonoView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizarEditarAbonoView.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarEditarAbonoView.Image")));
             this.btnMinimizarEditarAbonoView.Location = new System.Drawing.Point(410, 15);
             this.btnMinimizarEditarAbonoView.Name = "btnMinimizarEditarAbonoView";
@@ -155,27 +172,13 @@
             // 
             // btnCerrarEditarAbonoView
             // 
+            this.btnCerrarEditarAbonoView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarEditarAbonoView.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarEditarAbonoView.Image")));
             this.btnCerrarEditarAbonoView.Location = new System.Drawing.Point(451, 15);
             this.btnCerrarEditarAbonoView.Name = "btnCerrarEditarAbonoView";
             this.btnCerrarEditarAbonoView.Size = new System.Drawing.Size(33, 30);
             this.btnCerrarEditarAbonoView.TabIndex = 83;
             this.btnCerrarEditarAbonoView.TabStop = false;
-            // 
-            // btnActualizarAbono
-            // 
-            this.btnActualizarAbono.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizarAbono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizarAbono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.btnActualizarAbono.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizarAbono.Image")));
-            this.btnActualizarAbono.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActualizarAbono.Location = new System.Drawing.Point(331, 69);
-            this.btnActualizarAbono.Name = "btnActualizarAbono";
-            this.btnActualizarAbono.Size = new System.Drawing.Size(136, 44);
-            this.btnActualizarAbono.TabIndex = 60;
-            this.btnActualizarAbono.Text = "Actualizar";
-            this.btnActualizarAbono.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnActualizarAbono.UseVisualStyleBackColor = true;
             // 
             // EditarAbonoView
             // 
@@ -209,9 +212,9 @@
         private System.Windows.Forms.Label lvlActualizarValorAbono;
         private System.Windows.Forms.Label lblActualizarFechaAbono;
         public System.Windows.Forms.Label lblTituloEditarProveedor;
-        private System.Windows.Forms.Panel pnlSuperiorEditarAbonoView;
         public System.Windows.Forms.PictureBox btnMinimizarEditarAbonoView;
         public System.Windows.Forms.PictureBox btnCerrarEditarAbonoView;
         public System.Windows.Forms.Button btnActualizarAbono;
+        public System.Windows.Forms.Panel pnlSuperiorEditarAbonoView;
     }
 }

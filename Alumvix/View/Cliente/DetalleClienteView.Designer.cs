@@ -405,6 +405,7 @@
             this.pnlContrato.Controls.Add(this.txtFechaInicioContrato);
             this.pnlContrato.Controls.Add(this.txtValorContrato);
             this.pnlContrato.Controls.Add(this.txtNumeroFactura);
+            this.pnlContrato.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnlContrato.Location = new System.Drawing.Point(12, 307);
             this.pnlContrato.Name = "pnlContrato";
             this.pnlContrato.Size = new System.Drawing.Size(670, 192);
@@ -490,6 +491,7 @@
             // btnIngresarContrato
             // 
             this.btnIngresarContrato.BackColor = System.Drawing.Color.Transparent;
+            this.btnIngresarContrato.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIngresarContrato.FlatAppearance.BorderSize = 0;
             this.btnIngresarContrato.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresarContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -503,6 +505,7 @@
             // btnEditarContrato
             // 
             this.btnEditarContrato.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditarContrato.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditarContrato.FlatAppearance.BorderSize = 0;
             this.btnEditarContrato.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -526,6 +529,7 @@
             // btnEliminarContrato
             // 
             this.btnEliminarContrato.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminarContrato.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminarContrato.FlatAppearance.BorderSize = 0;
             this.btnEliminarContrato.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -726,6 +730,7 @@
             this.panel2.Controls.Add(this.btnEliminarProducto);
             this.panel2.Controls.Add(this.lblProductos);
             this.panel2.Controls.Add(this.btnAbrirIngresoProducto);
+            this.panel2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel2.Location = new System.Drawing.Point(688, 471);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(227, 178);
@@ -745,6 +750,7 @@
             // btnEliminarProducto
             // 
             this.btnEliminarProducto.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminarProducto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminarProducto.FlatAppearance.BorderSize = 0;
             this.btnEliminarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -769,6 +775,7 @@
             // btnAbrirIngresoProducto
             // 
             this.btnAbrirIngresoProducto.BackColor = System.Drawing.Color.Transparent;
+            this.btnAbrirIngresoProducto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAbrirIngresoProducto.FlatAppearance.BorderSize = 0;
             this.btnAbrirIngresoProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAbrirIngresoProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -794,6 +801,7 @@
             // 
             // btnCerrarSesion
             // 
+            this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Image")));
             this.btnCerrarSesion.Location = new System.Drawing.Point(816, 12);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
@@ -803,6 +811,7 @@
             // 
             // btnMinimizarDetalleClienteView
             // 
+            this.btnMinimizarDetalleClienteView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizarDetalleClienteView.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarDetalleClienteView.Image")));
             this.btnMinimizarDetalleClienteView.Location = new System.Drawing.Point(855, 15);
             this.btnMinimizarDetalleClienteView.Name = "btnMinimizarDetalleClienteView";
@@ -812,6 +821,7 @@
             // 
             // btnCerrarDetalleClienteView
             // 
+            this.btnCerrarDetalleClienteView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarDetalleClienteView.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarDetalleClienteView.Image")));
             this.btnCerrarDetalleClienteView.Location = new System.Drawing.Point(897, 15);
             this.btnCerrarDetalleClienteView.Name = "btnCerrarDetalleClienteView";

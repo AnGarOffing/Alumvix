@@ -121,6 +121,7 @@
             // 
             // btnCerrarLogin
             // 
+            this.btnCerrarLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarLogin.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarLogin.Image")));
             this.btnCerrarLogin.Location = new System.Drawing.Point(744, 1);
             this.btnCerrarLogin.Name = "btnCerrarLogin";
@@ -130,6 +131,7 @@
             // 
             // btnMinimizarLogin
             // 
+            this.btnMinimizarLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizarLogin.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarLogin.Image")));
             this.btnMinimizarLogin.Location = new System.Drawing.Point(708, 1);
             this.btnMinimizarLogin.Name = "btnMinimizarLogin";
@@ -152,6 +154,7 @@
             // 
             // btnVerPassword
             // 
+            this.btnVerPassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVerPassword.Image = ((System.Drawing.Image)(resources.GetObject("btnVerPassword.Image")));
             this.btnVerPassword.Location = new System.Drawing.Point(415, 84);
             this.btnVerPassword.Name = "btnVerPassword";
@@ -206,6 +209,7 @@
             // btnAcceder
             // 
             this.btnAcceder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAcceder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAcceder.FlatAppearance.BorderSize = 0;
             this.btnAcceder.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.btnAcceder.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));

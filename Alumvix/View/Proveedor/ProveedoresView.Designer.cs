@@ -39,13 +39,13 @@
             this.btnEditarProveedor = new System.Windows.Forms.Button();
             this.btnIngresarProveedor = new System.Windows.Forms.Button();
             this.pnlSuperiorProveedoresView = new System.Windows.Forms.Panel();
+            this.btnCerrarSesionProveedores = new System.Windows.Forms.PictureBox();
             this.btnMinimizarProveedorView = new System.Windows.Forms.PictureBox();
             this.btnCerrarProveedorView = new System.Windows.Forms.PictureBox();
-            this.btnCerrarSesionProveedores = new System.Windows.Forms.PictureBox();
             this.pnlSuperiorProveedoresView.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesionProveedores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarProveedorView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarProveedorView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesionProveedores)).BeginInit();
             this.SuspendLayout();
             // 
             // lstvProveedores
@@ -100,6 +100,7 @@
             // btnEliminarProveedor
             // 
             this.btnEliminarProveedor.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminarProveedor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminarProveedor.FlatAppearance.BorderSize = 0;
             this.btnEliminarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -113,6 +114,7 @@
             // btnEditarProveedor
             // 
             this.btnEditarProveedor.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditarProveedor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditarProveedor.FlatAppearance.BorderSize = 0;
             this.btnEditarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -126,6 +128,7 @@
             // btnIngresarProveedor
             // 
             this.btnIngresarProveedor.BackColor = System.Drawing.Color.Transparent;
+            this.btnIngresarProveedor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIngresarProveedor.FlatAppearance.BorderSize = 0;
             this.btnIngresarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -149,8 +152,19 @@
             this.pnlSuperiorProveedoresView.Size = new System.Drawing.Size(847, 59);
             this.pnlSuperiorProveedoresView.TabIndex = 50;
             // 
+            // btnCerrarSesionProveedores
+            // 
+            this.btnCerrarSesionProveedores.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrarSesionProveedores.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesionProveedores.Image")));
+            this.btnCerrarSesionProveedores.Location = new System.Drawing.Point(730, 11);
+            this.btnCerrarSesionProveedores.Name = "btnCerrarSesionProveedores";
+            this.btnCerrarSesionProveedores.Size = new System.Drawing.Size(33, 33);
+            this.btnCerrarSesionProveedores.TabIndex = 50;
+            this.btnCerrarSesionProveedores.TabStop = false;
+            // 
             // btnMinimizarProveedorView
             // 
+            this.btnMinimizarProveedorView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizarProveedorView.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarProveedorView.Image")));
             this.btnMinimizarProveedorView.Location = new System.Drawing.Point(771, 13);
             this.btnMinimizarProveedorView.Name = "btnMinimizarProveedorView";
@@ -160,21 +174,13 @@
             // 
             // btnCerrarProveedorView
             // 
+            this.btnCerrarProveedorView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarProveedorView.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarProveedorView.Image")));
             this.btnCerrarProveedorView.Location = new System.Drawing.Point(811, 13);
             this.btnCerrarProveedorView.Name = "btnCerrarProveedorView";
             this.btnCerrarProveedorView.Size = new System.Drawing.Size(33, 30);
             this.btnCerrarProveedorView.TabIndex = 46;
             this.btnCerrarProveedorView.TabStop = false;
-            // 
-            // btnCerrarSesionProveedores
-            // 
-            this.btnCerrarSesionProveedores.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesionProveedores.Image")));
-            this.btnCerrarSesionProveedores.Location = new System.Drawing.Point(730, 11);
-            this.btnCerrarSesionProveedores.Name = "btnCerrarSesionProveedores";
-            this.btnCerrarSesionProveedores.Size = new System.Drawing.Size(33, 33);
-            this.btnCerrarSesionProveedores.TabIndex = 50;
-            this.btnCerrarSesionProveedores.TabStop = false;
             // 
             // ProveedoresView
             // 
@@ -187,15 +193,16 @@
             this.Controls.Add(this.btnEliminarProveedor);
             this.Controls.Add(this.btnEditarProveedor);
             this.Controls.Add(this.lstvProveedores);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ProveedoresView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProveedoresView";
             this.pnlSuperiorProveedoresView.ResumeLayout(false);
             this.pnlSuperiorProveedoresView.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesionProveedores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarProveedorView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarProveedorView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesionProveedores)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -211,9 +218,9 @@
         public System.Windows.Forms.Button btnEliminarProveedor;
         public System.Windows.Forms.Button btnEditarProveedor;
         public System.Windows.Forms.Button btnIngresarProveedor;
-        private System.Windows.Forms.Panel pnlSuperiorProveedoresView;
         public System.Windows.Forms.PictureBox btnMinimizarProveedorView;
         public System.Windows.Forms.PictureBox btnCerrarProveedorView;
         public System.Windows.Forms.PictureBox btnCerrarSesionProveedores;
+        public System.Windows.Forms.Panel pnlSuperiorProveedoresView;
     }
 }

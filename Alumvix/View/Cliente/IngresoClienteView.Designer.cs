@@ -79,6 +79,7 @@
             // 
             // btnMinimizarIngresoClienteView
             // 
+            this.btnMinimizarIngresoClienteView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizarIngresoClienteView.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarIngresoClienteView.Image")));
             this.btnMinimizarIngresoClienteView.Location = new System.Drawing.Point(451, 14);
             this.btnMinimizarIngresoClienteView.Name = "btnMinimizarIngresoClienteView";
@@ -88,6 +89,7 @@
             // 
             // btnCerrarIngresoClienteView
             // 
+            this.btnCerrarIngresoClienteView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarIngresoClienteView.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarIngresoClienteView.Image")));
             this.btnCerrarIngresoClienteView.Location = new System.Drawing.Point(493, 14);
             this.btnCerrarIngresoClienteView.Name = "btnCerrarIngresoClienteView";
@@ -119,6 +121,7 @@
             // 
             // btnGuardarNuevoCliente
             // 
+            this.btnGuardarNuevoCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuardarNuevoCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarNuevoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarNuevoCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
@@ -290,7 +293,6 @@
 
         #endregion
         public System.Windows.Forms.Label lblTituloIngresarCliente;
-        private System.Windows.Forms.Panel pnlSuperiorIngresoClienteView;
         public System.Windows.Forms.PictureBox btnMinimizarIngresoClienteView;
         public System.Windows.Forms.PictureBox btnCerrarIngresoClienteView;
         private System.Windows.Forms.Panel panel1;
@@ -308,5 +310,6 @@
         public System.Windows.Forms.Label lblCelularCliente;
         public System.Windows.Forms.Label lblCorreoCliente;
         public System.Windows.Forms.Label lblNombreCliente;
+        public System.Windows.Forms.Panel pnlSuperiorIngresoClienteView;
     }
 }

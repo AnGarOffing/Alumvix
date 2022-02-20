@@ -44,11 +44,11 @@
             this.lvlValorIngresoGasto = new System.Windows.Forms.Label();
             this.lblFechaIngresoGasto = new System.Windows.Forms.Label();
             this.lblIngresarGasto = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlSuperiorIngresoGastoView = new System.Windows.Forms.Panel();
             this.btnMinimizarIngresoGastoView = new System.Windows.Forms.PictureBox();
             this.btnCerrarIngresoGastoView = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.pnlSuperiorIngresoGastoView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarIngresoGastoView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarIngresoGastoView)).BeginInit();
             this.SuspendLayout();
@@ -75,6 +75,7 @@
             // 
             // btnGuardarNuevoGasto
             // 
+            this.btnGuardarNuevoGasto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuardarNuevoGasto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarNuevoGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarNuevoGasto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
@@ -220,20 +221,21 @@
             this.lblIngresarGasto.TabIndex = 38;
             this.lblIngresarGasto.Text = "INGRESO DE GASTO";
             // 
-            // panel2
+            // pnlSuperiorIngresoGastoView
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel2.Controls.Add(this.btnMinimizarIngresoGastoView);
-            this.panel2.Controls.Add(this.btnCerrarIngresoGastoView);
-            this.panel2.Controls.Add(this.lblIngresarGasto);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(526, 59);
-            this.panel2.TabIndex = 40;
+            this.pnlSuperiorIngresoGastoView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pnlSuperiorIngresoGastoView.Controls.Add(this.btnMinimizarIngresoGastoView);
+            this.pnlSuperiorIngresoGastoView.Controls.Add(this.btnCerrarIngresoGastoView);
+            this.pnlSuperiorIngresoGastoView.Controls.Add(this.lblIngresarGasto);
+            this.pnlSuperiorIngresoGastoView.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSuperiorIngresoGastoView.Location = new System.Drawing.Point(0, 0);
+            this.pnlSuperiorIngresoGastoView.Name = "pnlSuperiorIngresoGastoView";
+            this.pnlSuperiorIngresoGastoView.Size = new System.Drawing.Size(526, 59);
+            this.pnlSuperiorIngresoGastoView.TabIndex = 40;
             // 
             // btnMinimizarIngresoGastoView
             // 
+            this.btnMinimizarIngresoGastoView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizarIngresoGastoView.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarIngresoGastoView.Image")));
             this.btnMinimizarIngresoGastoView.Location = new System.Drawing.Point(449, 12);
             this.btnMinimizarIngresoGastoView.Name = "btnMinimizarIngresoGastoView";
@@ -243,6 +245,7 @@
             // 
             // btnCerrarIngresoGastoView
             // 
+            this.btnCerrarIngresoGastoView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarIngresoGastoView.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarIngresoGastoView.Image")));
             this.btnCerrarIngresoGastoView.Location = new System.Drawing.Point(491, 12);
             this.btnCerrarIngresoGastoView.Name = "btnCerrarIngresoGastoView";
@@ -256,7 +259,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(526, 344);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pnlSuperiorIngresoGastoView);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "IngresoGastoView";
@@ -264,8 +267,8 @@
             this.Text = "IngresoGastoView";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.pnlSuperiorIngresoGastoView.ResumeLayout(false);
+            this.pnlSuperiorIngresoGastoView.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarIngresoGastoView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarIngresoGastoView)).EndInit();
             this.ResumeLayout(false);
@@ -288,9 +291,9 @@
         public System.Windows.Forms.ComboBox cbIngresarProveedor;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.ComboBox cbIngresarTipoGasto;
-        private System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.PictureBox btnMinimizarIngresoGastoView;
         public System.Windows.Forms.PictureBox btnCerrarIngresoGastoView;
         public System.Windows.Forms.Button btnGuardarNuevoGasto;
+        public System.Windows.Forms.Panel pnlSuperiorIngresoGastoView;
     }
 }

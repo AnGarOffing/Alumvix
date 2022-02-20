@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -31,7 +32,19 @@ namespace Alumvix.Controller.Producto
             ingresoProductoView.btnMinimizarIngresoProductoView.MouseLeave += new EventHandler(QuitarResaltadoBotonMinimizar);
             ingresoProductoView.btnMinimizarIngresoProductoView.Click += new EventHandler(MinimizarIngresoProductoView);
             ingresoProductoView.btnGuardarProducto.Click += new EventHandler(IngresarProducto);
+            ingresoProductoView.pnlSuperiorIngresoProductoView.MouseDown += new MouseEventHandler(PermitirMovimientoDeForm);
         }
+
+        private void PermitirMovimientoDeForm(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(ingresoProductoView.Handle, 0x112, 0xf012, 0);
+        }
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
         private void MinimizarIngresoProductoView(object sender, EventArgs e)
         {

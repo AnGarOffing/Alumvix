@@ -38,14 +38,14 @@
             this.columnaDescripcionGastoInterno = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnEliminarGastoInterno = new System.Windows.Forms.Button();
             this.pnlSuperiorGastoInternoView = new System.Windows.Forms.Panel();
+            this.btnCerrarSesionGastosInternos = new System.Windows.Forms.PictureBox();
             this.btnMinimizarGastoInternoView = new System.Windows.Forms.PictureBox();
             this.btnCerrarGastoInternoView = new System.Windows.Forms.PictureBox();
             this.btnIngresarGastoInterno = new System.Windows.Forms.Button();
-            this.btnCerrarSesionGastosInternos = new System.Windows.Forms.PictureBox();
             this.pnlSuperiorGastoInternoView.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesionGastosInternos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarGastoInternoView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarGastoInternoView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesionGastosInternos)).BeginInit();
             this.SuspendLayout();
             // 
             // lblListadoGastosInternos
@@ -62,6 +62,7 @@
             // btnEditarGastoInterno
             // 
             this.btnEditarGastoInterno.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditarGastoInterno.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditarGastoInterno.FlatAppearance.BorderSize = 0;
             this.btnEditarGastoInterno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarGastoInterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -113,6 +114,7 @@
             // btnEliminarGastoInterno
             // 
             this.btnEliminarGastoInterno.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminarGastoInterno.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminarGastoInterno.FlatAppearance.BorderSize = 0;
             this.btnEliminarGastoInterno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarGastoInterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -136,8 +138,19 @@
             this.pnlSuperiorGastoInternoView.Size = new System.Drawing.Size(1184, 59);
             this.pnlSuperiorGastoInternoView.TabIndex = 45;
             // 
+            // btnCerrarSesionGastosInternos
+            // 
+            this.btnCerrarSesionGastosInternos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrarSesionGastosInternos.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesionGastosInternos.Image")));
+            this.btnCerrarSesionGastosInternos.Location = new System.Drawing.Point(1064, 11);
+            this.btnCerrarSesionGastosInternos.Name = "btnCerrarSesionGastosInternos";
+            this.btnCerrarSesionGastosInternos.Size = new System.Drawing.Size(33, 33);
+            this.btnCerrarSesionGastosInternos.TabIndex = 49;
+            this.btnCerrarSesionGastosInternos.TabStop = false;
+            // 
             // btnMinimizarGastoInternoView
             // 
+            this.btnMinimizarGastoInternoView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizarGastoInternoView.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarGastoInternoView.Image")));
             this.btnMinimizarGastoInternoView.Location = new System.Drawing.Point(1107, 14);
             this.btnMinimizarGastoInternoView.Name = "btnMinimizarGastoInternoView";
@@ -147,6 +160,7 @@
             // 
             // btnCerrarGastoInternoView
             // 
+            this.btnCerrarGastoInternoView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarGastoInternoView.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarGastoInternoView.Image")));
             this.btnCerrarGastoInternoView.Location = new System.Drawing.Point(1149, 14);
             this.btnCerrarGastoInternoView.Name = "btnCerrarGastoInternoView";
@@ -157,6 +171,7 @@
             // btnIngresarGastoInterno
             // 
             this.btnIngresarGastoInterno.BackColor = System.Drawing.Color.Transparent;
+            this.btnIngresarGastoInterno.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIngresarGastoInterno.FlatAppearance.BorderSize = 0;
             this.btnIngresarGastoInterno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresarGastoInterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -166,15 +181,6 @@
             this.btnIngresarGastoInterno.Size = new System.Drawing.Size(37, 39);
             this.btnIngresarGastoInterno.TabIndex = 46;
             this.btnIngresarGastoInterno.UseVisualStyleBackColor = false;
-            // 
-            // btnCerrarSesionGastosInternos
-            // 
-            this.btnCerrarSesionGastosInternos.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesionGastosInternos.Image")));
-            this.btnCerrarSesionGastosInternos.Location = new System.Drawing.Point(1064, 11);
-            this.btnCerrarSesionGastosInternos.Name = "btnCerrarSesionGastosInternos";
-            this.btnCerrarSesionGastosInternos.Size = new System.Drawing.Size(33, 33);
-            this.btnCerrarSesionGastosInternos.TabIndex = 49;
-            this.btnCerrarSesionGastosInternos.TabStop = false;
             // 
             // GastosInternosView
             // 
@@ -187,15 +193,16 @@
             this.Controls.Add(this.btnEditarGastoInterno);
             this.Controls.Add(this.lstvGastosInternos);
             this.Controls.Add(this.btnEliminarGastoInterno);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GastosInternosView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GastoInternoView";
             this.pnlSuperiorGastoInternoView.ResumeLayout(false);
             this.pnlSuperiorGastoInternoView.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesionGastosInternos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarGastoInternoView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarGastoInternoView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesionGastosInternos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -210,10 +217,10 @@
         private System.Windows.Forms.ColumnHeader columnaValorGastoInterno;
         private System.Windows.Forms.ColumnHeader fechaGastoInterno;
         private System.Windows.Forms.ColumnHeader columnaDescripcionGastoInterno;
-        private System.Windows.Forms.Panel pnlSuperiorGastoInternoView;
         public System.Windows.Forms.PictureBox btnMinimizarGastoInternoView;
         public System.Windows.Forms.PictureBox btnCerrarGastoInternoView;
         public System.Windows.Forms.Button btnIngresarGastoInterno;
         public System.Windows.Forms.PictureBox btnCerrarSesionGastosInternos;
+        public System.Windows.Forms.Panel pnlSuperiorGastoInternoView;
     }
 }

@@ -6,6 +6,7 @@ using Alumvix.View.Cliente;
 using Alumvix.View.Contrato;
 using System;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace Alumvix.Controller.Contrato
@@ -29,7 +30,19 @@ namespace Alumvix.Controller.Contrato
             seleccionarContratoView.btnCerrarSeleccionarContratoView.MouseHover += new EventHandler(ResaltarBotonCerrar);
             seleccionarContratoView.btnCerrarSeleccionarContratoView.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrar);
             seleccionarContratoView.btnCerrarSeleccionarContratoView.Click += new EventHandler(CerrarSeleccionarContratoView);
+            seleccionarContratoView.pnlSuperiorSeleccionarContratoView.MouseDown += new MouseEventHandler(PermitirMovimientoDeForm);
         }
+
+        private void PermitirMovimientoDeForm(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(seleccionarContratoView.Handle, 0x112, 0xf012, 0);
+        }
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
         private void ResaltarBotonMinimizar(object sender, EventArgs e)
         {

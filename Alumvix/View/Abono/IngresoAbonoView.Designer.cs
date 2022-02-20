@@ -93,6 +93,7 @@
             // 
             // btnGuardarNuevoAbono
             // 
+            this.btnGuardarNuevoAbono.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuardarNuevoAbono.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarNuevoAbono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarNuevoAbono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
@@ -161,6 +162,7 @@
             // 
             // btnMinimizarIngresoAbonoView
             // 
+            this.btnMinimizarIngresoAbonoView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizarIngresoAbonoView.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarIngresoAbonoView.Image")));
             this.btnMinimizarIngresoAbonoView.Location = new System.Drawing.Point(409, 14);
             this.btnMinimizarIngresoAbonoView.Name = "btnMinimizarIngresoAbonoView";
@@ -170,6 +172,7 @@
             // 
             // btnCerrarIngresoAbonoView
             // 
+            this.btnCerrarIngresoAbonoView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarIngresoAbonoView.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarIngresoAbonoView.Image")));
             this.btnCerrarIngresoAbonoView.Location = new System.Drawing.Point(451, 14);
             this.btnCerrarIngresoAbonoView.Name = "btnCerrarIngresoAbonoView";
@@ -208,9 +211,9 @@
         public System.Windows.Forms.TextBox txtIngresarValorAbono;
         public System.Windows.Forms.DateTimePicker dtpIngresarFechaAbono;
         public System.Windows.Forms.Label lblTituloEditarProveedor;
-        private System.Windows.Forms.Panel pnlSuperiorIngresoAbonoView;
         public System.Windows.Forms.PictureBox btnMinimizarIngresoAbonoView;
         public System.Windows.Forms.PictureBox btnCerrarIngresoAbonoView;
         public System.Windows.Forms.Button btnGuardarNuevoAbono;
+        public System.Windows.Forms.Panel pnlSuperiorIngresoAbonoView;
     }
 }

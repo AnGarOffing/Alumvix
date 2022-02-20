@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -34,14 +35,24 @@ namespace Alumvix.Controller.Cliente
             ingresoClienteView.btnCerrarIngresoClienteView.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrar);
             ingresoClienteView.btnCerrarIngresoClienteView.Click += new EventHandler(CerrarFormularioIngresoClienteView);
             ingresoClienteView.btnMinimizarIngresoClienteView.Click += new EventHandler(MinimizarFormularioIngresoClienteView);
+            ingresoClienteView.pnlSuperiorIngresoClienteView.MouseDown += new MouseEventHandler(PermitirMovimientoDeForm);
         }
+
+        private void PermitirMovimientoDeForm(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(ingresoClienteView.Handle, 0x112, 0xf012, 0);
+        }
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
         private void PersistirDatos(object sender, EventArgs e)
         {
             ClienteDto clienteDto = new ClienteDto();
-            clienteDto.IdentificacionCliente =  ingresoClienteView.txtIngresarIdCliente.Text;
-
-            
+            clienteDto.IdentificacionCliente =  ingresoClienteView.txtIngresarIdCliente.Text;        
         }
 
         private void LimpiarControles(object sender, EventArgs e)

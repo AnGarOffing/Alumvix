@@ -249,6 +249,7 @@
             // 
             // btnCerrarSesionReporteAnual
             // 
+            this.btnCerrarSesionReporteAnual.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarSesionReporteAnual.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesionReporteAnual.Image")));
             this.btnCerrarSesionReporteAnual.Location = new System.Drawing.Point(1059, 12);
             this.btnCerrarSesionReporteAnual.Name = "btnCerrarSesionReporteAnual";
@@ -258,6 +259,7 @@
             // 
             // btnMinimizarReporteAnualView
             // 
+            this.btnMinimizarReporteAnualView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizarReporteAnualView.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarReporteAnualView.Image")));
             this.btnMinimizarReporteAnualView.Location = new System.Drawing.Point(1101, 15);
             this.btnMinimizarReporteAnualView.Name = "btnMinimizarReporteAnualView";
@@ -267,6 +269,7 @@
             // 
             // btnCerrarReporteAnualView
             // 
+            this.btnCerrarReporteAnualView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarReporteAnualView.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarReporteAnualView.Image")));
             this.btnCerrarReporteAnualView.Location = new System.Drawing.Point(1143, 15);
             this.btnCerrarReporteAnualView.Name = "btnCerrarReporteAnualView";
@@ -276,6 +279,7 @@
             // 
             // btnExportarReporteAExcel
             // 
+            this.btnExportarReporteAExcel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExportarReporteAExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExportarReporteAExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportarReporteAExcel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
@@ -348,11 +352,11 @@
         private System.Windows.Forms.ColumnHeader columnaTotalVentas;
         private System.Windows.Forms.ColumnHeader columnaTotalGastos;
         private System.Windows.Forms.ColumnHeader columnaUtilidad;
-        private System.Windows.Forms.Panel pnlSuperiorReporteAnualView;
         public System.Windows.Forms.PictureBox btnMinimizarReporteAnualView;
         public System.Windows.Forms.PictureBox btnCerrarReporteAnualView;
         public System.Windows.Forms.Button btnExportarReporteAExcel;
         public System.Windows.Forms.PictureBox btnCerrarSesionReporteAnual;
         public System.Windows.Forms.Label lblTituloDetalleTiposGastosRA;
+        public System.Windows.Forms.Panel pnlSuperiorReporteAnualView;
     }
 }

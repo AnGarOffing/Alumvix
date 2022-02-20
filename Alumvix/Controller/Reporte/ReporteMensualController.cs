@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -41,7 +42,19 @@ namespace Alumvix.Controller.Reporte
             reporteMensualView.btnCerrarSesionReporteMensual.MouseHover += new EventHandler(ResaltarBotonCerrarSesion);
             reporteMensualView.btnCerrarSesionReporteMensual.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrarSesion);
             reporteMensualView.btnExportarReporteMensualAExcel.Click += new EventHandler(ExportarReporteAExcel);
+            reporteMensualView.pnlSuperiorReporteMensualView.MouseDown += new MouseEventHandler(PermitirMovimientoDeForm);
         }
+
+        private void PermitirMovimientoDeForm(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(reporteMensualView.Handle, 0x112, 0xf012, 0);
+        }
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
         private void ExportarReporteAExcel(object sender, EventArgs e)
         {
@@ -51,7 +64,7 @@ namespace Alumvix.Controller.Reporte
             textBoxes.Add(reporteMensualView.txtTotalVentas);
             textBoxes.Add(reporteMensualView.txtTotalGastos);
             textBoxes.Add(reporteMensualView.txtUtilidadGeneral);
-            logica.ExportTextBoxesToExcel(textBoxes, reporteMensualView.lstvGastosPeriodo);
+            logica.ExportToExcel(textBoxes, reporteMensualView.lstvGastosPeriodo);
         }
 
         private void QuitarResaltadoBotonCerrarSesion(object sender, EventArgs e)

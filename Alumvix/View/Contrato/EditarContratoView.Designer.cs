@@ -71,6 +71,7 @@
             // 
             // btnActualizarContrato
             // 
+            this.btnActualizarContrato.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnActualizarContrato.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizarContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizarContrato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
@@ -210,6 +211,7 @@
             // 
             // btnMinimizarEditarContratoView
             // 
+            this.btnMinimizarEditarContratoView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizarEditarContratoView.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarEditarContratoView.Image")));
             this.btnMinimizarEditarContratoView.Location = new System.Drawing.Point(525, 15);
             this.btnMinimizarEditarContratoView.Name = "btnMinimizarEditarContratoView";
@@ -219,6 +221,7 @@
             // 
             // btnCerrarEditarContratoView
             // 
+            this.btnCerrarEditarContratoView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarEditarContratoView.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarEditarContratoView.Image")));
             this.btnCerrarEditarContratoView.Location = new System.Drawing.Point(566, 15);
             this.btnCerrarEditarContratoView.Name = "btnCerrarEditarContratoView";
@@ -262,9 +265,9 @@
         public System.Windows.Forms.Label lblTituloEditarContrato;
         public System.Windows.Forms.ComboBox cbEditarEstadoTrabajo;
         private System.Windows.Forms.Label lblEditarEstadoTrabajo;
-        private System.Windows.Forms.Panel pnlSuperiorEditarContratoView;
         public System.Windows.Forms.PictureBox btnMinimizarEditarContratoView;
         public System.Windows.Forms.PictureBox btnCerrarEditarContratoView;
         public System.Windows.Forms.Button btnActualizarContrato;
+        public System.Windows.Forms.Panel pnlSuperiorEditarContratoView;
     }
 }

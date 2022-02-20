@@ -15,6 +15,7 @@ using Alumvix.View.Login;
 using Alumvix.Controller.Login;
 using Alumvix.View;
 using System.Drawing;
+using System.Runtime.InteropServices;
 
 namespace Alumvix.Controller.Cliente
 {
@@ -72,17 +73,19 @@ namespace Alumvix.Controller.Cliente
             detalleClienteVista.btnEditarContrato.Click += new EventHandler(AbrirEditarContratoView);
             detalleClienteVista.btnCerrarSesion.Click += new EventHandler(CerrarSesion);
             detalleClienteVista.btnCerrarDetalleClienteView.Click += new EventHandler(CerrarDetalleClienteView);
+            detalleClienteVista.pnlSuperiorDetalleClienteView.MouseDown += new MouseEventHandler(PermitirMovimientoDeForm);
         }
 
-        //private void EstablecerContenedorProductos(object sender, EventArgs e)
-        //{
-        //    detalleClienteVista.lstvProductos.Scrollable = true;
-        //    detalleClienteVista.lstvProductos.View = System.Windows.Forms.View.Details;
-        //    ColumnHeader header = new ColumnHeader();
-        //    header.Text = "";
-        //    header.Name = "col1";
-        //   detalleClienteVista.lstvProductos.Columns.Add(header);
-        //}
+        private void PermitirMovimientoDeForm(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(detalleClienteVista.Handle, 0x112, 0xf012, 0);
+        }
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
         private void MinimizarDetalleClienteView(object sender, EventArgs e)
         {

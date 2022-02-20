@@ -86,6 +86,7 @@
             // 
             // btnMinimizarIngresoProductoView
             // 
+            this.btnMinimizarIngresoProductoView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizarIngresoProductoView.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarIngresoProductoView.Image")));
             this.btnMinimizarIngresoProductoView.Location = new System.Drawing.Point(407, 12);
             this.btnMinimizarIngresoProductoView.Name = "btnMinimizarIngresoProductoView";
@@ -95,6 +96,7 @@
             // 
             // btnCerrarIngresoProductoView
             // 
+            this.btnCerrarIngresoProductoView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarIngresoProductoView.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarIngresoProductoView.Image")));
             this.btnCerrarIngresoProductoView.Location = new System.Drawing.Point(445, 12);
             this.btnCerrarIngresoProductoView.Name = "btnCerrarIngresoProductoView";
@@ -104,6 +106,7 @@
             // 
             // btnGuardarProducto
             // 
+            this.btnGuardarProducto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuardarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarProducto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
@@ -145,9 +148,9 @@
         public System.Windows.Forms.ComboBox cbSeleccionarProducto;
         private System.Windows.Forms.Label lblProducto;
         public System.Windows.Forms.Label lblIngresarProducto;
-        private System.Windows.Forms.Panel pnlSuperiorIngresoProductoView;
         public System.Windows.Forms.PictureBox btnMinimizarIngresoProductoView;
         public System.Windows.Forms.PictureBox btnCerrarIngresoProductoView;
         public System.Windows.Forms.Button btnGuardarProducto;
+        public System.Windows.Forms.Panel pnlSuperiorIngresoProductoView;
     }
 }

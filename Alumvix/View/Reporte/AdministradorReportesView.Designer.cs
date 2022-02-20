@@ -38,16 +38,16 @@
             this.lblSeleccionarMes = new System.Windows.Forms.Label();
             this.lblSeleccionarAnio = new System.Windows.Forms.Label();
             this.cbSeleccionarAnio = new System.Windows.Forms.ComboBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlSuperiorAdminReportesView = new System.Windows.Forms.Panel();
+            this.btnCerrarSesionAdminReportes = new System.Windows.Forms.PictureBox();
             this.btnMinimizarAdministradorReportesView = new System.Windows.Forms.PictureBox();
             this.btnCerrarAdministradorReportesView = new System.Windows.Forms.PictureBox();
             this.btnConsultarReporte = new System.Windows.Forms.Button();
-            this.btnCerrarSesionAdminReportes = new System.Windows.Forms.PictureBox();
             this.gbPeriodicidad.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pnlSuperiorAdminReportesView.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesionAdminReportes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarAdministradorReportesView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarAdministradorReportesView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesionAdminReportes)).BeginInit();
             this.SuspendLayout();
             // 
             // gbPeriodicidad
@@ -78,6 +78,7 @@
             // rbAnual
             // 
             this.rbAnual.AutoSize = true;
+            this.rbAnual.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rbAnual.Location = new System.Drawing.Point(223, 24);
             this.rbAnual.Name = "rbAnual";
             this.rbAnual.Size = new System.Drawing.Size(73, 24);
@@ -89,6 +90,7 @@
             // rbMensual
             // 
             this.rbMensual.AutoSize = true;
+            this.rbMensual.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rbMensual.Location = new System.Drawing.Point(15, 24);
             this.rbMensual.Name = "rbMensual";
             this.rbMensual.Size = new System.Drawing.Size(94, 24);
@@ -110,6 +112,7 @@
             // 
             // cbSeleccionarMes
             // 
+            this.cbSeleccionarMes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbSeleccionarMes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSeleccionarMes.FormattingEnabled = true;
             this.cbSeleccionarMes.Location = new System.Drawing.Point(201, 183);
@@ -141,6 +144,7 @@
             // 
             // cbSeleccionarAnio
             // 
+            this.cbSeleccionarAnio.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbSeleccionarAnio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSeleccionarAnio.FormattingEnabled = true;
             this.cbSeleccionarAnio.Location = new System.Drawing.Point(552, 179);
@@ -148,21 +152,32 @@
             this.cbSeleccionarAnio.Size = new System.Drawing.Size(145, 28);
             this.cbSeleccionarAnio.TabIndex = 52;
             // 
-            // panel1
+            // pnlSuperiorAdminReportesView
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel1.Controls.Add(this.btnCerrarSesionAdminReportes);
-            this.panel1.Controls.Add(this.btnMinimizarAdministradorReportesView);
-            this.panel1.Controls.Add(this.btnCerrarAdministradorReportesView);
-            this.panel1.Controls.Add(this.lblTituloReporteGeneral);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(907, 59);
-            this.panel1.TabIndex = 54;
+            this.pnlSuperiorAdminReportesView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pnlSuperiorAdminReportesView.Controls.Add(this.btnCerrarSesionAdminReportes);
+            this.pnlSuperiorAdminReportesView.Controls.Add(this.btnMinimizarAdministradorReportesView);
+            this.pnlSuperiorAdminReportesView.Controls.Add(this.btnCerrarAdministradorReportesView);
+            this.pnlSuperiorAdminReportesView.Controls.Add(this.lblTituloReporteGeneral);
+            this.pnlSuperiorAdminReportesView.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSuperiorAdminReportesView.Location = new System.Drawing.Point(0, 0);
+            this.pnlSuperiorAdminReportesView.Name = "pnlSuperiorAdminReportesView";
+            this.pnlSuperiorAdminReportesView.Size = new System.Drawing.Size(907, 59);
+            this.pnlSuperiorAdminReportesView.TabIndex = 54;
+            // 
+            // btnCerrarSesionAdminReportes
+            // 
+            this.btnCerrarSesionAdminReportes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrarSesionAdminReportes.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesionAdminReportes.Image")));
+            this.btnCerrarSesionAdminReportes.Location = new System.Drawing.Point(788, 12);
+            this.btnCerrarSesionAdminReportes.Name = "btnCerrarSesionAdminReportes";
+            this.btnCerrarSesionAdminReportes.Size = new System.Drawing.Size(33, 33);
+            this.btnCerrarSesionAdminReportes.TabIndex = 48;
+            this.btnCerrarSesionAdminReportes.TabStop = false;
             // 
             // btnMinimizarAdministradorReportesView
             // 
+            this.btnMinimizarAdministradorReportesView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizarAdministradorReportesView.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarAdministradorReportesView.Image")));
             this.btnMinimizarAdministradorReportesView.Location = new System.Drawing.Point(829, 14);
             this.btnMinimizarAdministradorReportesView.Name = "btnMinimizarAdministradorReportesView";
@@ -172,6 +187,7 @@
             // 
             // btnCerrarAdministradorReportesView
             // 
+            this.btnCerrarAdministradorReportesView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarAdministradorReportesView.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarAdministradorReportesView.Image")));
             this.btnCerrarAdministradorReportesView.Location = new System.Drawing.Point(871, 14);
             this.btnCerrarAdministradorReportesView.Name = "btnCerrarAdministradorReportesView";
@@ -181,6 +197,7 @@
             // 
             // btnConsultarReporte
             // 
+            this.btnConsultarReporte.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConsultarReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsultarReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultarReporte.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
@@ -194,15 +211,6 @@
             this.btnConsultarReporte.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnConsultarReporte.UseVisualStyleBackColor = true;
             // 
-            // btnCerrarSesionAdminReportes
-            // 
-            this.btnCerrarSesionAdminReportes.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesionAdminReportes.Image")));
-            this.btnCerrarSesionAdminReportes.Location = new System.Drawing.Point(788, 12);
-            this.btnCerrarSesionAdminReportes.Name = "btnCerrarSesionAdminReportes";
-            this.btnCerrarSesionAdminReportes.Size = new System.Drawing.Size(33, 33);
-            this.btnCerrarSesionAdminReportes.TabIndex = 48;
-            this.btnCerrarSesionAdminReportes.TabStop = false;
-            // 
             // AdministradorReportesView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -210,7 +218,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(907, 235);
             this.Controls.Add(this.btnConsultarReporte);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlSuperiorAdminReportesView);
             this.Controls.Add(this.lblSeleccionarAnio);
             this.Controls.Add(this.cbSeleccionarAnio);
             this.Controls.Add(this.lblSeleccionarMes);
@@ -222,11 +230,11 @@
             this.Text = "Reporte General";
             this.gbPeriodicidad.ResumeLayout(false);
             this.gbPeriodicidad.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlSuperiorAdminReportesView.ResumeLayout(false);
+            this.pnlSuperiorAdminReportesView.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesionAdminReportes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarAdministradorReportesView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarAdministradorReportesView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesionAdminReportes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,10 +250,10 @@
         public System.Windows.Forms.RadioButton rbMensual;
         public System.Windows.Forms.RadioButton rbRangoDeFechas;
         public System.Windows.Forms.RadioButton rbAnual;
-        private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.Button btnConsultarReporte;
         public System.Windows.Forms.PictureBox btnMinimizarAdministradorReportesView;
         public System.Windows.Forms.PictureBox btnCerrarAdministradorReportesView;
         public System.Windows.Forms.PictureBox btnCerrarSesionAdminReportes;
+        public System.Windows.Forms.Panel pnlSuperiorAdminReportesView;
     }
 }

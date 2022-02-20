@@ -141,6 +141,7 @@
             // 
             // btnActualizarCliente
             // 
+            this.btnActualizarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnActualizarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizarCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
@@ -229,6 +230,7 @@
             // 
             // btnMinimizarEditarClienteView
             // 
+            this.btnMinimizarEditarClienteView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizarEditarClienteView.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarEditarClienteView.Image")));
             this.btnMinimizarEditarClienteView.Location = new System.Drawing.Point(699, 13);
             this.btnMinimizarEditarClienteView.Name = "btnMinimizarEditarClienteView";
@@ -238,6 +240,7 @@
             // 
             // btnCerrarEditarClienteView
             // 
+            this.btnCerrarEditarClienteView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarEditarClienteView.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarEditarClienteView.Image")));
             this.btnCerrarEditarClienteView.Location = new System.Drawing.Point(741, 13);
             this.btnCerrarEditarClienteView.Name = "btnCerrarEditarClienteView";
@@ -278,7 +281,6 @@
         public System.Windows.Forms.TextBox txtEditarEmailCliente;
         public System.Windows.Forms.TextBox txtEditarDireccionCliente;
         public System.Windows.Forms.TextBox txtEditarNombreCliente;
-        private System.Windows.Forms.Panel pnlSuperiorEditarClienteView;
         public System.Windows.Forms.PictureBox btnMinimizarEditarClienteView;
         public System.Windows.Forms.PictureBox btnCerrarEditarClienteView;
         public System.Windows.Forms.Button btnActualizarCliente;
@@ -288,5 +290,6 @@
         public System.Windows.Forms.Label lblEditarCelularCliente;
         public System.Windows.Forms.Label lblEditarEmailCliente;
         public System.Windows.Forms.Label lblEditarNombreCliente;
+        public System.Windows.Forms.Panel pnlSuperiorEditarClienteView;
     }
 }

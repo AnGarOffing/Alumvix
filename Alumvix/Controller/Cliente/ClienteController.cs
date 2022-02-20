@@ -14,6 +14,7 @@ using Alumvix.View.Proveedor;
 using System.Drawing;
 using Alumvix.View.Login;
 using Alumvix.Controller.Login;
+using System.Runtime.InteropServices;
 
 namespace Alumvix.Controller
 {
@@ -57,7 +58,19 @@ namespace Alumvix.Controller
             clienteVista.rbContratoAbierto.CheckedChanged += new EventHandler(FiltarCLientesContratosAbiertos);
             clienteVista.rbContratoCerrado.CheckedChanged += new EventHandler(FiltarCLientesContratoCerrado);
             clienteVista.rbCualquierContrato.CheckedChanged += new EventHandler(MostrarAllClientes);
+            clienteVista.pnlSuperiorClienteView.MouseDown += new MouseEventHandler(PermitirMovimientoDeForm);
         }
+
+        private void PermitirMovimientoDeForm(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(clienteVista.Handle, 0x112, 0xf012, 0);
+        }
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
         private void SeleccionarFiltroCualquiera(object sender, EventArgs e)
         {

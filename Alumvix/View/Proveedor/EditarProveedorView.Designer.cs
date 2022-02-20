@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditarProveedorView));
             this.lblTituloEditarProveedor = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlSuperiorEditarProveedorView = new System.Windows.Forms.Panel();
             this.btnMinimizarEditarProveedorView = new System.Windows.Forms.PictureBox();
             this.btnCerrarEditarProveedorView = new System.Windows.Forms.PictureBox();
             this.pnlEditarProveedor = new System.Windows.Forms.Panel();
@@ -44,7 +44,7 @@
             this.lblEditarTelefonoProveedor = new System.Windows.Forms.Label();
             this.txtEditarNombreProveedor = new System.Windows.Forms.TextBox();
             this.lblEditarCelularProveedor = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.pnlSuperiorEditarProveedorView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarEditarProveedorView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarEditarProveedorView)).BeginInit();
             this.pnlEditarProveedor.SuspendLayout();
@@ -61,20 +61,21 @@
             this.lblTituloEditarProveedor.TabIndex = 79;
             this.lblTituloEditarProveedor.Text = "ACTUALIZAR PROVEEDOR";
             // 
-            // panel1
+            // pnlSuperiorEditarProveedorView
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel1.Controls.Add(this.btnMinimizarEditarProveedorView);
-            this.panel1.Controls.Add(this.btnCerrarEditarProveedorView);
-            this.panel1.Controls.Add(this.lblTituloEditarProveedor);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(495, 59);
-            this.panel1.TabIndex = 88;
+            this.pnlSuperiorEditarProveedorView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pnlSuperiorEditarProveedorView.Controls.Add(this.btnMinimizarEditarProveedorView);
+            this.pnlSuperiorEditarProveedorView.Controls.Add(this.btnCerrarEditarProveedorView);
+            this.pnlSuperiorEditarProveedorView.Controls.Add(this.lblTituloEditarProveedor);
+            this.pnlSuperiorEditarProveedorView.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSuperiorEditarProveedorView.Location = new System.Drawing.Point(0, 0);
+            this.pnlSuperiorEditarProveedorView.Name = "pnlSuperiorEditarProveedorView";
+            this.pnlSuperiorEditarProveedorView.Size = new System.Drawing.Size(495, 59);
+            this.pnlSuperiorEditarProveedorView.TabIndex = 88;
             // 
             // btnMinimizarEditarProveedorView
             // 
+            this.btnMinimizarEditarProveedorView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizarEditarProveedorView.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarEditarProveedorView.Image")));
             this.btnMinimizarEditarProveedorView.Location = new System.Drawing.Point(419, 15);
             this.btnMinimizarEditarProveedorView.Name = "btnMinimizarEditarProveedorView";
@@ -84,6 +85,7 @@
             // 
             // btnCerrarEditarProveedorView
             // 
+            this.btnCerrarEditarProveedorView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarEditarProveedorView.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarEditarProveedorView.Image")));
             this.btnCerrarEditarProveedorView.Location = new System.Drawing.Point(459, 15);
             this.btnCerrarEditarProveedorView.Name = "btnCerrarEditarProveedorView";
@@ -111,6 +113,7 @@
             // 
             // btnActualizarProveedor
             // 
+            this.btnActualizarProveedor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnActualizarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizarProveedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
@@ -224,13 +227,13 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(495, 289);
             this.Controls.Add(this.pnlEditarProveedor);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlSuperiorEditarProveedorView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EditarProveedorView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditarProveedor";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlSuperiorEditarProveedorView.ResumeLayout(false);
+            this.pnlSuperiorEditarProveedorView.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarEditarProveedorView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarEditarProveedorView)).EndInit();
             this.pnlEditarProveedor.ResumeLayout(false);
@@ -241,7 +244,6 @@
 
         #endregion
         public System.Windows.Forms.Label lblTituloEditarProveedor;
-        private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.PictureBox btnMinimizarEditarProveedorView;
         public System.Windows.Forms.PictureBox btnCerrarEditarProveedorView;
         private System.Windows.Forms.Panel pnlEditarProveedor;
@@ -255,5 +257,6 @@
         public System.Windows.Forms.Label lblEditarTelefonoProveedor;
         public System.Windows.Forms.TextBox txtEditarNombreProveedor;
         public System.Windows.Forms.Label lblEditarCelularProveedor;
+        public System.Windows.Forms.Panel pnlSuperiorEditarProveedorView;
     }
 }

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IngresoContratoView));
             this.pnlIngresarContrato = new System.Windows.Forms.Panel();
+            this.btnGuardarNuevoContrato = new System.Windows.Forms.Button();
             this.lblInformacionValorContrato = new System.Windows.Forms.Label();
             this.dtpFechaTerminacionContrato = new System.Windows.Forms.DateTimePicker();
             this.lblIngresarFechaFinalContrato = new System.Windows.Forms.Label();
@@ -43,7 +44,6 @@
             this.pnlSuperiorIngresoContratoView = new System.Windows.Forms.Panel();
             this.btnMinimizarIngresoContratoView = new System.Windows.Forms.PictureBox();
             this.btnCerrarIngresoContratoView = new System.Windows.Forms.PictureBox();
-            this.btnGuardarNuevoContrato = new System.Windows.Forms.Button();
             this.pnlIngresarContrato.SuspendLayout();
             this.pnlSuperiorIngresoContratoView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarIngresoContratoView)).BeginInit();
@@ -66,6 +66,22 @@
             this.pnlIngresarContrato.Name = "pnlIngresarContrato";
             this.pnlIngresarContrato.Size = new System.Drawing.Size(511, 173);
             this.pnlIngresarContrato.TabIndex = 41;
+            // 
+            // btnGuardarNuevoContrato
+            // 
+            this.btnGuardarNuevoContrato.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardarNuevoContrato.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarNuevoContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarNuevoContrato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.btnGuardarNuevoContrato.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarNuevoContrato.Image")));
+            this.btnGuardarNuevoContrato.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardarNuevoContrato.Location = new System.Drawing.Point(379, 116);
+            this.btnGuardarNuevoContrato.Name = "btnGuardarNuevoContrato";
+            this.btnGuardarNuevoContrato.Size = new System.Drawing.Size(120, 44);
+            this.btnGuardarNuevoContrato.TabIndex = 51;
+            this.btnGuardarNuevoContrato.Text = "Guardar";
+            this.btnGuardarNuevoContrato.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGuardarNuevoContrato.UseVisualStyleBackColor = true;
             // 
             // lblInformacionValorContrato
             // 
@@ -184,6 +200,7 @@
             // 
             // btnMinimizarIngresoContratoView
             // 
+            this.btnMinimizarIngresoContratoView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizarIngresoContratoView.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarIngresoContratoView.Image")));
             this.btnMinimizarIngresoContratoView.Location = new System.Drawing.Point(434, 14);
             this.btnMinimizarIngresoContratoView.Name = "btnMinimizarIngresoContratoView";
@@ -193,27 +210,13 @@
             // 
             // btnCerrarIngresoContratoView
             // 
+            this.btnCerrarIngresoContratoView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarIngresoContratoView.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarIngresoContratoView.Image")));
             this.btnCerrarIngresoContratoView.Location = new System.Drawing.Point(475, 14);
             this.btnCerrarIngresoContratoView.Name = "btnCerrarIngresoContratoView";
             this.btnCerrarIngresoContratoView.Size = new System.Drawing.Size(33, 30);
             this.btnCerrarIngresoContratoView.TabIndex = 42;
             this.btnCerrarIngresoContratoView.TabStop = false;
-            // 
-            // btnGuardarNuevoContrato
-            // 
-            this.btnGuardarNuevoContrato.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarNuevoContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarNuevoContrato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.btnGuardarNuevoContrato.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarNuevoContrato.Image")));
-            this.btnGuardarNuevoContrato.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardarNuevoContrato.Location = new System.Drawing.Point(379, 116);
-            this.btnGuardarNuevoContrato.Name = "btnGuardarNuevoContrato";
-            this.btnGuardarNuevoContrato.Size = new System.Drawing.Size(120, 44);
-            this.btnGuardarNuevoContrato.TabIndex = 51;
-            this.btnGuardarNuevoContrato.Text = "Guardar";
-            this.btnGuardarNuevoContrato.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGuardarNuevoContrato.UseVisualStyleBackColor = true;
             // 
             // IngresoContratoView
             // 
@@ -250,9 +253,9 @@
         public System.Windows.Forms.DateTimePicker dtpFechaTerminacionContrato;
         private System.Windows.Forms.Label lblIngresarFechaFinalContrato;
         private System.Windows.Forms.Label lblInformacionValorContrato;
-        private System.Windows.Forms.Panel pnlSuperiorIngresoContratoView;
         public System.Windows.Forms.PictureBox btnMinimizarIngresoContratoView;
         public System.Windows.Forms.PictureBox btnCerrarIngresoContratoView;
         public System.Windows.Forms.Button btnGuardarNuevoContrato;
+        public System.Windows.Forms.Panel pnlSuperiorIngresoContratoView;
     }
 }

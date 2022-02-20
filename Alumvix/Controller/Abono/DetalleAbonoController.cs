@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using System.Collections.Generic;
 using Alumvix.View.Cliente;
 using System.Drawing;
+using System.Runtime.InteropServices;
 
 namespace Alumvix.Controller.Abono
 {
@@ -36,7 +37,19 @@ namespace Alumvix.Controller.Abono
             detalleAbonoView.btnMinimizarDetalleAbonoView.MouseHover += new EventHandler(ResaltarBotonMinimizar);
             detalleAbonoView.btnMinimizarDetalleAbonoView.MouseLeave += new EventHandler(QuitarResaltadoBotonMinimizar);
             detalleAbonoView.btnMinimizarDetalleAbonoView.Click += new EventHandler(MinimizarDetalleAbonoView);
+            detalleAbonoView.pnlSuperiorDetalleAbonoView.MouseDown += new MouseEventHandler(PermitirMovimientoDeForm);
         }
+
+        private void PermitirMovimientoDeForm(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(detalleAbonoView.Handle, 0x112, 0xf012, 0);
+        }
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
         private void MinimizarDetalleAbonoView(object sender, EventArgs e)
         {

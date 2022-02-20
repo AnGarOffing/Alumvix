@@ -67,6 +67,7 @@
             // 
             // btnGuardarNuevoGastoInterno
             // 
+            this.btnGuardarNuevoGastoInterno.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuardarNuevoGastoInterno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarNuevoGastoInterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarNuevoGastoInterno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
@@ -185,6 +186,7 @@
             // 
             // btnMinimizarIngresoGastoInternoView
             // 
+            this.btnMinimizarIngresoGastoInternoView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizarIngresoGastoInternoView.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarIngresoGastoInternoView.Image")));
             this.btnMinimizarIngresoGastoInternoView.Location = new System.Drawing.Point(551, 12);
             this.btnMinimizarIngresoGastoInternoView.Name = "btnMinimizarIngresoGastoInternoView";
@@ -194,6 +196,7 @@
             // 
             // btnCerrarIngresoGastoInternoView
             // 
+            this.btnCerrarIngresoGastoInternoView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarIngresoGastoInternoView.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarIngresoGastoInternoView.Image")));
             this.btnCerrarIngresoGastoInternoView.Location = new System.Drawing.Point(591, 12);
             this.btnCerrarIngresoGastoInternoView.Name = "btnCerrarIngresoGastoInternoView";
@@ -235,9 +238,9 @@
         private System.Windows.Forms.Label lblFechaIngresoGastoInterno;
         public System.Windows.Forms.Label lblTituloIngresarGastoInterno;
         public System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel pnlSuperiorIngresoGastoInterno;
         public System.Windows.Forms.PictureBox btnMinimizarIngresoGastoInternoView;
         public System.Windows.Forms.PictureBox btnCerrarIngresoGastoInternoView;
         public System.Windows.Forms.Button btnGuardarNuevoGastoInterno;
+        public System.Windows.Forms.Panel pnlSuperiorIngresoGastoInterno;
     }
 }

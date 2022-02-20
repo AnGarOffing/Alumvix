@@ -86,38 +86,7 @@ namespace Alumvix.Model.Negocio
             return sumaGastos;
         }
 
-        public void ExportToExcel(ListView lv)
-        {
-            using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel Workbook|*.xlsx", ValidateNames = true })
-            {
-                if (sfd.ShowDialog() == DialogResult.OK)
-                {
-                    Microsoft.Office.Interop.Excel.Application app = new Microsoft.Office.Interop.Excel.Application();
-                    Workbook wb = app.Workbooks.Add(XlSheetType.xlWorksheet);
-                    Worksheet ws = (Worksheet)app.ActiveSheet;
-                    app.Visible = false;
-                    for (int j = 1; j <= lv.Columns.Count; j++)
-                    {
-                        ws.Columns[j].AutoFit();
-                        ws.Cells[1, j] = lv.Columns[j - 1].Text;
-                    }
-                    int i = 2;
-                    foreach (ListViewItem item in lv.Items)
-                    {
-                        for (int k = 1; k <= item.SubItems.Count; k++)
-                        {
-                            ws.Cells[i, k] = item.SubItems[k - 1].Text;
-                        }
-                        i++;
-                    }
-                    wb.SaveAs(sfd.FileName, XlFileFormat.xlWorkbookDefault, Type.Missing, Type.Missing, false, false, XlSaveAsAccessMode.xlNoChange, XlSaveConflictResolution.xlLocalSessionChanges, Type.Missing, Type.Missing);
-                    app.Quit();
-                    MessageBox.Show("El archivo ha sido exportado de manera exitosa");
-                }
-            }
-        }
-
-        public void ExportTextBoxesToExcel(List<System.Windows.Forms.TextBox> textBoxes, ListView listViewGastos)
+        public void ExportToExcel(List<System.Windows.Forms.TextBox> textBoxes, ListView listViewGastos)
         {
             using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel Workbook|*.xlsx", ValidateNames = true })
             {
@@ -171,7 +140,7 @@ namespace Alumvix.Model.Negocio
             }
         }
 
-        public void ExportTextBoxesToExcel(List<System.Windows.Forms.TextBox> textBoxes, ListView listViewGastos, ListView listViewCuentasMensauales)
+        public void ExportToExcel(List<System.Windows.Forms.TextBox> textBoxes, ListView listViewGastos, ListView listViewCuentasMensuales)
         {
             using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel Workbook|*.xlsx", ValidateNames = true })
             {
@@ -182,13 +151,13 @@ namespace Alumvix.Model.Negocio
                     Worksheet ws = (Worksheet)app.ActiveSheet;
                     app.Visible = false;
 
-                    for (int j = 1; j <= listViewCuentasMensauales.Columns.Count; j++)
+                    for (int j = 1; j <= listViewCuentasMensuales.Columns.Count; j++)
                     {
                         ws.Columns[j].AutoFit();
-                        ws.Cells[1, j] = listViewCuentasMensauales.Columns[j - 1].Text;
+                        ws.Cells[1, j] = listViewCuentasMensuales.Columns[j - 1].Text;
                     }
                     int i = 2;
-                    foreach (ListViewItem item in listViewCuentasMensauales.Items)
+                    foreach (ListViewItem item in listViewCuentasMensuales.Items)
                     {
                         for (int k = 1; k <= item.SubItems.Count; k++)
                         {
@@ -239,9 +208,18 @@ namespace Alumvix.Model.Negocio
                     ws.Cells[_lastRow, 3] = textBoxes[2].Text;
                     ws.Cells[_lastRow, 4] = textBoxes[3].Text;
 
-                    wb.SaveAs(sfd.FileName, XlFileFormat.xlWorkbookDefault, Type.Missing, Type.Missing, false, false, XlSaveAsAccessMode.xlNoChange, XlSaveConflictResolution.xlLocalSessionChanges, Type.Missing, Type.Missing);
-                    app.Quit();
-                    MessageBox.Show("El archivo ha sido exportado de manera exitosa");
+                    try
+                    {
+                        wb.SaveAs(sfd.FileName, XlFileFormat.xlWorkbookDefault, Type.Missing, Type.Missing, false, false, XlSaveAsAccessMode.xlNoChange, XlSaveConflictResolution.xlLocalSessionChanges, Type.Missing, Type.Missing);
+                        app.Quit();
+                        MessageBox.Show("El archivo ha sido exportado de manera exitosa");
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Error al guardar el archivo, verifique que un archivo" + Environment.NewLine
+                            + "con el mismo nombre del archivo que intenta guardar, no este abierto, " + Environment.NewLine
+                            + "De ser asi, cierre primero el archivo abierto antes de realizar esta acción");
+                    }                
                 }
             }
         }

@@ -185,6 +185,7 @@
             // 
             // btnMinimizarActualizarGastoInternoView
             // 
+            this.btnMinimizarActualizarGastoInternoView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizarActualizarGastoInternoView.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarActualizarGastoInternoView.Image")));
             this.btnMinimizarActualizarGastoInternoView.Location = new System.Drawing.Point(550, 13);
             this.btnMinimizarActualizarGastoInternoView.Name = "btnMinimizarActualizarGastoInternoView";
@@ -194,6 +195,7 @@
             // 
             // btnCerrarActualizarGastoInternoView
             // 
+            this.btnCerrarActualizarGastoInternoView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarActualizarGastoInternoView.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarActualizarGastoInternoView.Image")));
             this.btnCerrarActualizarGastoInternoView.Location = new System.Drawing.Point(590, 13);
             this.btnCerrarActualizarGastoInternoView.Name = "btnCerrarActualizarGastoInternoView";
@@ -236,9 +238,9 @@
         private System.Windows.Forms.Label lvlValorEditarGastoInterno;
         private System.Windows.Forms.Label lblEditarFechaGastoInterno;
         public System.Windows.Forms.Label lblTituloEditarGastoInterno;
-        private System.Windows.Forms.Panel pnlSuperiorEditarGastoInternoView;
         public System.Windows.Forms.PictureBox btnMinimizarActualizarGastoInternoView;
         public System.Windows.Forms.PictureBox btnCerrarActualizarGastoInternoView;
         public System.Windows.Forms.Button btnActualizarGastoInterno;
+        public System.Windows.Forms.Panel pnlSuperiorEditarGastoInternoView;
     }
 }

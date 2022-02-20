@@ -37,11 +37,11 @@
             this.columnaFormaDePago = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnEditarAbono = new System.Windows.Forms.Button();
             this.btnIngresarAbono = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlSuperiorDetalleAbonoView = new System.Windows.Forms.Panel();
             this.btnMinimizarDetalleAbonoView = new System.Windows.Forms.PictureBox();
             this.btnCerrarDetalleAbonoView = new System.Windows.Forms.PictureBox();
             this.lblListadoAbonos = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.pnlSuperiorDetalleAbonoView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarDetalleAbonoView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarDetalleAbonoView)).BeginInit();
             this.SuspendLayout();
@@ -49,6 +49,7 @@
             // btnEliminarAbono
             // 
             this.btnEliminarAbono.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminarAbono.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminarAbono.FlatAppearance.BorderSize = 0;
             this.btnEliminarAbono.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarAbono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -100,6 +101,7 @@
             // btnEditarAbono
             // 
             this.btnEditarAbono.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditarAbono.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditarAbono.FlatAppearance.BorderSize = 0;
             this.btnEditarAbono.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarAbono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -113,6 +115,7 @@
             // btnIngresarAbono
             // 
             this.btnIngresarAbono.BackColor = System.Drawing.Color.Transparent;
+            this.btnIngresarAbono.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIngresarAbono.FlatAppearance.BorderSize = 0;
             this.btnIngresarAbono.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresarAbono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -123,20 +126,21 @@
             this.btnIngresarAbono.TabIndex = 42;
             this.btnIngresarAbono.UseVisualStyleBackColor = false;
             // 
-            // panel1
+            // pnlSuperiorDetalleAbonoView
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel1.Controls.Add(this.btnMinimizarDetalleAbonoView);
-            this.panel1.Controls.Add(this.btnCerrarDetalleAbonoView);
-            this.panel1.Controls.Add(this.lblListadoAbonos);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(669, 59);
-            this.panel1.TabIndex = 43;
+            this.pnlSuperiorDetalleAbonoView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pnlSuperiorDetalleAbonoView.Controls.Add(this.btnMinimizarDetalleAbonoView);
+            this.pnlSuperiorDetalleAbonoView.Controls.Add(this.btnCerrarDetalleAbonoView);
+            this.pnlSuperiorDetalleAbonoView.Controls.Add(this.lblListadoAbonos);
+            this.pnlSuperiorDetalleAbonoView.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSuperiorDetalleAbonoView.Location = new System.Drawing.Point(0, 0);
+            this.pnlSuperiorDetalleAbonoView.Name = "pnlSuperiorDetalleAbonoView";
+            this.pnlSuperiorDetalleAbonoView.Size = new System.Drawing.Size(669, 59);
+            this.pnlSuperiorDetalleAbonoView.TabIndex = 43;
             // 
             // btnMinimizarDetalleAbonoView
             // 
+            this.btnMinimizarDetalleAbonoView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizarDetalleAbonoView.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarDetalleAbonoView.Image")));
             this.btnMinimizarDetalleAbonoView.Location = new System.Drawing.Point(591, 15);
             this.btnMinimizarDetalleAbonoView.Name = "btnMinimizarDetalleAbonoView";
@@ -146,6 +150,7 @@
             // 
             // btnCerrarDetalleAbonoView
             // 
+            this.btnCerrarDetalleAbonoView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarDetalleAbonoView.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarDetalleAbonoView.Image")));
             this.btnCerrarDetalleAbonoView.Location = new System.Drawing.Point(633, 15);
             this.btnCerrarDetalleAbonoView.Name = "btnCerrarDetalleAbonoView";
@@ -170,7 +175,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(669, 243);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlSuperiorDetalleAbonoView);
             this.Controls.Add(this.btnIngresarAbono);
             this.Controls.Add(this.btnEditarAbono);
             this.Controls.Add(this.lstvDetalleAbonos);
@@ -179,8 +184,8 @@
             this.Name = "DetalleAbonoView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Abonos";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlSuperiorDetalleAbonoView.ResumeLayout(false);
+            this.pnlSuperiorDetalleAbonoView.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarDetalleAbonoView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarDetalleAbonoView)).EndInit();
             this.ResumeLayout(false);
@@ -197,9 +202,9 @@
         private System.Windows.Forms.ColumnHeader columnaFormaDePago;
         public System.Windows.Forms.Button btnEditarAbono;
         public System.Windows.Forms.Button btnIngresarAbono;
-        private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.Label lblListadoAbonos;
         public System.Windows.Forms.PictureBox btnMinimizarDetalleAbonoView;
         public System.Windows.Forms.PictureBox btnCerrarDetalleAbonoView;
+        public System.Windows.Forms.Panel pnlSuperiorDetalleAbonoView;
     }
 }

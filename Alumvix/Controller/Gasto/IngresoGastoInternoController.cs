@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -31,16 +32,37 @@ namespace Alumvix.Controller.Gasto
             ingresoGastoInternoView.btnMinimizarIngresoGastoInternoView.MouseLeave += new EventHandler(QuitarResaltadoBotonMinimizar);
             ingresoGastoInternoView.btnMinimizarIngresoGastoInternoView.Click += new EventHandler(MinimizarIngresoGastoInternoView);
             ingresoGastoInternoView.btnGuardarNuevoGastoInterno.Click += new EventHandler(IngresarGastoInterno);
+            ingresoGastoInternoView.pnlSuperiorIngresoGastoInterno.MouseDown += new MouseEventHandler(PermitirMovimientoDeForm);
         }
+
+        private void PermitirMovimientoDeForm(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(ingresoGastoInternoView.Handle, 0x112, 0xf012, 0);
+        }
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
         private void AplicarSeparadoresAValor(object sender, EventArgs e)
         {
             TextBox txtValor = ingresoGastoInternoView.txtIngresarValorGastoInterno;
             if (txtValor.Text == "" || txtValor.Text == "0") return;
-            decimal price;
-            price = decimal.Parse(txtValor.Text, System.Globalization.NumberStyles.Currency);
-            txtValor.Text = price.ToString("#,#");
-            txtValor.SelectionStart = txtValor.Text.Length;
+            try
+            {
+                decimal price;
+                price = decimal.Parse(txtValor.Text, System.Globalization.NumberStyles.Currency);
+                txtValor.Text = price.ToString("#,#");
+                txtValor.SelectionStart = txtValor.Text.Length;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + Environment.NewLine +
+                    "El valor no puede iniciar con punto (.)");
+                ingresoGastoInternoView.txtIngresarValorGastoInterno.Text = "";
+            }
         }
 
         private void MinimizarIngresoGastoInternoView(object sender, EventArgs e)
