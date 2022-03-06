@@ -85,6 +85,11 @@ namespace Alumvix.Model.Logica.Util
             detalleClienteVista.txtEstadoTrabajo.BackColor = detalleClienteVista.BackColor;
             detalleClienteVista.txtEstadoTrabajo.TabStop = false;
 
+            detalleClienteVista.txtCategoriaFactura.ReadOnly = true;
+            detalleClienteVista.txtCategoriaFactura.BorderStyle = 0;
+            detalleClienteVista.txtCategoriaFactura.BackColor = detalleClienteVista.BackColor;
+            detalleClienteVista.txtCategoriaFactura.TabStop = false;
+
             detalleClienteVista.txtTotalGastos.ReadOnly = true;
             detalleClienteVista.txtTotalGastos.BorderStyle = 0;
             detalleClienteVista.txtTotalGastos.BackColor = detalleClienteVista.BackColor;

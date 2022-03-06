@@ -15,10 +15,11 @@ namespace Alumvix.Model.Dao
         public ContratoDto ObtenerContrato(int idCliente)
         {
             command.Connection = connection;
-            command.CommandText = "select ID_CONTRATO, valorContrato, fechaInicioContrato, fechaTerminacionContrato, nombreEstadoContrato, nombreEstadoTrabajo, NombreTipoFactura from CONTRATO"
+            command.CommandText = "select ID_CONTRATO, valorContrato, fechaInicioContrato, fechaTerminacionContrato, nombreEstadoContrato, nombreEstadoTrabajo, NombreTipoFactura, NombreCategoriaFactura from CONTRATO"
                                 + " inner join ESTADO_CONTRATO on CONTRATO.FK_ID_ESTADO_CONTRATO = ESTADO_CONTRATO.ID_ESTADO_CONTRATO"
                                 + " inner join ESTADO_TRABAJO on CONTRATO.FK_ID_ESTADO_TRABAJO = ESTADO_TRABAJO.ID_ESTADO_TRABAJO"
-                                + " inner join TIPO_FACTURA on CONTRATO.FK_ID_TIPO_FACTURA = TIPO_FACTURA.ID_TIPO_FACTURA where FK_ID_CLIENTE = " + idCliente;
+                                + " inner join TIPO_FACTURA on CONTRATO.FK_ID_TIPO_FACTURA = TIPO_FACTURA.ID_TIPO_FACTURA"
+                                + " inner join CATEGORIA_FACTURA on CONTRATO.FK_ID_CATEGORIA_FACTURA = CATEGORIA_FACTURA.ID_CATEGORIA_FACTURA where FK_ID_CLIENTE = " + idCliente;
             command.CommandType = CommandType.Text;
             connection.Open();
             lectorFilas = command.ExecuteReader();
@@ -31,16 +32,18 @@ namespace Alumvix.Model.Dao
             contrato.EstadoContrato = lectorFilas.GetString(4);
             contrato.EstadoTrabajo = lectorFilas.GetString(5);
             contrato.TipoFactura = lectorFilas.GetString(6);
+            contrato.CategoriaFactura = lectorFilas.GetString(7);
             lectorFilas.Close();
             connection.Close();
             return contrato;
         }
 
-        public bool GuardarContrato(int valorContrato, string fechaInicio, string fechaFin, int estadoContrato, int estadoTrabajo, int tipoFactura, int idCliente)
+        public bool GuardarContrato(int valorContrato, string fechaInicio, string fechaFin, 
+            int estadoContrato, int estadoTrabajo, int tipoFactura, int categoriaFactura, int idCliente)
         {
             bool respuesta = false;
             command.Connection = connection;
-            command.CommandText = "insert into CONTRATO values(" + valorContrato + ",'" + fechaInicio + "','" + fechaFin + "'," + estadoContrato + ", " + estadoTrabajo + ", " + tipoFactura + ", " + idCliente + ")";
+            command.CommandText = "insert into CONTRATO values(" + valorContrato + ",'" + fechaInicio + "','" + fechaFin + "'," + estadoContrato + ", " + estadoTrabajo + ", " + tipoFactura + ", " + categoriaFactura + ", " + idCliente + ")";
             command.CommandType = CommandType.Text;
             connection.Open();
             int filasAfectadasEnBd = command.ExecuteNonQuery();
@@ -51,11 +54,11 @@ namespace Alumvix.Model.Dao
             return respuesta;
         }
 
-        public bool ActualizarContrato(int valorContrato, string fechaInicio, string fechaFin, int estadoTrabajo, int tipoFactura, int idContrato)
+        public bool ActualizarContrato(int valorContrato, string fechaInicio, string fechaFin, int estadoTrabajo, int tipoFactura, int categoriaFactura, int idContrato)
         {
             bool respuesta = false;
             command.Connection = connection;
-            command.CommandText = "update CONTRATO set valorContrato = " + valorContrato + ", fechaInicioContrato = '" + fechaInicio + "', fechaTerminacionContrato = '" + fechaFin + "',  FK_ID_ESTADO_TRABAJO = " + estadoTrabajo + ", FK_ID_TIPO_FACTURA = " + tipoFactura 
+            command.CommandText = "update CONTRATO set valorContrato = " + valorContrato + ", fechaInicioContrato = '" + fechaInicio + "', fechaTerminacionContrato = '" + fechaFin + "',  FK_ID_ESTADO_TRABAJO = " + estadoTrabajo + ", FK_ID_TIPO_FACTURA = " + tipoFactura + ", FK_ID_CATEGORIA_FACTURA = " + categoriaFactura
                                 + " where ID_CONTRATO = " + idContrato;
             command.CommandType = CommandType.Text;
             connection.Open();
@@ -126,15 +129,34 @@ namespace Alumvix.Model.Dao
             return tiposFactura;
         }
 
+        public List<string> ObtenerCategoriasFactura()
+        {
+            command.Connection = connection;
+            command.CommandText = "select * from CATEGORIA_FACTURA";
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            List<string> categoriasFactura = new List<string>();
+            lectorFilas = command.ExecuteReader();
+            categoriasFactura.Add("--Seleccionar--");
+            while (lectorFilas.Read())
+            {
+                categoriasFactura.Add(lectorFilas.GetString(1));
+            }
+            lectorFilas.Close();
+            connection.Close();
+            return categoriasFactura;
+        }
+
         public List<ContratoDto> ObtenerContratos(int idCliente)
         {
             command.Connection = connection;
             command.CommandText = "select ID_CONTRATO as '#_Factura', valorContrato as 'Valor', fechaInicioContrato as 'Fecha_Inicio',"
-                                +" fechaTerminacionContrato as 'Fecha_Terminacion', nombreEstadoContrato as 'Estado_Contrato', nombreEstadoTrabajo as 'Estado_Trabajo', NombreTipoFactura as 'Tipo_Factura' from CONTRATO"
-                                +" inner join ESTADO_CONTRATO on CONTRATO.FK_ID_ESTADO_CONTRATO = ESTADO_CONTRATO.ID_ESTADO_CONTRATO"
+                                + " fechaTerminacionContrato as 'Fecha_Terminacion', nombreEstadoContrato as 'Estado_Contrato', nombreEstadoTrabajo as 'Estado_Trabajo', NombreTipoFactura as 'Tipo_Factura', NombreCategoriaFactura as 'Categoria_Factura' from CONTRATO"
+                                + " inner join ESTADO_CONTRATO on CONTRATO.FK_ID_ESTADO_CONTRATO = ESTADO_CONTRATO.ID_ESTADO_CONTRATO"
                                 +" inner join ESTADO_TRABAJO on CONTRATO.FK_ID_ESTADO_TRABAJO = ESTADO_TRABAJO.ID_ESTADO_TRABAJO"
                                 +" inner join TIPO_FACTURA on CONTRATO.FK_ID_TIPO_FACTURA = TIPO_FACTURA.ID_TIPO_FACTURA"
-                                +" where FK_ID_CLIENTE = " + idCliente;
+                                +" inner join CATEGORIA_FACTURA on CONTRATO.FK_ID_CATEGORIA_FACTURA = CATEGORIA_FACTURA.ID_CATEGORIA_FACTURA"
+                                + " where FK_ID_CLIENTE = " + idCliente;
             command.CommandType = CommandType.Text;
             connection.Open();
             lectorFilas = command.ExecuteReader();
@@ -150,13 +172,13 @@ namespace Alumvix.Model.Dao
                     EstadoContrato = lectorFilas.GetString(4),
                     EstadoTrabajo = lectorFilas.GetString(5),
                     TipoFactura = lectorFilas.GetString(6),
+                    CategoriaFactura = lectorFilas.GetString(7)
                 });
             }
             lectorFilas.Close();
             connection.Close();
             return listadoContratos;
         }
-
 
         public ContratoDto ObtenerContratoPorIdContrato(int idContrato)
         {

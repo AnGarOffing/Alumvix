@@ -266,6 +266,7 @@ namespace Alumvix.Controller.Cliente
             detalleClienteVista.txtFechaFinContrato.Text = contratoDto.FechaTerminacionContrato.ToString();
             detalleClienteVista.txtEstadoContrato.Text = contratoDto.EstadoContrato.ToString();
             detalleClienteVista.txtEstadoTrabajo.Text = contratoDto.EstadoTrabajo.ToString();
+            detalleClienteVista.txtCategoriaFactura.Text = contratoDto.CategoriaFactura.ToString();
         }
 
         private void MostrarGastos(object sender, EventArgs e) 

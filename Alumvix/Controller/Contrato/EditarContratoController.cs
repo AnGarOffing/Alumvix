@@ -112,6 +112,8 @@ namespace Alumvix.Controller.Contrato
             editarContratoView.txtEditarValorContrato.Clear();
             editarContratoView.cbEditarTipoFactura.DataSource = contratoDao.ObtenerTiposFactura();
             editarContratoView.cbEditarTipoFactura.Text = DetalleClienteController.ObtenerInstanciaDetalleClienteView().txtTipoFactura.Text;
+            editarContratoView.cbEditarCategoriaFactura.DataSource = contratoDao.ObtenerCategoriasFactura();
+            editarContratoView.cbEditarCategoriaFactura.Text = DetalleClienteController.ObtenerInstanciaDetalleClienteView().txtCategoriaFactura.Text;
             tipoFacturaAnterior = editarContratoView.cbEditarTipoFactura.Text;
 
             editarContratoView.cbEditarEstadoTrabajo.DataSource = contratoDao.ObtenerEstadosTrabajo();
@@ -127,7 +129,9 @@ namespace Alumvix.Controller.Contrato
 
         private void ActualizarContrato(object sender, EventArgs e)
         {
-            if (ValidacionesDeControles.ValidarBotonIngresoContrato(editarContratoView.txtEditarValorContrato.Text, editarContratoView.cbEditarTipoFactura.SelectedIndex) == false)
+            if (ValidacionesDeControles.ValidarBotonIngresoContrato(editarContratoView.txtEditarValorContrato.Text,
+                editarContratoView.cbEditarTipoFactura.SelectedIndex,
+                editarContratoView.cbEditarCategoriaFactura.SelectedIndex) == false)
             {
                 MessageBox.Show("Debe diligenciar todos los campos");
             }
@@ -145,12 +149,12 @@ namespace Alumvix.Controller.Contrato
                     valorContratoCalculado = Logica.QuitarIVA(Convert.ToInt32(valorModificado));
                 }
                 else valorContratoCalculado = Convert.ToInt32(valorModificado);
-                bool respuestaActualizacionContrato = contratoDao.ActualizarContrato(Convert.ToInt32(valorContratoCalculado.ToString()), editarContratoView.dtpEditarFechaInicioContrato.Text, editarContratoView.dtpEditarFechaTerminacionContrato.Text, editarContratoView.cbEditarEstadoTrabajo.SelectedIndex + 1, editarContratoView.cbEditarTipoFactura.SelectedIndex,Convert.ToInt32(detalleClienteView.txtNumeroFactura.Text));
+                bool respuestaActualizacionContrato = contratoDao.ActualizarContrato(Convert.ToInt32(valorContratoCalculado.ToString()), editarContratoView.dtpEditarFechaInicioContrato.Text, editarContratoView.dtpEditarFechaTerminacionContrato.Text, editarContratoView.cbEditarEstadoTrabajo.SelectedIndex + 1, editarContratoView.cbEditarTipoFactura.SelectedIndex, editarContratoView.cbEditarCategoriaFactura.SelectedIndex, Convert.ToInt32(detalleClienteView.txtNumeroFactura.Text));
                 if (respuestaActualizacionContrato)
                 {
                     editarContratoView.txtEditarValorContrato.Clear();
                     editarContratoView.cbEditarTipoFactura.SelectedIndex = 0;
-                    //editarContratoView.Close();
+                    editarContratoView.cbEditarCategoriaFactura.SelectedIndex = 0;
                     editarContratoView.Hide();
                     MessageBox.Show("El contrato ha sido actualizado con exito");
                     detalleClienteView = DetalleClienteView.ObtenerInstancia();

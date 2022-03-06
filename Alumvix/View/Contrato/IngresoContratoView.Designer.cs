@@ -44,6 +44,8 @@
             this.pnlSuperiorIngresoContratoView = new System.Windows.Forms.Panel();
             this.btnMinimizarIngresoContratoView = new System.Windows.Forms.PictureBox();
             this.btnCerrarIngresoContratoView = new System.Windows.Forms.PictureBox();
+            this.cbIngresarCategoriaFactura = new System.Windows.Forms.ComboBox();
+            this.lblCategoriaFactura = new System.Windows.Forms.Label();
             this.pnlIngresarContrato.SuspendLayout();
             this.pnlSuperiorIngresoContratoView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarIngresoContratoView)).BeginInit();
@@ -52,6 +54,8 @@
             // 
             // pnlIngresarContrato
             // 
+            this.pnlIngresarContrato.Controls.Add(this.cbIngresarCategoriaFactura);
+            this.pnlIngresarContrato.Controls.Add(this.lblCategoriaFactura);
             this.pnlIngresarContrato.Controls.Add(this.btnGuardarNuevoContrato);
             this.pnlIngresarContrato.Controls.Add(this.lblInformacionValorContrato);
             this.pnlIngresarContrato.Controls.Add(this.dtpFechaTerminacionContrato);
@@ -64,7 +68,7 @@
             this.pnlIngresarContrato.Controls.Add(this.lblIngresarFechaInicioContrato);
             this.pnlIngresarContrato.Location = new System.Drawing.Point(0, 61);
             this.pnlIngresarContrato.Name = "pnlIngresarContrato";
-            this.pnlIngresarContrato.Size = new System.Drawing.Size(511, 173);
+            this.pnlIngresarContrato.Size = new System.Drawing.Size(511, 206);
             this.pnlIngresarContrato.TabIndex = 41;
             // 
             // btnGuardarNuevoContrato
@@ -75,7 +79,7 @@
             this.btnGuardarNuevoContrato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             this.btnGuardarNuevoContrato.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarNuevoContrato.Image")));
             this.btnGuardarNuevoContrato.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardarNuevoContrato.Location = new System.Drawing.Point(379, 116);
+            this.btnGuardarNuevoContrato.Location = new System.Drawing.Point(379, 145);
             this.btnGuardarNuevoContrato.Name = "btnGuardarNuevoContrato";
             this.btnGuardarNuevoContrato.Size = new System.Drawing.Size(120, 44);
             this.btnGuardarNuevoContrato.TabIndex = 51;
@@ -88,7 +92,7 @@
             this.lblInformacionValorContrato.AutoSize = true;
             this.lblInformacionValorContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInformacionValorContrato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.lblInformacionValorContrato.Location = new System.Drawing.Point(347, 54);
+            this.lblInformacionValorContrato.Location = new System.Drawing.Point(347, 89);
             this.lblInformacionValorContrato.Name = "lblInformacionValorContrato";
             this.lblInformacionValorContrato.Size = new System.Drawing.Size(21, 24);
             this.lblInformacionValorContrato.TabIndex = 50;
@@ -99,7 +103,7 @@
             this.dtpFechaTerminacionContrato.CustomFormat = "yyyy/MM/dd";
             this.dtpFechaTerminacionContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaTerminacionContrato.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFechaTerminacionContrato.Location = new System.Drawing.Point(241, 134);
+            this.dtpFechaTerminacionContrato.Location = new System.Drawing.Point(241, 163);
             this.dtpFechaTerminacionContrato.Name = "dtpFechaTerminacionContrato";
             this.dtpFechaTerminacionContrato.Size = new System.Drawing.Size(120, 26);
             this.dtpFechaTerminacionContrato.TabIndex = 49;
@@ -109,7 +113,7 @@
             this.lblIngresarFechaFinalContrato.AutoSize = true;
             this.lblIngresarFechaFinalContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIngresarFechaFinalContrato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.lblIngresarFechaFinalContrato.Location = new System.Drawing.Point(22, 134);
+            this.lblIngresarFechaFinalContrato.Location = new System.Drawing.Point(22, 163);
             this.lblIngresarFechaFinalContrato.Name = "lblIngresarFechaFinalContrato";
             this.lblIngresarFechaFinalContrato.Size = new System.Drawing.Size(214, 24);
             this.lblIngresarFechaFinalContrato.TabIndex = 48;
@@ -140,7 +144,7 @@
             this.dtpFechaInicioContrato.CustomFormat = "yyyy/MM/dd";
             this.dtpFechaInicioContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaInicioContrato.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFechaInicioContrato.Location = new System.Drawing.Point(241, 93);
+            this.dtpFechaInicioContrato.Location = new System.Drawing.Point(241, 125);
             this.dtpFechaInicioContrato.Name = "dtpFechaInicioContrato";
             this.dtpFechaInicioContrato.Size = new System.Drawing.Size(120, 26);
             this.dtpFechaInicioContrato.TabIndex = 40;
@@ -148,7 +152,7 @@
             // txtIngresarValorContrato
             // 
             this.txtIngresarValorContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIngresarValorContrato.Location = new System.Drawing.Point(241, 54);
+            this.txtIngresarValorContrato.Location = new System.Drawing.Point(241, 89);
             this.txtIngresarValorContrato.Name = "txtIngresarValorContrato";
             this.txtIngresarValorContrato.Size = new System.Drawing.Size(100, 26);
             this.txtIngresarValorContrato.TabIndex = 34;
@@ -158,7 +162,7 @@
             this.lblValorIngresoGasto.AutoSize = true;
             this.lblValorIngresoGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblValorIngresoGasto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.lblValorIngresoGasto.Location = new System.Drawing.Point(176, 54);
+            this.lblValorIngresoGasto.Location = new System.Drawing.Point(176, 89);
             this.lblValorIngresoGasto.Name = "lblValorIngresoGasto";
             this.lblValorIngresoGasto.Size = new System.Drawing.Size(59, 24);
             this.lblValorIngresoGasto.TabIndex = 33;
@@ -169,7 +173,7 @@
             this.lblIngresarFechaInicioContrato.AutoSize = true;
             this.lblIngresarFechaInicioContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIngresarFechaInicioContrato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.lblIngresarFechaInicioContrato.Location = new System.Drawing.Point(80, 93);
+            this.lblIngresarFechaInicioContrato.Location = new System.Drawing.Point(80, 125);
             this.lblIngresarFechaInicioContrato.Name = "lblIngresarFechaInicioContrato";
             this.lblIngresarFechaInicioContrato.Size = new System.Drawing.Size(155, 24);
             this.lblIngresarFechaInicioContrato.TabIndex = 35;
@@ -218,12 +222,32 @@
             this.btnCerrarIngresoContratoView.TabIndex = 42;
             this.btnCerrarIngresoContratoView.TabStop = false;
             // 
+            // cbIngresarCategoriaFactura
+            // 
+            this.cbIngresarCategoriaFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbIngresarCategoriaFactura.FormattingEnabled = true;
+            this.cbIngresarCategoriaFactura.Location = new System.Drawing.Point(241, 51);
+            this.cbIngresarCategoriaFactura.Name = "cbIngresarCategoriaFactura";
+            this.cbIngresarCategoriaFactura.Size = new System.Drawing.Size(218, 28);
+            this.cbIngresarCategoriaFactura.TabIndex = 53;
+            // 
+            // lblCategoriaFactura
+            // 
+            this.lblCategoriaFactura.AutoSize = true;
+            this.lblCategoriaFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoriaFactura.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.lblCategoriaFactura.Location = new System.Drawing.Point(136, 51);
+            this.lblCategoriaFactura.Name = "lblCategoriaFactura";
+            this.lblCategoriaFactura.Size = new System.Drawing.Size(99, 24);
+            this.lblCategoriaFactura.TabIndex = 52;
+            this.lblCategoriaFactura.Text = "Categoria";
+            // 
             // IngresoContratoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.ClientSize = new System.Drawing.Size(511, 236);
+            this.ClientSize = new System.Drawing.Size(511, 269);
             this.Controls.Add(this.pnlSuperiorIngresoContratoView);
             this.Controls.Add(this.pnlIngresarContrato);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -257,5 +281,7 @@
         public System.Windows.Forms.PictureBox btnCerrarIngresoContratoView;
         public System.Windows.Forms.Button btnGuardarNuevoContrato;
         public System.Windows.Forms.Panel pnlSuperiorIngresoContratoView;
+        public System.Windows.Forms.ComboBox cbIngresarCategoriaFactura;
+        private System.Windows.Forms.Label lblCategoriaFactura;
     }
 }

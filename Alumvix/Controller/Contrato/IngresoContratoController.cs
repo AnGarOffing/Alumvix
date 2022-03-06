@@ -24,6 +24,7 @@ namespace Alumvix.Controller.Contrato
         {
             ingresoContratoView = ingresoContratoVista;
             ingresoContratoView.Load += new EventHandler(CargarTiposFactura);
+            ingresoContratoView.Load += new EventHandler(CargarCategoriasFactura);
             ingresoContratoView.txtIngresarValorContrato.KeyPress += new KeyPressEventHandler(ValidarEntradaNumeros);
             ingresoContratoView.txtIngresarValorContrato.TextChanged += new EventHandler(AplicarSeparadoresAValor);
             ingresoContratoView.btnMinimizarIngresoContratoView.MouseHover += new EventHandler(ResaltarBotonMinimizar);
@@ -106,7 +107,9 @@ namespace Alumvix.Controller.Contrato
         private void GuardarContrato(object sender, EventArgs e)
         {
             int valorSinFormato = Convert.ToInt32(ingresoContratoView.txtIngresarValorContrato.Text.Replace(".", ""));
-            if (ValidacionesDeControles.ValidarBotonIngresoContrato(valorSinFormato.ToString(), ingresoContratoView.cbIngresarTipoFactura.SelectedIndex) == false)
+            if (ValidacionesDeControles.ValidarBotonIngresoContrato(valorSinFormato.ToString(),
+                ingresoContratoView.cbIngresarTipoFactura.SelectedIndex,
+                ingresoContratoView.cbIngresarCategoriaFactura.SelectedIndex) == false)
             {
                 MessageBox.Show("Debe diligenciar todos los campos");
             }
@@ -126,12 +129,17 @@ namespace Alumvix.Controller.Contrato
                     }
                     else valorContratoCalculado = Convert.ToInt32(valorSinFormato.ToString());
 
-                    bool respuestaIngresoContrato = contratoDao.GuardarContrato(valorContratoCalculado, ingresoContratoView.dtpFechaInicioContrato.Text, ingresoContratoView.dtpFechaTerminacionContrato.Text, 1, 1, ingresoContratoView.cbIngresarTipoFactura.SelectedIndex, ClienteController.ObtenerIdCliente());
+                    bool respuestaIngresoContrato = contratoDao.GuardarContrato(valorContratoCalculado,
+                        ingresoContratoView.dtpFechaInicioContrato.Text, 
+                        ingresoContratoView.dtpFechaTerminacionContrato.Text, 1, 1, 
+                        ingresoContratoView.cbIngresarTipoFactura.SelectedIndex,
+                        ingresoContratoView.cbIngresarCategoriaFactura.SelectedIndex,
+                        ClienteController.ObtenerIdCliente());
                     if (respuestaIngresoContrato)
                     {
                         ingresoContratoView.txtIngresarValorContrato.Clear();
                         ingresoContratoView.cbIngresarTipoFactura.SelectedIndex = 0;
-                        //ingresoContratoView.Close();
+                        ingresoContratoView.cbIngresarCategoriaFactura.SelectedIndex = 0;
                         ingresoContratoView.Hide();
                         MessageBox.Show("El contrato ha sido guardado con exito");
                         clienteView = ClienteView.ObtenerInstancia();
@@ -148,6 +156,12 @@ namespace Alumvix.Controller.Contrato
             ingresoContratoView.txtIngresarValorContrato.Clear();
             ContratoDao contratoDao = new ContratoDao();
             ingresoContratoView.cbIngresarTipoFactura.DataSource = contratoDao.ObtenerTiposFactura();
+        }
+
+        private void CargarCategoriasFactura(object sender, EventArgs e)
+        {
+            ContratoDao contratoDao = new ContratoDao();
+            ingresoContratoView.cbIngresarCategoriaFactura.DataSource = contratoDao.ObtenerCategoriasFactura();
         }
     }
 }

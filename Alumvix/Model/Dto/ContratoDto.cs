@@ -10,6 +10,7 @@ namespace Alumvix.Model.Dto
     {
         int idContrato;
         string tipoFactura;
+        string categoriaFactura;
         int valorContrato;
         string fechaInicioContrato;
         string fechaTerminacionContrato;
@@ -28,6 +29,7 @@ namespace Alumvix.Model.Dto
         public int Cliente { get => idCliente; set => idCliente = value; }
         public List<AbonoDto> Gastos { get => gastos; set => gastos = value; }
         public string TipoFactura { get => tipoFactura; set => tipoFactura = value; }
+        public string CategoriaFactura { get => categoriaFactura; set => categoriaFactura = value; }
     }
 }
 

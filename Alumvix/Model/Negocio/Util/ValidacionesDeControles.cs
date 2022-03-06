@@ -91,10 +91,10 @@ namespace Alumvix.Model.Negocio.Util
             return mensaje;
         }
 
-        public static bool ValidarBotonIngresoContrato(string valorContrato, int tipoFactura)
+        public static bool ValidarBotonIngresoContrato(string valorContrato, int tipoFactura, int categoriaFactura)
         {
             respuesta = false;
-            if (valorContrato != "" && tipoFactura != 0) respuesta = true;
+            if (valorContrato != "" && tipoFactura != 0 && categoriaFactura != 0) respuesta = true;
             return respuesta;
         }
 
