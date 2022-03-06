@@ -16,12 +16,12 @@ namespace Alumvix.Controller.Abono
 {
     internal class EditarAbonoController
     {
-        EditarAbonoView editarAbonoView;
+        ActualizarAbonoView editarAbonoView;
         DetalleAbonoView detalleAbonoView; 
 
-        public EditarAbonoController(EditarAbonoView editarAbonoVista) 
+        public EditarAbonoController(ActualizarAbonoView actualizarAbonoVista) 
         {
-            editarAbonoView = editarAbonoVista;
+            editarAbonoView = actualizarAbonoVista;
             detalleAbonoView = DetalleAbonoController.ObtenerInstanciaDetalleAbono();
             editarAbonoView.Activated += new EventHandler(CargarDatosAbono);
             editarAbonoView.txtIActualizarValorAbono.KeyPress += new KeyPressEventHandler(ValidarEntrada);

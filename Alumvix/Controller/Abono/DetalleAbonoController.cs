@@ -152,9 +152,9 @@ namespace Alumvix.Controller.Abono
         {
             if (detalleAbonoView.lstvDetalleAbonos.SelectedItems.Count > 0)
             {
-                EditarAbonoView editarAbonoView = EditarAbonoView.ObtenerInstancia();
+                ActualizarAbonoView  actualizarAbonoView = ActualizarAbonoView.ObtenerInstancia();
                 detalleAbonoView.Hide();
-                editarAbonoView.Show();
+                actualizarAbonoView.Show();
             }
             else MessageBox.Show("Debe seleccionar un abono de la lista para editarlo");
         }

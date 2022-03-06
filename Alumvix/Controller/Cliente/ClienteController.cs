@@ -35,7 +35,6 @@ namespace Alumvix.Controller
         {
             logica = new Logica();
             clienteVista = view;
-            clienteVista.btnModificarIVA.Enabled = false; //ELIMINAR ESTA LINEA CUANDO SE PROGRAME EL BOTON
             clienteVista.Activated += new EventHandler(ObtenerListadoClientes);
             clienteVista.Activated += new EventHandler(PersonalizarFormulario);
             clienteVista.Activated += new EventHandler(SeleccionarFiltroCualquiera);
@@ -49,6 +48,7 @@ namespace Alumvix.Controller
             clienteVista.txtFiltrarCliente.KeyPress += new KeyPressEventHandler(ValidarEntrada);
             clienteVista.btnIngresarCliente.Click += new EventHandler(AbrirIngresoClienteView);
             clienteVista.btnProveedores.Click += new EventHandler(AbrirProveedoresView);
+            clienteVista.btnModificarIVA.Click += new EventHandler(AbrirEditarValorIVAView);
             clienteVista.btnMinimizarClienteView.MouseHover += new EventHandler(ResaltarBotonMinimizar);
             clienteVista.btnMinimizarClienteView.MouseLeave += new EventHandler(QuitarResaltadoBotonMinimizar);
             clienteVista.btnCerrarClienteView.MouseHover += new EventHandler(ResaltarBotonCerrar);
@@ -59,6 +59,13 @@ namespace Alumvix.Controller
             clienteVista.rbContratoCerrado.CheckedChanged += new EventHandler(FiltarCLientesContratoCerrado);
             clienteVista.rbCualquierContrato.CheckedChanged += new EventHandler(MostrarAllClientes);
             clienteVista.pnlSuperiorClienteView.MouseDown += new MouseEventHandler(PermitirMovimientoDeForm);
+        }
+
+        private void AbrirEditarValorIVAView(object sender, EventArgs e)
+        {
+            EditarValorIVAView editarValorIVAView = EditarValorIVAView.ObtenerInstancia();
+            editarValorIVAView.Show();
+            clienteVista.Hide();
         }
 
         private void PermitirMovimientoDeForm(object sender, MouseEventArgs e)
@@ -181,8 +188,6 @@ namespace Alumvix.Controller
 
         private void AbrirReporteView(object sender, EventArgs e)
         {
-            //AdministradorReportesView reporteView = AdministradorReportesView.ObtenerInstancia();
-            //reporteView.ShowDialog();
             AdministradorReportesView reporteView = AdministradorReportesView.ObtenerInstancia();
             clienteVista.Hide();
             reporteView.Show();

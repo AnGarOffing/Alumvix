@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Alumvix.exe" size="697344">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Alumvix.exe" size="702976">
       <assemblyIdentity name="Alumvix" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>jcfn5HxxMrFjrkj05dH1sLiShtuuAMQFs9qFdYPT/fU=</dsig:DigestValue>
+        <dsig:DigestValue>wo0LltZDcZPsy0msMSmvfeu63Au0AWRiEj2LqAiWDq8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -62,7 +62,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>C2uFzVZ5cUCH0L2q9CUzBO7LexnRIgKP9TgwII1us6c=</dsig:DigestValue>
+        <dsig:DigestValue>wrFPT7w305nC3V+fXDnn7Woby08JsCkF2xNchRugo58=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

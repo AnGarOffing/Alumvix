@@ -15,9 +15,9 @@ namespace Alumvix.Model.Negocio.Util
         static bool respuesta;
 
         //metodo que valida las entradas de un ingreso o un abono
-        public static bool ValidarBotonIngresoAbono(string valorAbono, int formaDeAbono) 
+        public static bool ValidarBotonIngresoAbono(string valorAbono, int formaDeAbono)
         {
-            respuesta = false;  
+            respuesta = false;
             if (valorAbono != "")
             {
                 if (formaDeAbono != 0)
@@ -31,7 +31,7 @@ namespace Alumvix.Model.Negocio.Util
         public static bool ValidarBotonIngresoGasto(string valorGasto, string numeroFactura, int tipoGasto, int proveedor)
         {
             respuesta = false;
-            if (valorGasto != "" && numeroFactura != "" && tipoGasto != 0 && proveedor != 0) 
+            if (valorGasto != "" && numeroFactura != "" && tipoGasto != 0 && proveedor != 0)
             {
                 if (proveedor == 1) MessageBox.Show("No ha elegido un proveedor valido");
                 else respuesta = true;
@@ -88,7 +88,7 @@ namespace Alumvix.Model.Negocio.Util
                     if (duplicado) mensaje = "El producto ya esta asociado al contrato";
                 }
             }
-            return mensaje;   
+            return mensaje;
         }
 
         public static bool ValidarBotonIngresoContrato(string valorContrato, int tipoFactura)
@@ -108,12 +108,12 @@ namespace Alumvix.Model.Negocio.Util
 
         public static bool ValidarEntradaNumerosyLetras(KeyPressEventArgs e)
         {
-            if((e.KeyChar >= 33 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            if ((e.KeyChar >= 33 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
             {
-                if ((e.KeyChar >= 33 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96)  || (e.KeyChar >= 123 && e.KeyChar <= 255))
+                if ((e.KeyChar >= 33 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
                 {
                     e.Handled = true;
-                }             
+                }
             }
             return e.Handled;
         }
@@ -138,3 +138,4 @@ namespace Alumvix.Model.Negocio.Util
         }
     }
 }
+

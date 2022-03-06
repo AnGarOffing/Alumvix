@@ -56,16 +56,29 @@ namespace Alumvix.Model.Negocio
             return contadorContratos;
         }
 
-        public static int AplicarIVA(int valor, int idIva)
+        public static int AplicarIVA(int valor, int idValorUtil)
         {
             ContratoDao contratoDao = new ContratoDao();
-            double iva = contratoDao.ConsultarIVA(idIva);
+            double iva = contratoDao.ConsultarIVA(idValorUtil);
             return (int)(valor * iva) + valor;
         }
 
         public static int QuitarIVA(int valor)
         {
             return Convert.ToInt32(valor / (1 + new ContratoDao().ConsultarIVA(1)));
+        }
+
+        public int ObtenerIVAActual()
+        {
+            ContratoDao contratoDao = new ContratoDao();
+            double iva = contratoDao.ConsultarIVA(1);
+            return Convert.ToInt32(iva * 100);
+        }
+
+        public bool ModificarIVA(int iva)
+        {
+            ContratoDao contratoDao = new ContratoDao();
+            return contratoDao.ModificarIVA(iva);
         }
 
         public int SumarTiposDeGastos(int mes, int anio) 

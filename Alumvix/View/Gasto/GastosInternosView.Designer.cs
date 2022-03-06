@@ -42,6 +42,10 @@
             this.btnMinimizarGastoInternoView = new System.Windows.Forms.PictureBox();
             this.btnCerrarGastoInternoView = new System.Windows.Forms.PictureBox();
             this.btnIngresarGastoInterno = new System.Windows.Forms.Button();
+            this.lblFiltarPorMesGI = new System.Windows.Forms.Label();
+            this.cbSeleccionarMesGI = new System.Windows.Forms.ComboBox();
+            this.lblSeleccionarAnioGI = new System.Windows.Forms.Label();
+            this.cbSeleccionarAnioGI = new System.Windows.Forms.ComboBox();
             this.pnlSuperiorGastoInternoView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesionGastosInternos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarGastoInternoView)).BeginInit();
@@ -182,12 +186,58 @@
             this.btnIngresarGastoInterno.TabIndex = 46;
             this.btnIngresarGastoInterno.UseVisualStyleBackColor = false;
             // 
+            // lblFiltarPorMesGI
+            // 
+            this.lblFiltarPorMesGI.AutoSize = true;
+            this.lblFiltarPorMesGI.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFiltarPorMesGI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.lblFiltarPorMesGI.Location = new System.Drawing.Point(12, 70);
+            this.lblFiltarPorMesGI.Name = "lblFiltarPorMesGI";
+            this.lblFiltarPorMesGI.Size = new System.Drawing.Size(49, 24);
+            this.lblFiltarPorMesGI.TabIndex = 53;
+            this.lblFiltarPorMesGI.Text = "Mes";
+            // 
+            // cbSeleccionarMesGI
+            // 
+            this.cbSeleccionarMesGI.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbSeleccionarMesGI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSeleccionarMesGI.FormattingEnabled = true;
+            this.cbSeleccionarMesGI.Location = new System.Drawing.Point(67, 70);
+            this.cbSeleccionarMesGI.Name = "cbSeleccionarMesGI";
+            this.cbSeleccionarMesGI.Size = new System.Drawing.Size(131, 28);
+            this.cbSeleccionarMesGI.TabIndex = 52;
+            // 
+            // lblSeleccionarAnioGI
+            // 
+            this.lblSeleccionarAnioGI.AutoSize = true;
+            this.lblSeleccionarAnioGI.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSeleccionarAnioGI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.lblSeleccionarAnioGI.Location = new System.Drawing.Point(225, 70);
+            this.lblSeleccionarAnioGI.Name = "lblSeleccionarAnioGI";
+            this.lblSeleccionarAnioGI.Size = new System.Drawing.Size(54, 24);
+            this.lblSeleccionarAnioGI.TabIndex = 55;
+            this.lblSeleccionarAnioGI.Text = "Año:";
+            // 
+            // cbSeleccionarAnioGI
+            // 
+            this.cbSeleccionarAnioGI.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbSeleccionarAnioGI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSeleccionarAnioGI.FormattingEnabled = true;
+            this.cbSeleccionarAnioGI.Location = new System.Drawing.Point(285, 70);
+            this.cbSeleccionarAnioGI.Name = "cbSeleccionarAnioGI";
+            this.cbSeleccionarAnioGI.Size = new System.Drawing.Size(145, 28);
+            this.cbSeleccionarAnioGI.TabIndex = 54;
+            // 
             // GastosInternosView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(1184, 536);
+            this.Controls.Add(this.lblSeleccionarAnioGI);
+            this.Controls.Add(this.cbSeleccionarAnioGI);
+            this.Controls.Add(this.lblFiltarPorMesGI);
+            this.Controls.Add(this.cbSeleccionarMesGI);
             this.Controls.Add(this.btnIngresarGastoInterno);
             this.Controls.Add(this.pnlSuperiorGastoInternoView);
             this.Controls.Add(this.btnEditarGastoInterno);
@@ -204,6 +254,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarGastoInternoView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarGastoInternoView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -222,5 +273,9 @@
         public System.Windows.Forms.Button btnIngresarGastoInterno;
         public System.Windows.Forms.PictureBox btnCerrarSesionGastosInternos;
         public System.Windows.Forms.Panel pnlSuperiorGastoInternoView;
+        private System.Windows.Forms.Label lblFiltarPorMesGI;
+        public System.Windows.Forms.ComboBox cbSeleccionarMesGI;
+        private System.Windows.Forms.Label lblSeleccionarAnioGI;
+        public System.Windows.Forms.ComboBox cbSeleccionarAnioGI;
     }
 }

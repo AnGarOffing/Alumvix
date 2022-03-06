@@ -57,12 +57,39 @@ namespace Alumvix.Model.Dao
             return idGastoInterno;
         }
 
+        //Sobrecarga del metodo ObtenerGastosInternos() sin parametros y con parametros: mes y año
         public List<GastoInternoDto> ObtenerGastosInternos()
         {
             command.Connection = connection;
             command.CommandText = "select ID_GASTO_INTERNO, valorGastoInterno, fechaGastoInterno,"
                                 +" descripcionGastoInterno, NombreTipoGasto from GASTO_INTERNO" 
                                 +" inner join TIPO_GASTO on GASTO_INTERNO.FK_ID_TIPO_GASTO1 = TIPO_GASTO.ID_TIPO_GASTO";
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            lectorFilas = command.ExecuteReader();
+            List<GastoInternoDto> listadoGastosInternos = new List<GastoInternoDto>();
+            while (lectorFilas.Read())
+            {
+                listadoGastosInternos.Add(new GastoInternoDto()
+                {
+                    IdGastoInterno = lectorFilas.GetInt32(0),
+                    ValorGastoInterno = lectorFilas.GetInt32(1),
+                    FechaGastoInterno = lectorFilas.GetDateTime(2),
+                    DescripcionGastoInterno = lectorFilas.GetString(3),
+                    TipoGastoInterno = lectorFilas.GetString(4),
+                });
+            }
+            lectorFilas.Close();
+            connection.Close();
+            return listadoGastosInternos;
+        }
+
+        public List<GastoInternoDto> ObtenerGastosInternos(int mes, int anio)
+        {
+            command.Connection = connection;
+            command.CommandText = "select ID_GASTO_INTERNO, valorGastoInterno, fechaGastoInterno,"
+                                + " descripcionGastoInterno, NombreTipoGasto from GASTO_INTERNO"
+                                + " inner join TIPO_GASTO on GASTO_INTERNO.FK_ID_TIPO_GASTO1 = TIPO_GASTO.ID_TIPO_GASTO where MONTH(fechaGastoInterno) = " + mes + " and YEAR(fechaGastoInterno) = " + anio;
             command.CommandType = CommandType.Text;
             connection.Open();
             lectorFilas = command.ExecuteReader();

@@ -11,21 +11,21 @@ using System.Windows.Forms;
 
 namespace Alumvix.View.Abono
 {
-    public partial class EditarAbonoView : Form
+    public partial class ActualizarAbonoView : Form
     {
-        private static EditarAbonoView instancia = null;
+        private static ActualizarAbonoView instancia = null;
 
-        public EditarAbonoView()
+        public ActualizarAbonoView()
         {
             InitializeComponent();
             EditarAbonoController editarAbonoController = new EditarAbonoController(this);
         }
 
-        public static EditarAbonoView ObtenerInstancia()
+        public static ActualizarAbonoView ObtenerInstancia()
         {
             if (instancia == null)
             {
-                instancia = new EditarAbonoView();
+                instancia = new ActualizarAbonoView();
             }
             return instancia;
         }

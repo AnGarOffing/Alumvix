@@ -1,6 +1,6 @@
 ﻿namespace Alumvix.View.Abono
 {
-    partial class EditarAbonoView
+    partial class ActualizarAbonoView
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditarAbonoView));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ActualizarAbonoView));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnActualizarAbono = new System.Windows.Forms.Button();
             this.dtpActualizarFechaAbono = new System.Windows.Forms.DateTimePicker();

@@ -197,10 +197,10 @@ namespace Alumvix.Model.Dao
             return respuesta;
         }
 
-        public double ConsultarIVA(int idIva)
+        public double ConsultarIVA(int idValorUtil)
         {
             command.Connection = connection;
-            command.CommandText = "select valor from VALOR_UTIL where ID_VALOR_UTIL = " + idIva;
+            command.CommandText = "select valor from VALOR_UTIL where ID_VALOR_UTIL = " + idValorUtil;
             command.CommandType = CommandType.Text;
             connection.Open();
             lectorFilas = command.ExecuteReader();
@@ -209,6 +209,21 @@ namespace Alumvix.Model.Dao
             lectorFilas.Close();
             connection.Close();
             return valorIva;
+        }
+
+        public bool ModificarIVA(int iva)
+        {
+            bool respuesta = false;
+            command.Connection = connection;
+            command.CommandText = "update VALOR_UTIL set valor = " + iva + " where ID_VALOR_UTIL = 1";
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            int filasAfectadasEnBd = command.ExecuteNonQuery();
+            if (filasAfectadasEnBd > 0)
+            {
+                respuesta = true;
+            }
+            return respuesta;
         }
 
         public List<string> ObtenerEstadosTrabajo()

@@ -31,8 +31,11 @@ namespace Alumvix.Controller.Gasto
         {
             gastosInternosView = gastoInternoVista;
             clienteView = ClienteController.ObtenerInstanciaClienteView();
-            loginView = LoginController.ObtenerInstanciaLoginView(); 
+            loginView = LoginController.ObtenerInstanciaLoginView();
+            gastosInternosView.Activated += new EventHandler(CargarCombos);
             gastosInternosView.Activated += new EventHandler(MostrarGastosInternos);
+            gastosInternosView.cbSeleccionarMesGI.SelectedIndexChanged += new EventHandler(MostrarGastosInternos);
+            gastosInternosView.cbSeleccionarAnioGI.SelectedIndexChanged += new EventHandler(MostrarGastosInternos);
             gastosInternosView.lstvGastosInternos.SelectedIndexChanged += new EventHandler(ObtenerIndice);
             gastosInternosView.btnCerrarGastoInternoView.MouseHover += new EventHandler(ResaltarBotonCerrar);
             gastosInternosView.btnCerrarGastoInternoView.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrar);
@@ -47,6 +50,30 @@ namespace Alumvix.Controller.Gasto
             gastosInternosView.btnCerrarSesionGastosInternos.MouseHover += new EventHandler(ResaltarBotonCerrarSesion);
             gastosInternosView.btnCerrarSesionGastosInternos.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrarSesion);
             gastosInternosView.pnlSuperiorGastoInternoView.MouseDown += new MouseEventHandler(PermitirMovimientoDeForm);
+        }
+
+        private void CargarCombos(object sender, EventArgs e)
+        {
+            if (gastosInternosView.cbSeleccionarMesGI.Items.Count == 0)
+            {
+                gastosInternosView.cbSeleccionarMesGI.DataSource = new List<string>()
+                { "--Todos--" ,"Enero", "Febrero", "Marzo", "Abril",
+                  "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"};
+            }
+            if (gastosInternosView.cbSeleccionarAnioGI.Items.Count == 0)
+            {
+                int anioActual = DateTime.Now.Year;
+                int anioInicial = 2022;
+                List<int> listadoAnios = new List<int>();
+                while (anioInicial <= anioActual + 1)
+                {
+                    listadoAnios.Add(anioInicial);
+                    anioInicial++;
+                }
+                gastosInternosView.cbSeleccionarAnioGI.DataSource = listadoAnios.Select(a => a.ToString()).ToList();
+            }
+            gastosInternosView.cbSeleccionarMesGI.SelectedIndex = 0;
+            gastosInternosView.cbSeleccionarAnioGI.SelectedIndex = 0;
         }
 
         private void PermitirMovimientoDeForm(object sender, MouseEventArgs e)
@@ -160,7 +187,21 @@ namespace Alumvix.Controller.Gasto
             gastosInternosView.lstvGastosInternos.Items.Clear();
             idsGastosInternos.Clear();
             GastoInternoDao gastoInternoDao = new GastoInternoDao();
-            List<GastoInternoDto> listadoGastosInternos = gastoInternoDao.ObtenerGastosInternos();
+            List<GastoInternoDto> listadoGastosInternos = new List<GastoInternoDto>();
+            if (gastosInternosView.cbSeleccionarMesGI.SelectedIndex == 0)
+            {
+                listadoGastosInternos.Clear();
+                listadoGastosInternos = gastoInternoDao.ObtenerGastosInternos();
+                gastosInternosView.cbSeleccionarAnioGI.Enabled = false;
+            }
+            else
+            {
+                gastosInternosView.cbSeleccionarAnioGI.Enabled = true;
+                listadoGastosInternos.Clear();
+                listadoGastosInternos = gastoInternoDao.ObtenerGastosInternos(
+                gastosInternosView.cbSeleccionarMesGI.SelectedIndex,
+                Convert.ToInt32(gastosInternosView.cbSeleccionarAnioGI.SelectedItem));
+            }
             foreach (GastoInternoDto gastoInternoDto in listadoGastosInternos)
             {
                 idsGastosInternos.Add(gastoInternoDto.IdGastoInterno); //almacenamos ids de los gastos internos que se muestran 
@@ -174,7 +215,6 @@ namespace Alumvix.Controller.Gasto
         {
             return idsGastosInternos[indice];
         }
-
 
         private void ObtenerIndice(object sender, EventArgs e)
         {
