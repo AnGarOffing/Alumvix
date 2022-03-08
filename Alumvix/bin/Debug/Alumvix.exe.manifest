@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Alumvix.exe" size="714240">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Alumvix.exe" size="714752">
       <assemblyIdentity name="Alumvix" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>rhsIkQ28YEqlALDMQQPrbtsU5yJmD6VWF4M4VaUT3tM=</dsig:DigestValue>
+        <dsig:DigestValue>pSvrYaX74agAp7MRIal50TigqGMm6fSaTk+7HtuTsmg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -84,7 +84,7 @@ namespace Alumvix.Controller.Reporte
             textBoxes.Add(reporteMensualView.txtTotalVentas);
             textBoxes.Add(reporteMensualView.txtTotalGastos);
             textBoxes.Add(reporteMensualView.txtUtilidadGeneral);
-            logica.ExportToExcel(textBoxes, reporteMensualView.lstvGastosPeriodo);
+            logica.ExportarReporteMensualAExcel(textBoxes, reporteMensualView.lstvGastosPeriodo, reporteMensualView.lstvResumenContratos);
         }
 
         private void QuitarResaltadoBotonCerrarSesion(object sender, EventArgs e)

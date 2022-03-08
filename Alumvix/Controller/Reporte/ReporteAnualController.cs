@@ -183,7 +183,7 @@ namespace Alumvix.Controller.Reporte
             textBoxes.Add(reporteAnualView.txtTotalVentas);
             textBoxes.Add(reporteAnualView.txtTotalGastos);
             textBoxes.Add(reporteAnualView.txtUtilidadGeneral);
-            logica.ExportToExcel(textBoxes, reporteAnualView.lstvGastosTotalesMensuales, reporteAnualView.lstvReporteMensualPorAnio);
+            logica.ExportarReporteAnualAExcel(textBoxes, reporteAnualView.lstvGastosTotalesMensuales, reporteAnualView.lstvReporteMensualPorAnio);
         }
     }
 }

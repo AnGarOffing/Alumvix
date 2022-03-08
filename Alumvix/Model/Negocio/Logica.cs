@@ -99,7 +99,7 @@ namespace Alumvix.Model.Negocio
             return sumaGastos;
         }
 
-        public void ExportToExcel(List<System.Windows.Forms.TextBox> textBoxes, ListView listViewGastos)
+        public void ExportarReporteMensualAExcel(List<System.Windows.Forms.TextBox> textBoxes, ListView listViewGastos, ListView listViewResumenContratos)
         {
             using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel Workbook|*.xlsx", ValidateNames = true })
             {
@@ -111,13 +111,13 @@ namespace Alumvix.Model.Negocio
                     app.Visible = false;
 
 
-                    for (int j = 1; j <= listViewGastos.Columns.Count; j++)
+                    for (int j = 1; j <= listViewResumenContratos.Columns.Count; j++)
                     {
                         ws.Columns[j].AutoFit();
-                        ws.Cells[1, j] = listViewGastos.Columns[j - 1].Text;
+                        ws.Cells[1, j] = listViewResumenContratos.Columns[j - 1].Text;
                     }
                     int i = 2;
-                    foreach (ListViewItem item in listViewGastos.Items)
+                    foreach (ListViewItem item in listViewResumenContratos.Items)
                     {
                         for (int k = 1; k <= item.SubItems.Count; k++)
                         {
@@ -127,6 +127,29 @@ namespace Alumvix.Model.Negocio
                     }
 
                     int _lastRow = ws.Range["A" + ws.Rows.Count].End[Microsoft.Office.Interop.Excel.XlDirection.xlUp].Row + 1;
+                    ws.Cells[_lastRow, 1] = "**********";
+                    ws.Cells[_lastRow, 2] = "**********";
+                    ws.Cells[_lastRow, 3] = "**********";
+                    ws.Cells[_lastRow, 4] = "**********";
+
+                    _lastRow = ws.Range["A" + ws.Rows.Count].End[Microsoft.Office.Interop.Excel.XlDirection.xlUp].Row + 1;
+                    for (int j = 1; j <= listViewGastos.Columns.Count; j++)
+                    {
+                        ws.Columns[j].AutoFit();
+                        ws.Cells[_lastRow, j] = listViewGastos.Columns[j - 1].Text;
+                    }
+                    _lastRow = ws.Range["A" + ws.Rows.Count].End[Microsoft.Office.Interop.Excel.XlDirection.xlUp].Row + 1;
+                    i = _lastRow;
+                    foreach (ListViewItem item in listViewGastos.Items)
+                    {
+                        for (int k = 1; k <= item.SubItems.Count; k++)
+                        {
+                            ws.Cells[i, k] = item.SubItems[k - 1].Text;
+                        }
+                        i++;
+                    }
+
+                    _lastRow = ws.Range["A" + ws.Rows.Count].End[Microsoft.Office.Interop.Excel.XlDirection.xlUp].Row + 1;
                     ws.Cells[_lastRow, 1] = "**********";
                     ws.Cells[_lastRow, 2] = "**********";
                     ws.Cells[_lastRow, 3] = "**********";
@@ -153,7 +176,7 @@ namespace Alumvix.Model.Negocio
             }
         }
 
-        public void ExportToExcel(List<System.Windows.Forms.TextBox> textBoxes, ListView listViewGastos, ListView listViewCuentasMensuales)
+        public void ExportarReporteAnualAExcel(List<System.Windows.Forms.TextBox> textBoxes, ListView listViewGastos, ListView listViewCuentasMensuales)
         {
             using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel Workbook|*.xlsx", ValidateNames = true })
             {
@@ -188,7 +211,7 @@ namespace Alumvix.Model.Negocio
                     for (int j = 1; j <= listViewGastos.Columns.Count; j++)
                     {
                         ws.Columns[j].AutoFit();
-                        ws.Cells[1, j] = listViewGastos.Columns[j - 1].Text;
+                        ws.Cells[_lastRow, j] = listViewGastos.Columns[j - 1].Text;
                     }
                     _lastRow = ws.Range["A" + ws.Rows.Count].End[Microsoft.Office.Interop.Excel.XlDirection.xlUp].Row + 1;
                     i = _lastRow;
