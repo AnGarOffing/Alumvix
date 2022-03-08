@@ -29,7 +29,7 @@ namespace Alumvix.Controller.Gasto
             ingresoGastoView.txtIngresarValorGasto.KeyPress += new KeyPressEventHandler(ValidarEntradaNumeros);
             ingresoGastoView.txtIngresarValorGasto.TextChanged += new EventHandler(AplicarSeparadoresAValor);
             ingresoGastoView.txtNumeroFactura.KeyPress += new KeyPressEventHandler(ValidarEntradaLetrasYNumeros);
-            ingresoGastoView.cbIngresarTipoGasto.SelectedIndexChanged += new EventHandler(HabilitarControlesFactyProv);
+            //ingresoGastoView.cbIngresarTipoGasto.SelectedIndexChanged += new EventHandler(HabilitarControlesFactyProv);
             ingresoGastoView.btnCerrarIngresoGastoView.MouseHover += new EventHandler(ResaltarBotonCerrar);
             ingresoGastoView.btnCerrarIngresoGastoView.MouseLeave += new EventHandler(QuitarResaltadoBotonCerrar);
             ingresoGastoView.btnCerrarIngresoGastoView.Click += new EventHandler(CerrarIngresoGastoView);

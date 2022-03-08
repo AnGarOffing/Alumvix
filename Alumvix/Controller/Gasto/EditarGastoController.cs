@@ -22,7 +22,7 @@ namespace Alumvix.Controller.Gasto
             editarGastoView.Activated += new EventHandler(CargarDatosGasto);
             editarGastoView.txtActualizarValorGasto.KeyPress += new KeyPressEventHandler(ValidarEntradaNumeros);
             editarGastoView.txtActualizarValorGasto.TextChanged += new EventHandler(AplicarSeparadoresAValor);
-            editarGastoView.cbEditarTipoGasto.SelectedIndexChanged += new EventHandler(HabilitarControlesFactyProv);
+            //editarGastoView.cbEditarTipoGasto.SelectedIndexChanged += new EventHandler(HabilitarControlesFactyProv);
             editarGastoView.btnMinimizarEditarGastoView.MouseHover += new EventHandler(ResaltarBotonMinimizar);
             editarGastoView.btnMinimizarEditarGastoView.MouseLeave += new EventHandler(QuitarResaltadoBotonMinimizar);
             editarGastoView.btnCerrarEditarGastoView.MouseHover += new EventHandler(ResaltarBotonCerrar);
