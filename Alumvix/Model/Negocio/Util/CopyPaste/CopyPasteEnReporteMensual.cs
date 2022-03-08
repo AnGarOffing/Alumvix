@@ -38,6 +38,26 @@ namespace Alumvix.Model.Negocio.Util
             reporteMensualView.txtUtilidadGeneral.BorderStyle = 0;
             reporteMensualView.txtUtilidadGeneral.BackColor = reporteMensualView.BackColor;
             reporteMensualView.txtUtilidadGeneral.TabStop = false;
+
+            reporteMensualView.txtCantidadContabilidad.ReadOnly = true;
+            reporteMensualView.txtCantidadContabilidad.BorderStyle = 0;
+            reporteMensualView.txtCantidadContabilidad.BackColor = reporteMensualView.BackColor;
+            reporteMensualView.txtCantidadContabilidad.TabStop = false;
+
+            reporteMensualView.txtCantidadReserva.ReadOnly = true;
+            reporteMensualView.txtCantidadReserva.BorderStyle = 0;
+            reporteMensualView.txtCantidadReserva.BackColor = reporteMensualView.BackColor;
+            reporteMensualView.txtCantidadReserva.TabStop = false;
+
+            reporteMensualView.txtTotalContabilidad.ReadOnly = true;
+            reporteMensualView.txtTotalContabilidad.BorderStyle = 0;
+            reporteMensualView.txtTotalContabilidad.BackColor = reporteMensualView.BackColor;
+            reporteMensualView.txtTotalContabilidad.TabStop = false;
+
+            reporteMensualView.txtTotalReserva.ReadOnly = true;
+            reporteMensualView.txtTotalReserva.BorderStyle = 0;
+            reporteMensualView.txtTotalReserva.BackColor = reporteMensualView.BackColor;
+            reporteMensualView.txtTotalReserva.TabStop = false;
         }
     }
 }

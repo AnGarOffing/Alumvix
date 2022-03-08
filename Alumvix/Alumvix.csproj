@@ -132,6 +132,7 @@
     <Compile Include="Model\Dao\ProductoDao.cs" />
     <Compile Include="Model\Dao\ProveedorDao.cs" />
     <Compile Include="Model\Dao\ReporteDao.cs" />
+    <Compile Include="Model\Dao\ResumenContratoDao.cs" />
     <Compile Include="Model\Dao\UsuarioDao.cs" />
     <Compile Include="Model\Dto\AbonoDto.cs" />
     <Compile Include="Model\Dto\ClienteDto.cs" />
@@ -141,6 +142,7 @@
     <Compile Include="Model\Dto\ProductoDto.cs" />
     <Compile Include="Model\Dto\ProveedorDto.cs" />
     <Compile Include="Model\Dto\ReporteDto.cs" />
+    <Compile Include="Model\Dto\ResumenContratoDto.cs" />
     <Compile Include="Model\Dto\UsuarioDto.cs" />
     <Compile Include="Model\Negocio\Logica.cs" />
     <Compile Include="Model\Negocio\Util\CopyPaste\CopyPasteEnDetalleClienteVista.cs" />

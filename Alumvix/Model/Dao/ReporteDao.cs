@@ -362,6 +362,122 @@ namespace Alumvix.Model.Dao
             return listadoIndicesMeses;
         }
 
+        public int ObtenerCantidadContabilidadPorMes(int mes, int anio)
+        {
+            command.Connection = connection;
+            command.CommandText = "select COUNT(*) from CONTRATO where FK_ID_CATEGORIA_FACTURA = 1"
+                +" and MONTH(fechaInicioContrato) = " + mes + "and YEAR(fechaInicioContrato) =" + anio;
+            command.CommandType = CommandType.Text;
+            int cantContabilidad;
+            try
+            {
+                connection.Open();
+                lectorFilas = command.ExecuteReader();
+                lectorFilas.Read();
+                cantContabilidad = lectorFilas.GetInt32(0);
+            }
+            catch (SqlNullValueException ex)
+            {
+                ex = null;
+                cantContabilidad = 0;
+            }
+            catch (SqlException ex)
+            {
+                cantContabilidad = 0;
+                MessageBox.Show("Error de conexion a Base de Datos " + ex);
+            }
+            lectorFilas.Close();
+            connection.Close();
+            return cantContabilidad;
+        }
+
+        public int ObtenerCantidadReservaPorMes(int mes, int anio)
+        {
+            command.Connection = connection;
+            command.CommandText = "select COUNT(*) from CONTRATO where FK_ID_CATEGORIA_FACTURA = 2"
+                + " and MONTH(fechaInicioContrato) = " + mes + "and YEAR(fechaInicioContrato) =" + anio;
+            command.CommandType = CommandType.Text;
+            int cantReserva;
+            try
+            {
+                connection.Open();
+                lectorFilas = command.ExecuteReader();
+                lectorFilas.Read();
+                cantReserva = lectorFilas.GetInt32(0);
+            }
+            catch (SqlNullValueException ex)
+            {
+                ex = null;
+                cantReserva = 0;
+            }
+            catch (SqlException ex)
+            {
+                cantReserva = 0;
+                MessageBox.Show("Error de conexion a Base de Datos " + ex);
+            }
+            lectorFilas.Close();
+            connection.Close();
+            return cantReserva;
+        }
+
+        public int ObtenerTotalContabilidadPorMes(int mes, int anio)
+        {
+            command.Connection = connection;
+            command.CommandText = "select SUM(valorContrato) from CONTRATO where FK_ID_CATEGORIA_FACTURA = 1"
+                + " and MONTH(fechaInicioContrato) = " + mes + "and YEAR(fechaInicioContrato) =" + anio;
+            command.CommandType = CommandType.Text;
+            int totalContabilidad;
+            try
+            {
+                connection.Open();
+                lectorFilas = command.ExecuteReader();
+                lectorFilas.Read();
+                totalContabilidad = lectorFilas.GetInt32(0);
+            }
+            catch (SqlNullValueException ex)
+            {
+                ex = null;
+                totalContabilidad = 0;
+            }
+            catch (SqlException ex)
+            {
+                totalContabilidad = 0;
+                MessageBox.Show("Error de conexion a Base de Datos " + ex);
+            }
+            lectorFilas.Close();
+            connection.Close();
+            return totalContabilidad;
+        }
+
+        public int ObtenerTotalReservaPorMes(int mes, int anio)
+        {
+            command.Connection = connection;
+            command.CommandText = "select SUM(valorContrato) from CONTRATO where FK_ID_CATEGORIA_FACTURA = 2"
+                + " and MONTH(fechaInicioContrato) = " + mes + "and YEAR(fechaInicioContrato) =" + anio;
+            command.CommandType = CommandType.Text;
+            int totalReserva;
+            try
+            {
+                connection.Open();
+                lectorFilas = command.ExecuteReader();
+                lectorFilas.Read();
+                totalReserva = lectorFilas.GetInt32(0);
+            }
+            catch (SqlNullValueException ex)
+            {
+                ex = null;
+                totalReserva = 0;
+            }
+            catch (SqlException ex)
+            {
+                totalReserva = 0;
+                MessageBox.Show("Error de conexion a Base de Datos " + ex);
+            }
+            lectorFilas.Close();
+            connection.Close();
+            return totalReserva;
+        }
+
         public ReporteDto ObtenerCuentasPorPeriodo(string fechaInicial, string fechaFinal )
         {
             //TODO: programar este metodo para poder habilitar la opcion de reporte por periodo
