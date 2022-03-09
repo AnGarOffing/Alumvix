@@ -35,9 +35,10 @@ namespace Alumvix.Controller
         {
             logica = new Logica();
             clienteVista = view;
+            clienteVista.Activated += new EventHandler(SeleccionarFiltroCualquiera);
             clienteVista.Activated += new EventHandler(ObtenerListadoClientes);
             clienteVista.Activated += new EventHandler(PersonalizarFormulario);
-            clienteVista.Activated += new EventHandler(SeleccionarFiltroCualquiera);
+            clienteVista.btnModificarIVA.Enabled = false;
             clienteVista.txtFiltrarCliente.TextChanged += new EventHandler(ObtenerListadoClientes);
             clienteVista.dataGridClientes.CellClick += new DataGridViewCellEventHandler(ObtenerRegistroCliente);
             clienteVista.btnDetalleCliente.Click += new EventHandler(AbrirDetalleClienteView);
@@ -45,6 +46,7 @@ namespace Alumvix.Controller
             clienteVista.btnReporte.Click += new EventHandler(AbrirReporteView);
             clienteVista.btnActualizarCliente.Click += new EventHandler(AbrirEditarClienteView);
             clienteVista.btnGastosInternos.Click += new EventHandler(AbrirGastoInternoView);
+            clienteVista.btnGastosDeContratos.Click += new EventHandler(AbrirGastoContratoView);
             clienteVista.txtFiltrarCliente.KeyPress += new KeyPressEventHandler(ValidarEntrada);
             clienteVista.btnIngresarCliente.Click += new EventHandler(AbrirIngresoClienteView);
             clienteVista.btnProveedores.Click += new EventHandler(AbrirProveedoresView);
@@ -59,6 +61,13 @@ namespace Alumvix.Controller
             clienteVista.rbContratoCerrado.CheckedChanged += new EventHandler(FiltarCLientesContratoCerrado);
             clienteVista.rbCualquierContrato.CheckedChanged += new EventHandler(MostrarAllClientes);
             clienteVista.pnlSuperiorClienteView.MouseDown += new MouseEventHandler(PermitirMovimientoDeForm);
+        }
+
+        private void AbrirGastoContratoView(object sender, EventArgs e)
+        {
+            GastosContratosView gastosContratosView = GastosContratosView.ObtenerInstancia();
+            clienteVista.Hide();
+            gastosContratosView.Show();
         }
 
         private void AbrirEditarValorIVAView(object sender, EventArgs e)

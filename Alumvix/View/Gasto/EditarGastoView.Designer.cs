@@ -94,7 +94,7 @@
             this.btnActualizarGasto.Location = new System.Drawing.Point(470, 210);
             this.btnActualizarGasto.Name = "btnActualizarGasto";
             this.btnActualizarGasto.Size = new System.Drawing.Size(140, 44);
-            this.btnActualizarGasto.TabIndex = 61;
+            this.btnActualizarGasto.TabIndex = 6;
             this.btnActualizarGasto.Text = "Actualizar";
             this.btnActualizarGasto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnActualizarGasto.UseVisualStyleBackColor = true;
@@ -106,7 +106,7 @@
             this.txtEditarNumeroFactura.Location = new System.Drawing.Point(237, 131);
             this.txtEditarNumeroFactura.Name = "txtEditarNumeroFactura";
             this.txtEditarNumeroFactura.Size = new System.Drawing.Size(155, 26);
-            this.txtEditarNumeroFactura.TabIndex = 60;
+            this.txtEditarNumeroFactura.TabIndex = 3;
             // 
             // label2
             // 
@@ -126,7 +126,7 @@
             this.cbEditarProveedor.Location = new System.Drawing.Point(237, 225);
             this.cbEditarProveedor.Name = "cbEditarProveedor";
             this.cbEditarProveedor.Size = new System.Drawing.Size(218, 28);
-            this.cbEditarProveedor.TabIndex = 58;
+            this.cbEditarProveedor.TabIndex = 5;
             // 
             // label1
             // 
@@ -146,7 +146,7 @@
             this.cbEditarTipoGasto.Location = new System.Drawing.Point(237, 177);
             this.cbEditarTipoGasto.Name = "cbEditarTipoGasto";
             this.cbEditarTipoGasto.Size = new System.Drawing.Size(218, 28);
-            this.cbEditarTipoGasto.TabIndex = 56;
+            this.cbEditarTipoGasto.TabIndex = 4;
             // 
             // lblTipoGasto
             // 
@@ -167,7 +167,7 @@
             this.txtActualizarDescripcionGasto.Multiline = true;
             this.txtActualizarDescripcionGasto.Name = "txtActualizarDescripcionGasto";
             this.txtActualizarDescripcionGasto.Size = new System.Drawing.Size(267, 49);
-            this.txtActualizarDescripcionGasto.TabIndex = 54;
+            this.txtActualizarDescripcionGasto.TabIndex = 2;
             // 
             // dtpActualizarFechaGasto
             // 
@@ -177,7 +177,7 @@
             this.dtpActualizarFechaGasto.Location = new System.Drawing.Point(440, 10);
             this.dtpActualizarFechaGasto.Name = "dtpActualizarFechaGasto";
             this.dtpActualizarFechaGasto.Size = new System.Drawing.Size(120, 26);
-            this.dtpActualizarFechaGasto.TabIndex = 53;
+            this.dtpActualizarFechaGasto.TabIndex = 1;
             // 
             // lblDescripcionGasto
             // 
@@ -196,7 +196,7 @@
             this.txtActualizarValorGasto.Location = new System.Drawing.Point(237, 12);
             this.txtActualizarValorGasto.Name = "txtActualizarValorGasto";
             this.txtActualizarValorGasto.Size = new System.Drawing.Size(100, 26);
-            this.txtActualizarValorGasto.TabIndex = 50;
+            this.txtActualizarValorGasto.TabIndex = 0;
             // 
             // lvlValorIngresoGasto
             // 

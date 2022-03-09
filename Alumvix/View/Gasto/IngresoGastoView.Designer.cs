@@ -84,7 +84,7 @@
             this.btnGuardarNuevoGasto.Location = new System.Drawing.Point(393, 227);
             this.btnGuardarNuevoGasto.Name = "btnGuardarNuevoGasto";
             this.btnGuardarNuevoGasto.Size = new System.Drawing.Size(121, 44);
-            this.btnGuardarNuevoGasto.TabIndex = 48;
+            this.btnGuardarNuevoGasto.TabIndex = 6;
             this.btnGuardarNuevoGasto.Text = "Guardar";
             this.btnGuardarNuevoGasto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardarNuevoGasto.UseVisualStyleBackColor = true;
@@ -96,7 +96,7 @@
             this.txtNumeroFactura.Location = new System.Drawing.Point(153, 149);
             this.txtNumeroFactura.Name = "txtNumeroFactura";
             this.txtNumeroFactura.Size = new System.Drawing.Size(155, 26);
-            this.txtNumeroFactura.TabIndex = 47;
+            this.txtNumeroFactura.TabIndex = 3;
             // 
             // label2
             // 
@@ -116,7 +116,7 @@
             this.cbIngresarProveedor.Location = new System.Drawing.Point(153, 243);
             this.cbIngresarProveedor.Name = "cbIngresarProveedor";
             this.cbIngresarProveedor.Size = new System.Drawing.Size(218, 28);
-            this.cbIngresarProveedor.TabIndex = 45;
+            this.cbIngresarProveedor.TabIndex = 5;
             // 
             // label1
             // 
@@ -136,7 +136,7 @@
             this.cbIngresarTipoGasto.Location = new System.Drawing.Point(153, 195);
             this.cbIngresarTipoGasto.Name = "cbIngresarTipoGasto";
             this.cbIngresarTipoGasto.Size = new System.Drawing.Size(218, 28);
-            this.cbIngresarTipoGasto.TabIndex = 43;
+            this.cbIngresarTipoGasto.TabIndex = 4;
             // 
             // lblTipoGasto
             // 
@@ -157,7 +157,7 @@
             this.txtDescripcionGasto.Multiline = true;
             this.txtDescripcionGasto.Name = "txtDescripcionGasto";
             this.txtDescripcionGasto.Size = new System.Drawing.Size(267, 49);
-            this.txtDescripcionGasto.TabIndex = 41;
+            this.txtDescripcionGasto.TabIndex = 2;
             // 
             // dtpFechaIngresoGasto
             // 
@@ -167,7 +167,7 @@
             this.dtpFechaIngresoGasto.Location = new System.Drawing.Point(356, 28);
             this.dtpFechaIngresoGasto.Name = "dtpFechaIngresoGasto";
             this.dtpFechaIngresoGasto.Size = new System.Drawing.Size(120, 26);
-            this.dtpFechaIngresoGasto.TabIndex = 40;
+            this.dtpFechaIngresoGasto.TabIndex = 1;
             // 
             // lblDescripcionGasto
             // 
@@ -186,7 +186,7 @@
             this.txtIngresarValorGasto.Location = new System.Drawing.Point(153, 30);
             this.txtIngresarValorGasto.Name = "txtIngresarValorGasto";
             this.txtIngresarValorGasto.Size = new System.Drawing.Size(100, 26);
-            this.txtIngresarValorGasto.TabIndex = 34;
+            this.txtIngresarValorGasto.TabIndex = 0;
             // 
             // lvlValorIngresoGasto
             // 

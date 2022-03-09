@@ -26,7 +26,7 @@ namespace Alumvix.Controller.Gasto
         {
             gastosPorPeriodoView.lstvGastosPeriodo.Items.Clear();
             GastoDao gastoDao = new GastoDao();
-            List<GastoDto> listadoGastos = gastoDao.ObtenerGastosPorMes(AdministradorReportesController.MesSeleccionado, AdministradorReportesController.AnioSeleccionado);
+            List<GastoDto> listadoGastos = gastoDao.ObtenerGastosAgrupadosPorMes(AdministradorReportesController.MesSeleccionado, AdministradorReportesController.AnioSeleccionado);
             foreach (GastoDto gastoDto in listadoGastos)
             {
                 string[] row = { gastoDto.TipoGasto, CambioDeFormato.DarFormatoANumero(gastoDto.ValorGasto) };

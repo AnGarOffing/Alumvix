@@ -113,8 +113,7 @@ namespace Alumvix.Controller.Cliente
                     if (usuarioAdmin.Usuario == "Sharina" && usuarioAdmin.Password == "*1039452959@")
                     {
                         Logica logica = new Logica();
-                        bool ivaActualizado = logica.ModificarIVA(Convert.ToInt32(
-                            editarValorIVAView.txtEditarValorIVA.Text));
+                        bool ivaActualizado = logica.ModificarIVA(Convert.ToInt32(editarValorIVAView.txtEditarValorIVA.Text));
                         if (ivaActualizado)
                         {
                             MessageBox.Show("El IVA se ha actualizado con exito");
@@ -137,7 +136,8 @@ namespace Alumvix.Controller.Cliente
 
         private void CargarIVAActual(object sender, EventArgs e)
         {
-            editarValorIVAView.txtEditarValorIVA.Text = new Logica().ObtenerIVAActual().ToString();
+            string iva = new Logica().ObtenerIVAActual().ToString();
+            editarValorIVAView.txtEditarValorIVA.Text = iva;
         }
     }
 }

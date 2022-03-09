@@ -11,12 +11,13 @@ namespace Alumvix.Model.Dao
         SqlDataReader lectorFilas;
         SqlCommand command = new SqlCommand();
 
+
         public List<GastoDto> ObtenerGastos(int idContrato)
         {
             command.Connection = connection;
             command.CommandText ="select ID_GASTO, numeroFactura, valorGasto, fechaGasto, descripcionGasto, nombreProveedor, NombreTipoGasto from GASTO"
-                                +" inner join PROVEEDOR on GASTO.ID_PROVEEDOR1 = PROVEEDOR.ID_PROVEEDOR"
-                                +" inner join TIPO_GASTO on GASTO.FK_ID_TIPO_GASTO = TIPO_GASTO.ID_TIPO_GASTO"
+                                + " inner join PROVEEDOR on GASTO.FK_ID_PROVEEDOR = PROVEEDOR.ID_PROVEEDOR"
+                                + " inner join TIPO_GASTO on GASTO.FK_ID_TIPO_GASTO = TIPO_GASTO.ID_TIPO_GASTO"
                                 +" where FK_ID_CONTRATO2 = "+idContrato;
             command.CommandType = CommandType.Text;
             connection.Open();
@@ -102,7 +103,7 @@ namespace Alumvix.Model.Dao
         {
             bool respuesta = false;
             command.Connection = connection;
-            command.CommandText = "update GASTO set numeroFactura = '" + numeroFactura + "', valorGasto = " + valorGasto + ", fechaGasto = '" + fechaGasto + "', descripcionGasto = '" + descripcionGasto+ "', ID_PROVEEDOR1 = " + proveedor + ", FK_ID_TIPO_GASTO = " + tipoGasto 
+            command.CommandText = "update GASTO set numeroFactura = '" + numeroFactura + "', valorGasto = " + valorGasto + ", fechaGasto = '" + fechaGasto + "', descripcionGasto = '" + descripcionGasto+ "', FK_ID_PROVEEDOR = " + proveedor + ", FK_ID_TIPO_GASTO = " + tipoGasto 
                                 + " where ID_GASTO = " + idGasto;
             command.CommandType = CommandType.Text;
             connection.Open();
@@ -146,7 +147,7 @@ namespace Alumvix.Model.Dao
             return idGasto;
         }
 
-        public List<GastoDto> ObtenerGastosPorMes(int mes, int anio)
+        public List<GastoDto> ObtenerGastosAgrupadosPorMes(int mes, int anio)
         {
             command.Connection = connection;
             command.CommandText = "select NombreTipoGasto as Tipo, SUM(valorGasto) as Valor from GASTO" 
@@ -162,6 +163,74 @@ namespace Alumvix.Model.Dao
                 {
                     TipoGasto = lectorFilas.GetString(0),
                     ValorGasto = lectorFilas.GetInt32(1),
+                });
+            }
+            lectorFilas.Close();
+            connection.Close();
+            return listadoGastos;
+        }
+
+        //Sobrecarga de ObtenerGastosPorMes()
+        public List<GastoDto> ObtenerGastosPorMes(int mes, int anio)
+        {
+            command.Connection = connection;
+            command.CommandText = "select fechaGasto, NombreTipoGasto as Tipo_Gasto, valorGasto as Valor, " 
+                +" nombreProveedor as Proveedor, numeroFactura as factura_Proveedor, FK_ID_CONTRATO2 as #Contrato," 
+                +" nombreCliente as Cliente, descripcionGasto from GASTO" 
+                +" inner join TIPO_GASTO on GASTO.FK_ID_TIPO_GASTO = TIPO_GASTO.ID_TIPO_GASTO"
+                + " inner join PROVEEDOR on GASTO.FK_ID_PROVEEDOR = PROVEEDOR.ID_PROVEEDOR"
+                + " inner join CONTRATO on GASTO.FK_ID_CONTRATO2 = CONTRATO.ID_CONTRATO"
+                +" inner join CLIENTE on CONTRATO.FK_ID_CLIENTE = CLIENTE.ID_CLIENTE"
+                +" where MONTH(fechaGasto) = " + mes + " and YEAR(fechaGasto) = " + anio;
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            lectorFilas = command.ExecuteReader();
+            List<GastoDto> listadoGastos = new List<GastoDto>();
+            while (lectorFilas.Read())
+            {
+                listadoGastos.Add(new GastoDto()
+                {
+                    FechaGasto = lectorFilas.GetDateTime(0),
+                    TipoGasto = lectorFilas.GetString(1),
+                    ValorGasto = lectorFilas.GetInt32(2),
+                    Proveedor = lectorFilas.GetString(3),
+                    FacturaProveedor = lectorFilas.GetString(4),
+                    NumeroContrato = lectorFilas.GetInt32(5),
+                    Cliente = lectorFilas.GetString(6),
+                    DescripcionGasto = lectorFilas.GetString(7)
+                });
+            }
+            lectorFilas.Close();
+            connection.Close();
+            return listadoGastos;
+        }
+
+        public List<GastoDto> ObtenerGastosPorMes()
+        {
+            command.Connection = connection;
+            command.CommandText = "select fechaGasto, NombreTipoGasto as Tipo_Gasto, valorGasto as Valor, "
+                + " nombreProveedor as Proveedor, numeroFactura as factura_Proveedor, FK_ID_CONTRATO2 as #Contrato,"
+                + " nombreCliente as Cliente, descripcionGasto from GASTO"
+                + " inner join TIPO_GASTO on GASTO.FK_ID_TIPO_GASTO = TIPO_GASTO.ID_TIPO_GASTO"
+                + " inner join PROVEEDOR on GASTO.FK_ID_PROVEEDOR = PROVEEDOR.ID_PROVEEDOR"
+                + " inner join CONTRATO on GASTO.FK_ID_CONTRATO2 = CONTRATO.ID_CONTRATO"
+                + " inner join CLIENTE on CONTRATO.FK_ID_CLIENTE = CLIENTE.ID_CLIENTE";
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            lectorFilas = command.ExecuteReader();
+            List<GastoDto> listadoGastos = new List<GastoDto>();
+            while (lectorFilas.Read())
+            {
+                listadoGastos.Add(new GastoDto()
+                {
+                    FechaGasto = lectorFilas.GetDateTime(0),
+                    TipoGasto = lectorFilas.GetString(1),
+                    ValorGasto = lectorFilas.GetInt32(2),
+                    Proveedor = lectorFilas.GetString(3),
+                    FacturaProveedor = lectorFilas.GetString(4),
+                    NumeroContrato = lectorFilas.GetInt32(5),
+                    Cliente = lectorFilas.GetString(6),
+                    DescripcionGasto = lectorFilas.GetString(7)
                 });
             }
             lectorFilas.Close();

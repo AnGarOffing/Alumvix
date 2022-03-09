@@ -21,7 +21,7 @@ namespace Alumvix.Controller.Gasto
         public IngresoGastoInternoController(IngresoGastoInternoView ingresoGastoInternoVista)
         {
             ingresoGastoInternoView = ingresoGastoInternoVista;
-            gastoInternoView = GastosInternosController.ObtenerInstanciaClienteView();
+            gastoInternoView = GastosInternosController.ObtenerInstanciaGastosInternosView();
             ingresoGastoInternoView.Activated += new EventHandler(CargarYLimpiarControles);
             ingresoGastoInternoView.txtIngresarValorGastoInterno.KeyPress += new KeyPressEventHandler(ValidarEntradaNumeros);
             ingresoGastoInternoView.txtIngresarValorGastoInterno.TextChanged += new EventHandler(AplicarSeparadoresAValor);

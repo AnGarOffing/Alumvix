@@ -75,7 +75,7 @@
             this.btnActualizarGastoInterno.Location = new System.Drawing.Point(476, 136);
             this.btnActualizarGastoInterno.Name = "btnActualizarGastoInterno";
             this.btnActualizarGastoInterno.Size = new System.Drawing.Size(136, 44);
-            this.btnActualizarGastoInterno.TabIndex = 50;
+            this.btnActualizarGastoInterno.TabIndex = 4;
             this.btnActualizarGastoInterno.Text = "Actualizar";
             this.btnActualizarGastoInterno.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnActualizarGastoInterno.UseVisualStyleBackColor = true;
@@ -87,7 +87,7 @@
             this.cbEditarTipoGastoInterno.Location = new System.Drawing.Point(233, 82);
             this.cbEditarTipoGastoInterno.Name = "cbEditarTipoGastoInterno";
             this.cbEditarTipoGastoInterno.Size = new System.Drawing.Size(218, 28);
-            this.cbEditarTipoGastoInterno.TabIndex = 43;
+            this.cbEditarTipoGastoInterno.TabIndex = 2;
             // 
             // lblEditarTipoGastoInterno
             // 
@@ -107,7 +107,7 @@
             this.txtEditarDescripcionGastoInterno.Multiline = true;
             this.txtEditarDescripcionGastoInterno.Name = "txtEditarDescripcionGastoInterno";
             this.txtEditarDescripcionGastoInterno.Size = new System.Drawing.Size(233, 47);
-            this.txtEditarDescripcionGastoInterno.TabIndex = 41;
+            this.txtEditarDescripcionGastoInterno.TabIndex = 3;
             // 
             // dtpEditarFechaGastoInterno
             // 
@@ -117,7 +117,7 @@
             this.dtpEditarFechaGastoInterno.Location = new System.Drawing.Point(449, 29);
             this.dtpEditarFechaGastoInterno.Name = "dtpEditarFechaGastoInterno";
             this.dtpEditarFechaGastoInterno.Size = new System.Drawing.Size(120, 26);
-            this.dtpEditarFechaGastoInterno.TabIndex = 40;
+            this.dtpEditarFechaGastoInterno.TabIndex = 1;
             // 
             // lblEditarDescripcionGastoInterno
             // 
@@ -136,7 +136,7 @@
             this.txtEditarValorGastoInterno.Location = new System.Drawing.Point(233, 31);
             this.txtEditarValorGastoInterno.Name = "txtEditarValorGastoInterno";
             this.txtEditarValorGastoInterno.Size = new System.Drawing.Size(100, 26);
-            this.txtEditarValorGastoInterno.TabIndex = 34;
+            this.txtEditarValorGastoInterno.TabIndex = 0;
             // 
             // lvlValorEditarGastoInterno
             // 

@@ -33,8 +33,7 @@ namespace Alumvix.Model.Negocio.Util
             respuesta = false;
             if (valorGasto != "" && numeroFactura != "" && tipoGasto != 0 && proveedor != 0)
             {
-                if (proveedor == 1) MessageBox.Show("No ha elegido un proveedor valido");
-                else respuesta = true;
+                respuesta = true;
             }
             return respuesta;
         }

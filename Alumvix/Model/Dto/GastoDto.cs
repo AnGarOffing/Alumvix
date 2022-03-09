@@ -14,7 +14,10 @@ namespace Alumvix.Model.Dto
         DateTime fechaGasto;
         string descripcionGasto;
         string proveedor;
+        string facturaProveedor;
         string tipoGasto;
+        string cliente;
+        int numeroContrato;
 
 
         public int IdGasto { get => idGasto; set => idGasto = value; }
@@ -24,5 +27,8 @@ namespace Alumvix.Model.Dto
         public string NumeroFactura { get => numeroFactura; set => numeroFactura = value; }
         public string Proveedor { get => proveedor; set => proveedor = value; }
         public string TipoGasto { get => tipoGasto; set => tipoGasto = value; }
+        public string Cliente { get => cliente; set => cliente = value; }
+        public int NumeroContrato { get => numeroContrato; set => numeroContrato = value; }
+        public string FacturaProveedor { get => facturaProveedor; set => facturaProveedor = value; }
     }
 }

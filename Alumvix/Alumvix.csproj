@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>http://localhost/Alumvix/</UpdateUrl>
-    <ApplicationRevision>12</ApplicationRevision>
+    <ApplicationRevision>14</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -110,6 +110,7 @@
     <Compile Include="Controller\Gasto\DetalleGastoController.cs" />
     <Compile Include="Controller\Gasto\EditarGastoController.cs" />
     <Compile Include="Controller\Gasto\EditarGastoInternoController.cs" />
+    <Compile Include="Controller\Gasto\GastosContratosController.cs" />
     <Compile Include="Controller\Gasto\GastosInternosController.cs" />
     <Compile Include="Controller\Gasto\GastosPorPeriodoController.cs" />
     <Compile Include="Controller\Gasto\IngresoGastoController.cs" />
@@ -223,6 +224,12 @@
     </Compile>
     <Compile Include="View\Gasto\EditarGastoInternoView.Designer.cs">
       <DependentUpon>EditarGastoInternoView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Gasto\GastosContratosView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Gasto\GastosContratosView.Designer.cs">
+      <DependentUpon>GastosContratosView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Gasto\GastosInternosView.cs">
       <SubType>Form</SubType>
@@ -358,6 +365,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Gasto\EditarGastoInternoView.resx">
       <DependentUpon>EditarGastoInternoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Gasto\GastosContratosView.resx">
+      <DependentUpon>GastosContratosView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Gasto\GastosInternosView.resx">
       <DependentUpon>GastosInternosView.cs</DependentUpon>

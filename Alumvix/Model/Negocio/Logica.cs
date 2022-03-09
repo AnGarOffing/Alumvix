@@ -3,6 +3,7 @@ using Alumvix.Model.Dto;
 using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,7 +60,7 @@ namespace Alumvix.Model.Negocio
         public static int AplicarIVA(int valor, int idValorUtil)
         {
             ContratoDao contratoDao = new ContratoDao();
-            double iva = contratoDao.ConsultarIVA(idValorUtil);
+            decimal iva = contratoDao.ConsultarIVA(idValorUtil);
             return (int)(valor * iva) + valor;
         }
 
@@ -68,17 +69,31 @@ namespace Alumvix.Model.Negocio
             return Convert.ToInt32(valor / (1 + new ContratoDao().ConsultarIVA(1)));
         }
 
-        public int ObtenerIVAActual()
+        public double ObtenerIVAActual()
         {
             ContratoDao contratoDao = new ContratoDao();
-            double iva = contratoDao.ConsultarIVA(1);
-            return Convert.ToInt32(iva * 100);
+            decimal iva = contratoDao.ConsultarIVA(1);
+            double ivaEntero = Convert.ToDouble(iva * 100);
+            return ivaEntero;
         }
 
         public bool ModificarIVA(int iva)
         {
+            bool respuesta = false;
             ContratoDao contratoDao = new ContratoDao();
-            return contratoDao.ModificarIVA(iva);
+            double ivaDouble = iva * 1.0 / 100;
+            string ivaString = ivaDouble.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
+            //decimal ivaDecimal = Convert.ToDecimal(ivaDouble, CultureInfo.CurrentCulture);
+            decimal ivaDecimal = Convert.ToDecimal(ivaString,CultureInfo.InvariantCulture);
+            //if (!decimal.TryParse(ivaString, NumberStyles.None, CultureInfo.InvariantCulture, out ivaDecimal))
+            //{
+            //    MessageBox.Show("Numero invalido");
+            //}
+            //else
+            //{
+            //    respuesta = contratoDao.ModificarIVA(ivaDecimal);
+            //}    
+            return contratoDao.ModificarIVA(ivaDecimal);
         }
 
         public int SumarTiposDeGastos(int mes, int anio) 

@@ -81,7 +81,7 @@
             this.txtPasswordAdmin.Multiline = true;
             this.txtPasswordAdmin.Name = "txtPasswordAdmin";
             this.txtPasswordAdmin.Size = new System.Drawing.Size(197, 31);
-            this.txtPasswordAdmin.TabIndex = 64;
+            this.txtPasswordAdmin.TabIndex = 2;
             // 
             // txtEditarValorIVA
             // 
@@ -91,7 +91,7 @@
             this.txtEditarValorIVA.Multiline = true;
             this.txtEditarValorIVA.Name = "txtEditarValorIVA";
             this.txtEditarValorIVA.Size = new System.Drawing.Size(32, 31);
-            this.txtEditarValorIVA.TabIndex = 63;
+            this.txtEditarValorIVA.TabIndex = 0;
             // 
             // lblUsuarioAdmin
             // 
@@ -111,7 +111,7 @@
             this.txtUsuarioAdmin.Multiline = true;
             this.txtUsuarioAdmin.Name = "txtUsuarioAdmin";
             this.txtUsuarioAdmin.Size = new System.Drawing.Size(197, 31);
-            this.txtUsuarioAdmin.TabIndex = 61;
+            this.txtUsuarioAdmin.TabIndex = 1;
             // 
             // btnActualizarIVA
             // 
@@ -124,7 +124,7 @@
             this.btnActualizarIVA.Location = new System.Drawing.Point(148, 162);
             this.btnActualizarIVA.Name = "btnActualizarIVA";
             this.btnActualizarIVA.Size = new System.Drawing.Size(136, 44);
-            this.btnActualizarIVA.TabIndex = 60;
+            this.btnActualizarIVA.TabIndex = 3;
             this.btnActualizarIVA.Text = "Actualizar";
             this.btnActualizarIVA.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnActualizarIVA.UseVisualStyleBackColor = true;

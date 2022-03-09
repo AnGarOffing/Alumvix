@@ -183,10 +183,13 @@ namespace Alumvix.Model.Dao
         public ContratoDto ObtenerContratoPorIdContrato(int idContrato)
         {
             command.Connection = connection;
-            command.CommandText = "select ID_CONTRATO, valorContrato, fechaInicioContrato, fechaTerminacionContrato, nombreEstadoContrato, nombreEstadoTrabajo, NombreTipoFactura from CONTRATO"
-                                + " inner join ESTADO_CONTRATO on CONTRATO.FK_ID_ESTADO_CONTRATO = ESTADO_CONTRATO.ID_ESTADO_CONTRATO"
-                                + " inner join ESTADO_TRABAJO on CONTRATO.FK_ID_ESTADO_TRABAJO = ESTADO_TRABAJO.ID_ESTADO_TRABAJO"
-                                + " inner join TIPO_FACTURA on CONTRATO.FK_ID_TIPO_FACTURA = TIPO_FACTURA.ID_TIPO_FACTURA where ID_CONTRATO = " + idContrato;
+            command.CommandText = "select ID_CONTRATO, valorContrato, fechaInicioContrato, fechaTerminacionContrato," 
+                +" nombreEstadoContrato, nombreEstadoTrabajo, NombreTipoFactura, NombreCategoriaFactura from CONTRATO" 
+                +" inner join ESTADO_CONTRATO on CONTRATO.FK_ID_ESTADO_CONTRATO = ESTADO_CONTRATO.ID_ESTADO_CONTRATO"
+                +" inner join ESTADO_TRABAJO on CONTRATO.FK_ID_ESTADO_TRABAJO = ESTADO_TRABAJO.ID_ESTADO_TRABAJO"
+                +" inner join TIPO_FACTURA on CONTRATO.FK_ID_TIPO_FACTURA = TIPO_FACTURA.ID_TIPO_FACTURA"
+                +" inner join CATEGORIA_FACTURA on CONTRATO.FK_ID_CATEGORIA_FACTURA = CATEGORIA_FACTURA.ID_CATEGORIA_FACTURA"
+                +" where ID_CONTRATO = " + idContrato;
             command.CommandType = CommandType.Text;
             connection.Open();
             lectorFilas = command.ExecuteReader();
@@ -199,6 +202,7 @@ namespace Alumvix.Model.Dao
             contrato.EstadoContrato = lectorFilas.GetString(4);
             contrato.EstadoTrabajo = lectorFilas.GetString(5);
             contrato.TipoFactura = lectorFilas.GetString(6);
+            contrato.CategoriaFactura = lectorFilas.GetString(7);
             lectorFilas.Close();
             connection.Close();
             return contrato;
@@ -219,7 +223,7 @@ namespace Alumvix.Model.Dao
             return respuesta;
         }
 
-        public double ConsultarIVA(int idValorUtil)
+        public decimal ConsultarIVA(int idValorUtil)
         {
             command.Connection = connection;
             command.CommandText = "select valor from VALOR_UTIL where ID_VALOR_UTIL = " + idValorUtil;
@@ -227,13 +231,13 @@ namespace Alumvix.Model.Dao
             connection.Open();
             lectorFilas = command.ExecuteReader();
             lectorFilas.Read();
-            double valorIva = lectorFilas.GetDouble(0);
+            decimal valorIva = lectorFilas.GetDecimal(0);
             lectorFilas.Close();
             connection.Close();
             return valorIva;
         }
 
-        public bool ModificarIVA(int iva)
+        public bool ModificarIVA(decimal iva)
         {
             bool respuesta = false;
             command.Connection = connection;

@@ -107,7 +107,7 @@ namespace Alumvix.Controller.Gasto
             }         
         }
 
-        public static GastosInternosView ObtenerInstanciaClienteView()
+        public static GastosInternosView ObtenerInstanciaGastosInternosView()
         {
             return gastosInternosView;
         }

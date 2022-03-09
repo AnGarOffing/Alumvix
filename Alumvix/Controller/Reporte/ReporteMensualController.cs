@@ -52,6 +52,8 @@ namespace Alumvix.Controller.Reporte
 
         private void MostrarResumenContratos(object sender, EventArgs e)
         {
+            mes = AdministradorReportesController.MesSeleccionado = administradorReportesView.cbSeleccionarMes.SelectedIndex;
+            anio = AdministradorReportesController.AnioSeleccionado = Convert.ToInt32(administradorReportesView.cbSeleccionarAnio.SelectedValue);
             reporteMensualView.lstvResumenContratos.Items.Clear();
             ResumenContratoDao resumenContratoDao = new ResumenContratoDao();
             List<ResumenContratoDto> listadoResumenContrato = resumenContratoDao.ObtenerResumenContratos(mes, anio);
@@ -141,6 +143,8 @@ namespace Alumvix.Controller.Reporte
 
         private void MostrarReporteMensual(object sender, EventArgs e)
         {
+            mes = AdministradorReportesController.MesSeleccionado = administradorReportesView.cbSeleccionarMes.SelectedIndex;
+            anio = AdministradorReportesController.AnioSeleccionado = Convert.ToInt32(administradorReportesView.cbSeleccionarAnio.SelectedValue);
             reporteMensualView.lstvGastosPeriodo.Items.Clear();
             reporteMensualView.lblTituloReporteMensual.Text = "REPORTE: " + administradorReportesView.cbSeleccionarMes.SelectedItem.ToString().ToUpperInvariant() + " - " + administradorReportesView.cbSeleccionarAnio.SelectedItem.ToString();
             ReporteDao reporteDao = new ReporteDao();
@@ -164,7 +168,7 @@ namespace Alumvix.Controller.Reporte
         {
             reporteMensualView.lstvGastosPeriodo.Items.Clear();
             GastoDao gastoDao = new GastoDao();
-            List<GastoDto> listadoGastos = gastoDao.ObtenerGastosPorMes(mes, anio);
+            List<GastoDto> listadoGastos = gastoDao.ObtenerGastosAgrupadosPorMes(mes, anio);
             foreach (GastoDto gastoDto in listadoGastos)
             {
                 string[] row = { gastoDto.TipoGasto, CambioDeFormato.DarFormatoANumero(gastoDto.ValorGasto) };

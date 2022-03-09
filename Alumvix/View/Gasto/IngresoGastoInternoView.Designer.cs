@@ -76,7 +76,7 @@
             this.btnGuardarNuevoGastoInterno.Location = new System.Drawing.Point(490, 139);
             this.btnGuardarNuevoGastoInterno.Name = "btnGuardarNuevoGastoInterno";
             this.btnGuardarNuevoGastoInterno.Size = new System.Drawing.Size(121, 44);
-            this.btnGuardarNuevoGastoInterno.TabIndex = 49;
+            this.btnGuardarNuevoGastoInterno.TabIndex = 4;
             this.btnGuardarNuevoGastoInterno.Text = "Guardar";
             this.btnGuardarNuevoGastoInterno.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardarNuevoGastoInterno.UseVisualStyleBackColor = true;
@@ -88,7 +88,7 @@
             this.cbIngresarTipoGastoInterno.Location = new System.Drawing.Point(229, 67);
             this.cbIngresarTipoGastoInterno.Name = "cbIngresarTipoGastoInterno";
             this.cbIngresarTipoGastoInterno.Size = new System.Drawing.Size(218, 28);
-            this.cbIngresarTipoGastoInterno.TabIndex = 43;
+            this.cbIngresarTipoGastoInterno.TabIndex = 2;
             // 
             // lblTipoGastoInterno
             // 
@@ -108,7 +108,7 @@
             this.txtDescripcionGastoInterno.Multiline = true;
             this.txtDescripcionGastoInterno.Name = "txtDescripcionGastoInterno";
             this.txtDescripcionGastoInterno.Size = new System.Drawing.Size(240, 63);
-            this.txtDescripcionGastoInterno.TabIndex = 41;
+            this.txtDescripcionGastoInterno.TabIndex = 3;
             // 
             // dtpFechaIngresoGastoInterno
             // 
@@ -118,7 +118,7 @@
             this.dtpFechaIngresoGastoInterno.Location = new System.Drawing.Point(445, 19);
             this.dtpFechaIngresoGastoInterno.Name = "dtpFechaIngresoGastoInterno";
             this.dtpFechaIngresoGastoInterno.Size = new System.Drawing.Size(120, 26);
-            this.dtpFechaIngresoGastoInterno.TabIndex = 40;
+            this.dtpFechaIngresoGastoInterno.TabIndex = 1;
             // 
             // lblDescripcionGastoInterno
             // 
@@ -137,7 +137,7 @@
             this.txtIngresarValorGastoInterno.Location = new System.Drawing.Point(229, 21);
             this.txtIngresarValorGastoInterno.Name = "txtIngresarValorGastoInterno";
             this.txtIngresarValorGastoInterno.Size = new System.Drawing.Size(100, 26);
-            this.txtIngresarValorGastoInterno.TabIndex = 34;
+            this.txtIngresarValorGastoInterno.TabIndex = 0;
             // 
             // lvlValorIngresoGastoInterno
             // 

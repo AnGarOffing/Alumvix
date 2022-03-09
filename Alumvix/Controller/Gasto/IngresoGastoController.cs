@@ -22,8 +22,8 @@ namespace Alumvix.Controller.Gasto
             idContrato = DetalleClienteController.ObtenerIdContrato();
             ingresoGastoView = ingresoGastoVista;
             detalleGastoView = DetalleGastoController.ObtenerInstanciaDetalleGasto();
-            ingresoGastoView.Load += new EventHandler(LimpiarCampos);
-            ingresoGastoView.Load += new EventHandler(CargarTiposDeGastoMaterial);
+            ingresoGastoView.Activated += new EventHandler(LimpiarCampos);
+            ingresoGastoView.Load += new EventHandler(CargarTiposDeGastoContratos);
             ingresoGastoView.Load += new EventHandler(CargarProveedores);
             ingresoGastoView.Activated += new EventHandler(ActualizarIdContrato);
             ingresoGastoView.txtIngresarValorGasto.KeyPress += new KeyPressEventHandler(ValidarEntradaNumeros);
@@ -120,6 +120,7 @@ namespace Alumvix.Controller.Gasto
         {
             ingresoGastoView.txtIngresarValorGasto.Clear();
             ingresoGastoView.txtDescripcionGasto.Clear();
+            ingresoGastoView.txtNumeroFactura.Clear();
         }
 
         private void IngresarGasto(object sender, EventArgs e)
@@ -160,7 +161,7 @@ namespace Alumvix.Controller.Gasto
             }
         }
 
-        private void CargarTiposDeGastoMaterial(object sender, EventArgs e)
+        private void CargarTiposDeGastoContratos(object sender, EventArgs e)
         {
             GastoDao tipoGasto = new GastoDao();
             ingresoGastoView.cbIngresarTipoGasto.DataSource = tipoGasto.ObtenerTiposDeGastoDeContrato();

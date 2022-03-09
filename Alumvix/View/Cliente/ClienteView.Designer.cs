@@ -50,6 +50,7 @@
             this.rbContratoAbierto = new System.Windows.Forms.RadioButton();
             this.dataGridClientes = new System.Windows.Forms.DataGridView();
             this.btnModificarIVA = new System.Windows.Forms.Button();
+            this.btnGastosDeContratos = new System.Windows.Forms.Button();
             this.pnlSuperiorClienteView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarClienteView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarClienteView)).BeginInit();
@@ -102,7 +103,7 @@
             this.btnReporte.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             this.btnReporte.Image = ((System.Drawing.Image)(resources.GetObject("btnReporte.Image")));
             this.btnReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReporte.Location = new System.Drawing.Point(17, 598);
+            this.btnReporte.Location = new System.Drawing.Point(18, 598);
             this.btnReporte.Name = "btnReporte";
             this.btnReporte.Size = new System.Drawing.Size(125, 44);
             this.btnReporte.TabIndex = 37;
@@ -175,7 +176,7 @@
             this.btnGastosInternos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             this.btnGastosInternos.Image = ((System.Drawing.Image)(resources.GetObject("btnGastosInternos.Image")));
             this.btnGastosInternos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGastosInternos.Location = new System.Drawing.Point(198, 598);
+            this.btnGastosInternos.Location = new System.Drawing.Point(196, 598);
             this.btnGastosInternos.Name = "btnGastosInternos";
             this.btnGastosInternos.Size = new System.Drawing.Size(184, 44);
             this.btnGastosInternos.TabIndex = 44;
@@ -191,7 +192,7 @@
             this.btnProveedores.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             this.btnProveedores.Image = ((System.Drawing.Image)(resources.GetObject("btnProveedores.Image")));
             this.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProveedores.Location = new System.Drawing.Point(439, 598);
+            this.btnProveedores.Location = new System.Drawing.Point(722, 598);
             this.btnProveedores.Name = "btnProveedores";
             this.btnProveedores.Size = new System.Drawing.Size(159, 44);
             this.btnProveedores.TabIndex = 45;
@@ -286,7 +287,7 @@
             this.dataGridClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridClientes.EnableHeadersVisualStyles = false;
             this.dataGridClientes.GridColor = System.Drawing.Color.DarkSlateGray;
-            this.dataGridClientes.Location = new System.Drawing.Point(16, 129);
+            this.dataGridClientes.Location = new System.Drawing.Point(18, 128);
             this.dataGridClientes.MultiSelect = false;
             this.dataGridClientes.Name = "dataGridClientes";
             this.dataGridClientes.ReadOnly = true;
@@ -317,7 +318,7 @@
             this.btnModificarIVA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             this.btnModificarIVA.Image = ((System.Drawing.Image)(resources.GetObject("btnModificarIVA.Image")));
             this.btnModificarIVA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificarIVA.Location = new System.Drawing.Point(654, 598);
+            this.btnModificarIVA.Location = new System.Drawing.Point(938, 598);
             this.btnModificarIVA.Name = "btnModificarIVA";
             this.btnModificarIVA.Size = new System.Drawing.Size(164, 44);
             this.btnModificarIVA.TabIndex = 48;
@@ -325,12 +326,29 @@
             this.btnModificarIVA.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnModificarIVA.UseVisualStyleBackColor = true;
             // 
+            // btnGastosDeContratos
+            // 
+            this.btnGastosDeContratos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGastosDeContratos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGastosDeContratos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGastosDeContratos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.btnGastosDeContratos.Image = ((System.Drawing.Image)(resources.GetObject("btnGastosDeContratos.Image")));
+            this.btnGastosDeContratos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGastosDeContratos.Location = new System.Drawing.Point(434, 598);
+            this.btnGastosDeContratos.Name = "btnGastosDeContratos";
+            this.btnGastosDeContratos.Size = new System.Drawing.Size(232, 44);
+            this.btnGastosDeContratos.TabIndex = 49;
+            this.btnGastosDeContratos.Text = "Gastos de Contratos";
+            this.btnGastosDeContratos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGastosDeContratos.UseVisualStyleBackColor = true;
+            // 
             // ClienteView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(1230, 656);
+            this.Controls.Add(this.btnGastosDeContratos);
             this.Controls.Add(this.btnModificarIVA);
             this.Controls.Add(this.gbEstadoContrato);
             this.Controls.Add(this.btnDetalleCliente);
@@ -379,5 +397,6 @@
         public System.Windows.Forms.RadioButton rbCualquierContrato;
         public System.Windows.Forms.Button btnModificarIVA;
         public System.Windows.Forms.Panel pnlSuperiorClienteView;
+        public System.Windows.Forms.Button btnGastosDeContratos;
     }
 }
