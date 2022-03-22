@@ -246,7 +246,7 @@ namespace Alumvix.Controller
                 clienteVista.dataGridClientes.ClearSelection();
                 registroCliente.Clear();
             }
-            else if (clienteVista.rbContratoCerrado.Checked)
+            if (clienteVista.rbContratoCerrado.Checked)
             {
                 ClienteDao clienteDao = new ClienteDao();
                 clienteVista.dataGridClientes.DataSource = clienteDao.ObtenerClientesContratoCerradoYFiltro(clienteVista.txtFiltrarCliente.Text);
