@@ -127,6 +127,7 @@ namespace Alumvix.Controller.Gasto
         {
             bool respuesta = false;
             GastoDao gastoActualizado = new GastoDao();
+            ProveedorDao proveedorDao = new ProveedorDao();
             if (ingresoGastoView.txtNumeroFactura.Enabled == false)
             {
                 respuesta = ValidacionesDeControles.ValidarBotonIngresoGastoSinFactura(ingresoGastoView.txtIngresarValorGasto.Text, ingresoGastoView.cbIngresarTipoGasto.SelectedIndex);
@@ -141,7 +142,8 @@ namespace Alumvix.Controller.Gasto
                 //string valorSinFormato = CambioDeFormato.QuitarFormatoANumero(ingresoGastoView.txtIngresarValorGasto.Text);
                 int valorSinFormato = Convert.ToInt32(ingresoGastoView.txtIngresarValorGasto.Text.Replace(".", ""));
                 int idTipoGasto = nuevoGasto.ObtenerTipoGastoPorNombre(ingresoGastoView.cbIngresarTipoGasto.GetItemText(ingresoGastoView.cbIngresarTipoGasto.SelectedItem));
-                bool respuestaIngresoGasto = gastoActualizado.IngresarGasto(ingresoGastoView.txtNumeroFactura.Text, valorSinFormato, ingresoGastoView.dtpFechaIngresoGasto.Text, ingresoGastoView.txtDescripcionGasto.Text, ingresoGastoView.cbIngresarProveedor.SelectedIndex, idTipoGasto, idContrato);
+                int idProveedor = proveedorDao.ObtenerIdProveedor(ingresoGastoView.cbIngresarProveedor.SelectedItem.ToString());
+                bool respuestaIngresoGasto = gastoActualizado.IngresarGasto(ingresoGastoView.txtNumeroFactura.Text, valorSinFormato, ingresoGastoView.dtpFechaIngresoGasto.Text, ingresoGastoView.txtDescripcionGasto.Text, idProveedor, idTipoGasto, idContrato);
                 if (respuestaIngresoGasto)
                 {
                     //editarGastoView.txtActualizarValorGasto.Clear();

@@ -79,6 +79,18 @@ namespace Alumvix.Model.Dao
             return listadoProveedores;
         }
 
+        public int ObtenerIdProveedor(string nombreProveedor)
+        {
+            command.Connection = connection;
+            command.CommandText = "select ID_PROVEEDOR from PROVEEDOR where nombreProveedor = '" + nombreProveedor + "'";
+            command.CommandType = CommandType.Text;
+            connection.Open();
+            lectorFilas = command.ExecuteReader();
+            lectorFilas.Read();
+            int idProveedor = lectorFilas.GetInt32(0);
+            return idProveedor;
+        }
+
         public bool ActualizarProveedor(string nombreProveedor, string celularProveedor, string telefonoProveedor, string direccionProveedor, int idProveedor)
         {
             bool respuesta = false;
